@@ -91,7 +91,7 @@ API Fields
 Field Name | Data Source  | Valid Statuses  | Input Type
 ---------------|------------|----------|------------
 Country Code |  Country_Code MUST come from https://geonames.nga.mil/geonames/GNSHome/index.html and only allowed sources | Active, Inactive (GET calls Only) | Three (3) characters
-Country Name |  Full_Name MUST come from https://geonames.nga.mil/geonames/GNSHome/index.html and only allowed sources |   | TEXT
+Country Name |  fullName MUST come from https://geonames.nga.mil/geonames/GNSHome/index.html and only allowed sources |   | TEXT
 State | State MUST come from https://geonames.nga.mil/geonames/GNSHome/index.html and only allowed sources   | Listed from the selected country | Two (2) characters
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -164,7 +164,7 @@ The API will process each request as described for all Subawardees within the re
          "programTitle":"Title of the program",
          "subawardDataList":[
             {
-               "subawardUei":"ABC987654321",
+               "subawardUEI":"ABC987654321",
                "subawardNumber":"2303-TEST-05-0",
                "subawardAmount":"100567.99",
                "subawardDate":"2023-05-14",
@@ -175,7 +175,7 @@ The API will process each request as described for all Subawardees within the re
                      "code":"USA",
                      "name":"UNITED STATES"
                   },
-                  "state":{
+                  "stateOrProvidence":{
                      "code":"VA",
                      "name":"Virginia"
                   },
@@ -193,29 +193,29 @@ The API will process each request as described for all Subawardees within the re
                ],
                "topPayEmployees":[
                   {
-                     "full_name":"John White",
+                     "fullName":"John White",
                      "salary":"100000"
                   },
                   {
-                     "full_name":"Employee Green",
+                     "fullName":"Employee Green",
                      "salary":"120000"
                   },
                   {
-                     "full_name":"Employee Red",
+                     "fullName":"Employee Red",
                      "salary":"96000"
                   },
                   {
-                     "full_name":"Employee Orange",
+                     "fullName":"Employee Orange",
                      "salary":"250000"
                   },
                   {
-                     "full_name":"Employee Blue",
+                     "fullName":"Employee Blue",
                      "salary":"290000"
                   }
                ]
             },
             {
-               "subawardUei":"XYZ987654321",
+               "subawardUEI":"XYZ987654321",
                "subawardNumber":"2303-TEST-06-1",
                "subawardAmount":"80000",
                "subawardDate":"2023-05-14",
@@ -226,7 +226,7 @@ The API will process each request as described for all Subawardees within the re
                      "code":"USA",
                      "name":"UNITED STATES"
                   },
-                  "state":{
+                  "stateOrProvidence":{
                      "code":"VA",
                      "name":"Virginia"
                   },
@@ -253,7 +253,7 @@ The API will process each request as described for all Subawardees within the re
          "programTitle":"Title of the program",
          "subawardDataList":[
             {
-               "subawardUei":"ABC999999999",
+               "subawardUEI":"ABC999999999",
                "subawardNumber":"9999-TEST",
                "subawardAmount":"80000",
                "subawardDate":"2023-04-28",
@@ -264,7 +264,7 @@ The API will process each request as described for all Subawardees within the re
                      "code":"USA",
                      "name":"UNITED STATES"
                   },
-                  "state":{
+                  "stateOrProvidence":{
                      "code":"GA",
                      "name":"Georgia"
                   },
@@ -299,7 +299,7 @@ The API will process each request as described for all Subawardees within the re
          "programTitle":"Title of the program",
          "subawardDataList":[
             {
-               "subawardUei":"ABC987654321",
+               "subawardUEI":"ABC987654321",
                "subawardNumber":"",
                "subawardAmount":"",
                "subawardDate":"",
@@ -310,7 +310,7 @@ The API will process each request as described for all Subawardees within the re
                      "code":"USA",
                      "name":"UNITED STATES"
                   },
-                  "state":{
+                  "stateOrProvidence":{
                      "code":"VA",
                      "name":"Virginia"
                   },
@@ -383,7 +383,7 @@ The API will process each request as described for all Subawardees within the re
               "code": "USA",
               "name": "UNITED STATES"
             },
-            "state": {
+            "stateOrProvidence": {
               "code": "VA",
               "name": "Virginia"
             },
@@ -401,23 +401,23 @@ The API will process each request as described for all Subawardees within the re
           ],
           "topPayEmployees": [
             {
-              "full_name": "John White",
+              "fullName": "John White",
               "salary": "100000"
             },
             {
-              "full_name": "Employee Green",
+              "fullName": "Employee Green",
               "salary": "120000"
             },
             {
-              "full_name": "Employee Red",
+              "fullName": "Employee Red",
               "salary": "96000"
             },
             {
-              "full_name": "Employee Orange",
+              "fullName": "Employee Orange",
               "salary": "250000"
             },
             {
-              "full_name": "Employee Blue",
+              "fullName": "Employee Blue",
               "salary": "290000"
             }
           ]
@@ -441,7 +441,7 @@ The API will process each request as described for all Subawardees within the re
               "code": "USA",
               "name": "UNITED STATES"
             },
-            "state": {
+            "stateOrProvidence": {
               "code": "GA",
               "name": "Georgia"
             },
@@ -467,7 +467,7 @@ The API will process each request as described for all Subawardees within the re
               "code": "USA",
               "name": "UNITED STATES"
             },
-            "state": {
+            "stateOrProvidence": {
               "code": "VA",
               "name": "Virginia"
             },
@@ -515,7 +515,7 @@ The API will process each request as described for all Subawardees within the re
               "code": "USA",
               "name": "UNITED STATES"
             },
-            "state": {
+            "stateOrProvidence": {
               "code": "GA",
               "name": "Georgia"
             },
@@ -587,7 +587,7 @@ See the [Response JSON](#response-json) section for the response structure and s
          "subawardDataList":[
             {
                "subawardReportNumber":"51e2fad8-7b43-4b62-a870-45b3f250ea99",
-               "subawardUei":"ABC987654321",
+               "subawardUEI":"ABC987654321",
                "subawardNumber":"2303-TEST-05-0",
                "subawardAmount":"100567.99",
                "subawardDate":"2023-05-14",
@@ -598,7 +598,7 @@ See the [Response JSON](#response-json) section for the response structure and s
                      "code":"USA",
                      "name":"UNITED STATES"
                   },
-                  "state":{
+                  "stateOrProvidence":{
                      "code":"VA",
                      "name":"Virginia"
                   },
@@ -616,30 +616,30 @@ See the [Response JSON](#response-json) section for the response structure and s
                ],
                "topPayEmployees":[
                   {
-                     "full_name":"John White",
+                     "fullName":"John White",
                      "salary":"100000"
                   },
                   {
-                     "full_name":"Employee Green",
+                     "fullName":"Employee Green",
                      "salary":"120000"
                   },
                   {
-                     "full_name":"Employee Red",
+                     "fullName":"Employee Red",
                      "salary":"96000"
                   },
                   {
-                     "full_name":"Employee Orange",
+                     "fullName":"Employee Orange",
                      "salary":"250000"
                   },
                   {
-                     "full_name":"Employee Blue",
+                     "fullName":"Employee Blue",
                      "salary":"290000"
                   }
                ]
             },
             {
                "subawardReportNumber":"45e2fad8-7b43-4b62-a870-45b3f250ea31",
-               "subawardUei":"XYZ987654321",
+               "subawardUEI":"XYZ987654321",
                "subawardNumber":"2303-TEST-06-1",
                "subawardAmount":"80000",
                "subawardDate":"2023-05-14",
@@ -650,7 +650,7 @@ See the [Response JSON](#response-json) section for the response structure and s
                      "code":"USA",
                      "name":"UNITED STATES"
                   },
-                  "state":{
+                  "stateOrProvidence":{
                      "code":"VA",
                      "name":"Virginia"
                   },
@@ -678,7 +678,7 @@ See the [Response JSON](#response-json) section for the response structure and s
          "subawardDataList":[
             {
                "subawardReportNumber":"45b3f2d8-7b43-4b62-a870-45b3f250b435",
-               "subawardUei":"ABC999999999",
+               "subawardUEI":"ABC999999999",
                "subawardNumber":"9999-TEST",
                "subawardAmount":"80000",
                "subawardDate":"2023-04-28",
@@ -689,7 +689,7 @@ See the [Response JSON](#response-json) section for the response structure and s
                      "code":"USA",
                      "name":"UNITED STATES"
                   },
-                  "state":{
+                  "stateOrProvidence":{
                      "code":"GA",
                      "name":"Georgia"
                   },
@@ -725,7 +725,7 @@ See the [Response JSON](#response-json) section for the response structure and s
          "subawardDataList":[
             {
                "subawardReportNumber":"45b3f2d8-7b43-4b62-a870-45b3f250b435",
-               "subawardUei":"ABC987654321",
+               "subawardUEI":"ABC987654321",
                "subawardNumber":"",
                "subawardAmount":"",
                "subawardDate":"",
@@ -736,7 +736,7 @@ See the [Response JSON](#response-json) section for the response structure and s
                      "code":"USA",
                      "name":"UNITED STATES"
                   },
-                  "state":{
+                  "stateOrProvidence":{
                      "code":"VA",
                      "name":"Virginia"
                   },
@@ -818,7 +818,7 @@ See the [Response JSON](#response-json) section for the response structure and s
               "code": "USA",
               "name": "UNITED STATES"
             },
-            "state": {
+            "stateOrProvidence": {
               "code": "VA",
               "name": "Virginia"
             },
@@ -836,23 +836,23 @@ See the [Response JSON](#response-json) section for the response structure and s
           ],
           "topPayEmployees": [
             {
-              "full_name": "John White",
+              "fullName": "John White",
               "salary": "100000"
             },
             {
-              "full_name": "Employee Green",
+              "fullName": "Employee Green",
               "salary": "120000"
             },
             {
-              "full_name": "Employee Red",
+              "fullName": "Employee Red",
               "salary": "96000"
             },
             {
-              "full_name": "Employee Orange",
+              "fullName": "Employee Orange",
               "salary": "250000"
             },
             {
-              "full_name": "Employee Blue",
+              "fullName": "Employee Blue",
               "salary": "290000"
             }
           ]
@@ -877,7 +877,7 @@ See the [Response JSON](#response-json) section for the response structure and s
               "code": "USA",
               "name": "UNITED STATES"
             },
-            "state": {
+            "stateOrProvidence": {
               "code": "GA",
               "name": "Georgia"
             },
@@ -904,7 +904,7 @@ See the [Response JSON](#response-json) section for the response structure and s
               "code": "USA",
               "name": "UNITED STATES"
             },
-            "state": {
+            "stateOrProvidence": {
               "code": "VA",
               "name": "Virginia"
             },
@@ -953,7 +953,7 @@ See the [Response JSON](#response-json) section for the response structure and s
               "code": "USA",
               "name": "UNITED STATES"
             },
-            "state": {
+            "stateOrProvidence": {
               "code": "GA",
               "name": "Georgia"
             },
@@ -1524,7 +1524,7 @@ NOTE: In an effort to keep the user informed on the actions performed through th
           "subawardDataList": [
             {
               "submittedDate": "2024-02-12",
-              "subawardUei": "string",
+              "subawardUEI": "string",
               "subawardNumber": "string",
               "subawardAmount": "string",
               "subawardDate": "string",
@@ -1535,7 +1535,7 @@ NOTE: In an effort to keep the user informed on the actions performed through th
                   "code": "string",
                   "name": "string"
                 },
-                "state": {
+                "stateOrProvidence": {
                   "code": "string",
                   "name": "string"
                 },
@@ -1553,23 +1553,23 @@ NOTE: In an effort to keep the user informed on the actions performed through th
               ],
               "topPayEmployees": [
                 {
-                  "full_name": "sub1",
+                  "fullName": "sub1",
                   "salary": "100"
                 },
                 {
-                  "full_name": "sub2",
+                  "fullName": "sub2",
                   "salary": "200"
                 },
                 {
-                  "full_name": "sub3",
+                  "fullName": "sub3",
                   "salary": "300"
                 },
                 {
-                  "full_name": "sub4",
+                  "fullName": "sub4",
                   "salary": "400"
                 },
                 {
-                  "full_name": "sub5",
+                  "fullName": "sub5",
                   "salary": "500"
                 }
               ]
@@ -1598,7 +1598,7 @@ NOTE: In an effort to keep the user informed on the actions performed through th
           "subawardDataList": [
             {
               "submittedDate": "2024-02-12",
-              "subawardUei": "string",
+              "subawardUEI": "string",
               "subawardNumber": "string",
               "subawardAmount": "string",
               "subawardDate": "string",
@@ -1609,7 +1609,7 @@ NOTE: In an effort to keep the user informed on the actions performed through th
                   "code": "string",
                   "name": "string"
                 },
-                "state": {
+                "stateOrProvidence": {
                   "code": "string",
                   "name": "string"
                 },
@@ -1843,7 +1843,7 @@ NOTE: In an effort to keep the user informed on the actions performed through th
           "subawardDataList": [
             {
               "submittedDate": "2024-02-12",
-              "subawardUei": "string",
+              "subawardUEI": "string",
               "subawardNumber": "string",
               "subawardAmount": "string",
               "subawardDate": "string",
@@ -1854,7 +1854,7 @@ NOTE: In an effort to keep the user informed on the actions performed through th
                   "code": "string",
                   "name": "string"
                 },
-                "state": {
+                "stateOrProvidence": {
                   "code": "string",
                   "name": "string"
                 },
@@ -1872,23 +1872,23 @@ NOTE: In an effort to keep the user informed on the actions performed through th
               ],
               "topPayEmployees": [
                 {
-                  "full_name": "sub1",
+                  "fullName": "sub1",
                   "salary": "100"
                 },
                 {
-                  "full_name": "sub2",
+                  "fullName": "sub2",
                   "salary": "200"
                 },
                 {
-                  "full_name": "sub3",
+                  "fullName": "sub3",
                   "salary": "300"
                 },
                 {
-                  "full_name": "sub4",
+                  "fullName": "sub4",
                   "salary": "400"
                 },
                 {
-                  "full_name": "sub5",
+                  "fullName": "sub5",
                   "salary": "500"
                 }
               ]
@@ -1913,7 +1913,7 @@ NOTE: In an effort to keep the user informed on the actions performed through th
           "subawardDataList": [
             {
               "submittedDate": "2024-02-12",
-              "subawardUei": "string",
+              "subawardUEI": "string",
               "subawardNumber": "string",
               "subawardAmount": "string",
               "subawardDate": "string",
@@ -1924,7 +1924,7 @@ NOTE: In an effort to keep the user informed on the actions performed through th
                   "code": "string",
                   "name": "string"
                 },
-                "state": {
+                "stateOrProvidence": {
                   "code": "string",
                   "name": "string"
                 },
@@ -1994,16 +1994,16 @@ contractData.programTitle | string || No | Program or Project Title
 contractData.subawardDataList |string  ||Yes  |Information about the Subawardees. If the report is being submitted for multiple Subawardees, then this array will have multiple elements, one for each of the Subawardee.
 contractData.subawardDataList Details | | | | 
 subawardDataList.subawardReportNumber | string | 13 characters | Yes, for an update request (PUT) to update a report. | The id of the Subaward report. Will be blank/ignored for a POST request to create a Subaward report. 
-subawardDataList.subawardUei | string | 13 characters | Yes | Subawardee UEI
+subawardDataList.subawardUEI | string | 13 characters | Yes | Subawardee UEI
 subawardDataList.subawardNumber | string |32 characters  | Yes | Number assigned by the Prime Contractor to track this subaward
 subawardDataList.subawardAmount |string  |32 characters | Yes | Amount for this award to this Subawardee 
 subawardDataList.subawardDate |string |TIMESTAMP | Yes| Date subaward was made in YYYY-MM-DD format
 subawardDataList.subawardDescription |string  || Yes | Describes the Subaward requirements. This is from FPDS.
 subawardDataList.placeOfPerformance | JSON Object |NA |Yes | Subawardee Principal Place of Performance (POP)
 subawardDataList.placeOfPerformance.city | string || Yes |Subawardee POP City Name
-subawardDataList.placeOfPerformance.state | JSON Object |NA |Yes|Subawardee POP State Information. The State Code and name need to be specified.
-subawardDataList.placeOfPerformance.state.code | string |||Subawardee POP State Code
-subawardDataList.placeOfPerformance.state.name | string ||  |Subawardee POP State Name
+subawardDataList.placeOfPerformance.stateOrProvidence | JSON Object |NA |Yes|Subawardee POP State Information. The State Code and name need to be specified.
+subawardDataList.placeOfPerformance.stateOrProvidence.code | string |||Subawardee POP State Code
+subawardDataList.placeOfPerformance.stateOrProvidence.name | string ||  |Subawardee POP State Name
 subawardDataList.placeOfPerformance.country | JSON Object | NA |Yes|Subawardee POP Country Information. The Country Code and name need to be specified.
 subawardDataList.placeOfPerformance.country.code | string || |Subawardee POP Country Code
 subawardDataList.placeOfPerformance.country.name | string ||  |Subawardee POP Country Name
@@ -2012,7 +2012,7 @@ subawardDataList.recovery_model_questions |JSON Array|NA |Yes, if the SAM regist
 subawardDataList.recovery_model_questions.code |string||Yes, if Compensation question responses are being provided. | Code for the compensation question. This will be 1 for the first question and 2 for the second compensation question. Refer to the Recovery Model Questions (Compensation Questions) section for details.
 subawardDataList.recovery_model_questions.isSelected |string  || Yes, if Compensation question responses are being provided. | Boolean value representing the response to the compensation question.
 subawardDataList.topPayEmployees|JSON Array|NA |Conditional - see Description. If required, the Array requires 5 elements| This is the compensation information for the top 5 employees. The array will have 5 elements for the 5 top pay Employees. This is required if response to compensation question 1 is true and compensation question 2 is false. If the responses to the compensation questions are already provided with the SAM registration for this entity, then this information is not required to be provided.
-subawardDataList.topPayEmployees.full_name |string  ||Yes if subawardDataList.topPayEmployees is required| The full name of the top pay employee
+subawardDataList.topPayEmployees.fullName |string  ||Yes if subawardDataList.topPayEmployees is required| The full name of the top pay employee
 subawardDataList.topPayEmployees.salary | string  ||Yes if subawardDataList.topPayEmployees is required|The total compensation of the top pay employee
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -2037,9 +2037,9 @@ subawardDataList.subAssistanceObligationOrActionDate|string ||Yes |Date subaward
 subawardDataList.overallDescription |string  |   | Yes |
 subawardDataList.placeOfPerformance | JSON Object ||Yes | SubAwardee Principal Place of Performance (POP)
 subawardDataList.placeOfPerformance.city | string || Yes |Subawardee POP City Name
-subawardDataList.placeOfPerformance.state | JSON Object ||Yes|Subawardee POP State Information. The State Code and name need to be specified.
-subawardDataList.placeOfPerformance.state.code | string |||Subawardee POP State Code
-subawardDataList.placeOfPerformance.state.name | string ||  |Subawardee POP State Name
+subawardDataList.placeOfPerformance.stateOrProvidence | JSON Object ||Yes|Subawardee POP State Information. The State Code and name need to be specified.
+subawardDataList.placeOfPerformance.stateOrProvidence.code | string |||Subawardee POP State Code
+subawardDataList.placeOfPerformance.stateOrProvidence.name | string ||  |Subawardee POP State Name
 subawardDataList.placeOfPerformance.country | JSON Object ||Yes|Subawardee POP Country Information. The Country Code and name need to be specified.
 subawardDataList.placeOfPerformance.country.code | string || |Subawardee POP Country Code
 subawardDataList.placeOfPerformance.country.name | string ||  |Subawardee POP Country Name
@@ -2048,7 +2048,7 @@ subawardDataList.recovery_model_questions |JSON Array|NA |Yes, if the SAM regist
 subawardDataList.recovery_model_questions.code |string||Yes, if Compensation question responses are being provided. | Code for the compensation question. This will be 1 for the first question and 2 for the second compensation question. Refer to the Recovery Model Questions (Compensation Questions) section for details.
 subawardDataList.recovery_model_questions.isSelected |string  || Yes, if Compensation question responses are being provided. | Boolean value representing the response to the compensation question.
 subawardDataList.topPayEmployees|JSON Array|NA |Conditional - see Description. If required, the Array requires 5 elements| This is the compensation information for the top 5 employees. The array will have 5 elements for the 5 top pay Employees. This is required if response to compensation question 1 is true and compensation question 2 is false. If the responses to the compensation questions are already provided with the SAM registration for this entity, then this information is not required to be provided.
-subawardDataList.topPayEmployees.full_name |string  ||Yes if subawardDataList.topPayEmployees is required| The full name of the top pay employee
+subawardDataList.topPayEmployees.fullName |string  ||Yes if subawardDataList.topPayEmployees is required| The full name of the top pay employee
 subawardDataList.topPayEmployees.salary | string  ||Yes if subawardDataList.topPayEmployees is required|The total compensation of the top pay employee
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -2190,7 +2190,7 @@ HTTP Status Code|Field | Error Message | Reason/Description | Operation |
 201|subawardDataList.topPayEmployees      subAssistanceDataList.topPayEmployees | Sub Top Employer Compensation - full name and amount are required for all 5 top pay employees. |If Compensation Question 1 answer is true and Compensation Question 2 answer is false: topPayEmployees is required|	submitSubawardReport(Contracts and Grants)
 201|subawardDataList.topPayEmployees.salary    subAssistanceDataList.topPayEmployees.salary | Sub Top Employer Compensation: amount must contain only digits and not exceed 12 digits |Sub Top Pay Employees: salary must contain only digits and not exceed 12 digits |	submitSubawardReport(Contracts and Grants)
 201|subawardDataList.topPayEmployees.salary    subAssistanceDataList.topPayEmployees.salary | Sub topPayEmployees.salary is required |Sub topPayEmployees.salary is required |	submitSubawardReport(Contracts and Grants)
-201|subawardDataList.topPayEmployees.full_name | Sub topPayEmployees.full_name is required |Sub topPayEmployees.full_name is required |	submitSubawardReport(Contracts and Grants)
+201|subawardDataList.topPayEmployees.fullName | Sub topPayEmployees.fullName is required |Sub topPayEmployees.fullName is required |	submitSubawardReport(Contracts and Grants)
 201|subAssistanceDataList | At least one Subawardee information is required for the reporting |At least one Subawardee information is required for the reporting |	submitSubawardReport(Grants)
 201|subAssistanceDataList.subAssistanceNumber | Subaward number is required |Subaward number is required |	submitSubawardReport(Grants)
 201|subAssistanceDataList.subAssistanceNumber| Subaward number should be unique across multiple elements of subawardDataList  |Subaward number should be unique across multiple elements of subawardDataList |	submitSubawardReport(Grants)
@@ -2231,7 +2231,7 @@ HTTP Status Code|Field | Error Message | Reason/Description | Operation |
 200|subawardDataList.topPayEmployees      subAssistanceDataList.topPayEmployees | Sub Top Employer Compensation - full name and amount are required for all 5 top pay employees. |If Compensation Question 1 answer is true and Compensation Question 2 answer is false: topPayEmployees is required|	updateSubawardReport(Contracts and Grants)
 200|subawardDataList.topPayEmployees.salary    subAssistanceDataList.topPayEmployees.salary | Sub Top Employer Compensation: amount must contain only digits and not exceed 12 digits |Sub Top Pay Employees: salary must contain only digits and not exceed 12 digits |	updateSubawardReport(Contracts and Grants)
 200|subawardDataList.topPayEmployees.salary    subAssistanceDataList.topPayEmployees.salary | Sub topPayEmployees.salary is required |Sub topPayEmployees.salary is required |	updateSubawardReport(Contracts and Grants)
-200|subawardDataList.topPayEmployees.full_name | Sub topPayEmployees.full_name is required |Sub topPayEmployees.full_name is required |	updateSubawardReport(Contracts and Grants)
+200|subawardDataList.topPayEmployees.fullName | Sub topPayEmployees.fullName is required |Sub topPayEmployees.fullName is required |	updateSubawardReport(Contracts and Grants)
 200|subAssistanceDataList | At least one Subawardee information is required for the reporting |At least one Subawardee information is required for the reporting |	updateSubawardReport(Grants)
 200|subAssistanceDataList.subAssistanceNumber | Subaward number is required |Subaward number is required |	updateSubawardReport(Grants)
 200|subAssistanceDataList.subAssistanceNumber| Subaward number should be unique across multiple elements of subawardDataList  |Subaward number should be unique across multiple elements of subawardDataList |	updateSubawardReport(Grants)
