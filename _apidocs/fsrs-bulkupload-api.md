@@ -179,7 +179,7 @@ The API will process each request as described for all Subawardees within the re
                      "code":"VA",
                      "name":"Virginia"
                   },
-                  "zip":"12345"
+                  "zipPlus4":"123456789"
                },
                "recovery_model_questions":[
                   {
@@ -230,7 +230,7 @@ The API will process each request as described for all Subawardees within the re
                      "code":"VA",
                      "name":"Virginia"
                   },
-                  "zip":"67890"
+                  "zipPlus4":"678901234"
                },
                "recovery_model_questions":[
                   {
@@ -268,7 +268,7 @@ The API will process each request as described for all Subawardees within the re
                      "code":"GA",
                      "name":"Georgia"
                   },
-                  "zip":"12345"
+                  "zipPlus4":"123456789"
                },
                "recovery_model_questions":[
                   {
@@ -314,7 +314,7 @@ The API will process each request as described for all Subawardees within the re
                      "code":"VA",
                      "name":"Virginia"
                   },
-                  "zip":"12345"
+                  "zipPlus4":"123456789"
                }
             }
          ]
@@ -387,7 +387,7 @@ The API will process each request as described for all Subawardees within the re
               "code": "VA",
               "name": "Virginia"
             },
-            "zip": "12345"
+            "zipPlus4": "123456789"
           },
           "recovery_model_questions": [
             {
@@ -445,7 +445,7 @@ The API will process each request as described for all Subawardees within the re
               "code": "GA",
               "name": "Georgia"
             },
-            "zip": "12345"
+            "zipPlus4": "123456789"
           },
           "recovery_model_questions": [
             {
@@ -471,7 +471,7 @@ The API will process each request as described for all Subawardees within the re
               "code": "VA",
               "name": "Virginia"
             },
-            "zip": "67890"
+            "zipPlus4": "678901234"
           },
           "recovery_model_questions": [
             {
@@ -519,7 +519,7 @@ The API will process each request as described for all Subawardees within the re
               "code": "GA",
               "name": "Georgia"
             },
-            "zip": "12345"
+            "zipPlus4": "123456789"
           }
         }
       ]
@@ -602,7 +602,7 @@ See the [Response JSON](#response-json) section for the response structure and s
                      "code":"VA",
                      "name":"Virginia"
                   },
-                  "zip":"12345"
+                  "zipPlus4":"123456789"
                },
                "recovery_model_questions":[
                   {
@@ -654,7 +654,7 @@ See the [Response JSON](#response-json) section for the response structure and s
                      "code":"VA",
                      "name":"Virginia"
                   },
-                  "zip":"67890"
+                  "zipPlus4":"678901234"
                },
                "recovery_model_questions":[
                   {
@@ -693,7 +693,7 @@ See the [Response JSON](#response-json) section for the response structure and s
                      "code":"GA",
                      "name":"Georgia"
                   },
-                  "zip":"12345"
+                  "zipPlus4":"123456789"
                },
                "recovery_model_questions":[
                   {
@@ -740,7 +740,7 @@ See the [Response JSON](#response-json) section for the response structure and s
                      "code":"VA",
                      "name":"Virginia"
                   },
-                  "zip":"12345"
+                  "zipPlus4":"123456789"
                }
             }
          ]
@@ -822,7 +822,7 @@ See the [Response JSON](#response-json) section for the response structure and s
               "code": "VA",
               "name": "Virginia"
             },
-            "zip": "12345"
+            "zipPlus4": "123456789"
           },
           "recovery_model_questions": [
             {
@@ -881,7 +881,7 @@ See the [Response JSON](#response-json) section for the response structure and s
               "code": "GA",
               "name": "Georgia"
             },
-            "zip": "12345"
+            "zipPlus4": "123456789"
           },
           "recovery_model_questions": [
             {
@@ -908,7 +908,7 @@ See the [Response JSON](#response-json) section for the response structure and s
               "code": "VA",
               "name": "Virginia"
             },
-            "zip": "67890"
+            "zipPlus4": "678901234"
           },
           "recovery_model_questions": [
             {
@@ -957,7 +957,7 @@ See the [Response JSON](#response-json) section for the response structure and s
               "code": "GA",
               "name": "Georgia"
             },
-            "zip": "12345"
+            "zipPlus4": "123456789"
           }
         }
       ]
@@ -1539,7 +1539,7 @@ NOTE: In an effort to keep the user informed on the actions performed through th
                   "code": "string",
                   "name": "string"
                 },
-                "zip": "string"
+                "zipPlus4": "string"
               },
               "recovery_model_questions": [
                 {
@@ -1613,7 +1613,7 @@ NOTE: In an effort to keep the user informed on the actions performed through th
                   "code": "string",
                   "name": "string"
                 },
-                "zip": "string"
+                "zipPlus4": "string"
               },
               "recovery_model_questions": [
                 {
@@ -1858,7 +1858,7 @@ NOTE: In an effort to keep the user informed on the actions performed through th
                   "code": "string",
                   "name": "string"
                 },
-                "zip": "string"
+                "zipPlus4": "string"
               },
               "recovery_model_questions": [
                 {
@@ -1928,7 +1928,7 @@ NOTE: In an effort to keep the user informed on the actions performed through th
                   "code": "string",
                   "name": "string"
                 },
-                "zip": "string"
+                "zipPlus4": "string"
               },
               "recovery_model_questions": [
                 {
@@ -2007,7 +2007,7 @@ subawardDataList.placeOfPerformance.state.name | string ||  |Subawardee POP Stat
 subawardDataList.placeOfPerformance.country | JSON Object | NA |Yes|Subawardee POP Country Information. The Country Code and name need to be specified.
 subawardDataList.placeOfPerformance.country.code | string || |Subawardee POP Country Code
 subawardDataList.placeOfPerformance.country.name | string ||  |Subawardee POP Country Name
-subawardDataList.placeOfPerformance.zip | string ||Yes|Subawardee POP ZIP Code
+subawardDataList.placeOfPerformance.zipPlus4 | string ||Yes|Subawardee POP zip+4 Code
 subawardDataList.recovery_model_questions |JSON Array|NA |Yes, if the SAM registration for the entity does not already have this information for the Subawardee. | Array of Compensation questions for the Subawardee. There will be 2 questions, and therefore 2 elements in this array
 subawardDataList.recovery_model_questions.code |string||Yes, if Compensation question responses are being provided. | Code for the compensation question. This will be 1 for the first question and 2 for the second compensation question. Refer to the Recovery Model Questions (Compensation Questions) section for details.
 subawardDataList.recovery_model_questions.isSelected |string  || Yes, if Compensation question responses are being provided. | Boolean value representing the response to the compensation question.
@@ -2043,7 +2043,7 @@ subawardDataList.placeOfPerformance.state.name | string ||  |Subawardee POP Stat
 subawardDataList.placeOfPerformance.country | JSON Object ||Yes|Subawardee POP Country Information. The Country Code and name need to be specified.
 subawardDataList.placeOfPerformance.country.code | string || |Subawardee POP Country Code
 subawardDataList.placeOfPerformance.country.name | string ||  |Subawardee POP Country Name
-subawardDataList.placeOfPerformance.zip | string ||Yes|Subawardee POP ZIP Code
+subawardDataList.placeOfPerformance.zipPlus4 | string ||Yes|Subawardee POP zip+4 Code
 subawardDataList.recovery_model_questions |JSON Array|NA |Yes, if the SAM registration for the entity does not already have this information for the Subawardee. | Array of Compensation questions for the Subawardee. There will be 2 questions, and therefore 2 elements in this array
 subawardDataList.recovery_model_questions.code |string||Yes, if Compensation question responses are being provided. | Code for the compensation question. This will be 1 for the first question and 2 for the second compensation question. Refer to the Recovery Model Questions (Compensation Questions) section for details.
 subawardDataList.recovery_model_questions.isSelected |string  || Yes, if Compensation question responses are being provided. | Boolean value representing the response to the compensation question.
@@ -2177,15 +2177,15 @@ HTTP Status Code|Field | Error Message | Reason/Description | Operation |
 201|subawardDataList.overallDescription   subAssistanceDataList.overallDescription |	Program or Project Title exceeds 250 character limit. | Program or Project Title exceeds 250 character limit. |	submitSubawardReport(Contracts and Grants)
 201|subawardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance |	Subaward Place of Performance is required. |	Subaward Place of Performance is required. |	submitSubawardReport(Contracts and Grants)
 201|subawardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance |	Subaward Place of Performance Section - Country is required |	Subaward Place of Performance Section - Country is required | submitSubawardReport(Contracts and Grants)
-201|subawardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance |	Subaward Place of Performance Section - ZIP Code cannot exceed 20 characters |	Subaward Place of Performance Section - ZIP Code cannot exceed 20 characters | submitSubawardReport(Contracts and Grants
+201|subawardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance |	Subaward Place of Performance Section - zip+4 Code cannot exceed 9 characters |	Subaward Place of Performance Section - zip+4 Code cannot exceed 9 characters | submitSubawardReport(Contracts and Grants
 201|subawardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance |	Only for US addresses: Subaward Place of Performance Section - Country is required |	Only for US addresses: Subaward Place of Performance Section - Country is required |  submitSubawardReport(Contracts and Grants)
 201|subawardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance|	Only for US addresses: Subaward Place of Performance Section - Country provided is invalid |	Only for US addresses: Subaward Place of Performance Section - Country provided is invalid | submitSubawardReport(Contracts and Grants)
 201|subawardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance |	Only for US addresses: Subaward Place of Performance Section - State is required |	Only for US addresses: Subaward Place of Performance Section - State is required |	submitSubawardReport(Contracts and Grants)
 201|subawardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance |	Only for US addresses: Subaward Place of Performance Section - State provided is invalid |	Only for US addresses: Subaward Place of Performance Section - State provided is invalid|	submitSubawardReport(Contracts and Grants)
 201|subawardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance |	Only for US addresses: Subaward Place of Performance Section - City is required	| Only for US addresses: Subaward Place of Performance Section - City is required | submitSubawardReport(Contracts and Grants)
 201|subawardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance |	Only for US addresses: Subaward Place of Performance Section - City provided is invalid| Only for US addresses: Subaward Place of Performance Section - City provided is invalid | submitSubawardReport(Contracts and Grants)
-201|subawardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance | Only for US addresses: Subaward Place of Performance Section - ZIP is required | Only for US addresses: Subaward Place of Performance Section - ZIP is required |	submitSubawardReport(Contracts and Grants)
-201|subawardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance | Only for US addresses: Subaward Place of Performance Section - ZIP provided is invalid |	Only for US addresses: Subaward Place of Performance Section - ZIP provided is invalid |	submitSubawardReport(Contracts and Grants)
+201|subawardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance | Only for US addresses: Subaward Place of Performance Section - zip+4 is required | Only for US addresses: Subaward Place of Performance Section - zip+4 is required |	submitSubawardReport(Contracts and Grants)
+201|subawardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance | Only for US addresses: Subaward Place of Performance Section - zip+4 provided is invalid |	Only for US addresses: Subaward Place of Performance Section - zip+4 provided is invalid |	submitSubawardReport(Contracts and Grants)
 201|subawardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance | Contractor Awarded Name max character length is 1000 |	Contractor Awarded Name max character length is 1000 | submitSubawardReport(Contracts and Grants)
 201|subawardDataList.topPayEmployees      subAssistanceDataList.topPayEmployees | Sub Top Employer Compensation - full name and amount are required for all 5 top pay employees. |If Compensation Question 1 answer is true and Compensation Question 2 answer is false: topPayEmployees is required|	submitSubawardReport(Contracts and Grants)
 201|subawardDataList.topPayEmployees.salary    subAssistanceDataList.topPayEmployees.salary | Sub Top Employer Compensation: amount must contain only digits and not exceed 12 digits |Sub Top Pay Employees: salary must contain only digits and not exceed 12 digits |	submitSubawardReport(Contracts and Grants)
@@ -2218,15 +2218,15 @@ HTTP Status Code|Field | Error Message | Reason/Description | Operation |
 200|subawardDataList.overallDescription   subAssistanceDataList.overallDescription |	Program or Project Title exceeds 250 character limit. | Program or Project Title exceeds 250 character limit. |	updateSubawardReport(Contracts and Grants)
 200|subawardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance |	Subaward Place of Performance is required. |	Subaward Place of Performance is required. |	updateSubawardReport(Contracts and Grants)
 200|subawardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance |	Subaward Place of Performance Section - Country is required |	Subaward Place of Performance Section - Country is required | updateSubawardReport(Contracts and Grants)
-200|subawardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance |	Subaward Place of Performance Section - ZIP Code cannot exceed 20 characters |	Subaward Place of Performance Section - ZIP Code cannot exceed 20 characters | updateSubawardReport(Contracts and Grants
+200|subawardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance |	Subaward Place of Performance Section - zip+4 Code cannot exceed 9 characters |	Subaward Place of Performance Section - zip+4 Code cannot exceed 9 characters | updateSubawardReport(Contracts and Grants)
 200|subawardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance |	Only for US addresses: Subaward Place of Performance Section - Country is required |	Only for US addresses: Subaward Place of Performance Section - Country is required |  updateSubawardReport(Contracts and Grants)
 200|subawardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance|	Only for US addresses: Subaward Place of Performance Section - Country provided is invalid |	Only for US addresses: Subaward Place of Performance Section - Country provided is invalid | updateSubawardReport(Contracts and Grants)
 200|subawardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance |	Only for US addresses: Subaward Place of Performance Section - State is required |	Only for US addresses: Subaward Place of Performance Section - State is required |	updateSubawardReport(Contracts and Grants)
 200|subawardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance |	Only for US addresses: Subaward Place of Performance Section - State provided is invalid |	Only for US addresses: Subaward Place of Performance Section - State provided is invalid|	updateSubawardReport(Contracts and Grants)
 200|subawardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance |	Only for US addresses: Subaward Place of Performance Section - City is required	| Only for US addresses: Subaward Place of Performance Section - City is required | updateSubawardReport(Contracts and Grants)
 200|subawardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance |	Only for US addresses: Subaward Place of Performance Section - City provided is invalid| Only for US addresses: Subaward Place of Performance Section - City provided is invalid | updateSubawardReport(Contracts and Grants)
-200|subawardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance | Only for US addresses: Subaward Place of Performance Section - ZIP is required | Only for US addresses: Subaward Place of Performance Section - ZIP is required |	updateSubawardReport(Contracts and Grants)
-200|subawardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance | Only for US addresses: Subaward Place of Performance Section - ZIP provided is invalid |	Only for US addresses: Subaward Place of Performance Section - ZIP provided is invalid |	updateSubawardReport(Contracts and Grants)
+200|subawardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance | Only for US addresses: Subaward Place of Performance Section - zip+4 is required | Only for US addresses: Subaward Place of Performance Section - zip+4 is required |	updateSubawardReport(Contracts and Grants)
+200|subawardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance | Only for US addresses: Subaward Place of Performance Section - zip+4 provided is invalid |	Only for US addresses: Subaward Place of Performance Section - zip+4 provided is invalid |	updateSubawardReport(Contracts and Grants)
 200|subawardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance | Contractor Awarded Name max character length is 1000 |	Contractor Awarded Name max character length is 1000 | updateSubawardReport(Contracts and Grants)
 200|subawardDataList.topPayEmployees      subAssistanceDataList.topPayEmployees | Sub Top Employer Compensation - full name and amount are required for all 5 top pay employees. |If Compensation Question 1 answer is true and Compensation Question 2 answer is false: topPayEmployees is required|	updateSubawardReport(Contracts and Grants)
 200|subawardDataList.topPayEmployees.salary    subAssistanceDataList.topPayEmployees.salary | Sub Top Employer Compensation: amount must contain only digits and not exceed 12 digits |Sub Top Pay Employees: salary must contain only digits and not exceed 12 digits |	updateSubawardReport(Contracts and Grants)
