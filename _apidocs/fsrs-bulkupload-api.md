@@ -1539,7 +1539,8 @@ NOTE: In an effort to keep the user informed on the actions performed through th
                   "code": "string",
                   "name": "string"
                 },
-                "zipPlus4": "string"
+                "zipPlus4": "string",
+		"congressionalDistrict": "string"
               },
               "recovery_model_questions": [
                 {
@@ -1613,7 +1614,8 @@ NOTE: In an effort to keep the user informed on the actions performed through th
                   "code": "string",
                   "name": "string"
                 },
-                "zipPlus4": "string"
+                "zipPlus4": "string",
+		"congressionalDistrict": "string"
               },
               "recovery_model_questions": [
                 {
@@ -1858,7 +1860,8 @@ NOTE: In an effort to keep the user informed on the actions performed through th
                   "code": "string",
                   "name": "string"
                 },
-                "zipPlus4": "string"
+                "zipPlus4": "string",
+		"congressionalDistrict": "string"
               },
               "recovery_model_questions": [
                 {
@@ -1928,7 +1931,8 @@ NOTE: In an effort to keep the user informed on the actions performed through th
                   "code": "string",
                   "name": "string"
                 },
-                "zipPlus4": "string"
+                "zipPlus4": "string",
+		"congressionalDistrict": "string"
               },
               "recovery_model_questions": [
                 {
