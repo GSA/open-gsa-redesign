@@ -1331,9 +1331,9 @@ message | string | Message indicating status of the operation. Also includes any
 errors | JSON Array | If there are validation errors, they are sent back as a part of this errors array.
 
 NOTE: In an effort to keep the user informed on the actions performed through the API, some descriptive messages will be sent back as a part of the "message" element. This will be done for the Create (POST) and Update (PUT) requests for Contracts. The scenarios when these informational messages will be provided are outlined below:
-* When there are existing Subaward reports for the Contract Number, Reporting Agency, IDV Reference Number, Reference Agency, Subaward Number and the Subaward Date.
-* When there are existing Subaward reports for the Contract Number, Reporting Agency, IDV Reference Number, Reference Agency, Subaward Number and the Subaward Date submitted on the same date.
-* When there are existing Subaward reports for the Contract Number, Reporting Agency, IDV Reference Number, Reference Agency, Subaward Number and the Subaward Date submitted on the same date with the same Subaward amount.
+* When there are existing Subaward reports for the Contract Number, Reporting Agency, IDV Reference Number, Reference Agency, Subaward ID and the Subaward Date.
+* When there are existing Subaward reports for the Contract Number, Reporting Agency, IDV Reference Number, Reference Agency, Subaward ID and the Subaward Date submitted on the same date.
+* When there are existing Subaward reports for the Contract Number, Reporting Agency, IDV Reference Number, Reference Agency, Subaward ID and the Subaward Date submitted on the same date with the same Subaward amount.
 * When the Date of the Subaward provided matches the Date of the Subaward of the previous Subaward report.
 * When the Subaward Amount provided matches the Subaward Amount of the previous Subaward report.
 * When the Subaward Amount provided is greater than the total contract value.
@@ -2163,7 +2163,7 @@ Error codes may change depending on the error given; document will be updated ac
 
 HTTP Status Code|Field | Error Message | Reason/Description | Operation |
 -----|------|---------------|--------------------|----------|
-201|subawardDataList.subawardNumber|	Subaward number is required | Subaward number is required | submitSubawardReport(Contracts)
+201|subawardDataList.subawardNumber|	Subaward ID is required | Subaward ID is required | submitSubawardReport(Contracts)
 201|subawardDataList.subawardDollars |	Subaward Amount is required | Subaward Amount is required| submitSubawardReport(Contracts)
 201|subawardDataList.subawardDollars |	Subaward Amount must contain only numbers and up to 2 decimal places (18 digits plus cents) | Subaward Amount must contain only numbers and up to 2 decimal places (18 digits plus cents)s| submitSubawardReport(Contracts)
 201|subawardDataList.periodOfPerformanceStartDate | Subaward Date is required | Subaward Date is required | submitSubawardReport(Contracts)
@@ -2187,7 +2187,7 @@ HTTP Status Code|Field | Error Message | Reason/Description | Operation |
 201|subawardDataList.topPayEmployees.salary    subAssistanceDataList.topPayEmployees.salary | Sub Top Employer Compensation: amount must contain only digits and not exceed 12 digits |Sub Top Pay Employees: salary must contain only digits and not exceed 12 digits |	submitSubawardReport(Contracts and Grants)
 201|subawardDataList.topPayEmployees.salary    subAssistanceDataList.topPayEmployees.salary | Sub topPayEmployees.salary is required |Sub topPayEmployees.salary is required |	submitSubawardReport(Contracts and Grants)
 201|subawardDataList.topPayEmployees.fullName | Sub topPayEmployees.fullName is required |Sub topPayEmployees.fullName is required |	submitSubawardReport(Contracts and Grants)
-201|subAssistanceDataList.subAssistanceNumber | Subaward number is required |Subaward number is required |	submitSubawardReport(Grants)
+201|subAssistanceDataList.subAssistanceNumber | Subaward ID is required |Subaward ID is required |	submitSubawardReport(Grants)
 201|subAssistanceDataList.subAssistanceDollars |	Subaward Amount is required	| Subaward Amount is required | submitSubawardReport(Grants)
 201|subAssistanceDataList.subAssistanceDollars |	Subaward Amount must contain only numbers and up to 2 decimal places (18 digits plus cents)	| Subaward Amount must contain only numbers and up to 2 decimal places (18 digits plus cents) | submitSubawardReport(Grants)
 201|subAssistanceDataList. subAssistanceObligationOrActionDate |	Subaward Date is required | Subaward Date is required| submitSubawardReport(Grants)
@@ -2198,8 +2198,8 @@ HTTP Status Code|Field | Error Message | Reason/Description | Operation |
 200|recovery_model_questions |Since you responded true to the first compensation question, a response for the second compensation question is required.|	Compensation Q2 code and response are required	| updateSubawardReport(Contracts and Grants)
 200|recovery_model_questions |An incorrect compensation question code was provided for the Prime/Subawardee. Please refer to the Lookup table information for the correct codes to use.| Compensation question code provided did not match expected codes |	updateSubawardReport(Contracts and Grants)
 200|recovery_model_questions |	Compensation question isSelected value can only be true or false | Compensation question isSelected value can only be true or false | updateSubawardReport(Contracts and Grants)
-200|subawardDataList.subawardNumber|	Subaward number is required | Subaward number is required | updateSubawardReport(Contracts)
-200|subawardDataList.subawardNumber|	Subaward number should be unique across multiple elements of subawardDataList  | Subaward number should be unique across multiple elements of subawardDataList  | updateSubawardReport(Contracts)
+200|subawardDataList.subawardNumber|	Subaward ID is required | Subaward ID is required | updateSubawardReport(Contracts)
+200|subawardDataList.subawardNumber|	Subaward ID should be unique across multiple elements of subawardDataList  | Subaward ID should be unique across multiple elements of subawardDataList  | updateSubawardReport(Contracts)
 200|subawardDataList.subawardDollars |	Subaward Amount is required | Subaward Amount is requiredn| updateSubawardReport(Contracts)
 200|subawardDataList.subawardDollars |	Subaward Amount must contain only numbers and up to 2 decimal places (18 digits plus cents) | Subaward Amount must contain only numbers and up to 2 decimal places (18 digits plus cents)s| updateSubawardReport(Contracts)
 200|subawardDataList.periodOfPerformanceStartDate | Subaward Date is required | Subaward Date is required | updateSubawardReport(Contracts)
@@ -2223,7 +2223,7 @@ HTTP Status Code|Field | Error Message | Reason/Description | Operation |
 200|subawardDataList.topPayEmployees.salary    subAssistanceDataList.topPayEmployees.salary | Sub Top Employer Compensation: amount must contain only digits and not exceed 12 digits |Sub Top Pay Employees: salary must contain only digits and not exceed 12 digits |	updateSubawardReport(Contracts and Grants)
 200|subawardDataList.topPayEmployees.salary    subAssistanceDataList.topPayEmployees.salary | Sub topPayEmployees.salary is required |Sub topPayEmployees.salary is required |	updateSubawardReport(Contracts and Grants)
 200|subawardDataList.topPayEmployees.fullName | Sub topPayEmployees.fullName is required |Sub topPayEmployees.fullName is required |	updateSubawardReport(Contracts and Grants)
-200|subAssistanceDataList.subAssistanceNumber | Subaward number is required |Subaward number is required |	updateSubawardReport(Grants)
+200|subAssistanceDataList.subAssistanceNumber | Subaward ID is required |Subaward ID is required |	updateSubawardReport(Grants)
 200|subAssistanceDataList.subAssistanceDollars |	Subaward Amount is required	| Subaward Amount is required | updateSubawardReport(Grants)
 200|subAssistanceDataList.subAssistanceDollars |	Subaward Amount must contain only numbers and up to 2 decimal places (18 digits plus cents)	| Subaward Amount must contain only numbers and up to 2 decimal places (18 digits plus cents) | updateSubawardReport(Grants)
 200|subAssistanceDataList. subAssistanceObligationOrActionDate |	Subaward Date is required | Subaward Date is required| updateSubawardReport(Grants)
@@ -2250,6 +2250,7 @@ Date | Version | Description
 10/12/2023 | v0.2 | Updates to GET calls and minor cosmetic changes
 11/10/2023 | v0.3 | Updates to remove FFATA and use Subaward
 03/06/2024 | v0.4 | Updates to align with new Data Model
+03/25/2024 | v0.4 | Updates to error messages and latest decisions
 
 
 <p><small><a href="#">Back to top</a></small></p>
