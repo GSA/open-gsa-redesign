@@ -2130,27 +2130,23 @@ NOTE: Error codes may change depending on an error given; in such a case the doc
 
 Error Code |	Error Message	| Reason/Description | Operation |
 ---------- | ------------- | ------------------ | --------- |
-401	|	Please provide valid Authorization Email & API Key	|	API Key and/or Authorization Email are required	|	All |
-401	|	Encountered error authenticating user. Invalid JWT provided	|	Invalid Authorization Email provided	|	All |
+401	|	Please provide valid Authorization Email	|	Authorization Email associated with the user System Account is required	|	All |
+401	|	Please provide a valid API Key	|	The System Account API Key is required and should be a valid API Key	|	All |
+401	|	There are no IP addresses associated with this system account. An IP address must be set for this account, and all requests be forwarded from that IP or originate from that IP	|	The IP Address associated with the System Account should be provided under the 'X-Forwarded-For' header	|	All |
 403	|	You do not have permissions to access this resource	|	Account does not have appropriate privileges to perform the operation	|	All |
-404	|	Requested URL not found	|	Not found	|	All |
 500	|	Internal Server Error encountered. Please try after sometime	|	Internal Server Error	|	All |
-501	|	Invalid request	|	Not Implemented	|	All |
-400	|	Error processing the request	|	Invalid JSON format provided	|	All |
-400	|	Invalid JSON structure. assistanceData is required	|	The assistanceData element is required in the request body.	|	submitSubawardReport, updateSubawardReport(Grants) |
-400	|	Invalid JSON structure: At least one contractData is required for Subaward reporting.	|	Request Body JSON structure is invalid. At least one contractData.contractData element is required for Subaward reporting	|	All (Contracts) |
-400	|	Invalid JSON structure: At least one assistanceData is required for grant reporting.	|	Request Body JSON structure is invalid. At least one assistanceData element is required for  grant reporting	|	submitSubawardReport, updateSubawardReport(Grants) |
+400	|	Invalid JSON format provided	|	Please check the request JSON structure and try again	|	All |
+400	|	Invalid JSON structure: At least one contractData is required for Subaward reporting.	|	Request Body JSON structure is invalid. At least one contractData element is required for Subaward reporting	|	All (Contracts) |
+400	|	Invalid JSON structure: At least one assistanceData is required for Subaward reporting.	|	Request Body JSON structure is invalid. At least one assistanceData element is required for Subaward reporting	|	All (Grants) |
+400	|	Could not find an Award for the contractNumber and reportingAgencyCode	|	No record found for the Contract Number and Reporting Agency Code combination (Combination of contractData.contractNumber and contractData.reportingAgencyCode in the Request Body).	|	submitSubawardReport, updateSubawardReport (Contracts) |
 400	|	Ensure that the FAIN Number is correct. No matching Grant found for the provided FAIN number	|	As provided in assistanceData.primeFAIN, FAIN Number not found	|	submitSubawardReport, updateSubawardReport(Grants) |
-400	|	Could not find a record matching the contractNumber and reportingAgencyCode provided	|	No record found for the Contract Number and Reporting Agency Code combination (Combination of contractData.contractNumber and contractData.reportingAgencyCode in the Request Body).	|	submitSubawardReport, updateSubawardReport(Contracts) |
-400	|	Could not find a record associating the IDV reference number with the Contract number	|	IDV Reference Number not found associated with the Contract Number (Combination of contractData.contractNumber and contractData.idvReferenceNumber)	|	submitSubawardReport, updateSubawardReport(Contracts) |
-400	|	Please specify the idvReferenceNumber to correctly identify the contract being reported on	|	User needs to specify the idvReferenceNumber to correctly identify the record as multiple records were found for the contractNumber and reportingAgency combination	|	submitSubawardReport(Contracts) |
-400	|	Cannot update. A Subaward report for the specified subawardReportNumber does not exist.	|	No Report found for the specified subawardReportNumber. |	updateSubawardReport(Contracts, Grants) |
+400	|	Please specify the idvReferenceNumber and referenceAgencyCode to correctly identify the contract being reported on	|	User needs to specify the idvReferenceNumber to correctly identify the record as multiple records were found for the contractNumber and reportingAgency combination	|	submitSubawardReport, updateSubawardReport (Contracts) |
 400	|	Contract Number is required for Prime Entity	|	contractData.contractNumber was not provided.	|	submitSubawardReport, updateSubawardReport(Contracts) |
-400	|	Please provide the Federal awarding Agency Code	|	contractData.reportingAgencyCode is a required field.	|	submitSubawardReport, updateSubawardReport(Contracts) |
-400	|	Please provide the correct format for the Federal awarding Agency Code	|	contractData.reportingAgencyCode provided is invalid.	|	submitSubawardReport ,updateSubawardReport(Contracts) |
-400	|	At least one contractData element is required for the Subaward reporting	|	At least one contractData element is required for the Subaward reporting	|	getSubawardReport(Contracts) |
-400	|	At least one assistanceData element is required for the grant reporting	|	At least one assistanceData element is required for the grant reporting	|	getSubawardReport(Grants) |
-400	|	Subawardee UNIQUE ENTITY ID # is required	|	Subawardee UNIQUE ENTITY ID # is required	|	submitSubawardReport ,updateSubawardReport(Contracts and Grants) |
+400	|	Federal awarding Agency Code is required for Prime Entity	|	contractData.reportingAgencyCode is a required field.	|	submitSubawardReport, updateSubawardReport(Contracts) |
+400	|	At least one Subawardee information is required for the Subaward reporting	|	At least one contractData element is required for the Subaward reporting	|	submitSubawardReport, updateSubawardReport (Contracts and Grants) |
+400	|	Subawardee UEI is required	|	The SAM.gov registration UEI for the subawardee is required	|	submitSubawardReport ,updateSubawardReport(Contracts and Grants) |
+400	|	The Subawardee Unique Entity ID provided does not match with either an active Entity Management Registration, or a UEI registrant at SAM.gov	|	Invalid UEI provided for the Subawardee	|	submitSubawardReport, updateSubawardReport(Contracts and Grants) |
+400	|	Cannot update. A Subaward report for the specified subawardReportNumber does not exist.	|	No Report found for the specified subawardReportNumber. |	updateSubawardReport(Contracts, Grants) |
 400	|	At least one search criteria needs to be specified. One of contractNumber, reportingAgencyCode, idvReferenceNumber, referenceAgencyCode, subawardNumber, subawardReportNumber	|	contractNumber, reportingAgencyCode, idvReferenceNumber, referenceAgencyCode, subawardNumber and subawardReportNumber are missing for at least one element in the request	|	getSubawardReport(Contracts and Grants) |
 400	|	At least one search criteria needs to be specified. |	Search Criteria are missing for at least one element in the request.	|	getSubawardReport(Contracts and Grants) |
 400	|	At least one contractData element is required for deleting	|	At least one contractData element is required for deleting	|	deleteSubawardReport(Contracts) |
@@ -2167,16 +2163,12 @@ Error codes may change depending on the error given; document will be updated ac
 
 HTTP Status Code|Field | Error Message | Reason/Description | Operation |
 -----|------|---------------|--------------------|----------|
-201|subawardDataList|	Invalid JSON format: At least one Subawardee information is required for the reporting | At least one Subawardee information is required for the reporting | submitSubawardReport(Contracts)
 201|subawardDataList.subawardNumber|	Subaward number is required | Subaward number is required | submitSubawardReport(Contracts)
-201|subawardDataList.subawardNumber|	Subaward number should be unique across multiple elements of subawardDataList  | Subaward number should be unique across multiple elements of subawardDataList  | submitSubawardReport(Contracts)
 201|subawardDataList.subawardDollars |	Subaward Amount is required | Subaward Amount is required| submitSubawardReport(Contracts)
 201|subawardDataList.subawardDollars |	Subaward Amount must contain only numbers and up to 2 decimal places (18 digits plus cents) | Subaward Amount must contain only numbers and up to 2 decimal places (18 digits plus cents)s| submitSubawardReport(Contracts)
 201|subawardDataList.periodOfPerformanceStartDate | Subaward Date is required | Subaward Date is required | submitSubawardReport(Contracts)
 201|subawardDataList.periodOfPerformanceStartDate | Date of Subaward for Subawardee:(XXXXXXXXX) is not valid (Expecting YYYY-MM-DD Format) | Date of Subaward for Subawardee:(XXXXXXXXX) is not valid (Expecting YYYY-MM-DD Format) | submitSubawardReport(Contracts)
 201|subawardDataList.periodOfPerformanceStartDate | The Subaward Date cannot be in the future. | The Subaward Date cannot be in the future. |  submitSubawardReport(Contracts)
-201|subawardDataList.uei  subAssistanceDataList.uei | Sub UNIQUE ENTITY ID # must be exactly 12 characters |	Sub UNIQUE ENTITY ID # must be exactly 12 characters  | submitSubawardReport(Contracts)
-201|subawardDataList.uei  subAssistanceDataList.uei |	TBD(The Subawardee Unique Entity ID provided does not match with either an active Entity Management Registration, or a UEI registrant at SAM.gov) |	TBD(The Subawardee Unique Entity ID provided does not match with either an active Entity Management Registration, or a UEI registrant at SAM.gov.) |	submitSubawardReport(Contracts)
 201|subawardDataList.overallDescription   subAssistanceDataList.overallDescription |	Subaward overall description is required. |	Subaward overall description is required. |	submitSubawardReport(Contracts and Grants)
 201|subawardDataList.overallDescription   subAssistanceDataList.overallDescription |	Program or Project Title exceeds 250 character limit. | Program or Project Title exceeds 250 character limit. |	submitSubawardReport(Contracts and Grants)
 201|subawardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance |	Subaward Place of Performance is required. |	Subaward Place of Performance is required. |	submitSubawardReport(Contracts and Grants)
@@ -2195,9 +2187,7 @@ HTTP Status Code|Field | Error Message | Reason/Description | Operation |
 201|subawardDataList.topPayEmployees.salary    subAssistanceDataList.topPayEmployees.salary | Sub Top Employer Compensation: amount must contain only digits and not exceed 12 digits |Sub Top Pay Employees: salary must contain only digits and not exceed 12 digits |	submitSubawardReport(Contracts and Grants)
 201|subawardDataList.topPayEmployees.salary    subAssistanceDataList.topPayEmployees.salary | Sub topPayEmployees.salary is required |Sub topPayEmployees.salary is required |	submitSubawardReport(Contracts and Grants)
 201|subawardDataList.topPayEmployees.fullName | Sub topPayEmployees.fullName is required |Sub topPayEmployees.fullName is required |	submitSubawardReport(Contracts and Grants)
-201|subAssistanceDataList | At least one Subawardee information is required for the reporting |At least one Subawardee information is required for the reporting |	submitSubawardReport(Grants)
 201|subAssistanceDataList.subAssistanceNumber | Subaward number is required |Subaward number is required |	submitSubawardReport(Grants)
-201|subAssistanceDataList.subAssistanceNumber| Subaward number should be unique across multiple elements of subawardDataList  |Subaward number should be unique across multiple elements of subawardDataList |	submitSubawardReport(Grants)
 201|subAssistanceDataList.subAssistanceDollars |	Subaward Amount is required	| Subaward Amount is required | submitSubawardReport(Grants)
 201|subAssistanceDataList.subAssistanceDollars |	Subaward Amount must contain only numbers and up to 2 decimal places (18 digits plus cents)	| Subaward Amount must contain only numbers and up to 2 decimal places (18 digits plus cents) | submitSubawardReport(Grants)
 201|subAssistanceDataList. subAssistanceObligationOrActionDate |	Subaward Date is required | Subaward Date is required| submitSubawardReport(Grants)
@@ -2208,7 +2198,6 @@ HTTP Status Code|Field | Error Message | Reason/Description | Operation |
 200|recovery_model_questions |Since you responded true to the first compensation question, a response for the second compensation question is required.|	Compensation Q2 code and response are required	| updateSubawardReport(Contracts and Grants)
 200|recovery_model_questions |An incorrect compensation question code was provided for the Prime/Subawardee. Please refer to the Lookup table information for the correct codes to use.| Compensation question code provided did not match expected codes |	updateSubawardReport(Contracts and Grants)
 200|recovery_model_questions |	Compensation question isSelected value can only be true or false | Compensation question isSelected value can only be true or false | updateSubawardReport(Contracts and Grants)
-200|subawardDataList|	Invalid JSON format: At least one Subawardee information is required for the reporting | At least one Subawardee information is required for the reporting | updateSubawardReport(Contracts)
 200|subawardDataList.subawardNumber|	Subaward number is required | Subaward number is required | updateSubawardReport(Contracts)
 200|subawardDataList.subawardNumber|	Subaward number should be unique across multiple elements of subawardDataList  | Subaward number should be unique across multiple elements of subawardDataList  | updateSubawardReport(Contracts)
 200|subawardDataList.subawardDollars |	Subaward Amount is required | Subaward Amount is requiredn| updateSubawardReport(Contracts)
@@ -2216,8 +2205,6 @@ HTTP Status Code|Field | Error Message | Reason/Description | Operation |
 200|subawardDataList.periodOfPerformanceStartDate | Subaward Date is required | Subaward Date is required | updateSubawardReport(Contracts)
 200|subawardDataList.periodOfPerformanceStartDate | Date of Subaward for Subawardee:(XXXXXXXXX) is not valid (Expecting YYYY-MM-DD Format) | Date of Subaward for Subawardee:(XXXXXXXXX) is not valid (Expecting YYYY-MM-DD Format) | updateSubawardReport(Contracts)
 200|subawardDataList.periodOfPerformanceStartDate | The Subaward Date cannot be in the future. | The Subaward Date cannot be in the future. |  updateSubawardReport(Contracts)
-200|subawardDataList.uei  subAssistanceDataList.uei | Sub UNIQUE ENTITY ID # must be exactly 12 characters |	Sub UNIQUE ENTITY ID # must be exactly 12 characters  | updateSubawardReport(Contracts)
-200|subawardDataList.uei  subAssistanceDataList.uei |	TBD(The Subawardee Unique Entity ID provided does not match with either an active Entity Management Registration, or a UEI registrant at SAM.gov) |	TBD(The Subawardee Unique Entity ID provided does not match with either an active Entity Management Registration, or a UEI registrant at SAM.gov.) |	updateSubawardReport(Contracts)
 200|subawardDataList.overallDescription   subAssistanceDataList.overallDescription |	Subaward overall description is required. |	Subaward overall description is required. |	updateSubawardReport(Contracts and Grants)
 200|subawardDataList.overallDescription   subAssistanceDataList.overallDescription |	Program or Project Title exceeds 250 character limit. | Program or Project Title exceeds 250 character limit. |	updateSubawardReport(Contracts and Grants)
 200|subawardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance |	Subaward Place of Performance is required. |	Subaward Place of Performance is required. |	updateSubawardReport(Contracts and Grants)
@@ -2236,9 +2223,7 @@ HTTP Status Code|Field | Error Message | Reason/Description | Operation |
 200|subawardDataList.topPayEmployees.salary    subAssistanceDataList.topPayEmployees.salary | Sub Top Employer Compensation: amount must contain only digits and not exceed 12 digits |Sub Top Pay Employees: salary must contain only digits and not exceed 12 digits |	updateSubawardReport(Contracts and Grants)
 200|subawardDataList.topPayEmployees.salary    subAssistanceDataList.topPayEmployees.salary | Sub topPayEmployees.salary is required |Sub topPayEmployees.salary is required |	updateSubawardReport(Contracts and Grants)
 200|subawardDataList.topPayEmployees.fullName | Sub topPayEmployees.fullName is required |Sub topPayEmployees.fullName is required |	updateSubawardReport(Contracts and Grants)
-200|subAssistanceDataList | At least one Subawardee information is required for the reporting |At least one Subawardee information is required for the reporting |	updateSubawardReport(Grants)
 200|subAssistanceDataList.subAssistanceNumber | Subaward number is required |Subaward number is required |	updateSubawardReport(Grants)
-200|subAssistanceDataList.subAssistanceNumber| Subaward number should be unique across multiple elements of subawardDataList  |Subaward number should be unique across multiple elements of subawardDataList |	updateSubawardReport(Grants)
 200|subAssistanceDataList.subAssistanceDollars |	Subaward Amount is required	| Subaward Amount is required | updateSubawardReport(Grants)
 200|subAssistanceDataList.subAssistanceDollars |	Subaward Amount must contain only numbers and up to 2 decimal places (18 digits plus cents)	| Subaward Amount must contain only numbers and up to 2 decimal places (18 digits plus cents) | updateSubawardReport(Grants)
 200|subAssistanceDataList. subAssistanceObligationOrActionDate |	Subaward Date is required | Subaward Date is required| updateSubawardReport(Grants)
