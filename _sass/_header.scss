@@ -1,7 +1,18 @@
-.header-logo {
-  min-width: 50px;
+#logo a {
+  text-decoration: none;
 }
 
+.header-logo {
+  max-width: 50px;
+}
+
+.header-title {
+  display: inline;
+  position: relative;
+  bottom: 8px;
+  padding-left: 1rem;
+  font-family: Source Sans Pro Web, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
+}
 
 .hero-border{
   position:absolute;

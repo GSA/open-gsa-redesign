@@ -3,7 +3,7 @@ title: GSA Open Technology
 description: Open source code, data and APIs from GSA.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://open.gsa.gov" # the base hostname & protocol for your site
-logo: /assets/img/site-logo.png
+logo: /assets/img/gsa_logo.svg
 feature_image: /assets/img/feature-background.jpg
 
 sass:

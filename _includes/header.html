@@ -37,34 +37,21 @@
 </div>
 </div>
 <!-- Gov banner END -->
-    <nav class="usa-site-navbar" aria-label="primary navigation">
-                    <div class="usa-grid top-nav">
-                        <div id="logo">
-                            <a href="{{ site.baseurl }}/" accesskey="1" title="Home" aria-label="Home">
-          {% if site.logo %}
-            <img class="header-logo" src="{{ site.logo | prepend: site.baseurl }}" alt="{{ site.title }}">
-          {% else %}
-            <h1 class="usa-header-title">{{ site.title }}</h1>
-          {% endif %}
+  <nav class="usa-site-navbar" aria-label="primary navigation">
+    <div class="usa-grid top-nav">
+      <div id="logo">
+        <a href="{{ site.baseurl }}/" accesskey="1" title="Home" aria-label="Home">
+          <img class="header-logo" src="{{ site.logo | prepend: site.baseurl }}" alt="{{ site.title }}">
+          <span class="header-title">U.S. General Services Administration</span>
         </a>
-                        </div>
-                        <ul class="usa-nav-list usa-unstyled-list">
-                          <li class="usa-menu-item"><a href="{{ site.baseurl }}/search.html"> <i class="fa fa-search"></i> Search</a></li>
-                          <li class="usa-menu-item"><a href="{{ '/data' | prepend: site.baseurl }}">Data</a></li>
-                          <li class="usa-menu-item"><a href="{{ '/api' | prepend: site.baseurl }}">APIs</a></li>
-                          <li class="usa-menu-item"><a href="{{ '/code' | prepend: site.baseurl }}">Code</a></li>
-                        </ul>
-                        <!-- <ul class="usa-nav-list usa-unstyled-list">
-                          <li class="usa-menu-item"><a href="{{ site.baseurl }}/search"> <i class="fa fa-search"></i> Search</a></li>
-                            {% assign navs = site.data.navbar.assigned %} {% for nav in navs %} {% if nav.show_in_menu %}
-                            <li class="usa-menu-item">
-                                <a href="{{ nav.permalink | prepend: site.baseurl }}">{{ nav.text }}</a>
-                            </li>
-                            {% endif %} {% endfor %}
-                            </ul> -->
-
-                    </div>
-        <br/>
-
-    </nav>
+      </div>
+      <ul class="usa-nav-list usa-unstyled-list">
+        <li class="usa-menu-item"><a href="{{ site.baseurl }}/search.html"> <i class="fa fa-search"></i> Search</a></li>
+        <li class="usa-menu-item"><a href="{{ '/data' | prepend: site.baseurl }}">Data</a></li>
+        <li class="usa-menu-item"><a href="{{ '/api' | prepend: site.baseurl }}">APIs</a></li>
+        <li class="usa-menu-item"><a href="{{ '/code' | prepend: site.baseurl }}">Code</a></li>
+      </ul>
+    </div>
+    <br/>
+  </nav>
 </header>
