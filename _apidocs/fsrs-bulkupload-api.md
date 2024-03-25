@@ -2132,7 +2132,7 @@ Error Code |	Error Message	| Reason/Description | Operation |
 ---------- | ------------- | ------------------ | --------- |
 401	|	Please provide valid Authorization Email	|	Authorization Email associated with the user System Account is required	|	All |
 401	|	Please provide a valid API Key	|	The System Account API Key is required and should be a valid API Key	|	All |
-401	|	There are no IP addresses associated with this system account. An IP address must be set for this account, and all requests be forwarded from that IP or originate from that IP	|	The IP Address associated with the System Account should be provided under the 'X-Forwarded-For' header	|	All |
+401	|	There are no IP addresses associated with this system account. An IP address must be set for this account, and all requests be forwarded from that IP or originate from that IP	|	The IP Address associated with the System Account	|	All |
 403	|	You do not have permissions to access this resource	|	Account does not have appropriate privileges to perform the operation	|	All |
 500	|	Internal Server Error encountered. Please try after sometime	|	Internal Server Error	|	All |
 400	|	Invalid JSON format provided	|	Please check the request JSON structure and try again	|	All |
