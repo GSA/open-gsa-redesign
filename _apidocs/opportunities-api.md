@@ -368,7 +368,7 @@ Please use v3 for the following APIs to utilize “Requirement strategies(farCas
 *  /opps/v2/api/createAndPublish  
 *  /opps/v2/api/update/{opportunityId}  
 
-**Above v2 endpoints will be retired from alpha and prod (TBD) **
+**The above v2 endpoints will be retired from both alpha and production on October 31, 2024. **
   
 
 ## Contract Opportunity Management API Request and Responses
@@ -8955,5 +8955,6 @@ Date | Version | Description
 12/12/2023| v1.27| Updated the setAside titile descriptions for WOSB,WOSBSS,EDWOSB,EDWOSBSS.
 12/12/2023| v1.28| Updated the setAside titile descriptions for IEE, ISBEE.
 12/13/2023| v1.29| Updated the api's list for Award Amount error messages.
+03/22/2024| v1.30| The retirement date for the V2 endpoints(create, createAndPublished and update) has been updated in both the alpha and production environments. Please adjust your implementations accordingly.
 
 <p><small><a href="#">Back to top</a></small></p>
