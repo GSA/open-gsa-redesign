@@ -31,10 +31,9 @@
   },
   "homepage": "https://github.com/GSA/open-gsa-redesign/blob/dev/README.md",
   "devDependencies": {
+    "@eslint/js": "^9.0.0",
     "eslint": "^9.0.0",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-config-google": "^0.14.0",
-    "eslint-plugin-import": "^2.22.1",
+    "globals": "^15.0.0",
     "postcss": "^8.4.36",
     "postcss-cli": "^11.0.0",
     "stylelint": "^16.3.1",
