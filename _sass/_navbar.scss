@@ -45,19 +45,13 @@ li.usa-menu-item {
 
 #logo {
   float: left;
-  max-width: 32rem;
 }
 
 #logo a {
   border: none;
 }
 
-#logo h1 {
-  font-size: 3rem;
-  margin: 0;
-}
-
-@media (width <= 600px) {
+@media (width <= 750px) {
   .usa-site-navbar .usa-grid {
     padding: 0;
   }
