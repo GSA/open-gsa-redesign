@@ -4202,6 +4202,36 @@
       "organization": "GSA"
     },
     {
+      "name": "eMuseum-API",
+      "description": "API documentation for the eMuseum API",
+      "permissions": {
+        "licenses": [
+          {
+            "URL": "http://choosealicense.com/licenses/other/",
+            "name": "other"
+          }
+        ],
+        "usageType": "openSource"
+      },
+      "tags": [
+        "GSA"
+      ],
+      "repositoryURL": "https://github.com/GSA/eMuseum-API",
+      "homepageURL": "https://gsa.github.io/eMuseum-API",
+      "contact": {
+        "email": "gsa-github.support@gsa.gov"
+      },
+      "languages": [
+        "Ruby",
+        "JavaScript",
+        "CSS",
+        "HTML"
+      ],
+      "laborHours": 0,
+      "vcs": "git",
+      "organization": "GSA"
+    },
+    {
       "name": "seo",
       "description": "Resources and Materials for Search Engine Optimization for .Gov Websites",
       "permissions": {
@@ -12113,6 +12143,35 @@
       "contact": {
         "email": "gsa-github.support@gsa.gov"
       },
+      "laborHours": 0,
+      "vcs": "git",
+      "organization": "GSA"
+    },
+    {
+      "name": "go.usa.gov",
+      "description": "go.usa.gov",
+      "permissions": {
+        "licenses": null,
+        "usageType": "openSource"
+      },
+      "tags": [
+        "GSA"
+      ],
+      "repositoryURL": "https://github.com/GSA/go.usa.gov",
+      "contact": {
+        "email": "gsa-github.support@gsa.gov"
+      },
+      "languages": [
+        "PHP",
+        "CSS",
+        "HTML",
+        "JavaScript",
+        "Shell",
+        "ActionScript",
+        "AngelScript",
+        "Dockerfile",
+        "Hack"
+      ],
       "laborHours": 0,
       "vcs": "git",
       "organization": "GSA"
