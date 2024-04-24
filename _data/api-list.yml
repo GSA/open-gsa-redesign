@@ -19,9 +19,6 @@
 - title: Data.gov CKAN API
   description: The government-wide data catalog available at Data.gov.
   url: https://open.gsa.gov/api/datadotgov/
-- title: Digital.gov API
-  description: Content API for the Digital.gov website.
-  url: https://open.gsa.gov/api/digitalgov/
 - title: Federal Procurement Data System - FPDS API
   description: SOAP and XML web services are used in FPDS-NG to provide interoperability with various federal procurement systems.
   url: https://www.fpds.gov/fpdsng_cms/index.php/en/worksite.html
@@ -29,7 +26,7 @@
   description: GSA Fleet Drive-thru offers two reports through an API for GSA Fleet Leasing customers.
   url: https://www.gsa.gov/buying-selling/products-services/transportation-logistics-services/vehicle-leasing/gsa-fleet-drivethru
 - title: GSA IT Collect Public API
-  description: The IT Collect API provides a way for the general public to access government-wide IT Portfolio Management and other related IT data sources. 
+  description: The IT Collect API provides a way for the general public to access government-wide IT Portfolio Management and other related IT data sources.
   url: https://open.gsa.gov/api/itcollect/
 - title: GSA.gov Content API
   description: The GSA.gov content API is an XML feed which supplies the public with a means to extract data out of the GSA.gov website. When the API returns multiple content items, it list them with the newest item(s) first, and oldest last.
