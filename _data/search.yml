@@ -11590,16 +11590,6 @@
   contact:
     email: github-admins@gsa.gov
   url: https://github.com/GSA/data-json
-- title: eMuseum-API
-  body: API documentation for the eMuseum API
-  license: https://github.com/GSA/eMuseum-API/blob/gh-pages/LICENSE
-  openSourceProject: 1
-  governmentWideReuseProject: 1
-  tags:
-  - GSA
-  contact:
-    email: github-admins@gsa.gov
-  url: https://github.com/GSA/eMuseum-API
 - title: seo
   body: Resources and Materials for Search Engine Optimization for .Gov Websites
   license: https://github.com/GSA/seo/blob/master/LICENSE
@@ -13059,26 +13049,10 @@
   body: The Discovery API drives the Discovery Market Research Tool. It contains information on various GSA services contracts and the awarded vendors, such as their contracting history, their eligibility for contract awards, and their small business designations.
   url: https://discovery.gsa.gov/api/
   category: APIs
-- title: eMuseum API
-  body: This API delivers search information and images from The Museum System (TMS) & eMuseum to GSA.gov.
-  url: https://gsa.github.io/eMuseum-API/
-  category: APIs
-  tags:
-    - API
-    - Fine arts
-    - TMS
 - title: Federal Procurement Data System - FPDS API
   body: SOAP and XML web services are used in FPDS-NG to provide interoperability with various federal procurement systems.
   url: https://www.fpds.gov/fpdsng_cms/index.php/en/worksite.html
   category: APIs
-- title: Go.USA.gov API
-  body: Go.USA.gov is a URL shortener for government employees. The API can shorten, preview, and show clicks on short URLs.
-  url: https://go.usa.gov/api
-  category: APIs
-  tags:
-    - API
-    - URL shortener
-    - Sharing
 - title: GSA.gov Content API
   body: The GSA.gov content API is an XML feed which supplies the public with a means to extract data out of the GSA.gov website. When the API returns multiple content items, it list them with the newest item(s) first, and oldest last.
   url: https://www.gsa.gov/about-us/gsa-content-api
