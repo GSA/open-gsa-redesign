@@ -59,7 +59,7 @@ ncode|	NAICS Code. This code is maximum of 6 digits|	No|	String | v2
 ccode|	Classification Code|	No|	String | v2
 rdlfrom	|Response Deadline date. Format must be MM/dd/yyyy <br>Note: If response date From & To is provided, then the date range is 1 year|	No|	String | v2
 rdlto	|Response Deadline date. Format must be MM/dd/yyyy <br>Note: If response date From & To is provided, then the date range is 1 year|	No|	String | v2
-limit	|Total number of records to be retrieved per page. This field must be a number <br> Max Value = 1000|	Yes	|Int | v2
+limit	|Total number of records to be retrieved per page. This field must be a number <br> Max Value = 1000. Default limit value is 1.|	No	|Int | v2
 offset	|Indicates the page index. Default offset starts with 0 |	No|	Int | v2
 
 ## Get Opportunities Response Parameters
