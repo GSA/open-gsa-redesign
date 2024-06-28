@@ -1,0 +1,1020 @@
+openapi: 3.0.3
+info:
+  title: SAM.gov Subawards Reporting API 
+  description: Swagger documentation for API for reporting on Subawards  
+  license:
+    name: GSA
+  version: 0.1.0
+servers:
+  - url: https://api.sam.gov/acquisition/v1/subawards
+  - url: https://api.sam.gov/assistance/v1/subawards
+  - url: https://api-alpha.sam.gov/acquisition/v1/subawards
+  - url: https://api-alpha.sam.gov/assistance/v1/subawards
+tags:
+  - name: AcquisitionSubawardsV1
+    description: All endpoints for Acquisition (Contracts) Subawards Reporting
+    #externalDocs:
+     # description: Find out more
+    #  url: http://swagger.io
+  - name: AssistanceSubawardsV1
+    description: All endpoints for Assistance (Grants) Subawards Reporting
+    #externalDocs:
+     # description: Find out more about our store
+      #url: http://swagger.io
+paths:
+  /acquisition/v1/subawards:
+    post:
+      tags:
+        - AcquisitionSubawardsV1
+      summary: Upload Contract Subaward report(s)
+      description: Upload Contract Subaward report(s)
+      operationId: saveContractReport
+      parameters:
+        - name: Authorization
+          in: header
+          description: SAM.gov user email address
+          required: true
+          schema:
+            type: string
+        - name: api_key
+          in: query
+          description: System Account API Key
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: Upload one or multiple Contract Subaward report(s) 
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateContractRequestObject'
+        required: true
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": '#/components/schemas/SubawardsAPIResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": '#/components/schemas/SubawardsAPIResponse'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '405':
+          description: Validation exception    
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": '#/components/schemas/SubawardsAPIResponse'          
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": '#/components/schemas/SubawardsAPIResponse'
+        '501':
+          description: Not Implemented
+    put:
+      tags:
+        - AcquisitionSubawardsV1
+      summary: Update existing Subaward Contract Report(s)
+      description: Update existing Subaward Contract Report(s)
+      operationId: updateContractReport
+      parameters:
+        - name: Authorization
+          in: header
+          description: SAM.gov user email address
+          required: true
+          schema:
+            type: string
+        - name: api_key
+          in: query
+          description: System Account API Key
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: Update Subaward Contract Report(s)
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateContractObject'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": '#/components/schemas/SubawardsAPIResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": '#/components/schemas/SubawardsAPIResponse'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '405':
+          description: Validation exception
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": '#/components/schemas/SubawardsAPIResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": '#/components/schemas/SubawardsAPIResponse'
+        '501':
+          description: Not Implemented
+    delete:
+      tags:
+        - AcquisitionSubawardsV1
+      summary: Deletes Contract Subaward Subaward Report(s)
+      description: Deletes Contract Subaward Subaward Report(s)
+      operationId: deleteContractReport
+      parameters:
+        - name: Authorization
+          in: header
+          description: SAM.gov user email address
+          required: true
+          schema:
+            type: string
+        - name: api_key
+          in: query
+          description: System Account API Key
+          required: true
+          schema:
+            type: string
+        - name: requestBody
+          in: query
+          description: Delete Contract Subaward Subaward report(s)
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DeleteContractRequestObject'
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": '#/components/schemas/SubawardsAPIResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": '#/components/schemas/SubawardsAPIResponse'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '405':
+          description: Validation exception
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": '#/components/schemas/SubawardsAPIResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": '#/components/schemas/SubawardsAPIResponse'
+        '501':
+          description: Not Implemented
+  /acquisition/v1/subawards/get:
+    post:
+      tags:
+        - AcquisitionSubawardsV1
+      summary: Get existing Subaward Contract Report(s)
+      description: Get existing Subaward Contract Report(s)
+      operationId: getContractReport
+      parameters:
+        - name: Authorization
+          in: header
+          description: SAM.gov user email address
+          required: true
+          schema:
+            type: string
+        - name: api_key
+          in: query
+          description: System Account API Key
+          required: true
+          schema:
+            type: string
+        - name: requestBody
+          in: query
+          description: Get existing Contract Subaward Subaward report(s)
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GetContractRequestObject'
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": '#/components/schemas/SubawardsAPIResponse'       
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": '#/components/schemas/SubawardsAPIResponse'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '405':
+          description: Validation exception
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": '#/components/schemas/SubawardsAPIResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": '#/components/schemas/SubawardsAPIResponse'
+        '501':
+          description: Not Implemented          
+  /assistance/v1/subawards:
+    post:
+      tags:
+        - AssistanceSubawardsV1
+      summary: Create Grant Subaward report(s)
+      description: Endpoint to create one/multiple Grant Subaward report(s)
+      operationId: saveGrantReport
+      parameters:
+        - name: Authorization
+          in: header
+          description: SAM.gov user email address
+          required: true
+          schema:
+            type: string
+        - name: api_key
+          in: query
+          description: System Account API Key
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: Request to create one/multiple Grant Subaward report(s)
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GrantObject'
+        required: true
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": '#/components/schemas/SubawardsAPIResponse'
+        '400':
+          description: Bad Request
+          content:
+            "*/*":
+              schema:
+                type: array
+                items:
+                  "$ref": '#/components/schemas/SubawardsAPIResponse'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '405':
+          description: Validation exception
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": '#/components/schemas/SubawardsAPIResponse'
+          
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": '#/components/schemas/SubawardsAPIResponse'
+        '501':
+          description: Not Implemented
+    put:
+      tags:
+        - AssistanceSubawardsV1
+      summary: Update existing Subaward Grant Report(s)
+      description: Endpoint to update existing Grant Subaward report(s)
+      operationId: updateGrantReport
+      parameters:
+        - name: Authorization
+          in: header
+          description: SAM.gov user email address
+          required: true
+          schema:
+            type: string
+        - name: api_key
+          in: query
+          description: System Account API Key
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: Request to update Grant Subaward report(s)
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GrantObject'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": '#/components/schemas/SubawardsAPIResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": '#/components/schemas/SubawardsAPIResponse'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '405':
+          description: Validation exception
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": '#/components/schemas/SubawardsAPIResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": '#/components/schemas/SubawardsAPIResponse'
+        '501':
+          description: Not Implemented
+    delete:
+      tags:
+        - AssistanceSubawardsV1
+      summary: Delete Grant Subaward Subaward report(s)
+      description: Delete Grant Subaward Subaward report(s)
+      operationId: deleteGrantReport
+      parameters:
+        - name: Authorization
+          in: header
+          description: SAM.gov user email address
+          required: true
+          schema:
+            type: string
+        - name: api_key
+          in: query
+          description: System Account API Key
+          required: true
+          schema:
+            type: string
+        - name: requestBody
+          in: query
+          description: Delete Grant Subaward Subaward report(s)
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GrantRequestObject'
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": '#/components/schemas/SubawardsAPIResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": '#/components/schemas/SubawardsAPIResponse'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '405':
+          description: Validation exception
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": '#/components/schemas/SubawardsAPIResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": '#/components/schemas/SubawardsAPIResponse'
+        '501':
+          description: Not Implemented
+  /assistance/v1/subawards/get:  
+    post:
+      tags:
+        - AssistanceSubawardsV1
+      summary: Get existing Grant Subaward Subaward report(s)
+      description: Get existing Grant Subaward Subaward report(s)
+      operationId: getGrantReport
+      parameters:
+        - name: Authorization
+          in: header
+          description: SAM.gov user email address
+          required: true
+          schema:
+            type: string
+        - name: api_key
+          in: query
+          description: System Account API Key
+          required: true
+          schema:
+            type: string
+        - name: requestBody
+          in: query
+          description: Get existing Grant Subaward Subaward report(s)
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GrantRequestObject'
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": '#/components/schemas/SubawardsAPIResponse'       
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": '#/components/schemas/SubawardsAPIResponse'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '405':
+          description: Validation exception
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": '#/components/schemas/SubawardsAPIResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": '#/components/schemas/SubawardsAPIResponse'
+        '501':
+          description: Not Implemented
+components:
+  schemas:
+    SubawardsAPIResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        statusCode:
+          type: string
+        transactionId:
+          type: string
+        timeStamp:
+          type: string
+        subawardReportNumber:
+          type: string  
+        reportStatus:
+          type: string          
+        message:
+          type: object
+        errors:
+          uniqueItems: true
+          type: array
+          items:
+            type: string
+    GetContractRequestObject: 
+      type: object
+      required:
+        - contractData
+      properties: 
+        contractData:     
+          type: array
+          items: 
+            type: object
+            properties: 
+              contractNumber: 
+                type: string
+                example: W9123823PTEST
+              reportingAgencyCode: 
+                type: string
+                example: 2100
+              idvReferenceNumber: 
+                type: string
+                example: GSTEST001
+              referenceAgencyCode: 
+                type: string
+                example: 2100
+              subawardNumber: 
+                type: string
+                example: SUBAWARD1
+              subawardReportNumber: 
+                type: string
+                example: 51e2fad8-7b43-4b62-a870-45b3f250ea99
+              reportStatus: 
+                type: string
+                example: Published            
+          minItems: 1  
+    DeleteContractRequestObject: 
+      type: object
+      required:
+        - contractData
+      properties: 
+        contractData:     
+          type: array
+          items: 
+            type: object
+            properties: 
+              subawardReportNumber: 
+                type: string
+                example: 51e2fad8-7b43-4b62-a870-45b3f250ea99
+              reportStatus: 
+                type: string
+                example: Published            
+          minItems: 1            
+    CreateContractRequestObject:
+      type: object
+      required:
+        - contractData
+      properties: 
+        contractData: 
+          type: array
+          required:
+            - contractNumber
+            - reportingAgencyCode
+            - subawardDataList
+          items: 
+            type: object
+            properties: 
+              contractNumber: 
+                type: string
+                example: W9123823PTEST
+              reportingAgencyCode: 
+                type: string
+                example: 2100                    
+              idvReferenceNumber: 
+                type: string
+                example: GSTEST001
+              referenceAgencyCode: 
+                type: string
+                example: 2100
+              programTitle: 
+                type: string
+                example: Title of the program   
+              subawardDataList: 
+                type: array
+                required:
+                  - subawardUEI
+                items: 
+                  type: object
+                  properties: 
+                    subawardUEI: 
+                      type: string
+                      example: ABC987654321
+                    subawardNumber: 
+                      type: string
+                      example: 2303-TEST-05-0
+                    subawardAmount: 
+                      type: string
+                      example: 100567.99
+                    subawardDate: 
+                      type: string
+                      format: date
+                      example: 2023-05-14
+                    subawardDescription: 
+                      type: string
+                      example: tEST Description
+                    placeOfPerformance: 
+                      type: object
+                      required:
+                        - country
+                      properties: 
+                        city: 
+                          type: string
+                          example: Alexandria
+                        country: 
+                          type: object
+                          properties: 
+                            code: 
+                              type: string
+                              example: USA
+                            name: 
+                              type: string
+                              example: UNITED STATES
+                        stateOrProvince: 
+                          type: object
+                          properties: 
+                            code: 
+                              type: string
+                              example: VA
+                            name: 
+                              type: string
+                              example: Virginia
+                        zipPlus4: 
+                          type: string
+                          example: 12345
+                    recoveryModelQuestions: 
+                      type: array
+                      items: 
+                        type: object
+                        properties: 
+                          code: 
+                            type: string
+                            enum: ["1","2"]
+                          isSelected: 
+                            type: boolean
+                      minItems: 1
+                      maxItems: 2  
+                    topPayEmployees: 
+                      type: array
+                      items: 
+                        type: object
+                        properties: 
+                          fullName: 
+                            type: string
+                            example: John White
+                          salary: 
+                            type: string
+                            example: 100000
+                      minItems: 5
+                      maxItems: 5
+          minItems: 1
+    UpdateContractObject:
+      type: object
+      required:
+        - contractData
+      properties: 
+        contractData: 
+          type: array
+          required:
+            - contractNumber
+            - reportingAgencyCode
+            - subawardDataList
+          items: 
+            type: object
+            properties: 
+              contractNumber: 
+                type: string
+                example: W9123823PTEST
+              reportingAgencyCode: 
+                type: string
+                example: 2100                    
+              idvReferenceNumber: 
+                type: string
+                example: GSTEST001
+              referenceAgencyCode: 
+                type: string
+                example: 2100
+              programTitle: 
+                type: string
+                example: Title of the program   
+              subawardDataList: 
+                type: array
+                required:
+                  - subawardUEI
+                items: 
+                  type: object
+                  properties: 
+                    subawardReportNumber:
+                      type: string
+                      example: 51e2fad8-7b43-4b62-a870-45b3f250ea99        
+                      description: "Required for update/PUT requests to uniquely identify the report being updated. Use the value sent back by get/upload request."                   
+                    subawardUEI: 
+                      type: string
+                      example: ABC987654321
+                    subawardNumber: 
+                      type: string
+                      example: 2303-TEST-05-0
+                    subawardAmount: 
+                      type: string
+                      example: 100567.99
+                    subawardDate: 
+                      type: string
+                      format: date
+                      example: 2023-05-14
+                    subawardDescription: 
+                      type: string
+                      example: tEST Description
+                    placeOfPerformance: 
+                      type: object
+                      required:
+                        - country
+                      properties: 
+                        city: 
+                          type: string
+                          example: Alexandria
+                        country: 
+                          type: object
+                          properties: 
+                            code: 
+                              type: string
+                              example: USA
+                            name: 
+                              type: string
+                              example: UNITED STATES
+                        stateOrProvince: 
+                          type: object
+                          properties: 
+                            code: 
+                              type: string
+                              example: VA
+                            name: 
+                              type: string
+                              example: Virginia
+                        zipPlus4: 
+                          type: string
+                          example: 12345
+                    recoveryModelQuestions: 
+                      type: array
+                      items: 
+                        type: object
+                        properties: 
+                          code: 
+                            type: string
+                            enum: ["1","2"]
+                          isSelected: 
+                            type: boolean
+                      minItems: 1
+                      maxItems: 2  
+                    topPayEmployees: 
+                      type: array
+                      items: 
+                        type: object
+                        properties: 
+                          fullName: 
+                            type: string
+                            example: John White
+                          salary: 
+                            type: string
+                            example: 100000
+                      minItems: 5
+                      maxItems: 5
+          minItems: 1  
+    GrantRequestObject: 
+      type: object
+      required:
+        - contractData
+      properties: 
+        contractData: 
+          type: array
+          items: 
+            type: object
+            properties: 
+              primeFAIN: 
+                type: string
+                example: 1001KS1420
+              reportPeriodMon: 
+                type: string
+                example: 05
+              reportPeriodYear: 
+                type: string
+                example: 2023
+          minItems: 1                
+    GrantObject:
+      type: object
+      required:
+        - assistanceData
+      properties:
+        assistanceData: 
+          type: object
+          required:
+            - contractData
+          properties: 
+            contractData: 
+              type: array
+              required:
+                - primeFAIN
+                - reportPeriodMon
+                - reportPeriodYear
+                - subAssistanceDataList            
+              items: 
+                type: object
+                properties: 
+                  primeFAIN: 
+                    type: string
+                    example: 1001KS1420
+                  reportPeriodMon: 
+                    type: string
+                    example: '05'
+                  reportPeriodYear: 
+                    type: string
+                    example: 2023
+                  eftIndicator: 
+                    type: string
+                    example: 9999
+                  recoveryModelQuestions: 
+                    type: array
+                    items: 
+                      type: object
+                      properties: 
+                        code: 
+                          type: string
+                          enum: ["1","2"]
+                        isSelected: 
+                          type: boolean
+                    minItems: 1
+                    maxItems: 2 
+                  subAssistanceDataList: 
+                    type: array
+                    required:
+                      - subAssistanceNumber
+                      - uei
+                      - subAssistanceDollars
+                      - subAssistanceObligationOrActionDate
+                      - overallDescription
+                      - placeOfPerformance
+                    items: 
+                      type: object
+                      properties: 
+                        subAssistanceNumber: 
+                          type: string
+                          example: XX-YY-00008
+                        uei: 
+                          type: string
+                          example: ABC123456789
+                        eftIndicator: 
+                          type: string
+                          example: 1111
+                        subAssistanceDollars: 
+                          type: string
+                          example: 100000
+                        subAssistanceObligationOrActionDate: 
+                          type: string
+                          format: date
+                          example: 2023-06-01
+                        overallDescription: 
+                          type: string
+                          example: My Description
+                        placeOfPerformance: 
+                          type: object
+                          required:
+                            - country
+                          properties: 
+                            streetAddress: 
+                              type: string
+                              example: 1800 F Street NW
+                            streetAddress2: 
+                              type: string
+                              example: 
+                            city: 
+                              type: string
+                              example: Alexandria
+                            country: 
+                              type: object
+                              properties: 
+                                code: 
+                                  type: string
+                                  example: USA
+                                name: 
+                                  type: string
+                                  example: UNITED STATES
+                            stateOrProvince: 
+                              type: object
+                              properties: 
+                                code: 
+                                  type: string
+                                  example: VA
+                                name: 
+                                  type: string
+                                  example: Virginia
+                            zipPlus4: 
+                              type: string
+                              example: 12345
+                        recoveryModelQuestions: 
+                          type: array
+                          items: 
+                            type: object
+                            properties: 
+                              code: 
+                                type: string
+                                enum: ["3","4"]
+                              isSelected: 
+                                type: boolean
+                          minItems: 1
+                          maxItems: 2 
+                        topPayEmployees: 
+                          type: array
+                          items: 
+                            type: object
+                            properties: 
+                              fullName: 
+                                type: string
+                                example: John White
+                              salary: 
+                                type: string
+                                example: 100000
+                          minItems: 5
+                          maxItems: 5
+              minItems: 1
