@@ -14,7 +14,7 @@ The Subaward Reporting Public API provides users with metadata on new and existi
 * It returns synchronous responses.
 * It returns 25 records per page by default. User can configure page size by passing it as a query string in URL. Options for status is Published or Deleted. If no status is passed as parameter default value is 'Published'. E.g. https://api.sam.gov/acquisition/v1/subawards/search?pageNumber=0&pageSize=10
 * Pagination: By using the page number and page size parameters, it is possible to retrieve any desired number of records from an API. This allows for efficient retrieval of data in smaller, manageable chunks rather than retrieving all records at once.
-* The following characters are not allowed to be sent in the parameter values with the API request: "&|{}^\"
+* The following characters are not allowed to be sent in the parameter values with the API request: & \| { } ^ \
 
 ## Getting Started
 
