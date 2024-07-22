@@ -10184,19 +10184,6 @@
   contact:
     email: github-admins@gsa.gov
   url: https://github.com/GSA/ruby-cloudfiles
-- title: U.S. Digital Registry
-  body: Application that allows for record keeping of US government social
-    media accounts and mobile applications
-  license: https://github.com/GSA/us-digital-registry/blob/master/LICENSE
-  openSourceProject: 1
-  governmentWideReuseProject: 1
-  tags:
-  - gsa
-  - socialmedia
-  - mobileapps
-  contact:
-    email: justin.herman@gsa.gov
-  url: https://github.com/GSA/us-digital-registry
 - title: digital-strategy-drupal-module
   body: Creates 3 page nodes for digital strategy progess on enable. Also creates
     menu callbacks which load the page nodes and output just the body with the appropriate
@@ -13090,16 +13077,6 @@
 #  body: A RESTful method of retrieving public information about the businesses or individuals within the System for Award Management data set.
 #  url: https://gsa.github.io/sam_api/sam/
 #  category: APIs
-- title: U.S. Digital Registry API
-  body: Contains listing from the U.S. Digital Media Registry, which serves as a crowdsource resource for agencies, citizens, and developers to confirm the official status of social media and public-facing collaboration accounts, mobile apps, and mobile websites. The accounts in the registry are independently updated by federal managers across the government who maintain individual agency accounts.
-  url: https://usdigitalregistry.digitalgov.gov/
-  category: APIs
-  tags:
-    - Social media
-    - Facebook
-    - Twitter
-    - Mobile
-    - Collaboration
 - title: Auctions API
   body: The Auctions API is a GET API which has currently one operation. The operation will retrieve GSA Auctions data. GSA Auctions offers Federal personal property assets ranging from common place items (such as office equipment and furniture) to more select products like scientific equipment, heavy machinery, airplanes, vessels and vehicles.
   url: https://gsa.github.io/auctions_api/
