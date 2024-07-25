@@ -13032,10 +13032,6 @@
     - API
     - Data.gov
     - CKAN
-- title: Discovery API
-  body: The Discovery API drives the Discovery Market Research Tool. It contains information on various GSA services contracts and the awarded vendors, such as their contracting history, their eligibility for contract awards, and their small business designations.
-  url: https://discovery.gsa.gov/api/
-  category: APIs
 - title: Federal Procurement Data System - FPDS API
   body: SOAP and XML web services are used in FPDS-NG to provide interoperability with various federal procurement systems.
   url: https://www.fpds.gov/fpdsng_cms/index.php/en/worksite.html
