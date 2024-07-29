@@ -35,7 +35,7 @@
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-google": "^0.14.0",
     "eslint-plugin-import": "^2.22.1",
-    "postcss": "^8.4.39",
+    "postcss": "^8.4.40",
     "postcss-cli": "^11.0.0",
     "stylelint": "^16.7.0",
     "stylelint-config-recommended": "^14.0.1",
