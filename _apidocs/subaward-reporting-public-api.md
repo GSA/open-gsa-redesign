@@ -1,11 +1,11 @@
 ---
-title: SAM.gov Subaward Reporting Public API 
-banner-heading: SAM.gov Subaward Reporting Public API 
+title: SAM.gov Acquisition Subaward Reporting Public API 
+banner-heading: SAM.gov Acquisition Subaward Reporting Public API 
 ---
 
 ## Overview
 
-The Subaward Reporting Public API provides users with metadata on new and existing subawards and subcontracts and deleted subaward and subcontract data. This API requires pagination, and the response will be provided to users synchronously. The API key generated out of a non-Federal individual, non-Federal system, Federal individual or Federal system account that has "Read" permission to the Contract Opportunities, Contract Data or both the domains shall be able to acccess the API. 
+The Acquisition Subaward Reporting Public API provides users with metadata on new and existing subawards and subcontracts and deleted subaward and subcontract data. This API requires pagination, and the response will be provided to users synchronously. The API key generated out of a non-Federal individual, non-Federal system, Federal individual or Federal system account that has "Read" permission to the Contract Opportunities, Contract Data or both the domains shall be able to acccess the API. 
 
 
 **Key Features of the Acquisition Subaward Outbound API**
@@ -18,7 +18,7 @@ The Subaward Reporting Public API provides users with metadata on new and existi
 
 ## Getting Started
 
-Subaward Reporting Public API can be accessed from Production or Alpha via the following environments:
+Acquisition Subaward Reporting Public API can be accessed from Production or Alpha via the following environments:
 
 ### Version Control - v1 
 
@@ -26,7 +26,7 @@ Subaward Reporting Public API can be accessed from Production or Alpha via the f
 * Alpha: <br> https://api-alpha.sam.gov/acquisition/v1/subawards/search?api_key= 
 
 ## Authentication and API Keys
-User of this public API must provide an API key to use the Subaward Reporting Public API. Request per day are limited based on the federal or non-federal or general roles. 
+User of this public API must provide an API key to use the Acquisition Subaward Reporting Public API. Request per day are limited based on the federal or non-federal or general roles. 
 Note: User can request a public API Key in the Account Details page on SAM.gov (if testing in production) Else on alpha.sam.gov (if testing in prodlike).
 
 #### User Account API Key Creation
@@ -55,7 +55,7 @@ Note: User can request a public API Key in the Account Details page on SAM.gov (
 * Users must then set the password for the System Account.
 * After the above step is successfully completed, users will see a new section for retrieving the API Key. Users must enter the password to retrieve this value.
 
-System Accounts must satisfy the following criteria to successfully utilize the Subaward Reporting Public API:
+System Accounts must satisfy the following criteria to successfully utilize the Acquisition Subaward Reporting Public API:
 
 * System Information Unique System ID: The System Account ID
 * Security Information - IP Address: List all the IP Addresses that the System invokes the API from.
@@ -74,9 +74,9 @@ Non-Federal System User | System Account API Key | 1,000 requests/day
 Federal System User | System Account API | 10,000 requests/day 
 
 
-## Subaward Reporting API Description 
+## Acquisition Subaward Reporting API Description 
 
-The Subaward Reporting Public API offers several optional search parameters that can be provided independently or in combination with each other to retrieve prime information. 
+The Acquisition Subaward Reporting Public API offers several optional search parameters that can be provided independently or in combination with each other to retrieve prime information. 
 
 ### Contract Search Endpoint - v1
 
@@ -86,18 +86,30 @@ Users can search by any of the below request parameters based on date and browse
 
 Field Name	| Description | Required| Data Type| Applicable Versions
 ----- | ----- | ----- | ----- | -----
-uniqueAwardKey | Business key to identify subawards under each prime. | Yes | Alphanumeric | 
-piid | Allows user to pull one single record with multiple subawards. The total records that will be showed is the number of subawards. | Yes | Alphanumeric | v1
-agencyId | Allows user to pull prime information to identify the contract family. | Yes | Numeric | v1
-referencedIdvPIID | Allows user to pull prime information to identify the contract family. | Yes | Alphanumeric |v1
-referencedIDVAgencyID | Allows user to pull prime information to identify the contract family. | Yes | Alphanumeric | v1
-primeAwardType | Type of Prime Award. | Yes | string | v1
-fromDate | Allows users to filter by From Date. | Yes | string | v1
-toDate | Allows users to filter by From Date. | Yes | string | v1
+api_key | Public key of users. | Yes | String | v1
+uniqueAwardKey | Business key to identify subawards under each prime. Unique for a contract and gives complete subaward information pertaining to that contract  | Yes | Alphanumeric | v1
+piid | Allows user to pull one single record with multiple subawards. The total records that will be showed is the number of subawards. | No | Alphanumeric | v1
+agencyId | Allows user to pull prime information to identify the contract family. | No | Numeric | v1
+referencedIdvPIID | Allows user to pull prime information to identify the contract family. | No | Alphanumeric |v1
+referencedIDVAgencyID | Allows user to pull prime information to identify the contract family. | No | Alphanumeric | v1
+primeAwardType | Type of Prime Award. | No | string | v1
+fromDate | Allows users to filter by From Date. | No | string | v1
+toDate | Allows users to filter by From Date. | No | string | v1
+limit | Total number of records to be retrieved per page. This field must be a number Max Value = 1000. | Yes | Int | v1
+offset | Indicates the page index. Default offset starts with 0. | No | Int | v1
+status | Allows users to request submitted records that were deleted.   
+
+### Status Values 
+
+Status Name | Value 
+----- | ----- 
+Published | Returns all published subaward information pertaining to contract. If no status is passed, the default will return all published records.
+Deleted | Returns deleted records that were submitted for the contract. Delete must be passed as a status to return deletd records
+
 
 ## Response Schema
 
-Based on the request parameters, the API response shall return a JSON summarized view of the subawards. The Subaward Reporting Public API offers several response elements that are described in the following sections. 
+Based on the request parameters, the API response shall return a JSON summarized view of the subawards. The Acquisition Subaward Reporting Public API offers several response elements that are described in the following sections. 
 
 Field Name	| Description | Data Type|Applicable Versions
 ----- | ----- | ----- | -----  
@@ -131,9 +143,9 @@ primeNaics | NAICS Code | string | v1
 primeOrganizationInfo | Contracting Subtier Name | string | v1
 subEntityPhysicalAddress | Sub Entity Physical Address | string | v1
 subBusinessType | Sub Business Type | string | v1 
-subEntityParentLegalBusinessName | Sub Entity Parent Legal Business Name | v1 
-subParentUei | Sub Parent UEI | v1 
-subEntityTopPayEmployee | Sub Entity Top Pay Employee | v1
+subEntityParentLegalBusinessName | Sub Entity Parent Legal Business Name | string | v1 
+subParentUei | Sub Parent UEI | string | v1
+subEntityTopPayEmployee | Sub Entity Top Pay Employee | string | v1
 
 ## Contract Delete Endpoint - v1
 
@@ -154,7 +166,7 @@ You can view the full details of this API’s in the OpenAPI Specification file 
 ## Examples
 
 
-### Example 1: I would like to obtain a summarized view of the subawards.
+### Example 1: Search for summarized view of the subawards.
 
 <details>
     <summary>Request URL</summary>
@@ -225,10 +237,10 @@ Alpha URL: <br>
                     "name": "PUBLIC BUILDINGS SERVICE"
                 }
             },
-            "subEntityEFTIndicator": null,  ( eftIndicator -> subEntityEFTIndicator)   -- Missing in OS index
+            "subEntityEFTIndicator": null,  ( eftIndicator -> subEntityEFTIndicator)
             "subEntityLegalBusinessName": "SYSTEMS PLANNING AND ANALYSIS, INC.",
             "subEntityDoingBusinessAsName": " SYSTEMS PLANNING AND ANALYSIS, INC.",
-            "entityPhysicalAddress": [  (code attribute update)     --- Need to work on zipCodePlus4
+            "entityPhysicalAddress": [  (code attribute update)
                 {
                  "streetAddress": "2690 W UNION AVE",
                 "streetAddress2": null,
@@ -263,6 +275,29 @@ Alpha URL: <br>
 },
 
 
+### Example 2: Search without selecting To or From Date
+
+<details>
+    <summary>Request URL</summary>
+
+Production URL:  <br>
+ <br>
+Alpha URL: <br>
+
+</details>
+
+### Example 3: Search with To/From Date and other Parameters
+
+<details>
+    <summary>Request URL</summary>
+
+Production URL:  <br>
+ <br>
+Alpha URL: <br>
+
+</details>
+
+
 ## HTTP Response Codes
 
 The API will return one of the following responses:
@@ -287,7 +322,7 @@ Search Parameters are provided incorrectly |
 
 ## Contact Us
 
-* Reach out to the SAM.gov team at [www.fsd.gov](https://www.fsd.gov) for inquiries and help desk support 
+* Reach out to the SAM.gov team at [www.fsd.gov](https://www.fsd.gov) for inquiries and help desk support. 
 
 
 
