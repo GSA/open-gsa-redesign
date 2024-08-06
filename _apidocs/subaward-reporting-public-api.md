@@ -167,20 +167,25 @@ HTTP Response Code | Description
 ## Examples
 
 
-### Example 1: Search for summarized view of the subawards.
+### Example 1: Search without Selecting To or From Date
 
 <details>
     <summary>Request URL</summary>
 
-Production URL:  <br>
+Production URL: https://api.sam.gov/prod/acquisition/v1/subawards/search?api_key={User’s Public API Key}&postedFrom=01/01/2018&postedTo=05/10/2018&ptype=a&deptname=general  <br>
  <br>
-Alpha URL: <br>
+Alpha URL: https://api-alpha.sam.gov/acquisition/v1/subawards/search?api_key={User’s Public API Key}&postedFrom=01/01/2018&postedTo=05/10/2018&ptype=a&deptname=general<br>
 
+Note: Request URL for alpha is used in this example
 </details>
 
 <details>
-    <summary>Sample Response (JSON Output) v2</summary>
+    <summary>Sample Response (JSON Output) v1</summary>
 
+Note: Response for one record is provided as an example <br>
+
+<p>
+<code><pre>
 {
     "totalPages": 1,
     "totalRecords": 1,
@@ -273,41 +278,35 @@ Alpha URL: <br>
                }
         }
     ]
-},
+}
+</pre></code>
+</p>
+</details>
 
-
-### Example 2: Search without selecting To or From Date
+### Example 2: Search with To/From Date and other Parameters
 
 <details>
     <summary>Request URL</summary>
-
-Production URL:  <br>
+Production URL: https://api.sam.gov/prod/acquisition/v1/subawards/search?api_key={User’s Public API Key}&postedFrom=01/01/2018&postedTo=05/10/2018&ptype=a&deptname=general   <br>
  <br>
-Alpha URL: <br>
-
+Alpha URL: https://api-alpha.sam.gov/acquisition/v1/subawards/search?api_key={User’s Public API Key}&postedFrom=01/01/2018&postedTo=05/10/2018&ptype=a&deptname=general  <br>
 </details>
-
-### Example 3: Search with To/From Date and other Parameters
 
 <details>
-    <summary>Request URL</summary>
+    <summary>Response (JSON Output)</summary>
 
-Production URL:  <br>
- <br>
-Alpha URL: <br>
+Note: Response for one record is provided as an example <br>
 
+<p>
+<code><pre>
+
+</pre></code>
+</p>
 </details>
-
-
-
-
-
 
 ## Contact Us
 
 * Reach out to the SAM.gov team at [www.fsd.gov](https://www.fsd.gov) for inquiries and help desk support. 
-
-
 
 ## Change Log
 
