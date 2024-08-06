@@ -27,7 +27,7 @@ Acquisition Subaward Reporting Public API can be accessed from Production or Alp
 
 ## Authentication and API Keys
 User of this public API must provide an API key to use the Acquisition Subaward Reporting Public API. Request per day are limited based on the federal or non-federal or general roles. 
-Note: User can request a public API Key in the Account Details page on SAM.gov (if testing in production) Else on alpha.sam.gov (if testing in prodlike).
+Note: User can request a public API Key in the Account Details page on SAM.gov (if testing in production), else on alpha.sam.gov (if testing in prodlike).
 
 #### User Account API Key Creation
 * Registered user can request for a public API on ‘Account Details’ page. This page can be accessed on Account Details page on SAM.gov
@@ -97,7 +97,7 @@ fromDate | Allows users to filter by From Date. | No | string | v1
 toDate | Allows users to filter by From Date. | No | string | v1
 limit | Total number of records to be retrieved per page. This field must be a number Max Value = 1000. | Yes | Int | v1
 offset | Indicates the page index. Default offset starts with 0. | No | Int | v1
-status | Allows users to request submitted records that were deleted.   
+status | Allows users to request submitted records that were deleted. If the user does not pass any value, the system will default status = Published | No | string | v1    
 
 ### Status Values 
 
@@ -115,7 +115,7 @@ Field Name	| Description | Data Type|Applicable Versions
 ----- | ----- | ----- | -----  
 totalPages | Total Pages | int | v1
 totalRecords | Total Records | int | v1
-pageNumber | Page Number  | int | v1
+pageNumber | Page Number. If the user does not pass any value, the system will default pageNumber = 0  | int | v1
 nextPageLink | Next Page Link | string | v1
 previousPageLink | Previous Page Link | string | v1
 uniqueAwardKey | Unique Award Key | string | v1
@@ -147,20 +147,21 @@ subEntityParentLegalBusinessName | Sub Entity Parent Legal Business Name | strin
 subParentUei | Sub Parent UEI | string | v1
 subEntityTopPayEmployee | Sub Entity Top Pay Employee | string | v1
 
-## Contract Delete Endpoint - v1
 
-**Delete Parameters**
-
-Users can search submitted records that were deleted by the following request parameters.
-
-Field Name	| Description | Required| Data Type| Applicable Versions
------ | ----- | ----- | ----- | -----
-subawardReportID | Business key to identify subawards under each prime. | Yes | Alphanumeric | 
-submittedDate | Date the record was submitted  | Yes | Alphanumeric | v1
-
-### Open API Specification File 
+## Open API Specification File 
 
 You can view the full details of this API’s in the OpenAPI Specification file available here: Link to openapi. yaml specification file
+
+## HTTP Response Codes 
+
+HTTP Response Code | Description 
+----- | ----- 
+200 | Successful
+400 | Bad Request 
+401 | Unauthorized Error
+403 | Forbidden 
+406 | Not Acceptable Error
+500 | Internal Server Error 
 
 
 ## Examples
@@ -298,26 +299,8 @@ Alpha URL: <br>
 </details>
 
 
-## HTTP Response Codes
-
-The API will return one of the following responses:
-
-HTTP Response Code	| Description
------ | ----- | ----- | ----- | -----
-200 | Success. Data will be returend in JSON format.
-404 | No Data found 
-400 | Bad Request 
-500	| Internal Server Error
 
 
-## Error Messages
-
-Scenario | Error Messages
-------| ------
-API end point is provided incorrectly | 
-User-entered API Key is invalid or deactivated | 
-Unauthorized API Key attempts accessing FFATA Data | 
-Search Parameters are provided incorrectly | 
 
 
 ## Contact Us
