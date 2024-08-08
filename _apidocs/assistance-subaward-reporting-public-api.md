@@ -22,8 +22,14 @@ Assistance Subaward Reporting Public API can be accessed from Production or Alph
 
 ### Version Control - v1 
 
-* Production: <br>  https://api.sam.gov/assistance/v1/subawards/search?status=published&api_key=
-* Alpha: <br> https://api-alpha.sam.gov/assistance/v1/subawards/search?status=published&api_key=
+**Production**
+* https://api.sam.gov/assistance/v1/subawards/search?status=published&api_key=<A VALID API KEY>
+* https://api.sam.gov/assistance/v1/subawards/search?
+
+**Alpha**
+* https://api-alpha.sam.gov/assistance/v1/subawards/search?status=published&api_key=<A VALID API KEY>
+* https://api-alpha.sam.gov/assistance/v1/subawards/search?
+
 
 ## Authentication and API Keys
 User of this public API must provide an API key to use the Assistance Subaward Reporting Public API. Request per day are limited based on the federal or non-federal or general roles. 
@@ -164,135 +170,76 @@ HTTP Response Code | Description
 ## Examples
 
 
-### Example 1: Search without Selecting To or From Date
+### Example 1: Published_IDV_From2020-01-01-To'currentDate'
 
 <details>
     <summary>Request URL</summary>
 
-Production URL: https://api.sam.gov/prod/assistance/v1/subawards/search?status=Published&api_key=LufX5GmXxw2EOEolwkBZBzzcVymAv11AdcTRXVD7&pageSize=25&pageNumber=0 <br>
+Production URL:  <br>
  <br>
-Alpha URL: https://api-alpha.sam.gov/assistance/v1/subawards/search?status=Published&api_key=LufX5GmXxw2EOEolwkBZBzzcVymAv11AdcTRXVD7&pageSize=25&pageNumber=0 <br>
+Alpha URL:  <br>
 
-Note: Request URL for alpha is used in this example
 </details>
 
 <details>
     <summary>Sample Response (JSON Output) v1</summary>
 
-Note: Response for one record is provided as an example <br>
-
 <p>
 <code><pre>
-{
-    "totalPages": 1,
-    "totalRecords": 1,
-    "pageNumber": 0,
-    "nextPageLink": "/api/v1/search?pageNumber=0&pageSize=25",
-    "previousPageLink": "/api/v1/search?pageNumber=0&pageSize=25",
-    "data": [
-        {
-            "uniqueAwardKey": "N0018918FZ5849700N0018916DZ043",
-            "piid": "N0018918FZ584",
-            "agencyId": "9700",
-            "referencedIDVPIID": "N0018916DZ043",
-            "referencedIDVAgencyId": "9700",
-            "subAwardReportId": "21735499",
-            "subAwardReportNumber": "8b66f14a-eace-11ee-849e-53580f311605",
-            "submittedDate": "2019-01-18",
-            "subAwardNumber": "102745-3",
-            "subAwardAmount": "233682",
-            "subAwardDate": "2018-12-11",
-            "subEntityName": "SYSTEMS PLANNING AND ANALYSIS, INC.",
-            "subEntityUei": "TRE8LWVNNXL3",
-            "primeAwardType": "IDV",
-            "totalContractValue": "100000.0",
-            "primeEntityUei": "JCBMLGPE6Z71",
-            "primeEntityName": "BOOZ ALLEN HAMILTON INC",
-            "baseAwardDateSigned": "2020-06-02",
-            "descriptionOfRequirement": "MODIFICATION TO EXTENDED PERIOD OF PERFORMANCE TO 2/28/2022",
-            "primeNaics": {
-                "code": "541620",
-                "description": "ENVIRONMENTAL CONSULTING SERVICES"
-            },
-            "primeOrganizationInfo": {
-                "funding_agency": {
-                    "code": "4740",
-                    "name": "PUBLIC BUILDINGS SERVICE"
-                },
-                "funding_office": {
-                    "code": "47PJ00",
-                    "name": "PBS R8"
-                },
-                "contracting_office": {
-                    "code": "47PJ00",
-                    "name": "PBS R8"
-                },
-                "funding_department": {
-                    "code": "4700",
-                    "name": "GENERAL SERVICES ADMINISTRATION"
-                },
-                "contracting_department": {
-                    "code": "4700",
-                    "name": "GENERAL SERVICES ADMINISTRATION"
-                },
-                "contracting_agency": {
-                    "code": "4740",
-                    "name": "PUBLIC BUILDINGS SERVICE"
-                }
-            },
-            "subEntityEFTIndicator": null,  ( eftIndicator -> subEntityEFTIndicator)
-            "subEntityLegalBusinessName": "SYSTEMS PLANNING AND ANALYSIS, INC.",
-            "subEntityDoingBusinessAsName": " SYSTEMS PLANNING AND ANALYSIS, INC.",
-            "entityPhysicalAddress": [  (code attribute update)
-                {
-                 "streetAddress": "2690 W UNION AVE",
-                "streetAddress2": null,
-                "city": "englewood",
-                "congressional_district": "01",
-                "state": {
-                    "code": "CO",
-                    "name": "Colorado"
-                },
-                "country": {
-                    "code": "USA",
-                    "name": "United States"
-                },
-                "zip": "801105307"
-                }
-            ],
-           "subBusinessType": [      
-                {
-                    "subBusinessTypeCode": "2X",
-                    "subBusinessTypeDesc": "For Profit Organization"
-                }
-             ],
-            "subEntityParentLegalBusinessName": "R&J Krogel",
-            "subParentUei": "CL5MNLQQVLL9",
-            "subEntityTopPayEmployees":[   
-                {
-                  "fullName":{ "type": "string" },
-                   "salary": { "type": "string" } ]
-               }
-        }
-    ]
-}
+
 </pre></code>
 </p>
 </details>
 
-### Example 2: Search with To/From Date and other Parameters
+### Example 2: PublishedUnchecked_IDV_From2020-01-01-To'currentDate'
 
 <details>
     <summary>Request URL</summary>
-Production URL: https://api.sam.gov/prod/assistance/v1/subawards/search?api_key={User’s Public API Key}&postedFrom=01/01/2018&postedTo=05/10/2018&ptype=a&deptname=general   <br>
+Production URL:   <br>
  <br>
-Alpha URL: https://api-alpha.sam.gov/assistance/v1/subawards/search?api_key={User’s Public API Key}&postedFrom=01/01/2018&postedTo=05/10/2018&ptype=a&deptname=general  <br>
+Alpha URL:   <br>
 </details>
 
 <details>
     <summary>Response (JSON Output)</summary>
 
-Note: Response for one record is provided as an example <br>
+<p>
+<code><pre>
+
+</pre></code>
+</p>
+</details>
+
+### Example 3: Deleted_IDV_From2020-01-01-To'currentDate'
+
+<details>
+    <summary>Request URL</summary>
+Production URL:   <br>
+ <br>
+Alpha URL:   <br>
+</details>
+
+<details>
+    <summary>Response (JSON Output)</summary>
+
+<p>
+<code><pre>
+
+</pre></code>
+</p>
+</details>
+
+### Example 4: Published_AWARD_4732_From2021-02-01-To2021-02-28
+
+<details>
+    <summary>Request URL</summary>
+Production URL:   <br>
+ <br>
+Alpha URL:   <br>
+</details>
+
+<details>
+    <summary>Response (JSON Output)</summary>
 
 <p>
 <code><pre>
