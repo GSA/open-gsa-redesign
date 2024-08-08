@@ -5,7 +5,7 @@ banner-heading: SAM.gov Assistance Subaward Reporting Public API
 
 ## Overview
 
-The Assistance Subaward Reporting Public API provides users with metadata on new and existing subawards and subcontracts and deleted subaward and subcontract data. This API requires pagination, and the response will be provided to users synchronously.
+The Assistance Subaward Reporting Public API provides users with metadata on new and existing subawards and sub-assistance and deleted subaward and sub-assistance data. This API requires pagination, and the response will be provided to users synchronously.
 
 
 **Key Features of the Assistance Subaward Outbound API**
@@ -169,9 +169,9 @@ HTTP Response Code | Description
 <details>
     <summary>Request URL</summary>
 
-Production URL: https://api.sam.gov/prod/assistance/v1/subawards/search?api_key={User’s Public API Key}&postedFrom=01/01/2018&postedTo=05/10/2018&ptype=a&deptname=general  <br>
+Production URL: https://api.sam.gov/prod/assistance/v1/subawards/search?status=Published&api_key=LufX5GmXxw2EOEolwkBZBzzcVymAv11AdcTRXVD7&pageSize=25&pageNumber=0 <br>
  <br>
-Alpha URL: https://api-alpha.sam.gov/assistance/v1/subawards/search?api_key={User’s Public API Key}&postedFrom=01/01/2018&postedTo=05/10/2018&ptype=a&deptname=general<br>
+Alpha URL: https://api-alpha.sam.gov/assistance/v1/subawards/search?status=Published&api_key=LufX5GmXxw2EOEolwkBZBzzcVymAv11AdcTRXVD7&pageSize=25&pageNumber=0 <br>
 
 Note: Request URL for alpha is used in this example
 </details>
