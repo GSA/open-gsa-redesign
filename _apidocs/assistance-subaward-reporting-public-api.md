@@ -63,7 +63,7 @@ Users can search by any of the below request filters.
 Filter | Description | Required | Data Type | Applicable Versions 
 ----- | ------| ----- | ----- | -----
 uniqueAwardKey | Business key to identify subawards under each prime. Unique for a contract and gives complete subaward information pertaining to that contract  | Yes | Alphanumeric | v1
-fain | | No | Alphanumeric | v1
+fain | Unique Identifier for grant awards. | No | Alphanumeric | v1
 agencyCode | Allows user to pull prime information to identify the contract family. | No | Numeric | v1
 fromDate | Allows users to filter by From Date. | No | string | v1
 toDate | Allows users to filter by From Date. | No | string | v1
