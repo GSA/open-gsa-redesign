@@ -23,12 +23,12 @@ Assistance Subaward Reporting Public API can be accessed from Production or Alph
 ### Version Control - v1 
 
 **Production**
-* https://api.sam.gov/assistance/v1/subawards/search?status=published&api_key=<A VALID API KEY>
-* https://api.sam.gov/assistance/v1/subawards/search?
+* https://api.sam.gov/assistance/v1/subawards/search
+* https://api.sam.gov/assistance/v1/subawards/search?status=Delete
 
 **Alpha**
-* https://api-alpha.sam.gov/assistance/v1/subawards/search?status=published&api_key=<A VALID API KEY>
-* https://api-alpha.sam.gov/assistance/v1/subawards/search?
+* https://api-alpha.sam.gov/assistance/v1/subawards/search
+* https://api-alpha.sam.gov/assistance/v1/subawards/search?status=Delete
 
 
 ## Authentication and API Keys
@@ -41,63 +41,30 @@ Note: User can request a public API Key in the Account Details page on SAM.gov (
 * After the API Key is generated on ‘Account Details’ page, the API Key can be viewed on the Account Details page immediately. The API Key is visible until user navigates to a different page.
 * If an error is encountered during the API Key generation/retrieval, then user will receive an error message and must try again.
 
-## User Requirements
-
-**To Access Public Data**  
-
-* Users must have a non-Federal/Federal individual (Personal) account and the respective API Key, a non-Federal/Federal System Account with the "Read Public" Permission and the respective API Key in SAM.gov. 
-* Users can make GET calls using any browser or a Restful API Client such as Postman.
-
-**Individual (Personal) Accounts**
-
-* The SAM.gov Federal or non-Federal registered users must obtain the API Key from the https://sam.gov/profile/details page using the field, "Public API Key".
-* Click on the 'Eye' icon, enter the "Enter One-Time Password" (this value will be sent to your email address that is associated with your registered account), and hit 'Submit' for the API Key value to appear in the box.
-
-**System Accounts**
-
-* The SAM.gov non-Federal registered users must request for a System Account. If their registration and request criteria are satisfied, then they will be provided with the System Accounts” widget on their SAM.gov “Workspace” page.
-* The SAM.gov Federal registered users must contact their CCB representatives for obtaining the “System Accounts” widget on their SAM.gov “Workspace” page.
-* Users must create their System Account using the “System Accounts” widget and get it approved.
-* Users must then set the password for the System Account.
-* After the above step is successfully completed, users will see a new section for retrieving the API Key. Users must enter the password to retrieve this value.
-
-System Accounts must satisfy the following criteria to successfully utilize the Assistance Subaward Reporting Public API:
-
-* System Information Unique System ID: The System Account ID
-* Security Information - IP Address: List all the IP Addresses that the System invokes the API from.
-* Type of Connection: REST APIs
-* System Account Password 
-* System Account API Key 
-
 ## Assistance Subaward Reporting API Description 
 
 The Assistance Subaward Reporting Public API offers several optional search parameters that can be provided independently or in combination with each other to retrieve prime information. 
 
-### Grants Search Endpoint - v1
+## GET Grants Request Parameters - v1
 
-**Search Parameters**
-
-Users can search by any of the below request parameters based on date and browse through prime information. 
+Users can provide below parameters to limit the results.
 
 Field Name	| Description | Required| Data Type| Applicable Versions
 ----- | ----- | ----- | ----- | -----
 api_key | Public key of users. | Yes | String | v1
-limit | Total number of records to be retrieved per page. This field must be a number Max Value = 1000. | Yes | Int | v1
-offset | Indicates the page index. Default offset starts with 0. | No | Int | v1
+pageSize | Total number of records to be retrieved per page. This field must be a number Max Value = 1000. | No | Int | v1
+pageNumber | Indicates the page index. Default offset starts with 0. | No | Int | v1
 status | Allows users to request submitted records that were deleted. If the user does not pass any value, the system will default status = Published | No | string | v1   
 
 **Search Filters**
 
-Users can utilize the following search filters in the request body to request subaward data.
+Users can search by any of the below request filters. 
 
 Filter | Description | Required | Data Type | Applicable Versions 
 ----- | ------| ----- | ----- | -----
 uniqueAwardKey | Business key to identify subawards under each prime. Unique for a contract and gives complete subaward information pertaining to that contract  | Yes | Alphanumeric | v1
-piid | Allows user to pull one single record with multiple subawards. The total records that will be showed is the number of subawards. | No | Alphanumeric | v1
-agencyId | Allows user to pull prime information to identify the contract family. | No | Numeric | v1
-referencedIdvPIID | Allows user to pull prime information to identify the contract family. | No | Alphanumeric |v1
-referencedIDVAgencyID | Allows user to pull prime information to identify the contract family. | No | Alphanumeric | v1
-primeAwardType | Type of Prime Award. | No | string | v1
+fain | | No | Alphanumeric | v1
+agencyCode | Allows user to pull prime information to identify the contract family. | No | Numeric | v1
 fromDate | Allows users to filter by From Date. | No | string | v1
 toDate | Allows users to filter by From Date. | No | string | v1
 
@@ -110,9 +77,9 @@ Published | Returns all published subaward information pertaining to contract. I
 Deleted | Returns deleted records that were submitted for the contract. Delete must be passed as a status to return deletd records
 
 
-## Response Schema
+## GET Assistance Response Parameters
 
-Based on the request parameters, the API response shall return a JSON summarized view of the subawards. The Assistance Subaward Reporting Public API offers several response elements that are described in the following sections. 
+Based on the request filters, the API response shall return a JSON summarized view of the subawards. The Assistance Subaward Reporting Public API offers several response elements that are described in the following sections. 
 
 Field Name	| Description | Data Type|Applicable Versions
 ----- | ----- | ----- | -----  
@@ -163,7 +130,7 @@ HTTP Response Code | Description
 400 | Bad Request 
 401 | Unauthorized Error
 403 | Forbidden 
-406 | Not Acceptable Error
+405 | Method Not Allowed
 500 | Internal Server Error 
 
 
