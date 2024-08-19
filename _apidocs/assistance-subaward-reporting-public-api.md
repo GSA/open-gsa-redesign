@@ -74,7 +74,7 @@ toDate | Allows users to filter by From Date. | No | string | v1
 Status Name | Value 
 ----- | ----- 
 Published | Returns all published subaward information pertaining to contract. If no status is passed, the default will return all published records.
-Deleted | Returns deleted records that were submitted for the contract. Delete must be passed as a status to return deletd records
+Deleted | Returns deleted records that were submitted for the contract. Delete must be passed as a status to return deleted records
 
 
 ## GET Assistance Response Parameters
