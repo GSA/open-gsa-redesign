@@ -33,7 +33,7 @@ The API documentation on open.gsa.gov is managed by the GSA Office of the CTO.
 
 4. Edit the `apiname.md` file with all of the information about your API. When you commit your changes to your repo in GitHub, a preview will be available of the site (with your doco) at this URL after waiting 5 min or so for the preview to build:
 
-    https://federalist-ecc58765-2903-48b3-920c-5d93318ad084.app.cloud.gov/preview/gsa/open-gsa-redesign/YOUR_BRANCH_NAME/api/YOUR_API_NAME/ (insert your branch name and API name where indicated)
+    https://federalist-ecc58765-2903-48b3-920c-5d93318ad084.pages.cloud.gov/preview/gsa/open-gsa-redesign/YOUR_BRANCH_NAME/api/YOUR_API_NAME/ (insert your branch name and API name where indicated)
 
 5. When you are ready to publish in the API directory, [open a pull request (PR)](https://github.com/GSA/open-gsa-redesign/pulls) to merge your branch with the `master` branch. Email the [CTO team](mailto:cto@gsa.gov) with your PR number or a link to your PR, informing them that your branch is ready to be merged.
 
