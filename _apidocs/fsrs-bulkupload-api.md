@@ -2283,7 +2283,7 @@ assistanceData.reportStatus | string |32 characters  | No | The status of the re
 
 <p><small><a href="#">Back to top</a></small></p>
 
-###   Contract JSON
+### Get Subaward Report Contract JSON
 
 * Field headers in the table must match with field headers shown in JSON example  
 
@@ -2300,7 +2300,7 @@ contractData.reportStatus | string |32 characters  | No | The status of the repo
 
 <p><small><a href="#">Back to top</a></small></p>
 
-###  Grant JSON
+### Get Subaward Report Grant JSON
 
 * Field headers in the table must match with field headers shown in JSON example  
 
