@@ -26,7 +26,7 @@ To begin using this API, you will need to register for a System Account and obta
 	* System Information
    		** System Account Name: Unique name for the System Account
 	* Permissions
-   		** Subaward reporting: Write --> Gives access to Create/Update/Delete/Get Subaward reports.
+   		** Subaward reporting: Write --> Gives access to Create/Update/Delete/s.
 	* Security Information
 		** IP Address: List all the IP Addresses that the System invokes the API from.
 		** Type of Connection: REST APIs
@@ -103,18 +103,20 @@ All API v1 versions will utilize the API Key mechanism as outlined in this docum
 
 ## FSRS Subaward reporting Bulk Upload API Request and Responses
 
-This API has 8 endpoints as outlined below. 
+This API has 10 endpoints as outlined below. 
 
 Endpoint Name | Short Description |
 -----|-----------------
 Submit Subaward report (Contracts)     | Used to submit Subaward reports for reporting on one or more Contracts.
 Submit Subaward report (Grants)     | Used to submit Subaward reports for reporting on one or more Grants.
-Update Subaward report (Contracts)     | Used to update one or more previously published Subaward reports for Contracts.
-Update Subaward report (Grants)     | Used to update one or more previously published Subaward reports for Grants.
-Delete Subaward report (Contracts)     | Used to delete one or more previously published Subaward reports for Contracts.
-Delete Subaward report (Grants)     | Used to delete one or more previously published Subaward reports for Grants.
-Get Subaward report (Contracts)     | Used to get one or more previously published Subaward reports for Contracts. 
-Get Subaward report (Grants)     | Used to get one or more previously published Subaward reports for Grants.
+Update Subaward report (Contracts)     | Used to update a previously published Subaward report for a Contract.
+Update Subaward report (Grants)     | Used to update a previously published Subaward report for a Grant.
+Delete Subaward report (Contracts)     | Used to delete a Subaward report for a Contract.
+Delete Subaward report (Grants)     | Used to delete a Subaward reports for a Grant.
+Get Subaward report (Contracts)     | Used to get details for a Subaward report for a Contract. 
+Get Subaward report (Grants)     | Used to get details for a Subaward report for a Grant.
+Search Subaward report (Contracts)     | Used to get Subaward reports for Contracts based on optional search criteria. 
+Search Subaward report (Grants)     | Used to get Subaward reports for Grants based on optional search criteria.
 
 The following section describes each of the above endpoints in detail.
 
@@ -538,8 +540,8 @@ The API will process each request as described for all Subawardees within the re
 
 ------- | -------
 **Request Type** | PUT
-**URL** | /acquisition/v1/subawards
-**Summary** | Used to update one or multiple previously published contract reports
+**URL** | /acquisition/v1/subawards/{subawardReportNumber}
+**Summary** | A user will be able to update a contract subaward report
 **Consumes** | application/JSON
 **Produces** | Refer [Response JSON](#response-json)
 **Active Versions** | v1
@@ -759,8 +761,8 @@ See the [Response JSON](#response-json) section for the response structure and s
 
 ------- | -------
 **Request Type** | PUT
-**URL** | /assistance/v1/subawards
-**Summary** | Used to update one or multiple previously published grant reports
+**URL** | /assistance/v1/subawards/{subawardReportNumber}
+**Summary** | Used to update a grant subaward report
 **Consumes** | application/JSON
 **Produces** | Refer [Response JSON](#response-json)
 **Active Versions** | v1
@@ -976,8 +978,8 @@ See the [Response JSON](#response-json) section for the response structure and s
 
 ------- | -------
 **Request Type** | DELETE
-**URL** | /acquisition/v1/subawards
-**Summary** | Used to delete previously published contracts report(s)
+**URL** | /acquisition/v1/subawards/{subawardReportNumber}
+**Summary** | Used to delete a contract subaward report
 **Consumes** | application/JSON
 **Produces** | Refer [Response JSON](#response-json)
 **Active Versions** | v1
@@ -1049,8 +1051,8 @@ See the [Response JSON](#response-json) section for the response structure and s
 
 ------- | -------
 **Request Type** | DELETE
-**URL** | /assistance/v1/subawards
-**Summary** | Used to delete previously submitted grants report(s)
+**URL** | /assistance/v1/subawards/{subawardReportNumber}
+**Summary** | Used to delete a previously submitted grants report
 **Consumes** | Request Parameters
 **Produces** | Refer [Response JSON](#response-json)
 **Active Versions** | v1
@@ -1120,9 +1122,9 @@ See the [Response JSON](#response-json) section for the response structure and s
 ### Get Subaward report (Contracts)
 
 ------- | -------
-**Request Type** | POST
-**URL** | /acquisition/v1/subawards/get
-**Summary** |  User will be able to retrieve specific contract reports based on the provided search criteria
+**Request Type** | GET
+**URL** | /acquisition/v1/subawards/{subawardReportNumber}
+**Summary** |  User will be able to retrieve a specific contract subaward report
 **Consumes** | Request Parameters
 **Produces** | Refer [Response JSON](#response-json)
 **Active Versions** | v1
@@ -1211,7 +1213,7 @@ Request JSON | Body | JSON | Yes, at least one contractData element is required.
 
 HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
-200 | string | Report was successfully retrieved | [Refer Get Subaward report Contract JSON](#get-subaward-report-contract-json)
+200 | string | Report was successfully retrieved | [Refer  Contract JSON](#get-subaward-report-contract-json)
 
 NOTE: Will return JSON response same as POST Response JSON. The generated subawardReportNumber and the reportStatus will be sent back as a part of the response. See the [Response JSON](#response-json) section for the response structure and specific examples.
 
@@ -1220,8 +1222,205 @@ NOTE: Will return JSON response same as POST Response JSON. The generated subawa
 ### Get Subaward report (Grants) 
 
 ------- | -------
-**Request Type** | POST
-**URL** | /assistance/v1/subawards/get
+**Request Type** | GET
+**URL** | /assistance/v1/subawards/{subawardReportNumber}
+**Summary** | User will be able to retrieve a specific grant report
+**Consumes** | application/JSON
+**Produces** | Refer [Response JSON](#response-json)
+**Active Versions** | v1
+
+#### Request Parameters
+
+Parameter Name | Parameter Type | Data Type  | Required | Description
+---------------|----------------|------------|----------|------------
+Authorization	| Header | string |	Yes |	Valid and authorized SAM user email ID
+api_key |	query |	string |	Yes |	Valid System Account API Key
+Request JSON|	Body|	JSON|	Yes, at least one assistanceData element is required. From the fields, at least one field is required|	[Refer  Grant JSON](#get-subaward-report-grant-json)
+
+#### Examples
+
+<details>
+<summary>Example 1: Get Grant Subaward reports for a specific Grant based on the Subaward report Number and report status </summary>
+<p>
+<code><pre>
+ {
+  "assistanceData": [
+    {
+      "subawardReportNumber": "51e2fad8-7b43-4b62-a870-45b3f250ea99",
+      "reportStatus": "Draft"
+    }
+  ]
+}
+</pre></code>
+</p>
+</details>
+
+<details>
+<summary>Example 2: Get all Published Subaward reports for a specific Grant</summary>
+<p>
+<code><pre>
+{
+  "assistanceData": [
+    {
+      "primeFAIN": "ABCDY2324235",
+      "reportStatus": "Published"
+    }
+  ]
+}
+</pre></code>
+</p>
+</details>
+
+<details>
+<summary>Example 3: Get all Subaward reports for a specific grant</summary>
+<p>
+<code><pre>
+{
+  "assistanceData": [
+    {
+      "primeFAIN": "ABCDY2324235"
+    }
+  ]
+}
+</pre></code>
+</p>
+</details>
+
+<details>
+<summary>Example 4: Get request for multiple Grants</summary>
+<p>
+<code><pre>
+{
+   "assistanceData":[
+      {
+         "primeFAIN":"ABCDY2324235",
+         "reportStatus":"Published"
+      },
+      {
+         "subawardReportNumber":"51e2fad8-7b43-4b62-a870-45b3f250ea99",
+         "reportStatus":"Draft"
+      }
+   ]
+}
+</pre></code>
+</p>
+</details>
+
+#### Responses
+
+HTTP Status Code | Response Type | Reason  | Description
+-----------------|---------------|---------|------------
+200	|JSON|	Report was successfully retrieved | [Refer Submit Subaward report Grant JSON](#submit-subaward-report-grant-json)
+
+NOTE: Will return JSON response same as POST response JSON. The generated subAwardReportNumber and the reportStatus will be sent back as a part of the response. See the [Response JSON](#response-json) section for the response structure and specific examples.
+
+<p><small><a href="#">Back to top</a></small></p>
+
+### Search Subaward report (Contracts)
+
+------- | -------
+**Request Type** | GET
+**URL** | /acquisition/v1/subawards
+**Summary** |  User will be able to retrieve specific contract subaward reports based on the provided search criteria
+**Consumes** | Request Parameters
+**Produces** | Refer [Response JSON](#response-json)
+**Active Versions** | v1
+
+#### Request Parameters
+
+Parameter Name | Parameter Type | Data Type  | Required | Description
+---------------|----------------|------------|----------|------------
+Authorization | Header |  string | Yes | Valid and authorized SAM user email ID
+api_key | query | string | Yes | Valid System Account API Key
+Request JSON | Body | JSON | Yes, at least one contractData element is required. From the fields, at least one field is required | [Refer Get Subaward report Contract JSON](#get-subaward-report-contract-json) 
+
+#### Examples
+
+<details>
+<summary>Example 1: Get Subaward reports for a specific contract based on the Subaward report Number and report status</summary>
+<p>
+<code><pre>
+{
+  "contractData": [
+    {
+      "subawardReportNumber": "51e2fad8-7b43-4b62-a870-45b3f250ea99",
+      "reportStatus": "Draft"
+    }
+  ]
+}
+</pre></code>
+</p>
+</details>
+
+<details>
+<summary>Example 2: Get all Published Subaward reports for a specific contract</summary>
+<p>
+<code><pre>
+{
+  "contractData": [
+    {
+      "contractNumber": "ABCDY2324235",
+      "reportingAgencyCode": "4700",
+      "reportStatus": "Published"
+    }
+  ]
+}
+</pre></code>
+</p>
+</details>
+
+<details>
+<summary>Example 3: Get all Subaward reports for a specific contract</summary>
+<p>
+<code><pre>
+{
+  "contractData": [
+    {
+      "contractNumber": "ABCDY2324235",
+      "reportingAgencyCode": "4700"
+    }
+  ]
+}
+</pre></code>
+</p>
+</details>
+
+<details>
+<summary>Example 4: Get request for multiple contracts</summary>
+<p>
+<code><pre>
+{
+   "contractData":[
+      {
+         "contractNumber":"ABCDY2324235",
+         "reportingAgencyCode":"4700",
+         "reportStatus":"Published"
+      },
+      {
+         "subawardReportNumber":"51e2fad8-7b43-4b62-a870-45b3f250ea99",
+         "reportStatus":"Draft"
+      }
+   ]
+}
+</pre></code>
+</p>
+</details>
+
+#### Responses
+
+HTTP Status Code | Response Type | Reason  | Description
+-----------------|---------------|---------|------------
+200 | string | Report was successfully retrieved | [Refer  Contract JSON](#get-subaward-report-contract-json)
+
+NOTE: Will return JSON response same as POST Response JSON. The generated subawardReportNumber and the reportStatus will be sent back as a part of the response. See the [Response JSON](#response-json) section for the response structure and specific examples.
+
+<p><small><a href="#">Back to top</a></small></p>
+
+### Search Subaward report (Grants) 
+
+------- | -------
+**Request Type** | GET
+**URL** | /assistance/v1/subawards
 **Summary** | User will be able to retrieve specific grant reports based on the provided search criteria
 **Consumes** | application/JSON
 **Produces** | Refer [Response JSON](#response-json)
@@ -1233,7 +1432,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 Authorization	| Header | string |	Yes |	Valid and authorized SAM user email ID
 api_key |	query |	string |	Yes |	Valid System Account API Key
-Request JSON|	Body|	JSON|	Yes, at least one assistanceData element is required. From the fields, at least one field is required|	[Refer Get Subaward report Grant JSON](#get-subaward-report-grant-json)
+Request JSON|	Body|	JSON|	Yes, at least one assistanceData element is required. From the fields, at least one field is required|	[Refer  Grant JSON](#get-subaward-report-grant-json)
 
 #### Examples
 
@@ -2084,7 +2283,7 @@ assistanceData.reportStatus | string |32 characters  | No | The status of the re
 
 <p><small><a href="#">Back to top</a></small></p>
 
-###  Get Subaward report Contract JSON
+###   Contract JSON
 
 * Field headers in the table must match with field headers shown in JSON example  
 
@@ -2101,7 +2300,7 @@ contractData.reportStatus | string |32 characters  | No | The status of the repo
 
 <p><small><a href="#">Back to top</a></small></p>
 
-### Get Subaward report Grant JSON
+###  Grant JSON
 
 * Field headers in the table must match with field headers shown in JSON example  
 
