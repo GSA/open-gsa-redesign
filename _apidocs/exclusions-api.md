@@ -2,7 +2,20 @@
 title: SAM.gov Exclusions  API
 banner-heading: SAM.gov Exclusions API
 ---
-
+<div class="usa-alert usa-alert-warning" id="site-wide-alert" role="alert">
+   <div class="usa-alert-body">
+     <p class="usa-alert-text">
+        Older versions of SAM.gov’s Exclusions API (V1, V2, V3) are being removed on:
+        <ul>
+         <li><b>Alpha:</b> September 3, 2024</li>
+         <li><b>Production:</b> September 13, 2024</li>
+        </ul> 
+     </p>
+     <p>Update directly to V4 to continue receiving information from SAM.gov through the API. 
+        No action is necessary if you do not use the Exclusion API or already use V4. No other SAM.gov APIs are impacted.
+   </p>
+   </div>
+ </div>
 ## Overview
 The Exclusions API will allow users to request Public Exclusion Information based on various optional request parameters.
 The response will be provided in the JSON format in a paginated manner.
@@ -804,5 +817,6 @@ Date | Version | Description
 12/01/2023 | v3.1    | A new V4 Exclusions API has been created, enabling the search and response for FASCSA Order Exclusion records. As part of this change, below are the associated changes made to this OpenGSA page: <br><br> * Added exclusions V4 endpoint information to the Getting Started section.<br><br> * Updated the Query String Parameters and Expected Results sections to reflect available parameters and response fields in V4.<br><br> * Moved the existing Example 5 to Example 6; inserted a new Example 5 to indicate V4 behavior.<br><br> * Updated the section, “HTTP Response Codes” to indicate the v4 behavior.<br><br> * Updated the OpenAPI Specification File to include the V4 endpoints.
 02/29/2024 | v3.2    | * Updated Getting Started section to remove deprecated endpoint versions. 
 03/14/2024 | v3.3    | * Replaced Examples section with v4 requests and responses.
+08/29/2024 | v3.4    | * Update decommission timelines for v1 v2 and v3 versions.
 
 <p><small><a href="#">Back to top</a></small></p>
