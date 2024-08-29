@@ -30,9 +30,10 @@ individuals and anonymizes the IP addresses of visitors.
 
 A subset of the DAP analytics data reports are available via the DAP API. These
 reports may be limited to a specific domain or agency to support a wide range of
-user needs. Data may be subject to sampling and should not be relied upon for
-100% accuracy. This data should be used to examine high-level trends and provide
-general insights into user demographics and behavior.
+user needs. Report data are limited to sites which have a minimum of 50 visits
+in the report period. Data may be subject to sampling and should not be relied
+upon for 100% accuracy. This data should be used to examine high-level trends
+and provide general insights into user demographics and behavior.
 
 The URL for the API is `https://api.gsa.gov/analytics/dap`, and it
 exposes 3 routes to query DAP analytics data:
@@ -377,6 +378,7 @@ The following agencies can be queried using the API:
 | Consumer Product Safety Commission | consumer-product-safety-commission | _([example](https://api.gsa.gov/analytics/dap/v2.0.0/agencies/consumer-product-safety-commission/reports/site/data?api_key=DEMO_KEY1))_ |
 | Corporation for National and Community Service | corporation-national-community-service | _([example](https://api.gsa.gov/analytics/dap/v2.0.0/agencies/corporation-national-community-service/reports/site/data?api_key=DEMO_KEY1))_ |
 | Defense Nuclear Facilities Safety Board | defense-nuclear-facilities-safety-board | _([example](https://api.gsa.gov/analytics/dap/v2.0.0/agencies/defense-nuclear-facilities-safety-board/reports/site/data?api_key=DEMO_KEY1))_ |
+| Denali Commission | denali-commission | _([example](https://api.gsa.gov/analytics/dap/v2.0.0/agencies/denali-commission/reports/site/data?api_key=DEMO_KEY1))_ |
 | Department of Agriculture | agriculture | _([example](https://api.gsa.gov/analytics/dap/v2.0.0/agencies/agriculture/reports/site/data?api_key=DEMO_KEY1))_ |
 | Department of Commerce | commerce | _([example](https://api.gsa.gov/analytics/dap/v2.0.0/agencies/commerce/reports/site/data?api_key=DEMO_KEY1))_ |
 | Department of Defense | defense  | _([example](https://api.gsa.gov/analytics/dap/v2.0.0/agencies/defense/reports/site/data?api_key=DEMO_KEY1))_ |
@@ -396,6 +398,7 @@ The following agencies can be queried using the API:
 | Equal Employment Opportunity Commission | equal-employment-opportunity-commission | _([example](https://api.gsa.gov/analytics/dap/v2.0.0/agencies/equal-employment-opportunity-commission/reports/site/data?api_key=DEMO_KEY1))_ |
 | Executive Office of the President | executive-office-president | _([example](https://api.gsa.gov/analytics/dap/v2.0.0/agencies/executive-office-president/reports/site/data?api_key=DEMO_KEY1))_ |
 | Farm Credit Administration | farm-credit-administration | _([example](https://api.gsa.gov/analytics/dap/v2.0.0/agencies/farm-credit-administration/reports/site/data?api_key=DEMO_KEY1))_ |
+| Federal Bureau of Investigation | federal-bureau-investigation | _([example](https://api.gsa.gov/analytics/dap/v2.0.0/agencies/federal-bureau-investigation/reports/site/data?api_key=DEMO_KEY1))_ |
 | Federal Deposit Insurance Corporation | federal-deposit-insurance-corporation | _([example](https://api.gsa.gov/analytics/dap/v2.0.0/agencies/federal-deposit-insurance-corporation/reports/site/data?api_key=DEMO_KEY1))_ |
 | Federal Election Commission | federal-election-commission | _([example](https://api.gsa.gov/analytics/dap/v2.0.0/agencies/federal-election-commission/reports/site/data?api_key=DEMO_KEY1))_ |
 | Federal Energy Regulatory Commission | federal-energy-regulatory-commission | _([example](https://api.gsa.gov/analytics/dap/v2.0.0/agencies/federal-energy-regulatory-commission/reports/site/data?api_key=DEMO_KEY1))_ |
@@ -405,7 +408,6 @@ The following agencies can be queried using the API:
 | Federal Retirement Thrift Investment Board | federal-retirement-thrift-investment-board | _([example](https://api.gsa.gov/analytics/dap/v2.0.0/agencies/federal-retirement-thrift-investment-board/reports/site/data?api_key=DEMO_KEY1))_ |
 | Federal Trade Commission | federal-trade-commission | _([example](https://api.gsa.gov/analytics/dap/v2.0.0/agencies/federal-trade-commission/reports/site/data?api_key=DEMO_KEY1))_ |
 | General Services Administration | general-services-administration | _([example](https://api.gsa.gov/analytics/dap/v2.0.0/agencies/general-services-administration/reports/site/data?api_key=DEMO_KEY1))_ |
-| Institute of Museum and Library Services | institute-museum-library-services | _([example](https://api.gsa.gov/analytics/dap/v2.0.0/agencies/institute-museum-library-services/reports/site/data?api_key=DEMO_KEY1))_ |
 | Inter-American Foundation | inter-american-foundation | _([example](https://api.gsa.gov/analytics/dap/v2.0.0/agencies/inter-american-foundation/reports/site/data?api_key=DEMO_KEY1))_ |
 | International Development Finance Corporation | international-development-finance-corporation | _([example](https://api.gsa.gov/analytics/dap/v2.0.0/agencies/international-development-finance-corporation/reports/site/data?api_key=DEMO_KEY1))_ |
 | Merit Systems Protection Board | merit-systems-protection-board | _([example](https://api.gsa.gov/analytics/dap/v2.0.0/agencies/merit-systems-protection-board/reports/site/data?api_key=DEMO_KEY1))_ |
@@ -419,6 +421,8 @@ The following agencies can be queried using the API:
 | National Endowment For The Humanities | national-endowment-humanities | _([example](https://api.gsa.gov/analytics/dap/v2.0.0/agencies/national-endowment-humanities/reports/site/data?api_key=DEMO_KEY1))_ |
 | National Labor Relations Board | national-labor-relations-board | _([example](https://api.gsa.gov/analytics/dap/v2.0.0/agencies/national-labor-relations-board/reports/site/data?api_key=DEMO_KEY1))_ |
 | National Mediation Board | national-mediation-board | _([example](https://api.gsa.gov/analytics/dap/v2.0.0/agencies/national-mediation-board/reports/site/data?api_key=DEMO_KEY1))_ |
+| National Oceanic and Atmospheric Administration | national-oceanic-atmospheric-administration | _([example](https://api.gsa.gov/analytics/dap/v2.0.0/agencies/national-oceanic-atmospheric-administration/reports/site/data?api_key=DEMO_KEY1))_ |
+| National Park Service | national-park-service | _([example](https://api.gsa.gov/analytics/dap/v2.0.0/agencies/national-park-service/reports/site/data?api_key=DEMO_KEY1))_ |
 | National Reconnaissance Office | national-reconnaissance-office | _([example](https://api.gsa.gov/analytics/dap/v2.0.0/agencies/national-reconnaissance-office/reports/site/data?api_key=DEMO_KEY1))_ |
 | National Science Foundation | national-science-foundation | _([example](https://api.gsa.gov/analytics/dap/v2.0.0/agencies/national-science-foundation/reports/site/data?api_key=DEMO_KEY1))_ |
 | National Transportation Safety Board | national-transportation-safety-board | _([example](https://api.gsa.gov/analytics/dap/v2.0.0/agencies/national-transportation-safety-board/reports/site/data?api_key=DEMO_KEY1))_ |
@@ -438,10 +442,12 @@ The following agencies can be queried using the API:
 | Social Security Administration | social-security-administration | _([example](https://api.gsa.gov/analytics/dap/v2.0.0/agencies/social-security-administration/reports/site/data?api_key=DEMO_KEY1))_ |
 | Special Inspector General for Afghanistan Reconstruction | special-inspector-general-afghanistan-restoration | _([example](https://api.gsa.gov/analytics/dap/v2.0.0/agencies/special-inspector-general-afghanistan-restoration/reports/site/data?api_key=DEMO_KEY1))_ |
 | Surface Transportation Board | surface-transportation-board | _([example](https://api.gsa.gov/analytics/dap/v2.0.0/agencies/surface-transportation-board/reports/site/data?api_key=DEMO_KEY1))_ |
+| Tennessee Valley Authority | tennessee-valley-authority | _([example](https://api.gsa.gov/analytics/dap/v2.0.0/agencies/tennessee-valley-authority/reports/site/data?api_key=DEMO_KEY1))_ |
 | Udall Foundation | udall-foundation | _([example](https://api.gsa.gov/analytics/dap/v2.0.0/agencies/udall-foundation/reports/site/data?api_key=DEMO_KEY1))_ |
 | U.S. Access Board | access-board | _([example](https://api.gsa.gov/analytics/dap/v2.0.0/agencies/access-board/reports/site/data?api_key=DEMO_KEY1))_ |
 | U.S. Agency for Global Media | agency-global-media | _([example](https://api.gsa.gov/analytics/dap/v2.0.0/agencies/agency-global-media/reports/site/data?api_key=DEMO_KEY1))_ |
 | U.S. Commission on Civil Rights | commission-civil-rights | _([example](https://api.gsa.gov/analytics/dap/v2.0.0/agencies/commission-civil-rights/reports/site/data?api_key=DEMO_KEY1))_ |
+| U.S. Courts | us-courts | _([example](https://api.gsa.gov/analytics/dap/v2.0.0/agencies/us-courts/reports/site/data?api_key=DEMO_KEY1))_ |
 | U.S. International Trade Commission | international-trade-commission | _([example](https://api.gsa.gov/analytics/dap/v2.0.0/agencies/international-trade-commission/reports/site/data?api_key=DEMO_KEY1))_ |
 | U.S. Postal Inspection Service | postal-inspection-service | _([example](https://api.gsa.gov/analytics/dap/v2.0.0/agencies/postal-inspection-service/reports/site/data?api_key=DEMO_KEY1))_ |
 | U.S. Postal Service | postal-service | _([example](https://api.gsa.gov/analytics/dap/v2.0.0/agencies/postal-service/reports/site/data?api_key=DEMO_KEY1))_ |
