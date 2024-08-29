@@ -6,7 +6,7 @@ banner-heading: SAM.gov Exclusions API
    <div class="usa-alert-body">
      <p class="usa-alert-text">
         Older versions of SAM.gov’s Exclusions API (V1, V2, V3) are being removed on:
-          <ul>
+&nbsp;&nbsp;&nbsp;<ul>
             <li><b>Alpha:</b> September 3, 2024</li>
             <li><b>Production:</b> September 13, 2024</li>
           </ul> 
