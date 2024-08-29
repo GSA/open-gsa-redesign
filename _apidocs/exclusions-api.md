@@ -5,15 +5,12 @@ banner-heading: SAM.gov Exclusions API
 <div class="usa-alert usa-alert-warning" id="site-wide-alert" role="alert">
    <div class="usa-alert-body">
      <p class="usa-alert-text">
-        Older versions of SAM.gov’s Exclusions API (V1, V2, V3) are being removed on:
-&nbsp;&nbsp;&nbsp;<ul>
-            <li><b>Alpha:</b> September 3, 2024</li>
-            <li><b>Production:</b> September 13, 2024</li>
-          </ul> 
-     </p>
+        Older versions of SAM.gov’s Exclusions API (V1, V2, V3) are being removed on:</p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#x2022; &nbsp;<b>Alpha:</b>&nbsp;September 3, 2024<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#x2022; &nbsp;<b>Production:</b> &nbsp;September 13, 2024
      <p>Update directly to V4 to continue receiving information from SAM.gov through the API. 
         No action is necessary if you do not use the Exclusion API or already use V4. No other SAM.gov APIs are impacted.
-   </p>
+     </p>
    </div>
  </div>
 ## Overview
