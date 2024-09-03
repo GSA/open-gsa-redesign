@@ -10,7 +10,7 @@ The API documentation on open.gsa.gov is managed by the GSA Office of the CTO.
 
 ## Steps to add you API documentation to the GSA API Directory
 
-1. [Contact the CTO team](mailto:cto@gsa.gov) and ask for access to manage API docs, sharing your GitHub ID. Your GitHub ID will have to be in the GSA GitHub organization; follow the instructions in the [GitHub Administration repository](https://github.com/GSA/GitHub-Administration) if you haven't done so yet.
+1. [Contact the CTO team](mailto:open@gsa.gov) and ask for access to manage API docs, sharing your GitHub ID. Your GitHub ID will have to be in the GSA GitHub organization; follow the instructions in the [GitHub Administration repository](https://github.com/GSA/GitHub-Administration) if you haven't done so yet.
 
 2. Create a branch of the site from the `master` branch. Naming convention for new branch: `apidocs-apiname-YYYYMMDD` (replace `apiname` with the name of your API without spaces)
 
@@ -35,7 +35,7 @@ The API documentation on open.gsa.gov is managed by the GSA Office of the CTO.
 
     https://federalist-ecc58765-2903-48b3-920c-5d93318ad084.pages.cloud.gov/preview/gsa/open-gsa-redesign/YOUR_BRANCH_NAME/api/YOUR_API_NAME/ (insert your branch name and API name where indicated)
 
-5. When you are ready to publish in the API directory, [open a pull request (PR)](https://github.com/GSA/open-gsa-redesign/pulls) to merge your branch with the `master` branch. Email the [CTO team](mailto:cto@gsa.gov) with your PR number or a link to your PR, informing them that your branch is ready to be merged.
+5. When you are ready to publish in the API directory, [open a pull request (PR)](https://github.com/GSA/open-gsa-redesign/pulls) to merge your branch with the `master` branch. Email the [CTO team](mailto:open@gsa.gov) with your PR number or a link to your PR, informing them that your branch is ready to be merged.
 
 6. The CTO team will merge your branch with `master`, resulting in your doco going to the live website. At this point, you will see your API doco at: https://open.gsa.gov/api/YOUR_API_NAME/
 
@@ -101,5 +101,5 @@ In order to remove the API documentation:
 2. In that branch, delete the relevant markdown file in the `_apidocs` [folder](https://github.com/GSA/open-gsa-redesign/tree/master/_apidocs).
 3. In that branch, delete the relevant openapi yml file that is in a subfolder of the `_apidocs` [folder](https://github.com/GSA/open-gsa-redesign/tree/master/_apidocs).
 4. In that branch, delete the reference to your API in [the api-list.yml file](https://github.com/GSA/open-gsa-redesign/blob/master/_data/api-list.yml) which populates the [directory page](https://open.gsa.gov/api/).
-5. When you are ready to complete the removal, [open a pull request](https://github.com/GSA/open-gsa-redesign/pulls) to merge your branch with the master branch. [Email the CTO team](mailto:cto@gsa.gov) with your PR number or a link to your PR, informing them that your branch is ready to be merged.
+5. When you are ready to complete the removal, [open a pull request](https://github.com/GSA/open-gsa-redesign/pulls) to merge your branch with the master branch. [Email the CTO team](mailto:open@gsa.gov) with your PR number or a link to your PR, informing them that your branch is ready to be merged.
 6. The CTO team will merge your branch with master, resulting in your documentation being deleted from the live website, and the reference to it on the directory page being removed.  
