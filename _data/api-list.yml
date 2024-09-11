@@ -10,9 +10,6 @@
 - title: Api.Data.Gov Metrics API
   description: api.data.gov is a free API management service for federal agencies. This API provides system metrics from api.data.gov.
   url: https://open.gsa.gov/api/apidatagov-metrics/
-- title: Auctions API
-  description: The Auctions API is a GET API which has currently one operation. The operation will retrieve GSA Auctions data. GSA Auctions offers Federal personal property assets ranging from common place items (such as office equipment and furniture) to more select products like scientific equipment, heavy machinery, airplanes, vessels and vehicles.
-  url: https://gsa.github.io/auctions_api/
 - title: Contract-Awarded Labor Category (CALC) API
   description: CALC's API is used by CALC's front-end Data Explorer application to display labor rate data for awarded prices on GSA services schedules, and can also be accessed by any third-party application over the public internet. CALC (Contract Awarded Labor Category) tool searches awarded hourly rate prices on the eight GSA professional services schedules and returns comparable labor categories and prices based on search criteria and filters used.
   url: https://open.gsa.gov/api/dx-calc-api/
