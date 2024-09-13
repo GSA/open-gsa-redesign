@@ -803,7 +803,7 @@ Date | Version  | Description
 02/29/2024 | v4.1     | * Updated Getting Started section to remove deprecated endpoint versions. 
 03/14/2024 | v4.2     | * Replaced Examples section with v4 requests and responses.
 08/29/2024 | v4.3     | * Update decommission timelines for v1 v2 and v3 versions.
-09/13/2024 | v4.4     | * Exclusions API V1/2/3 have been retired, and are no longer available. * Removed references of V1/2/3 Exclusions API from the following sections: API Description (Query String Parameters, Expected Result), OpenAPI Specification File, HTTP Response Codes, Change Log.
+09/13/2024 | v4.4     | * Exclusions API V1/2/3 have been retired, and are no longer available.<br><br> * Removed references of V1/2/3 Exclusions API from the following sections: API Description (Query String Parameters, Expected Result), OpenAPI Specification File, HTTP Response Codes, Change Log.
 
 
 <p><small><a href="#">Back to top</a></small></p>
