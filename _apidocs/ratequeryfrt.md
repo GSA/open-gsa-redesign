@@ -203,8 +203,8 @@ This API has one primary endpoint:
 
 ## API Specification File
 
-You can view the full details of this API in the OpenAPI Specification file available here:
-[TMSS.FRT.Rate.Query.API.spec.xlsx](https://github.com/GSA/open-gsa-redesign/files/11870768/TMSS.FRT.Rate.Query.API.spec.xlsx)
+You can view the details of this API in the OpenAPI Specification file available here:
+[TMSS_FRT_RateQuery_API_spec.xlsx](https://github.com/user-attachments/files/17131254/TMSS.FRT.Rate.Query.API.spec.xlsx)
 
 
 
