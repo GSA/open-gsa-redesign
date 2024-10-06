@@ -117,14 +117,14 @@ This API has 10 endpoints as outlined below.
 
 Endpoint Name | Short Description |
 -----|-----------------
-Submit Subaward report (Contracts)     | Used to submit Subaward reports for reporting on one or more Contracts.
-Submit Subaward report (Assistance)     | Used to submit Subaward reports for reporting on one or more Assistance awards.
+Submit Subaward report (Contracts)     | Used to submit one or more Subaward reports for reporting on one (or more) Contracts.
+Submit Subaward report (Assistance)     | Used to submit one or more Subaward reports for reporting on one (or more) Assistance awards.
 Update Subaward report (Contracts)     | Used to update a previously published Subaward report for a Contract.
-Update Subaward report (Assistance)     | Used to update a previously published Subaward report for a Assistance awards.
-Delete Subaward report (Contracts)     | Used to delete a Subaward report for a Contract.
-Delete Subaward report (Assistance)     | Used to delete a Subaward reports for a Assistance awards.
+Update Subaward report (Assistance)     | Used to update a previously published Subaward report for an Assistance award.
+Delete Subaward report (Contracts)     | Used to delete Subaward report for a Contract.
+Delete Subaward report (Assistance)     | Used to delete Subaward reports for an Assistance award.
 Get Subaward report (Contracts)     | Used to get details for a Subaward report for a Contract. 
-Get Subaward report (Assistance)     | Used to get details for a Subaward report for a Assistance awards.
+Get Subaward report (Assistance)     | Used to get details for a Subaward report for an Assistance award.
 Search Subaward report (Contracts)     | Used to get Subaward reports for Contracts based on optional search criteria. 
 Search Subaward report (Assistance)     | Used to get Subaward reports for Assistance awards based on optional search criteria.
 
@@ -134,7 +134,7 @@ The following section describes each of the above endpoints in detail.
 
 ------- | ------- |
 **Request Type** | POST 
-**URL** | /acquisition/v1/subawards
+**URL** | /contract/v1/subcontracts
 **Summary** | A User will be able to submit one or multiple Subaward reports for Contracts using this endpoint
 **Consumes** | application/JSON
 **Produces** | Refer [Response JSON](#response-json)
@@ -550,7 +550,7 @@ The API will process each request as described for all Subawardees within the re
 
 ------- | -------
 **Request Type** | PUT
-**URL** | /acquisition/v1/subawards/{subawardReportNumber}
+**URL** | /contract/v1/subcontracts/{subawardReportNumber}
 **Summary** | A user will be able to update a contract subaward report
 **Consumes** | application/JSON
 **Produces** | Refer [Response JSON](#response-json)
@@ -988,7 +988,7 @@ See the [Response JSON](#response-json) section for the response structure and s
 
 ------- | -------
 **Request Type** | DELETE
-**URL** | /acquisition/v1/subawards/{subawardReportNumber}
+**URL** | /contract/v1/subcontracts/{subawardReportNumber}
 **Summary** | Used to delete a contract subaward report
 **Consumes** | application/JSON
 **Produces** | Refer [Response JSON](#response-json)
@@ -1133,7 +1133,7 @@ See the [Response JSON](#response-json) section for the response structure and s
 
 ------- | -------
 **Request Type** | GET
-**URL** | /acquisition/v1/subawards/{subawardReportNumber}
+**URL** | /contract/v1/subcontracts/{subawardReportNumber}
 **Summary** |  User will be able to retrieve a specific contract subaward report
 **Consumes** | Request Parameters
 **Produces** | Refer [Response JSON](#response-json)
@@ -1330,7 +1330,7 @@ NOTE: Will return JSON response same as POST response JSON. The generated subAwa
 
 ------- | -------
 **Request Type** | GET
-**URL** | /acquisition/v1/subawards
+**URL** | /contract/v1/subcontracts
 **Summary** |  User will be able to retrieve specific contract subaward reports based on the provided search criteria
 **Consumes** | Request Parameters
 **Produces** | Refer [Response JSON](#response-json)
