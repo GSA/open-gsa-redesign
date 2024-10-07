@@ -20,6 +20,29 @@ banner-heading: Digital Experience (DX) CALC+ Quick Rate API
  </div>
 <!-- end Alpha status alert -->
 
+<div class="usa-alert usa-alert-error" id="site-wide-alert" role="alert">
+   <div class="usa-alert-body">
+     <p>
+       <strong>LEGACY RATES API DECOMMISSION</strong>
+     </p>
+     <p>
+        <strong>DECOMMISSION DATE: February 2025</strong>
+    </p>
+     <p>
+        <a href="https://api.gsa.gov/acquisition/calc/v2/api/rates/">The legacy Rates API is being retired.</a> Users should migrate their systems and applications to use the modernized Ceiling-Rates API as soon as possible. 
+    </p>
+    <p>    
+        The new Ceiling-Rates API documentation can be found below.
+     </p>
+     <p>
+        The legacy CALC Rates API has been replaced by a modernized version powered by AWS OpenSearch with a broad range of feature enhancements, optimizations, and data quality improvements.
+     </p>
+     <p>
+        The new CALC+ application (and APIs) can be experienced at the following URL:
+        <a href="https://buy.gsa.gov/pricing/">https://buy.gsa.gov/pricing/</a>
+     </p>     
+   </div>
+ </div>
 
 ## Overview
 
@@ -36,7 +59,12 @@ The CALC+ Labor Ceiling Rates tool is powered by the CEILINGRATES API.
 The CEILINGRATES API data is refreshed everyday overnight.
 
 ## Entrypoint
-The URL for the CALC+ Quick Rate API is 
+
+The legacy URL is being retired and you should not use it.
+Please see decommissioning message above.
+https://api.gsa.gov/acquisition/calc/v2/api/rates/
+
+**The URL for the CALC+ Quick Rate API is** 
 
 `https://api.gsa.gov/acquisition/calc/v3/api/ceilingrates/`
 
