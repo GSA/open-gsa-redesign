@@ -369,19 +369,31 @@ The overall response will be a JSON array containing the status of each subcontr
 Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 Authorization | Header |  string | Yes | Valid and authorized SAM user email ID
+Content-Type | header |  string | Yes | application/json
 api_key | query | string | Yes | Valid System Account API Key
 Request JSON | Body | JSON | Yes | [Refer Submit Subaward report Assistance JSON](#submit-subaward-report-grant-json)
 
 #### Responses
 
-HTTP Status Code | Response Type | Reason  | Description
------------------|---------------|---------|------------
-201 | string | Report was created | As described below
+The overall HTTP status code for the response will be determined as follows:
 
-The API will process each request as described for all Subawardees within the request. 
-* If the Subawardee request passes all validations as specified in the [General Error Messages](#general-error-messages) section, the Subaward report for the Subawardee will be created and HTTP Status code 201 will be returned.
-* If the Subawardee request passes all validations as specified in the [Validation Failure Error Messages](#validation-failure-error-messages) section, then the report is saved in "Published" status.
-* If any validations fail, then the report is saved in "Draft" status and the validation error messages are sent back as a part of the response body. (See the [Response JSON](#response-json) section for the response structure and specific examples.) The API will return other HTTP Status codes in case of any errors as specified in the [General Error Messages](#general-error-messages) section.
+HTTP Status Code | Response Type | Description
+-----------------|---------------|------------
+201 Created | string | At least one subrecipient report was created 
+401 Unauthorized | string | Authentication failed or was not provided 
+403 Forbidden | string | Authenticated, but do not have appropriate permissions
+400 Bad Request | string | Malformed request or invalid data 
+500 Internal Server Error | string | Unexpected error occurred during processing
+
+For details on specific error messages under each of the above status codes, refer to the [General Error Messages](#general-error-messages) section. 
+
+Note: Even if some subrecipient reports fail to process, the overall status code will be 201 if at least one subrecipient report is processed successfully.
+
+The API will handle each subrecipient report in the request as below:
+* If a subrecipient report request passes all validations as specified in the [Validation Failure Error Messages](#validation-failure-error-messages) section, then the report is saved in "Published" status.  
+* If any validations fail, then the report is saved in "Draft" status and the validation error messages are sent back as a part of the response body. 
+
+The overall response will be a JSON array containing the status of each subrecipient report in the request. See the [Response JSON](#response-json) section for the response structure and specific examples.
 
 #### Examples
 
@@ -573,6 +585,7 @@ The API will process each request as described for all Subawardees within the re
 Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 Authorization | header |  string | Yes | Valid and authorized SAM user email ID
+Content-Type | header |  string | Yes | application/json
 api_key | query | string | Yes | Valid System Account API Key
 Request JSON | Body | JSON | Yes | [Refer Submit Subaward report Contract JSON](#submit-subaward-report-contract-json)
 
@@ -794,6 +807,7 @@ See the [Response JSON](#response-json) section for the response structure and s
 Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 Authorization | Header |  string | Yes | Valid and authorized SAM user email ID
+Content-Type | header |  string | Yes | application/json
 api_key | query | string | Yes | Valid System Account API Key
 Request JSON | Body | JSON | Yes | [Refer Submit Subaward report Assistance JSON](#submit-subaward-report-grant-json)
 
