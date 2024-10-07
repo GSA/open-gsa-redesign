@@ -22,10 +22,12 @@ banner-heading: Digital Experience (DX) CALC+ Quick Rate API
 
 <div class="usa-alert usa-alert-error" id="site-wide-alert" role="alert">
    <div class="usa-alert-body">
-     <h3>
-       LEGACY RATES API DECOMMISSION
-     </h3>
-     <h4>DECOMMISSION DATE: February 2025</h4>
+     <p>
+       <strong>LEGACY RATES API DECOMMISSION</strong>
+     </p>
+     <p>
+        <strong>DECOMMISSION DATE: February 2025</strong>
+    </p>
      <p>
         <a href="https://api.gsa.gov/acquisition/calc/v2/api/rates/">The legacy Rates API is being retired.</a> Users should migrate their systems and applications to use the modernized Ceiling-Rates API as soon as possible. 
     </p>
