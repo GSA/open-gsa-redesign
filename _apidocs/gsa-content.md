@@ -187,6 +187,6 @@ The API will return one of the following responses:
 
 ## Contact Us
 
-If you have questions or need help, please email us at [digitalteam@gsa.gov](mailto:digitalteam@gsa.gov) or file an issue in this [GitHub issue tracker](https://github.com/gsa/gsa-apis/issues).  
+If you have questions or need help, please email us at [digitalteam@gsa.gov](mailto:digitalteam@gsa.gov), [victoria.mcfadden@gsa.gov](mailto:victoria.mcfadden@gsa.gov),  [william.wales@gsa.gov](mailto:william.wales@gsa.gov), or file an issue in this [GitHub issue tracker](https://github.com/gsa/gsa-apis/issues).  
 
 <p><small><a href="#">Back to top</a></small></p>
