@@ -3,17 +3,22 @@ title: GSA.gov Content API
 banner-heading: GSA.gov Content API
 ---
 
-
 ## Overview
+
+<div class="usa-alert usa-alert-warning usa-alert--slim">
+  <div class="usa-alert-body">
+    <p class="usa-alert-text">
+      <strong>Disclaimer:</strong> This page contains outdated information and users may receive unexpected responses. We are currently working on updating the API endpoints.
+    </p>
+  </div>
+</div>
 
 The GSA.gov content API is an XML feed which supplies the public with a means to extract data out of the GSA.gov website. When the API returns multiple content items, it list them with the newest item(s) first, and oldest last. 
 
 <p><small><a href="#">Back to top</a></small></p>
 
+<!--
 ## Getting Started
-
-
-
 To begin using this API, you will need to register for an API Key. You can sign up for an API key below.  After registration, you will need to provide this API key in the `x-api-key` HTTP header with every API request.
 
 
@@ -96,8 +101,7 @@ To begin using this API, you will need to register for an API Key. You can sign 
 
 
 <p><small><a href="#">Back to top</a></small></p>
-
-
+-->
 ## OpenAPI Specification File
 
 You can view the full details of this API in the OpenAPI Specification file available here:
@@ -106,8 +110,6 @@ You can view the full details of this API in the OpenAPI Specification file avai
 <p><small><a href="#">Back to top</a></small></p>
 
 ## API Description
-
-
 
 This API has two primary endpoints:
 
@@ -123,7 +125,6 @@ This API has two primary endpoints:
 | ---- | ----------- |
 | Content Types | There are three options: Events - `event`; Topic Pages (meta data about GSA.gov web pages) - `cmp_page`; or Text Assets (snippets which display on pages of the site) - `text_asset`  |
 | Page Number | Each page displays 25 items, to get more results, you can goto "page 2" by adding a `/2` to the end of the URL, or "page 3" by adding a `/3`, etc. |
-
 
 **Expected Result**
 
@@ -168,7 +169,6 @@ This API has two primary endpoints:
 | owner | A numerical identifier that indicates who owns this content in this system. This is a reference to another items content_id |
 | owner | A numerical identifier that indicates who the POC is for this content in this system. This is a reference to another items content_id |
 
-
 <p><small><a href="#">Back to top</a></small></p>
 
 ## HTTP Response Codes
@@ -184,9 +184,8 @@ The API will return one of the following responses:
 
 <p><small><a href="#">Back to top</a></small></p>
 
-
 ## Contact Us
 
-If you have questions or need help, please email us at [digitalteam@gsa.gov](mailto:digitalteam@gsa.gov), [victoria.mcfadden@gsa.gov](mailto:victoria.mcfadden@gsa.gov),  [william.wales@gsa.gov](mailto:william.wales@gsa.gov), or file an issue in this [GitHub issue tracker](https://github.com/gsa/gsa-apis/issues).  
+If you have questions or need help, please email us at [digitalteam@gsa.gov](mailto:digitalteam@gsa.gov) or file an issue in this [GitHub issue tracker](https://github.com/gsa/gsa-apis/issues).  
 
 <p><small><a href="#">Back to top</a></small></p>
