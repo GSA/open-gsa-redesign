@@ -53,7 +53,7 @@ Users can provide below parameters to limit the results.
 Field Name	| Description | Required| Data Type| Applicable Versions
 ----- | ----- | ----- | ----- | -----
 api_key | Public key of users. | Yes | String | v1
-pageSize | Total number of records to be retrieved per page. This field must be a number Max Value = 1000. | No | Int | v1
+pageSize | Total number of records to be retrieved per page. This field must be a number Max Value = 1000. Default page size is 100. | No | Int | v1
 pageNumber | Indicates the page index. Default offset starts with 0. | No | Int | v1
 status | Allows users to request submitted records that were deleted. If the user does not pass any value, the system will default status = Published | No | string | v1   
 
@@ -176,14 +176,14 @@ No API Key is provided. | No API key was supplied. Please submit with a valid AP
 Production URL: <br>
  <br>
 Alpha URL: <br>
-<details>
+</details>
 
 <details>
-    <summary>Sample Response (JSON Output) v1</summary>
+    <summary>Response (JSON Output) v1</summary>
 
 <p>
 <code><pre>
-
+{}
 </pre></code>
 </p>
 </details>
@@ -203,7 +203,7 @@ Alpha URL: <br>
 
 <p>
 <code><pre>
-
+{}
 </pre></code>
 </p>
 </details>
@@ -223,7 +223,7 @@ Alpha URL: <br>
 
 <p>
 <code><pre>
-
+{}
 </pre></code>
 </p>
 </details>
@@ -243,7 +243,7 @@ Alpha URL: <br>
 
 <p>
 <code><pre>
-
+{}
 </pre></code>
 </p>
 </details>
@@ -263,7 +263,7 @@ Alpha URL: <br>
 
 <p>
 <code><pre>
-
+{}
 </pre></code>
 </p>
 </details>
@@ -280,12 +280,6 @@ Alpha URL: <br>
 
 <details>
     <summary> Sample Response (JSON Output) v1</summary>
-
-<p>
-<code><pre>
-
-</pre></code>
-</p>
 </details>
 
 ## Contact Us
