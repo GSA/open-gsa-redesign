@@ -168,16 +168,15 @@ No API Key is provided. | No API key was supplied. Please submit with a valid AP
 ## Examples
 
 
-### Example 1: Published_IDV_From2020-01-01-To'currentDate'
+### Example 1: PublishedUnchecked_IDV_From2020-01-01-To 'currentDate'
 
 <details>
     <summary>Request URL</summary>
 
-Production URL:  <br>
+Production URL: <br>
  <br>
-Alpha URL:  <br>
-
-</details>
+Alpha URL: <br>
+<details>
 
 <details>
     <summary>Sample Response (JSON Output) v1</summary>
@@ -189,17 +188,18 @@ Alpha URL:  <br>
 </p>
 </details>
 
-### Example 2: PublishedUnchecked_IDV_From2020-01-01-To'currentDate'
+### Example 2: Published_IDV_From2020-01-01-to 'currentDate'
 
 <details>
     <summary>Request URL</summary>
-Production URL:   <br>
+
+Production URL: <br>
  <br>
-Alpha URL:   <br>
+Alpha URL: <br>
 </details>
 
 <details>
-    <summary>Response (JSON Output)</summary>
+    <summary> Sample Response (JSON Output) v1</summary>
 
 <p>
 <code><pre>
@@ -208,17 +208,18 @@ Alpha URL:   <br>
 </p>
 </details>
 
-### Example 3: Deleted_IDV_From2020-01-01-To'currentDate'
+### Example 3: Deleted_IDV_From2020-01-01-To 'currentDate'
 
 <details>
     <summary>Request URL</summary>
-Production URL:   <br>
+
+Production URL: <br>
  <br>
-Alpha URL:   <br>
+Alpha URL: <br>
 </details>
 
 <details>
-    <summary>Response (JSON Output)</summary>
+    <summary> Sample Response (JSON Output) v1</summary>
 
 <p>
 <code><pre>
@@ -231,13 +232,54 @@ Alpha URL:   <br>
 
 <details>
     <summary>Request URL</summary>
-Production URL:   <br>
+
+Production URL: <br>
  <br>
-Alpha URL:   <br>
+Alpha URL: <br>
 </details>
 
 <details>
-    <summary>Response (JSON Output)</summary>
+    <summary> Sample Response (JSON Output) v1</summary>
+
+<p>
+<code><pre>
+
+</pre></code>
+</p>
+</details>
+
+### Example 5: Published_AWARD_9700_RefPiid_uniqueAwardKey_From2020-01-07-To2022-01-14
+
+<details>
+    <summary>Request URL</summary>
+
+Production URL: <br>
+ <br>
+Alpha URL: <br>
+</details>
+
+<details>
+    <summary> Sample Response (JSON Output) v1</summary>
+
+<p>
+<code><pre>
+
+</pre></code>
+</p>
+</details>
+
+### Example 6: Published_referencedIDVPIID
+
+<details>
+    <summary>Request URL</summary>
+
+Production URL: <br>
+ <br>
+Alpha URL: <br>
+</details>
+
+<details>
+    <summary> Sample Response (JSON Output) v1</summary>
 
 <p>
 <code><pre>
