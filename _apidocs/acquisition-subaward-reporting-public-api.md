@@ -15,7 +15,7 @@ The Acquisition Subaward Reporting Public API provides users with metadata on ne
 * It returns 100 records per page by default. User can configure page size by passing it as a query string in URL. Options for status is Published or Deleted. If no status is passed as parameter default value is 'Published'. E.g. https://api.sam.gov/contract/v1/subcontracts/search?pageNumber=1&pageSize=25
 * Pagination: By using the page number and page size parameters, it is possible to retrieve any desired number of records from an API. This allows for efficient retrieval of data in smaller, manageable chunks rather than retrieving all records at once.
 * The following characters are not allowed to be sent in the parameter values with the API request: & \| { } ^ \
-* If there are more than 10,000 records, users can download those records either json or csv asynchronously. The asynchronous json/csv file has max limit of 1 mil records.
+* To improve performance when search results may return thousands of records, set the page size to 1000.
 
 ## Getting Started
 
