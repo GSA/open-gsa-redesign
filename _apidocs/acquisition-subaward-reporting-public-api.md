@@ -63,7 +63,7 @@ Users can search by any of the below request filters.
 
 Filter | Description | Required | Data Type | Applicable Versions 
 ----- | ------| ----- | ----- | -----
-uniqueAwardKey | Business key to identify subawards under each prime. Unique for a contract and gives complete subaward information pertaining to that contract  | Yes | Alphanumeric | v1
+uniqueAwardKey | Business key to identify subawards under each prime. Unique for a contract and gives complete subaward information pertaining to that contract  | No | Alphanumeric | v1
 piid | Allws user to pull one single record with multiple subawards. The total records that will be shown is the number of subawards. | No | Alphanumeric | v1
 agencyId | Allows user to pull prime information to identify the contract family. | No | Numeric | v1
 referencedIdvPIID | Allows user to pull prime information to identify the contract family. | No | Alphanumeric | v1
