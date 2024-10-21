@@ -84,7 +84,7 @@ The table below lists the statuses for the Subaward reports.
 
 Code | Value     | Description
 -----|-----------------|-----------------
-1     | Draft | This status is used when the report has been saved in the system but still requires an additional update to pass all validation checks. NOTE: The reports saved from the User Interface of SAM.gov may also be in this status if the user has partially added the report data and needs to add more details before submitting the report.
+1     | Draft | This status is used when the report has been saved in the system but still requires additional updates to pass all validation checks. NOTE: The reports saved from the User Interface of SAM.gov may also be in this status if the user has partially added the report data and needs to add more details before submitting the report.
 2     | Published | This status is used when the report has passed all validation checks and has been successfully published (submitted).
 3     | Reopened | This status is used when updates are needed for a report that is in "Published" status. Until the report has passed all validations and is published again, it will stay in this status.
 4     | Deleted | This status is used for reports that have been deleted by the user. NOTE: Deleted reports will not be available for general view.
