@@ -63,7 +63,7 @@ Users can search by any of the below request filters.
 
 Filter | Description | Required | Data Type | Applicable Versions 
 ----- | ------| ----- | ----- | -----
-uniqueAwardKey | Business key to identify subawards under each prime. Unique for a contract and gives complete subaward information pertaining to that contract  | Yes | Alphanumeric | v1
+uniqueAwardKey | Business key to identify subawards under each prime. Unique for a contract and gives complete subaward information pertaining to that contract  | No | Alphanumeric | v1
 fain | Unique Identifier for grant awards. | No | Alphanumeric | v1
 agencyCode | Allows user to pull prime information to identify the contract family. | No | Numeric | v1
 fromDate | Allows users to filter by From Date. By specifying From and To Dates, records can be retreived spanning multiple years with no yearly limit. If both From Date and To Date are provided, user will retrieve records that fall within that inclusive date range. | No | string | v1
