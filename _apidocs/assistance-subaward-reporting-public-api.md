@@ -168,14 +168,14 @@ No API Key is provided. | No API key was supplied. Please submit with a valid AP
 ## Examples
 
 
-### Example 1: PublishedUnchecked_IDV_From2020-01-01-To 'currentDate'
+### Example 1: Published_UniqueAwardKey
 
 <details>
     <summary>Request URL</summary>
 
-Production URL: <br>
+Production URL: https://api.sam.gov/assistance/v1/subawards/search?status=Published&pageSize=25&pageNumber=0&uniqueAwardKey=ASST_NON_27MN12002L97E1_6925&api_key={{api_key}} <br>
  <br>
-Alpha URL: <br>
+Alpha URL: https://api-alpha.sam.gov/assistance/v1/subawards/search?status=Published&pageSize=25&pageNumber=0&uniqueAwardKey=ASST_NON_27MN12002L97E1_6925&api_key={{api_key}} <br>
 </details>
 
 <details>
@@ -183,19 +183,89 @@ Alpha URL: <br>
 
 <p>
 <code><pre>
-{}
+{
+  "totalPages": 1,
+  "totalRecords": 1,
+  "pageNumber": 0,
+  "nextPageLink": "https://api-alpha.sam.gov/assistance/v1/subawards/search?pageNumber=0&pageSize=25",
+  "previousPageLink": "https://api-alpha.sam.gov/assistance/v1/subawards/search?pageNumber=0&pageSize=25",
+  "data": [
+    {
+      "status": "Published",
+      "submittedDate": "2012-10-31",
+      "subVendorName": "CROW WING COUNTY (INC)",
+      "subVendorUei": "KRPSCRWNEPM3",
+      "subAwardNumber": "018-630-005",
+      "subAwardAmount": "30307",
+      "subAwardDate": "2012-09-19",
+      "reportUpdatedDate": "2012-10-31",
+      "subawardReportId": "84924255",
+      "subawardReportNumber": "67e15942-6353-11ef-a436-4bf2d183e71f",
+      "placeOfPerformance": {
+        "streetAddress": null,
+        "streetAddress2": null,
+        "city": "Crow Wing County",
+        "congressionalDistrict": "08",
+        "state": {
+          "code": "MN",
+          "name": "Minnesota"
+        },
+        "country": {
+          "code": "USA",
+          "name": "United States"
+        },
+        "zip": "564421200"
+      },
+      "organizationInfo": null,
+      "asistanceListingNumber": "20.205 Highway Planning and Construction",
+      "subawardDescription": "County State Aid Highway 3: Emergency Relief Work, Aggregate BASE, Bituminous Pavement REPLacement, AGGregate SHouLder, Culvert Replacement, Erosion Repair",
+      "fain": "27MN12002L97E1",
+      "actionDate": "2012-09-04",
+      "totalFedFundingAmount": "37600.0",
+      "baseObligationDate": "2012-09-04",
+      "projectDescription": "ALONG TH 11: DEVELOP A CORRIDOR MGMT PLAN FOR THE WATERS OF THE DANCING SKY SCENIC BYWAYS",
+      "baseAssistanceTypeCode": "03",
+      "baseAssistanceTypeDesc": null,
+      "agencyCode": "6925",
+      "assistanceType": null,
+      "primeEntityUei": "JL4EX4R4A647",
+      "primeEntityName": "Minnesota Department Of Transportation",
+      "uniqueAwardKey": "ASST_NON_27MN12002L97E1_6925",
+      "vendorPhysicalAddress": {
+        "streetAddress": null,
+        "streetAddress2": null,
+        "city": null,
+        "congressionalDistrict": null,
+        "state": {
+          "code": null,
+          "name": null
+        },
+        "country": {
+          "code": null,
+          "name": null
+        },
+        "zip": null
+      },
+      "subDbaName": null,
+      "subParentName": null,
+      "subParentUei": null,
+      "subBusinessType": null,
+      "subTopPayEmployee": null
+    }
+  ]
+}
 </pre></code>
 </p>
 </details>
 
-### Example 2: Published_IDV_From2020-01-01-to 'currentDate'
+### Example 2: PublishedUnchecked_UniqueAwardKey
 
 <details>
     <summary>Request URL</summary>
 
-Production URL: <br>
+Production URL: https://api.sam.gov/assistance/v1/subawards/search?status=&pageSize=25&pageNumber=0&uniqueAwardKey=ASST_NON_27MN12002L97E1_6925&api_key={{api_key}} <br>
  <br>
-Alpha URL: <br>
+Alpha URL: https://api-alpha.sam.gov/assistance/v1/subawards/search?status=&pageSize=25&pageNumber=0&uniqueAwardKey=ASST_NON_27MN12002L97E1_6925&api_key={{api_key}}  <br>
 </details>
 
 <details>
@@ -203,19 +273,89 @@ Alpha URL: <br>
 
 <p>
 <code><pre>
-{}
+{
+  "totalPages": 1,
+  "totalRecords": 1,
+  "pageNumber": 0,
+  "nextPageLink": "https://api-alpha.sam.gov/assistance/v1/subawards/search?pageNumber=0&pageSize=25",
+  "previousPageLink": "https://api-alpha.sam.gov/assistance/v1/subawards/search?pageNumber=0&pageSize=25",
+  "data": [
+    {
+      "status": "Published",
+      "submittedDate": "2012-10-31",
+      "subVendorName": "CROW WING COUNTY (INC)",
+      "subVendorUei": "KRPSCRWNEPM3",
+      "subAwardNumber": "018-630-005",
+      "subAwardAmount": "30307",
+      "subAwardDate": "2012-09-19",
+      "reportUpdatedDate": "2012-10-31",
+      "subawardReportId": "84924255",
+      "subawardReportNumber": "67e15942-6353-11ef-a436-4bf2d183e71f",
+      "placeOfPerformance": {
+        "streetAddress": null,
+        "streetAddress2": null,
+        "city": "Crow Wing County",
+        "congressionalDistrict": "08",
+        "state": {
+          "code": "MN",
+          "name": "Minnesota"
+        },
+        "country": {
+          "code": "USA",
+          "name": "United States"
+        },
+        "zip": "564421200"
+      },
+      "organizationInfo": null,
+      "asistanceListingNumber": "20.205 Highway Planning and Construction",
+      "subawardDescription": "County State Aid Highway 3: Emergency Relief Work, Aggregate BASE, Bituminous Pavement REPLacement, AGGregate SHouLder, Culvert Replacement, Erosion Repair",
+      "fain": "27MN12002L97E1",
+      "actionDate": "2012-09-04",
+      "totalFedFundingAmount": "37600.0",
+      "baseObligationDate": "2012-09-04",
+      "projectDescription": "ALONG TH 11: DEVELOP A CORRIDOR MGMT PLAN FOR THE WATERS OF THE DANCING SKY SCENIC BYWAYS",
+      "baseAssistanceTypeCode": "03",
+      "baseAssistanceTypeDesc": null,
+      "agencyCode": "6925",
+      "assistanceType": null,
+      "primeEntityUei": "JL4EX4R4A647",
+      "primeEntityName": "Minnesota Department Of Transportation",
+      "uniqueAwardKey": "ASST_NON_27MN12002L97E1_6925",
+      "vendorPhysicalAddress": {
+        "streetAddress": null,
+        "streetAddress2": null,
+        "city": null,
+        "congressionalDistrict": null,
+        "state": {
+          "code": null,
+          "name": null
+        },
+        "country": {
+          "code": null,
+          "name": null
+        },
+        "zip": null
+      },
+      "subDbaName": null,
+      "subParentName": null,
+      "subParentUei": null,
+      "subBusinessType": null,
+      "subTopPayEmployee": null
+    }
+  ]
+}
 </pre></code>
 </p>
 </details>
 
-### Example 3: Deleted_IDV_From2020-01-01-To 'currentDate'
+### Example 3: Published_FAIN_AgencyCode
 
 <details>
     <summary>Request URL</summary>
 
-Production URL: <br>
+Production URL: https://api.sam.gov/assistance/v1/subawards/search?status=Published&pageSize=25&pageNumber=0&fain=27MN12002L97E1&agencyCode=6925&fromDate=2012-01-01&toDate=2013-12-31&api_key={{api_key}} <br>
  <br>
-Alpha URL: <br>
+Alpha URL: https://api-alpha.sam.gov/assistance/v1/subawards/search?status=Published&pageSize=25&pageNumber=0&fain=27MN12002L97E1&agencyCode=6925&fromDate=2012-01-01&toDate=2013-12-31&api_key={{api_key}} <br>
 </details>
 
 <details>
@@ -223,19 +363,89 @@ Alpha URL: <br>
 
 <p>
 <code><pre>
-{}
+{
+  "totalPages": 1,
+  "totalRecords": 1,
+  "pageNumber": 0,
+  "nextPageLink": "https://api-alpha.sam.gov/assistance/v1/subawards/search?pageNumber=0&pageSize=25",
+  "previousPageLink": "https://api-alpha.sam.gov/assistance/v1/subawards/search?pageNumber=0&pageSize=25",
+  "data": [
+    {
+      "status": "Published",
+      "submittedDate": "2012-10-31",
+      "subVendorName": "CROW WING COUNTY (INC)",
+      "subVendorUei": "KRPSCRWNEPM3",
+      "subAwardNumber": "018-630-005",
+      "subAwardAmount": "30307",
+      "subAwardDate": "2012-09-19",
+      "reportUpdatedDate": "2012-10-31",
+      "subawardReportId": "84924255",
+      "subawardReportNumber": "67e15942-6353-11ef-a436-4bf2d183e71f",
+      "placeOfPerformance": {
+        "streetAddress": null,
+        "streetAddress2": null,
+        "city": "Crow Wing County",
+        "congressionalDistrict": "08",
+        "state": {
+          "code": "MN",
+          "name": "Minnesota"
+        },
+        "country": {
+          "code": "USA",
+          "name": "United States"
+        },
+        "zip": "564421200"
+      },
+      "organizationInfo": null,
+      "asistanceListingNumber": "20.205 Highway Planning and Construction",
+      "subawardDescription": "County State Aid Highway 3: Emergency Relief Work, Aggregate BASE, Bituminous Pavement REPLacement, AGGregate SHouLder, Culvert Replacement, Erosion Repair",
+      "fain": "27MN12002L97E1",
+      "actionDate": "2012-09-04",
+      "totalFedFundingAmount": "37600.0",
+      "baseObligationDate": "2012-09-04",
+      "projectDescription": "ALONG TH 11: DEVELOP A CORRIDOR MGMT PLAN FOR THE WATERS OF THE DANCING SKY SCENIC BYWAYS",
+      "baseAssistanceTypeCode": "03",
+      "baseAssistanceTypeDesc": null,
+      "agencyCode": "6925",
+      "assistanceType": null,
+      "primeEntityUei": "JL4EX4R4A647",
+      "primeEntityName": "Minnesota Department Of Transportation",
+      "uniqueAwardKey": "ASST_NON_27MN12002L97E1_6925",
+      "vendorPhysicalAddress": {
+        "streetAddress": null,
+        "streetAddress2": null,
+        "city": null,
+        "congressionalDistrict": null,
+        "state": {
+          "code": null,
+          "name": null
+        },
+        "country": {
+          "code": null,
+          "name": null
+        },
+        "zip": null
+      },
+      "subDbaName": null,
+      "subParentName": null,
+      "subParentUei": null,
+      "subBusinessType": null,
+      "subTopPayEmployee": null
+    }
+  ]
+}
 </pre></code>
 </p>
 </details>
 
-### Example 4: Published_AWARD_4732_From2021-02-01-To2021-02-28
+### Example 4: Published_FAIN_AgencyCode_UniqueAwardKey
 
 <details>
     <summary>Request URL</summary>
 
-Production URL: <br>
+Production URL: https://api.sam.gov/assistance/v1/subawards/search?status=Published&pageSize=25&pageNumber=0&fain=27MN12002L97E1&uniqueAwardKey=ASST_NON_27MN12002L97E1_6925&agencyCode=6925&fromDate=2012-01-01&toDate=2013-09-29&api_key={{api_key}} <br>
  <br>
-Alpha URL: <br>
+Alpha URL: https://api-alpha.sam.gov/assistance/v1/subawards/search?status=Published&pageSize=25&pageNumber=0&fain=27MN12002L97E1&uniqueAwardKey=ASST_NON_27MN12002L97E1_6925&agencyCode=6925&fromDate=2012-01-01&toDate=2013-09-29&api_key={{api_key}} <br>
 </details>
 
 <details>
@@ -243,19 +453,89 @@ Alpha URL: <br>
 
 <p>
 <code><pre>
-{}
+{
+  "totalPages": 1,
+  "totalRecords": 1,
+  "pageNumber": 0,
+  "nextPageLink": "https://api-alpha.sam.gov/assistance/v1/subawards/search?pageNumber=0&pageSize=25",
+  "previousPageLink": "https://api-alpha.sam.gov/assistance/v1/subawards/search?pageNumber=0&pageSize=25",
+  "data": [
+    {
+      "status": "Published",
+      "submittedDate": "2012-10-31",
+      "subVendorName": "CROW WING COUNTY (INC)",
+      "subVendorUei": "KRPSCRWNEPM3",
+      "subAwardNumber": "018-630-005",
+      "subAwardAmount": "30307",
+      "subAwardDate": "2012-09-19",
+      "reportUpdatedDate": "2012-10-31",
+      "subawardReportId": "84924255",
+      "subawardReportNumber": "67e15942-6353-11ef-a436-4bf2d183e71f",
+      "placeOfPerformance": {
+        "streetAddress": null,
+        "streetAddress2": null,
+        "city": "Crow Wing County",
+        "congressionalDistrict": "08",
+        "state": {
+          "code": "MN",
+          "name": "Minnesota"
+        },
+        "country": {
+          "code": "USA",
+          "name": "United States"
+        },
+        "zip": "564421200"
+      },
+      "organizationInfo": null,
+      "asistanceListingNumber": "20.205 Highway Planning and Construction",
+      "subawardDescription": "County State Aid Highway 3: Emergency Relief Work, Aggregate BASE, Bituminous Pavement REPLacement, AGGregate SHouLder, Culvert Replacement, Erosion Repair",
+      "fain": "27MN12002L97E1",
+      "actionDate": "2012-09-04",
+      "totalFedFundingAmount": "37600.0",
+      "baseObligationDate": "2012-09-04",
+      "projectDescription": "ALONG TH 11: DEVELOP A CORRIDOR MGMT PLAN FOR THE WATERS OF THE DANCING SKY SCENIC BYWAYS",
+      "baseAssistanceTypeCode": "03",
+      "baseAssistanceTypeDesc": null,
+      "agencyCode": "6925",
+      "assistanceType": null,
+      "primeEntityUei": "JL4EX4R4A647",
+      "primeEntityName": "Minnesota Department Of Transportation",
+      "uniqueAwardKey": "ASST_NON_27MN12002L97E1_6925",
+      "vendorPhysicalAddress": {
+        "streetAddress": null,
+        "streetAddress2": null,
+        "city": null,
+        "congressionalDistrict": null,
+        "state": {
+          "code": null,
+          "name": null
+        },
+        "country": {
+          "code": null,
+          "name": null
+        },
+        "zip": null
+      },
+      "subDbaName": null,
+      "subParentName": null,
+      "subParentUei": null,
+      "subBusinessType": null,
+      "subTopPayEmployee": null
+    }
+  ]
+}
 </pre></code>
 </p>
 </details>
 
-### Example 5: Published_AWARD_9700_RefPiid_uniqueAwardKey_From2020-01-07-To2022-01-14
+### Example 5: Deleted_FromDate_ToDate
 
 <details>
     <summary>Request URL</summary>
 
-Production URL: <br>
+Production URL: https://api.sam.gov/assistance/v1/subawards/search?status=Deleted&pageSize=25&pageNumber=0&fromDate=2010-04-15&toDate=2019-04-15&api_key={{api_key}} <br>
  <br>
-Alpha URL: <br>
+Alpha URL: https://api-alpha.sam.gov/assistance/v1/subawards/search?status=Deleted&pageSize=25&pageNumber=0&fromDate=2010-04-15&toDate=2019-04-15&api_key={{api_key}} <br>
 </details>
 
 <details>
@@ -263,23 +543,341 @@ Alpha URL: <br>
 
 <p>
 <code><pre>
-{}
+{
+  "totalPages": 1,
+  "totalRecords": 3,
+  "pageNumber": 0,
+  "nextPageLink": "https://api-alpha.sam.gov/assistance/v1/subawards/search?pageNumber=0&pageSize=25",
+  "previousPageLink": "https://api-alpha.sam.gov/assistance/v1/subawards/search?pageNumber=0&pageSize=25",
+  "data": [
+    {
+      "status": "Deleted",
+      "submittedDate": "2016-10-24",
+      "subVendorName": "VINTON, TOWN OF",
+      "subVendorUei": "FBA2ZQK26QV3",
+      "subAwardNumber": "109611",
+      "subAwardAmount": "74400",
+      "subAwardDate": "2016-09-25",
+      "reportUpdatedDate": "2016-10-24",
+      "subawardReportId": "85005788",
+      "subawardReportNumber": "cdabe7ce-6353-11ef-a436-4bf2d183e71f",
+      "placeOfPerformance": {
+        "streetAddress": null,
+        "streetAddress2": null,
+        "city": "vinton",
+        "congressionalDistrict": "09",
+        "state": {
+          "code": "VA",
+          "name": "Virginia"
+        },
+        "country": {
+          "code": "USA",
+          "name": "United States"
+        },
+        "zip": "241772531"
+      },
+      "organizationInfo": null,
+      "asistanceListingNumber": "20.205 Highway Planning and Construction",
+      "subawardDescription": "TOWN OF VINTON ",
+      "fain": "515128374M3001",
+      "actionDate": "2016-09-25",
+      "totalFedFundingAmount": "74400.0",
+      "baseObligationDate": "2016-09-25",
+      "projectDescription": "TOWN OF VINTON",
+      "baseAssistanceTypeCode": "03",
+      "baseAssistanceTypeDesc": null,
+      "agencyCode": "6925",
+      "assistanceType": null,
+      "primeEntityUei": "G7FMER65EXJ9",
+      "primeEntityName": "Va Dept Of Transportation",
+      "uniqueAwardKey": "ASST_NON_515128374M3001_6925",
+      "vendorPhysicalAddress": {
+        "streetAddress": "311 S POLLARD STREET",
+        "streetAddress2": null,
+        "city": "vinton",
+        "congressionalDistrict": "06",
+        "state": {
+          "code": "VA",
+          "name": "Virginia"
+        },
+        "country": {
+          "code": "USA",
+          "name": "United States"
+        },
+        "zip": "241790000"
+      },
+      "subDbaName": null,
+      "subParentName": "VINTON, TOWN OF",
+      "subParentUei": "FBA2ZQK26QV3",
+      "subBusinessType": [
+        {
+          "code": "12",
+          "name": "U.S. Local Government"
+        },
+        {
+          "code": "C6",
+          "name": "Municipality"
+        },
+        {
+          "code": "FO",
+          "name": "Township"
+        }
+      ],
+      "subTopPayEmployee": null
+    },
+    {
+      "status": "Deleted",
+      "submittedDate": "2012-06-28",
+      "subVendorName": "MANCHESTER, CITY OF",
+      "subVendorUei": "CNSJJ8B31T48",
+      "subAwardNumber": "2011CD37",
+      "subAwardAmount": "25000",
+      "subAwardDate": "2011-06-08",
+      "reportUpdatedDate": "2012-06-28",
+      "subawardReportId": "84568403",
+      "subawardReportNumber": "43cd5f9c-6353-11ef-a436-4bf2d183e71f",
+      "placeOfPerformance": {
+        "streetAddress": null,
+        "streetAddress2": null,
+        "city": "Manchester",
+        "congressionalDistrict": "01",
+        "state": {
+          "code": "NH",
+          "name": "New Hampshire"
+        },
+        "country": {
+          "code": "USA",
+          "name": "United States"
+        },
+        "zip": "031012101"
+      },
+      "organizationInfo": null,
+      "asistanceListingNumber": "16.727 Enforcing Underage Drinking Laws Program",
+      "subawardDescription": "Enforcing underage drinking laws, compliance checks, party patrols",
+      "fain": "2010AHFX0058",
+      "actionDate": "2010-06-07",
+      "totalFedFundingAmount": "356400.0",
+      "baseObligationDate": "2010-06-07",
+      "projectDescription": "2010 Enforcing Underage Drinking Laws Program",
+      "baseAssistanceTypeCode": "04",
+      "baseAssistanceTypeDesc": null,
+      "agencyCode": "1550",
+      "assistanceType": null,
+      "primeEntityUei": "RQ3MKLRJ4LV6",
+      "primeEntityName": "State of New Hampshire",
+      "uniqueAwardKey": "ASST_NON_2010AHFX0058_1550",
+      "vendorPhysicalAddress": {
+        "streetAddress": "351 CHESTNUT ST",
+        "streetAddress2": null,
+        "city": "manchester",
+        "congressionalDistrict": "01",
+        "state": {
+          "code": "NH",
+          "name": "New Hampshire"
+        },
+        "country": {
+          "code": "USA",
+          "name": "United States"
+        },
+        "zip": "031012201"
+      },
+      "subDbaName": null,
+      "subParentName": "MANCHESTER, CITY OF",
+      "subParentUei": "Z93ZBNUC43X8",
+      "subBusinessType": [
+        {
+          "code": "12",
+          "name": "U.S. Local Government"
+        },
+        {
+          "code": "C6",
+          "name": "Municipality"
+        }
+      ],
+      "subTopPayEmployee": null
+    },
+    {
+      "status": "Deleted",
+      "submittedDate": "2013-04-15",
+      "subVendorName": "AUSTIN COMMUNITY COLLEGE",
+      "subVendorUei": "ZSFBTJE461W5",
+      "subAwardNumber": "13008-8-1925-1",
+      "subAwardAmount": "19114",
+      "subAwardDate": "2013-04-03",
+      "reportUpdatedDate": "2013-04-15",
+      "subawardReportId": "83532699",
+      "subawardReportNumber": "da0ef0e8-6352-11ef-a436-4bf2d183e71f",
+      "placeOfPerformance": {
+        "streetAddress": null,
+        "streetAddress2": null,
+        "city": "Austin",
+        "congressionalDistrict": "25",
+        "state": {
+          "code": "TX",
+          "name": "Texas"
+        },
+        "country": {
+          "code": "USA",
+          "name": "United States"
+        },
+        "zip": "787524341"
+      },
+      "organizationInfo": null,
+      "asistanceListingNumber": "47.076 Education and Human Resources",
+      "subawardDescription": "This proposed project is a 2-year Capacity Building project on the Noyce Scholarship track at Texas State University-San Marcos, in collaboration with San Antonio College and Austin Community College, two neighboring 2-year colleges.  The main goal of the project is to foster a thriving community of undergraduate students at Texas State who identify as science educatiors, which will serve in the future as the supply of applicants to a Noyce Phase I Scholarship Project.  The community will be built and supported via two major mechanisms:  the \"Communities\" component and the \"Pathways\" component, which is alignment of STEM degrees with teacher certifications.  ",
+      "fain": "1240036",
+      "actionDate": "2012-07-26",
+      "totalFedFundingAmount": "350000.0",
+      "baseObligationDate": "2012-07-26",
+      "projectDescription": "\"Communities & Pathways\": Cultivating Science Educator Identity for Undergraduates through an Inclusive Physics Learning Assistant Program & STEM Tea",
+      "baseAssistanceTypeCode": "04",
+      "baseAssistanceTypeDesc": null,
+      "agencyCode": "4900",
+      "assistanceType": null,
+      "primeEntityUei": "HS5HWWK1AAU5",
+      "primeEntityName": "Texas State University-San Marcos",
+      "uniqueAwardKey": "ASST_NON_1240036_4900",
+      "vendorPhysicalAddress": {
+        "streetAddress": "9101 TUSCANY WAY",
+        "streetAddress2": null,
+        "city": "austin",
+        "congressionalDistrict": "10",
+        "state": {
+          "code": "TX",
+          "name": "Texas"
+        },
+        "country": {
+          "code": "USA",
+          "name": "United States"
+        },
+        "zip": "787544700"
+      },
+      "subDbaName": null,
+      "subParentName": "AUSTIN COMMUNITY COLLEGE",
+      "subParentUei": "ZSFBTJE461W5",
+      "subBusinessType": [
+        {
+          "code": "A8",
+          "name": "Nonprofit Organization"
+        },
+        {
+          "code": "M8",
+          "name": "Educational Institution"
+        },
+        {
+          "code": "OH",
+          "name": "State Controlled Institution of Higher Learning"
+        }
+      ],
+      "subTopPayEmployee": null
+    }
+  ]
+}
 </pre></code>
 </p>
 </details>
 
-### Example 6: Published_referencedIDVPIID
+### Example 6: Deleted_FAIN_AgencyCode_UniqueAwardKey
 
 <details>
     <summary>Request URL</summary>
 
-Production URL: <br>
+Production URL: https://api.sam.gov/assistance/v1/subawards/search?status=Deleted&pageSize=25&pageNumber=0&uniqueAwardKey=ASST_NON_1240036_4900&fain=1240036&agencyCode=4900&fromDate=2013-01-01&toDate=2013-12-31&api_key={{api_key}} <br>
  <br>
-Alpha URL: <br>
+Alpha URL: https://api-alpha.sam.gov/assistance/v1/subawards/search?status=Deleted&pageSize=25&pageNumber=0&uniqueAwardKey=ASST_NON_1240036_4900&fain=1240036&agencyCode=4900&fromDate=2013-01-01&toDate=2013-12-31&api_key={{api_key}} <br>
 </details>
 
 <details>
     <summary> Sample Response (JSON Output) v1</summary>
+
+</p>
+</pre></code>
+{
+  "totalPages": 1,
+  "totalRecords": 1,
+  "pageNumber": 0,
+  "nextPageLink": "https://api-alpha.sam.gov/assistance/v1/subawards/search?pageNumber=0&pageSize=25",
+  "previousPageLink": "https://api-alpha.sam.gov/assistance/v1/subawards/search?pageNumber=0&pageSize=25",
+  "data": [
+    {
+      "status": "Deleted",
+      "submittedDate": "2013-04-15",
+      "subVendorName": "AUSTIN COMMUNITY COLLEGE",
+      "subVendorUei": "ZSFBTJE461W5",
+      "subAwardNumber": "13008-8-1925-1",
+      "subAwardAmount": "19114",
+      "subAwardDate": "2013-04-03",
+      "reportUpdatedDate": "2013-04-15",
+      "subawardReportId": "83532699",
+      "subawardReportNumber": "da0ef0e8-6352-11ef-a436-4bf2d183e71f",
+      "placeOfPerformance": {
+        "streetAddress": null,
+        "streetAddress2": null,
+        "city": "Austin",
+        "congressionalDistrict": "25",
+        "state": {
+          "code": "TX",
+          "name": "Texas"
+        },
+        "country": {
+          "code": "USA",
+          "name": "United States"
+        },
+        "zip": "787524341"
+      },
+      "organizationInfo": null,
+      "asistanceListingNumber": "47.076 Education and Human Resources",
+      "subawardDescription": "This proposed project is a 2-year Capacity Building project on the Noyce Scholarship track at Texas State University-San Marcos, in collaboration with San Antonio College and Austin Community College, two neighboring 2-year colleges.  The main goal of the project is to foster a thriving community of undergraduate students at Texas State who identify as science educatiors, which will serve in the future as the supply of applicants to a Noyce Phase I Scholarship Project.  The community will be built and supported via two major mechanisms:  the \"Communities\" component and the \"Pathways\" component, which is alignment of STEM degrees with teacher certifications.  ",
+      "fain": "1240036",
+      "actionDate": "2012-07-26",
+      "totalFedFundingAmount": "350000.0",
+      "baseObligationDate": "2012-07-26",
+      "projectDescription": "\"Communities & Pathways\": Cultivating Science Educator Identity for Undergraduates through an Inclusive Physics Learning Assistant Program & STEM Tea",
+      "baseAssistanceTypeCode": "04",
+      "baseAssistanceTypeDesc": null,
+      "agencyCode": "4900",
+      "assistanceType": null,
+      "primeEntityUei": "HS5HWWK1AAU5",
+      "primeEntityName": "Texas State University-San Marcos",
+      "uniqueAwardKey": "ASST_NON_1240036_4900",
+      "vendorPhysicalAddress": {
+        "streetAddress": "9101 TUSCANY WAY",
+        "streetAddress2": null,
+        "city": "austin",
+        "congressionalDistrict": "10",
+        "state": {
+          "code": "TX",
+          "name": "Texas"
+        },
+        "country": {
+          "code": "USA",
+          "name": "United States"
+        },
+        "zip": "787544700"
+      },
+      "subDbaName": null,
+      "subParentName": "AUSTIN COMMUNITY COLLEGE",
+      "subParentUei": "ZSFBTJE461W5",
+      "subBusinessType": [
+        {
+          "code": "A8",
+          "name": "Nonprofit Organization"
+        },
+        {
+          "code": "M8",
+          "name": "Educational Institution"
+        },
+        {
+          "code": "OH",
+          "name": "State Controlled Institution of Higher Learning"
+        }
+      ],
+      "subTopPayEmployee": null
+    }
+  ]
+}
+</pre></code>
+</p>
 </details>
 
 ## Contact Us
