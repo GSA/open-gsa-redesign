@@ -145,14 +145,10 @@ For page size, user provides page size <=0 or >1000. | PageSize valid range is 1
 For page number, user provides page number < 0. | PageNumber must be a positive number.
 For limit, user provides range beyond 1000. | Limit valid range is 0-1000. Please provide valid input.
 For limit or offset, user inputs characters/special characters. | Limit/Offset must be a positive integer.
-User does not provide postedFrom and postedTo values. | PostedFrom and PostedTo are mandatory.
-For postedFrom, postedTo, rdlfrom, rdlto, user enters an invalid date format. | Invalid Date Entered. Expected date format is MM/dd/yyyy. 
-User provides more than 1 year of date range for postedFrom and postedTo. | Date range can't be more than one year apart. 
 From Date has invalid date format. | Invalid FromDate. Date must be in format 'yyyy-MM-dd'.
 To Date has invalid date format. | Invalid To Date. Date must be in format 'yyyy-MM-dd'. 
 From Date value is after To Date value. | From Date cannot be after To date. Please provide valid input. 
 To Date value is after Current Date value. | To Date cannot be after the current date. Please provide valid input.
-Users provides more than 1 year of date range from rdlfrom and rdlto. | Date range must be 1 year apart.
 Content in Description link is not available. | Description Not Found.
 Status Value is invalid. | Valid status values are: Deleted, Published. 
 UniqueAwardKey is invalid. | UniqueAwardKey must consist of alphanumeric characters only, with the underscore '_' being the only allowed special character.
