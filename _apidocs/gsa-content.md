@@ -8,7 +8,7 @@ banner-heading: GSA.gov Content API
 <div class="usa-alert usa-alert-warning usa-alert--slim">
   <div class="usa-alert-body">
     <p class="usa-alert-text">
-      <strong>Disclaimer:</strong> This page contains outdated information and users may receive unexpected responses. We are currently working on updating the API endpoints.
+      <strong>Disclaimer:</strong> This page contains outdated information and users may receive unexpected responses.
     </p>
   </div>
 </div>
@@ -186,6 +186,6 @@ The API will return one of the following responses:
 
 ## Contact Us
 
-If you have questions or need help, please email us at [digitalteam@gsa.gov](mailto:digitalteam@gsa.gov) or file an issue in this [GitHub issue tracker](https://github.com/gsa/gsa-apis/issues).  
+If you have questions or need help, please file an issue in this [GitHub issue tracker](https://github.com/gsa/gsa-apis/issues).  
 
 <p><small><a href="#">Back to top</a></small></p>
