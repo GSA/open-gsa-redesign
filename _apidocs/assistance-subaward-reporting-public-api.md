@@ -25,11 +25,11 @@ Assistance Subaward Reporting Public API can be accessed from Production or Alph
 
 **Production**
 * https://api.sam.gov/assistance/v1/subawards/search
-* https://api.sam.gov/assistance/v1/subawards/search?status=Delete
+* https://api.sam.gov/assistance/v1/subawards/search?status=Deleted
 
 **Alpha**
 * https://api-alpha.sam.gov/assistance/v1/subawards/search
-* https://api-alpha.sam.gov/assistance/v1/subawards/search?status=Delete
+* https://api-alpha.sam.gov/assistance/v1/subawards/search?status=Deleted
 
 
 ## Authentication and API Keys
