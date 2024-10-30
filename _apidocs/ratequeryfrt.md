@@ -101,7 +101,9 @@ To begin using this API, you will need to register for an API Key. You can sign 
 <noscript>Please enable JavaScript to signup for an <a href="http://api.data.gov/">api.data.gov</a> API key.</noscript>
 {% endraw %}  
 
-•	After registration, you will need to request the Agency Token by sending an email to transportation.programs@gsa.gov.
+•	After the API key registration, you will need to request the Agency Token by sending an email to transportation.programs@gsa.gov. 
+  You must also attach to that email a completed copy of the Memorandum Of Understanding (MOU). [Click here to download the MOU template](https://github.com/user-attachments/files/17574538/GSA_FAS_FMP_TMSS2_FRT_Rate_Query_API_MOU_Template.docx).
+
  
 •	Then you will need to provide this API key in the x-api-key and Agency Token in the x-agency-token of HTTP header with every API request.
  
@@ -339,6 +341,81 @@ Response :
     }
 ]
 ```
+<p><small><a href="#">Back to top</a></small></p>
+
+
+**Optional Endpoint:** https://api.gsa.gov/travel/tmss/v1/uspslookup/?cityName=  
+
+**API Method:** GET
+
+**Description:** This API can be used to lookup/search city name or Zip codes. Use the keyword **cityName=** to pass the query param.
+
+**API-KEY:** API-KEY obtained for the primary endpoint can be used and must be passed as a HTTP header name **x-api-key** .
+  
+  **API Query Parameters:**
+  
+  This API must be used by including at least one of the following params
+   - the City Name or a biginning letter of the city name or a few beginning letters of the City Name
+   - Zip code or a beginning digit of a zip code or a few beginning digits of a Zip code
+
+  **Expected Response**
+  
+  | Response Object | Description |
+  | ---- | ----------- |
+  | uspsZipId | TMSS 2.0 data ref ID |
+  | zipCode |	Zip Code |
+  | zipClassificationCode |	ZIP classification codes (P - PO Box, U - unclassified, " " - no classification) |
+  | cityName |	City Name |
+  | cityAbbrev |	City Abbrevation (if availabale) |
+  | stateAbbrev |	State Code |
+  | countyNo |	County Number |
+  | countyName |	County Name |
+  | createdDate |	Initial Data creation Date |
+  | updateProgram |	Update Program (internal use) |
+  | updateId |	For internal use |
+  | updateDate |	Date of last updation (internal use) |
+  | stateId |	For internal use |
+
+  <p><small><a href="#">Back to top</a></small></p>
+  
+ **Sample Request and Response for the optional endpoint:**
+
+ Request: https://api.data.gov/TEST/travel/tmss/v1/uspslookup/?cityName=Glen
+
+ Response:
+ 
+    {
+        "uspsZipId": 4536,
+        "zipCode": "03238",
+        "zipClassificationCode": "P",
+        "cityName": "GLENCLIFF",
+        "cityAbbrev": "",
+        "stateAbbrev": "NH",
+        "countyNo": "009",
+        "countyName": "GRAFTON",
+        "createdDate": "2019-05-03T16:57:05.000+00:00",
+        "updateProgram": "Manual Data Load Feb. 3 2024",
+        "updateId": null,
+        "updateDate": "2024-02-03T17:41:29.000+00:00",
+        "stateId": null
+    },
+    {
+        "uspsZipId": 4845,
+        "zipCode": "03838",
+        "zipClassificationCode": "",
+        "cityName": "GLEN",
+        "cityAbbrev": "",
+        "stateAbbrev": "NH",
+        "countyNo": "003",
+        "countyName": "CARROLL",
+        "createdDate": "2019-05-03T16:57:05.000+00:00",
+        "updateProgram": "Manual Data Load Feb. 3 2024",
+        "updateId": null,
+        "updateDate": "2024-02-03T17:41:31.000+00:00",
+        "stateId": null
+    } ...
+
+    
 <p><small><a href="#">Back to top</a></small></p>
 
 ## Feedback
