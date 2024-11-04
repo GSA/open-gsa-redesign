@@ -20,7 +20,7 @@ banner-heading: SAM.gov Entity Management API
         <ul style="padding-left: 50px;">
             <li>Alpha: November 25, 2024</li>
             <li>Production: December 6, 2024</li>
-        </ul>
+        </ul><br/>
         V4 includes a new Exceeds Domestic Threshold field under the Reps and Certs Section -> Certification Subsection in the FAR Responses Lists of Answers list. The field location is as follows: 
         <br><br>
         <code>repsAndCerts section -> certifications sub-section -> fARResponses list -> listOfAnswers list -> endProductsList list -> exceedsDomesticThreshold string</code>
