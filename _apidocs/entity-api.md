@@ -17,7 +17,7 @@ banner-heading: SAM.gov Entity Management API
    <div class="usa-alert-body">
      <p class="usa-alert-text">
         Version 4 (V4) of the Entity Management API is being released on:
-        <ul style="padding-left: 20px;">
+        <ul style="padding-left: 50px;">
             <li>Alpha: November 25, 2024</li>
             <li>Production: December 6, 2024</li>
         </ul>
