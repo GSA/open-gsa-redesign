@@ -13,6 +13,26 @@ banner-heading: SAM.gov Entity Management API
    </div>
  </div>
 
+<div class="usa-alert usa-alert-warning" id="site-wide-alert" role="alert">
+   <div class="usa-alert-body">
+     <p class="usa-alert-text">
+        Version 4 (V4) of the Entity Management API is being released on:
+        <ul>
+            <li>Alpha: November 25, 2024</li>
+            <li>Production: December 6, 2024</li>
+        </ul>
+        V4 includes a new Exceeds Domestic Threshold field under the Reps and Certs Section -> Certification Subsection in the FAR Responses Lists of Answers list. The field location is as follows: 
+        <br><br>
+        <code>repsAndCerts section -> certifications sub-section -> fARResponses list -> listOfAnswers list -> endProductsList list -> exceedsDomesticThreshold string</code>
+        <br><br>
+        The new field is a Yes/No value and is added as part of Reps and Certs (version 72). This change does not resolve Reps and Certs issues impacting other services. No other SAM.gov APIs are impacted as part of this change.
+        <br><br>
+        Please update your systems to use the latest Entity Management API if necessary.
+     </p>
+   </div>
+ </div>
+
+
 ## Overview
 The Entity Management API allows users to request Unclassified ("Public"), Controlled Unclassified Information (CUI) "For Official Use Only" (FOUO) or CUI "Sensitive" entity data, based on the sensitivity level of the user account and through several optional request parameters.
 
