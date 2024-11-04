@@ -18,8 +18,8 @@ banner-heading: SAM.gov Entity Management API
      <p class="usa-alert-text">
         Version 4 (V4) of the Entity Management API is being released on:
         <ul>
-            &nbsp;&nbsp;<li>Alpha: November 25, 2024</li>
-            &nbsp;&nbsp;<li>Production: December 6, 2024</li>
+            <li>&nbsp;&nbsp;Alpha: November 25, 2024</li>
+            <li>&nbsp;&nbsp;Production: December 6, 2024</li>
         </ul>
         V4 includes a new Exceeds Domestic Threshold field under the Reps and Certs Section -> Certification Subsection in the FAR Responses Lists of Answers list. The field location is as follows: 
         <br><br>
