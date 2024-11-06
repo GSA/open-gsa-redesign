@@ -124,7 +124,147 @@ subEntityTopPayEmployee | Sub Entity Top Pay Employee | string | v1
 
 ## Open API Specification File 
 
-You can view the full details of this API’s in the OpenAPI Specification file available here: Link to openapi. yaml specification file
+You can view the full details of this API in the OpenAPI Specification file available here: <a href="v1/ffata-search-openapi.yaml" download="ffata-search-v1">OpenAPI File</a>
+
+
+<details>
+<summary>Acquisition Subaward Outbound v1</summary>
+<p>
+<code><pre>
+ /{type}/v1/{subType}/search:
+    get:
+      tags:
+      - Subaward Search Module API
+      - OpenSearch APIs
+      summary: Search entries
+      description: Search entries
+      operationId: search
+      parameters:
+      - name: pageNumber
+        in: query
+        required: false
+        schema:
+          type: string
+          default: "0"
+      - name: pageSize
+        in: query
+        required: false
+        schema:
+          type: string
+          default: "100"
+      - name: status
+        in: query
+        required: false
+        schema:
+          type: string
+          default: Published
+      - name: uniqueAwardKey
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: piid
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: agencyId
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: referencedIDVAgencyId
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: primeAwardType
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: referencedIDVPIID
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: fain
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: agencyCode
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: fromDate
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: toDate
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: type
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: subType
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        "500":
+          description: Internal Server Error
+          content:
+            '*/*':
+              schema:
+                type: object
+        "200":
+          description: successful operation
+          content:
+            '*/*':
+              schema:
+                type: object
+        "404":
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                type: object
+        "403":
+          description: Forbidden
+          content:
+            '*/*':
+              schema:
+                type: object
+        "400":
+          description: Bad Request
+          content:
+            '*/*':
+              schema:
+                type: object
+        "501":
+          description: Not Implemented
+          content:
+            '*/*':
+              schema:
+                type: object
+        "405":
+          description: Validation exception
+          content:
+            '*/*':
+              schema:
+                type: object
+</pre></code>
+</p>
+</details>
+
 
 ## HTTP Response Codes 
 
@@ -164,7 +304,7 @@ No API Key is provided. | No API key was supplied. Please submit with a valid AP
 ## Examples
 
 
-### Example 1: PublishedUnchecked_IDV_From2020-01-07-To 2021-01-06
+### Example 1: Search by IDV from 2020-01-07 to 2021-01-06 
 
 <details>
     <summary>Request URL</summary>
@@ -273,7 +413,7 @@ Alpha URL: https://api-alpha.sam.gov/contract/v1/subcontracts/search?pageSize=25
 </p>
 </details>
 
-### Example 2: Published_IDV_From2020-01-01-to 'currentDate'
+### Example 2: Search IDV from 2020-01-01 to Current Date
 
 <details>
     <summary>Request URL</summary>
@@ -382,7 +522,7 @@ Alpha URL: https://api-alpha.sam.gov/contract/v1/subcontracts/search?status=Publ
 </p>
 </details>
 
-### Example 3: Deleted_IDV_From2020-01-01-To 'currentDate'
+### Example 3: Search deleted records by IDV from 2020-01-01 to Current Date
 
 <details>
     <summary>Request URL</summary>
@@ -508,7 +648,7 @@ Alpha URL: https://api-alpha.sam.gov/contract/v1/subcontracts/search?status=Dele
 </p>
 </details>
 
-### Example 4: Published_AWARD_4732_From2021-02-01-To2021-02-28
+### Example 4: Search by Agency ID from 2021-02-01 to 2021-02-28
 
 <details>
     <summary>Request URL</summary>
@@ -2019,7 +2159,7 @@ Alpha URL: https://api-alpha.sam.gov/contract/v1/subcontracts/search?status=Publ
 </p>
 </details>
 
-### Example 5: Published_AWARD_9700_RefPiid_uniqueAwardKey_From2020-01-07-To2022-01-14
+### Example 5: Search by Agency ID, ReferenceIDVPIID, and Unique Award Key from 2020-01-07 to 2022-01-14 
 
 <details>
     <summary>Request URL</summary>
@@ -2128,7 +2268,7 @@ Alpha URL: https://api-alpha.sam.gov/contract/v1/subcontracts/search?status=Publ
 </p>
 </details>
 
-### Example 6: Published_referencedIDVPIID
+### Example 6: Search by ReferenceIDVPIID
 
 <details>
     <summary>Request URL</summary>
