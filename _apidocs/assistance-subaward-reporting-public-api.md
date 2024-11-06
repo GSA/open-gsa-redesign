@@ -122,7 +122,146 @@ subEntityTopPayEmployee | Sub Entity Top Pay Employee | string | v1
 
 ## Open API Specification File 
 
-You can view the full details of this API’s in the OpenAPI Specification file available here: Link to openapi. yaml specification file
+You can view the full details of this API in the OpenAPI Specification file available here: <a href="v1/ffata-search-openapi.yaml" download="ffata-search-v1">OpenAPI File</a>
+
+
+<details>
+<summary>Acquisition Subaward Outbound v1</summary>
+<p>
+<code><pre>
+ /{type}/v1/{subType}/search:
+    get:
+      tags:
+      - Subaward Search Module API
+      - OpenSearch APIs
+      summary: Search entries
+      description: Search entries
+      operationId: search
+      parameters:
+      - name: pageNumber
+        in: query
+        required: false
+        schema:
+          type: string
+          default: "0"
+      - name: pageSize
+        in: query
+        required: false
+        schema:
+          type: string
+          default: "100"
+      - name: status
+        in: query
+        required: false
+        schema:
+          type: string
+          default: Published
+      - name: uniqueAwardKey
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: piid
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: agencyId
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: referencedIDVAgencyId
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: primeAwardType
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: referencedIDVPIID
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: fain
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: agencyCode
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: fromDate
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: toDate
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: type
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: subType
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        "500":
+          description: Internal Server Error
+          content:
+            '*/*':
+              schema:
+                type: object
+        "200":
+          description: successful operation
+          content:
+            '*/*':
+              schema:
+                type: object
+        "404":
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                type: object
+        "403":
+          description: Forbidden
+          content:
+            '*/*':
+              schema:
+                type: object
+        "400":
+          description: Bad Request
+          content:
+            '*/*':
+              schema:
+                type: object
+        "501":
+          description: Not Implemented
+          content:
+            '*/*':
+              schema:
+                type: object
+        "405":
+          description: Validation exception
+          content:
+            '*/*':
+              schema:
+                type: object
+</pre></code>
+</p>
+</details>
 
 
 ## HTTP Response Codes 
@@ -164,7 +303,7 @@ No API Key is provided. | No API key was supplied. Please submit with a valid AP
 ## Examples
 
 
-### Example 1: Published_UniqueAwardKey
+### Example 1: Search by UniqueAwardKey
 
 <details>
     <summary>Request URL</summary>
@@ -254,97 +393,8 @@ Alpha URL: https://api-alpha.sam.gov/assistance/v1/subawards/search?status=Publi
 </p>
 </details>
 
-### Example 2: PublishedUnchecked_UniqueAwardKey
 
-<details>
-    <summary>Request URL</summary>
-
-Production URL: https://api.sam.gov/assistance/v1/subawards/search?status=&pageSize=25&pageNumber=0&uniqueAwardKey=ASST_NON_27MN12002L97E1_6925&api_key={{api_key}} <br>
- <br>
-Alpha URL: https://api-alpha.sam.gov/assistance/v1/subawards/search?status=&pageSize=25&pageNumber=0&uniqueAwardKey=ASST_NON_27MN12002L97E1_6925&api_key={{api_key}}  <br>
-</details>
-
-<details>
-    <summary> Sample Response (JSON Output) v1</summary>
-
-<p>
-<code><pre>
-{
-  "totalPages": 1,
-  "totalRecords": 1,
-  "pageNumber": 0,
-  "nextPageLink": "https://api-alpha.sam.gov/assistance/v1/subawards/search?pageNumber=0&pageSize=25",
-  "previousPageLink": "https://api-alpha.sam.gov/assistance/v1/subawards/search?pageNumber=0&pageSize=25",
-  "data": [
-    {
-      "status": "Published",
-      "submittedDate": "2012-10-31",
-      "subVendorName": "CROW WING COUNTY (INC)",
-      "subVendorUei": "KRPSCRWNEPM3",
-      "subAwardNumber": "018-630-005",
-      "subAwardAmount": "30307",
-      "subAwardDate": "2012-09-19",
-      "reportUpdatedDate": "2012-10-31",
-      "subawardReportId": "84924255",
-      "subawardReportNumber": "67e15942-6353-11ef-a436-4bf2d183e71f",
-      "placeOfPerformance": {
-        "streetAddress": null,
-        "streetAddress2": null,
-        "city": "Crow Wing County",
-        "congressionalDistrict": "08",
-        "state": {
-          "code": "MN",
-          "name": "Minnesota"
-        },
-        "country": {
-          "code": "USA",
-          "name": "United States"
-        },
-        "zip": "564421200"
-      },
-      "organizationInfo": null,
-      "asistanceListingNumber": "20.205 Highway Planning and Construction",
-      "subawardDescription": "County State Aid Highway 3: Emergency Relief Work, Aggregate BASE, Bituminous Pavement REPLacement, AGGregate SHouLder, Culvert Replacement, Erosion Repair",
-      "fain": "27MN12002L97E1",
-      "actionDate": "2012-09-04",
-      "totalFedFundingAmount": "37600.0",
-      "baseObligationDate": "2012-09-04",
-      "projectDescription": "ALONG TH 11: DEVELOP A CORRIDOR MGMT PLAN FOR THE WATERS OF THE DANCING SKY SCENIC BYWAYS",
-      "baseAssistanceTypeCode": "03",
-      "baseAssistanceTypeDesc": null,
-      "agencyCode": "6925",
-      "assistanceType": null,
-      "primeEntityUei": "JL4EX4R4A647",
-      "primeEntityName": "Minnesota Department Of Transportation",
-      "uniqueAwardKey": "ASST_NON_27MN12002L97E1_6925",
-      "vendorPhysicalAddress": {
-        "streetAddress": null,
-        "streetAddress2": null,
-        "city": null,
-        "congressionalDistrict": null,
-        "state": {
-          "code": null,
-          "name": null
-        },
-        "country": {
-          "code": null,
-          "name": null
-        },
-        "zip": null
-      },
-      "subDbaName": null,
-      "subParentName": null,
-      "subParentUei": null,
-      "subBusinessType": null,
-      "subTopPayEmployee": null
-    }
-  ]
-}
-</pre></code>
-</p>
-</details>
-
-### Example 3: Published_FAIN_AgencyCode
+### Example 2: Search by FAIN and Agency Code
 
 <details>
     <summary>Request URL</summary>
@@ -434,7 +484,7 @@ Alpha URL: https://api-alpha.sam.gov/assistance/v1/subawards/search?status=Publi
 </p>
 </details>
 
-### Example 4: Published_FAIN_AgencyCode_UniqueAwardKey
+### Example 3: Search by FAIN, Agency Code, and Unique Award Key
 
 <details>
     <summary>Request URL</summary>
@@ -524,7 +574,7 @@ Alpha URL: https://api-alpha.sam.gov/assistance/v1/subawards/search?status=Publi
 </p>
 </details>
 
-### Example 5: Deleted_FromDate_ToDate
+### Example 4: Search Deleted Records by From Date - To Date
 
 <details>
     <summary>Request URL</summary>
@@ -773,7 +823,7 @@ Alpha URL: https://api-alpha.sam.gov/assistance/v1/subawards/search?status=Delet
 </p>
 </details>
 
-### Example 6: Deleted_FAIN_AgencyCode_UniqueAwardKey
+### Example 5: Search Deleted Records by FAIN, Agency Code, Unique Award Key
 
 <details>
     <summary>Request URL</summary>
@@ -786,8 +836,8 @@ Alpha URL: https://api-alpha.sam.gov/assistance/v1/subawards/search?status=Delet
 <details>
     <summary> Sample Response (JSON Output) v1</summary>
 
-</p>
-</pre></code>
+<p>
+<code><pre>
 {
   "totalPages": 1,
   "totalRecords": 1,
