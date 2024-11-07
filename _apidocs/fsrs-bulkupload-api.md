@@ -214,6 +214,10 @@ The overall response will be a JSON array containing the status of each subcontr
                   {
                      "code":"2",
                      "isSelected":"false"
+                  },
+                  {
+                     "code":"3",
+                     "isSelected":"false"
                   }
                ],
                "topPayEmployees":[
@@ -271,10 +275,8 @@ The overall response will be a JSON array containing the status of each subcontr
          ]
       },
       {
-         "contractNumber":"W91238PTESTTWO",
+         "contractNumber":"W9123823PTESTCHILD",
          "reportingAgencyCode":"9700",
-         "idvReferenceNumber":"",
-         "referenceAgencyCode":"",
          "programTitle":"Title of the program",
          "subawardDataList":[
             {
@@ -325,10 +327,6 @@ The overall response will be a JSON array containing the status of each subcontr
          "subawardDataList":[
             {
                "subawardUEI":"ABC987654321",
-               "subawardNumber":"",
-               "subawardAmount":"",
-               "subawardDate":"",
-               "subawardDescription":"",
                "placeOfPerformance":{
                   "city":"Alexandria",
                   "country":{
@@ -403,13 +401,12 @@ The overall response will be a JSON array containing the status of each subrecip
 {
   "assistanceData": [
     {
-      "primeFAIN": "1001KS1420",
-      "eftIndicator": "9999",
-      "subAssistanceDataList": [
+      "fain": "1001KS1420",
+      "agencyCode": "9999",
+      "subawardDataList": [
         {
           "subAssistanceNumber": "XX-YY-00008",
           "uei": "ABC123456789",
-          "eftIndicator": "1111",
           "subAssistanceDollars": "100000",
           "subAssistanceObligationOrActionDate": "2010-10-01",
           "overallDescription": "My Description",
@@ -461,9 +458,9 @@ The overall response will be a JSON array containing the status of each subrecip
       ]
     },
     {
-      "primeFAIN": "1001ZZZ420",
+      "fain": "1001ZZZ420",
       "eftIndicator": "8978",
-      "subAssistanceDataList": [
+      "subawardDataList": [
         {
           "subAssistanceNumber": "XX-YY-12345",
           "uei": "zzz123456789",
@@ -535,9 +532,9 @@ The overall response will be a JSON array containing the status of each subrecip
 {
   "assistanceData": [
     {
-      "primeFAIN": "1001ZZZ420",
+      "fain": "1001ZZZ420",
       "eftIndicator": "8978",
-      "subAssistanceDataList": [
+      "subawardDataList": [
         {
           "subAssistanceNumber": "",
           "uei": "zzz123456789",
@@ -845,9 +842,9 @@ See the [Response JSON](#response-json) section for the response structure and s
 {
   "assistanceData": [
     {
-      "primeFAIN": "1001KS1420",
+      "fain": "1001KS1420",
       "eftIndicator": "9999",
-      "subAssistanceDataList": [
+      "subawardDataList": [
         {
           "subawardReportNumber":"51e2fad8-7b43-4b62-a870-45b3f250ea99",
 	  "subAssistanceNumber": "XX-YY-00008",
@@ -904,9 +901,9 @@ See the [Response JSON](#response-json) section for the response structure and s
       ]
     },
     {
-      "primeFAIN": "1001ZZZ420",
+      "fain": "1001ZZZ420",
       "eftIndicator": "8978",
-      "subAssistanceDataList": [
+      "subawardDataList": [
         {
           "subawardReportNumber":"45e2fad8-7b43-4b62-a870-45b3f250ea31",
 	  "subAssistanceNumber": "XX-YY-12345",
@@ -980,9 +977,9 @@ See the [Response JSON](#response-json) section for the response structure and s
 {
   "assistanceData": [
     {
-      "primeFAIN": "1001ZZZ420",
+      "fain": "1001ZZZ420",
       "eftIndicator": "8978",
-      "subAssistanceDataList": [
+      "subawardDataList": [
         {
           "subawardReportNumber":"45b3f2d8-7b43-4b62-a870-45b3f250b435",
 	  "subAssistanceNumber": "",
@@ -1276,7 +1273,7 @@ status | query | string | No | Status of the report (Draft, Published or Reopene
 {
   "assistanceData": [
     {
-      "primeFAIN": "ABCDY2324235",
+      "fain": "ABCDY2324235",
       "reportStatus": "Published"
     }
   ]
@@ -1460,7 +1457,7 @@ size | query | string | No | The page size (default is 10)
 {
   "assistanceData": [
     {
-      "primeFAIN": "ABCDY2324235",
+      "fain": "ABCDY2324235",
       "reportStatus": "Published"
     }
   ]
@@ -1476,7 +1473,7 @@ size | query | string | No | The page size (default is 10)
 {
   "assistanceData": [
     {
-      "primeFAIN": "ABCDY2324235"
+      "fain": "ABCDY2324235"
     }
   ]
 }
@@ -1491,7 +1488,7 @@ size | query | string | No | The page size (default is 10)
 {
    "assistanceData":[
       {
-         "primeFAIN":"ABCDY2324235",
+         "fain":"ABCDY2324235",
          "reportStatus":"Published"
       },
       {
@@ -1874,7 +1871,7 @@ NOTE: In an effort to keep the user informed on the actions performed through th
 <code><pre>
 [
   {
-    "id": "primeFAIN:subawardNumber:subawardDate:subawardAmount:submittedDate",
+    "id": "fain:subawardNumber:subawardDate:subawardAmount:submittedDate",
     "statusCode": "201",
     "transactionId": "48e2fad8-7b43-4b62-a870-45b3f250ea72",
     "timeStamp": "2024-02-20T19:51:24.915924",
@@ -1884,7 +1881,7 @@ NOTE: In an effort to keep the user informed on the actions performed through th
     "errors": []
   },
   {
-    "id": "primeFAIN:subawardNumber:subawardDate:subawardAmount:submittedDate",
+    "id": "fain:subawardNumber:subawardDate:subawardAmount:submittedDate",
     "statusCode": "201",
     "transactionId": "48e2fad8-7b43-4b62-a870-45b3f250ea72",
     "timeStamp": "2024-02-20T19:51:24.915968",
@@ -1897,7 +1894,7 @@ NOTE: In an effort to keep the user informed on the actions performed through th
     ]
   },
   {
-    "id": "primeFAIN:subawardNumber:subawardDate:subawardAmount:submittedDate",
+    "id": "fain:subawardNumber:subawardDate:subawardAmount:submittedDate",
     "statusCode": "400",
     "transactionId": "48e2fad8-7b43-4b62-a870-45b3f250ea72",
     "timeStamp": "2024-02-20T19:51:24.915972",
@@ -1919,7 +1916,7 @@ NOTE: In an effort to keep the user informed on the actions performed through th
 <code><pre>
 [
   {
-    "id": "primeFAIN:subawardNumber:subawardDate:subawardAmount:submittedDate",
+    "id": "fain:subawardNumber:subawardDate:subawardAmount:submittedDate",
     "statusCode": "201",
     "transactionId": "48e2fad8-7b43-4b62-a870-45b3f250ea72",
     "timeStamp": "2024-02-20T19:51:24.915924",
@@ -1929,7 +1926,7 @@ NOTE: In an effort to keep the user informed on the actions performed through th
     "errors": []
   },
   {
-    "id": "primeFAIN:subawardNumber:subawardDate:subawardAmount:submittedDate",
+    "id": "fain:subawardNumber:subawardDate:subawardAmount:submittedDate",
     "statusCode": "201",
     "transactionId": "48e2fad8-7b43-4b62-a870-45b3f250ea72",
     "timeStamp": "2024-02-20T19:51:24.915968",
@@ -1942,7 +1939,7 @@ NOTE: In an effort to keep the user informed on the actions performed through th
     ]
   },
   {
-    "id": "primeFAIN:subawardNumber:subawardDate:subawardAmount:submittedDate",
+    "id": "fain:subawardNumber:subawardDate:subawardAmount:submittedDate",
     "statusCode": "201",
     "transactionId": "48e2fad8-7b43-4b62-a870-45b3f250ea72",
     "timeStamp": "2024-02-20T19:51:24.915968",
@@ -1954,7 +1951,7 @@ NOTE: In an effort to keep the user informed on the actions performed through th
     ]
   },
   {
-    "id": "primeFAIN:subawardNumber:subawardDate:subawardAmount:submittedDate",
+    "id": "fain:subawardNumber:subawardDate:subawardAmount:submittedDate",
     "statusCode": "400",
     "transactionId": "48e2fad8-7b43-4b62-a870-45b3f250ea72",
     "timeStamp": "2024-02-20T19:51:24.915972",
@@ -1976,7 +1973,7 @@ NOTE: In an effort to keep the user informed on the actions performed through th
 <code><pre>
 [
   {
-    "id": "primeFAIN:subawardNumber:subawardDate:subawardAmount:submittedDate",
+    "id": "fain:subawardNumber:subawardDate:subawardAmount:submittedDate",
     "statusCode": "204",
     "transactionId": "48e2fad8-7b43-4b62-a870-45b3f250ea72",
     "timeStamp": "2024-02-20T19:51:24.915924",
@@ -1986,7 +1983,7 @@ NOTE: In an effort to keep the user informed on the actions performed through th
     "errors": []
   },
   {
-    "id": "primeFAIN:subawardNumber:subawardDate:subawardAmount:submittedDate",
+    "id": "fain:subawardNumber:subawardDate:subawardAmount:submittedDate",
     "statusCode": "204",
     "transactionId": "48e2fad8-7b43-4b62-a870-45b3f250ea72",
     "timeStamp": "2024-02-20T19:51:24.915924",
@@ -2006,7 +2003,7 @@ NOTE: In an effort to keep the user informed on the actions performed through th
 <code><pre>
 [
   {
-    "id": "primeFAIN:subawardNumber:subawardDate:subawardAmount:submittedDate",
+    "id": "fain:subawardNumber:subawardDate:subawardAmount:submittedDate",
     "statusCode": "204",
     "transactionId": "48e2fad8-7b43-4b62-a870-45b3f250ea72",
     "timeStamp": "2024-02-20T19:51:24.915924",
@@ -2036,7 +2033,7 @@ NOTE: In an effort to keep the user informed on the actions performed through th
 <code><pre>
 [
   {
-    "id": "primeFAIN:subawardNumber:subawardDate:subawardAmount:submittedDate",
+    "id": "fain:subawardNumber:subawardDate:subawardAmount:submittedDate",
     "statusCode": "200",
     "transactionId": "48e2fad8-7b43-4b62-a870-45b3f250ea72",
     "timeStamp": "2024-02-20T19:51:24.915924",
@@ -2045,7 +2042,7 @@ NOTE: In an effort to keep the user informed on the actions performed through th
     "message": {
       "assistanceData": [
         {
-          "primeFAIN": "string",
+          "fain": "string",
           "subawardDataList": [
             {
               "submittedDate": "2024-02-12",
@@ -2107,7 +2104,7 @@ NOTE: In an effort to keep the user informed on the actions performed through th
     "errors": []
   },
   {
-    "id": "primeFAIN:subawardNumber:subawardDate:subawardAmount:submittedDate",
+    "id": "fain:subawardNumber:subawardDate:subawardAmount:submittedDate",
     "statusCode": "200",
     "transactionId": "58e2fad8-7b43-4b62-a870-45b3f250ea72",
     "timeStamp": "2024-02-20T19:51:24.915924",
@@ -2116,7 +2113,7 @@ NOTE: In an effort to keep the user informed on the actions performed through th
     "message": {
       "assistanceData": [
         {
-          "primeFAIN": "string",
+          "fain": "string",
           "subawardDataList": [
             {
               "submittedDate": "2024-02-12",
@@ -2233,7 +2230,7 @@ Name | Data Type | Field Length | Required | Description
 -----|-----------|---------|----------|------------
 assistanceData | JSON Array | NA| Yes | Information about the prime Assistance awardee. If the report is being submitted for multiple prime Assistance awards, then this array will have multiple elements, one for each of the prime Assistance.
 assistanceData Details||||
-assistanceData.primeFAIN | string |  255 characters | Yes | This is the Federal Award Identifier Number (FAIN) for the prime assistance award. 
+assistanceData.fain | string |  255 characters | Yes | This is the Federal Award Identifier Number (FAIN) for the prime assistance award. 
 assistanceData.eftIndicator | string | 10 characters | No |If your organization has the eftIndicator to indicate specific payment locations within your organization as registered in SAM, this information will be picked up from the SAM registration. Otherwise, if applicable, you would note it here. 
 assistanceData.subawardDataList |string  ||Yes  |Information about the sub Contractors. If the report is being submitted for multiple Subawards, then this array will have multiple elements, one for each of the sub Contracts.
 assistanceData.subawardDataList Details | || | 
@@ -2312,7 +2309,7 @@ Name | Data Type | Field Length | Required | Description
 -----|-----------|----------------|------------|-------
 assistanceData | JSON Array  |   |Yes |Information about the prime Assistance and the Subaward report(s). If the report is being submitted for multiple prime assistance awards, then this array will have multiple elements, one for each of the prime Assistance.
 assistanceData Details| | | | 
-primeFAIN | string  |255 characters |Yes | This is the Federal Award Identifier Number (FAIN) for the prime Assistance award.
+fain | string  |255 characters |Yes | This is the Federal Award Identifier Number (FAIN) for the prime Assistance award.
 assistanceData.subawardReportNumber | string |32 characters  | No | Number assigned by the Prime Assistance awardee to track the subaward. This is returned as a part of the response for the Create, Update calls for the Subaward report.
 assistanceData.reportStatus | string |32 characters  | No | The status of the report to be retrieved.
 
@@ -2343,7 +2340,7 @@ Error Code |	Error Message	| Reason/Description | Operation |
 400	|	Provide a valid JSON structure. We require at least one contractData element.	|	Request Body JSON structure is invalid. At least one contractData element is required for Subaward reporting	|	All (Contracts) |
 400	|	Provide a valid JSON structure. We require at least one assistanceData element.	|	Request Body JSON structure is invalid. At least one assistanceData element is required for Subaward reporting	|	All (Assistance) |
 400	|	No record found for the contractID and reportingAgencyCode provided.	|	No record found for the Contract Number and Reporting Agency Code combination (Combination of contractData.contractNumber and contractData.reportingAgencyCode in the Request Body).	|	submitSubawardReport, updateSubawardReport (Contracts) |
-400	|	No record found for the FAIN Number provided.	|	As provided in assistanceData.primeFAIN, FAIN Number not found	|	submitSubawardReport, updateSubawardReport(Assistance) |
+400	|	No record found for the FAIN Number provided.	|	As provided in assistanceData.fain, FAIN Number not found	|	submitSubawardReport, updateSubawardReport(Assistance) |
 400	|	Multiple records found for the contractID and reportingAgencyCode provided. Add the idvReferenceNumber to identify the contract.	|	User needs to specify the idvReferenceNumber to correctly identify the record as multiple records were found for the contractNumber and reportingAgency combination	|	submitSubawardReport, updateSubawardReport (Contracts) |
 400	|	Provide the prime contractor's contractID.	|	contractData.contractNumber was not provided.	|	submitSubawardReport, updateSubawardReport(Contracts) |
 400	|	Provide a reportingAgencyCode.	|	contractData.reportingAgencyCode is a required field.	|	submitSubawardReport, updateSubawardReport(Contracts) |
@@ -2373,29 +2370,29 @@ HTTP Status Code|Field | Error Message | Reason/Description | Operation |
 201|subawardDataList.subawardDate | Subaward Date is required | Subaward Date is required | submitSubawardReport(Contracts)
 201|subawardDataList.subawardDate | Date of Subaward for Subawardee:(XXXXXXXXX) is not valid (Expecting YYYY-MM-DD Format) | Date of Subaward for Subawardee:(XXXXXXXXX) is not valid (Expecting YYYY-MM-DD Format) | submitSubawardReport(Contracts)
 201|subawardDataList.subawardDate | The Subaward Date cannot be in the future. | The Subaward Date cannot be in the future. |  submitSubawardReport(Contracts)
-201|subawardDataList.subawardDescription   subAssistanceDataList.overallDescription |	Subaward overall description is required. |	Subaward overall description is required. |	submitSubawardReport(Contracts and Assistance)
-201|subawardDataList.subawardDescription   subAssistanceDataList.overallDescription |	Program or Project Title exceeds 250 character limit. | Program or Project Title exceeds 250 character limit. |	submitSubawardReport(Contracts and Assistance)
-201|subawardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance |	Subaward Place of Performance is required. |	Subaward Place of Performance is required. |	submitSubawardReport(Contracts and Assistance)
-201|subawardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance |	Subaward Place of Performance Section - Country is required |	Subaward Place of Performance Section - Country is required | submitSubawardReport(Contracts and Assistance)
-201|subawardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance |	Subaward Place of Performance Section - zip+4 Code cannot exceed 9 characters |	Subaward Place of Performance Section - zip+4 Code cannot exceed 9 characters | submitSubawardReport(Contracts and Assistance
-201|subawardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance |	Only for US addresses: Subaward Place of Performance Section - Country is required |	Only for US addresses: Subaward Place of Performance Section - Country is required |  submitSubawardReport(Contracts and Assistance)
-201|subawardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance|	Only for US addresses: Subaward Place of Performance Section - Country provided is invalid |	Only for US addresses: Subaward Place of Performance Section - Country provided is invalid | submitSubawardReport(Contracts and Assistance)
-201|subawardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance |	Only for US addresses: Subaward Place of Performance Section - StateOrProvince  is required |	Only for US addresses: Subaward Place of Performance Section - StateOrProvince  is required |	submitSubawardReport(Contracts and Assistance)
-201|subawardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance |	Only for US addresses: Subaward Place of Performance Section - StateOrProvince provided is invalid |	Only for US addresses: Subaward Place of Performance Section - StateOrProvince provided is invalid|	submitSubawardReport(Contracts and Assistance)
-201|subawardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance |	Only for US addresses: Subaward Place of Performance Section - City is required	| Only for US addresses: Subaward Place of Performance Section - City is required | submitSubawardReport(Contracts and Assistance)
-201|subawardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance |	Only for US addresses: Subaward Place of Performance Section - City provided is invalid| Only for US addresses: Subaward Place of Performance Section - City provided is invalid | submitSubawardReport(Contracts and Assistance)
-201|subawardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance | Only for US addresses: Subaward Place of Performance Section - zip+4 is required | Only for US addresses: Subaward Place of Performance Section - zip+4 is required |	submitSubawardReport(Contracts and Assistance)
-201|subawardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance | Only for US addresses: Subaward Place of Performance Section - zip+4 provided is invalid |	Only for US addresses: Subaward Place of Performance Section - zip+4 provided is invalid |	submitSubawardReport(Contracts and Assistance)
-201|subawardDataList.topPayEmployees      subAssistanceDataList.topPayEmployees | Sub Top Employer Compensation - full name and amount are required for all 5 top pay employees. |If Compensation Question 1 answer is true and Compensation Question 2 answer is false: topPayEmployees is required|	submitSubawardReport(Contracts and Assistance)
-201|subawardDataList.topPayEmployees.salary    subAssistanceDataList.topPayEmployees.salary | Sub Top Employer Compensation: amount must contain only digits and not exceed 12 digits |Sub Top Pay Employees: salary must contain only digits and not exceed 12 digits |	submitSubawardReport(Contracts and Assistance)
-201|subawardDataList.topPayEmployees.salary    subAssistanceDataList.topPayEmployees.salary | Sub topPayEmployees.salary is required |Sub topPayEmployees.salary is required |	submitSubawardReport(Contracts and Assistance)
+201|subawardDataList.subawardDescription   subawardDataList.overallDescription |	Subaward overall description is required. |	Subaward overall description is required. |	submitSubawardReport(Contracts and Assistance)
+201|subawardDataList.subawardDescription   subawardDataList.overallDescription |	Program or Project Title exceeds 250 character limit. | Program or Project Title exceeds 250 character limit. |	submitSubawardReport(Contracts and Assistance)
+201|subawardDataList.placeOfPerformance    subawardDataList.placeOfPerformance |	Subaward Place of Performance is required. |	Subaward Place of Performance is required. |	submitSubawardReport(Contracts and Assistance)
+201|subawardDataList.placeOfPerformance    subawardDataList.placeOfPerformance |	Subaward Place of Performance Section - Country is required |	Subaward Place of Performance Section - Country is required | submitSubawardReport(Contracts and Assistance)
+201|subawardDataList.placeOfPerformance    subawardDataList.placeOfPerformance |	Subaward Place of Performance Section - zip+4 Code cannot exceed 9 characters |	Subaward Place of Performance Section - zip+4 Code cannot exceed 9 characters | submitSubawardReport(Contracts and Assistance
+201|subawardDataList.placeOfPerformance    subawardDataList.placeOfPerformance |	Only for US addresses: Subaward Place of Performance Section - Country is required |	Only for US addresses: Subaward Place of Performance Section - Country is required |  submitSubawardReport(Contracts and Assistance)
+201|subawardDataList.placeOfPerformance    subawardDataList.placeOfPerformance|	Only for US addresses: Subaward Place of Performance Section - Country provided is invalid |	Only for US addresses: Subaward Place of Performance Section - Country provided is invalid | submitSubawardReport(Contracts and Assistance)
+201|subawardDataList.placeOfPerformance    subawardDataList.placeOfPerformance |	Only for US addresses: Subaward Place of Performance Section - StateOrProvince  is required |	Only for US addresses: Subaward Place of Performance Section - StateOrProvince  is required |	submitSubawardReport(Contracts and Assistance)
+201|subawardDataList.placeOfPerformance    subawardDataList.placeOfPerformance |	Only for US addresses: Subaward Place of Performance Section - StateOrProvince provided is invalid |	Only for US addresses: Subaward Place of Performance Section - StateOrProvince provided is invalid|	submitSubawardReport(Contracts and Assistance)
+201|subawardDataList.placeOfPerformance    subawardDataList.placeOfPerformance |	Only for US addresses: Subaward Place of Performance Section - City is required	| Only for US addresses: Subaward Place of Performance Section - City is required | submitSubawardReport(Contracts and Assistance)
+201|subawardDataList.placeOfPerformance    subawardDataList.placeOfPerformance |	Only for US addresses: Subaward Place of Performance Section - City provided is invalid| Only for US addresses: Subaward Place of Performance Section - City provided is invalid | submitSubawardReport(Contracts and Assistance)
+201|subawardDataList.placeOfPerformance    subawardDataList.placeOfPerformance | Only for US addresses: Subaward Place of Performance Section - zip+4 is required | Only for US addresses: Subaward Place of Performance Section - zip+4 is required |	submitSubawardReport(Contracts and Assistance)
+201|subawardDataList.placeOfPerformance    subawardDataList.placeOfPerformance | Only for US addresses: Subaward Place of Performance Section - zip+4 provided is invalid |	Only for US addresses: Subaward Place of Performance Section - zip+4 provided is invalid |	submitSubawardReport(Contracts and Assistance)
+201|subawardDataList.topPayEmployees      subawardDataList.topPayEmployees | Sub Top Employer Compensation - full name and amount are required for all 5 top pay employees. |If Compensation Question 1 answer is true and Compensation Question 2 answer is false: topPayEmployees is required|	submitSubawardReport(Contracts and Assistance)
+201|subawardDataList.topPayEmployees.salary    subawardDataList.topPayEmployees.salary | Sub Top Employer Compensation: amount must contain only digits and not exceed 12 digits |Sub Top Pay Employees: salary must contain only digits and not exceed 12 digits |	submitSubawardReport(Contracts and Assistance)
+201|subawardDataList.topPayEmployees.salary    subawardDataList.topPayEmployees.salary | Sub topPayEmployees.salary is required |Sub topPayEmployees.salary is required |	submitSubawardReport(Contracts and Assistance)
 201|subawardDataList.topPayEmployees.fullName | Sub topPayEmployees.fullName is required |Sub topPayEmployees.fullName is required |	submitSubawardReport(Contracts and Assistance)
-201|subAssistanceDataList.subAssistanceNumber | Subaward ID is required |Subaward ID is required |	submitSubawardReport(Assistance)
-201|subAssistanceDataList.subAssistanceDollars |	Subaward Amount is required	| Subaward Amount is required | submitSubawardReport(Assistance)
-201|subAssistanceDataList.subAssistanceDollars |	Subaward Amount must contain only numbers and up to 2 decimal places (18 digits plus cents)	| Subaward Amount must contain only numbers and up to 2 decimal places (18 digits plus cents) | submitSubawardReport(Assistance)
-201|subAssistanceDataList. subAssistanceObligationOrActionDate |	Subaward Date is required | Subaward Date is required| submitSubawardReport(Assistance)
-201|subAssistanceDataList. subAssistanceObligationOrActionDate |	Date of Subaward for Subawardee: (XXXXXXXXX) is not valid (Expecting YYYY-MM-DD Format) | Date of Subaward for Subawardee: (XXXXXXXXX) is not valid (Expecting YYYY-MM-DD Format) | submitSubawardReport(Assistance)
-201|subAssistanceDataList. subAssistanceObligationOrActionDate |	The Subaward Date cannot be in the future and should be on or after the Base Obligation Date for the assistance | The Subaward Date cannot be in the future and should be on or after the Base Obligation Date for the assistance | submitSubawardReport(Assistance)
+201|subawardDataList.subAssistanceNumber | Subaward ID is required |Subaward ID is required |	submitSubawardReport(Assistance)
+201|subawardDataList.subAssistanceDollars |	Subaward Amount is required	| Subaward Amount is required | submitSubawardReport(Assistance)
+201|subawardDataList.subAssistanceDollars |	Subaward Amount must contain only numbers and up to 2 decimal places (18 digits plus cents)	| Subaward Amount must contain only numbers and up to 2 decimal places (18 digits plus cents) | submitSubawardReport(Assistance)
+201|subawardDataList. subAssistanceObligationOrActionDate |	Subaward Date is required | Subaward Date is required| submitSubawardReport(Assistance)
+201|subawardDataList. subAssistanceObligationOrActionDate |	Date of Subaward for Subawardee: (XXXXXXXXX) is not valid (Expecting YYYY-MM-DD Format) | Date of Subaward for Subawardee: (XXXXXXXXX) is not valid (Expecting YYYY-MM-DD Format) | submitSubawardReport(Assistance)
+201|subawardDataList. subAssistanceObligationOrActionDate |	The Subaward Date cannot be in the future and should be on or after the Base Obligation Date for the assistance | The Subaward Date cannot be in the future and should be on or after the Base Obligation Date for the assistance | submitSubawardReport(Assistance)
 200|recovery_model_questions |	Responses to Compensation Questions were not found under SAM registration for the UEI <UEI Number>. Please provide the responses to the compensation questions under recovery_model_questions JSON element |Responses to compensation questions are required  if they are not available for the Prime Entity's SAM registration| updateSubawardReport(Contracts and Assistance)
 200|recovery_model_questions |	Compensation Q1 code and response are required |Compensation Q1 code and response are required if responses to compensation questions is provided|updateSubawardReport(Contracts and Assistance)
 200|recovery_model_questions |Since you responded true to the first compensation question, a response for the second compensation question is required.|	Compensation Q2 code and response are required	| updateSubawardReport(Contracts and Assistance)
@@ -2408,29 +2405,29 @@ HTTP Status Code|Field | Error Message | Reason/Description | Operation |
 200|subawardDataList.subawardDate | Subaward Date is required | Subaward Date is required | updateSubawardReport(Contracts)
 200|subawardDataList.subawardDate | Date of Subaward for Subawardee:(XXXXXXXXX) is not valid (Expecting YYYY-MM-DD Format) | Date of Subaward for Subawardee:(XXXXXXXXX) is not valid (Expecting YYYY-MM-DD Format) | updateSubawardReport(Contracts)
 200|subawardDataList.subawardDate | The Subaward Date cannot be in the future. | The Subaward Date cannot be in the future. |  updateSubawardReport(Contracts)
-200|subawardDataList.subawardDescription   subAssistanceDataList.overallDescription |	Subaward overall description is required. |	Subaward overall description is required. |	updateSubawardReport(Contracts and Assistance)
-200|subawardDataList.subawardDescription   subAssistanceDataList.overallDescription |	Program or Project Title exceeds 250 character limit. | Program or Project Title exceeds 250 character limit. |	updateSubawardReport(Contracts and Assistance)
-200|subawardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance |	Subaward Place of Performance is required. |	Subaward Place of Performance is required. |	updateSubawardReport(Contracts and Assistance)
-200|subawardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance |	Subaward Place of Performance Section - Country is required |	Subaward Place of Performance Section - Country is required | updateSubawardReport(Contracts and Assistance)
-200|subawardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance |	Subaward Place of Performance Section - zip+4 Code cannot exceed 9 characters |	Subaward Place of Performance Section - zip+4 Code cannot exceed 9 characters | updateSubawardReport(Contracts and Assistance)
-200|subawardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance |	Only for US addresses: Subaward Place of Performance Section - Country is required |	Only for US addresses: Subaward Place of Performance Section - Country is required |  updateSubawardReport(Contracts and Assistance)
-200|subawardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance|	Only for US addresses: Subaward Place of Performance Section - Country provided is invalid |	Only for US addresses: Subaward Place of Performance Section - Country provided is invalid | updateSubawardReport(Contracts and Assistance)
-200|subawardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance |	Only for US addresses: Subaward Place of Performance Section - StateOrProvince  is required |	Only for US addresses: Subaward Place of Performance Section - StateOrProvince  is required |	updateSubawardReport(Contracts and Assistance)
-200|subawardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance |	Only for US addresses: Subaward Place of Performance Section - StateOrProvince provided is invalid |	Only for US addresses: Subaward Place of Performance Section - StateOrProvince provided is invalid|	updateSubawardReport(Contracts and Assistance)
-200|subawardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance |	Only for US addresses: Subaward Place of Performance Section - City is required	| Only for US addresses: Subaward Place of Performance Section - City is required | updateSubawardReport(Contracts and Assistance)
-200|subawardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance |	Only for US addresses: Subaward Place of Performance Section - City provided is invalid| Only for US addresses: Subaward Place of Performance Section - City provided is invalid | updateSubawardReport(Contracts and Assistance)
-200|subawardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance | Only for US addresses: Subaward Place of Performance Section - zip+4 is required | Only for US addresses: Subaward Place of Performance Section - zip+4 is required |	updateSubawardReport(Contracts and Assistance)
-200|subawardDataList.placeOfPerformance    subAssistanceDataList.placeOfPerformance | Only for US addresses: Subaward Place of Performance Section - zip+4 provided is invalid |	Only for US addresses: Subaward Place of Performance Section - zip+4 provided is invalid |	updateSubawardReport(Contracts and Assistance)
-200|subawardDataList.topPayEmployees      subAssistanceDataList.topPayEmployees | Sub Top Employer Compensation - full name and amount are required for all 5 top pay employees. |If Compensation Question 1 answer is true and Compensation Question 2 answer is false: topPayEmployees is required|	updateSubawardReport(Contracts and Assistance)
-200|subawardDataList.topPayEmployees.salary    subAssistanceDataList.topPayEmployees.salary | Sub Top Employer Compensation: amount must contain only digits and not exceed 12 digits |Sub Top Pay Employees: salary must contain only digits and not exceed 12 digits |	updateSubawardReport(Contracts and Assistance)
-200|subawardDataList.topPayEmployees.salary    subAssistanceDataList.topPayEmployees.salary | Sub topPayEmployees.salary is required |Sub topPayEmployees.salary is required |	updateSubawardReport(Contracts and Assistance)
+200|subawardDataList.subawardDescription   subawardDataList.overallDescription |	Subaward overall description is required. |	Subaward overall description is required. |	updateSubawardReport(Contracts and Assistance)
+200|subawardDataList.subawardDescription   subawardDataList.overallDescription |	Program or Project Title exceeds 250 character limit. | Program or Project Title exceeds 250 character limit. |	updateSubawardReport(Contracts and Assistance)
+200|subawardDataList.placeOfPerformance    subawardDataList.placeOfPerformance |	Subaward Place of Performance is required. |	Subaward Place of Performance is required. |	updateSubawardReport(Contracts and Assistance)
+200|subawardDataList.placeOfPerformance    subawardDataList.placeOfPerformance |	Subaward Place of Performance Section - Country is required |	Subaward Place of Performance Section - Country is required | updateSubawardReport(Contracts and Assistance)
+200|subawardDataList.placeOfPerformance    subawardDataList.placeOfPerformance |	Subaward Place of Performance Section - zip+4 Code cannot exceed 9 characters |	Subaward Place of Performance Section - zip+4 Code cannot exceed 9 characters | updateSubawardReport(Contracts and Assistance)
+200|subawardDataList.placeOfPerformance    subawardDataList.placeOfPerformance |	Only for US addresses: Subaward Place of Performance Section - Country is required |	Only for US addresses: Subaward Place of Performance Section - Country is required |  updateSubawardReport(Contracts and Assistance)
+200|subawardDataList.placeOfPerformance    subawardDataList.placeOfPerformance|	Only for US addresses: Subaward Place of Performance Section - Country provided is invalid |	Only for US addresses: Subaward Place of Performance Section - Country provided is invalid | updateSubawardReport(Contracts and Assistance)
+200|subawardDataList.placeOfPerformance    subawardDataList.placeOfPerformance |	Only for US addresses: Subaward Place of Performance Section - StateOrProvince  is required |	Only for US addresses: Subaward Place of Performance Section - StateOrProvince  is required |	updateSubawardReport(Contracts and Assistance)
+200|subawardDataList.placeOfPerformance    subawardDataList.placeOfPerformance |	Only for US addresses: Subaward Place of Performance Section - StateOrProvince provided is invalid |	Only for US addresses: Subaward Place of Performance Section - StateOrProvince provided is invalid|	updateSubawardReport(Contracts and Assistance)
+200|subawardDataList.placeOfPerformance    subawardDataList.placeOfPerformance |	Only for US addresses: Subaward Place of Performance Section - City is required	| Only for US addresses: Subaward Place of Performance Section - City is required | updateSubawardReport(Contracts and Assistance)
+200|subawardDataList.placeOfPerformance    subawardDataList.placeOfPerformance |	Only for US addresses: Subaward Place of Performance Section - City provided is invalid| Only for US addresses: Subaward Place of Performance Section - City provided is invalid | updateSubawardReport(Contracts and Assistance)
+200|subawardDataList.placeOfPerformance    subawardDataList.placeOfPerformance | Only for US addresses: Subaward Place of Performance Section - zip+4 is required | Only for US addresses: Subaward Place of Performance Section - zip+4 is required |	updateSubawardReport(Contracts and Assistance)
+200|subawardDataList.placeOfPerformance    subawardDataList.placeOfPerformance | Only for US addresses: Subaward Place of Performance Section - zip+4 provided is invalid |	Only for US addresses: Subaward Place of Performance Section - zip+4 provided is invalid |	updateSubawardReport(Contracts and Assistance)
+200|subawardDataList.topPayEmployees      subawardDataList.topPayEmployees | Sub Top Employer Compensation - full name and amount are required for all 5 top pay employees. |If Compensation Question 1 answer is true and Compensation Question 2 answer is false: topPayEmployees is required|	updateSubawardReport(Contracts and Assistance)
+200|subawardDataList.topPayEmployees.salary    subawardDataList.topPayEmployees.salary | Sub Top Employer Compensation: amount must contain only digits and not exceed 12 digits |Sub Top Pay Employees: salary must contain only digits and not exceed 12 digits |	updateSubawardReport(Contracts and Assistance)
+200|subawardDataList.topPayEmployees.salary    subawardDataList.topPayEmployees.salary | Sub topPayEmployees.salary is required |Sub topPayEmployees.salary is required |	updateSubawardReport(Contracts and Assistance)
 200|subawardDataList.topPayEmployees.fullName | Sub topPayEmployees.fullName is required |Sub topPayEmployees.fullName is required |	updateSubawardReport(Contracts and Assistance)
-200|subAssistanceDataList.subAssistanceNumber | Subaward ID is required |Subaward ID is required |	updateSubawardReport(Assistance)
-200|subAssistanceDataList.subAssistanceDollars |	Subaward Amount is required	| Subaward Amount is required | updateSubawardReport(Assistance)
-200|subAssistanceDataList.subAssistanceDollars |	Subaward Amount must contain only numbers and up to 2 decimal places (18 digits plus cents)	| Subaward Amount must contain only numbers and up to 2 decimal places (18 digits plus cents) | updateSubawardReport(Assistance)
-200|subAssistanceDataList. subAssistanceObligationOrActionDate |	Subaward Date is required | Subaward Date is required| updateSubawardReport(Assistance)
-200|subAssistanceDataList. subAssistanceObligationOrActionDate |	Date of Subaward for Subawardee: (XXXXXXXXX) is not valid (Expecting YYYY-MM-DD Format) | Date of Subaward for Subawardee: (XXXXXXXXX) is not valid (Expecting YYYY-MM-DD Format) | updateSubawardReport(Assistance)
-200|subAssistanceDataList. subAssistanceObligationOrActionDate |	The Subaward Date cannot be in the future and should be on or after the Base Obligation Date for the assistance | The Subaward Date cannot be in the future and should be on or after the Base Obligation Date for the assistance | updateSubawardReport(Assistance)
+200|subawardDataList.subAssistanceNumber | Subaward ID is required |Subaward ID is required |	updateSubawardReport(Assistance)
+200|subawardDataList.subAssistanceDollars |	Subaward Amount is required	| Subaward Amount is required | updateSubawardReport(Assistance)
+200|subawardDataList.subAssistanceDollars |	Subaward Amount must contain only numbers and up to 2 decimal places (18 digits plus cents)	| Subaward Amount must contain only numbers and up to 2 decimal places (18 digits plus cents) | updateSubawardReport(Assistance)
+200|subawardDataList. subAssistanceObligationOrActionDate |	Subaward Date is required | Subaward Date is required| updateSubawardReport(Assistance)
+200|subawardDataList. subAssistanceObligationOrActionDate |	Date of Subaward for Subawardee: (XXXXXXXXX) is not valid (Expecting YYYY-MM-DD Format) | Date of Subaward for Subawardee: (XXXXXXXXX) is not valid (Expecting YYYY-MM-DD Format) | updateSubawardReport(Assistance)
+200|subawardDataList. subAssistanceObligationOrActionDate |	The Subaward Date cannot be in the future and should be on or after the Base Obligation Date for the assistance | The Subaward Date cannot be in the future and should be on or after the Base Obligation Date for the assistance | updateSubawardReport(Assistance)
 
 <p><small><a href="#">Back to top</a></small></p>
 
