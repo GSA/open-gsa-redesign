@@ -125,8 +125,10 @@ subEntityTopPayEmployee | Sub Entity Top Pay Employee | string | v1
 ## Open API Specification File 
 
 You can view the full details of this API in the OpenAPI Specification file available here: 
-<a href="v1/ffata-search-openapi.yaml" download="ffata-search-v1">OpenAPI File</a>
+<a href="v1/ffata-search-openapi.yml" download="ffata-search-openapi">OpenAPI File</a>
 
+You can view the full details of this API in the OpenAPI Specification file available here:
+<a href="v1/get-opportunities-v2.yml" download="get-opportunities-v2">OpenAPI File</a>
 
 <details>
 <summary>Acquisition Subaward Outbound v1</summary>
