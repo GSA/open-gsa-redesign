@@ -117,25 +117,25 @@ This API has 10 endpoints as outlined below.
 
 Endpoint Name | Short Description |
 -----|-----------------
-Submit Subaward report (Contracts)     | Used to submit one or more Subaward reports for reporting on one (or more) Contracts.
+Submit Subcontract report (Contracts)     | Used to submit one or more Subaward reports for reporting on one (or more) Contracts.
 Submit Subaward report (Assistance)     | Used to submit one or more Subaward reports for reporting on one (or more) Assistance awards.
-Update Subaward report (Contracts)     | Used to update a previously published Subaward report for a Contract.
+Update Subcontract report (Contracts)     | Used to update a previously published Subaward report for a Contract.
 Update Subaward report (Assistance)     | Used to update a previously published Subaward report for an Assistance award.
-Delete Subaward report (Contracts)     | Used to delete Subaward report for a Contract.
+Delete Subcontract report (Contracts)     | Used to delete Subaward report for a Contract.
 Delete Subaward report (Assistance)     | Used to delete Subaward reports for an Assistance award.
-Get Subaward report (Contracts)     | Used to get details for a Subaward report for a Contract. 
+Get Subcontract report (Contracts)     | Used to get details for a Subaward report for a Contract. 
 Get Subaward report (Assistance)     | Used to get details for a Subaward report for an Assistance award.
-Search Subaward report (Contracts)     | Used to get Subaward reports for Contracts based on optional search criteria. 
+Search Subcontract report (Contracts)     | Used to get Subaward reports for Contracts based on optional search criteria. 
 Search Subaward report (Assistance)     | Used to get Subaward reports for Assistance awards based on optional search criteria.
 
 The following section describes each of the above endpoints in detail.
 
-### Submit Subaward report (Contracts)
+### Submit Subcontract report (Contracts)
 
 ------- | ------- |
 **Request Type** | POST 
 **URL** | /contract/v1/subcontracts
-**Summary** | A User will be able to submit one or multiple Subaward reports for Contracts using this endpoint
+**Summary** | A User will be able to submit one or multiple Subcontract reports for Contracts using this endpoint
 **Consumes** | application/JSON
 **Produces** | Refer [Response JSON](#response-json)
 **Active Versions** | v1
@@ -147,7 +147,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization | header |  string | Yes | Valid and authorized SAM user email ID
 Content-Type | header |  string | Yes | application/json
 api_key | query | string | Yes | Valid System Account API Key
-Request JSON | Body | JSON | Yes | [Refer Submit Subaward report Contract JSON](#submit-subaward-report-contract-json)
+Request JSON | Body | JSON | Yes | [Refer Submit Subcontract report Contract JSON](#submit-subaward-report-contract-json)
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -176,7 +176,7 @@ The overall response will be a JSON array containing the status of each subcontr
 #### Examples
 
 <details>
-<summary>Example 1: Submit Subaward report for multiple Contracts and multiple Subawards. Example includes Task Order where IDV Reference number is required, and scenario when Top Pay Employees information for the Subawardee is not mandatory to be provided.</summary>
+<summary>Example 1: Submit Subcontract report for multiple Contracts and multiple Subcontracts under them. Example includes Task Order where IDV Reference number is required, and scenario when Top Pay Employees information for the Subcontractor is not mandatory to be provided.</summary>
 <p>
 <code><pre>
 {
@@ -311,7 +311,7 @@ The overall response will be a JSON array containing the status of each subcontr
 </details>
 
 <details>
-<summary>Example 2: Submit Subaward report with minimal data. In this case, the report will be saved in Draft status and validation errors will be sent back. </summary>
+<summary>Example 2: Submit Subcontract report with partial data. In this case, the report will be saved in Draft status and validation errors will be sent back. </summary>
 <p>
 <code><pre>
 {
@@ -397,7 +397,7 @@ The overall response will be a JSON array containing the status of each subrecip
 #### Examples
 
 <details>
-<summary>Example 1: Submit Assistance Subaward report for multiple awards and multiple Subawards. Example includes scenario when Top Pay Employees information for the Subawardee is not mandatory to be provided.</summary>
+<summary>Example 1: Submit Assistance Subaward report for multiple Assistance awards and their Subawards. Example includes scenario when Top Pay Employees information for the Subawardee is not mandatory to be provided.</summary>
 <p>
 <code><pre>
 {
@@ -529,7 +529,7 @@ The overall response will be a JSON array containing the status of each subrecip
 </details>
 
 <details>
-<summary>Example 2: Submit Subaward Assistance Report with minimal data. In this case, the report will be saved in Draft status and validation errors will be sent back. </summary>
+<summary>Example 2: Submit Subaward Assistance Report with partial data. In this case, the report will be saved in Draft status and validation errors will be sent back. </summary>
 <p>
 <code><pre>
 {
@@ -568,12 +568,12 @@ The overall response will be a JSON array containing the status of each subrecip
 
 <p><small><a href="#">Back to top</a></small></p>
 
-### Update Subaward report (Contracts)
+### Update Subcontract report (Contracts)
 
 ------- | -------
 **Request Type** | PUT
 **URL** | /contract/v1/subcontracts/{subawardReportNumber}
-**Summary** | A user will be able to update a contract subaward report
+**Summary** | A user will be able to update a subcontract report
 **Consumes** | application/JSON
 **Produces** | Refer [Response JSON](#response-json)
 **Active Versions** | v1
@@ -585,9 +585,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization | header |  string | Yes | Valid and authorized SAM user email ID
 Content-Type | header |  string | Yes | application/json
 api_key | query | string | Yes | Valid System Account API Key
-Request JSON | Body | JSON | Yes | [Refer Submit Subaward report Contract JSON](#submit-subaward-report-contract-json)
-
-NOTE: For an update request, the subawardReportNumber element in the request JSON structure will be required for each Subaward report to be updated.
+Request JSON | Body | JSON | Yes | [Refer Submit Subcontract report Contract JSON](#submit-subaward-report-contract-json)
 
 #### Responses
 
@@ -615,7 +613,7 @@ See the [Response JSON](#response-json) section for the response structure and s
 
 #### Examples: 
 <details>
-<summary>Example 1: Update Subaward report for multiple Contracts and multiple Subawards. Example includes Task Order where IDV Reference number is required, and the scenario when Top Pay Employees information is not mandatory to be provided.</summary>
+<summary>Example 1: Update a Subcontract report with all required information.</summary>
 <p>
 <code><pre>
 {
@@ -753,7 +751,7 @@ See the [Response JSON](#response-json) section for the response structure and s
 </details>
 
 <details>
-<summary>Example 2: Update Subaward report with minimal data. In this case, the report will be saved in Draft status and validation errors will be sent back. </summary>
+<summary>Example 2: Update Subcontract report with partial data. In this case, the report will be saved in Reopened status and validation errors will be sent back. </summary>
 <p>
 <code><pre>
 {
@@ -814,8 +812,6 @@ Content-Type | header |  string | Yes | application/json
 api_key | query | string | Yes | Valid System Account API Key
 Request JSON | Body | JSON | Yes | [Refer Submit Subaward report Assistance JSON](#submit-subaward-report-grant-json)
 
-NOTE: For update requests, the subawardReportNumber element in the request JSON structure will be required for each Subaward report to be updated.
-
 #### Responses
 
 The overall HTTP status code for the response will be determined as follows:
@@ -843,7 +839,7 @@ See the [Response JSON](#response-json) section for the response structure and s
 #### Examples: 
 
 <details>
-<summary>Example 1: Update Assistance Subaward report for multiple awards and multiple Subawards. Example includes scenario when Top Pay Employees information for the Subawardee is not mandatory to be provided.</summary>
+<summary>Example 1: Update Assistance Subaward report with all required information.</summary>
 <p>
 <code><pre>
 {
@@ -978,7 +974,7 @@ See the [Response JSON](#response-json) section for the response structure and s
 </details>
 
 <details>
-<summary>Example 2: Update Subaward Assistance Report with minimal data.  </summary>
+<summary>Example 2: Update Assistance Subaward Report with partial data. In this case, the report will be saved in Reopened status and validation failure messages will be sent back. </summary>
 <p>
 <code><pre>
 {
@@ -1018,12 +1014,12 @@ See the [Response JSON](#response-json) section for the response structure and s
 
 <p><small><a href="#">Back to top</a></small></p>
 
-### Delete Subaward report (Contracts)
+### Delete Subcontract report (Contracts)
 
 ------- | -------
 **Request Type** | DELETE
 **URL** | /contract/v1/subcontracts/{subawardReportNumber}
-**Summary** | Used to delete a contract subaward report
+**Summary** | Used to delete subcontract report(s)
 **Consumes** | application/JSON
 **Produces** | Refer [Response JSON](#response-json)
 **Active Versions** | v1
@@ -1055,7 +1051,7 @@ See the [Response JSON](#response-json) section for the response structure and s
 #### Examples
 
 <details>
-<summary>Example 1: Delete request to delete multiple Subaward reports for Contracts based on status provided</summary>
+<summary>Example 1: Delete request to delete subcontract report for the given status.</summary>
 <p>
 <code><pre>
 {
@@ -1079,7 +1075,7 @@ See the [Response JSON](#response-json) section for the response structure and s
 </details>
 
 <details>
-<summary>Example 2: Delete request to delete Subaward reports in all statuses (Published, Reopened) for a Contract when status is not provided</summary>
+<summary>Example 2: Delete request to delete a subcontract report in all statuses (Published, Reopened or Draft) for a Contract when status is not provided</summary>
 <p>
 <code><pre>
 {
@@ -1102,7 +1098,7 @@ See the [Response JSON](#response-json) section for the response structure and s
 ------- | -------
 **Request Type** | DELETE
 **URL** | /assistance/v1/subawards/{subawardReportNumber}
-**Summary** | Used to delete a previously submitted assistance subaward report
+**Summary** | Used to delete assistance subaward report(s)
 **Consumes** | Request Parameters
 **Produces** | Refer [Response JSON](#response-json)
 **Active Versions** | v1
@@ -1134,7 +1130,7 @@ See the [Response JSON](#response-json) section for the response structure and s
 #### Examples
 
 <details>
-<summary>Example 1: Delete request to delete multiple Assistance Subaward reports</summary>
+<summary>Example 1: Delete request to delete an Assistance Subaward report</summary>
 <p>
 <code><pre>
 {
@@ -1142,15 +1138,7 @@ See the [Response JSON](#response-json) section for the response structure and s
     {
       "subawardReportNumber": "2fad851e-7b43-4b62-a870-45b3f250ea99",
       "reportStatus": "Published"
-    },
-    {
-      "subawardReportNumber": "51e2fad8-7b43-4b62-a870-45b3f250ea55",
-      "reportStatus": "Draft"
-    },
-    {
-      "subawardReportNumber": "41e2fad8-7b43-4b62-a870-45b3f250ea91",
-      "reportStatus": "Reopened"
-    }		
+    }
   ]
 }
 </pre></code>
@@ -1158,7 +1146,7 @@ See the [Response JSON](#response-json) section for the response structure and s
 </details>
 
 <details>
-<summary>Example 2: Delete request to delete Subaward reports in all statuses (Published, Reopened) for a Assistance when status is not provided</summary>
+<summary>Example 2: Delete request to delete Subaward reports in all statuses (Published, Reopened or Draft) when status is not provided</summary>
 <p>
 <code><pre>
 {
@@ -1175,12 +1163,12 @@ See the [Response JSON](#response-json) section for the response structure and s
 
 <p><small><a href="#">Back to top</a></small></p>
 
-### Get Subaward report (Contracts)
+### Get Subcontract report (Contracts)
 
 ------- | -------
 **Request Type** | GET
 **URL** | /contract/v1/subcontracts/{subawardReportNumber}
-**Summary** |  User will be able to retrieve a specific contract subaward report
+**Summary** |  User will be able to retrieve a specific subcontract report
 **Consumes** | Request Parameters
 **Produces** | Refer [Response JSON](#response-json)
 **Active Versions** | v1
@@ -1213,7 +1201,7 @@ status | query | string | No | Status of the report (Draft, Published or Reopene
 </details>
 
 <details>
-<summary>Example 2: Get all Published Subaward reports for a specific contract</summary>
+<summary>Example 2: Get all Subaward reports for a specific subawardReportNumber when status is not provided.</summary>
 <p>
 <code><pre>
 {
@@ -1224,43 +1212,6 @@ status | query | string | No | Status of the report (Draft, Published or Reopene
       "reportStatus": "Published"
     }
   ]
-}
-</pre></code>
-</p>
-</details>
-
-<details>
-<summary>Example 3: Get all Subaward reports for a specific contract</summary>
-<p>
-<code><pre>
-{
-  "contractData": [
-    {
-      "contractNumber": "ABCDY2324235",
-      "reportingAgencyCode": "4700"
-    }
-  ]
-}
-</pre></code>
-</p>
-</details>
-
-<details>
-<summary>Example 4: Get request for multiple contracts</summary>
-<p>
-<code><pre>
-{
-   "contractData":[
-      {
-         "contractNumber":"ABCDY2324235",
-         "reportingAgencyCode":"4700",
-         "reportStatus":"Published"
-      },
-      {
-         "subawardReportNumber":"51e2fad8-7b43-4b62-a870-45b3f250ea99",
-         "reportStatus":"Draft"
-      }
-   ]
 }
 </pre></code>
 </p>
@@ -1319,7 +1270,7 @@ status | query | string | No | Status of the report (Draft, Published or Reopene
 </details>
 
 <details>
-<summary>Example 2: Get all Published Subaward reports for a specific Assistance</summary>
+<summary>Example 2: Get all Subaward reports for a specific Assistance subawardReportNumber when no status is provided.</summary>
 <p>
 <code><pre>
 {
@@ -1329,41 +1280,6 @@ status | query | string | No | Status of the report (Draft, Published or Reopene
       "reportStatus": "Published"
     }
   ]
-}
-</pre></code>
-</p>
-</details>
-
-<details>
-<summary>Example 3: Get all Subaward reports for a specific Assistance award</summary>
-<p>
-<code><pre>
-{
-  "assistanceData": [
-    {
-      "primeFAIN": "ABCDY2324235"
-    }
-  ]
-}
-</pre></code>
-</p>
-</details>
-
-<details>
-<summary>Example 4: Get request for multiple Assistance </summary>
-<p>
-<code><pre>
-{
-   "assistanceData":[
-      {
-         "primeFAIN":"ABCDY2324235",
-         "reportStatus":"Published"
-      },
-      {
-         "subawardReportNumber":"51e2fad8-7b43-4b62-a870-45b3f250ea99",
-         "reportStatus":"Draft"
-      }
-   ]
 }
 </pre></code>
 </p>
@@ -1384,12 +1300,12 @@ NOTE: Will return JSON response same as POST Response JSON. The subawardReportNu
 
 <p><small><a href="#">Back to top</a></small></p>
 
-### Search Subaward report (Contracts)
+### Search Subcontract report (Contracts)
 
 ------- | -------
 **Request Type** | GET
 **URL** | /contract/v1/subcontracts
-**Summary** |  User will be able to retrieve specific contract subaward reports based on the provided search criteria
+**Summary** |  User will be able to retrieve specific subcontract reports based on the provided search criteria
 **Consumes** | Request Parameters as described below
 **Produces** | A paginated response. Refer [Response JSON](#response-json)
 **Active Versions** | v1
@@ -1404,7 +1320,7 @@ contractNumber | query | string | No | The piid for the contract
 reportingAgencyCode | query | string | No | The agencyCode for the contract
 idvReferenceNumber | query | string | No | The Reference IDV for the contract
 referenceAgencyCode | query | string | No | The Reference Agency Code for the Reference IDV
-subawardReportNumber | query | string | No | The UUID for the contract subaward report number
+subawardReportNumber | query | string | No | The UUID for the subcontract report
 reportStatus | query | string | No | The status of the Subaward Report to fetch (Draft, Published or Reopened)
 page | query | string | No | The page number for the response to be retrieved (default is 0 which is the first page)
 size | query | string | No | The page size (default is 10)
