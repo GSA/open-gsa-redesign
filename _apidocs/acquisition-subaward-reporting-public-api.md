@@ -127,8 +127,6 @@ subEntityTopPayEmployee | Sub Entity Top Pay Employee | string | v1
 You can view the full details of this API in the OpenAPI Specification file available here: 
 <a href="v1/ffata-search-openapi.yml" download="ffata-search-openapi">OpenAPI File</a>
 
-You can view the full details of this API in the OpenAPI Specification file available here:
-<a href="v1/get-opportunities-v2.yml" download="get-opportunities-v2">OpenAPI File</a>
 
 <details>
 <summary>Acquisition Subaward Outbound v1</summary>
@@ -307,7 +305,7 @@ No API Key is provided. | No API key was supplied. Please submit with a valid AP
 ## Examples
 
 
-### Example 1: Search by IDV from 2020-01-07 to 2021-01-06 
+### Example 1: Search Published Records by IDV from yyyy-MM-dd to yyyy-MM-dd 
 
 <details>
     <summary>Request URL</summary>
@@ -416,14 +414,14 @@ Alpha URL: https://api-alpha.sam.gov/contract/v1/subcontracts/search?pageSize=25
 </p>
 </details>
 
-### Example 2: Search IDV from 2020-01-01 to Current Date
+### Example 2: Search Published Records by IDV from yyyy-MM-dd to Current Date
 
 <details>
     <summary>Request URL</summary>
 
-Production URL: https://api.sam.gov/contract/v1/subcontracts/search?status=Published&pageSize=25&pageNumber=0&referencedIDVPIID=SPM8EJ14D0011&fromDate=2020-01-07&toDate=2021-01-06&api_key={{api_key}} <br>
+Production URL: https://api.sam.gov/contract/v1/subcontracts/search?pageSize=25&pageNumber=0&referencedIDVPIID=SPM8EJ14D0011&fromDate=2020-01-07&toDate=2021-01-06&api_key={{api_key}} <br>
  <br>
-Alpha URL: https://api-alpha.sam.gov/contract/v1/subcontracts/search?status=Published&pageSize=25&pageNumber=0&referencedIDVPIID=SPM8EJ14D0011&fromDate=2020-01-07&toDate=2021-01-06&api_key={{api_key}}  <br>
+Alpha URL: https://api-alpha.sam.gov/contract/v1/subcontracts/search?pageSize=25&pageNumber=0&referencedIDVPIID=SPM8EJ14D0011&fromDate=2020-01-07&toDate=2021-01-06&api_key={{api_key}}  <br>
 </details>
 
 <details>
@@ -525,7 +523,7 @@ Alpha URL: https://api-alpha.sam.gov/contract/v1/subcontracts/search?status=Publ
 </p>
 </details>
 
-### Example 3: Search deleted records by IDV from 2020-01-01 to Current Date
+### Example 3: Search Deleted Records by IDV from yyyy-MM-dd to Current Date
 
 <details>
     <summary>Request URL</summary>
@@ -651,14 +649,14 @@ Alpha URL: https://api-alpha.sam.gov/contract/v1/subcontracts/search?status=Dele
 </p>
 </details>
 
-### Example 4: Search by Agency ID from 2021-02-01 to 2021-02-28
+### Example 4: Search Published Records by Agency ID from yyyy-MM-dd to yyyy-MM-dd
 
 <details>
     <summary>Request URL</summary>
 
-Production URL: https://api.sam.gov/contract/v1/subcontracts/search?status=Published&pageSize=25&pageNumber=0&primeAwardType=AWARD&agencyId=4732&fromDate=2021-02-01&toDate=2021-02-28&api_key={{api_key}} <br>
+Production URL: https://api.sam.gov/contract/v1/subcontracts/search?pageSize=25&pageNumber=0&primeAwardType=AWARD&agencyId=4732&fromDate=2021-02-01&toDate=2021-02-28&api_key={{api_key}} <br>
  <br>
-Alpha URL: https://api-alpha.sam.gov/contract/v1/subcontracts/search?status=Published&pageSize=25&pageNumber=0&primeAwardType=AWARD&agencyId=4732&fromDate=2021-02-01&toDate=2021-02-28&api_key={{api_key}} <br>
+Alpha URL: https://api-alpha.sam.gov/contract/v1/subcontracts/search?pageSize=25&pageNumber=0&primeAwardType=AWARD&agencyId=4732&fromDate=2021-02-01&toDate=2021-02-28&api_key={{api_key}} <br>
 </details>
 
 <details>
@@ -2162,14 +2160,14 @@ Alpha URL: https://api-alpha.sam.gov/contract/v1/subcontracts/search?status=Publ
 </p>
 </details>
 
-### Example 5: Search by Agency ID, ReferenceIDVPIID, and Unique Award Key from 2020-01-07 to 2022-01-14 
+### Example 5: Search Published Records by Agency ID, ReferenceIDVPIID, and Unique Award Key from yyyy-MM-dd to yyyy-MM-dd 
 
 <details>
     <summary>Request URL</summary>
 
-Production URL: https://api.sam.gov/contract/v1/subcontracts/search?status=Published&pageSize=25&pageNumber=0&primeAwardType=AWARD&agencyId=9700&referencedIDVPIID=SPM8EJ14D0011&fromDate=2020-01-07&toDate=2021-01-06&api_key={{api_key}} <br>
+Production URL: https://api.sam.gov/contract/v1/subcontracts/search?pageSize=25&pageNumber=0&primeAwardType=AWARD&agencyId=9700&referencedIDVPIID=SPM8EJ14D0011&fromDate=2020-01-07&toDate=2021-01-06&api_key={{api_key}} <br>
  <br>
-Alpha URL: https://api-alpha.sam.gov/contract/v1/subcontracts/search?status=Published&pageSize=25&pageNumber=0&primeAwardType=AWARD&agencyId=9700&referencedIDVPIID=SPM8EJ14D0011&fromDate=2020-01-07&toDate=2021-01-06&api_key={{api_key}} <br>
+Alpha URL: https://api-alpha.sam.gov/contract/v1/subcontracts/search?pageSize=25&pageNumber=0&primeAwardType=AWARD&agencyId=9700&referencedIDVPIID=SPM8EJ14D0011&fromDate=2020-01-07&toDate=2021-01-06&api_key={{api_key}} <br>
 </details>
 
 <details>
@@ -2271,14 +2269,14 @@ Alpha URL: https://api-alpha.sam.gov/contract/v1/subcontracts/search?status=Publ
 </p>
 </details>
 
-### Example 6: Search by ReferenceIDVPIID
+### Example 6: Search Published Records by ReferenceIDVPIID
 
 <details>
     <summary>Request URL</summary>
 
-Production URL: https://api.sam.gov/contract/v1/subcontracts/search?status=Published&pageSize=25&pageNumber=0&referencedIDVPIID=W52P1J18DA075&api_key=%7B%7Bapi_key%7D%7D <br>
+Production URL: https://api.sam.gov/contract/v1/subcontracts/search?pageSize=25&pageNumber=0&referencedIDVPIID=W52P1J18DA075&api_key=%7B%7Bapi_key%7D%7D <br>
  <br>
-Alpha URL: https://api-alpha.sam.gov/contract/v1/subcontracts/search?status=Published&pageSize=25&pageNumber=0&referencedIDVPIID=W52P1J18DA075&api_key=%7B%7Bapi_key%7D%7D <br>
+Alpha URL: https://api-alpha.sam.gov/contract/v1/subcontracts/search?pageSize=25&pageNumber=0&referencedIDVPIID=W52P1J18DA075&api_key=%7B%7Bapi_key%7D%7D <br>
 </details>
 
 <details>

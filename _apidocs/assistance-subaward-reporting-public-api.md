@@ -304,14 +304,14 @@ No API Key is provided. | No API key was supplied. Please submit with a valid AP
 ## Examples
 
 
-### Example 1: Search by UniqueAwardKey
+### Example 1: Search Published Records by UniqueAwardKey
 
 <details>
     <summary>Request URL</summary>
 
-Production URL: https://api.sam.gov/assistance/v1/subawards/search?status=Published&pageSize=25&pageNumber=0&uniqueAwardKey=ASST_NON_27MN12002L97E1_6925&api_key={{api_key}} <br>
+Production URL: https://api.sam.gov/assistance/v1/subawards/search?pageSize=25&pageNumber=0&uniqueAwardKey=ASST_NON_27MN12002L97E1_6925&api_key={{api_key}} <br>
  <br>
-Alpha URL: https://api-alpha.sam.gov/assistance/v1/subawards/search?status=Published&pageSize=25&pageNumber=0&uniqueAwardKey=ASST_NON_27MN12002L97E1_6925&api_key={{api_key}} <br>
+Alpha URL: https://api-alpha.sam.gov/assistance/v1/subawards/search?pageSize=25&pageNumber=0&uniqueAwardKey=ASST_NON_27MN12002L97E1_6925&api_key={{api_key}} <br>
 </details>
 
 <details>
@@ -395,14 +395,14 @@ Alpha URL: https://api-alpha.sam.gov/assistance/v1/subawards/search?status=Publi
 </details>
 
 
-### Example 2: Search by FAIN and Agency Code
+### Example 2: Search Published Records by FAIN and Agency Code
 
 <details>
     <summary>Request URL</summary>
 
-Production URL: https://api.sam.gov/assistance/v1/subawards/search?status=Published&pageSize=25&pageNumber=0&fain=27MN12002L97E1&agencyCode=6925&fromDate=2012-01-01&toDate=2013-12-31&api_key={{api_key}} <br>
+Production URL: https://api.sam.gov/assistance/v1/subawards/search?pageSize=25&pageNumber=0&fain=27MN12002L97E1&agencyCode=6925&fromDate=2012-01-01&toDate=2013-12-31&api_key={{api_key}} <br>
  <br>
-Alpha URL: https://api-alpha.sam.gov/assistance/v1/subawards/search?status=Published&pageSize=25&pageNumber=0&fain=27MN12002L97E1&agencyCode=6925&fromDate=2012-01-01&toDate=2013-12-31&api_key={{api_key}} <br>
+Alpha URL: https://api-alpha.sam.gov/assistance/v1/subawards/search?pageSize=25&pageNumber=0&fain=27MN12002L97E1&agencyCode=6925&fromDate=2012-01-01&toDate=2013-12-31&api_key={{api_key}} <br>
 </details>
 
 <details>
@@ -485,14 +485,14 @@ Alpha URL: https://api-alpha.sam.gov/assistance/v1/subawards/search?status=Publi
 </p>
 </details>
 
-### Example 3: Search by FAIN, Agency Code, and Unique Award Key
+### Example 3: Search Published Records by FAIN, Agency Code, and Unique Award Key
 
 <details>
     <summary>Request URL</summary>
 
-Production URL: https://api.sam.gov/assistance/v1/subawards/search?status=Published&pageSize=25&pageNumber=0&fain=27MN12002L97E1&uniqueAwardKey=ASST_NON_27MN12002L97E1_6925&agencyCode=6925&fromDate=2012-01-01&toDate=2013-09-29&api_key={{api_key}} <br>
+Production URL: https://api.sam.gov/assistance/v1/subawards/search?pageSize=25&pageNumber=0&fain=27MN12002L97E1&uniqueAwardKey=ASST_NON_27MN12002L97E1_6925&agencyCode=6925&fromDate=2012-01-01&toDate=2013-09-29&api_key={{api_key}} <br>
  <br>
-Alpha URL: https://api-alpha.sam.gov/assistance/v1/subawards/search?status=Published&pageSize=25&pageNumber=0&fain=27MN12002L97E1&uniqueAwardKey=ASST_NON_27MN12002L97E1_6925&agencyCode=6925&fromDate=2012-01-01&toDate=2013-09-29&api_key={{api_key}} <br>
+Alpha URL: https://api-alpha.sam.gov/assistance/v1/subawards/search?pageSize=25&pageNumber=0&fain=27MN12002L97E1&uniqueAwardKey=ASST_NON_27MN12002L97E1_6925&agencyCode=6925&fromDate=2012-01-01&toDate=2013-09-29&api_key={{api_key}} <br>
 </details>
 
 <details>
@@ -575,7 +575,7 @@ Alpha URL: https://api-alpha.sam.gov/assistance/v1/subawards/search?status=Publi
 </p>
 </details>
 
-### Example 4: Search Deleted Records by From Date - To Date
+### Example 4: Search Deleted Records by yyyy-MM-dd to yyyy-MM-dd
 
 <details>
     <summary>Request URL</summary>
