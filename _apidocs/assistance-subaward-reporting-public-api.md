@@ -90,7 +90,7 @@ pageNumber | Page Number. If the user does not pass any value, the system will d
 nextPageLink | Next Page Link | string | v1
 previousPageLink | Previous Page Link | string | v1
 uniqueAwardKey | Unique Award Key | string | v1
-piid | Piid | string | v1
+PIID | PIID | string | v1
 agencyId | Agency ID | string | v1
 referencedIDVPIID | Reference IDV PIID | string | v1
 referencedIDVAgencyId | Reference IDV Agency PIID | string | v1
@@ -162,7 +162,7 @@ You can view the full details of this API in the OpenAPI Specification file avai
         required: false
         schema:
           type: string
-      - name: piid
+      - name: PIID
         in: query
         required: false
         schema:
@@ -292,8 +292,8 @@ To Date value is after Current Date value. | To Date cannot be after the current
 Content in Description link is not available. | Description Not Found.
 Status Value is invalid. | Valid status values are: Deleted, Published. 
 UniqueAwardKey is invalid. | UniqueAwardKey must consist of alphanumeric characters only, with the underscore '_' being the only allowed special character.
-Piid value is invalid. | Piid value must be alphanumeric. 
-ReferencedIDVPIID value is invalid. | Referenced IDV Piid value must be alphanumeric. 
+PIID value is invalid. | PIID value must be alphanumeric. 
+ReferencedIDVPIID value is invalid. | Referenced IDV PIID value must be alphanumeric. 
 AgencyID value is invalid. | Agency ID value must be a four-digit number. 
 ReferencedIDV value is invalid. | ReferencedIDV agency ID value must be a four-digit number.
 PrimeAwardType value is invalid. | Prime award type value must be alphanumeric.
@@ -922,6 +922,230 @@ Alpha URL: https://api-alpha.sam.gov/assistance/v1/subawards/search?status=Delet
       "subTopPayEmployee": null
     }
   ]
+}
+</pre></code>
+</p>
+</details>
+
+### Example 6: Search Published Records from Past 24 Hours 
+
+<details>
+    <summary>Request URL</summary>
+
+Production URL: https://api.sam.gov/assistance/v1/subawards/search?pageSize=25&pageNumber=0&fromDate=2024-11-07&toDate=2024-11-08&api_key={{api_key}} <br>
+ <br>
+Alpha URL: https://api-alpha.sam.gov/assistance/v1/subawards/search?pageSize=25&pageNumber=0&fromDate=2024-11-07&toDate=2024-11-08&api_key={{api_key}} <br>
+</details>
+
+<details>
+    <summary> Sample Response (JSON Output) v1</summary>
+
+<p>
+<code><pre>
+{
+    "totalPages": 8,
+    "totalRecords": 8,
+    "pageNumber": 0,
+    "nextPageLink": "https://api-alpha.sam.gov/assistance/v1/subawards/search?pageNumber=1&pageSize=1&status=Published&fromDate=2024-11-07&toDate=2024-11-08",
+    "previousPageLink": "https://api-alpha.sam.gov/assistance/v1/subawards/search?pageNumber=0&pageSize=1&status=Published&fromDate=2024-11-07&toDate=2024-11-08",
+    "data": [
+        {
+            "status": "Published",
+            "submittedDate": "2024-11-07",
+            "subVendorName": "WATERPLAY INC.",
+            "subVendorUei": "FZNJF7KWUE87",
+            "subAwardNumber": "MAWNOV08-2",
+            "subAwardAmount": "56000.0",
+            "subAwardDate": "2024-11-04",
+            "reportUpdatedDate": "2024-11-07",
+            "subawardReportId": "123477605",
+            "subawardReportNumber": "758a9b27-a804-485a-8a14-cd99cc5998d2",
+            "placeOfPerformance": {
+                "streetAddress": null,
+                "streetAddress2": null,
+                "city": "OKLAHOMA CITY",
+                "congressionalDistrict": "Oklahoma 05",
+                "state": {
+                    "code": null,
+                    "name": "Oklahoma"
+                },
+                "country": {
+                    "code": null,
+                    "name": "UNITED STATES"
+                },
+                "zip": "73152"
+            },
+            "organizationInfo": null,
+            "assistanceListingNumber": {
+                "title": "Federal Disaster Assistance to Individuals and Households in Presidential Declared Disaster Areas",
+                "number": "97.048"
+            },
+            "subawardDescription": "test",
+            "fain": "4438DROKTTHP     04",
+            "actionDate": null,
+            "totalFedFundingAmount": "1.0006742E7",
+            "baseObligationDate": "2019-06-04",
+            "projectDescription": "PASS THROUGH GRANT FOR FAMILIES IN DISASTER AREA",
+            "baseAssistanceTypeCode": "06",
+            "baseAssistanceTypeDesc": "direct payment for specified use, as a subsidy or other non-reimbursable direct financial aid (C)",
+            "agencyCode": "7022",
+            "assistanceType": null,
+            "primeEntityUei": "PCBXEVWE3V75",
+            "primeEntityName": "OKLAHOMA STATE OF",
+            "uniqueAwardKey": "ASST_NON_4438DROKTTHP     04_7022",
+            "vendorPhysicalAddress": {
+                "streetAddress": "8858 SOUTH PRINCETON",
+                "streetAddress2": null,
+                "city": "CHICAGO",
+                "congressionalDistrict": null,
+                "state": {
+                    "code": "IL",
+                    "name": "ILLINOIS"
+                },
+                "country": {
+                    "code": "USA",
+                    "name": "UNITED STATES"
+                },
+                "zip": "60620"
+            },
+            "subDbaName": null,
+            "subParentName": "OKLAHOMA, STATE OF",
+            "subParentUei": "EMSCXBHK78V7",
+            "subBusinessType": [
+                {
+                    "code": "23",
+                    "name": "Minority-Owned Business"
+                },
+                {
+                    "code": "27",
+                    "name": "Self Certified Small Disadvantaged Business"
+                },
+                {
+                    "code": "F",
+                    "name": "Business or Organization"
+                },
+                {
+                    "code": "XS",
+                    "name": "Subchapter S Corporation"
+                }
+            ],
+            "subTopPayEmployee": []
+        }
+    ]
+}
+</pre></code>
+</p>
+</details>
+
+### Example 7: Search Deleted Records from Past 24 Hours 
+
+<details>
+    <summary>Request URL</summary>
+
+Production URL: https://api.sam.gov/assistance/v1/subawards/search?status=Deleted&pageSize=25&pageNumber=0&fromDate=2024-11-07&toDate=2024-11-08&api_key={{api_key}} <br>
+ <br>
+Alpha URL: https://api-alpha.sam.gov/assistance/v1/subawards/search?status=Deleted&pageSize=25&pageNumber=0&fromDate=2024-11-07&toDate=2024-11-08&api_key={{api_key}} <br>
+</details>
+
+<details>
+    <summary> Sample Response (JSON Output) v1</summary>
+
+<p>
+<code><pre>
+{
+     "totalPages": 2,
+    "totalRecords": 2,
+    "pageNumber": 0,
+    "nextPageLink": "https://api-alpha.sam.gov/assistance/v1/subawards/search?pageNumber=1&pageSize=1&status=Deleted&fromDate=2024-11-07&toDate=2024-11-08",
+    "previousPageLink": "https://api-alpha.sam.gov/assistance/v1/subawards/search?pageNumber=0&pageSize=1&status=Deleted&fromDate=2024-11-07&toDate=2024-11-08",
+    "data": [
+        {
+            "status": "Deleted",
+            "submittedDate": "2024-11-08",
+            "subVendorName": null,
+            "subVendorUei": "VE5GG6T6ERN5",
+            "subAwardNumber": "BulkuploadScenario11_newdata",
+            "subAwardAmount": "43534.65",
+            "subAwardDate": "2019-10-10",
+            "reportUpdatedDate": "2024-11-08",
+            "subawardReportId": "123477850",
+            "subawardReportNumber": "70a0605d-43bc-4a3e-adee-296dc78d10ce",
+            "placeOfPerformance": {
+                "streetAddress": null,
+                "streetAddress2": null,
+                "city": "TEMPE",
+                "congressionalDistrict": "Arizona 09",
+                "state": {
+                    "code": null,
+                    "name": "Arizona"
+                },
+                "country": {
+                    "code": null,
+                    "name": "UNITED STATES"
+                },
+                "zip": "85281"
+            },
+            "organizationInfo": null,
+            "assistanceListingNumber": {
+                "title": "Geosciences",
+                "number": "47.05"
+            },
+            "subawardDescription": "BulkuploadScenario7",
+            "fain": "1250440",
+            "actionDate": null,
+            "totalFedFundingAmount": "135654.0",
+            "baseObligationDate": "2013-06-25",
+            "projectDescription": "Building the Deccan Traps:  What Can We Learn from Lava Flow Morphology in Large Igneous Provinces?",
+            "baseAssistanceTypeCode": "04",
+            "baseAssistanceTypeDesc": null,
+            "agencyCode": "4900",
+            "assistanceType": null,
+            "primeEntityUei": "NTLHJXM55KZ6",
+            "primeEntityName": "Arizona State University",
+            "uniqueAwardKey": "ASST_NON_1250440_4900",
+            "vendorPhysicalAddress": {
+                "streetAddress": "6521 HIGHWAY 69 S Ste O",
+                "streetAddress2": "null",
+                "city": "TUSCALOOSA",
+                "congressionalDistrict": "null",
+                "state": {
+                    "code": "AL",
+                    "name": "Alabama"
+                },
+                "country": {
+                    "code": "USA",
+                    "name": "UNITED STATES"
+                },
+                "zip": "35405"
+            },
+            "subDbaName": null,
+            "subParentName": "ARIZONA STATE UNIVERSITY",
+            "subParentUei": "HX59VKHQH1V7",
+            "subBusinessType": [],
+            "subTopPayEmployee": [
+                {
+                    "salary": "100",
+                    "fullname": "sub1"
+                },
+                {
+                    "salary": "200",
+                    "fullname": "sub2"
+                },
+                {
+                    "salary": "300",
+                    "fullname": "sub3"
+                },
+                {
+                    "salary": "400",
+                    "fullname": "sub4"
+                },
+                {
+                    "salary": "500",
+                    "fullname": "sub5"
+                }
+            ]
+        }
+    ]
 }
 </pre></code>
 </p>

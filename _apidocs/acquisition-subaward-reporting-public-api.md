@@ -64,7 +64,7 @@ Users can search by any of the below request filters.
 Filter | Description | Required | Data Type | Applicable Versions 
 ----- | ------| ----- | ----- | -----
 uniqueAwardKey | Business key to identify subawards under each prime. Unique for a contract and gives complete subaward information pertaining to that contract  | Yes | Alphanumeric | v1
-piid | Allows user to pull one single record with multiple subawards. The total records that will be shown is the number of subawards. | No | Alphanumeric | v1
+PIID | Allows user to pull one single record with multiple subawards. The total records that will be shown is the number of subawards. | No | Alphanumeric | v1
 agencyId | Allows user to pull prime information to identify the contract family. | No | Numeric | v1
 referencedIdvPIID | Allows user to pull prime information to identify the contract family. | No | Alphanumeric | v1
 referencedIDVAgencyID | Allows user to pull prime information to identify the contract family. | No | Alphanumeric | v1
@@ -93,7 +93,7 @@ pageNumber | Page Number. If the user does not pass any value, the system will d
 nextPageLink | Next Page Link | string | v1
 previousPageLink | Previous Page Link | string | v1
 uniqueAwardKey | Unique Award Key | string | v1
-piid | Piid | string | v1
+PIID | PIID | string | v1
 agencyId | Agency ID | string | v1
 referencedIDVPIID | Reference IDV PIID | string | v1
 referencedIDVAgencyId | Reference IDV Agency PIID | string | v1
@@ -164,7 +164,7 @@ You can view the full details of this API in the OpenAPI Specification file avai
         required: false
         schema:
           type: string
-      - name: piid
+      - name: PIID
         in: query
         required: false
         schema:
@@ -293,8 +293,8 @@ To Date value is after Current Date value. | To Date cannot be after the current
 Content in Description link is not available. | Description Not Found.
 Status Value is invalid. | Valid status values are: Deleted, Published. 
 UniqueAwardKey is invalid. | UniqueAwardKey must consist of alphanumeric characters only, with the underscore '_' being the only allowed special character.
-Piid value is invalid. | Piid value must be alphanumeric. 
-ReferencedIDVPIID value is invalid. | Referenced IDV Piid value must be alphanumeric. 
+PIID value is invalid. | PIID value must be alphanumeric. 
+ReferencedIDVPIID value is invalid. | Referenced IDV PIID value must be alphanumeric. 
 AgencyID value is invalid. | Agency ID value must be a four-digit number. 
 ReferencedIDV value is invalid. | ReferencedIDV agency ID value must be a four-digit number.
 PrimeAwardType value is invalid. | Prime award type value must be alphanumeric.
@@ -542,8 +542,8 @@ Alpha URL: https://api-alpha.sam.gov/contract/v1/subcontracts/search?status=Dele
   "totalPages": 1,
   "totalRecords": 1,
   "pageNumber": 0,
-  "nextPageLink": "https://api-alpha.sam.gov/comp/contract/v1/subcontracts/search?pageNumber=0&pageSize=25",
-  "previousPageLink": "https://api-alpha.sam.gov/comp/contract/v1/subcontracts/search?pageNumber=0&pageSize=25",
+  "nextPageLink": "https://api-alpha.sam.gov/contract/v1/subcontracts/search?pageNumber=0&pageSize=25",
+  "previousPageLink": "https://api-alpha.sam.gov/contract/v1/subcontracts/search?pageNumber=0&pageSize=25",
   "data": [
     {
       "uniqueAwardKey": "CONT_AWD_FA860420F6109_9700_FA860415D7976_9700",
@@ -668,8 +668,8 @@ Alpha URL: https://api-alpha.sam.gov/contract/v1/subcontracts/search?pageSize=25
   "totalPages": 1,
   "totalRecords": 17,
   "pageNumber": 0,
-  "nextPageLink": "https://api-alpha.sam.gov/comp/contract/v1/subcontracts/search?pageNumber=0&pageSize=25",
-  "previousPageLink": "https://api-alpha.sam.gov/comp/contract/v1/subcontracts/search?pageNumber=0&pageSize=25",
+  "nextPageLink": "https://api-alpha.sam.gov/contract/v1/subcontracts/search?pageNumber=0&pageSize=25",
+  "previousPageLink": "https://api-alpha.sam.gov/contract/v1/subcontracts/search?pageNumber=0&pageSize=25",
   "data": [
     {
       "uniqueAwardKey": "CONT_AWD_47QFSA20F0057_4732_GS00Q14OADU428_4732",
@@ -2288,8 +2288,8 @@ Alpha URL: https://api-alpha.sam.gov/contract/v1/subcontracts/search?pageSize=25
   "totalPages": 6,
   "totalRecords": 138,
   "pageNumber": 0,
-  "nextPageLink": "https://api-alpha.sam.gov/comp/contract/v1/subcontracts/search?pageNumber=1&pageSize=25",
-  "previousPageLink": "https://api-alpha.sam.gov/comp/contract/v1/subcontracts/search?pageNumber=0&pageSize=25",
+  "nextPageLink": "https://api-alpha.sam.gov/contract/v1/subcontracts/search?pageNumber=1&pageSize=25",
+  "previousPageLink": "https://api-alpha.sam.gov/contract/v1/subcontracts/search?pageNumber=0&pageSize=25",
   "data": [
     {
       "uniqueAwardKey": "CONT_AWD_W91QVN20F0157_9700_W52P1J18DA075_9700",
@@ -4680,6 +4680,224 @@ Alpha URL: https://api-alpha.sam.gov/contract/v1/subcontracts/search?pageSize=25
           "fullname": "Mark H Mercilliott"
         }
       ],
+      "subEntityParentLegalBusinessName": null
+    }
+  ]
+}
+</pre></code>
+</p>
+</details>
+
+### Example 7: Search Published Records from Past 24 Hours 
+
+<details>
+    <summary>Request URL</summary>
+
+Production URL: https://api.sam.gov/contract/v1/subcontracts/search?pageSize=25&pageNumber=0&fromDate=2023-11-07&toDate=2023-11-08&api_key= <br>
+ <br>
+Alpha URL:  https://api-alpha.sam.gov/contract/v1/subcontracts/search?pageSize=25&pageNumber=0&fromDate=2023-11-07&toDate=2023-11-08&api_key= <br>
+</details>
+
+<details>
+    <summary> Sample Response (JSON Output) v1</summary>
+
+<p>
+<code><pre>
+{
+  "totalPages": 5,
+  "totalRecords": 116,
+  "pageNumber": 0,
+  "nextPageLink": "https://api-alpha.sam.gov/contract/v1/subcontracts/search?pageNumber=1&pageSize=1&status=Published&fromDate=2023-11-07&toDate=2023-11-08",
+  "previousPageLink": "https://api-alpha.sam.gov/contract/v1/subcontracts/search?pageNumber=1&pageSize=1&status=Published&fromDate=2023-11-07&toDate=2023-11-08",
+  "data": [
+    {
+      "uniqueAwardKey": "CONT_AWD_SPE8EM20F111S_9700_SPM8EJ14D0011_9700",
+      "piid": "SPE8EM20F111S",
+      "agencyId": "9700",
+      "referencedIDVPIID": "SPM8EJ14D0011",
+      "referencedIDVAgencyId": "9700",
+      "subAwardReportId": "88543458",
+      "subEntityEFTIndicator": null,
+      "subAwardReportNumber": "89394bbe-666d-11ef-ba05-25022c356cb4",
+      "submittedDate": "2020-03-11",
+      "subAwardNumber": "1071211",
+      "subAwardAmount": "48688",
+      "subAwardDate": "2020-02-20",
+      "subEntityLegalBusinessName": "L&C PROTEC, INC.",
+      "subEntityUei": "DKLBZLX4D674",
+      "primeAwardType": "AWARD",
+      "totalContractValue": "58660.0",
+      "primeEntityUei": "GJMSFBCNMSK3",
+      "primeEntityName": "ATLANTIC DIVING SUPPLY, INC.",
+      "baseAwardDateSigned": "2020-02-19",
+      "descriptionOfRequirement": "4549096622!UH1Y CANOPY AND NOSE COVER",
+      "primeNaics": {
+        "code": "423850",
+        "description": "SERVICE ESTABLISHMENT EQUIPMENT AND SUPPLIES MERCHANT WHOLESALERS"
+      },
+      "primeOrganizationInfo": {
+        "fundingAgency": {
+          "code": "97AS",
+          "name": "DEFENSE LOGISTICS AGENCY"
+        },
+        "fundingOffice": {
+          "code": "SPE8EM",
+          "name": "DLA TROOP SUPPORT"
+        },
+        "contractingAgency": {
+          "code": "97AS",
+          "name": "DEFENSE LOGISTICS AGENCY"
+        },
+        "contractingOffice": {
+          "code": "SPE8EM",
+          "name": "DLA TROOP SUPPORT"
+        },
+        "fundingDepartment": {
+          "code": "9700",
+          "name": "DEPT OF DEFENSE"
+        },
+        "contractingDepartment": {
+          "code": "9700",
+          "name": "DEPT OF DEFENSE"
+        }
+      },
+      "entityPhysicalAddress": {
+        "streetAddress": "216 LAFAYETTE RD UNIT 201",
+        "streetAddress2": null,
+        "city": "north hampton",
+        "congressionalDistrict": "01",
+        "state": {
+          "code": "NH",
+          "name": "New Hampshire"
+        },
+        "country": {
+          "code": "USA",
+          "name": "United States"
+        },
+        "zip": "038622445"
+      },
+      "subBusinessType": [
+        {
+          "code": "2X",
+          "name": "For-Profit Organization"
+        },
+        {
+          "code": "MF",
+          "name": "Manufacturer of Goods"
+        }
+      ],
+      "subParentUei": null,
+      "subEntityDoingBusinessAsName": "ADS",
+      "subTopPayEmployee": null,
+      "subEntityParentLegalBusinessName": null
+    }
+  ]
+}
+</pre></code>
+</p>
+</details>
+
+### Example 8: Search Deleted Records from Past 24 Hours 
+
+<details>
+    <summary>Request URL</summary>
+
+Production URL: https://api.sam.gov/contract/v1/subcontracts/search?status=Deleted&pageSize=25&pageNumber=0&fromDate=2023-11-07&toDate=2023-11-08&api_key={{api_key}} <br>
+ <br>
+Alpha URL: https://api-alpha.sam.gov/contract/v1/subcontracts/search?status=Deleted&pageSize=25&pageNumber=0&fromDate=2023-11-07&toDate=2023-11-08&api_key={{api_key}} <br>
+</details>
+
+<details>
+    <summary> Sample Response (JSON Output) v1</summary>
+
+<p>
+<code><pre>
+{
+  "totalPages": 5,
+  "totalRecords": 116,
+  "pageNumber": 0,
+  "nextPageLink": "https://api-alpha.sam.gov/contract/v1/subcontracts/search?status=Deleted&pageNumber=1&pageSize=1&status=Published&fromDate=2023-11-07&toDate=2023-11-08",
+  "previousPageLink": "https://api-alpha.sam.gov/contract/v1/subcontracts/search?status=Deleted&pageNumber=1&pageSize=1&status=Published&fromDate=2023-11-07&toDate=2023-11-08",
+  "data": [
+    {
+      "uniqueAwardKey": "CONT_AWD_SPE8EM20F111S_9700_SPM8EJ14D0011_9700",
+      "PIID": "SPE8EM20F111S",
+      "agencyId": "9700",
+      "referencedIDVPIID": "SPM8EJ14D0011",
+      "referencedIDVAgencyId": "9700",
+      "subAwardReportId": "88543458",
+      "subEntityEFTIndicator": null,
+      "subAwardReportNumber": "89394bbe-666d-11ef-ba05-25022c356cb4",
+      "submittedDate": "2020-03-11",
+      "subAwardNumber": "1071211",
+      "subAwardAmount": "48688",
+      "subAwardDate": "2020-02-20",
+      "subEntityLegalBusinessName": "L&C PROTEC, INC.",
+      "subEntityUei": "DKLBZLX4D674",
+      "primeAwardType": "AWARD",
+      "totalContractValue": "58660.0",
+      "primeEntityUei": "GJMSFBCNMSK3",
+      "primeEntityName": "ATLANTIC DIVING SUPPLY, INC.",
+      "baseAwardDateSigned": "2020-02-19",
+      "descriptionOfRequirement": "4549096622!UH1Y CANOPY AND NOSE COVER",
+      "primeNaics": {
+        "code": "423850",
+        "description": "SERVICE ESTABLISHMENT EQUIPMENT AND SUPPLIES MERCHANT WHOLESALERS"
+      },
+      "primeOrganizationInfo": {
+        "fundingAgency": {
+          "code": "97AS",
+          "name": "DEFENSE LOGISTICS AGENCY"
+        },
+        "fundingOffice": {
+          "code": "SPE8EM",
+          "name": "DLA TROOP SUPPORT"
+        },
+        "contractingAgency": {
+          "code": "97AS",
+          "name": "DEFENSE LOGISTICS AGENCY"
+        },
+        "contractingOffice": {
+          "code": "SPE8EM",
+          "name": "DLA TROOP SUPPORT"
+        },
+        "fundingDepartment": {
+          "code": "9700",
+          "name": "DEPT OF DEFENSE"
+        },
+        "contractingDepartment": {
+          "code": "9700",
+          "name": "DEPT OF DEFENSE"
+        }
+      },
+      "entityPhysicalAddress": {
+        "streetAddress": "216 LAFAYETTE RD UNIT 201",
+        "streetAddress2": null,
+        "city": "north hampton",
+        "congressionalDistrict": "01",
+        "state": {
+          "code": "NH",
+          "name": "New Hampshire"
+        },
+        "country": {
+          "code": "USA",
+          "name": "United States"
+        },
+        "zip": "038622445"
+      },
+      "subBusinessType": [
+        {
+          "code": "2X",
+          "name": "For-Profit Organization"
+        },
+        {
+          "code": "MF",
+          "name": "Manufacturer of Goods"
+        }
+      ],
+      "subParentUei": null,
+      "subEntityDoingBusinessAsName": "ADS",
+      "subTopPayEmployee": null,
       "subEntityParentLegalBusinessName": null
     }
   ]
