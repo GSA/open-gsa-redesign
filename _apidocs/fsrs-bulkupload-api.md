@@ -200,13 +200,13 @@ The overall response will be a JSON array containing the status of each subcontr
                      "code":"USA",
                      "name":"UNITED STATES"
                   },
-                  "stateOrProvidence":{
+                  "stateOrProvince":{
                      "code":"VA",
                      "name":"Virginia"
                   },
                   "zipPlus4":"123456789"
                },
-               "recovery_model_questions":[
+               "recoveryModelQuestions":[
                   {
                      "code":"1",
                      "isSelected":"true"
@@ -255,13 +255,13 @@ The overall response will be a JSON array containing the status of each subcontr
                      "code":"USA",
                      "name":"UNITED STATES"
                   },
-                  "stateOrProvidence":{
+                  "stateOrProvince":{
                      "code":"VA",
                      "name":"Virginia"
                   },
                   "zipPlus4":"678901234"
                },
-               "recovery_model_questions":[
+               "recoveryModelQuestions":[
                   {
                      "code":"1",
                      "isSelected":"true"
@@ -291,13 +291,13 @@ The overall response will be a JSON array containing the status of each subcontr
                      "code":"USA",
                      "name":"UNITED STATES"
                   },
-                  "stateOrProvidence":{
+                  "stateOrProvince":{
                      "code":"GA",
                      "name":"Georgia"
                   },
                   "zipPlus4":"12345"
                },
-               "recovery_model_questions":[
+               "recoveryModelQuestions":[
                   {
                      "code":"1",
                      "isSelected":"false"
@@ -333,7 +333,7 @@ The overall response will be a JSON array containing the status of each subcontr
                      "code":"USA",
                      "name":"UNITED STATES"
                   },
-                  "stateOrProvidence":{
+                  "stateOrProvince":{
                      "code":"VA",
                      "name":"Virginia"
                   },
@@ -409,20 +409,20 @@ The overall response will be a JSON array containing the status of each subrecip
           "uei": "ABC123456789",
           "subawardAmount": "100000",
           "subawardDate": "2010-10-01",
-          "overallDescription": "My Description",
+          "subawardDescription": "My Description",
           "placeOfPerformance": {
             "city": "Alexandria",
             "country": {
               "code": "USA",
               "name": "UNITED STATES"
             },
-            "stateOrProvidence": {
+            "stateOrProvince": {
               "code": "VA",
               "name": "Virginia"
             },
             "zipPlus4": "123456789"
           },
-          "recovery_model_questions": [
+          "recoveryModelQuestions": [
             {
               "code": "3",
               "isSelected": "true"
@@ -465,20 +465,20 @@ The overall response will be a JSON array containing the status of each subrecip
           "uei": "zzz123456789",
           "subawardAmount": "150000",
           "subawardDate": "2023-04-17",
-          "overallDescription": "My Description",
+          "subawardDescription": "My Description",
           "placeOfPerformance": {
             "city": "Atlanta",
             "country": {
               "code": "USA",
               "name": "UNITED STATES"
             },
-            "stateOrProvidence": {
+            "stateOrProvince": {
               "code": "GA",
               "name": "Georgia"
             },
             "zipPlus4": "123456789"
           },
-          "recovery_model_questions": [
+          "recoveryModelQuestions": [
             {
               "code": "3",
               "isSelected": "false"
@@ -490,20 +490,20 @@ The overall response will be a JSON array containing the status of each subrecip
           "uei": "XYZ123456789",
           "subawardAmount": "150055",
           "subawardDate": "2023-04-17",
-          "overallDescription": "My Description",
+          "subawardDescription": "My Description",
           "placeOfPerformance": {
             "city": "Brambleton",
             "country": {
               "code": "USA",
               "name": "UNITED STATES"
             },
-            "stateOrProvidence": {
+            "stateOrProvince": {
               "code": "VA",
               "name": "Virginia"
             },
             "zipPlus4": "678901234"
           },
-          "recovery_model_questions": [
+          "recoveryModelQuestions": [
             {
               "code": "3",
               "isSelected": "true"
@@ -536,14 +536,14 @@ The overall response will be a JSON array containing the status of each subrecip
           "uei": "zzz123456789",
           "subawardAmount": "",
           "subawardDate": "",
-          "overallDescription": "",
+          "subawardDescription": "",
           "placeOfPerformance": {
             "city": "Atlanta",
             "country": {
               "code": "USA",
               "name": "UNITED STATES"
             },
-            "stateOrProvidence": {
+            "stateOrProvince": {
               "code": "GA",
               "name": "Georgia"
             },
@@ -609,134 +609,64 @@ See the [Response JSON](#response-json) section for the response structure and s
 <p>
 <code><pre>
 {
-   "contractData":[
-      {
-         "contractNumber":"W9123823PTEST",
-         "reportingAgencyCode":"2100",
-         "idvReferenceNumber":"GSTEST001",
-         "referenceAgencyCode":"2147",
-         "programTitle":"Title of the program",
-         "subawardDataList":[
+   "contractData":{
+      "contractNumber":"W9123823PTEST",
+      "reportingAgencyCode":"2100",
+      "idvReferenceNumber":"GSTEST001",
+      "referenceAgencyCode":"2147",
+      "programTitle":"Title of the program",
+      "subawardData":{
+         "subawardUEI":"ABC987654321",
+         "subawardNumber":"2303-TEST-05-0",
+         "subawardAmount":"100567.99",
+         "subawardDate":"2023-05-14",
+         "subawardDescription":"test Description",
+         "placeOfPerformance":{
+            "city":"Alexandria",
+            "country":{
+               "code":"USA",
+               "name":"UNITED STATES"
+            },
+            "stateOrProvince":{
+               "code":"VA",
+               "name":"Virginia"
+            },
+            "zipPlus4":"123456789"
+         },
+         "recoveryModelQuestions":[
             {
-               "subawardReportNumber":"51e2fad8-7b43-4b62-a870-45b3f250ea99",
-               "subawardUEI":"ABC987654321",
-               "subawardNumber":"2303-TEST-05-0",
-               "subawardAmount":"100567.99",
-               "subawardDate":"2023-05-14",
-               "subawardDescription":"test Description",
-               "placeOfPerformance":{
-                  "city":"Alexandria",
-                  "country":{
-                     "code":"USA",
-                     "name":"UNITED STATES"
-                  },
-                  "stateOrProvidence":{
-                     "code":"VA",
-                     "name":"Virginia"
-                  },
-                  "zipPlus4":"123456789"
-               },
-               "recovery_model_questions":[
-                  {
-                     "code":"1",
-                     "isSelected":"true"
-                  },
-                  {
-                     "code":"2",
-                     "isSelected":"false"
-                  }
-               ],
-               "topPayEmployees":[
-                  {
-                     "fullName":"John White",
-                     "salary":"100000"
-                  },
-                  {
-                     "fullName":"Employee Green",
-                     "salary":"120000"
-                  },
-                  {
-                     "fullName":"Employee Red",
-                     "salary":"96000"
-                  },
-                  {
-                     "fullName":"Employee Orange",
-                     "salary":"250000"
-                  },
-                  {
-                     "fullName":"Employee Blue",
-                     "salary":"290000"
-                  }
-               ]
+               "code":"1",
+               "isSelected":"true"
             },
             {
-               "subawardReportNumber":"45e2fad8-7b43-4b62-a870-45b3f250ea31",
-               "subawardUEI":"XYZ987654321",
-               "subawardNumber":"2303-TEST-06-1",
-               "subawardAmount":"80000",
-               "subawardDate":"2023-05-14",
-               "subawardDescription":"test Description2",
-               "placeOfPerformance":{
-                  "city":"Brambleton",
-                  "country":{
-                     "code":"USA",
-                     "name":"UNITED STATES"
-                  },
-                  "stateOrProvidence":{
-                     "code":"VA",
-                     "name":"Virginia"
-                  },
-                  "zipPlus4":"678901234"
-               },
-               "recovery_model_questions":[
-                  {
-                     "code":"1",
-                     "isSelected":"true"
-                  },
-                  {
-                     "code":"2",
-                     "isSelected":"true"
-                  }
-               ]
+               "code":"2",
+               "isSelected":"false"
             }
-         ]
-      },
-      {
-         "contractNumber":"W91238PTESTTWO",
-         "reportingAgencyCode":"9700",
-         "idvReferenceNumber":"",
-         "referenceAgencyCode":"",
-         "programTitle":"Title of the program",
-         "subawardDataList":[
+         ],
+         "topPayEmployees":[
             {
-               "subawardReportNumber":"45b3f2d8-7b43-4b62-a870-45b3f250b435",
-               "subawardUEI":"ABC999999999",
-               "subawardNumber":"9999-TEST",
-               "subawardAmount":"80000",
-               "subawardDate":"2023-04-28",
-               "subawardDescription":"test Description3",
-               "placeOfPerformance":{
-                  "city":"Atlanta",
-                  "country":{
-                     "code":"USA",
-                     "name":"UNITED STATES"
-                  },
-                  "stateOrProvidence":{
-                     "code":"GA",
-                     "name":"Georgia"
-                  },
-                  "zipPlus4":"123456789"
-               },
-               "recovery_model_questions":[
-                  {
-                     "code":"1",
-                     "isSelected":"false"
-                  }
-               ]
+               "fullName":"John White",
+               "salary":"100000"
+            },
+            {
+               "fullName":"Employee Green",
+               "salary":"120000"
+            },
+            {
+               "fullName":"Employee Red",
+               "salary":"96000"
+            },
+            {
+               "fullName":"Employee Orange",
+               "salary":"250000"
+            },
+            {
+               "fullName":"Employee Blue",
+               "salary":"290000"
             }
          ]
       }
-   ]
+   }
 }
 </pre></code>
 </p>
@@ -747,37 +677,32 @@ See the [Response JSON](#response-json) section for the response structure and s
 <p>
 <code><pre>
 {
-   "contractData":[
-      {
-         "contractNumber":"W9123823PTEST",
-         "reportingAgencyCode":"2100",
-         "idvReferenceNumber":"GSTEST001",
-         "referenceAgencyCode":"2147",
-         "programTitle":"Title of the program",
-         "subawardDataList":[
-            {
-               "subawardReportNumber":"45b3f2d8-7b43-4b62-a870-45b3f250b435",
-               "subawardUEI":"ABC987654321",
-               "subawardNumber":"",
-               "subawardAmount":"",
-               "subawardDate":"",
-               "subawardDescription":"",
-               "placeOfPerformance":{
-                  "city":"Alexandria",
-                  "country":{
-                     "code":"USA",
-                     "name":"UNITED STATES"
-                  },
-                  "stateOrProvidence":{
-                     "code":"VA",
-                     "name":"Virginia"
-                  },
-                  "zipPlus4":"123456789"
-               }
-            }
-         ]
+   "contractData":{
+      "contractNumber":"W9123823PTEST",
+      "reportingAgencyCode":"2100",
+      "idvReferenceNumber":"GSTEST001",
+      "referenceAgencyCode":"2147",
+      "programTitle":"Title of the program",
+      "subawardDataList":{
+         "subawardUEI":"ABC987654321",
+         "subawardNumber":"",
+         "subawardAmount":"",
+         "subawardDate":"",
+         "subawardDescription":"",
+         "placeOfPerformance":{
+            "city":"Alexandria",
+            "country":{
+               "code":"USA",
+               "name":"UNITED STATES"
+            },
+            "stateOrProvince":{
+               "code":"VA",
+               "name":"Virginia"
+            },
+            "zipPlus4":"123456789"
+         }
       }
-   ]
+   }
 }	
 </pre></code>
 </p>
@@ -835,126 +760,61 @@ See the [Response JSON](#response-json) section for the response structure and s
 <p>
 <code><pre>
 {
-  "assistanceData": [
-    {
-      "fain": "1001KS1420",
-      "subawardDataList": [
-        {
-          "subawardReportNumber":"51e2fad8-7b43-4b62-a870-45b3f250ea99",
-	  "subawardNumber": "XX-YY-00008",
-          "uei": "ABC123456789",
-          "subawardAmount": "100000",
-          "subawardDate": "2010-10-01",
-          "overallDescription": "My Description",
-          "placeOfPerformance": {
-            "city": "Alexandria",
-            "country": {
-              "code": "USA",
-              "name": "UNITED STATES"
+   "assistanceData":{
+      "fain":"1001KS1420",
+      "subawardDataList":{
+         "subawardReportNumber":"51e2fad8-7b43-4b62-a870-45b3f250ea99",
+         "subawardNumber":"XX-YY-00008",
+         "uei":"ABC123456789",
+         "subawardAmount":"100000",
+         "subawardDate":"2010-10-01",
+         "subawardDescription":"My Description",
+         "placeOfPerformance":{
+            "city":"Alexandria",
+            "country":{
+               "code":"USA",
+               "name":"UNITED STATES"
             },
-            "stateOrProvidence": {
-              "code": "VA",
-              "name": "Virginia"
+            "stateOrProvince":{
+               "code":"VA",
+               "name":"Virginia"
             },
-            "zipPlus4": "123456789"
-          },
-          "recovery_model_questions": [
+            "zipPlus4":"123456789"
+         },
+         "recoveryModelQuestions":[
             {
-              "code": "3",
-              "isSelected": "true"
+               "code":"3",
+               "isSelected":"true"
             },
             {
-              "code": "4",
-              "isSelected": "false"
+               "code":"4",
+               "isSelected":"false"
             }
-          ],
-          "topPayEmployees": [
+         ],
+         "topPayEmployees":[
             {
-              "fullName": "John White",
-              "salary": "100000"
+               "fullName":"John White",
+               "salary":"100000"
             },
             {
-              "fullName": "Employee Green",
-              "salary": "120000"
+               "fullName":"Employee Green",
+               "salary":"120000"
             },
             {
-              "fullName": "Employee Red",
-              "salary": "96000"
+               "fullName":"Employee Red",
+               "salary":"96000"
             },
             {
-              "fullName": "Employee Orange",
-              "salary": "250000"
+               "fullName":"Employee Orange",
+               "salary":"250000"
             },
             {
-              "fullName": "Employee Blue",
-              "salary": "290000"
+               "fullName":"Employee Blue",
+               "salary":"290000"
             }
-          ]
-        }
-      ]
-    },
-    {
-      "fain": "1001ZZZ420",
-      "subawardDataList": [
-        {
-          "subawardReportNumber":"45e2fad8-7b43-4b62-a870-45b3f250ea31",
-	  "subawardNumber": "XX-YY-12345",
-          "uei": "zzz123456789",
-          "subawardAmount": "150000",
-          "subawardDate": "2023-04-17",
-          "overallDescription": "My Description",
-          "placeOfPerformance": {
-            "city": "Atlanta",
-            "country": {
-              "code": "USA",
-              "name": "UNITED STATES"
-            },
-            "stateOrProvidence": {
-              "code": "GA",
-              "name": "Georgia"
-            },
-            "zipPlus4": "123456789"
-          },
-          "recovery_model_questions": [
-            {
-              "code": "3",
-              "isSelected": "false"
-            }
-          ]
-        },
-        {
-          "subawardReportNumber":"45b3f2d8-7b43-4b62-a870-45b3f250b435",
-	  "subawardNumber": "AA-YY-12345",
-          "uei": "XYZ123456789",
-          "subawardAmount": "150055",
-          "subawardDate": "2023-04-17",
-          "overallDescription": "My Description",
-          "placeOfPerformance": {
-            "city": "Brambleton",
-            "country": {
-              "code": "USA",
-              "name": "UNITED STATES"
-            },
-            "stateOrProvidence": {
-              "code": "VA",
-              "name": "Virginia"
-            },
-            "zipPlus4": "678901234"
-          },
-          "recovery_model_questions": [
-            {
-              "code": "3",
-              "isSelected": "true"
-            },
-            {
-              "code": "4",
-              "isSelected": "true"
-            }
-          ]
-        }
-      ]
-    }
-  ]
+         ]
+      }
+   }
 }
 </pre></code>
 </p>
@@ -965,33 +825,29 @@ See the [Response JSON](#response-json) section for the response structure and s
 <p>
 <code><pre>
 {
-  "assistanceData": [
-    {
-      "fain": "1001ZZZ420",
-      "subawardDataList": [
-        {
-          "subawardReportNumber":"45b3f2d8-7b43-4b62-a870-45b3f250b435",
-	  "subawardNumber": "",
-          "uei": "zzz123456789",
-          "subawardAmount": "",
-          "subawardDate": "",
-          "overallDescription": "",
-          "placeOfPerformance": {
-            "city": "Atlanta",
-            "country": {
-              "code": "USA",
-              "name": "UNITED STATES"
+   "assistanceData":{
+      "fain":"1001ZZZ420",
+      "subawardDataList":{
+         "subawardReportNumber":"45b3f2d8-7b43-4b62-a870-45b3f250b435",
+         "subawardNumber":"",
+         "uei":"zzz123456789",
+         "subawardAmount":"",
+         "subawardDate":"",
+         "subawardDescription":"",
+         "placeOfPerformance":{
+            "city":"Atlanta",
+            "country":{
+               "code":"USA",
+               "name":"UNITED STATES"
             },
-            "stateOrProvidence": {
-              "code": "GA",
-              "name": "Georgia"
+            "stateOrProvince":{
+               "code":"GA",
+               "name":"Georgia"
             },
-            "zipPlus4": "123456789"
-          }
-        }
-      ]
-    }
-  ]
+            "zipPlus4":"123456789"
+         }
+      }
+   }
 }	
 </pre></code>
 </p>
@@ -1038,40 +894,14 @@ See the [Response JSON](#response-json) section for the response structure and s
 <details>
 <summary>Example 1: Delete request to delete subcontract report for the given status.</summary>
 <p>
-<code><pre>
-{
-  "contractData": [
-    {
-      "subawardReportNumber": "2fad851e-7b43-4b62-a870-45b3f250ea99",
-      "reportStatus": "Published"
-    },
-    {
-      "subawardReportNumber": "51e2fad8-7b43-4b62-a870-45b3f250ea55",
-      "reportStatus": "Draft"
-    },
-    {
-      "subawardReportNumber": "41e2fad8-7b43-4b62-a870-45b3f250ea91",
-      "reportStatus": "Reopened"
-    }		
-  ]
-}
-</pre></code>
+Provide the status (Draft, Published or Reopened as a Query Param) in the request.
 </p>
 </details>
 
 <details>
 <summary>Example 2: Delete request to delete a subcontract report in all statuses (Published, Reopened or Draft) for a Contract when status is not provided</summary>
 <p>
-<code><pre>
-{
-  "contractData": [
-    {
-      "subawardReportNumber": "2fad851e-7b43-4b62-a870-45b3f250ea99",
-      "reportStatus": ""
-    }		
-  ]
-}
-</pre></code>
+Do not provide any status in the request.
 </p>
 </details>
 
@@ -1117,32 +947,14 @@ See the [Response JSON](#response-json) section for the response structure and s
 <details>
 <summary>Example 1: Delete request to delete an Assistance Subaward report</summary>
 <p>
-<code><pre>
-{
-  "assistanceData": [
-    {
-      "subawardReportNumber": "2fad851e-7b43-4b62-a870-45b3f250ea99",
-      "reportStatus": "Published"
-    }
-  ]
-}
-</pre></code>
+Provide the status (Draft, Published or Reopened as a Query Param) in the request.
 </p>
 </details>
 
 <details>
 <summary>Example 2: Delete request to delete Subaward reports in all statuses (Published, Reopened or Draft) when status is not provided</summary>
 <p>
-<code><pre>
-{
-  "assistanceData": [
-    {
-      "subawardReportNumber": "2fad851e-7b43-4b62-a870-45b3f250ea99",
-      "reportStatus": ""
-    }		
-  ]
-}
-</pre></code>
+Do not provide any status in the request.
 </p>
 </details>
 
@@ -1172,33 +984,14 @@ status | query | string | No | Status of the report (Draft, Published or Reopene
 <details>
 <summary>Example 1: Get Subaward reports for a specific contract based on the Subaward report Number and report status</summary>
 <p>
-<code><pre>
-{
-  "contractData": [
-    {
-      "subawardReportNumber": "51e2fad8-7b43-4b62-a870-45b3f250ea99",
-      "reportStatus": "Draft"
-    }
-  ]
-}
-</pre></code>
+Provide the status (Draft, Published or Reopened as a Query Param) in the request.
 </p>
 </details>
 
 <details>
 <summary>Example 2: Get all Subaward reports for a specific subawardReportNumber when status is not provided.</summary>
 <p>
-<code><pre>
-{
-  "contractData": [
-    {
-      "contractNumber": "ABCDY2324235",
-      "reportingAgencyCode": "4700",
-      "reportStatus": "Published"
-    }
-  ]
-}
-</pre></code>
+Do not provide any status in the request.
 </p>
 </details>
 
@@ -1241,32 +1034,14 @@ status | query | string | No | Status of the report (Draft, Published or Reopene
 <details>
 <summary>Example 1: Get Assistance Subaward reports for a specific Assistance based on the Subaward report Number and report status </summary>
 <p>
-<code><pre>
- {
-  "assistanceData": [
-    {
-      "subawardReportNumber": "51e2fad8-7b43-4b62-a870-45b3f250ea99",
-      "reportStatus": "Draft"
-    }
-  ]
-}
-</pre></code>
+Provide the status (Draft, Published or Reopened as a Query Param) in the request.
 </p>
 </details>
 
 <details>
 <summary>Example 2: Get all Subaward reports for a specific Assistance subawardReportNumber when no status is provided.</summary>
 <p>
-<code><pre>
-{
-  "assistanceData": [
-    {
-      "fain": "ABCDY2324235",
-      "reportStatus": "Published"
-    }
-  ]
-}
-</pre></code>
+Do not provide any status in the request.
 </p>
 </details>
 
@@ -1315,72 +1090,42 @@ size | query | string | No | The page size (default is 10)
 <details>
 <summary>Example 1: Get Subaward reports for a specific contract based on the Subaward report Number and report status</summary>
 <p>
-<code><pre>
-{
-  "contractData": [
-    {
-      "subawardReportNumber": "51e2fad8-7b43-4b62-a870-45b3f250ea99",
-      "reportStatus": "Draft"
-    }
-  ]
-}
-</pre></code>
+Provide subawardReportNumber and reportStatus (Draft, Published or Reopened) as query Params in the request.
 </p>
 </details>
 
 <details>
-<summary>Example 2: Get all Published Subaward reports for a specific contract</summary>
+<summary>Example 2: Get all Published Subaward reports.</summary>
 <p>
-<code><pre>
-{
-  "contractData": [
-    {
-      "contractNumber": "ABCDY2324235",
-      "reportingAgencyCode": "4700",
-      "reportStatus": "Published"
-    }
-  ]
-}
-</pre></code>
+Provide reportStatus as 'Published' as a query Param in the request.
 </p>
 </details>
 
 <details>
 <summary>Example 3: Get all Subaward reports for a specific contract</summary>
 <p>
+Provide contractNumber query Param in the request.
+</p>
+</details>
+
+<details>
+<summary>Example 4: Get a specific page of multi-page results for a search.</summary>
+<p>
 <code><pre>
-{
-  "contractData": [
-    {
-      "contractNumber": "ABCDY2324235",
-      "reportingAgencyCode": "4700"
-    }
-  ]
-}
+By default, the page is set as '0' (first page), and size is set as '10' (10 records per page). The response returns the totalPages along with the totalElements. To get results from a specific page, provide the page number (0,1,2 ...) as a part of the page query param. 
 </pre></code>
 </p>
 </details>
 
 <details>
-<summary>Example 4: Get request for multiple contracts</summary>
+<summary>Example 5: Get a specific number of elements in a page for a search.</summary>
 <p>
 <code><pre>
-{
-   "contractData":[
-      {
-         "contractNumber":"ABCDY2324235",
-         "reportingAgencyCode":"4700",
-         "reportStatus":"Published"
-      },
-      {
-         "subawardReportNumber":"51e2fad8-7b43-4b62-a870-45b3f250ea99",
-         "reportStatus":"Draft"
-      }
-   ]
-}
+By default, the page is set as '0' (first page), and size is set as '10' (10 records per page). To get a specific number of elements on a page, set the size element as a query param. 
 </pre></code>
 </p>
 </details>
+
 
 #### Responses
 
@@ -1425,66 +1170,38 @@ size | query | string | No | The page size (default is 10)
 <details>
 <summary>Example 1: Get Assistance Subaward reports for a specific Assistance based on the Subaward report Number and report status </summary>
 <p>
-<code><pre>
- {
-  "assistanceData": [
-    {
-      "subawardReportNumber": "51e2fad8-7b43-4b62-a870-45b3f250ea99",
-      "reportStatus": "Draft"
-    }
-  ]
-}
-</pre></code>
+Provide subawardReportNumber and reportStatus (Draft, Published or Reopened) as query Params in the request.
 </p>
 </details>
 
 <details>
 <summary>Example 2: Get all Published Subaward reports for a specific Assistance</summary>
 <p>
-<code><pre>
-{
-  "assistanceData": [
-    {
-      "fain": "ABCDY2324235",
-      "reportStatus": "Published"
-    }
-  ]
-}
-</pre></code>
+Provide reportStatus as 'Published' as a query Param in the reques
 </p>
 </details>
 
 <details>
 <summary>Example 3: Get all Subaward reports for a specific Assistance award</summary>
 <p>
+Provide fain query Param in the request.
+</p>
+</details>
+
+<details>
+<summary>Example 4: Get a specific page of multi-page results for a search.</summary>
+<p>
 <code><pre>
-{
-  "assistanceData": [
-    {
-      "fain": "ABCDY2324235"
-    }
-  ]
-}
+By default, the page is set as '0' (first page), and size is set as '10' (10 records per page). The response returns the totalPages along with the totalElements. To get results from a specific page, provide the page number (0,1,2 ...) as a part of the page query param. 
 </pre></code>
 </p>
 </details>
 
 <details>
-<summary>Example 4: Get request for multiple Assistance subaward reports</summary>
+<summary>Example 5: Get a specific number of elements in a page for a search.</summary>
 <p>
 <code><pre>
-{
-   "assistanceData":[
-      {
-         "fain":"ABCDY2324235",
-         "reportStatus":"Published"
-      },
-      {
-         "subawardReportNumber":"51e2fad8-7b43-4b62-a870-45b3f250ea99",
-         "reportStatus":"Draft"
-      }
-   ]
-}
+By default, the page is set as '0' (first page), and size is set as '10' (10 records per page). To get a specific number of elements on a page, set the size element as a query param. 
 </pre></code>
 </p>
 </details>
@@ -1724,14 +1441,14 @@ NOTE: In an effort to keep the user informed on the actions performed through th
                   "code": "string",
                   "name": "string"
                 },
-                "stateOrProvidence": {
+                "stateOrProvince": {
                   "code": "string",
                   "name": "string"
                 },
                 "zipPlus4": "string",
 		"congressionalDistrict": "string"
               },
-              "recovery_model_questions": [
+              "recoveryModelQuestions": [
                 {
                   "code": "1",
                   "isSelected": true
@@ -1799,14 +1516,14 @@ NOTE: In an effort to keep the user informed on the actions performed through th
                   "code": "string",
                   "name": "string"
                 },
-                "stateOrProvidence": {
+                "stateOrProvince": {
                   "code": "string",
                   "name": "string"
                 },
                 "zipPlus4": "string",
 		"congressionalDistrict": "string"
               },
-              "recovery_model_questions": [
+              "recoveryModelQuestions": [
                 {
                   "code": "1",
                   "isSelected": false
@@ -2045,14 +1762,14 @@ NOTE: In an effort to keep the user informed on the actions performed through th
                   "code": "string",
                   "name": "string"
                 },
-                "stateOrProvidence": {
+                "stateOrProvince": {
                   "code": "string",
                   "name": "string"
                 },
                 "zipPlus4": "string",
 		"congressionalDistrict": "string"
               },
-              "recovery_model_questions": [
+              "recoveryModelQuestions": [
                 {
                   "code": "1",
                   "isSelected": true
@@ -2116,14 +1833,14 @@ NOTE: In an effort to keep the user informed on the actions performed through th
                   "code": "string",
                   "name": "string"
                 },
-                "stateOrProvidence": {
+                "stateOrProvince": {
                   "code": "string",
                   "name": "string"
                 },
                 "zipPlus4": "string",
 		"congressionalDistrict": "string"
               },
-              "recovery_model_questions": [
+              "recoveryModelQuestions": [
                 {
                   "code": "1",
                   "isSelected": false
@@ -2194,16 +1911,16 @@ subawardDataList.subawardDate |string |TIMESTAMP | Yes| Date subaward was made i
 subawardDataList.subawardDescription |string  || Yes | Describes the Subaward requirements. This is from FPDS.
 subawardDataList.placeOfPerformance | JSON Object |NA |Yes | Subawardee Principal Place of Performance (POP)
 subawardDataList.placeOfPerformance.city | string || Yes |Subawardee POP City Name
-subawardDataList.placeOfPerformance.stateOrProvidence | JSON Object |NA |Yes|Subawardee POP State Information. The State Code and name need to be specified.
-subawardDataList.placeOfPerformance.stateOrProvidence.code | string |||Subawardee POP State Code
-subawardDataList.placeOfPerformance.stateOrProvidence.name | string ||  |Subawardee POP State Name
+subawardDataList.placeOfPerformance.stateOrProvince | JSON Object |NA |Yes|Subawardee POP State Information. The State Code and name need to be specified.
+subawardDataList.placeOfPerformance.stateOrProvince.code | string |||Subawardee POP State Code
+subawardDataList.placeOfPerformance.stateOrProvince.name | string ||  |Subawardee POP State Name
 subawardDataList.placeOfPerformance.country | JSON Object | NA |Yes|Subawardee POP Country Information. The Country Code and name need to be specified.
 subawardDataList.placeOfPerformance.country.code | string || |Subawardee POP Country Code
 subawardDataList.placeOfPerformance.country.name | string ||  |Subawardee POP Country Name
 subawardDataList.placeOfPerformance.zipPlus4 | string ||Yes|Subawardee POP zip+4 Code
-subawardDataList.recovery_model_questions |JSON Array|NA |Yes, if the SAM registration for the entity does not already have this information for the Subawardee. | Array of Compensation questions for the Subawardee. There will be 2 questions, and therefore 2 elements in this array
-subawardDataList.recovery_model_questions.code |string||Yes, if Compensation question responses are being provided. | Code for the compensation question. This will be 1 for the first question and 2 for the second compensation question. Refer to the Recovery Model Questions (Compensation Questions) section for details.
-subawardDataList.recovery_model_questions.isSelected |string  || Yes, if Compensation question responses are being provided. | Boolean value representing the response to the compensation question.
+subawardDataList.recoveryModelQuestions |JSON Array|NA |Yes, if the SAM registration for the entity does not already have this information for the Subawardee. | Array of Compensation questions for the Subawardee. There will be 2 questions, and therefore 2 elements in this array
+subawardDataList.recoveryModelQuestions.code |string||Yes, if Compensation question responses are being provided. | Code for the compensation question. This will be 1 for the first question and 2 for the second compensation question. Refer to the Recovery Model Questions (Compensation Questions) section for details.
+subawardDataList.recoveryModelQuestions.isSelected |string  || Yes, if Compensation question responses are being provided. | Boolean value representing the response to the compensation question.
 subawardDataList.topPayEmployees|JSON Array|NA |Conditional - see Description. If required, the Array requires 5 elements| This is the compensation information for the top 5 employees. The array will have 5 elements for the 5 top pay Employees. This is required if response to compensation question 1 is true and compensation question 2 is false. If the responses to the compensation questions are already provided with the SAM registration for this entity, then this information is not required to be provided.
 subawardDataList.topPayEmployees.fullName |string  ||Yes if subawardDataList.topPayEmployees is required| The full name of the top pay employee
 subawardDataList.topPayEmployees.salary | string  ||Yes if subawardDataList.topPayEmployees is required|The total compensation of the top pay employee
@@ -2228,16 +1945,16 @@ subawardDataList.subawardDate|string ||Yes |Date subaward was made in YYYY-MM-DD
 subawardDataList.subawardDescription |string  |   | Yes |
 subawardDataList.placeOfPerformance | JSON Object ||Yes | SubAwardee Principal Place of Performance (POP)
 subawardDataList.placeOfPerformance.city | string || Yes |Subawardee POP City Name
-subawardDataList.placeOfPerformance.stateOrProvidence | JSON Object ||Yes|Subawardee POP State Information. The State Code and name need to be specified.
-subawardDataList.placeOfPerformance.stateOrProvidence.code | string |||Subawardee POP State Code
-subawardDataList.placeOfPerformance.stateOrProvidence.name | string ||  |Subawardee POP State Name
+subawardDataList.placeOfPerformance.stateOrProvince | JSON Object ||Yes|Subawardee POP State Information. The State Code and name need to be specified.
+subawardDataList.placeOfPerformance.stateOrProvince.code | string |||Subawardee POP State Code
+subawardDataList.placeOfPerformance.stateOrProvince.name | string ||  |Subawardee POP State Name
 subawardDataList.placeOfPerformance.country | JSON Object ||Yes|Subawardee POP Country Information. The Country Code and name need to be specified.
 subawardDataList.placeOfPerformance.country.code | string || |Subawardee POP Country Code
 subawardDataList.placeOfPerformance.country.name | string ||  |Subawardee POP Country Name
 subawardDataList.placeOfPerformance.zipPlus4 | string ||Yes|Subawardee POP zip+4 Code
-subawardDataList.recovery_model_questions |JSON Array|NA |Yes, if the SAM registration for the entity does not already have this information for the Subawardee. | Array of Compensation questions for the Subawardee. There will be 2 questions, and therefore 2 elements in this array
-subawardDataList.recovery_model_questions.code |string||Yes, if Compensation question responses are being provided. | Code for the compensation question. This will be 1 for the first question and 2 for the second compensation question. Refer to the Recovery Model Questions (Compensation Questions) section for details.
-subawardDataList.recovery_model_questions.isSelected |string  || Yes, if Compensation question responses are being provided. | Boolean value representing the response to the compensation question.
+subawardDataList.recoveryModelQuestions |JSON Array|NA |Yes, if the SAM registration for the entity does not already have this information for the Subawardee. | Array of Compensation questions for the Subawardee. There will be 2 questions, and therefore 2 elements in this array
+subawardDataList.recoveryModelQuestions.code |string||Yes, if Compensation question responses are being provided. | Code for the compensation question. This will be 1 for the first question and 2 for the second compensation question. Refer to the Recovery Model Questions (Compensation Questions) section for details.
+subawardDataList.recoveryModelQuestions.isSelected |string  || Yes, if Compensation question responses are being provided. | Boolean value representing the response to the compensation question.
 subawardDataList.topPayEmployees|JSON Array|NA |Conditional - see Description. If required, the Array requires 5 elements| This is the compensation information for the top 5 employees. The array will have 5 elements for the 5 top pay Employees. This is required if response to compensation question 1 is true and compensation question 2 is false. If the responses to the compensation questions are already provided with the SAM registration for this entity, then this information is not required to be provided.
 subawardDataList.topPayEmployees.fullName |string  ||Yes if subawardDataList.topPayEmployees is required| The full name of the top pay employee
 subawardDataList.topPayEmployees.salary | string  ||Yes if subawardDataList.topPayEmployees is required|The total compensation of the top pay employee
@@ -2356,8 +2073,8 @@ HTTP Status Code|Field | Error Message | Reason/Description | Operation |
 201|subawardDataList.subawardDate | Subaward Date is required | Subaward Date is required | submitSubawardReport(Contracts)
 201|subawardDataList.subawardDate | Date of Subaward for Subawardee:(XXXXXXXXX) is not valid (Expecting YYYY-MM-DD Format) | Date of Subaward for Subawardee:(XXXXXXXXX) is not valid (Expecting YYYY-MM-DD Format) | submitSubawardReport(Contracts)
 201|subawardDataList.subawardDate | The Subaward Date cannot be in the future. | The Subaward Date cannot be in the future. |  submitSubawardReport(Contracts)
-201|subawardDataList.subawardDescription   subawardDataList.overallDescription |	Subaward overall description is required. |	Subaward overall description is required. |	submitSubawardReport(Contracts and Assistance)
-201|subawardDataList.subawardDescription   subawardDataList.overallDescription |	Program or Project Title exceeds 250 character limit. | Program or Project Title exceeds 250 character limit. |	submitSubawardReport(Contracts and Assistance)
+201|subawardDataList.subawardDescription   subawardDataList.subawardDescription |	Subaward overall description is required. |	Subaward overall description is required. |	submitSubawardReport(Contracts and Assistance)
+201|subawardDataList.subawardDescription   subawardDataList.subawardDescription |	Program or Project Title exceeds 250 character limit. | Program or Project Title exceeds 250 character limit. |	submitSubawardReport(Contracts and Assistance)
 201|subawardDataList.placeOfPerformance    subawardDataList.placeOfPerformance |	Subaward Place of Performance is required. |	Subaward Place of Performance is required. |	submitSubawardReport(Contracts and Assistance)
 201|subawardDataList.placeOfPerformance    subawardDataList.placeOfPerformance |	Subaward Place of Performance Section - Country is required |	Subaward Place of Performance Section - Country is required | submitSubawardReport(Contracts and Assistance)
 201|subawardDataList.placeOfPerformance    subawardDataList.placeOfPerformance |	Subaward Place of Performance Section - zip+4 Code cannot exceed 9 characters |	Subaward Place of Performance Section - zip+4 Code cannot exceed 9 characters | submitSubawardReport(Contracts and Assistance
@@ -2379,11 +2096,11 @@ HTTP Status Code|Field | Error Message | Reason/Description | Operation |
 201|subawardDataList. subawardDate |	Subaward Date is required | Subaward Date is required| submitSubawardReport(Assistance)
 201|subawardDataList. subawardDate |	Date of Subaward for Subawardee: (XXXXXXXXX) is not valid (Expecting YYYY-MM-DD Format) | Date of Subaward for Subawardee: (XXXXXXXXX) is not valid (Expecting YYYY-MM-DD Format) | submitSubawardReport(Assistance)
 201|subawardDataList. subawardDate |	The Subaward Date cannot be in the future and should be on or after the Base Obligation Date for the assistance | The Subaward Date cannot be in the future and should be on or after the Base Obligation Date for the assistance | submitSubawardReport(Assistance)
-200|recovery_model_questions |	Responses to Compensation Questions were not found under SAM registration for the UEI <UEI Number>. Please provide the responses to the compensation questions under recovery_model_questions JSON element |Responses to compensation questions are required  if they are not available for the Prime Entity's SAM registration| updateSubawardReport(Contracts and Assistance)
-200|recovery_model_questions |	Compensation Q1 code and response are required |Compensation Q1 code and response are required if responses to compensation questions is provided|updateSubawardReport(Contracts and Assistance)
-200|recovery_model_questions |Since you responded true to the first compensation question, a response for the second compensation question is required.|	Compensation Q2 code and response are required	| updateSubawardReport(Contracts and Assistance)
-200|recovery_model_questions |An incorrect compensation question code was provided for the Prime/Subawardee. Please refer to the Lookup table information for the correct codes to use.| Compensation question code provided did not match expected codes |	updateSubawardReport(Contracts and Assistance)
-200|recovery_model_questions |	Compensation question isSelected value can only be true or false | Compensation question isSelected value can only be true or false | updateSubawardReport(Contracts and Assistance)
+200|recoveryModelQuestions |	Responses to Compensation Questions were not found under SAM registration for the UEI <UEI Number>. Please provide the responses to the compensation questions under recoveryModelQuestions JSON element |Responses to compensation questions are required  if they are not available for the Prime Entity's SAM registration| updateSubawardReport(Contracts and Assistance)
+200|recoveryModelQuestions |	Compensation Q1 code and response are required |Compensation Q1 code and response are required if responses to compensation questions is provided|updateSubawardReport(Contracts and Assistance)
+200|recoveryModelQuestions |Since you responded true to the first compensation question, a response for the second compensation question is required.|	Compensation Q2 code and response are required	| updateSubawardReport(Contracts and Assistance)
+200|recoveryModelQuestions |An incorrect compensation question code was provided for the Prime/Subawardee. Please refer to the Lookup table information for the correct codes to use.| Compensation question code provided did not match expected codes |	updateSubawardReport(Contracts and Assistance)
+200|recoveryModelQuestions |	Compensation question isSelected value can only be true or false | Compensation question isSelected value can only be true or false | updateSubawardReport(Contracts and Assistance)
 200|subawardDataList.subawardNumber|	Subaward ID is required | Subaward ID is required | updateSubawardReport(Contracts)
 200|subawardDataList.subawardNumber|	Subaward ID should be unique across multiple elements of subawardDataList  | Subaward ID should be unique across multiple elements of subawardDataList  | updateSubawardReport(Contracts)
 200|subawardDataList.subawardDollars |	Subaward Amount is required | Subaward Amount is requiredn| updateSubawardReport(Contracts)
@@ -2391,8 +2108,8 @@ HTTP Status Code|Field | Error Message | Reason/Description | Operation |
 200|subawardDataList.subawardDate | Subaward Date is required | Subaward Date is required | updateSubawardReport(Contracts)
 200|subawardDataList.subawardDate | Date of Subaward for Subawardee:(XXXXXXXXX) is not valid (Expecting YYYY-MM-DD Format) | Date of Subaward for Subawardee:(XXXXXXXXX) is not valid (Expecting YYYY-MM-DD Format) | updateSubawardReport(Contracts)
 200|subawardDataList.subawardDate | The Subaward Date cannot be in the future. | The Subaward Date cannot be in the future. |  updateSubawardReport(Contracts)
-200|subawardDataList.subawardDescription   subawardDataList.overallDescription |	Subaward overall description is required. |	Subaward overall description is required. |	updateSubawardReport(Contracts and Assistance)
-200|subawardDataList.subawardDescription   subawardDataList.overallDescription |	Program or Project Title exceeds 250 character limit. | Program or Project Title exceeds 250 character limit. |	updateSubawardReport(Contracts and Assistance)
+200|subawardDataList.subawardDescription   subawardDataList.subawardDescription |	Subaward overall description is required. |	Subaward overall description is required. |	updateSubawardReport(Contracts and Assistance)
+200|subawardDataList.subawardDescription   subawardDataList.subawardDescription |	Program or Project Title exceeds 250 character limit. | Program or Project Title exceeds 250 character limit. |	updateSubawardReport(Contracts and Assistance)
 200|subawardDataList.placeOfPerformance    subawardDataList.placeOfPerformance |	Subaward Place of Performance is required. |	Subaward Place of Performance is required. |	updateSubawardReport(Contracts and Assistance)
 200|subawardDataList.placeOfPerformance    subawardDataList.placeOfPerformance |	Subaward Place of Performance Section - Country is required |	Subaward Place of Performance Section - Country is required | updateSubawardReport(Contracts and Assistance)
 200|subawardDataList.placeOfPerformance    subawardDataList.placeOfPerformance |	Subaward Place of Performance Section - zip+4 Code cannot exceed 9 characters |	Subaward Place of Performance Section - zip+4 Code cannot exceed 9 characters | updateSubawardReport(Contracts and Assistance)
