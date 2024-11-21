@@ -2134,10 +2134,6 @@ HTTP Status Code|Field | Error Message | Reason/Description | Operation |
 
 <p><small><a href="#">Back to top</a></small></p>
 
-## FAQ
-
-TBD
-
 ## Contact Us
 
 * A User can reach out to the SAM.gov team at [www.fsd.gov](https://www.fsd.gov)
@@ -2149,10 +2145,6 @@ TBD
 Date | Version | Description
 --------- | --------------- | ---------
 07/15/2023 | v0.1 | Base Version
-10/12/2023 | v0.2 | Updates to GET calls and minor cosmetic changes
-11/10/2023 | v0.3 | Updates to remove FFATA and use Subaward
-03/06/2024 | v0.4 | Updates to align with new Data Model
-03/25/2024 | v0.4 | Updates to error messages and latest decisions
-
+11/21/2024 | v0.2 | Updates to documenation with examples
 
 <p><small><a href="#">Back to top</a></small></p>
