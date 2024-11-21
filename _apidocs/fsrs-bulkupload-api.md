@@ -459,12 +459,10 @@ The overall response will be a JSON array containing the status of each subrecip
     },
     {
       "fain": "1001ZZZ420",
-      "eftIndicator": "8978",
       "subawardDataList": [
         {
           "subAssistanceNumber": "XX-YY-12345",
           "uei": "zzz123456789",
-          "eftIndicator": "1234",
           "subAssistanceDollars": "150000",
           "subAssistanceObligationOrActionDate": "2023-04-17",
           "overallDescription": "My Description",
@@ -490,7 +488,6 @@ The overall response will be a JSON array containing the status of each subrecip
         {
           "subAssistanceNumber": "AA-YY-12345",
           "uei": "XYZ123456789",
-          "eftIndicator": "4455",
           "subAssistanceDollars": "150055",
           "subAssistanceObligationOrActionDate": "2023-04-17",
           "overallDescription": "My Description",
@@ -533,12 +530,10 @@ The overall response will be a JSON array containing the status of each subrecip
   "assistanceData": [
     {
       "fain": "1001ZZZ420",
-      "eftIndicator": "8978",
       "subawardDataList": [
         {
           "subAssistanceNumber": "",
           "uei": "zzz123456789",
-          "eftIndicator": "",
           "subAssistanceDollars": "",
           "subAssistanceObligationOrActionDate": "",
           "overallDescription": "",
@@ -843,13 +838,11 @@ See the [Response JSON](#response-json) section for the response structure and s
   "assistanceData": [
     {
       "fain": "1001KS1420",
-      "eftIndicator": "9999",
       "subawardDataList": [
         {
           "subawardReportNumber":"51e2fad8-7b43-4b62-a870-45b3f250ea99",
 	  "subAssistanceNumber": "XX-YY-00008",
           "uei": "ABC123456789",
-          "eftIndicator": "1111",
           "subAssistanceDollars": "100000",
           "subAssistanceObligationOrActionDate": "2010-10-01",
           "overallDescription": "My Description",
@@ -902,13 +895,11 @@ See the [Response JSON](#response-json) section for the response structure and s
     },
     {
       "fain": "1001ZZZ420",
-      "eftIndicator": "8978",
       "subawardDataList": [
         {
           "subawardReportNumber":"45e2fad8-7b43-4b62-a870-45b3f250ea31",
 	  "subAssistanceNumber": "XX-YY-12345",
           "uei": "zzz123456789",
-          "eftIndicator": "1234",
           "subAssistanceDollars": "150000",
           "subAssistanceObligationOrActionDate": "2023-04-17",
           "overallDescription": "My Description",
@@ -935,7 +926,6 @@ See the [Response JSON](#response-json) section for the response structure and s
           "subawardReportNumber":"45b3f2d8-7b43-4b62-a870-45b3f250b435",
 	  "subAssistanceNumber": "AA-YY-12345",
           "uei": "XYZ123456789",
-          "eftIndicator": "4455",
           "subAssistanceDollars": "150055",
           "subAssistanceObligationOrActionDate": "2023-04-17",
           "overallDescription": "My Description",
@@ -978,13 +968,11 @@ See the [Response JSON](#response-json) section for the response structure and s
   "assistanceData": [
     {
       "fain": "1001ZZZ420",
-      "eftIndicator": "8978",
       "subawardDataList": [
         {
           "subawardReportNumber":"45b3f2d8-7b43-4b62-a870-45b3f250b435",
 	  "subAssistanceNumber": "",
           "uei": "zzz123456789",
-          "eftIndicator": "",
           "subAssistanceDollars": "",
           "subAssistanceObligationOrActionDate": "",
           "overallDescription": "",
@@ -2231,12 +2219,10 @@ Name | Data Type | Field Length | Required | Description
 assistanceData | JSON Array | NA| Yes | Information about the prime Assistance awardee. If the report is being submitted for multiple prime Assistance awards, then this array will have multiple elements, one for each of the prime Assistance.
 assistanceData Details||||
 assistanceData.fain | string |  255 characters | Yes | This is the Federal Award Identifier Number (FAIN) for the prime assistance award. 
-assistanceData.eftIndicator | string | 10 characters | No |If your organization has the eftIndicator to indicate specific payment locations within your organization as registered in SAM, this information will be picked up from the SAM registration. Otherwise, if applicable, you would note it here. 
 assistanceData.subawardDataList |string  ||Yes  |Information about the sub Contractors. If the report is being submitted for multiple Subawards, then this array will have multiple elements, one for each of the sub Contracts.
 assistanceData.subawardDataList Details | || | 
 subawardDataList.subAssistanceNumber | string  | 32 characters |Yes  | Number assigned by the Prime to track this sub Assistance
 subawardDataList.uei |string | 13 characters | Yes | Subawardee UEI
-subawardDataList.eftIndicator | string | 10 characters | No |If the Subawardee organization has the eftIndicator to indicate specific payment locations within your organization as registered in SAM, this information will be picked up from the SAM registration. Otherwise, if applicable, you would note it here. 
 subawardDataList.subAssistanceDollars |string  | 20 characters| Yes | Amount for this award to this Subaward
 subawardDataList.subAssistanceObligationOrActionDate|string ||Yes |Date subaward was made in YYYY-MM-DD format 
 subawardDataList.subawardDescription |string  |   | Yes |
