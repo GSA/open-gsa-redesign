@@ -295,7 +295,7 @@ The overall response will be a JSON array containing the status of each subcontr
                      "code":"GA",
                      "name":"Georgia"
                   },
-                  "zipPlus4":"123456789"
+                  "zipPlus4":"12345"
                },
                "recovery_model_questions":[
                   {
@@ -337,7 +337,7 @@ The overall response will be a JSON array containing the status of each subcontr
                      "code":"VA",
                      "name":"Virginia"
                   },
-                  "zipPlus4":"123456789"
+                  "zipPlus4":"12345"
                }
             }
          ]
@@ -405,10 +405,10 @@ The overall response will be a JSON array containing the status of each subrecip
       "agencyCode": "9999",
       "subawardDataList": [
         {
-          "subAssistanceNumber": "XX-YY-00008",
+          "subawardNumber": "XX-YY-00008",
           "uei": "ABC123456789",
-          "subAssistanceDollars": "100000",
-          "subAssistanceObligationOrActionDate": "2010-10-01",
+          "subawardAmount": "100000",
+          "subawardDate": "2010-10-01",
           "overallDescription": "My Description",
           "placeOfPerformance": {
             "city": "Alexandria",
@@ -461,10 +461,10 @@ The overall response will be a JSON array containing the status of each subrecip
       "fain": "1001ZZZ420",
       "subawardDataList": [
         {
-          "subAssistanceNumber": "XX-YY-12345",
+          "subawardNumber": "XX-YY-12345",
           "uei": "zzz123456789",
-          "subAssistanceDollars": "150000",
-          "subAssistanceObligationOrActionDate": "2023-04-17",
+          "subawardAmount": "150000",
+          "subawardDate": "2023-04-17",
           "overallDescription": "My Description",
           "placeOfPerformance": {
             "city": "Atlanta",
@@ -486,10 +486,10 @@ The overall response will be a JSON array containing the status of each subrecip
           ]
         },
         {
-          "subAssistanceNumber": "AA-YY-12345",
+          "subawardNumber": "AA-YY-12345",
           "uei": "XYZ123456789",
-          "subAssistanceDollars": "150055",
-          "subAssistanceObligationOrActionDate": "2023-04-17",
+          "subawardAmount": "150055",
+          "subawardDate": "2023-04-17",
           "overallDescription": "My Description",
           "placeOfPerformance": {
             "city": "Brambleton",
@@ -532,10 +532,10 @@ The overall response will be a JSON array containing the status of each subrecip
       "fain": "1001ZZZ420",
       "subawardDataList": [
         {
-          "subAssistanceNumber": "",
+          "subawardNumber": "",
           "uei": "zzz123456789",
-          "subAssistanceDollars": "",
-          "subAssistanceObligationOrActionDate": "",
+          "subawardAmount": "",
+          "subawardDate": "",
           "overallDescription": "",
           "placeOfPerformance": {
             "city": "Atlanta",
@@ -841,10 +841,10 @@ See the [Response JSON](#response-json) section for the response structure and s
       "subawardDataList": [
         {
           "subawardReportNumber":"51e2fad8-7b43-4b62-a870-45b3f250ea99",
-	  "subAssistanceNumber": "XX-YY-00008",
+	  "subawardNumber": "XX-YY-00008",
           "uei": "ABC123456789",
-          "subAssistanceDollars": "100000",
-          "subAssistanceObligationOrActionDate": "2010-10-01",
+          "subawardAmount": "100000",
+          "subawardDate": "2010-10-01",
           "overallDescription": "My Description",
           "placeOfPerformance": {
             "city": "Alexandria",
@@ -898,10 +898,10 @@ See the [Response JSON](#response-json) section for the response structure and s
       "subawardDataList": [
         {
           "subawardReportNumber":"45e2fad8-7b43-4b62-a870-45b3f250ea31",
-	  "subAssistanceNumber": "XX-YY-12345",
+	  "subawardNumber": "XX-YY-12345",
           "uei": "zzz123456789",
-          "subAssistanceDollars": "150000",
-          "subAssistanceObligationOrActionDate": "2023-04-17",
+          "subawardAmount": "150000",
+          "subawardDate": "2023-04-17",
           "overallDescription": "My Description",
           "placeOfPerformance": {
             "city": "Atlanta",
@@ -924,10 +924,10 @@ See the [Response JSON](#response-json) section for the response structure and s
         },
         {
           "subawardReportNumber":"45b3f2d8-7b43-4b62-a870-45b3f250b435",
-	  "subAssistanceNumber": "AA-YY-12345",
+	  "subawardNumber": "AA-YY-12345",
           "uei": "XYZ123456789",
-          "subAssistanceDollars": "150055",
-          "subAssistanceObligationOrActionDate": "2023-04-17",
+          "subawardAmount": "150055",
+          "subawardDate": "2023-04-17",
           "overallDescription": "My Description",
           "placeOfPerformance": {
             "city": "Brambleton",
@@ -971,10 +971,10 @@ See the [Response JSON](#response-json) section for the response structure and s
       "subawardDataList": [
         {
           "subawardReportNumber":"45b3f2d8-7b43-4b62-a870-45b3f250b435",
-	  "subAssistanceNumber": "",
+	  "subawardNumber": "",
           "uei": "zzz123456789",
-          "subAssistanceDollars": "",
-          "subAssistanceObligationOrActionDate": "",
+          "subawardAmount": "",
+          "subawardDate": "",
           "overallDescription": "",
           "placeOfPerformance": {
             "city": "Atlanta",
@@ -2221,10 +2221,10 @@ assistanceData Details||||
 assistanceData.fain | string |  255 characters | Yes | This is the Federal Award Identifier Number (FAIN) for the prime assistance award. 
 assistanceData.subawardDataList |string  ||Yes  |Information about the sub Contractors. If the report is being submitted for multiple Subawards, then this array will have multiple elements, one for each of the sub Contracts.
 assistanceData.subawardDataList Details | || | 
-subawardDataList.subAssistanceNumber | string  | 32 characters |Yes  | Number assigned by the Prime to track this sub Assistance
+subawardDataList.subawardNumber | string  | 32 characters |Yes  | Number assigned by the Prime to track this sub Assistance
 subawardDataList.uei |string | 13 characters | Yes | Subawardee UEI
-subawardDataList.subAssistanceDollars |string  | 20 characters| Yes | Amount for this award to this Subaward
-subawardDataList.subAssistanceObligationOrActionDate|string ||Yes |Date subaward was made in YYYY-MM-DD format 
+subawardDataList.subawardAmount |string  | 20 characters| Yes | Amount for this award to this Subaward
+subawardDataList.subawardDate|string ||Yes |Date subaward was made in YYYY-MM-DD format 
 subawardDataList.subawardDescription |string  |   | Yes |
 subawardDataList.placeOfPerformance | JSON Object ||Yes | SubAwardee Principal Place of Performance (POP)
 subawardDataList.placeOfPerformance.city | string || Yes |Subawardee POP City Name
@@ -2373,12 +2373,12 @@ HTTP Status Code|Field | Error Message | Reason/Description | Operation |
 201|subawardDataList.topPayEmployees.salary    subawardDataList.topPayEmployees.salary | Sub Top Employer Compensation: amount must contain only digits and not exceed 12 digits |Sub Top Pay Employees: salary must contain only digits and not exceed 12 digits |	submitSubawardReport(Contracts and Assistance)
 201|subawardDataList.topPayEmployees.salary    subawardDataList.topPayEmployees.salary | Sub topPayEmployees.salary is required |Sub topPayEmployees.salary is required |	submitSubawardReport(Contracts and Assistance)
 201|subawardDataList.topPayEmployees.fullName | Sub topPayEmployees.fullName is required |Sub topPayEmployees.fullName is required |	submitSubawardReport(Contracts and Assistance)
-201|subawardDataList.subAssistanceNumber | Subaward ID is required |Subaward ID is required |	submitSubawardReport(Assistance)
-201|subawardDataList.subAssistanceDollars |	Subaward Amount is required	| Subaward Amount is required | submitSubawardReport(Assistance)
-201|subawardDataList.subAssistanceDollars |	Subaward Amount must contain only numbers and up to 2 decimal places (18 digits plus cents)	| Subaward Amount must contain only numbers and up to 2 decimal places (18 digits plus cents) | submitSubawardReport(Assistance)
-201|subawardDataList. subAssistanceObligationOrActionDate |	Subaward Date is required | Subaward Date is required| submitSubawardReport(Assistance)
-201|subawardDataList. subAssistanceObligationOrActionDate |	Date of Subaward for Subawardee: (XXXXXXXXX) is not valid (Expecting YYYY-MM-DD Format) | Date of Subaward for Subawardee: (XXXXXXXXX) is not valid (Expecting YYYY-MM-DD Format) | submitSubawardReport(Assistance)
-201|subawardDataList. subAssistanceObligationOrActionDate |	The Subaward Date cannot be in the future and should be on or after the Base Obligation Date for the assistance | The Subaward Date cannot be in the future and should be on or after the Base Obligation Date for the assistance | submitSubawardReport(Assistance)
+201|subawardDataList.subawardNumber | Subaward ID is required |Subaward ID is required |	submitSubawardReport(Assistance)
+201|subawardDataList.subawardAmount |	Subaward Amount is required	| Subaward Amount is required | submitSubawardReport(Assistance)
+201|subawardDataList.subawardAmount |	Subaward Amount must contain only numbers and up to 2 decimal places (18 digits plus cents)	| Subaward Amount must contain only numbers and up to 2 decimal places (18 digits plus cents) | submitSubawardReport(Assistance)
+201|subawardDataList. subawardDate |	Subaward Date is required | Subaward Date is required| submitSubawardReport(Assistance)
+201|subawardDataList. subawardDate |	Date of Subaward for Subawardee: (XXXXXXXXX) is not valid (Expecting YYYY-MM-DD Format) | Date of Subaward for Subawardee: (XXXXXXXXX) is not valid (Expecting YYYY-MM-DD Format) | submitSubawardReport(Assistance)
+201|subawardDataList. subawardDate |	The Subaward Date cannot be in the future and should be on or after the Base Obligation Date for the assistance | The Subaward Date cannot be in the future and should be on or after the Base Obligation Date for the assistance | submitSubawardReport(Assistance)
 200|recovery_model_questions |	Responses to Compensation Questions were not found under SAM registration for the UEI <UEI Number>. Please provide the responses to the compensation questions under recovery_model_questions JSON element |Responses to compensation questions are required  if they are not available for the Prime Entity's SAM registration| updateSubawardReport(Contracts and Assistance)
 200|recovery_model_questions |	Compensation Q1 code and response are required |Compensation Q1 code and response are required if responses to compensation questions is provided|updateSubawardReport(Contracts and Assistance)
 200|recovery_model_questions |Since you responded true to the first compensation question, a response for the second compensation question is required.|	Compensation Q2 code and response are required	| updateSubawardReport(Contracts and Assistance)
@@ -2408,12 +2408,12 @@ HTTP Status Code|Field | Error Message | Reason/Description | Operation |
 200|subawardDataList.topPayEmployees.salary    subawardDataList.topPayEmployees.salary | Sub Top Employer Compensation: amount must contain only digits and not exceed 12 digits |Sub Top Pay Employees: salary must contain only digits and not exceed 12 digits |	updateSubawardReport(Contracts and Assistance)
 200|subawardDataList.topPayEmployees.salary    subawardDataList.topPayEmployees.salary | Sub topPayEmployees.salary is required |Sub topPayEmployees.salary is required |	updateSubawardReport(Contracts and Assistance)
 200|subawardDataList.topPayEmployees.fullName | Sub topPayEmployees.fullName is required |Sub topPayEmployees.fullName is required |	updateSubawardReport(Contracts and Assistance)
-200|subawardDataList.subAssistanceNumber | Subaward ID is required |Subaward ID is required |	updateSubawardReport(Assistance)
-200|subawardDataList.subAssistanceDollars |	Subaward Amount is required	| Subaward Amount is required | updateSubawardReport(Assistance)
-200|subawardDataList.subAssistanceDollars |	Subaward Amount must contain only numbers and up to 2 decimal places (18 digits plus cents)	| Subaward Amount must contain only numbers and up to 2 decimal places (18 digits plus cents) | updateSubawardReport(Assistance)
-200|subawardDataList. subAssistanceObligationOrActionDate |	Subaward Date is required | Subaward Date is required| updateSubawardReport(Assistance)
-200|subawardDataList. subAssistanceObligationOrActionDate |	Date of Subaward for Subawardee: (XXXXXXXXX) is not valid (Expecting YYYY-MM-DD Format) | Date of Subaward for Subawardee: (XXXXXXXXX) is not valid (Expecting YYYY-MM-DD Format) | updateSubawardReport(Assistance)
-200|subawardDataList. subAssistanceObligationOrActionDate |	The Subaward Date cannot be in the future and should be on or after the Base Obligation Date for the assistance | The Subaward Date cannot be in the future and should be on or after the Base Obligation Date for the assistance | updateSubawardReport(Assistance)
+200|subawardDataList.subawardNumber | Subaward ID is required |Subaward ID is required |	updateSubawardReport(Assistance)
+200|subawardDataList.subawardAmount |	Subaward Amount is required	| Subaward Amount is required | updateSubawardReport(Assistance)
+200|subawardDataList.subawardAmount |	Subaward Amount must contain only numbers and up to 2 decimal places (18 digits plus cents)	| Subaward Amount must contain only numbers and up to 2 decimal places (18 digits plus cents) | updateSubawardReport(Assistance)
+200|subawardDataList. subawardDate |	Subaward Date is required | Subaward Date is required| updateSubawardReport(Assistance)
+200|subawardDataList. subawardDate |	Date of Subaward for Subawardee: (XXXXXXXXX) is not valid (Expecting YYYY-MM-DD Format) | Date of Subaward for Subawardee: (XXXXXXXXX) is not valid (Expecting YYYY-MM-DD Format) | updateSubawardReport(Assistance)
+200|subawardDataList. subawardDate |	The Subaward Date cannot be in the future and should be on or after the Base Obligation Date for the assistance | The Subaward Date cannot be in the future and should be on or after the Base Obligation Date for the assistance | updateSubawardReport(Assistance)
 
 <p><small><a href="#">Back to top</a></small></p>
 
