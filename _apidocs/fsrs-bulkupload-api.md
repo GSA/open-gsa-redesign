@@ -1626,7 +1626,7 @@ NOTE: In an effort to keep the user informed on the actions performed through th
     "reportStatus": "Not Saved",
     "message": "Could not save the report. Please fix the errors and submit again.",
     "errors": [
-      "Sub contractor UNIQUE ENTITY ID # is required"
+      "Sub assistanceor UNIQUE ENTITY ID # is required"
     ]
   }
 ]
@@ -1635,10 +1635,10 @@ NOTE: In an effort to keep the user informed on the actions performed through th
 </details>
 
 <details>
-<summary>Example 2: Assistance: Update (PUT) request for four Subaward reports, when first was successfully Published, second was saved in Draft status with Validation failures, third was saved in Reopened status since a Published version already exists for the subawardReportNumber, and fourth report could not be updated. </summary>
+<summary>Example 2: Assistance: Update (PUT) request for ar Subaward report, report was successfully Published. </summary>
 <p>
 <code><pre>
-[
+{
   {
     "id": "fain:subawardNumber:subawardDate:subawardAmount:submittedDate",
     "statusCode": "201",
@@ -1648,7 +1648,17 @@ NOTE: In an effort to keep the user informed on the actions performed through th
     "reportStatus": "Published",
     "message": "Report was successfully saved.",
     "errors": []
-  },
+  }
+}
+</pre></code>
+</p>
+</details>
+
+<details>
+<summary>Example 3: Assistance: Update (PUT) request for ar Subaward report, when report was saved in Draft status and error messages were sent back. </summary>
+<p>
+<code><pre>
+{
   {
     "id": "fain:subawardNumber:subawardDate:subawardAmount:submittedDate",
     "statusCode": "201",
@@ -1661,38 +1671,14 @@ NOTE: In an effort to keep the user informed on the actions performed through th
       "Subaward Amount is required",
       "Sub award Place of Performance Section - City provided is invalid."
     ]
-  },
-  {
-    "id": "fain:subawardNumber:subawardDate:subawardAmount:submittedDate",
-    "statusCode": "201",
-    "transactionId": "48e2fad8-7b43-4b62-a870-45b3f250ea72",
-    "timeStamp": "2024-02-20T19:51:24.915968",
-    "subawardReportNumber": "51e2fad8-9b43-4b62-a870-45b3f250ea14",
-    "reportStatus": "Reopened",
-    "message": "Report was saved but failed some validations. Please fix the errors and submit an update request.",
-    "errors": [
-      "Subaward Amount is required"
-    ]
-  },
-  {
-    "id": "fain:subawardNumber:subawardDate:subawardAmount:submittedDate",
-    "statusCode": "400",
-    "transactionId": "48e2fad8-7b43-4b62-a870-45b3f250ea72",
-    "timeStamp": "2024-02-20T19:51:24.915972",
-    "subawardReportNumber": "",
-    "reportStatus": "Not Saved",
-    "message": "Could not save the report. Please fix the errors and submit again.",
-    "errors": [
-      "No report found matching the specified parameters for the report."
-    ]
   }
-]
+}
 </pre></code>
 </p>
 </details>
 
 <details>
-<summary>Example 3: Assistance: Delete (DELETE) request for a Subaward report when only the subawardReportNumber was provided, Published and Reopened reports existed and both were deleted successfully. One element is returned for each deleted report. </summary>
+<summary>Example 4: Assistance: Delete (DELETE) request for a Subaward report when only the subawardReportNumber was provided, Published and Reopened reports existed and both were deleted successfully. One element is returned for each deleted report. </summary>
 <p>
 <code><pre>
 [
@@ -1722,22 +1708,12 @@ NOTE: In an effort to keep the user informed on the actions performed through th
 </details>
 
 <details>
-<summary>Example 4: Assistance: Delete (DELETE) request for two Subaward reports. First was a Draft report that was successfully Deleted, and second delete request was not successful. </summary>
+<summary>Example 5: Assistance: Delete (DELETE) request for a Subaward report when delete request was not successful. </summary>
 <p>
 <code><pre>
-[
+{
   {
-    "id": "fain:subawardNumber:subawardDate:subawardAmount:submittedDate",
-    "statusCode": "204",
-    "transactionId": "48e2fad8-7b43-4b62-a870-45b3f250ea72",
-    "timeStamp": "2024-02-20T19:51:24.915924",
-    "subawardReportNumber": "28e1fad9-7b43-4b62-a870-45b3f250ea32",
-    "reportStatus": "Draft",
-    "message": "Report was successfully deleted.",
-    "errors": []
-  },
-  {
-    "id": "search params concatenated",
+    "id": "",
     "statusCode": "400",
     "transactionId": null,
     "timeStamp": "2024-02-25T16:58:09.183947300",
@@ -1746,160 +1722,202 @@ NOTE: In an effort to keep the user informed on the actions performed through th
       "Please provide a valid value for the report status. It can be Draft, Published, Reopened or left blank."
     ]
   }
-]
+}
 </pre></code>
 </p>
 </details>
 
 <details>
-<summary>Example 5: Assistance: Get (POST) request for a contract with 2 Subaward reports, when the request is successful. One element is returned for each Subaward report.</summary>
+<summary>Example 5: Assistance: Paginated GET request for a assistance with 9 Subaward reports, and page size of 2. Search is executed when the fain is provided in the query parameters. One element is returned for each Subaward report.</summary>
 <p>
 <code><pre>
-[
-  {
-    "id": "fain:subawardNumber:subawardDate:subawardAmount:submittedDate",
-    "statusCode": "200",
-    "transactionId": "48e2fad8-7b43-4b62-a870-45b3f250ea72",
-    "timeStamp": "2024-02-20T19:51:24.915924",
-    "subawardReportNumber": "51e2fad8-7b43-4b62-a870-45b3f250ea99",
-    "reportStatus": "Published",
-    "message": {
-      "assistanceData": [
-        {
-          "fain": "string",
-          "subawardDataList": [
-            {
-              "submittedDate": "2024-02-12",
-              "subawardUEI": "string",
-              "subawardNumber": "string",
-              "subawardAmount": "string",
-              "subawardDate": "string",
-              "subawardDescription": "string",
-              "placeOfPerformance": {
-                "city": "string",
-                "country": {
-                  "code": "string",
-                  "name": "string"
-                },
-                "stateOrProvince": {
-                  "code": "string",
-                  "name": "string"
-                },
-                "zipPlus4": "string",
-		"congressionalDistrict": "string"
-              },
-              "recoveryModelQuestions": [
-                {
-                  "code": "1",
-                  "isSelected": true
-                },
-                {
-                  "code": "2",
-                  "isSelected": false
-                }
-              ],
-              "topPayEmployees": [
-                {
-                  "fullName": "sub1",
-                  "salary": "100"
-                },
-                {
-                  "fullName": "sub2",
-                  "salary": "200"
-                },
-                {
-                  "fullName": "sub3",
-                  "salary": "300"
-                },
-                {
-                  "fullName": "sub4",
-                  "salary": "400"
-                },
-                {
-                  "fullName": "sub5",
-                  "salary": "500"
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    "errors": []
-  },
-  {
-    "id": "fain:subawardNumber:subawardDate:subawardAmount:submittedDate",
-    "statusCode": "200",
-    "transactionId": "58e2fad8-7b43-4b62-a870-45b3f250ea72",
-    "timeStamp": "2024-02-20T19:51:24.915924",
-    "subawardReportNumber": "71e2fad8-7b43-4b62-a870-45b3f250ea98",
-    "reportStatus": "Published",
-    "message": {
-      "assistanceData": [
-        {
-          "fain": "string",
-          "subawardDataList": [
-            {
-              "submittedDate": "2024-02-12",
-              "subawardUEI": "string",
-              "subawardNumber": "string",
-              "subawardAmount": "string",
-              "subawardDate": "string",
-              "subawardDescription": "string",
-              "placeOfPerformance": {
-                "city": "string",
-                "country": {
-                  "code": "string",
-                  "name": "string"
-                },
-                "stateOrProvince": {
-                  "code": "string",
-                  "name": "string"
-                },
-                "zipPlus4": "string",
-		"congressionalDistrict": "string"
-              },
-              "recoveryModelQuestions": [
-                {
-                  "code": "1",
-                  "isSelected": false
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    "errors": []
-  }
-]
+{
+   "responseList":[
+      {
+         "id": "fain:subawardNumber:subawardDate:subawardAmount:submittedDate",
+         "statusCode":"200",
+         "transactionId":"48e2fad8-7b43-4b62-a870-45b3f250ea72",
+         "timeStamp":"2024-02-20T19:51:24.915924",
+         "reportStatus":"Published",
+         "message":{
+            "assistanceData":[
+               {
+                  "fain":"string",
+                  "agencyCode":"string",
+                  "subawardDataList":[
+                     {
+                        "subawardReportNumber":"51e2fad8-7b43-4b62-a870-45b3f250ea99",
+                        "submittedDate":"2024-02-12",
+                        "subawardUEI":"string",
+                        "subawardNumber":"string",
+                        "subawardAmount":"string",
+                        "subawardDate":"string",
+                        "subawardDescription":"string",
+                        "placeOfPerformance":{
+                           "city":"string",
+                           "country":{
+                              "code":"string",
+                              "name":"string"
+                           },
+                           "stateOrProvince":{
+                              "code":"string",
+                              "name":"string"
+                           },
+                           "zip":"string",
+                           "congressional_district":"string"
+                        },
+                        "recoveryModelQuestions":[
+                           {
+                              "code":"1",
+                              "isSelected":true
+                           },
+                           {
+                              "code":"2",
+                              "isSelected":false
+                           }
+                        ],
+                        "topPayEmployees":[
+                           {
+                              "fullName":"sub1",
+                              "salary":"100"
+                           },
+                           {
+                              "fullName":"sub2",
+                              "salary":"200"
+                           },
+                           {
+                              "fullName":"sub3",
+                              "salary":"300"
+                           },
+                           {
+                              "fullName":"sub4",
+                              "salary":"400"
+                           },
+                           {
+                              "fullName":"sub5",
+                              "salary":"500"
+                           }
+                        ]
+                     }
+                  ]
+               }
+            ]
+         },
+         "errors":[
+            
+         ]
+      },
+      {
+         "id": "fain:subawardNumber:subawardDate:subawardAmount:submittedDate",
+         "statusCode":"200",
+         "transactionId":"58e2fad8-7b43-4b62-a870-45b3f250ea72",
+         "timeStamp":"2024-02-20T19:51:24.915924",
+         "subawardReportNumber":"71e2fad8-7b43-4b62-a870-45b3f250ea98",
+         "reportStatus":"Published",
+         "message":{
+            "assistanceData":[
+               {
+                  "fain":"string",
+                  "agencyCode":"string",
+                  "subawardDataList":[
+                     {
+                        "subawardReportNumber":"71e2fad8-7b43-4b62-a870-45b3f250ea98",
+                        "submittedDate":"2024-02-12",
+                        "subawardUEI":"string",
+                        "subawardNumber":"string",
+                        "subawardAmount":"string",
+                        "subawardDate":"string",
+                        "subawardDescription":"string",
+                        "placeOfPerformance":{
+                           "city":"string",
+                           "country":{
+                              "code":"string",
+                              "name":"string"
+                           },
+                           "stateOrProvince":{
+                              "code":"string",
+                              "name":"string"
+                           },
+                           "zip":"string",
+                           "congressional_district":"string"
+                        },
+                        "recoveryModelQuestions":[
+                           {
+                              "code":"1",
+                              "isSelected":false
+                           }
+                        ]
+                     }
+                  ]
+               }
+            ]
+         },
+         "errors":[
+            
+         ]
+      }
+   ],
+   "page":0,
+   "size":2,
+   "totalElements":5,
+   "totalPages":3
+}
 </pre></code>
 </p>
 </details>
 
 <details>
-<summary>Example 6: Assistance: Get (POST) request for a contract with 2 Subaward reports, when the request is not successful for both for different reasons. One element is returned for each Subaward report.</summary>
+<summary>Example 6: Assistance: Get request for a specific Subaward report in Published status.</summary>
 <p>
 <code><pre>
 [
-  {
-    "id": "search params concatenated",
-    "statusCode": "400",
-    "transactionId": "c4aa7163-03fb-40e2-9234-9c8f0fcd9947",
-    "timeStamp": "2024-02-28T20:23:32.672006",
-    "message": "No data matching the search criteria found",
-    "errors": []
-  },
-  {
-    "id": "search params concatenated",
-    "statusCode": "400",
-    "transactionId": "48e2fad8-7b43-4b62-a870-45b3f250ea72",
-    "timeStamp": "2024-02-20T19:51:24.915972",
-    "message": "Could not retrieve the report. Please fix the errors and try again.",
-    "errors": [
-      "At least one assistanceData element is required for the grant reporting"
-    ]
-  }
+   {
+      "id": "fain:subawardNumber:subawardDate:subawardAmount:submittedDate",
+      "statusCode":"200",
+      "transactionId":"58e2fad8-7b43-4b62-a870-45b3f250ea72",
+      "timeStamp":"2024-02-20T19:51:24.915924",
+      "subawardReportNumber":"71e2fad8-7b43-4b62-a870-45b3f250ea98",
+      "reportStatus":"Published",
+      "message":{
+         "assistanceData":[
+            {
+               "fain":"string",
+               "agencyCode":"string",
+               "subawardDataList":[
+                  {
+                     "subawardReportNumber":"71e2fad8-7b43-4b62-a870-45b3f250ea98",
+                     "submittedDate":"2024-02-12",
+                     "subawardUEI":"string",
+                     "subawardNumber":"string",
+                     "subawardAmount":"string",
+                     "subawardDate":"string",
+                     "subawardDescription":"string",
+                     "placeOfPerformance":{
+                        "city":"string",
+                        "country":{
+                           "code":"string",
+                           "name":"string"
+                        },
+                        "stateOrProvince":{
+                           "code":"string",
+                           "name":"string"
+                        },
+                        "zip":"string",
+                        "congressional_district":"string"
+                     },
+                     "recoveryModelQuestions":[
+                        {
+                           "code":"1",
+                           "isSelected":false
+                        }
+                     ]
+                  }
+               ]
+            }
+         ]
+      },
+      "errors":[]
+   }
 ]
 </pre></code>
 </p>
