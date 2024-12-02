@@ -8,14 +8,17 @@ banner-heading: SAM.gov Assistance Subaward Reporting Public API
 The Assistance Subaward Reporting Public API provides users with metadata on new and existing subawards and sub-assistance and deleted subaward and sub-assistance data. This API requires pagination, and the response will be provided to users synchronously.
 
 
-**Key Features of the Assistance Subaward Outbound API**
+**Tips and Key Features of the Assistance Subaward Outbound API**
 
-* It offers several optional search parameters, filtering by sections AND (&) condition to obtain the desired data.
-* It returns synchronous responses.
-* It returns 100 records per page by default. User can configure page size by passing it as a query string in URL. Options for status is Published or Deleted. If no status is passed as parameter default value is 'Published'. E.g. https://api.sam.gov/assistance/v1/subawards/search?pageNumber=0&pageSize=10
-* Pagination: By using the page number and page size parameters, it is possible to retrieve any desired number of records from an API. This allows for efficient retrieval of data in smaller, manageable chunks rather than retrieving all records at once.
-* The following characters are not allowed to be sent in the parameter values with the API request: & \| { } ^ \
-* To improve performance when search results may return thousands of records, set the page size to 1000.
+This API: 
+
+* Provides synchronous responses.
+* Provides optional search parameters, filtering by sections AND (&) condition to obtain the desired data.
+* Requires pagination: Use page number and page size parameters to get data in manageable quantities rather than all records at once. The default pagination is 100 records per page.
+    * Configure the page size by passing it as a query string in the URL. Set the page size to 1,000 to improve search performance for large data requests - for example, https://api.sam.gov/assistance/v1/subawards/search?pageNumber=0&pageSize=1000.
+* Has status options of Published and Deleted. If no status is passed as a parameter, Published is the default value. 
+* Does not allow the characters & \| { } ^ \ in parameter values.
+
 
 ## Getting Started
 
@@ -28,8 +31,8 @@ Assistance Subaward Reporting Public API can be accessed from Production or Alph
 * https://api.sam.gov/assistance/v1/subawards/search?status=Deleted
 
 **Alpha**
-* https://api-alpha.sam.gov/assistance/v1/subawards/search
-* https://api-alpha.sam.gov/assistance/v1/subawards/search?status=Deleted
+* https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search
+* https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?status=Deleted
 
 
 ## Authentication and API Keys
@@ -101,7 +104,6 @@ subAwardNumber | Subaward Number | string | v1
 subAwardAmount | Subaward Amount | string | v1
 subAwardDate | Subaward Date | string | v1
 subEntityUei | Sub Entity UEI | string | v1
-subEntityEFTIndicator | Sub Entity EFT Indicator | string | v1
 subTopPayEmployee | Sub Top Pay Employee | string | v1
 subEntityLegalBusinessName | Sub Entity Legal Business Name | string | v1
 subEntityDoingBusinessAsName | Sub Entity Doing Business As | string | v1
@@ -311,7 +313,7 @@ No API Key is provided. | No API key was supplied. Please submit with a valid AP
 
 Production URL: https://api.sam.gov/assistance/v1/subawards/search?pageSize=25&pageNumber=0&uniqueAwardKey=ASST_NON_27MN12002L97E1_6925&api_key={{api_key}} <br>
  <br>
-Alpha URL: https://api-alpha.sam.gov/assistance/v1/subawards/search?pageSize=25&pageNumber=0&uniqueAwardKey=ASST_NON_27MN12002L97E1_6925&api_key={{api_key}} <br>
+Alpha URL: https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?pageSize=25&pageNumber=0&uniqueAwardKey=ASST_NON_27MN12002L97E1_6925&api_key={{api_key}} <br>
 </details>
 
 <details>
@@ -323,8 +325,8 @@ Alpha URL: https://api-alpha.sam.gov/assistance/v1/subawards/search?pageSize=25&
   "totalPages": 1,
   "totalRecords": 1,
   "pageNumber": 0,
-  "nextPageLink": "https://api-alpha.sam.gov/assistance/v1/subawards/search?pageNumber=0&pageSize=25",
-  "previousPageLink": "https://api-alpha.sam.gov/assistance/v1/subawards/search?pageNumber=0&pageSize=25",
+  "nextPageLink": "https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?pageNumber=0&pageSize=25",
+  "previousPageLink": "https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?pageNumber=0&pageSize=25",
   "data": [
     {
       "status": "Published",
@@ -402,7 +404,7 @@ Alpha URL: https://api-alpha.sam.gov/assistance/v1/subawards/search?pageSize=25&
 
 Production URL: https://api.sam.gov/assistance/v1/subawards/search?pageSize=25&pageNumber=0&fain=27MN12002L97E1&agencyCode=6925&fromDate=2012-01-01&toDate=2013-12-31&api_key={{api_key}} <br>
  <br>
-Alpha URL: https://api-alpha.sam.gov/assistance/v1/subawards/search?pageSize=25&pageNumber=0&fain=27MN12002L97E1&agencyCode=6925&fromDate=2012-01-01&toDate=2013-12-31&api_key={{api_key}} <br>
+Alpha URL: https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?pageSize=25&pageNumber=0&fain=27MN12002L97E1&agencyCode=6925&fromDate=2012-01-01&toDate=2013-12-31&api_key={{api_key}} <br>
 </details>
 
 <details>
@@ -414,8 +416,8 @@ Alpha URL: https://api-alpha.sam.gov/assistance/v1/subawards/search?pageSize=25&
   "totalPages": 1,
   "totalRecords": 1,
   "pageNumber": 0,
-  "nextPageLink": "https://api-alpha.sam.gov/assistance/v1/subawards/search?pageNumber=0&pageSize=25",
-  "previousPageLink": "https://api-alpha.sam.gov/assistance/v1/subawards/search?pageNumber=0&pageSize=25",
+  "nextPageLink": "https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?pageNumber=0&pageSize=25",
+  "previousPageLink": "https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?pageNumber=0&pageSize=25",
   "data": [
     {
       "status": "Published",
@@ -492,7 +494,7 @@ Alpha URL: https://api-alpha.sam.gov/assistance/v1/subawards/search?pageSize=25&
 
 Production URL: https://api.sam.gov/assistance/v1/subawards/search?pageSize=25&pageNumber=0&fain=27MN12002L97E1&uniqueAwardKey=ASST_NON_27MN12002L97E1_6925&agencyCode=6925&fromDate=2012-01-01&toDate=2013-09-29&api_key={{api_key}} <br>
  <br>
-Alpha URL: https://api-alpha.sam.gov/assistance/v1/subawards/search?pageSize=25&pageNumber=0&fain=27MN12002L97E1&uniqueAwardKey=ASST_NON_27MN12002L97E1_6925&agencyCode=6925&fromDate=2012-01-01&toDate=2013-09-29&api_key={{api_key}} <br>
+Alpha URL: https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?pageSize=25&pageNumber=0&fain=27MN12002L97E1&uniqueAwardKey=ASST_NON_27MN12002L97E1_6925&agencyCode=6925&fromDate=2012-01-01&toDate=2013-09-29&api_key={{api_key}} <br>
 </details>
 
 <details>
@@ -504,8 +506,8 @@ Alpha URL: https://api-alpha.sam.gov/assistance/v1/subawards/search?pageSize=25&
   "totalPages": 1,
   "totalRecords": 1,
   "pageNumber": 0,
-  "nextPageLink": "https://api-alpha.sam.gov/assistance/v1/subawards/search?pageNumber=0&pageSize=25",
-  "previousPageLink": "https://api-alpha.sam.gov/assistance/v1/subawards/search?pageNumber=0&pageSize=25",
+  "nextPageLink": "https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?pageNumber=0&pageSize=25",
+  "previousPageLink": "https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?pageNumber=0&pageSize=25",
   "data": [
     {
       "status": "Published",
@@ -582,7 +584,7 @@ Alpha URL: https://api-alpha.sam.gov/assistance/v1/subawards/search?pageSize=25&
 
 Production URL: https://api.sam.gov/assistance/v1/subawards/search?status=Deleted&pageSize=25&pageNumber=0&fromDate=2010-04-15&toDate=2019-04-15&api_key={{api_key}} <br>
  <br>
-Alpha URL: https://api-alpha.sam.gov/assistance/v1/subawards/search?status=Deleted&pageSize=25&pageNumber=0&fromDate=2010-04-15&toDate=2019-04-15&api_key={{api_key}} <br>
+Alpha URL: https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?status=Deleted&pageSize=25&pageNumber=0&fromDate=2010-04-15&toDate=2019-04-15&api_key={{api_key}} <br>
 </details>
 
 <details>
@@ -594,8 +596,8 @@ Alpha URL: https://api-alpha.sam.gov/assistance/v1/subawards/search?status=Delet
   "totalPages": 1,
   "totalRecords": 3,
   "pageNumber": 0,
-  "nextPageLink": "https://api-alpha.sam.gov/assistance/v1/subawards/search?pageNumber=0&pageSize=25",
-  "previousPageLink": "https://api-alpha.sam.gov/assistance/v1/subawards/search?pageNumber=0&pageSize=25",
+  "nextPageLink": "https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?pageNumber=0&pageSize=25",
+  "previousPageLink": "https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?pageNumber=0&pageSize=25",
   "data": [
     {
       "status": "Deleted",
@@ -831,7 +833,7 @@ Alpha URL: https://api-alpha.sam.gov/assistance/v1/subawards/search?status=Delet
 
 Production URL: https://api.sam.gov/assistance/v1/subawards/search?status=Deleted&pageSize=25&pageNumber=0&uniqueAwardKey=ASST_NON_1240036_4900&fain=1240036&agencyCode=4900&fromDate=2013-01-01&toDate=2013-12-31&api_key={{api_key}} <br>
  <br>
-Alpha URL: https://api-alpha.sam.gov/assistance/v1/subawards/search?status=Deleted&pageSize=25&pageNumber=0&uniqueAwardKey=ASST_NON_1240036_4900&fain=1240036&agencyCode=4900&fromDate=2013-01-01&toDate=2013-12-31&api_key={{api_key}} <br>
+Alpha URL: https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?status=Deleted&pageSize=25&pageNumber=0&uniqueAwardKey=ASST_NON_1240036_4900&fain=1240036&agencyCode=4900&fromDate=2013-01-01&toDate=2013-12-31&api_key={{api_key}} <br>
 </details>
 
 <details>
@@ -843,8 +845,8 @@ Alpha URL: https://api-alpha.sam.gov/assistance/v1/subawards/search?status=Delet
   "totalPages": 1,
   "totalRecords": 1,
   "pageNumber": 0,
-  "nextPageLink": "https://api-alpha.sam.gov/assistance/v1/subawards/search?pageNumber=0&pageSize=25",
-  "previousPageLink": "https://api-alpha.sam.gov/assistance/v1/subawards/search?pageNumber=0&pageSize=25",
+  "nextPageLink": "https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?pageNumber=0&pageSize=25",
+  "previousPageLink": "https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?pageNumber=0&pageSize=25",
   "data": [
     {
       "status": "Deleted",
@@ -934,7 +936,7 @@ Alpha URL: https://api-alpha.sam.gov/assistance/v1/subawards/search?status=Delet
 
 Production URL: https://api.sam.gov/assistance/v1/subawards/search?pageSize=25&pageNumber=0&fromDate=2024-11-07&toDate=2024-11-08&api_key={{api_key}} <br>
  <br>
-Alpha URL: https://api-alpha.sam.gov/assistance/v1/subawards/search?pageSize=25&pageNumber=0&fromDate=2024-11-07&toDate=2024-11-08&api_key={{api_key}} <br>
+Alpha URL: https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?pageSize=25&pageNumber=0&fromDate=2024-11-07&toDate=2024-11-08&api_key={{api_key}} <br>
 </details>
 
 <details>
@@ -946,8 +948,8 @@ Alpha URL: https://api-alpha.sam.gov/assistance/v1/subawards/search?pageSize=25&
     "totalPages": 8,
     "totalRecords": 8,
     "pageNumber": 0,
-    "nextPageLink": "https://api-alpha.sam.gov/assistance/v1/subawards/search?pageNumber=1&pageSize=1&status=Published&fromDate=2024-11-07&toDate=2024-11-08",
-    "previousPageLink": "https://api-alpha.sam.gov/assistance/v1/subawards/search?pageNumber=0&pageSize=1&status=Published&fromDate=2024-11-07&toDate=2024-11-08",
+    "nextPageLink": "https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?pageNumber=1&pageSize=1&status=Published&fromDate=2024-11-07&toDate=2024-11-08",
+    "previousPageLink": "https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?pageNumber=0&pageSize=1&status=Published&fromDate=2024-11-07&toDate=2024-11-08",
     "data": [
         {
             "status": "Published",
@@ -1044,7 +1046,7 @@ Alpha URL: https://api-alpha.sam.gov/assistance/v1/subawards/search?pageSize=25&
 
 Production URL: https://api.sam.gov/assistance/v1/subawards/search?status=Deleted&pageSize=25&pageNumber=0&fromDate=2024-11-07&toDate=2024-11-08&api_key={{api_key}} <br>
  <br>
-Alpha URL: https://api-alpha.sam.gov/assistance/v1/subawards/search?status=Deleted&pageSize=25&pageNumber=0&fromDate=2024-11-07&toDate=2024-11-08&api_key={{api_key}} <br>
+Alpha URL: https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?status=Deleted&pageSize=25&pageNumber=0&fromDate=2024-11-07&toDate=2024-11-08&api_key={{api_key}} <br>
 </details>
 
 <details>
@@ -1056,8 +1058,8 @@ Alpha URL: https://api-alpha.sam.gov/assistance/v1/subawards/search?status=Delet
      "totalPages": 2,
     "totalRecords": 2,
     "pageNumber": 0,
-    "nextPageLink": "https://api-alpha.sam.gov/assistance/v1/subawards/search?pageNumber=1&pageSize=1&status=Deleted&fromDate=2024-11-07&toDate=2024-11-08",
-    "previousPageLink": "https://api-alpha.sam.gov/assistance/v1/subawards/search?pageNumber=0&pageSize=1&status=Deleted&fromDate=2024-11-07&toDate=2024-11-08",
+    "nextPageLink": "https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?pageNumber=1&pageSize=1&status=Deleted&fromDate=2024-11-07&toDate=2024-11-08",
+    "previousPageLink": "https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?pageNumber=0&pageSize=1&status=Deleted&fromDate=2024-11-07&toDate=2024-11-08",
     "data": [
         {
             "status": "Deleted",
