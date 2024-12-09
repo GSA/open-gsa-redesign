@@ -21,7 +21,7 @@ banner-heading: SAM.gov Entity Management API
             <li><b>Alpha:</b> November 25, 2024</li>
             <li><b>Production:</b> December 6, 2024</li>
         </ul><br/>
-        V4 includes a new <b>Exceeds Domestic Threshold field</b> under the <b>Reps and Certs Section -> Certification Subsection</b> in the <b>FAR Responses Lists of Answers</b> and <b>DFAR Responses List of Answers </b>lists, and <b>the Qualifications Subsection</b> in the <b>Architect Engineer Responses</b> list.</br>
+        V4 includes a new <b>Exceeds Domestic Threshold field</b> under the <b>Reps and Certs Section -> Certification Subsection</b> in the <b>FAR Responses Lists of Answers</b> and <b>DFAR Responses List of Answers </b>lists, and <b>the Qualifications Subsection</b> in the <b>Architect Engineer Responses</b> list.<br>
          The field location is as follows: 
         <br><br>
         <ul style="padding-left: 50px;">
