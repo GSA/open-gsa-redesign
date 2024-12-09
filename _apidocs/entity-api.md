@@ -16,14 +16,31 @@ banner-heading: SAM.gov Entity Management API
 <div class="usa-alert usa-alert-warning" id="site-wide-alert" role="alert">
    <div class="usa-alert-body">
      <p class="usa-alert-text">
-        Version 4 (V4) of the Entity Management API is being released on:
+        Version 4 (V4) of the Entity Management API was released on:
         <ul style="padding-left: 50px;">
             <li><b>Alpha:</b> November 25, 2024</li>
             <li><b>Production:</b> December 6, 2024</li>
         </ul><br/>
-        V4 includes a new <b>Exceeds Domestic Threshold field</b> under the <b>Reps and Certs Section -> Certification Subsection</b> in the <b>FAR Responses Lists of Answers</b> list. The field location is as follows: 
+        V4 includes a new <b>Exceeds Domestic Threshold field</b> under the <b>Reps and Certs Section -> Certification Subsection</b> in the <b>FAR Responses Lists of Answers</b> and <b>DFAR Responses List of Answers </b>lists, and <b>the Qualifications Subsection</b> in the <b>Architect Engineer Responses</b> list.</br>
+         The field location is as follows: 
         <br><br>
-        <code>repsAndCerts section -> certifications sub-section -> fARResponses list -> listOfAnswers list -> endProductsList list -> exceedsDomesticThreshold string</code>
+        <ul style="padding-left: 50px;">
+        <li>
+         <code>
+           repsAndCerts section -> certifications sub-section -> fARResponses list -> listOfAnswers list -> endProductsList list -> exceedsDomesticThreshold string
+        </code>
+        </li>
+        <li>
+         <code>
+           repsAndCerts section -> certifications sub-section -> dFARResponses list -> listOfAnswers list -> endProductsList list -> exceedsDomesticThreshold string
+        </code>
+        </li>
+        <li>
+         <code>
+           repsAndCerts section -> qualifications sub-section -> architectEngineerResponses list -> listOfAnswers list -> endProductsList list -> exceedsDomesticThreshold string
+        </code>
+        </li>
+        </ul>
         <br><br>
         The new field is a Yes/No value and is added as part of Reps and Certs (version 72). This change does not resolve Reps and Certs issues impacting other services. No other SAM.gov APIs are impacted as part of this change.
         <br><br>
@@ -76,6 +93,8 @@ Following are the key features of the Entity Management Extract API:
 * https://api.sam.gov/entity-information/v2/entities?
 * https://api.sam.gov/entity-information/v3/entities?api_key=<A VALID API KEY>
 * https://api.sam.gov/entity-information/v3/entities?
+* https://api.sam.gov/entity-information/v4/entities?api_key=<A VALID API KEY>
+* https://api.sam.gov/entity-information/v4/entities?
 
 **Alpha:**
 * https://api-alpha.sam.gov/entity-information/v1/entities?api_key=<A VALID API KEY>
@@ -84,6 +103,8 @@ Following are the key features of the Entity Management Extract API:
 * https://api-alpha.sam.gov/entity-information/v2/entities?
 * https://api-alpha.sam.gov/entity-information/v3/entities?api_key=<A VALID API KEY>
 * https://api-alpha.sam.gov/entity-information/v3/entities?
+* https://api-alpha.sam.gov/entity-information/v4/entities?api_key=<A VALID API KEY>
+* https://api-alpha.sam.gov/entity-information/v4/entities?
 
 ### User Requirements
 
@@ -4077,6 +4098,12 @@ samMonitoring
 <td>ProductType</td>
 </tr>
 
+<tr>
+<td>exceedsDomesticThreshold</td>
+<td>string</td>
+<td>ExceedsDomesticThreshold</td>
+</tr>
+
 </table>
 </details>
 </td>
@@ -5212,6 +5239,11 @@ samMonitoring
 <td>ProductType</td>
 </tr>
 
+<tr>
+<td>exceedsDomesticThreshold</td>
+<td>string</td>
+<td>ExceedsDomesticThreshold</td>
+</tr>
 </table>
 </details>
 </td>
@@ -6368,6 +6400,11 @@ samMonitoring
 <td>ProductType</td>
 </tr>
 
+<tr>
+<td>exceedsDomesticThreshold</td>
+<td>string</td>
+<td>ExceedsDomesticThreshold</td>
+</tr>
 </table>
 </details>
 </td>
@@ -12375,12 +12412,13 @@ Disclaimer:
 | 09/19/2022 | v3.6    | * Updated "Description" for includeSections in the "Query String Parameters" section.<br><br> * Updated "entitySummary Sub Section" in the "Response Schema" section.<br><br> * Added "responsibilityInformationCount Sub Section" in the "Response Schema" section.<br><br> * Updated the “Examples” section - modified Example 6, added Example 7 and revised numbering of other Examples accordingly.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | 10/19/2022 | v3.7    | * Added a new Public search parameter, "proceedingsData" in the "API Description" - "Query String Parameters" section.<br><br> * Added new validation rules for "proceedingsData" in the "HTTP Response Codes" section.<br><br> * Updated the yaml file to include proceedingsData as a search parameter.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | 10/25/2022 | v3.8    | *  Updated the response schema for the API Description 🡪 Response Schema 🡪 integrityInformation 🡪 proceedingsData Sub Section to show the newly added field, "proceedingsRecordCount".<br><br> * Updated Example 6 🡪 Response (JSON Output) to show the newly added field, "proceedingsRecordCount".<br><br> * Updated Reps and Certs help documentation.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| 11/25/2022 | v3.9    | *  Updated SAM Functional Data Dictionary 🡪 Removed  DUNS/D&B References.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| 01/17/2023 | v4.0    | *  Uploaded a revised Data Dictionary with data fields arranged in the Alphabetical order.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| 01/30/2023 | v4.1    | *  Uploaded a revised Data Dictionary with data fields added for Proceedings and Responsibility/Qualification.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| 02/28/2023 | v4.2    | *  Removed MPIN occurrences from the Data Dictionary and the "Overview" > "Sensitive (CUI) Data" section.  <br><br> * Indicated that MPIN has been deprecated in the "Response Schema" >  "coreData" >  "entityInformation Sub Section".
-| 06/27/2023 | v4.3    | * Uploaded a revised Data Dictionary with updated Socio Economic Self Selections.
-| 08/22/2023 | v4.4    | * Uploaded a revised Data Dictionary with updated Business Types.
-| 09/29/2023 | v4.5    | * Updated "Additional Help References" documentation to link to SAM.gov Data Services page.
+| 11/25/2022 | v3.9    | *  Updated SAM Functional Data Dictionary 🡪 Removed  DUNS/D&B References.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| 01/17/2023 | v4.0    | *  Uploaded a revised Data Dictionary with data fields arranged in the Alphabetical order.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| 01/30/2023 | v4.1    | *  Uploaded a revised Data Dictionary with data fields added for Proceedings and Responsibility/Qualification.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| 02/28/2023 | v4.2    | *  Removed MPIN occurrences from the Data Dictionary and the "Overview" > "Sensitive (CUI) Data" section.  <br><br> * Indicated that MPIN has been deprecated in the "Response Schema" >  "coreData" >  "entityInformation Sub Section".                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+| 06/27/2023 | v4.3    | * Uploaded a revised Data Dictionary with updated Socio Economic Self Selections.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+| 08/22/2023 | v4.4    | * Uploaded a revised Data Dictionary with updated Business Types.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+| 09/29/2023 | v4.5    | * Updated "Additional Help References" documentation to link to SAM.gov Data Services page.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+| 12/09/2024 | v4.6    | * A new V4 Entity Management API has been created, enabling the response for the Exceeds Domestic Threshold field within the Reps and Certs section of the API respons.<br><br> * Added Entity Management V4 endpoint information to the Getting Started section.<br><br> * Updated the API Description -> Query String Parameters and Response Schema sub-sections to reflect available parameters and response fields in V4.<br><br> * Updated the OpenAPI Specification File to include the V4 endpoints.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 
 <p><small><a href="#">Back to top</a></small></p>
