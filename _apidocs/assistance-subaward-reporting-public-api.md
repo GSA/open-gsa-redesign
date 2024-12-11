@@ -5,7 +5,7 @@ banner-heading: SAM.gov Assistance Subaward Reporting Public API
 
 ## Overview
 
-The Assistance Subaward Reporting Public API provides users with metadata on new and existing subawards and sub-assistance and deleted subaward and sub-assistance data. This API requires pagination, and the response will be provided to users synchronously.
+The Assistance Subaward Reporting Public API provides published and deleted federal subaward data.
 
 
 **Tips and Key Features of the Assistance Subaward Outbound API**
@@ -22,9 +22,9 @@ This API:
 
 ## Getting Started
 
-Assistance Subaward Reporting Public API can be accessed from Production or Alpha via the following environments:
+Access the Assistance Subaward Reporting Public API from the following Production or Alpha environments: 
 
-### Version Control - v1 
+### API Endpoints
 
 **Production**
 * https://api.sam.gov/assistance/v1/subawards/search
@@ -36,24 +36,29 @@ Assistance Subaward Reporting Public API can be accessed from Production or Alph
 
 
 ## Authentication and API Keys
-User of this public API must provide an API key to use the Assistance Subaward Reporting Public API. Request per day are limited based on the federal or non-federal or general roles. 
-Note: User can request a public API Key in the Account Details page on SAM.gov (if testing in production), else on alpha.sam.gov (if testing in prodlike).
 
-#### User Account API Key Creation
-* Registered user can request for a public API on ‘Account Details’ page. This page can be accessed on Account Details page on SAM.gov
-* User must enter account password on ‘Account Details’ page to view the API Key information. If an incorrect password is entered, an error will be returned.
-* After the API Key is generated on ‘Account Details’ page, the API Key can be viewed on the Account Details page immediately. The API Key is visible until user navigates to a different page.
-* If an error is encountered during the API Key generation/retrieval, then user will receive an error message and must try again.
+We require an API key to use this API. Request a public API key from your SAM.gov user account on the Account Details page. If using the Alpha environment API, get your API key from your alpha.SAM.gov user account. Get a Production environment API key from your SAM.gov user account.
 
-## Assistance Subaward Reporting API Description 
+#### API Key Rate Limits 
 
-The Assistance Subaward Reporting Public API offers several optional search parameters that can be provided independently or in combination with each other to retrieve prime information. 
+We limit call rates by day and account type.
 
-## GET Grants Request Parameters - v1
+Type of Account	| Type of API Key| API Daily Rate Limit
+----- | ----- | ----- |
+Non-federal users with no role to an entity in SAM.gov | Personal API Key | 10 requests/day
+Non-federal users with a role to an entity in SAM.gov | Personal API Key | 1,000 requests/day
+Federal Users | Personal API Key | 1,000 requests/day
+Non-federal System Account users | System Account API Key | 1,000 requests/day
+Federal System Account users | System Account API key | 10,000 requests/day
 
-Users can provide below parameters to limit the results.
 
-Field Name	| Description | Required| Data Type| Applicable Versions
+## GET Request Parameters
+
+**Parameters** 
+
+Use these parameters to limit results.
+
+Field Name	| Description| Required| Data Type| Applicable Versions
 ----- | ----- | ----- | ----- | -----
 api_key | Public key of users. | Yes | String | v1
 pageSize | Total number of records to be retrieved per page. This field must be a number Max Value = 1000. Default page size is 100. | No | Int | v1
@@ -62,7 +67,7 @@ status | Allows users to request submitted records that were deleted. If the use
 
 **Search Filters**
 
-Users can search by any of the below request filters. 
+Use filters to get specific results.
 
 Filter | Description | Required | Data Type | Applicable Versions 
 ----- | ------| ----- | ----- | -----
@@ -77,13 +82,13 @@ toDate | Allows users to filter by To Date. If only the From Date is provided, t
 
 Status Name | Value 
 ----- | ----- 
-Published | Returns all published subaward information pertaining to contract. If no status is passed, the default will return all published records.
-Deleted | Returns deleted records that were submitted for the contract. Delete must be passed as a status to return deleted records
+Published | Returns all published subaward information for a contract. If no status is passed as a parameter, Published is the default value.
+Deleted | Returns deleted records submitted for a contract. Delete must be passed as a status to return deleted records.
 
 
 ## GET Assistance Response Parameters
 
-Based on the request filters, the API response shall return a JSON summarized view of the subawards. The Assistance Subaward Reporting Public API offers several response elements that are described in the following sections. 
+The Assistance Subaward Reporting Public API offers respone parameters described in this section. The API response returns a JSON summarized view of the subawards based on your request filters.
 
 Field Name	| Description | Data Type|Applicable Versions
 ----- | ----- | ----- | -----  
@@ -1155,7 +1160,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?sta
 
 ## Contact Us
 
-* Reach out to the SAM.gov team at [www.fsd.gov](https://www.fsd.gov) for inquiries and help desk support. 
+* Go to [fsd.gov](https://www.fsd.gov) for support. 
 
 ## Change Log
 
