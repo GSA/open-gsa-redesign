@@ -2839,14 +2839,14 @@ samMonitoring
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
-<td>>v3<br>v4</td>
+<td>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
-<td>>v3<br>v4</td>
+<td>v3<br>v4</td>
 </tr>
 
 <tr>
