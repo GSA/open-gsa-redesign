@@ -24,7 +24,7 @@ This API:
 
 Access the Acquisition Subaward Reporting Public API from the following Production or Alpha environments: 
 
-### Version Control - v1 
+### API Endpoints
 
 **Production**
 * https://api.sam.gov/contract/v1/subcontracts/search
