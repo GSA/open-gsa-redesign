@@ -12,24 +12,41 @@ banner-heading: SAM.gov Entity Management API
      </p>
    </div>
  </div>
- <div class="usa-alert usa-alert-warning" id="site-wide-alert" role="alert">
+
+<div class="usa-alert usa-alert-warning" id="site-wide-alert" role="alert">
    <div class="usa-alert-body">
      <p class="usa-alert-text">
-        Version 4 (V4) of the Entity Management API is being released on:
+        Version 4 (V4) of the Entity Management API was released on:
         <ul style="padding-left: 50px;">
             <li><b>Alpha:</b> November 25, 2024</li>
             <li><b>Production:</b> December 6, 2024</li>
         </ul><br/>
-        V4 includes a new <b>Exceeds Domestic Threshold field</b> under the <b>Reps and Certs Section -> Certification Subsection</b> in the <b>FAR Responses Lists of Answers</b> list. The field location is as follows: 
-        <br><br>
-        <code>repsAndCerts section -> certifications sub-section -> fARResponses list -> listOfAnswers list -> endProductsList list -> exceedsDomesticThreshold string</code>
-        <br><br>
+        V4 includes a new <b>Exceeds Domestic Threshold field</b> under the <b>Reps and Certs Section -> Certification Subsection</b> in the <b>FAR Responses List of Answers</b> and <b>DFAR Responses List of Answers </b>lists, and the <b>Qualifications Subsection</b> in the <b>Architect Engineer Responses</b> list.<br/><br/>
+         The field locations are as follows:
+        <ul style="padding-left: 50px;">
+        <li>
+         <code>
+           repsAndCerts section -> certifications sub-section -> fARResponses list -> listOfAnswers list -> endProductsList list -> exceedsDomesticThreshold string
+        </code>
+        </li>
+        <li>
+         <code>
+           repsAndCerts section -> certifications sub-section -> dFARResponses list -> listOfAnswers list -> endProductsList list -> exceedsDomesticThreshold string
+        </code>
+        </li>
+        <li>
+         <code>
+           repsAndCerts section -> qualifications sub-section -> architectEngineerResponses list -> listOfAnswers list -> endProductsList list -> exceedsDomesticThreshold string
+        </code>
+        </li>
+        </ul>
         The new field is a Yes/No value and is added as part of Reps and Certs (version 72). This change does not resolve Reps and Certs issues impacting other services. No other SAM.gov APIs are impacted as part of this change.
         <br><br>
         Please update your systems to use the latest Entity Management API if necessary.
      </p>
    </div>
  </div>
+
 
 ## Overview
 The Entity Management API allows users to request Unclassified ("Public"), Controlled Unclassified Information (CUI) "For Official Use Only" (FOUO) or CUI "Sensitive" entity data, based on the sensitivity level of the user account and through several optional request parameters.
@@ -74,6 +91,8 @@ Following are the key features of the Entity Management Extract API:
 * https://api.sam.gov/entity-information/v2/entities?
 * https://api.sam.gov/entity-information/v3/entities?api_key=<A VALID API KEY>
 * https://api.sam.gov/entity-information/v3/entities?
+* https://api.sam.gov/entity-information/v4/entities?api_key=<A VALID API KEY>
+* https://api.sam.gov/entity-information/v4/entities?
 
 **Alpha:**
 * https://api-alpha.sam.gov/entity-information/v1/entities?api_key=<A VALID API KEY>
@@ -82,6 +101,8 @@ Following are the key features of the Entity Management Extract API:
 * https://api-alpha.sam.gov/entity-information/v2/entities?
 * https://api-alpha.sam.gov/entity-information/v3/entities?api_key=<A VALID API KEY>
 * https://api-alpha.sam.gov/entity-information/v3/entities?
+* https://api-alpha.sam.gov/entity-information/v4/entities?api_key=<A VALID API KEY>
+* https://api-alpha.sam.gov/entity-information/v4/entities?
 
 ### User Requirements
 
@@ -223,7 +244,7 @@ if this search parameter is not sent in the request.
 <br>samRegistered=Yes – to receive entities that are registered.
 <br>samRegistered=No – to receive entities that are not registered/ID Assigned.
 </td>
-<td>v3</td>
+<td>v3<br>v4</td>
 </tr>
 
 <tr>
@@ -232,7 +253,7 @@ if this search parameter is not sent in the request.
 <br>samExtractCode=A, registrationStatus=A
 <br>NOTE: This parameter is being renamed. samExtractCode is in V1 and registrationStatus is starting V2. 
 </td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
@@ -241,7 +262,7 @@ if this search parameter is not sent in the request.
 <br>Allows a single 12-character value or up to 100 values.
 <br>Example: ueiSAM=RV56IG5JM6G9
 <br>Applicable to the entities that are registered or not registered/ID Assigned.</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
@@ -249,7 +270,7 @@ if this search parameter is not sent in the request.
 <td>Entity EFT Indicator.
 <br>Example: entityEFTIndicator=0000
 <br>NOTE: This parameter must be used in conjunction with ueiSAM.</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
@@ -257,14 +278,14 @@ if this search parameter is not sent in the request.
 <td>Allows a single 5-character value or up to 100 values.
 <br>Example: cageCode=00000
 <br>Applicable to the entities that are registered or not registered/ID Assigned.</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>dodaac</td>
 <td>Allows 9 character value.
 <br>Example: dodaac=DOD123456</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
@@ -272,21 +293,21 @@ if this search parameter is not sent in the request.
 <td>Allows partial or complete value search.
 <br>Example: legalBusinessName=ALLTEL
 <br>Applicable to the entities that are registered or not registered/ID Assigned.</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>dbaName</td>
 <td>Allows Partial or Complete value.
 <br>Example: dbaName=ALLTEL</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>debtSubjectToOffset</td>
 <td>Allows Y, N, U or null.
 <br>Example: debtSubjectToOffset=Y</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
@@ -295,7 +316,7 @@ if this search parameter is not sent in the request.
 <br>Examples: exclusionStatusFlag=D, exclusionStatusFlag=""
 <br><br>v3: Allows Y or N
 <br>Examples: exclusionStatusFlag=Y, exclusionStatusFlag=N</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
@@ -303,7 +324,7 @@ if this search parameter is not sent in the request.
 <td>Allows a single Date or a Date range.
 <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
 <br>Examples: registrationDate=01/01/2019, registrationDate=[01/01/2019,05/29/2019]</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
@@ -311,7 +332,7 @@ if this search parameter is not sent in the request.
 <td>Allows a single Date or a Date range.
 <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
 <br>Examples: activationDate=01/01/2019, activationDate=[01/01/2019,05/29/2019]</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
@@ -319,7 +340,7 @@ if this search parameter is not sent in the request.
 <td>Allows a single Date or a Date range.
 <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
 <br>Examples: updateDate=01/01/2019, updateDate=[01/01/2019,05/29/2019]</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
@@ -329,7 +350,7 @@ if this search parameter is not sent in the request.
 <br>Examples: registrationExpirationDate=01/01/2019, registrationExpirationDate=[01/01/2019,05/29/2019]<br>
 NOTE: This parameter is being renamed. expirationDate is in V1 and registrationExpirationDate is starting V2.
 </td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
@@ -338,21 +359,21 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]
 <br>Examples: ueiCreationDate=01/01/2019, ueiCreationDate=[01/01/2019,05/29/2019]
 <br>Applicable to the entities that are registered or not registered/ID Assigned.</td>
-<td>v2<br>v3</td>
+<td>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>purposeOfRegistrationCode</td>
 <td>Allows 2 character code.
 <br>Example: purposeOfRegistrationCode=Z2</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>purposeOfRegistrationDesc</td>
 <td>Allows a text.
 <br>Example: purposeOfRegistrationDesc=All Awards</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
@@ -360,7 +381,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>Allows a text.
 <br>Example: physicalAddressCity=Herndon
 <br>Applicable to the entities that are registered or not registered/ID Assigned.</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
@@ -368,7 +389,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>Allows a 2 digit code.
 <br>Example: physicalAddressCongressionalDistrict=08
 <br>Applicable to SAM registrants.</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
@@ -376,7 +397,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>Allows a 3-character code for entities that are registered. Allows both 3-character and 2-character codes for entities that are not registered/ID Assigned.
 <br>Example: physicalAddressCountryCode=USA
 <br>Applicable to the entities that are registered or not registered/ID Assigned.</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
@@ -384,7 +405,7 @@ NOTE: This parameter is being renamed. expirationDate is in V1 and registrationE
 <td>Allows a 2 character code.
 <br>Example: physicalAddressProvinceOrStateCode=AR
 <br>Applicable to the entities that are registered or not registered/ID Assigned.</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
@@ -396,168 +417,168 @@ or any digit postal code for non-US postal codes, for entities that are not regi
 <br>Examples: 
 <br>physicalAddressZipPostalCode=02201, physicalAddressZipPostalCode=110054, physicalAddressZipPostalCode=21202-3117
 </td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>entityStructureCode</td>
 <td>Allows 2 character code or null.
 <br>Example: entityStructureCode=2L</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>entityStructureDesc</td>
 <td>Allows Description or null.
 <br>Example: entityStructureDesc=Partnership or Limited Liability Partnership</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>organizationStructureCode</td>
 <td>Allows 2 character code.
 <br>Example: organizationStructureCode=MF</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>organizationStructureDesc</td>
 <td>Allows 2 character code.
 <br>Example: organizationStructureDesc=MANUFACTURER OF GOODS</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>businessTypeCode</td>
 <td>Allows 2 character code.
 <br>Example: businessTypeCode=OY</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>businessTypeDesc</td>
 <td>Allows a text.
 <br>Example: businessTypeDesc=Woman Owned Business </td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>sbaBusinessTypeCode</td>
 <td>Allows a two character code or null.
 <br>Example: sbaBusinessTypeCode=12</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>sbaBusinessTypeDesc</td>
 <td>Allows text.
 <br>Example: sbaBusinessTypeDesc=Woman Owned Small Business</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>primaryNaics</td>
 <td>Allows 6 digit NAICS, accepts multiple NAICS.
 <br>Example: primaryNaics=513310</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>naicsCode</td>
 <td>Allows 6 character code.
 <br>Example: naicsCode=513310</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>naicsDesc</td>
 <td>Allows a text.
 <br>Example: naicsDesc=Furniture Stores</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>naicsLimitedSB</td>
 <td>Allows a 6-digit NAICS Code, "" or !"" values.
 <br>Example: naicsLimitedSB=513310</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>pscCode</td>
 <td>Allows 4 character code.
 <br>Example: pscCode=X1QA</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>pscDesc</td>
 <td>Allows a text.
 <br>Example: pscDesc=Screws</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>stateOfIncorporationCode</td>
 <td>Allows 2 character code.
 <br>Example: stateOfIncorporationCode=VA</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>stateOfIncorporationDesc</td>
 <td>Allows a text.
 <br>Example: stateOfIncorporationDesc=Virginia</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>countryOfIncorporationCode</td>
 <td>Allows 3 character code.
 <br>Example: countryOfIncorporationCode=USA</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>countryOfIncorporationDesc</td>
 <td>Allows a text.
 <br>Example: countryOfIncorporationDesc=UNITED STATES</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>servedDisasterStateCode</td>
 <td>Allows 2 digit character code or "any".
 <br>Example: servedDisasterStateCode=VA, servedDisasterStateCode=any</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>servedDisasterStateName</td>
 <td>Allows Name or null.
 <br>Example: servedDisasterStateName=Virginia</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>servedDisasterCountyCode</td>
 <td>Allows 3 digit county code.
 <br>Example: servedDisasterCountyCode=060</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>servedDisasterCountyName</td>
 <td>Allows a text.
 <br>Example: servedDisasterCountyName=FAIRFAX</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>servedDisasterMSA</td>
 <td>Allows 4 digit MSA code.
 <br>Example: servedDisasterMSA=1720</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
@@ -571,7 +592,7 @@ includeSections=All,integrityInformation&proceedingsData=yes;<br>
 includeSections=entityRegistration,coreData,integrityInformation,<br>
 pointsOfContact&proceedingsData=YES
 </td>
-<td>v3</td>
+<td>v3<br>v4</td>
 </tr>
 
 <tr>
@@ -601,7 +622,7 @@ includeSections=repsAndCerts.
 <br>includeSections=entityRegistration,coreData;
 <br>includeSections=integrityInformation,All
 </td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
@@ -609,7 +630,7 @@ includeSections=repsAndCerts.
 <td>Allows user to download data into the JSON and CSV asynchronous file formats.
 <br>Example: format=csv
 <br>Applicable to the entities that are registered or not registered/ID Assigned.</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
@@ -619,7 +640,7 @@ links with tokens sent to the email address associated to the API key used in th
 <br>Example: emailId=Yes&format=JSON
 <br>Applicable to the entities that are registered or not registered/ID Assigned.
 </td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
@@ -630,63 +651,63 @@ links with tokens sent to the email address associated to the API key used in th
 <td>edi</td>
 <td>Allows text.
 <br>Example: edi=YES/NO</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>companySecurityLevelCode</td>
 <td>Allows 2 character code.
 <br>Example: companySecurityLevelCode=92</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>companySecurityLevelDesc</td>
 <td>Allows text.
 <br>Example: companySecurityLevelDesc=Government Top Secret</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>highestEmployeeSecurityLevelCode</td>
 <td>Allows 2 character code .
 <br>Example: highestEmployeeSecurityLevelCode=90</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>highestEmployeeSecurityLevelDesc</td>
 <td>Allows text.
 <br>Example: highestEmployeeSecurityLevelDesc=Government Top Secret</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>ultimateParentUEISAM</td>
 <td>Allows text.
 <br>Example: ultimateParentUEISAM=RQ56IG5JM6G9</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>agencyBusinessPurposeCode</td>
 <td>Allows text, Determines Agency Business Purpose Code.
 <br>Example: agencyBusinessPurposeCode=1</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>agencyBusinessPurposeDesc</td>
 <td>Allows text.
 <br>Example: agencyBusinessPurposeDesc=Buyer and Seller</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>sensitivity</td>
 <td>By default your API key determines the sensitivity level of the API response. If you would like to receive a response that is at a sensitivity level lower than your API key you can utilize this parameter.
 <br>Example: sensitivity=public</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
@@ -697,56 +718,56 @@ links with tokens sent to the email address associated to the API key used in th
 <td>routingNumber</td>
 <td>Allows a text.
 <br>Example: routingNumber=0123456</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>bankName</td>
 <td>Allows a text.
 <br>Example: bankName=TEST</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>accountNumber</td>
 <td>Allows a text.
 <br>Example: accountNumber=012323456</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>eftWaiverFlag</td>
 <td>Allows a text.
 <br>Example: eftWaiverFlag=Y</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>agencyLocationCode</td>
 <td>Allows a text.
 <br>Example: agencyLocationCode=1</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>disbursingOfficeSymbol</td>
 <td>Allows a text.
 <br>Example: disbursingOfficeSymbol=1093</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>taxpayerName</td>
 <td>Allows a text.
 <br>Example: taxpayerName=test</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>taxpayerIdentificationNumber</td>
 <td>Allows a text.
 <br>Example: taxpayerIdentificationNumber=01234</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 </table>
@@ -778,7 +799,7 @@ links with tokens sent to the email address associated to the API key used in th
 <td>string</td>
 <td>Registered or not registered/ID Assigned entity.
 </td>
-<td>v2<br>v3</td>
+<td>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
@@ -786,14 +807,14 @@ links with tokens sent to the email address associated to the API key used in th
 <td>string</td>
 <td>Unique Entity Identifier SAM
 <br>Applicable to the entities that are registered or not registered/ID Assigned.</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>entityEFTIndicator</td>
 <td>string</td>
 <td>Entity EFT Indicator</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
@@ -801,14 +822,14 @@ links with tokens sent to the email address associated to the API key used in th
 <td>string</td>
 <td>CAGE Code
 <br>Applicable to the entities that are registered or not registered/ID Assigned.</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>dodaac</td>
 <td>string</td>
 <td>DoDAAC</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
@@ -816,56 +837,56 @@ links with tokens sent to the email address associated to the API key used in th
 <td>string</td>
 <td>Legal Business Name
 <br>Applicable to the entities that are registered or not registered/ID Assigned.</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>dbaName</td>
 <td>string</td>
 <td>Doing Business As Name</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>purposeOfRegistrationCode</td>
 <td>string</td>
 <td>Purpose of Registration Code</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>purposeOfRegistrationDesc</td>
 <td>string</td>
 <td>Purpose of Registration Description</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>registrationStatus</td>
 <td>string</td>
 <td>The status of the entities that are registered or not registered/ID Assigned.</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>evsSource</td>
 <td>string</td>
 <td>Source of the validated entities that are registered or not registered/ID Assigned.</td>
-<td>v3</td>
+<td>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>registrationDate</td>
 <td>string</td>
 <td>Registration Date</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>lastUpdateDate</td>
 <td>string</td>
 <td>Last Update Date</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
@@ -873,14 +894,14 @@ links with tokens sent to the email address associated to the API key used in th
 <td>string</td>
 <td>Registration Expiration Date
 <br>NOTE: This parameter is being renamed. expirationDate is in V1 and registrationExpirationDate is starting V2.</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>activationDate</td>
 <td>string</td>
 <td>Active Date</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
@@ -888,7 +909,7 @@ links with tokens sent to the email address associated to the API key used in th
 <td>string</td>
 <td>Unique Entity Identifier Status
 <br>Applicable to the entities that are registered or not registered/ID Assigned.</td>
-<td>v2<br>v3</td>
+<td>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
@@ -896,7 +917,7 @@ links with tokens sent to the email address associated to the API key used in th
 <td>string</td>
 <td>Unique Entity Identifier Expiration Date
 <br>Applicable to the entities that are registered or not registered/ID Assigned.</td>
-<td>v2<br>v3</td>
+<td>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
@@ -904,7 +925,7 @@ links with tokens sent to the email address associated to the API key used in th
 <td>string</td>
 <td>Unique Entity Identifier Creation Date
 <br>Applicable to the entities that are registered or not registered/ID Assigned.</td>
-<td>v2<br>v3</td>
+<td>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
@@ -915,7 +936,7 @@ links with tokens sent to the email address associated to the API key used in th
 <br>v3: Returns publicDisplayFlag.
 <br>Applicable to the entities that are registered or not registered/ID Assigned.
 <br><br>NOTE: A Fed System Account with the Non-SAM NPDY Role is required to access NPDY entities that are not registered/ID Assigned.</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
@@ -924,14 +945,14 @@ links with tokens sent to the email address associated to the API key used in th
 <td>v1 or v2: Returns D (Debarred) or null.
 <br>v3: Returns Y (Debarred) or N (not Debarred).
 <br><br>NOTE: Debarred entities will populate 'exclusionURL' with the endpoint to access the debarred record.</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>exclusionURL</td>
 <td>string</td>
 <td>Returns the URL to access the Exclusion record with ueiSAM.</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
@@ -939,7 +960,7 @@ links with tokens sent to the email address associated to the API key used in th
 <td>string</td>
 <td>Dun & Bradstreet Open Data
 <br>Applicable to the entities that are registered or not registered/ID Assigned.</td>
-<td>v2<br>v3</td>
+<td>v2<br>v3<br>v4</td>
 </tr>
 
 </table>
@@ -987,21 +1008,21 @@ links with tokens sent to the email address associated to the API key used in th
 <td>ueiSAM</td>
 <td>string</td>
 <td>Unique Entity Identifier SAM</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>legalBusinessName</td>
 <td>string</td>
 <td>Legal Business Name</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>evsSource</td>
 <td>string</td>
 <td>Source of the registered entity’s hierarchy</td>
-<td>v3</td>
+<td>v3<br>v4</td>
 </tr>
 
 <tr>
@@ -1064,7 +1085,7 @@ links with tokens sent to the email address associated to the API key used in th
 
 </details>
 </td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </div>
 </tr>
 
@@ -1072,7 +1093,7 @@ links with tokens sent to the email address associated to the API key used in th
 <td>phoneNumber</td>
 <td>string</td>
 <td>Phone Number</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 </table>
@@ -1123,7 +1144,7 @@ links with tokens sent to the email address associated to the API key used in th
 <td>evsSource</td>
 <td>string</td>
 <td>Source of the registered entity’s hierarchy
-<br><br>NOTE: This field is only available in v3</td>
+<br><br>NOTE: This field is only available in v3<br>v4</td>
 </tr>
 
 <tr>
@@ -1197,7 +1218,7 @@ links with tokens sent to the email address associated to the API key used in th
 </table>
 </details>
 </td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
@@ -1229,7 +1250,7 @@ links with tokens sent to the email address associated to the API key used in th
 <td>evsSource</td>
 <td>string</td>
 <td>Source of the registered entity’s hierarchy
-<br><br>NOTE: This field is only available in v3</td>
+<br><br>NOTE: This field is only available in v3<br>v4</td>
 </tr>
 
 <tr>
@@ -1304,7 +1325,7 @@ links with tokens sent to the email address associated to the API key used in th
 </table>
 </details>
 </td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 
@@ -1330,21 +1351,21 @@ links with tokens sent to the email address associated to the API key used in th
 <td>ueiSAM</td>
 <td>string</td>
 <td>Unique Entity Identifier SAM</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>legalBusinessName</td>
 <td>string</td>
 <td>Legal Business Name</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>evsSource</td>
 <td>string</td>
 <td>Source of the registered entity’s hierarchy</td>
-<td>v3</td>
+<td>v3<br>v4</td>
 </tr>
 
 <tr>
@@ -1408,7 +1429,7 @@ links with tokens sent to the email address associated to the API key used in th
 
 </details>
 </td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </div>
 </tr>
 
@@ -1416,7 +1437,7 @@ links with tokens sent to the email address associated to the API key used in th
 <td>phoneNumber</td>
 <td>string</td>
 <td>Phone Number</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 </table>
 </details>
@@ -1625,77 +1646,77 @@ samMonitoring
 <td>legalBusinessName</td>
 <td>string</td>
 <td>Legal Business Name</td>
-<td>v2<br>v3</td>
+<td>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>dbaName</td>
 <td>string</td>
 <td>DBA Name</td>
-<td>v2<br>v3</td>
+<td>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>outOfBusinessFlag</td>
 <td>string</td>
 <td>Out Of Business Flag</td>
-<td>v2<br>v3</td>
+<td>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>monitoringStatus</td>
 <td>string</td>
 <td>Monitoring Status</td>
-<td>v2<br>v3</td>
+<td>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>lastUpdated</td>
 <td>string</td>
 <td>Last Updated</td>
-<td>v2<br>v3</td>
+<td>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
-<td>v2<br>v3</td>
+<td>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
-<td>v2<br>v3</td>
+<td>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
-<td>v2<br>v3</td>
+<td>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>postalCode</td>
 <td>string</td>
 <td>Postal Code</td>
-<td>v2<br>v3</td>
+<td>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
-<td>v2<br>v3</td>
+<td>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
-<td>v2<br>v3</td>
+<td>v2<br>v3<br>v4</td>
 </tr>
 
 </table>
@@ -1730,42 +1751,42 @@ samMonitoring
 <td>source</td>
 <td>string</td>
 <td>Source</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>hierarchyDepartmentCode</td>
 <td>string</td>
 <td>Hierarchy Department Code</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>hierarchyDepartmentName</td>
 <td>string</td>
 <td>Hierarchy Department Name</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>hierarchyAgencyCode</td>
 <td>string</td>
 <td>Hierarchy Agency Code</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>hierarchyAgencyName</td>
 <td>string</td>
 <td>Hierarchy Agency Name</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>hierarchyOfficeCode</td>
 <td>string</td>
 <td>Hierarchy Office Code</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 </table>
@@ -1795,21 +1816,21 @@ samMonitoring
 <td>taxpayerName</td>
 <td>string</td>
 <td>Taxpayer Name</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>taxpayerIdentificationType</td>
 <td>string</td>
 <td>Taxpayer Identification Type</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>taxpayerIdentificationNumber</td>
 <td>string</td>
 <td>Taxpayer Identification Number</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 </table>
@@ -1839,42 +1860,42 @@ samMonitoring
 <td>entityURL</td>
 <td>string</td>
 <td>Entity URL</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>entityDivisionName</td>
 <td>string</td>
 <td>Entity Division Name</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>entityDivisionNumber</td>
 <td>string</td>
 <td>Entity Division Number</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>entityStartDate</td>
 <td>string</td>
 <td>Entity Start Date</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>fiscalYearEndCloseDate</td>
 <td>string</td>
 <td>Fiscal Year End Close Date</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>submissionDate</td>
 <td>string</td>
 <td>Submission Date</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
@@ -1886,7 +1907,7 @@ samMonitoring
 <td>mpin</td>
 <td>string</td>
 <td>This field has been deprecated.</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 </table>
 </details>
@@ -1916,49 +1937,49 @@ samMonitoring
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Plus4</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 </table>
 </details>
@@ -1987,49 +2008,49 @@ samMonitoring
 <td>addressLine1</td>
 <td>string</td>
 <td>Mailing Address Line 1.</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Mailing Address Line 2.</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>Mailing Address City.</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>Mailing Address State or Province Code.</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Mailing Address Zip.</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Mailing Address Zip Plus4.</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Mailing Address Country Code</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 </table>
 </details>
@@ -2058,7 +2079,7 @@ samMonitoring
 <td>congressionalDistrict</td>		
 <td>string</td>		
 <td>Physical Address Congressional District</td>	
-<td>v1<br>v2<br>v3</td>	
+<td>v1<br>v2<br>v3<br>v4</td>	
 </tr>
 
 </table>
@@ -2088,84 +2109,84 @@ samMonitoring
 <td>entityStructureCode</td>
 <td>string</td>
 <td>Entity Structure Code</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>entityStructureDescription</td>
 <td>string</td>
 <td>Entity Structure Description</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>entityTypeCode</td>
 <td>string</td>
 <td>Entity Type Code</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>entityTypeDesc</td>
 <td>string</td>
 <td>Entity Type Description</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>profitStructureCode</td>
 <td>string</td>
 <td>Profit Structure Code</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>profitStructureDesc</td>
 <td>string</td>
 <td>Profit Structure Description</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>organizationStructureCode</td>
 <td>string</td>
 <td>Organization Structure Code</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>organizationStructureDesc</td>
 <td>string</td>
 <td>Organization Structure Description</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>stateOfIncorporationCode</td>
 <td>string</td>
 <td>State Of Incorporation Code</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>stateOfIncorporationDesc</td>
 <td>string</td>
 <td>State Of Incorporation Description</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>countryOfIncorporationCode</td>
 <td>string</td>
 <td>Country Of IncorporationCode</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>countryOfIncorporationDesc</td>
 <td>string</td>
 <td>Country Of IncorporationDescription</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
@@ -2177,42 +2198,42 @@ samMonitoring
 <td>agencyBusinessPurposeCode</td>
 <td>string</td>
 <td>Agency Business Purpose Code</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>agencyBusinessPurposeDesc</td>
 <td>string</td>
 <td>Agency Business Purpose Desc</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>companySecurityLevelCode</td>
 <td>string</td>
 <td>Company Security Level Code</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>companySecurityLevelDesc</td>
 <td>string</td>
 <td>Company Security Level Description</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>highestEmployeeSecurityLevelCode</td>
 <td>string</td>
 <td>Highest Employee Security Level Code</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>highestEmployeeSecurityLevelDesc</td>
 <td>string</td>
 <td>Highest Employee Security Level Description</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 </table>
@@ -2265,7 +2286,7 @@ samMonitoring
 </table>
 </details>
 </td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 
@@ -2309,7 +2330,7 @@ samMonitoring
 </table>
 </details>
 </td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 </table>
@@ -2339,14 +2360,14 @@ samMonitoring
 <td>creditCardUsage</td>
 <td>string</td>
 <td>Credit Card Usage</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>debtSubjectToOffset</td>
 <td>string</td>
 <td>Debt Subject to Offset Flag</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
@@ -2447,7 +2468,7 @@ samMonitoring
 </table>
 </details>
 </td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
@@ -2490,7 +2511,7 @@ samMonitoring
 </table>
 </details>
 </td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
@@ -2555,7 +2576,7 @@ samMonitoring
 </table>
 </details>
 </td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 </table>
 </details>
@@ -2589,19 +2610,19 @@ samMonitoring
 <td>ueiSAM</td>
 <td>string</td>
 <td>Unique Entity Identifier SAM</td>
-<td>v3</td>
+<td>v3<br>v4</td>
 </tr>
 <tr>
 <td>cageCode</td>
 <td>string</td>
 <td>CAGE Code</td>
-<td>v3</td>
+<td>v3<br>v4</td>
 </tr>
 <tr>
 <td>legalBusinessName</td>
 <td>string</td>
 <td>Legal Business Name</td>
-<td>v3</td>
+<td>v3<br>v4</td>
 </tr>
 
 <tr>
@@ -2612,43 +2633,43 @@ samMonitoring
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line1</td>
-<td>v3</td>
+<td>v3<br>v4</td>
 </tr>
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line2</td>
-<td>v3</td>
+<td>v3<br>v4</td>
 </tr>
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
-<td>v3</td>
+<td>v3<br>v4</td>
 </tr>
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
-<td>v3</td>
+<td>v3<br>v4</td>
 </tr>
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
-<td>v3</td>
+<td>v3<br>v4</td>
 </tr>
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Plus4</td>
-<td>v3</td>
+<td>v3<br>v4</td>
 </tr>
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
-<td>v3</td>
+<td>v3<br>v4</td>
 </tr>
 </table>
 </details>
@@ -2680,27 +2701,27 @@ samMonitoring
 <td>string</td>
 <td>Proceedings Question1. 
 <br>Yes or No values are captured</td>
-<td>v3</td>
+<td>v3<br>v4</td>
 </tr>
 <tr>
 <td>proceedingsQuestion2</td>
 <td>string</td>
 <td>Proceedings Question2.
 <br>Yes or No values are captured</td>
-<td>v3</td>
+<td>v3<br>v4</td>
 </tr>
 <tr>
 <td>proceedingsQuestion3</td>
 <td>string</td>
 <td>Proceedings Question3. 
 <br>Yes or No values are captured</td>
-<td>v3</td>
+<td>v3<br>v4</td>
 </tr>
 <tr>
 <td>proceedingsRecordCount</td>
 <td>string</td>
 <td>Proceedings Records Counter</td>
-<td>v3</td>
+<td>v3<br>v4</td>
 </tr>
 <tr>
 <th colspan="4" style="background-color: #f1f1f1;"> <b>listOfProceedings</b>
@@ -2710,43 +2731,43 @@ samMonitoring
 <td>proceedingDate</td>
 <td>string</td>
 <td>Proceeding Date</td>
-<td>v3</td>
+<td>v3<br>v4</td>
 </tr>
 <tr>
 <td>instrumentNumber</td>
 <td>string</td>
 <td>Instrument Number</td>
-<td>v3</td>
+<td>v3<br>v4</td>
 </tr>
 <tr>
 <td>instrument</td>
 <td>string</td>
 <td>Instrument Type</td>
-<td>v3</td>
+<td>v3<br>v4</td>
 </tr>
 <tr>
 <td>proceedingStateCode</td>
 <td>string</td>
 <td>Proceeding State Code</td>
-<td>v3</td>
+<td>v3<br>v4</td>
 </tr>
 <tr>
 <td>proceedingType</td>
 <td>string</td>
 <td>Proceeding Type</td>
-<td>v3</td>
+<td>v3<br>v4</td>
 </tr>
 <tr>
 <td>disposition</td>
 <td>string</td>
 <td>Disposition</td>
-<td>v3</td>
+<td>v3<br>v4</td>
 </tr>
 <tr>
 <td>proceedingDescription</td>
 <td>string</td>
 <td>Proceeding Description</td>
-<td>v3</td>
+<td>v3<br>v4</td>
 </tr>
 <tr>
 <th colspan="4" style="background-color: #f1f1f1;"> <b>proceedingsPointsOfContact</b>
@@ -2764,28 +2785,28 @@ samMonitoring
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
-<td>v3</td>
+<td>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
-<td>v3</td>
+<td>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
-<td>v3</td>
+<td>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
-<td>v3</td>
+<td>v3<br>v4</td>
 </tr>
 
 <tr>
@@ -2797,35 +2818,35 @@ samMonitoring
 <td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
-<td>v3</td>
+<td>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
-<td>v3</td>
+<td>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
-<td>v3</td>
+<td>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
-<td>>v3</td>
+<td>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
-<td>>v3</td>
+<td>v3<br>v4</td>
 </tr>
 
 <tr>
@@ -2837,49 +2858,49 @@ samMonitoring
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
-<td>v3</td>
+<td>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
-<td>v3</td>
+<td>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
-<td>v3</td>
+<td>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
-<td>v3</td>
+<td>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
-<td>v3</td>
+<td>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
-<td>v3</td>
+<td>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
-<td>v3</td>
+<td>v3<br>v4</td>
 </tr>
 <tr>
 <th colspan="4" style="background-color: #f1f1f1;"> <b>proceedingsAlternatePOC</b>
@@ -2893,28 +2914,28 @@ samMonitoring
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
-<td>v3</td>
+<td>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
-<td>v3</td>
+<td>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
-<td>v3</td>
+<td>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
-<td>v3</td>
+<td>v3<br>v4</td>
 </tr>
 
 <tr>
@@ -2926,35 +2947,35 @@ samMonitoring
 <td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
-<td>v3</td>
+<td>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
-<td>v3</td>
+<td>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
-<td>v3</td>
+<td>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
-<td>>v3</td>
+<td>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
-<td>>v3</td>
+<td>v3<br>v4</td>
 </tr>
 
 <tr>
@@ -2966,49 +2987,49 @@ samMonitoring
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
-<td>v3</td>
+<td>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
-<td>v3</td>
+<td>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
-<td>v3</td>
+<td>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
-<td>v3</td>
+<td>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
-<td>v3</td>
+<td>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
-<td>v3</td>
+<td>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
-<td>v3</td>
+<td>v3<br>v4</td>
 </tr>
 </table>
 </details>
@@ -3038,7 +3059,7 @@ samMonitoring
 <td>responsibilityInformationCount</td>
 <td>string</td>
 <td>Responsibility Information Counter</td>
-<td>v3</td>
+<td>v3<br>v4</td>
 </tr>
 
 </table>
@@ -3069,37 +3090,37 @@ samMonitoring
 <td>recordType</td>
 <td>string</td>
 <td>Record Type</td>
-<td>v3</td>
+<td>v3<br>v4</td>
 </tr>
 <tr>
 <td>recordTypeDesc</td>
 <td>string</td>
 <td>Record Type Description</td>
-<td>v3</td>
+<td>v3<br>v4</td>
 </tr>
 <tr>
 <td>recordDate</td>
 <td>string</td>
 <td>Record Date</td>
-<td>v3</td>
+<td>v3<br>v4</td>
 </tr>
 <tr>
 <td>procurementIdOrFederalAssistanceId</td>
 <td>string</td>
 <td>Contract Data ID or Grant ID</td>
-<td>v3</td>
+<td>v3<br>v4</td>
 </tr>
 <tr>
 <td>referenceIdvPiid</td>
 <td>string</td>
 <td>Referenced IDV PIID</td>
-<td>v3</td>
+<td>v3<br>v4</td>
 </tr>
 <tr>
 <td>attachment</td>
 <td>string</td>
 <td>Pre-signed URL to access the attachment</td>
-<td>v3</td>
+<td>v3<br>v4</td>
 </tr>
 </table>
 </details>
@@ -3134,13 +3155,13 @@ samMonitoring
 <td>legalBusinessName</td>
 <td>string</td>
 <td>Legal Business Name</td>
-<td>v3</td>
+<td>v3<br>v4</td>
 </tr>
 <tr>
 <td>cageCode</td>
 <td>string</td>
 <td>Cage Code</td>
-<td>v3</td>
+<td>v3<br>v4</td>
 </tr>
 <tr>
 <td>integrityRecords</td>
@@ -3149,7 +3170,7 @@ samMonitoring
 <br>Yes - if the CAGE Code finds one or more matches in the database.
 <br>No - if the CAGE Code does not find any match in the database.
 <br>N/A - if the CAGE Code is null.</td>
-<td>v3</td>
+<td>v3<br>v4</td>
 </tr>
 
 <tr>
@@ -3161,13 +3182,13 @@ samMonitoring
 <td>legalBusinessName</td>
 <td>string</td>
 <td>Legal Business Name</td>
-<td>v3</td>
+<td>v3<br>v4</td>
 </tr>
 <tr>
 <td>cageCode</td>
 <td>string</td>
 <td>Cage Code</td>
-<td>v3</td>
+<td>v3<br>v4</td>
 </tr>
 <tr>
 <td>integrityRecords</td>
@@ -3176,7 +3197,7 @@ samMonitoring
 <br>Yes - if the CAGE Code finds one or more matches in the database.
 <br>No - if the CAGE Code does not find any match in the database.
 <br>N/A - if the CAGE Code is null.</td>
-<td>v3</td>
+<td>v3<br>v4</td>
 </tr>
 
 <tr>
@@ -3188,13 +3209,13 @@ samMonitoring
 <td>legalBusinessName</td>
 <td>string</td>
 <td>Legal Business Name</td>
-<td>v3</td>
+<td>v3<br>v4</td>
 </tr>
 <tr>
 <td>cageCode</td>
 <td>string</td>
 <td>Cage Code</td>
-<td>v3</td>
+<td>v3<br>v4</td>
 </tr>
 <tr>
 <td>integrityRecords</td>
@@ -3203,7 +3224,7 @@ samMonitoring
 <br>Yes - if the CAGE Code finds one or more matches in the database.
 <br>No - if the CAGE Code does not find any match in the database.
 <br>N/A - if the CAGE Code is null.</td>
-<td>v3</td>
+<td>v3<br>v4</td>
 </tr>
 </table>
 </details>
@@ -3238,7 +3259,7 @@ samMonitoring
 <td>primaryNaics</td>
 <td>string</td>
 <td>Primary NAICS</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
@@ -3280,7 +3301,7 @@ samMonitoring
 </table>
 </details>
 </td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
@@ -3308,7 +3329,7 @@ samMonitoring
 </table>
 </details>
 </td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 </table>
 </details>
@@ -3337,14 +3358,14 @@ samMonitoring
 <td>disasterRegistryFlag</td>
 <td>string</td>
 <td>Disaster Registry Flag</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>bondingFlag</td>
 <td>string</td>
 <td>Bonding Flag</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
@@ -3399,7 +3420,7 @@ samMonitoring
 </table>
 </details>
 </td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
@@ -3411,7 +3432,7 @@ samMonitoring
 <td>bondingLevels</td>
 <td>string</td>
 <td>Bonding Flag</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 </table>
@@ -3441,14 +3462,14 @@ samMonitoring
 <td>averageAnnualRevenue</td>
 <td>string</td>
 <td>Average Annual Revenue</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>averageNumberOfEmployees</td>
 <td>string</td>
 <td>Average Number Of Employees</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 </table>
 </details>
@@ -3477,14 +3498,14 @@ samMonitoring
 <td>employeesLocation</td>
 <td>string</td>
 <td>Employees Location</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>receiptsLocation</td>
 <td>string</td>
 <td>Receipts Location</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 </table>
 </details>
@@ -3513,21 +3534,21 @@ samMonitoring
 <td>barrelsCapacity</td>
 <td>string</td>
 <td>Barrels Capacity</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>totalAssets</td>
 <td>string</td>
 <td>Total Assets</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>megawattHours</td>
 <td>string</td>
 <td>Mega Watt Hours</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 </table>
 </details>
@@ -3555,7 +3576,7 @@ samMonitoring
 <td>ediInformationFlag</td>
 <td>string</td>
 <td>EDI Information Flag</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 <tr>
 <th style="background-color: #f1f1f1;" colspan="4"> <b>Sensitivity Level: FOUO</b>, which constitutes both the publicly available entities and the entities that have opted out of public display with their CUI data
@@ -3565,35 +3586,35 @@ samMonitoring
 <td>vanProvider</td>
 <td>string</td>
 <td>Van Provider</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>isaQualifier</td>
 <td>string</td>
 <td>ISA Qualifier</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>isaIdentifier</td>
 <td>string</td>
 <td>ISA Identifier</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>functionalGroupIdentifier</td>
 <td>string</td>
 <td>Functional Group Identifier</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>requestFlag820s</td>
 <td>string</td>
 <td>Request Flag 820s</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 </table>
 </details>
@@ -4075,6 +4096,12 @@ samMonitoring
 <td>ProductType</td>
 </tr>
 
+<tr>
+<td>exceedsDomesticThreshold</td>
+<td>string</td>
+<td>ExceedsDomesticThreshold</td>
+</tr>
+
 </table>
 </details>
 </td>
@@ -4756,7 +4783,7 @@ samMonitoring
 </table>
 </details>
 </td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
@@ -5210,6 +5237,11 @@ samMonitoring
 <td>ProductType</td>
 </tr>
 
+<tr>
+<td>exceedsDomesticThreshold</td>
+<td>string</td>
+<td>ExceedsDomesticThreshold</td>
+</tr>
 </table>
 </details>
 </td>
@@ -5891,7 +5923,7 @@ samMonitoring
 </table>
 </details>
 </td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 </table>
 </details>
@@ -6366,6 +6398,11 @@ samMonitoring
 <td>ProductType</td>
 </tr>
 
+<tr>
+<td>exceedsDomesticThreshold</td>
+<td>string</td>
+<td>ExceedsDomesticThreshold</td>
+</tr>
 </table>
 </details>
 </td>
@@ -7047,7 +7084,7 @@ samMonitoring
 </table>
 </details>
 </td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 </table>
@@ -7077,35 +7114,35 @@ samMonitoring
 <td>grantsCertificationStatus</td>
 <td>string</td>
 <td>Grants Certification Status</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>grantsCertifyingResponse</td>
 <td>string</td>
 <td>Grants Certifying Response</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>certifierFirstName</td>
 <td>string</td>
 <td>Certifier First Name</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>certifierLastName</td>
 <td>string</td>
 <td>Certifier Last Name</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>certifierMiddleInitial</td>
 <td>string</td>
 <td>Certifier Middle Initial</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 </table>
 </details>
@@ -7134,28 +7171,28 @@ samMonitoring
 <td>farPDF</td>
 <td>string</td>
 <td>FAR PDF</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>farAndDfarsPDF</td>
 <td>string</td>
 <td>FAR and DFARS PDF</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>architectEngineeringPDF</td>
 <td>string</td>
 <td>Architect Engineering PDF</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>financialAssistanceCertificationsPDF</td>
 <td>string</td>
 <td>Financial Assistance Certifications PDF</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 </table>
 </details>
@@ -7190,28 +7227,28 @@ samMonitoring
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
@@ -7223,35 +7260,35 @@ samMonitoring
 <td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
@@ -7263,49 +7300,49 @@ samMonitoring
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 </table>
 </details>
@@ -7334,28 +7371,28 @@ samMonitoring
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
@@ -7367,35 +7404,35 @@ samMonitoring
 <td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
@@ -7407,49 +7444,49 @@ samMonitoring
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 </table>
 </details>
@@ -7478,28 +7515,28 @@ samMonitoring
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
@@ -7511,35 +7548,35 @@ samMonitoring
 <td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
@@ -7551,49 +7588,49 @@ samMonitoring
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 </table>
 </details>
@@ -7622,28 +7659,28 @@ samMonitoring
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
@@ -7655,35 +7692,35 @@ samMonitoring
 <td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
@@ -7695,49 +7732,49 @@ samMonitoring
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 </table>
 </details>
@@ -7766,28 +7803,28 @@ samMonitoring
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
@@ -7799,35 +7836,35 @@ samMonitoring
 <td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
@@ -7839,49 +7876,49 @@ samMonitoring
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 </table>
 </details>
@@ -7910,28 +7947,28 @@ samMonitoring
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
@@ -7943,35 +7980,35 @@ samMonitoring
 <td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
@@ -7983,49 +8020,49 @@ samMonitoring
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 </table>
 </details>
@@ -8054,112 +8091,112 @@ samMonitoring
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 </table>
 </details>
@@ -8188,63 +8225,63 @@ samMonitoring
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 </table>
 </details>
@@ -8273,63 +8310,63 @@ samMonitoring
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 </table>
 </details>
@@ -8358,112 +8395,112 @@ samMonitoring
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 </table>
 </details>
@@ -8492,63 +8529,63 @@ samMonitoring
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 </table>
 </details>
@@ -8577,112 +8614,112 @@ samMonitoring
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 </table>
 </details>
@@ -8711,112 +8748,112 @@ samMonitoring
 <td>firstName</td>
 <td>string</td>
 <td>First Name</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>middleInitial</td>
 <td>string</td>
 <td>Middle Initial</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>lastName</td>
 <td>string</td>
 <td>Last Name</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>title</td>
 <td>string</td>
 <td>Title</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>usPhone</td>
 <td>string</td>
 <td>US Phone</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>usPhoneExtension</td>
 <td>string</td>
 <td>US Phone Extension</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>nonUSPhone</td>
 <td>string</td>
 <td>Non-US Phone</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>fax</td>
 <td>string</td>
 <td>Fax</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>email</td>
 <td>string</td>
 <td>Email</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>addressLine1</td>
 <td>string</td>
 <td>Address Line 1</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>addressLine2</td>
 <td>string</td>
 <td>Address Line 2</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>city</td>
 <td>string</td>
 <td>City</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>stateOrProvinceCode</td>
 <td>string</td>
 <td>State or Province Code</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>zipCode</td>
 <td>string</td>
 <td>Zip Code</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>zipCodePlus4</td>
 <td>string</td>
 <td>Zip Code Plus 4</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 
 <tr>
 <td>countryCode</td>
 <td>string</td>
 <td>Country Code</td>
-<td>v1<br>v2<br>v3</td>
+<td>v1<br>v2<br>v3<br>v4</td>
 </tr>
 </table>
 </details>
@@ -12341,44 +12378,45 @@ Disclaimer:
 
 ## Change Log
 
-| Date       | Version | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-|------------|---------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 06/03/2019 | v0.9    | Base Version                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| Date       | Version | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+|------------|---------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 06/03/2019 | v0.9    | Base Version                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | 07/03/2019 | v1.0    | * Alpha endpoint for the Sensitive version of the API has been added.<br><br>  * agencyBusinessPurposeCode, agencyBusinessPurposeDesc, bondingLevels, companySecurityLevelCode, companySecurityLevelDesc, highestEmployeeSecurityLevelCode, highestEmployeeSecurityLevelDesc were added to FOUO and Sensitive api's schema. <br><br>  * New Filters agencyBusinessPurposeCode, companySecurityLevelCode and highestEmployeeSecurityLevelCode have been added for FOUO and Sensitive api's. <br><br>  * country and stateOrProvince were updated to countryCode and stateOrProvinceCode across all versions of api.<br><br>  * ediInformationFlag was added across all versions of api.<br><br>  * geographicalAreaServedmetropolitanStatisticalAreaCode, geographicalAreaServedmetropolitanStatisticalAreaName were added across all versions of api instead of geographicalAreaServedMSAName.<br><br>  * certificationEntryDate, certificationExitDate were added to SBA Business Types across all versions of api instead of expirationDate.<br><br>  * updateDate was added as a filter across all versions of api. |
-| 08/15/2019 | v1.1    | * Alpha endpoints for public and FOUO API were updated from version 0.9 to version 1.0.<br><br> * Warning message added under Getting Started to inform users of API version changes.<br><br> *Added Beta.SAM.Gov to the page title.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| 09/25/2019 | v1.2    | Beta endpoints for public and FOUO API were updated from version 0.9 to version 1.0.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| 11/25/2019 | v1.3    | * Added D&B Disclaimer in the Additional Information section.<br><br> * Updated the specifications to include parameters and fields that will be included in v2 of the API.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| 12/20/2019 | v1.4    | * Removed Email, Fax,US phone number and non-us phone number from public poc sections for v2. <br><br> * Added "COMING SOON" section for upcoming changes to Alpha and Beta endpoints to meet new API standards.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| 02/25/2020 | v1.5    | * Added Examples for v2 requests and responses.  <br><br> * Updated Alpha endpoint to meet new API standards.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| 02/28/2020 | v1.6    | * Updated Beta endpoint to meet new API standards. <br><br> * Removed "COMING SOON" information in Getting Started section.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| 05/04/2020 | v1.7    | * Added V2 endpoint information.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| 06/10/2020 | v1.8    | * Added the endpoint, new process and an example for the Sensitive API .                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| 08/17/2020 | v1.9    | * The "Sensitive API Process" subsection under the "Sensitive API Information" section has been updated with additional steps for sending Sensitive requests (sending "Accept" and "Content-Type" parameters).<br><br> * The Sample Request Header screenshots under "Example 13" have been updated to reflect the new parameters as well. Two new codes (406, 415) have been added in the "HTTP Response Codes" section.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| 10/15/2020 | v2.0    | * Updated the description for the correspondenceFlag field<br><br> * Added the http response code description when providing the entityEFTIndicator parameter without providing the ueiDUNS or ueiSAM prarameter. <br><br> * Updated the description for the entityEFTIndicator parameter.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| 12/07/2020 | v2.1    | * Updated the Sensitive response documentation to include mpin.<br><br> * Updated the Query String Parameters to include the sbaBusinessTypeCode, sbaBusinessTypeDesc, companySecurityLevelDesc, highestEmployeeSecurityLevelDesc, and agencyBusinessPurposeDesc.<br><br> * Updated the definitions and examples in the Query String Parameters.<br><br> * Updated emailId parameter description.<br><br> * Updated sensitivity parameter description.<br><br> * Corrected zip code related fields in V1 dnbMonitoring and samMonitoring sections.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| 01/22/2021 | v2.2    | * Added the highlighted changes message under the "Getting Started" section.<br><br> * Updated the repsAndCerts schema for Public, FOUO, and Sensitive.<br><br> * Added note to the noPublicDisplayFlag field in the response.<br><br>  * Added the Beta V2 endpoints.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| 02/05/2021 | v2.3    | * Added message to includeSections that user can provide "All".<br><br> * Added message about special characters that cannot be used in API request.<br><br> * Updated the exclusionStatusFlag definition.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| 03/12/2021 | v2.4    | * Added Http Response for invalid IP address.<br><br> * Added note to sensitivity parameter explaining use of POST call.<br><br> * Added note under repsAndCerts section about use with format parameter.<br><br> * Added NOTE under FOUO API Information Expected Results section and Sensitive API Information Sensitive API Process sections mentioning only system account keys can be used to access data.<br><br> * Removed the message stating that this page is not FireFox compliant.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | 
-| 04/08/2021 | v2.5    | * Updated Contact Us information.<br><br> * Updated pointsOfContact fields information for public api.<br><br> * Updated Application Level Error Messages in HTTP Response Codes section.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | 
-| 05/12/2021 | v2.6    | * Updated instances of beta.sam.gov to SAM.gov.<br><br> * Removed non-relevant information for Beta api.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | 
-| 07/16/2021 | v2.7    | * Updated the instructions on sending "Basic Auth" under the "Authorization" header.<br><br> * Added the Type of Connections and Rate Limits table.<br><br> * Updated the Contact Us information.<br><br> * Added example curl requests.<br><br> * Updated the examples.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| 07/20/2021 | v2.8    | * Added v3 documentation.<br><br> * Updated OpenAPI specification file.<br><br> * Updated HTTP Response Codes.<br><br> * Added v3 Examples.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| 09/21/2021 | v2.9    | * Added the "Additional Help References" section.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| 10/06/2021 | v3.0    | * Updated the "Contact Us" section.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | 
-| 10/21/2021 | v3.1    | * Updated Examples - Added Example 1 and Example 2 to indicate the post April 3rd, 2022 behavior.<br><br> * Added error messages #23 and #24 to the 400 level http response codes.<br><br> * Added the Version 3 endpoint.<br><br> * Added notes in the Query String Parameters, Expected Result and HTTP Response Codes sections to highlight the until and after April 3rd, 2022 behavior.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| 02/01/2022 | v3.2    | * Update the OpenAPI Specification File to include the V3 endpoints.<br><br> * Updated the OpenAPI Specification File to reflect the correct behavior for the V3 exclusionsStatusFlag parameter.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| 04/04/2022 | v3.3    | * Removed duns information from the documentation.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| 08/08/2022 | v3.4    | * Updated to clarify the use of Controlled Unclassified Information (CUI) data.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| 08/10/2022 | v3.5    | * Introduced a header to clearly distinguish the applicability of the section or sub-section to the registered entities and/or unregistered/ID Assigned entities.<br><br> * Included the “Responsibility & Integrity Record” API changes in the "API Description" and "Examples" sections.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| 09/19/2022 | v3.6    | * Updated "Description" for includeSections in the "Query String Parameters" section.<br><br> * Updated "entitySummary Sub Section" in the "Response Schema" section.<br><br> * Added "responsibilityInformationCount Sub Section" in the "Response Schema" section.<br><br> * Updated the “Examples” section - modified Example 6, added Example 7 and revised numbering of other Examples accordingly.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| 10/19/2022 | v3.7    | * Added a new Public search parameter, "proceedingsData" in the "API Description" - "Query String Parameters" section.<br><br> * Added new validation rules for "proceedingsData" in the "HTTP Response Codes" section.<br><br> * Updated the yaml file to include proceedingsData as a search parameter.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| 10/25/2022 | v3.8    | *  Updated the response schema for the API Description 🡪 Response Schema 🡪 integrityInformation 🡪 proceedingsData Sub Section to show the newly added field, "proceedingsRecordCount".<br><br> * Updated Example 6 🡪 Response (JSON Output) to show the newly added field, "proceedingsRecordCount".<br><br> * Updated Reps and Certs help documentation.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| 11/25/2022 | v3.9    | *  Updated SAM Functional Data Dictionary 🡪 Removed  DUNS/D&B References.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| 01/17/2023 | v4.0    | *  Uploaded a revised Data Dictionary with data fields arranged in the Alphabetical order.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| 01/30/2023 | v4.1    | *  Uploaded a revised Data Dictionary with data fields added for Proceedings and Responsibility/Qualification.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| 02/28/2023 | v4.2    | *  Removed MPIN occurrences from the Data Dictionary and the "Overview" > "Sensitive (CUI) Data" section.  <br><br> * Indicated that MPIN has been deprecated in the "Response Schema" >  "coreData" >  "entityInformation Sub Section".
-| 06/27/2023 | v4.3    | * Uploaded a revised Data Dictionary with updated Socio Economic Self Selections.
-| 08/22/2023 | v4.4    | * Uploaded a revised Data Dictionary with updated Business Types.
-| 09/29/2023 | v4.5    | * Updated "Additional Help References" documentation to link to SAM.gov Data Services page.
+| 08/15/2019 | v1.1    | * Alpha endpoints for public and FOUO API were updated from version 0.9 to version 1.0.<br><br> * Warning message added under Getting Started to inform users of API version changes.<br><br> *Added Beta.SAM.Gov to the page title.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| 09/25/2019 | v1.2    | Beta endpoints for public and FOUO API were updated from version 0.9 to version 1.0.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| 11/25/2019 | v1.3    | * Added D&B Disclaimer in the Additional Information section.<br><br> * Updated the specifications to include parameters and fields that will be included in v2 of the API.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| 12/20/2019 | v1.4    | * Removed Email, Fax,US phone number and non-us phone number from public poc sections for v2. <br><br> * Added "COMING SOON" section for upcoming changes to Alpha and Beta endpoints to meet new API standards.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| 02/25/2020 | v1.5    | * Added Examples for v2 requests and responses.  <br><br> * Updated Alpha endpoint to meet new API standards.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| 02/28/2020 | v1.6    | * Updated Beta endpoint to meet new API standards. <br><br> * Removed "COMING SOON" information in Getting Started section.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| 05/04/2020 | v1.7    | * Added V2 endpoint information.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| 06/10/2020 | v1.8    | * Added the endpoint, new process and an example for the Sensitive API .                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| 08/17/2020 | v1.9    | * The "Sensitive API Process" subsection under the "Sensitive API Information" section has been updated with additional steps for sending Sensitive requests (sending "Accept" and "Content-Type" parameters).<br><br> * The Sample Request Header screenshots under "Example 13" have been updated to reflect the new parameters as well. Two new codes (406, 415) have been added in the "HTTP Response Codes" section.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| 10/15/2020 | v2.0    | * Updated the description for the correspondenceFlag field<br><br> * Added the http response code description when providing the entityEFTIndicator parameter without providing the ueiDUNS or ueiSAM prarameter. <br><br> * Updated the description for the entityEFTIndicator parameter.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| 12/07/2020 | v2.1    | * Updated the Sensitive response documentation to include mpin.<br><br> * Updated the Query String Parameters to include the sbaBusinessTypeCode, sbaBusinessTypeDesc, companySecurityLevelDesc, highestEmployeeSecurityLevelDesc, and agencyBusinessPurposeDesc.<br><br> * Updated the definitions and examples in the Query String Parameters.<br><br> * Updated emailId parameter description.<br><br> * Updated sensitivity parameter description.<br><br> * Corrected zip code related fields in V1 dnbMonitoring and samMonitoring sections.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| 01/22/2021 | v2.2    | * Added the highlighted changes message under the "Getting Started" section.<br><br> * Updated the repsAndCerts schema for Public, FOUO, and Sensitive.<br><br> * Added note to the noPublicDisplayFlag field in the response.<br><br>  * Added the Beta V2 endpoints.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| 02/05/2021 | v2.3    | * Added message to includeSections that user can provide "All".<br><br> * Added message about special characters that cannot be used in API request.<br><br> * Updated the exclusionStatusFlag definition.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| 03/12/2021 | v2.4    | * Added Http Response for invalid IP address.<br><br> * Added note to sensitivity parameter explaining use of POST call.<br><br> * Added note under repsAndCerts section about use with format parameter.<br><br> * Added NOTE under FOUO API Information Expected Results section and Sensitive API Information Sensitive API Process sections mentioning only system account keys can be used to access data.<br><br> * Removed the message stating that this page is not FireFox compliant.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | 
+| 04/08/2021 | v2.5    | * Updated Contact Us information.<br><br> * Updated pointsOfContact fields information for public api.<br><br> * Updated Application Level Error Messages in HTTP Response Codes section.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | 
+| 05/12/2021 | v2.6    | * Updated instances of beta.sam.gov to SAM.gov.<br><br> * Removed non-relevant information for Beta api.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | 
+| 07/16/2021 | v2.7    | * Updated the instructions on sending "Basic Auth" under the "Authorization" header.<br><br> * Added the Type of Connections and Rate Limits table.<br><br> * Updated the Contact Us information.<br><br> * Added example curl requests.<br><br> * Updated the examples.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| 07/20/2021 | v2.8    | * Added v3 documentation.<br><br> * Updated OpenAPI specification file.<br><br> * Updated HTTP Response Codes.<br><br> * Added v3 Examples.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| 09/21/2021 | v2.9    | * Added the "Additional Help References" section.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| 10/06/2021 | v3.0    | * Updated the "Contact Us" section.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | 
+| 10/21/2021 | v3.1    | * Updated Examples - Added Example 1 and Example 2 to indicate the post April 3rd, 2022 behavior.<br><br> * Added error messages #23 and #24 to the 400 level http response codes.<br><br> * Added the Version 3 endpoint.<br><br> * Added notes in the Query String Parameters, Expected Result and HTTP Response Codes sections to highlight the until and after April 3rd, 2022 behavior.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| 02/01/2022 | v3.2    | * Update the OpenAPI Specification File to include the V3 endpoints.<br><br> * Updated the OpenAPI Specification File to reflect the correct behavior for the V3 exclusionsStatusFlag parameter.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| 04/04/2022 | v3.3    | * Removed duns information from the documentation.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| 08/08/2022 | v3.4    | * Updated to clarify the use of Controlled Unclassified Information (CUI) data.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| 08/10/2022 | v3.5    | * Introduced a header to clearly distinguish the applicability of the section or sub-section to the registered entities and/or unregistered/ID Assigned entities.<br><br> * Included the “Responsibility & Integrity Record” API changes in the "API Description" and "Examples" sections.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| 09/19/2022 | v3.6    | * Updated "Description" for includeSections in the "Query String Parameters" section.<br><br> * Updated "entitySummary Sub Section" in the "Response Schema" section.<br><br> * Added "responsibilityInformationCount Sub Section" in the "Response Schema" section.<br><br> * Updated the “Examples” section - modified Example 6, added Example 7 and revised numbering of other Examples accordingly.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| 10/19/2022 | v3.7    | * Added a new Public search parameter, "proceedingsData" in the "API Description" - "Query String Parameters" section.<br><br> * Added new validation rules for "proceedingsData" in the "HTTP Response Codes" section.<br><br> * Updated the yaml file to include proceedingsData as a search parameter.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| 10/25/2022 | v3.8    | *  Updated the response schema for the API Description 🡪 Response Schema 🡪 integrityInformation 🡪 proceedingsData Sub Section to show the newly added field, "proceedingsRecordCount".<br><br> * Updated Example 6 🡪 Response (JSON Output) to show the newly added field, "proceedingsRecordCount".<br><br> * Updated Reps and Certs help documentation.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| 11/25/2022 | v3.9    | *  Updated SAM Functional Data Dictionary 🡪 Removed  DUNS/D&B References.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| 01/17/2023 | v4.0    | *  Uploaded a revised Data Dictionary with data fields arranged in the Alphabetical order.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| 01/30/2023 | v4.1    | *  Uploaded a revised Data Dictionary with data fields added for Proceedings and Responsibility/Qualification.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| 02/28/2023 | v4.2    | *  Removed MPIN occurrences from the Data Dictionary and the "Overview" > "Sensitive (CUI) Data" section.  <br><br> * Indicated that MPIN has been deprecated in the "Response Schema" >  "coreData" >  "entityInformation Sub Section".                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+| 06/27/2023 | v4.3    | * Uploaded a revised Data Dictionary with updated Socio Economic Self Selections.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+| 08/22/2023 | v4.4    | * Uploaded a revised Data Dictionary with updated Business Types.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+| 09/29/2023 | v4.5    | * Updated "Additional Help References" documentation to link to SAM.gov Data Services page.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+| 12/06/2024 | v4.6    | * A new V4 Entity Management API has been created, enabling the response for the Exceeds Domestic Threshold field within the Reps and Certs section of the API response.As part of this change, below are the associated changes made to this OpenGSA page:<br><br> * Added Entity Management V4 endpoint information to the Getting Started section.<br><br> * Updated the API Description -> Query String Parameters and Response Schema sub-sections to reflect available parameters and response fields in V4.<br><br> * Updated the OpenAPI Specification File to include the V4 endpoints.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 
 <p><small><a href="#">Back to top</a></small></p>
