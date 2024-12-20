@@ -8,14 +8,6 @@ banner-heading: SAM.gov Entity Management API
 <div class="usa-alert usa-alert-warning" id="site-wide-alert" role="alert">
    <div class="usa-alert-body">
      <p class="usa-alert-text">
-        Representation and Certification (Reps and Certs) data entered and stored in the database is correct. We are working to address issues with the Entity Management API returning Reps and Certs data and the system displaying the data on entity records and downloaded PDFs.<br><br>Contracting officers should follow agency procurement processes and procedures to ensure due diligence before making any contract award.
-     </p>
-   </div>
- </div>
-
-<div class="usa-alert usa-alert-warning" id="site-wide-alert" role="alert">
-   <div class="usa-alert-body">
-     <p class="usa-alert-text">
         Version 4 (V4) of the Entity Management API was released on:
         <ul style="padding-left: 50px;">
             <li><b>Alpha:</b> November 25, 2024</li>
