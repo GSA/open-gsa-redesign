@@ -142,7 +142,7 @@ The following section describes each of the above endpoints in detail.
 ------- | ------- |
 **Request Type** | POST 
 **URL** | /contract/v1/subcontracts/
-**Summary** | A User will be able to submit one or multiple Subcontract reports for Contracts using this endpoint
+**Summary** | You can publish one or more subcontract reports using this endpoint
 **Consumes** | application/JSON
 **Produces** | Refer [Response JSON](#response-json)
 **Active Versions** | v1
@@ -160,7 +160,7 @@ Request JSON | Body | JSON | Yes | [Refer Submit Subcontract report Contract JSO
 
 #### Responses
 
-The overall HTTP status code for the response will be determined as follows:
+The following section describes HTTP status codes and the response type.
 
 HTTP Status Code | Response Type | Description
 -----------------|---------------|------------
@@ -170,20 +170,18 @@ HTTP Status Code | Response Type | Description
 400 Bad Request | string | Malformed request or invalid data 
 500 Internal Server Error | string | Unexpected error occurred during processing
 
-For details on specific error messages under each of the above status codes, refer to the [General Error Messages](#general-error-messages) section. 
+Go to the [General Error Messages](#general-error-messages) section for details on the status code error message. The overall status code 201 displays if at least one subcontract report is processed successfully, even if some subcontract reports fail to process. 
 
-Note: Even if some subcontract reports fail to process, the overall status code will be 201 if at least one subcontract report is processed successfully.
+The API handles subcontract report requests as follows:
+* If a subcontract report request passes all validations as specified in the [Validation Failure Error Messages](#validation-failure-error-messages) section, then the report is saved in **Published** status.  
+* If any validations fail, then the report is saved in **Draft** status, and validation error messages are sent back as a part of the response body. 
 
-The API will handle each subcontract report in the request as below:
-* If a subcontract report request passes all validations as specified in the [Validation Failure Error Messages](#validation-failure-error-messages) section, then the report is saved in "Published" status.  
-* If any validations fail, then the report is saved in "Draft" status and the validation error messages are sent back as a part of the response body. 
-
-The overall response will be a JSON array containing the status of each subcontract report in the request. See the [Response JSON](#response-json) section for the response structure and specific examples. 
+The overall response is a JSON array containing the status of each subcontract report in the request. See the [Response JSON](#response-json) section for the response structure and specific examples. 
 
 #### Examples
 
 <details>
-<summary>Example 1: Submit Subcontract report for multiple Contracts and multiple Subcontracts under them. Example includes Task Order where IDV Reference number is required, and scenario when Top Pay Employees information for the Subcontractor is not mandatory to be provided.</summary>
+<summary>Example 1: Submit subcontract reports for multiple contracts and subcontracts under them. The example includes task order where the Referenced IDV is required, and the subcontractor’s executive compensation information is already on the subcontractor’s SAM.gov entity record.</summary>
 <p>
 <code><pre>
 {
@@ -320,7 +318,7 @@ The overall response will be a JSON array containing the status of each subcontr
 </details>
 
 <details>
-<summary>Example 2: Submit Subcontract report with partial data. In this case, the report will be saved in Draft status and validation errors will be sent back. </summary>
+<summary>Example 2: Submit subcontract reports with partial data. The report will be saved in Draft status, and validation errors will be returned. </summary>
 <p>
 <code><pre>
 {
@@ -357,16 +355,15 @@ The overall response will be a JSON array containing the status of each subcontr
 
 <p><small><a href="#">Back to top</a></small></p>
 
-### Submit Subaward report (Assistance)
+### Submit Subaward report
 
 ------- | -------
 **Request Type** | POST
-**URL** | /assistance/v1/subawards
-**Summary** | A user will be able to submit one or multiple Subaward reports for Assistance awards using this endpoint
+**URL** | /assistance/v1/subawards/
+**Summary** | You can publish one or more subaward reports using this endpoint
 **Consumes** | application/JSON
 **Produces** | Refer [Response JSON](#response-json)
 **Active Versions** | v1
-
 
 #### Request Parameters
 
@@ -379,30 +376,29 @@ Request JSON | Body | JSON | Yes | [Refer Submit Subaward report Assistance JSON
 
 #### Responses
 
-The overall HTTP status code for the response will be determined as follows:
+The following section describes HTTP status codes and the response type.
 
 HTTP Status Code | Response Type | Description
 -----------------|---------------|------------
-201 Created | string | At least one subrecipient report was created 
+201 Created | string | At least one subaward report was created 
 401 Unauthorized | string | Authentication failed or was not provided 
 403 Forbidden | string | Authenticated, but do not have appropriate permissions
 400 Bad Request | string | Malformed request or invalid data 
 500 Internal Server Error | string | Unexpected error occurred during processing
 
-For details on specific error messages under each of the above status codes, refer to the [General Error Messages](#general-error-messages) section. 
+Go to the [General Error Messages](#general-error-messages) section for details on the status code error message. The overall status code 201 displays if at least one subcontract report is processed successfully, even if some subcontract reports fail to process.
 
-Note: Even if some subrecipient reports fail to process, the overall status code will be 201 if at least one subrecipient report is processed successfully.
+The API handles subaward report requests as follows:
 
-The API will handle each subrecipient report in the request as below:
-* If a subrecipient report request passes all validations as specified in the [Validation Failure Error Messages](#validation-failure-error-messages) section, then the report is saved in "Published" status.  
-* If any validations fail, then the report is saved in "Draft" status and the validation error messages are sent back as a part of the response body. 
+* If a subaward report request passes all validations as specified in the [Validation Failure Error Messages](#validation-failure-error-messages) section, then the report is saved in **Published** status.  
+* If any validations fail, then the report is saved in **Draft** status, and validation error messages are sent back as a part of the response body. 
 
-The overall response will be a JSON array containing the status of each subrecipient report in the request. See the [Response JSON](#response-json) section for the response structure and specific examples.
+The overall response is a JSON array containing the status of each subaward report in the request. See the [Response JSON](#response-json) section for the response structure and specific examples.
 
 #### Examples
 
 <details>
-<summary>Example 1: Submit Assistance Subaward report for multiple Assistance awards and their Subawards. Example includes scenario when Top Pay Employees information for the Subawardee is not mandatory to be provided.</summary>
+<summary>Example 1: Submit subaward reports for multiple assistance awards and subawards under them. The example includes the subrecipient’s executive compensation information is already on the subrecipient’s SAM.gov entity record.</summary>
 <p>
 <code><pre>
 {
@@ -530,7 +526,7 @@ The overall response will be a JSON array containing the status of each subrecip
 </details>
 
 <details>
-<summary>Example 2: Submit Subaward Assistance Report with partial data. In this case, the report will be saved in Draft status and validation errors will be sent back. </summary>
+<summary>Example 2: Submit subaward reports with partial data. The report will be saved in Draft status, and validation errors will be returned. </summary>
 <p>
 <code><pre>
 {
@@ -567,12 +563,12 @@ The overall response will be a JSON array containing the status of each subrecip
 
 <p><small><a href="#">Back to top</a></small></p>
 
-### Update Subcontract report (Contracts)
+### Update Subcontract report
 
 ------- | -------
 **Request Type** | PUT
 **URL** | /contract/v1/subcontracts/{subawardReportNumber}
-**Summary** | A user will be able to update a subcontract report
+**Summary** | You can update a subcontract report
 **Consumes** | application/JSON
 **Produces** | Refer [Response JSON](#response-json)
 **Active Versions** | v1
@@ -588,7 +584,7 @@ Request JSON | Body | JSON | Yes | [Refer Submit Subcontract report Contract JSO
 
 #### Responses
 
-The overall HTTP status code for the response will be determined as follows:
+The following section describes HTTP status codes and the response type.
 
 HTTP Status Code | Response Type | Description
 -----------------|---------------|------------
@@ -598,16 +594,16 @@ HTTP Status Code | Response Type | Description
 400 Bad Request | string | Malformed request or invalid data 
 500 Internal Server Error | string | Unexpected error occurred during processing
 
-For details on specific error messages under each of the above status codes, refer to the [General Error Messages](#general-error-messages) section. 
+Go to the [General Error Messages](#general-error-messages) section for details on the status code error message. 
 
-The API will handle the subcontract report in the request as below:
-* If the request passes all validations as specified in the [Validation Failure Error Messages](#validation-failure-error-messages) section, the report status is updated as described below:
-	* If the update are being performed on a "Draft" report, then the report is updated to "Published" status
- 	* If the updates are being performed on a "Published" report, then a new report record is created in "Published" status and the previous "Published" record for the report is archived.
-* If any validations fail, validation error messages are sent back as a part of the response body. The report status is updated as described below:
-	* If the updates are being performed on a "Draft" report, then the report stays in "Draft" status
- 	* If the updates are being performed on a "Published" report, a new report record is created in "Reopened" status and the previous "Published" record stays.
-  
+If the request passes all validations as specified in the [Validation Failure Error Messages](#validation-failure-error-messages) section, the report status is updated as follows:
+* Updates on a **Draft** report are updated to **Published**.
+* Updates on a **Published** report create a new report in the Published status. The previous Published report is archived.
+
+If any validations fail, validation error messages are sent back as a part of the response body. The report status is updated as described:
+* Updates on a **Draft** report stay in **Draft** status.
+* Updates on a **Published** report create a report in the **Reopened** status, and the Published record remains public.
+
 See the [Response JSON](#response-json) section for the response structure and specific examples.
 
 #### Examples: 
@@ -680,7 +676,7 @@ See the [Response JSON](#response-json) section for the response structure and s
 </details>
 
 <details>
-<summary>Example 2: Update Subcontract report with partial data. In this case, the report will be saved in Reopened status and validation errors will be sent back. </summary>
+<summary>Example 2: Update a subcontract report with partial data. In this case, the report will be saved in the Reopened status, and validation errors will be returned. </summary>
 <p>
 <code><pre>
 {
@@ -717,12 +713,12 @@ See the [Response JSON](#response-json) section for the response structure and s
 
 <p><small><a href="#">Back to top</a></small></p>
 
-### Update Subaward report (Assistance)
+### Update Subaward report
 
 ------- | -------
 **Request Type** | PUT
 **URL** | /assistance/v1/subawards/{subawardReportNumber}
-**Summary** | Used to update a Assistance subaward report
+**Summary** | You can update a subaward report
 **Consumes** | application/JSON
 **Produces** | Refer [Response JSON](#response-json)
 **Active Versions** | v1
@@ -738,38 +734,38 @@ Request JSON | Body | JSON | Yes | [Refer Submit Subaward report Assistance JSON
 
 #### Responses
 
-The overall HTTP status code for the response will be determined as follows:
+The following section describes HTTP status codes and the response type.
 
 HTTP Status Code | Response Type | Description
 -----------------|---------------|------------
-200 Ok | string | Subrecipient report was updated
+200 Ok | string | Subaward report was updated
 401 Unauthorized | string | Authentication failed or was not provided 
 403 Forbidden | string | Authenticated, but do not have appropriate permissions
 400 Bad Request | string | Malformed request or invalid data 
 500 Internal Server Error | string | Unexpected error occurred during processing
 
-For details on specific error messages under each of the above status codes, refer to the [General Error Messages](#general-error-messages) section. 
+Go to the [General Error Messages](#general-error-messages) section for details on the status code error message.
 
-The API will handle the subrecipient report in the request as below:
-* If the request passes all validations as specified in the [Validation Failure Error Messages](#validation-failure-error-messages) section, the report status is updated as described below:
-	* If the update are being performed on a "Draft" report, then the report is updated to "Published" status
- 	* If the updates are being performed on a "Published" report, then a new report record is created in "Published" status and the previous "Published" record for the report is archived.
-* If any validations fail, validation error messages are sent back as a part of the response body. The report status is updated as described below:
-	* If the updates are being performed on a "Draft" report, then the report stays in "Draft" status
- 	* If the updates are being performed on a "Published" report, a new report record is created in "Reopened" status and the previous "Published" record stays.
-  
+If the request passes all validations as specified in the [Validation Failure Error Messages](#validation-failure-error-messages) section, the report status is updated as follows:
+* Updates on a **Draft** report are updated to **Published**.
+* Updates on a **Published** report create a new report in the Published status. The previous Published report is archived.
+
+If any validations fail, validation error messages are sent back as a part of the response body. The report status is updated as described:
+* Updates on a **Draft** report stay in **Draft** status.
+* Updates on a **Published** report create a report in the **Reopened** status, and the Published record remains public.
+
 See the [Response JSON](#response-json) section for the response structure and specific examples.
 
 #### Examples: 
 
 <details>
-<summary>Example 1: Update Assistance Subaward report with all required information.</summary>
+<summary>Example 1: Update subaward report with all required information.</summary>
 <p>
 <code><pre>
 {
    "assistanceData":{
       "fain":"1001KS1420",
-      "subawardDataList":{
+      "subawardData":{
          "subawardReportNumber":"51e2fad8-7b43-4b62-a870-45b3f250ea99",
          "subawardNumber":"XX-YY-00008",
          "uei":"ABC123456789",
@@ -828,7 +824,7 @@ See the [Response JSON](#response-json) section for the response structure and s
 </details>
 
 <details>
-<summary>Example 2: Update Assistance Subaward Report with partial data. In this case, the report will be saved in Reopened status and validation failure messages will be sent back. </summary>
+<summary>Example 2: Update subaward report with partial data. The report will be saved in Reopened status and validation failure messages will be returned. </summary>
 <p>
 <code><pre>
 {
@@ -862,12 +858,12 @@ See the [Response JSON](#response-json) section for the response structure and s
 
 <p><small><a href="#">Back to top</a></small></p>
 
-### Delete Subcontract report (Contracts)
+### Delete Subcontract report
 
 ------- | -------
 **Request Type** | DELETE
 **URL** | /contract/v1/subcontracts/{subawardReportNumber}
-**Summary** | Used to delete subcontract report(s)
+**Summary** | User will be able to delete subcontract report(s)
 **Consumes** | application/JSON
 **Produces** | Refer [Response JSON](#response-json)
 **Active Versions** | v1
@@ -882,7 +878,7 @@ Request JSON | Body | JSON | Yes |[Refer Delete Subaward report Contract JSON](#
 
 #### Responses
 
-The overall HTTP status code for the response will be determined as follows:
+The following section describes HTTP status codes and the response type.
 
 HTTP Status Code | Response Type | Description
 -----------------|---------------|------------
@@ -892,7 +888,7 @@ HTTP Status Code | Response Type | Description
 400 Bad Request | string | Malformed request or invalid data 
 500 Internal Server Error | string | Unexpected error occurred during processing
 
-This API will return HTTP Status code 200 if the report is deleted successfully. The API will return other HTTP Status codes in case of any other errors and the report will not be deleted. Refer to the [Error Messages](#error-messages) for specific details.
+This API returns the HTTP Status code 200 when the report is deleted successfully. If other errors occur, the API returns other HTTP Status codes and the report will not be deleted. Refer to the [Error Messages](#error-messages) section for details.
 
 See the [Response JSON](#response-json) section for the response structure and specific examples.
 
@@ -906,7 +902,7 @@ Provide the status (Draft, Published or Reopened as a Query Param) in the reques
 </details>
 
 <details>
-<summary>Example 2: Delete request to delete a subcontract report in all statuses (Published, Reopened or Draft) for a Contract when status is not provided</summary>
+<summary>Example 2: Delete request to delete a subcontract report in all statuses, Published, Reopened or Draft, for a contract when status is not provided</summary>
 <p>
 Do not provide any status in the request.
 </p>
@@ -914,13 +910,12 @@ Do not provide any status in the request.
 
 <p><small><a href="#">Back to top</a></small></p>
 
-### Delete Subaward report (Assistance)
-
+### Delete Subaward report
 
 ------- | -------
 **Request Type** | DELETE
 **URL** | /assistance/v1/subawards/{subawardReportNumber}
-**Summary** | Used to delete assistance subaward report(s)
+**Summary** | User will be able to delete subaward report(s)
 **Consumes** | Request Parameters
 **Produces** | Refer [Response JSON](#response-json)
 **Active Versions** | v1
@@ -935,31 +930,31 @@ Request JSON | Body | JSON | Yes | [Refer Delete Subaward report Assistance JSON
 
 #### Responses
 
-The overall HTTP status code for the response will be determined as follows:
+The following section describes HTTP status codes and the response type:
 
 HTTP Status Code | Response Type | Description
 -----------------|---------------|------------
-200 Ok | string | Subrecipient report(s) successfully deleted
+200 Ok | string | Subaward report(s) successfully deleted
 401 Unauthorized | string | Authentication failed or was not provided 
 403 Forbidden | string | Authenticated, but do not have appropriate permissions
 400 Bad Request | string | Malformed request or invalid data 
 500 Internal Server Error | string | Unexpected error occurred during processing
 
-This API will return HTTP Status code 200 if the report is deleted successfully. The API will return other HTTP Status codes in case of any other errors and the report will not be deleted. Refer to the [Error Messages](#error-messages) for specific details.
+This API returns the HTTP Status code 200 when the report is deleted successfully. If other errors occur, the API returns other HTTP Status codes and the report will not be deleted. Refer to the [Error Messages](#error-messages) for details.
 
 See the [Response JSON](#response-json) section for the response structure and specific examples.
 
 #### Examples
 
 <details>
-<summary>Example 1: Delete request to delete an Assistance Subaward report</summary>
+<summary>Example 1: Delete request to delete a subaward report</summary>
 <p>
 Provide the status (Draft, Published or Reopened as a Query Param) in the request.
 </p>
 </details>
 
 <details>
-<summary>Example 2: Delete request to delete Subaward reports in all statuses (Published, Reopened or Draft) when status is not provided</summary>
+<summary>Example 2: Delete request to delete subaward reports in all statuses, Published, Reopened, or Draft, when status is not provided</summary>
 <p>
 Do not provide any status in the request.
 </p>
@@ -967,7 +962,7 @@ Do not provide any status in the request.
 
 <p><small><a href="#">Back to top</a></small></p>
 
-### Get Subcontract report (Contracts)
+### Get Subcontract report
 
 ------- | -------
 **Request Type** | GET
@@ -989,14 +984,14 @@ status | query | string | No | Status of the report (Draft, Published or Reopene
 #### Examples
 
 <details>
-<summary>Example 1: Get Subaward reports for a specific contract based on the Subaward report Number and report status</summary>
+<summary>Example 1: Get subcontract reports for a specific contract based on the subcontract report number and report status. </summary>
 <p>
 Provide the status (Draft, Published or Reopened as a Query Param) in the request.
 </p>
 </details>
 
 <details>
-<summary>Example 2: Get all Subaward reports for a specific subawardReportNumber when status is not provided.</summary>
+<summary>Example 2: Get all subcontract reports for a specific subaward report number when status is not provided.</summary>
 <p>
 Do not provide any status in the request.
 </p>
@@ -1004,7 +999,7 @@ Do not provide any status in the request.
 
 #### Responses
 
-The overall HTTP status code for the response will be determined as follows:
+The following section describes HTTP status codes and the response type.
 
 HTTP Status Code | Response Type | Description
 -----------------|---------------|------------
@@ -1013,16 +1008,16 @@ HTTP Status Code | Response Type | Description
 403 Forbidden | string | Authenticated, but do not have appropriate permissions
 500 Internal Server Error | string | Unexpected error occurred during processing
 
-NOTE: Will return JSON response same as POST Response JSON. The subawardReportNumber and the reportStatus will be sent back as a part of the response. See the [Response JSON](#response-json) section for the response structure and specific examples.
+Requests return a JSON response that is the same as the POST Response JSON. The subawardReportNumber and the reportStatus are sent back as a part of the response. See the [Response JSON](#response-json) section for the response structure and specific examples.
 
 <p><small><a href="#">Back to top</a></small></p>
 
-### Get Subaward report (Assistance) 
+### Get Subaward report 
 
 ------- | -------
 **Request Type** | GET
 **URL** | /assistance/v1/subawards/{subawardReportNumber}
-**Summary** | User will be able to retrieve a specific assistance subaward report
+**Summary** | User will be able to retrieve a specific subaward report
 **Consumes** | application/JSON
 **Produces** | Refer [Response JSON](#response-json)
 **Active Versions** | v1
@@ -1039,14 +1034,14 @@ status | query | string | No | Status of the report (Draft, Published or Reopene
 #### Examples
 
 <details>
-<summary>Example 1: Get Assistance Subaward reports for a specific Assistance based on the Subaward report Number and report status </summary>
+<summary>Example 1: Get subaward reports for a specific assistance award based on the subaward report number and report status.</summary>
 <p>
 Provide the status (Draft, Published or Reopened as a Query Param) in the request.
 </p>
 </details>
 
 <details>
-<summary>Example 2: Get all Subaward reports for a specific Assistance subawardReportNumber when no status is provided.</summary>
+<summary>Example 2: Get all subaward reports for a specific assistance award based on the subaward report number when no status is provided.</summary>
 <p>
 Do not provide any status in the request.
 </p>
@@ -1054,25 +1049,25 @@ Do not provide any status in the request.
 
 #### Responses
 
-The overall HTTP status code for the response will be determined as follows:
+The following section describes HTTP status codes and the response type.
 
 HTTP Status Code | Response Type | Description
 -----------------|---------------|------------
-200 Ok | string | Subrecipient report(s) successfully retrieved [Refer  Contract JSON](#get-subaward-report-grant-json)
+200 Ok | string | Subaward report(s) successfully retrieved [Refer  Contract JSON](#get-subaward-report-grant-json)
 401 Unauthorized | string | Authentication failed or was not provided 
 403 Forbidden | string | Authenticated, but do not have appropriate permissions
 500 Internal Server Error | string | Unexpected error occurred during processing
 
-NOTE: Will return JSON response same as POST Response JSON. The subawardReportNumber and the reportStatus will be sent back as a part of the response. See the [Response JSON](#response-json) section for the response structure and specific examples.
+Requests return a JSON response that is the same as the POST Response JSON. The subawardReportNumber and the reportStatus are sent back as a part of the response. See the [Response JSON](#response-json) section for the response structure and specific examples.
 
 <p><small><a href="#">Back to top</a></small></p>
 
-### Search Subcontract report (Contracts)
+### Search Subcontract report
 
 ------- | -------
 **Request Type** | GET
 **URL** | /contract/v1/subcontracts
-**Summary** |  User will be able to retrieve specific subcontract reports based on the provided search criteria
+**Summary** |  You can get specific subcontract reports based on the provided search criteria.
 **Consumes** | Request Parameters as described below
 **Produces** | A paginated response. Refer [Response JSON](#response-json)
 **Active Versions** | v1
@@ -1083,11 +1078,11 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 Authorization | Header |  string | Yes | Valid and authorized SAM user email ID
 api_key | query | string | Yes | Valid System Account API Key
-contractNumber | query | string | No | The piid for the contract
-reportingAgencyCode | query | string | No | The agencyCode for the contract
-idvReferenceNumber | query | string | No | The Reference IDV for the contract
-referenceAgencyCode | query | string | No | The Reference Agency Code for the Reference IDV
-subawardReportNumber | query | string | No | The UUID for the subcontract report
+contractNumber | query | string | No | The Contract ID (PIID)
+reportingAgencyCode | query | string | No | The agency code for the contract
+idvReferenceNumber | query | string | No | The Referenced IDV for the contract
+referenceAgencyCode | query | string | No | The Reference Agency Code for the Referenced IDV
+subawardReportNumber | query | string | No | The subcontract report number for the subcontract report
 reportStatus | query | string | No | The status of the Subaward Report to fetch (Draft, Published or Reopened)
 page | query | string | No | The page number for the response to be retrieved (default is 0 which is the first page)
 size | query | string | No | The page size (default is 10)
@@ -1095,21 +1090,21 @@ size | query | string | No | The page size (default is 10)
 #### Examples
 
 <details>
-<summary>Example 1: Get Subaward reports for a specific contract based on the Subaward report Number and report status</summary>
+<summary>Example 1: Get subcontract reports for a specific contract based on the subcontract report number and report status.</summary>
 <p>
 Provide subawardReportNumber and reportStatus (Draft, Published or Reopened) as query Params in the request.
 </p>
 </details>
 
 <details>
-<summary>Example 2: Get all Published Subaward reports.</summary>
+<summary>Example 2: Get all Published subcontract reports.</summary>
 <p>
 Provide reportStatus as 'Published' as a query Param in the request.
 </p>
 </details>
 
 <details>
-<summary>Example 3: Get all Subaward reports for a specific contract</summary>
+<summary>Example 3: Get all subcontract reports for a specific contract.</summary>
 <p>
 Provide contractNumber query Param in the request.
 </p>
@@ -1136,7 +1131,7 @@ By default, the page is set as '0' (first page), and size is set as '10' (10 rec
 
 #### Responses
 
-The overall HTTP status code for the response will be determined as follows:
+The following section describes HTTP status codes and the response type.
 
 HTTP Status Code | Response Type | Description
 -----------------|---------------|------------
@@ -1145,16 +1140,16 @@ HTTP Status Code | Response Type | Description
 403 Forbidden | string | Authenticated, but do not have appropriate permissions
 500 Internal Server Error | string | Unexpected error occurred during processing
 
-NOTE: Will return JSON response same as POST Response JSON. The subawardReportNumber and the reportStatus will be sent back as a part of the response. See the [Response JSON](#response-json) section for the response structure and specific examples.
+Requests return a JSON response that is the same as the POST Response JSON. The subcontract report number and the report status are sent back as a part of the response. See the [Response JSON](#response-json) section for the response structure and specific examples.
 
 <p><small><a href="#">Back to top</a></small></p>
 
-### Search Subaward report (Assistance) 
+### Search Subaward report 
 
 ------- | -------
 **Request Type** | GET
 **URL** | /assistance/v1/subawards
-**Summary** |  User will be able to retrieve specific assistance subaward reports based on the provided search criteria
+**Summary** |  You can get specific subaward reports based on the provided search criteria
 **Consumes** | Request Parameters as described below
 **Produces** | A paginated response. Refer [Response JSON](#response-json)
 **Active Versions** | v1
@@ -1163,26 +1158,26 @@ NOTE: Will return JSON response same as POST Response JSON. The subawardReportNu
 
 Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
-Authorization | Header |  string | Yes | Valid and authorized SAM user email ID
+Authorization | Header |  string | Yes | Valid and authorized SAM.gov user email ID
 api_key | query | string | Yes | Valid System Account API Key
-FAIN | query | string | No | The FAIN number for the assistance award
-agencyCode | query | string | No | The agencyCode for the assistance award
-subawardReportNumber | query | string | No | The UUID for the assistance subaward report number
-reportStatus | query | string | No | The status of the Subaward Report to fetch (Draft, Published or Reopened)
+FAIN | query | string | No | The Award ID (FAIN) for the award
+agencyCode | query | string | No | The agency code for the assistance award
+subawardReportNumber | query | string | No | The subaward report Id for the subaward report number
+reportStatus | query | string | No | The status of the subaward Report to fetch (Draft, Published or Reopened)
 page | query | string | No | The page number for the response to be retrieved (default is 0 which is the first page)
 size | query | string | No | The page size (default is 10)
 
 #### Examples
 
 <details>
-<summary>Example 1: Get Assistance Subaward reports for a specific Assistance based on the Subaward report Number and report status </summary>
+<summary>Example 1: Get subaward reports for a specific assistance award based on the Subaward ID and report status.</summary>
 <p>
 Provide subawardReportNumber and reportStatus (Draft, Published or Reopened) as query Params in the request.
 </p>
 </details>
 
 <details>
-<summary>Example 2: Get all Published Subaward reports for a specific Assistance</summary>
+<summary>Example 2: Get all published subaward reports for a specific assistance award.</summary>
 <p>
 Provide reportStatus as 'Published' as a query Param in the reques
 </p>
@@ -1222,7 +1217,7 @@ HTTP Status Code | Response Type | Description
 403 Forbidden | string | Authenticated, but do not have appropriate permissions
 500 Internal Server Error | string | Unexpected error occurred during processing
 
-NOTE: Will return JSON response same as POST response JSON. The subAwardReportNumber and the reportStatus will be sent back as a part of the response. See the [Response JSON](#response-json) section for the response structure and specific examples.
+Requests return a JSON response that is the same as the POST Response JSON. The subaward report number and the report status are sent back as a part of the response. See the [Response JSON](#response-json) section for the response structure and specific examples.
 
 <p><small><a href="#">Back to top</a></small></p>
 
