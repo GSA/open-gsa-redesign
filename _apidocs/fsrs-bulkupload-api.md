@@ -5,56 +5,60 @@ banner-heading: SAM.gov Subaward reporting Bulk Upload API
 
 ## Overview 
 
-The API for Federal Funding Accountability and Transparency Act (FFATA) Reporting will allow Prime awardees (i.e. prime contractors and prime assistance recipients) to report subaward and executive compensation data regarding their first-tier Subawards to meet the FFATA reporting requirements. Using this API, the users will be able to file multiple Subaward reports at once. 
+This documentation provides information for publishing subcontract and subaward reports to SAM.gov. 
+Only the SAM.gov test environment - alpha.SAM.gov - is available to test subcontract and subaward report uploads. The production Subaward Reporting Bulk Upload API has a target launch date of Spring 2025.
 
-**NOTE:** The specifications on this page are for a future API.  Check back here or be in contact with IAE for the release date and testing session.
-
-**API Version: v1.0**
+**Tips and Key Features of the Subaward Reporting Bulk Upload API** 
+* You must have a SAM.gov system account with reporting permissions and a system account API key to use this API to report subcontracts and subawards.
+* You can use the same system account for an entity and any of its child entities. You do not need separate system accounts for each child entity.
+* You need separate system accounts to bulk report for entities not in the same hierarchy.
+* API requests must use a REST API connection type.
+* API requests must come from the IP address(es) listed on your system account application.
 
 ## Getting Started
 
-Subaward reporting Bulk Upload API can be accessed from Production or Alpha via the following endpoints:
+Access the Subaward Reporting Bulk Upload API from the following Production or Alpha environments:
 
-* Production: https://api.sam.gov
-* Alpha: https://api-alpha.SAM.gov
+**Production** 
+* Target availability in Spring 2025
 
-### Authentication and Authorization
+**Alpha** 
+* https://api-alpha.SAM.gov/prodlike
 
-To begin using this API, you will need to register for a System Account and obtain an API Key. After registration, you will need to provide this API key in the <i>x-api-key</i> HTTP header with every API request.
-* To request a System account wiht permission to use the Subaward APIs, the user must first create a user account in SAM.gov and request a "Non-Federal System Administrator" via FSD.
-* A user will be able to access the System Accounts widget from their Workspace page after logging in. They can then select “New Account” by navigating from the widget and fill out the required sections and submit their System Account. When creating a System Account, the user must specify the following to successfully utilize the Subaward API:
-	* System Information
-   		** System Account Name: Unique name for the System Account
-	* Permissions
-   		** Subaward reporting: Write --> Gives access to Create/Update/Delete/s.
-	* Security Information
-		** IP Address: List all the IP Addresses that the System invokes the API from.
-		** Type of Connection: REST APIs
-* The requested system account will be sent for approval. Upon approval, the user will be notified via an email and will be able to see the status of their request in the System Account widget.
+### Authentication, Authorization and API Keys
 
-**NOTE:** If user does not have the “Non-Federal System Administrator” user role in SAM.gov, they will be able to request for a new system account, however, the user account will not have the permissions required to access the Subaward endpoints. Therefore, getting this user role is a prerequisite.
+#### Get a System Account
+A system account enables you to use this API to publish multiple subcontract or subaward reports to SAM.gov at once using software or web services. Follow these steps to get a system account with subaward reporting permissions:
+1. Get an entity reporting Data Entry or Administrator role with subaward permissions enabled on your SAM.gov user account. If you do not have the entity reporting role, request it from your Entity Administrator.
+2. Request the Non-Federal System Administrator role from the Federal Service Desk.
+   * Go to FSD.gov and sign in with your login.gov username and password.
+   * Submit a helpdesk ticket by selecting **Create an Incident** and completing the form. Select **SAM (System for Award Management)** under System Name. Select **Other** under Issue Type and enter a subject in the next field.
+   * In the **Please describe the issue below** field, say that you want the **Non-Federal System Administrator** role. Include your entity name and Unique Entity ID. 
+3. Once you have the Non-Federal System Administrator role, sign in to SAM.gov. Locate the System Account section in your Workspace and select the section title.
+4. Select the **New Account** button. Enter the required information and submit the application.
 
-#### Generating a System Account API Key
-In order to utilize the Subaward API endpoints, users will need to generate the System account API Key to make API calls.
-* Once the system account is approved, as per the instructions above, the user can select their System account from the Tier2 workspace and access the API key and Password section to set up new system account password
-* After setting up the password for the system account, the user will see a new section for generating a system account API Key. The user must enter their password again to generate the API Key
-* The user will have the option to copy the API key to their clipboard to store the key
-* The API key will be hidden at all times and the user will need to enter the system account password to reveal the key
-* The API keys have a validity of 90 days and a new key will be auto generated at 75 days. For a period of 15 days 76th to 90th day) both the old and new keys remain active and will be visible for the user to use. You must ensure that the new keys are rotated on your API call during this time
-* This API Key will be used for all API calls as described in this documentation
+The General Services Administration reviews system account applications. You will be notified by email when an application is approved or rejected.
 
-### Type of Connection Validation 
-All REST API requests will be validated against the Type of Connection within the system account profile. All requests without "REST API" type of connection in the system account profile will be rejected with an error.
+If you apply for a system account without receiving the Non-Federal System Administrator role from the Federal Service Desk, you can still use a system account to pull other types of SAM.gov data by API, but you will not have the permissions required to publish subcontract or subaward reports to SAM.gov. 
 
-### IP Address Validation 
-All REST API requests will be validated against the IP Addresses registered within the system account profile. All requests that are not from registered IP address(es) in the system account profile will be rejected with an error.
+#### Get a System Account API Key 
+We require a system account API key to use this API. Once your system account is approved, get an API key from the System Account Workspace. When your system account is new, you must set up a system account password before generating your API key. Once your password is set up, you must enter it to get your API key. 
 
-#### User Account Authorization
-To be able to perform the various operations provided under the Subaward API, a user will require a SAM.gov non-federal user account with either 'Admin' or 'Data Entry' role and 'Create/Edit/Delete Subaward report' permission.
+API keys are valid for 90 days. New keys are automatically generated 15 days before the key expires. New and current keys are active and valid during the 15-day period until the current key expires on the 90th day.
+
+If using the Alpha environment API, get your API key from your alpha.SAM.gov System Account Workspace. Get a Production environment API key from your SAM.gov System Account Workspace. 
+
+#### API Key Rate Limits 
+We limit call rates by day and account type.
+|   Type of Account   | Type of API Key   | API Daily Rate Limit   |
+| ---------------------------------- | ----------------- | ----------------- |
+| Non-federal user with no role to an entity in SAM.gov | Personal API key | 10 requests/day |
+| Non-federal user with a role to an entity in SAM.gov |  Personal API key | 1,000 requests/day |
+| Non-federal system account user | System account API key | 1,000 requests/day |
 
 <p><small><a href="#">Back to top</a></small></p>
 
-### Lookup/Meta-Data
+### API Description
 
 #### Recovery Model Questions (Compensation Questions) - Contract Subaward Reports
 
