@@ -50,6 +50,7 @@ If using the Alpha environment API, get your API key from your alpha.SAM.gov Sys
 
 #### API Key Rate Limits 
 We limit call rates by day and account type.
+
 |   Type of Account   | Type of API Key   | API Daily Rate Limit   |
 | ---------------------------------- | ----------------- | ----------------- |
 | Non-federal user with no role to an entity in SAM.gov | Personal API key | 10 requests/day |
@@ -65,6 +66,7 @@ We limit call rates by day and account type.
 SAM.gov requires responses to subcontractor and subrecipient executive compensation questions to submit subcontract and subaward reports. If your subcontractor or subrecipient does not have responses to these questions on their SAM.gov entity record, you must provide responses in your request. The tables below outline the questions and corresponding codes for your requests.
 
 ##### Subcontractor Questions
+
 |                                   | Code              | Description                                   |
 | ----------------- | ----------------- | --------------------------------------------- |
 | Subcontractor Question 1| __1__	            | As provided to you by your subcontractor, in your subcontractor’s business or organization's preceding completed fiscal year, did its business or organization (the legal entity to which the Unique Entity ID it provided belongs) receive $25,000,000 or more in annual gross revenues from Federal contracts (and subcontracts), loans, grants (and subgrants), cooperative agreements, and other forms of Federal financial assistance? |
@@ -72,6 +74,7 @@ SAM.gov requires responses to subcontractor and subrecipient executive compensat
 | Subcontractor Question 3| __3__	            | As provided to you by your subcontractor, does the public have access to information about the compensation of the executives in the subcontractor's business or organization (the legal entity to which the Unique Entity ID (SAM) it provided belongs) through periodic reports filed under section 13(a) or 15(d) of the Securities Exchange Act of 1934 (15 U.S.C. 78m(a), 78o(d)) or section 6104 of the Internal Revenue Code of 1986?|
 
 #### Subrecipient Questions
+
 |                                   | Code              | Description                                   |
 | ----------------- | ----------------- | --------------------------------------------- |
 | Subrecipient Question 1| __1__	            | As provided to you by your subrecipient, in your subrecipient’s business or organization's preceding completed fiscal year, did its business or organization (the legal entity to which the Unique Entity ID it provided belongs) receive $25,000,000 or more in annual gross revenue from Federal procurement contracts (and subcontracts) and Federal awards (and subawards) subject to the Transparency Act, as defined at § 170.300? |
