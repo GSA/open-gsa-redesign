@@ -60,20 +60,18 @@ We limit call rates by day and account type.
 
 ### API Description
 
-#### Recovery Model Questions (Compensation Questions) - Contract Subaward Reports
+#### Subcontract and Subaward Reports Executive Compensation Questions
 
-To submit a Contract Subaward report, compensation questions for the Prime, as well as Subcontractor will need to be responded to. The tables below outlines the Compensation Questions and their corresponding codes to be used in the requests.
+SAM.gov requires responses to subcontractor and subrecipient executive compensation questions to submit subcontract and subaward reports. If your subcontractor or subrecipient does not have responses to these questions on their SAM.gov entity record, you must provide responses in your request. The tables below outline the questions and corresponding codes for your requests.
 
+##### Subcontractor Questions
 |                                   | Code              | Description                                   |
 | ----------------- | ----------------- | --------------------------------------------- |
 | Subcontractor Question 1| __1__	            | As provided to you by your subcontractor, in your subcontractor’s business or organization's preceding completed fiscal year, did its business or organization (the legal entity to which the Unique Entity ID it provided belongs) receive $25,000,000 or more in annual gross revenues from Federal contracts (and subcontracts), loans, grants (and subgrants), cooperative agreements, and other forms of Federal financial assistance? |
 | Subcontractor Question 2| __2__	            | As provided to you by your subcontractor, in your subcontractor’s business or organization's preceding completed fiscal year, did its business or organization (the legal entity to which the Unique Entity ID it provided belongs) receive 80 percent or more of its annual gross revenues from Federal contracts (and subcontracts), loans, grants (and subgrants), cooperative agreements, and other forms of Federal financial assistance?|
 | Subcontractor Question 3| __3__	            | As provided to you by your subcontractor, does the public have access to information about the compensation of the executives in the subcontractor's business or organization (the legal entity to which the Unique Entity ID (SAM) it provided belongs) through periodic reports filed under section 13(a) or 15(d) of the Securities Exchange Act of 1934 (15 U.S.C. 78m(a), 78o(d)) or section 6104 of the Internal Revenue Code of 1986?|
 
-#### Recovery Model Questions (Compensation Questions) - Assistance Subaward Reports
-
-To submit an Assistance Subaward report, compensation questions for the Prime, as well as Subrecipient will need to be responded to. The tables below outlines the Compensation Questions and their corresponding codes to be used in the requests.
-
+#### Subrecipient Questions
 |                                   | Code              | Description                                   |
 | ----------------- | ----------------- | --------------------------------------------- |
 | Subrecipient Question 1| __1__	            | As provided to you by your subrecipient, in your subrecipient’s business or organization's preceding completed fiscal year, did its business or organization (the legal entity to which the Unique Entity ID it provided belongs) receive $25,000,000 or more in annual gross revenue from Federal procurement contracts (and subcontracts) and Federal awards (and subawards) subject to the Transparency Act, as defined at § 170.300? |
@@ -84,24 +82,21 @@ To submit an Assistance Subaward report, compensation questions for the Prime, a
 
 #### Report Status
 
-The table below lists the statuses for the Subaward reports.
+The table below lists subcontract and subaward report statuses.
 
 Code | Value     | Description
 -----|-----------------|-----------------
-1     | Draft | This status is used when the report has been saved in the system but still requires additional updates to pass all validation checks. NOTE: The reports saved from the User Interface of SAM.gov may also be in this status if the user has partially added the report data and needs to add more details before submitting the report.
-2     | Published | This status is used when the report has passed all validation checks and has been successfully published (submitted).
-3     | Reopened | This status is used when updates are needed for a report that is in "Published" status. Until the report has passed all validations and is published again, it will stay in this status.
-4     | Deleted | This status is used for reports that have been deleted by the user. NOTE: Deleted reports will not be available for general view.
+1     | Draft | A report has been started and saved but has not been published and requires additional information or updates to be published. 
+2     | Published | A report has all required information and is successfully published.
+3     | Reopened | When you update a published report, we create a reopened version. SAM.gov keeps the published version public until you publish the updates.
+4     | Deleted | A report has been deleted. Deleted reports are not publicly available.
 
 <p><small><a href="#">Back to top</a></small></p>
 
-## GENC Standardization
-SAM.gov uses the "GENC Standardization" of country and administrative data to ensure there are no countries or states currently being inserted into SAM that are not correctly vetted and recognized by the United States. To ensure any country/state data entered by the Users through Subaward reporting meets the standard, validations will be run when receiving this data. Please refer to the error messages section for specific details for these errors.
+## GENC Standards
+SAM.gov uses the [Geopolitical Entities, Names, and Codes (GENC) standards](https://geonames.nga.mil/geonames/GeographicNamesSearch/), which provide country and administrative area codes recognized by the U.S. government. Please refer to the [Error Messages](#validation-failure-error-messages)  section for specific details for these errors.
 
-Refer : 
-https://geonames.nga.mil/geonames/GeographicNamesSearch/
-
-API Fields
+### API Fields
 
 Field Name | Data Source  | Valid Statuses  | Input Type
 ---------------|------------|----------|------------
@@ -113,32 +108,37 @@ State | State MUST come from https://geonames.nga.mil/geonames/GNSHome/index.htm
 
 ## Version Control
 
-All API v1 versions will utilize the API Key mechanism as outlined in this documentation. 
+All API v1 versions use the API Key mechanism outlined in this documentation.
 
-## FSRS Subaward reporting Bulk Upload API Request and Responses
+## SAM.gov Subaward reporting Bulk Upload API Request and Responses
 
-This API has 10 endpoints as outlined below. 
+### Subcontract API Endpoints  
 
-Endpoint Name | Short Description |
+Endpoint Name | Description |
 -----|-----------------
-Submit Subcontract report (Contracts)     | Used to submit one or more Subaward reports for reporting on one (or more) Contracts.
-Submit Subaward report (Assistance)     | Used to submit one or more Subaward reports for reporting on one (or more) Assistance awards.
-Update Subcontract report (Contracts)     | Used to update a previously published Subaward report for a Contract.
-Update Subaward report (Assistance)     | Used to update a previously published Subaward report for an Assistance award.
-Delete Subcontract report (Contracts)     | Used to delete Subaward report for a Contract.
-Delete Subaward report (Assistance)     | Used to delete Subaward reports for an Assistance award.
-Get Subcontract report (Contracts)     | Used to get details for a Subaward report for a Contract. 
-Get Subaward report (Assistance)     | Used to get details for a Subaward report for an Assistance award.
-Search Subcontract report (Contracts)     | Used to get Subaward reports for Contracts based on optional search criteria. 
-Search Subaward report (Assistance)     | Used to get Subaward reports for Assistance awards based on optional search criteria.
+Submit Subcontract report | Used to submit subcontract reports for reporting on one or more contracts.
+Update Subcontract report | Used to update a previously published subcontract report for a contract.
+Delete Subcontract report | Used to delete a subcontract report for a contract.
+Get Subcontract report | Used to get details for a subcontract report for a contract. 
+Search Subcontract report | Used to get subcontract reports for contracts based on optional search criteria. 
+
+### Subaward API Endpoints  
+
+Endpoint Name | Description |
+-----|-----------------
+Submit Subaward report | Used to submit subaward reports for reporting on one or more assistance awards.
+Update Subaward report | Used to update a previously published subaward report for an assistance award.
+Delete Subaward report | Used to delete subaward reports for an assistance award.
+Get Subaward report | Used to get details for a subaward report for an assistance award.
+Search Subaward report | Used to get subaward reports for assistance awards based on optional search criteria.
 
 The following section describes each of the above endpoints in detail.
 
-### Submit Subcontract report (Contracts)
+### Submit Subcontract report
 
 ------- | ------- |
 **Request Type** | POST 
-**URL** | /contract/v1/subcontracts
+**URL** | /contract/v1/subcontracts/
 **Summary** | A User will be able to submit one or multiple Subcontract reports for Contracts using this endpoint
 **Consumes** | application/JSON
 **Produces** | Refer [Response JSON](#response-json)
