@@ -156,8 +156,6 @@ Content-Type | header |  string | Yes | application/json
 api_key | query | string | Yes | Valid System Account API Key
 Request JSON | Body | JSON | Yes | [Refer Submit Subcontract report Contract JSON](#submit-subaward-report-contract-json)
 
-<p><small><a href="#">Back to top</a></small></p>
-
 #### Responses
 
 The following section describes HTTP status codes and the response type.
