@@ -2022,34 +2022,29 @@ You can view the full details of this API in the OpenAPI Specification file avai
 
 ### General Error Messages
 
-The following error messages will be returned as part of the response to various web service calls; these errors are not specific to one method and may apply to more than one error.
+Error messages are returned as part of the web service call response. Errors are not specific to one method and may apply to more than one error.
 
-NOTE: Error codes may change depending on an error given; in such a case the document will update accordingly.
-
-Error Code |	Error Message	| Reason/Description | Operation |
+Error Code |	Error Message	| Description | Operation |
 ---------- | ------------- | ------------------ | --------- |
-401	|	Provide valid authorization email.	|	Authorization Email associated with the user System Account is required	|	All |
-401	|	Provide a valid API Key.	|	The System Account API Key is required and should be a valid API Key	|	All |
-401	|	This IP address is not associated with your system account. All requests must come from an IP address listed on your system account.	|	The IP Address associated with the System Account	|	All |
-403	|	Access denied. Your account is not authorized.	|	Account does not have appropriate privileges to perform the operation	|	All |
-500	|	We are experiencing an internal server error. Please try again later.	|	Internal Server Error	|	All |
-400	|	Provide a valid JSON format.	|	Please check the request JSON structure and try again	|	All |
-400	|	Provide a valid JSON structure. We require at least one contractData element.	|	Request Body JSON structure is invalid. At least one contractData element is required for Subaward reporting	|	All (Contracts) |
-400	|	Provide a valid JSON structure. We require at least one assistanceData element.	|	Request Body JSON structure is invalid. At least one assistanceData element is required for Subaward reporting	|	All (Assistance) |
-400	|	No record found for the contractID and reportingAgencyCode provided.	|	No record found for the Contract Number and Reporting Agency Code combination (Combination of contractData.contractNumber and contractData.reportingAgencyCode in the Request Body).	|	submitSubawardReport, updateSubawardReport (Contracts) |
-400	|	No record found for the FAIN Number provided.	|	As provided in assistanceData.fain, FAIN Number not found	|	submitSubawardReport, updateSubawardReport(Assistance) |
-400	|	Multiple records found for the contractID and reportingAgencyCode provided. Add the idvReferenceNumber to identify the contract.	|	User needs to specify the idvReferenceNumber to correctly identify the record as multiple records were found for the contractNumber and reportingAgency combination	|	submitSubawardReport, updateSubawardReport (Contracts) |
-400	|	Provide the prime contractor's contractID.	|	contractData.contractNumber was not provided.	|	submitSubawardReport, updateSubawardReport(Contracts) |
-400	|	Provide a reportingAgencyCode.	|	contractData.reportingAgencyCode is a required field.	|	submitSubawardReport, updateSubawardReport(Contracts) |
-400	|	Provide at least one contractData element.	|	At least one contractData element is required for the Subaward reporting	|	submitSubawardReport, updateSubawardReport (Contracts and Assistance) |
-400	|	Provide a subawardee Unique Entity ID.	|	The SAM.gov registration UEI for the subawardee is required	|	submitSubawardReport ,updateSubawardReport(Contracts and Assistance) |
-400	|	Provide a valid Unique Entity ID.	|	Invalid UEI provided for the Subawardee	|	submitSubawardReport, updateSubawardReport(Contracts and Assistance) |
-400	|	No record found for the subawardID provided.	|	No Report found for the specified subawardReportNumber. |	updateSubawardReport(Contracts, Assistance) |
-400	|	Provide at least one data element. Add a contractID, reportingAgencyCode, idvReferenceNumber, referenceAgencyCode, subawardNumber, or subawardReportNumber.	|	contractNumber, reportingAgencyCode, idvReferenceNumber, referenceAgencyCode, subawardNumber and subawardReportNumber are missing for at least one element in the request	|	getSubawardReport(Contracts and Assistance) |
-400	|	Provide at least one data element. |	Search Criteria are missing for at least one element in the request.	|	getSubawardReport(Contracts and Assistance) |
-400	|	Provide at least one contractData element to delete.	|	At least one contractData element is required for deleting	|	deleteSubawardReport(Contracts) |
-400	|	Provide at least one assistanceData element to delete.	|	At least one assistanceData element is required for deleting	|	deleteSubawardReport(Assistance) |
-400	|	No record found for the data provided.	|	No report found matching the specified parameters for the report.	|	deleteSubawardReport(Contracts and Assistance) |
+|401	|	Provide valid authorization email.	|	Authorized email associated with your system account is required.	|	All |	
+|401	|	Provide a valid API Key.	|	Your valid  system account API key is required.	|	All |	
+|401	|This IP address is not associated with your system account. All requests must come from an IP address listed on your system account.	|	You entered an IP Address that was not included on your system account application.	|	All |	
+|403	|	Access denied. Your account is not authorized.	|	Your account does not have appropriate privileges.	|	All |	
+|500	|	We are experiencing an internal server error. Please try again later.	|	Internal Server Error	|	All |	
+|400	|	Provide a valid JSON format.	|	Check the request JSON structure and try again.	|	submitSubcontractReport, updateSubcontractReport, submitSubawardReport, updateSubawardReport|	
+|400	|	Provide a valid JSON structure. We require at least one contractData element.	|	The request Body JSON structure is invalid. At least one contractData element is required for subcontract reporting.	|	submitSubcontractReport, updateSubcontractReport	
+|400	|	Provide a valid JSON structure. We require at least one assistanceData element.	|	The request Body JSON structure is invalid. At least one assistanceData element is required for subaward reporting	|	submitSubawardReport, updateSubawardReport|	
+|400	|	No record found for the contractID and reportingAgencyCode provided.	|	No record found for the contract ID (PIID)  and reporting agency code combination in the request body (Combination of contractData.contractNumber and contractData.reportingAgencyCode).	|	submitSubcontractReport, updateSubcontractReport	
+|400	|	No record found for the FAIN Number and agencyCode provided.	|	No record found for the FAIN Number  and agency code combination in the request body (Combination of assistanceData.fain and assistanceData.agencyCode).	submitSubawardReport, updateSubawardReport	
+|400	|	Multiple records found for the contractID and reportingAgencyCode provided. Add the idvReferenceNumber to identify the contract.	|	You must specify the idvReferenceNumber to correctly identify the record because multiple records were found for the contract ID (PIID)  and reporting agency code combination. |	submitSubcontractReport, updateSubcontractReport	
+|400	|	Provide the prime contractor's contractID.	|	contractData.contractNumber was not provided.	|	submitSubcontractReport, updateSubcontractReport	
+|400	|	Provide a reportingAgencyCode.	|	contractData.reportingAgencyCode is a required field.	|	submitSubcontractReport, updateSubcontractReport	
+|400	|	Provide the prime awardee's FainID.	|	assistanceData.fain was not provided.	|	submitSubcontractReport, updateSubcontractReport	
+|400	|	Provide the fundingAgencyCode.	|	assistanceData.agencyCode is a required field.	|	submitSubcontractReport, updateSubcontractReport	
+|400	|	Provide a subawardee Unique Entity ID.	|	The subcontractor or subrecipient’s Unique Entity ID is required.	|	submitSubcontractReport, updateSubcontractReport, submitSubawardReport, updateSubawardReport|	
+|400	|	Provide a valid Unique Entity ID.	|	You provided an invalided subcontractor or subawardee Unique Entity ID.	|	submitSubcontractReport, updateSubcontractReport, submitSubawardReport, updateSubawardReport|	
+|400	|	No record found for the data provided.	|	No Report found for the subawardReportNumber you provided. |	updateSubcontractReport, updateSubawardReport	
+|400	|	No record found for the data provided.	|	No report found matching the specified parameters for the report.	|	deleteSubawardReport(Contracts and Assistance) |	
 
 <p><small><a href="#">Back to top</a></small></p>
 
