@@ -174,7 +174,7 @@ The API handles subcontract report requests as follows:
 * If a subcontract report request passes all validations as specified in the [Validation Failure Error Messages](#validation-failure-error-messages) section, the report is saved in the **Published** status.  
 * If any validations fail, the report is saved in **Draft** status, and validation error messages are sent back as a part of the response body. 
 
-The overall response is a JSON array containing the status of each subcontract report in the request. See the [Response JSON](#response-json) section for the response structure and specific examples. 
+The overall response is a JSON array containing the status of each subcontract report in the request. Each subcontract report created is assigned a unique Id **subawardReportNumber** that is sent back as a part of the response. The **subawardReportNumber** is used to make any update, delete or get calls. See the [Response JSON](#response-json) section for the response structure and specific examples. 
 
 #### Examples
 
@@ -391,7 +391,7 @@ The API handles subaward report requests as follows:
 * If a subaward report request passes all validations as specified in the [Validation Failure Error Messages](#validation-failure-error-messages) section, the report is saved in the **Published** status.  
 * If any validations fail, the report is saved in **Draft** status, and validation error messages are sent back as a part of the response body. 
 
-The overall response is a JSON array containing the status of each subaward report in the request. See the [Response JSON](#response-json) section for the response structure and specific examples.
+The overall response is a JSON array containing the status of each subaward report in the request. Each subaward report created is assigned a unique Id **subawardReportNumber** that is sent back as a part of the response. The **subawardReportNumber** is used to make any update, delete or get calls. See the [Response JSON](#response-json) section for the response structure and specific examples.
 
 #### Examples
 
@@ -578,7 +578,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization | header |  string | Yes | Valid and authorized SAM.gov user email ID
 Content-Type | header |  string | Yes | application/json
 api_key | query | string | Yes | Valid System Account API Key
-Request JSON | Body | JSON | Yes | [Refer Submit Subcontract report Contract JSON](#submit-subaward-report-contract-json)
+subawardReportNumber | path | string | Yes | Unique identifier for the subcontract report. 
 
 #### Responses
 
@@ -728,7 +728,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization | Header |  string | Yes | Valid and authorized SAM.gov user email ID
 Content-Type | header |  string | Yes | application/json
 api_key | query | string | Yes | Valid System Account API Key
-Request JSON | Body | JSON | Yes | [Refer Submit Subaward report Assistance JSON](#submit-subaward-report-grant-json)
+subawardReportNumber | path | string | Yes | Unique identifier for the subaward report.
 
 #### Responses
 
@@ -873,7 +873,8 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 Authorization | Header |  string | Yes | Valid and authorized SAM.gov user email ID
 api_key | query | string | Yes | Valid System Account API Key
-Request JSON | Body | JSON | Yes |[Refer Delete Subaward report Contract JSON](#delete-subaward-report-contract-json)
+subawardReportNumber | path | string | Yes | Unique identifier for the subcontract report.
+status | query | string | No | Status of the subcontract report.
 
 #### Responses
 
@@ -925,7 +926,8 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 Authorization | Header |  string | Yes | Valid and authorized SAM.gov user email ID
 api_key | query | string | Yes | Valid System Account API Key
-Request JSON | Body | JSON | Yes | [Refer Delete Subaward report Assistance JSON ](#delete-subaward-report-grant-json)
+subawardReportNumber | path | string | Yes | Unique identifier for the subaward report.
+status | query | string | No | Status of the subaward report.
 
 #### Responses
 
@@ -977,8 +979,8 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 Authorization | Header |  string | Yes | Valid and authorized SAM.gov user email ID
 api_key | query | string | Yes | Valid System Account API Key
-subawardReportNumber | path | UUID | Yes | The SubawardReportNumber of the subaward report to fetch
-status | query | string | No | Status of the report (Draft, Published or Reopened)
+subawardReportNumber | path | string | Yes | Unique identifier for the subcontract report.
+status | query | string | No | Status of the subcontract report
 
 #### Examples
 
@@ -1027,8 +1029,8 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 Authorization | Header |  string | Yes | Valid and authorized SAM.gov user email ID
 api_key | query | string | Yes | Valid System Account API Key
-subawardReportNumber | path | UUID | Yes | The SubawardReportNumber of the subaward report to fetch
-status | query | string | No | Status of the report (Draft, Published or Reopened)
+subawardReportNumber | path | string | Yes | Unique identifier for the subaward report.
+status | query | string | No | Status of the subaward report
 
 #### Examples
 
@@ -1081,7 +1083,7 @@ contractNumber | query | string | No | The Contract ID (PIID)
 reportingAgencyCode | query | string | No | The agency code for the contract
 idvReferenceNumber | query | string | No | The Referenced IDV for the contract
 referenceAgencyCode | query | string | No | The Reference Agency Code for the Referenced IDV
-subawardReportNumber | query | string | No | The subcontract report number for the subcontract report
+subawardReportNumber | query | string | No | Unique identifier for the subcontract report
 reportStatus | query | string | No | The status of the Subaward Report to fetch (Draft, Published or Reopened)
 page | query | string | No | The page number for the response to be retrieved (default is 0 which is the first page)
 size | query | string | No | The page size (default is 10)
@@ -1161,7 +1163,7 @@ Authorization | Header |  string | Yes | Valid and authorized SAM.gov user email
 api_key | query | string | Yes | Valid System Account API Key
 FAIN | query | string | No | The Award ID (FAIN) for the award
 agencyCode | query | string | No | The agency code for the assistance award
-subawardReportNumber | query | string | No | The subaward report Id for the subaward report number
+subawardReportNumber | query | string | No | Unique identifier for the subaward report 
 reportStatus | query | string | No | The status of the subaward Report to fetch (Draft, Published or Reopened)
 page | query | string | No | The page number for the response to be retrieved (default is 0 which is the first page)
 size | query | string | No | The page size (default is 10)
@@ -2010,64 +2012,6 @@ subawardDataList.topPayEmployees.fullName |string  ||Yes if subawardDataList.top
 subawardDataList.topPayEmployees.salary | string  ||Yes if subawardDataList.topPayEmployees is required|The total compensation of the top-paid employees.
 
 <p><small><a href="#">Back to top</a></small></p>
-
-### Delete Subcontract Report Contract JSON
-
-* Field headers in the table must match with the field headers shown in the JSON example  
-
-Name | Data Type | Field Length | Required | Description
------|-----------|---------|----------|------------
-contractData | JSON Array  | | Yes, at least one element in the array is required. At least one field is required for the fields in each element. | Information about the report to be deleted. If there are multiple reports to be deleted, then this array has multiple elements, one for each of the delete requests.
-contractData Details| | | | 
-contractData.subawardReportNumber | string |32 characters  | No | Number assigned by the Prime Contractor to track the subaward. This is returned as a part of the response for the Create, Update and Get calls for the Subaward report.
-contractData.reportStatus | string |32 characters  | No | The status of the report to be deleted. If no status is provided, then all associated reports (in all statuses) will be deleted.
-
-<p><small><a href="#">Back to top</a></small></p>
-
-### Delete Subaward report Assistance JSON
-
-* Field headers in the table must match with field headers shown in JSON example  
-
-Name | Data Type | Field Length|  Required | Description
------|-----------|---------|----------|------------
-assistanceData | JSON Array  |  | Yes, at least one element in the array is required. At least one field is required for the fields in each element. |Information about the prime Assistance awardee. If the request is being submitted for multiple prime assistance awards, then this array will have multiple elements, one for each of the prime Assistance.
-assistanceData Details| | | | 
-assistanceData.subawardReportNumber | string |32 characters  | No | Number assigned by the Prime Contractor to track the subaward. This is returned as a part of the response for the Create, Update and Get calls for the Subaward report.
-assistanceData.reportStatus | string |32 characters  | No | The status of the report to be deleted. If no status is provided, then all associated reports (in all statuses) will be deleted.
-
-<p><small><a href="#">Back to top</a></small></p>
-
-### Get Subaward Report Contract JSON
-
-* Field headers in the table must match with field headers shown in JSON example  
-
-Name | Data Type | Field Length| Required | Description
------|-----------|--------|--------|------------
-contractData | JSON Array | NA|Yes|Information about the prime Contractor and the Subaward report(s). If the report is being submitted for multiple prime contracts, then this array will have multiple elements, one for each of the prime Contract
-contractData Details| | | | 
-contractData.contractNumber | string | 50 characters  | Yes |If this report is being submitted for a Contract, the contractNumber field should match the Award ID for your contract as reported in FPDS and idvReferenceNumber should be left blank
-contractData.reportingAgencyCode | string | 32 characters  | Yes | The ID of the Federal awarding agency as from FPDS-NG
-contractData.idvReferenceNumber | string | 50 characters |Yes, if the report is for a Task Order on a Contract |If this report is being submitted for a Task Order on a Contract, then enter the Task Order Number in contractNumber field and enter the contract number which matches the Reference IDV field in FPDS into the idvReferenceNumber field.
-contractData.referenceAgencyCode | string | 32 characters  | Yes, if the idvReferenceNumber is provided | The ID of the Federal awarding agency associated with the IDV Reference Number
-contractData.subawardReportNumber | string |32 characters  | No | Number assigned by the Prime Contractor to track the subaward. This is returned as a part of the response for the Create, Update calls for the Subaward report.
-contractData.reportStatus | string |32 characters  | No | The status of the report to be retrieved.
-
-<p><small><a href="#">Back to top</a></small></p>
-
-### Get Subaward Report Assistance JSON
-
-* Field headers in the table must match with field headers shown in JSON example  
-
-Name | Data Type | Field Length | Required | Description
------|-----------|----------------|------------|-------
-assistanceData | JSON Array  |   |Yes |Information about the prime Assistance and the Subaward report(s). If the report is being submitted for multiple prime assistance awards, then this array will have multiple elements, one for each of the prime Assistance.
-assistanceData Details| | | | 
-fain | string  |255 characters |Yes | This is the Federal Award Identifier Number (FAIN) for the prime Assistance award.
-assistanceData.subawardReportNumber | string |32 characters  | No | Number assigned by the Prime Assistance awardee to track the subaward. This is returned as a part of the response for the Create, Update calls for the Subaward report.
-assistanceData.reportStatus | string |32 characters  | No | The status of the report to be retrieved.
-
-<p><small><a href="#">Back to top</a></small></p>
-
 
 ## OpenAPI Specification File
 
