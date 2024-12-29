@@ -154,7 +154,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization | header |  string | Yes | Valid and authorized SAM.gov user email ID
 Content-Type | header |  string | Yes | application/json
 api_key | query | string | Yes | Valid System Account API Key
-Request JSON | Body | JSON | Yes | [Refer Submit Subcontract report Contract JSON](#submit-subaward-report-contract-json)
+Request JSON | Body | JSON | Yes | [Refer Submit Subcontract report Contract JSON](#submit-subcontract-report-contract-json)
 
 #### Responses
 
@@ -370,7 +370,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization | Header |  string | Yes | Valid and authorized SAM.gov user email ID
 Content-Type | header |  string | Yes | application/json
 api_key | query | string | Yes | Valid System Account API Key
-Request JSON | Body | JSON | Yes | [Refer Submit Subaward report Assistance JSON](#submit-subaward-report-grant-json)
+Request JSON | Body | JSON | Yes | [Refer Submit Subaward report Assistance JSON](#submit-subaward-report-assistance-json)
 
 #### Responses
 
@@ -1004,7 +1004,7 @@ The following section describes HTTP status codes and the response type.
 
 HTTP Status Code | Response Type | Description
 -----------------|---------------|------------
-200 Ok | string | Subcontract report(s) successfully retrieved [Refer  Contract JSON](#get-subaward-report-contract-json)
+200 Ok | string | Subcontract report(s) successfully retrieved [Refer Contract JSON](#submit-subcontract-report-contract-json)
 401 Unauthorized | string | Authentication failed or was not provided 
 403 Forbidden | string | Authenticated, but do not have appropriate permissions
 500 Internal Server Error | string | Unexpected error occurred during processing
@@ -1054,7 +1054,7 @@ The following section describes HTTP status codes and the response type.
 
 HTTP Status Code | Response Type | Description
 -----------------|---------------|------------
-200 Ok | string | Subaward report(s) successfully retrieved [Refer  Contract JSON](#get-subaward-report-grant-json)
+200 Ok | string | Subaward report(s) successfully retrieved [Refer  Contract JSON](#submit-subaward-report-assistance-json)
 401 Unauthorized | string | Authentication failed or was not provided 
 403 Forbidden | string | Authenticated, but do not have appropriate permissions
 500 Internal Server Error | string | Unexpected error occurred during processing
@@ -1136,7 +1136,7 @@ The following section describes HTTP status codes and the response type.
 
 HTTP Status Code | Response Type | Description
 -----------------|---------------|------------
-200 | string | Report was successfully retrieved [Refer  Contract JSON](#get-subaward-report-contract-json)
+200 | string | Report was successfully retrieved [Refer Contract JSON](#submit-subcontract-report-contract-json)
 401 Unauthorized | string | Authentication failed or was not provided 
 403 Forbidden | string | Authenticated, but do not have appropriate permissions
 500 Internal Server Error | string | Unexpected error occurred during processing
@@ -1213,7 +1213,7 @@ By default, the page is set as '0' (first page), and size is set as '10' (10 rec
 
 HTTP Status Code | Response Type | Description
 -----------------|---------------|------------
-200	|JSON|	Report was successfully retrieved [Refer Submit Subaward report Assistance JSON](#submit-subaward-report-grant-json)
+200	|JSON|	Report was successfully retrieved [Refer Submit Subaward report Assistance JSON](#submit-subaward-report-assistance-json)
 401 Unauthorized | string | Authentication failed or was not provided 
 403 Forbidden | string | Authenticated, but do not have appropriate permissions
 500 Internal Server Error | string | Unexpected error occurred during processing
