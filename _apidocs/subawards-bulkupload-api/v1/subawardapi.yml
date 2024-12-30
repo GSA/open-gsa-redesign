@@ -1,1 +1,1158 @@
-
+openapi: 3.0.1
+info:
+  title: SAM.gov Subawards Reporting API
+  description: Swagger documentation for API for reporting on Subawards
+  license:
+    name: GSA
+  version: 0.1.0
+servers:
+  - url: https://api-alpha.sam.gov/contract/v1/subcontracts
+  - url: https://api-alpha.sam.gov/assistance/v1/subawards
+tags:
+  - name: Contracts-Bulk-Upload
+    description: All endpoints for Subcontract Reporting
+  - name: Assistance-Bulk-Upload
+    description: All endpoints for Subaward Reporting
+paths:
+  /contract/v1/subcontracts/{subawardReportNumber}:
+    get:
+      tags:
+        - Contracts Bulk Upload
+      summary: Get existing Subcontract report(s)
+      description: Get existing Subcontract report(s)
+      operationId: getContractReportByReportNumberAndStatus
+      parameters:
+        - name: Authorization
+          in: header
+          required: true
+          schema:
+            type: string
+        - name: api_key
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: subawardReportNumber
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: status
+          in: query
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SubawardsAPIResponseDto'
+        '400':
+          description: Bad Request
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SubawardsAPIResponseDto'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SubawardsAPIResponseDto'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SubawardsAPIResponseDto'
+        '404':
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SubawardsAPIResponseDto'
+        '405':
+          description: Validation exception
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SubawardsAPIResponseDto'
+        '500':
+          description: Internal Server Error
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SubawardsAPIResponseDto'
+        '501':
+          description: Not Implemented
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SubawardsAPIResponseDto'
+    put:
+      tags:
+        - Contracts Bulk Upload
+      summary: Update Subcontract report
+      description: Update previously submitted Subcontract report
+      operationId: updateContractsReport
+      parameters:
+        - name: Authorization
+          in: header
+          required: true
+          schema:
+            type: string
+        - name: api_key
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: subawardReportNumber
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateContractRequestObjectDto'
+        required: true
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SubawardsAPIResponseDto'
+        '400':
+          description: Bad Request
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SubawardsAPIResponseDto'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SubawardsAPIResponseDto'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SubawardsAPIResponseDto'
+        '404':
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SubawardsAPIResponseDto'
+        '405':
+          description: Validation exception
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SubawardsAPIResponseDto'
+        '500':
+          description: Internal Server Error
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SubawardsAPIResponseDto'
+        '501':
+          description: Not Implemented
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SubawardsAPIResponseDto'
+    delete:
+      tags:
+        - Contracts Bulk Upload
+      summary: Delete Subcontract report
+      description: Delete Subcontract report
+      operationId: deleteContractReport
+      parameters:
+        - name: Authorization
+          in: header
+          required: true
+          schema:
+            type: string
+        - name: api_key
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: subawardReportNumber
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: status
+          in: query
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SubawardsAPIResponseDto'
+        '400':
+          description: Bad Request
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SubawardsAPIResponseDto'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SubawardsAPIResponseDto'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SubawardsAPIResponseDto'
+        '404':
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SubawardsAPIResponseDto'
+        '405':
+          description: Validation exception
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SubawardsAPIResponseDto'
+        '500':
+          description: Internal Server Error
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SubawardsAPIResponseDto'
+        '501':
+          description: Not Implemented
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SubawardsAPIResponseDto'
+  /assistance/v1/subawards/{subawardReportNumber}:
+    get:
+      tags:
+        - Assistance Bulk Upload
+      summary: Get existing Subaward report(s)
+      description: Get existing Subaward report(s)
+      operationId: getGrantReportByReportNumberAndStatus
+      parameters:
+        - name: Authorization
+          in: header
+          required: true
+          schema:
+            type: string
+        - name: api_key
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: subawardReportNumber
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: status
+          in: query
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SubawardsAPIResponseDto'
+        '400':
+          description: Bad Request
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SubawardsAPIResponseDto'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SubawardsAPIResponseDto'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SubawardsAPIResponseDto'
+        '404':
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SubawardsAPIResponseDto'
+        '405':
+          description: Validation exception
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SubawardsAPIResponseDto'
+        '500':
+          description: Internal Server Error
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SubawardsAPIResponseDto'
+        '501':
+          description: Not Implemented
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SubawardsAPIResponseDto'
+    put:
+      tags:
+        - Assistance Bulk Upload
+      summary: Update Subaward report
+      description: Update previously submitted Subaward report
+      operationId: updateGrantsReport
+      parameters:
+        - name: Authorization
+          in: header
+          required: true
+          schema:
+            type: string
+        - name: api_key
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: subawardReportNumber
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateGrantRequestObjectDto'
+        required: true
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SubawardsAPIResponseDto'
+        '400':
+          description: Bad Request
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SubawardsAPIResponseDto'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SubawardsAPIResponseDto'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SubawardsAPIResponseDto'
+        '404':
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SubawardsAPIResponseDto'
+        '405':
+          description: Validation exception
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SubawardsAPIResponseDto'
+        '500':
+          description: Internal Server Error
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SubawardsAPIResponseDto'
+        '501':
+          description: Not Implemented
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SubawardsAPIResponseDto'
+    delete:
+      tags:
+        - Assistance Bulk Upload
+      summary: Delete Subaward report
+      description: Delete Subaward report
+      operationId: deleteGrantReport
+      parameters:
+        - name: Authorization
+          in: header
+          required: true
+          schema:
+            type: string
+        - name: api_key
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: subawardReportNumber
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: status
+          in: query
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SubawardsAPIResponseDto'
+        '400':
+          description: Bad Request
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SubawardsAPIResponseDto'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SubawardsAPIResponseDto'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SubawardsAPIResponseDto'
+        '404':
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SubawardsAPIResponseDto'
+        '405':
+          description: Validation exception
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SubawardsAPIResponseDto'
+        '500':
+          description: Internal Server Error
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SubawardsAPIResponseDto'
+        '501':
+          description: Not Implemented
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SubawardsAPIResponseDto'
+  /contract/v1/subcontracts:
+    get:
+      tags:
+        - Contracts Bulk Upload
+      summary: Get existing Subcontract report(s)
+      description: Get existing Subcontract report(s)
+      operationId: getContractReport
+      parameters:
+        - name: Authorization
+          in: header
+          required: true
+          schema:
+            type: string
+        - name: api_key
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: contractNumber
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: reportingAgencyCode
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: idvReferenceNumber
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: referenceAgencyCode
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: subawardReportNumber
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: reportStatus
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: subawardNumber
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: page
+          in: query
+          required: false
+          schema:
+            type: integer
+            format: int32
+            default: 0
+        - name: size
+          in: query
+          required: false
+          schema:
+            type: integer
+            format: int32
+            default: 10
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad Request
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SubawardsAPIResponseDto'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                type: object
+        '404':
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SubawardsAPIResponseDto'
+        '405':
+          description: Validation exception
+          content:
+            application/json:
+              schema:
+                type: object
+        '500':
+          description: Internal Server Error
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SubawardsAPIResponseDto'
+        '501':
+          description: Not Implemented
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SubawardsAPIResponseDto'
+    post:
+      tags:
+        - Contracts Bulk Upload
+      summary: Submit Subcontract report
+      description: Submit one or multiple SubContract report for Contracts
+      operationId: saveContractsReport
+      parameters:
+        - name: Authorization
+          in: header
+          required: true
+          schema:
+            type: string
+        - name: api_key
+          in: query
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateContractRequestObjectDto'
+        required: true
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SubawardsAPIResponseDto'
+        '400':
+          description: Bad Request
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SubawardsAPIResponseDto'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SubawardsAPIResponseDto'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SubawardsAPIResponseDto'
+        '404':
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SubawardsAPIResponseDto'
+        '405':
+          description: Validation exception
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SubawardsAPIResponseDto'
+        '500':
+          description: Internal Server Error
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SubawardsAPIResponseDto'
+        '501':
+          description: Not Implemented
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SubawardsAPIResponseDto'
+  /assistance/v1/subawards:
+    get:
+      tags:
+        - Assistance Bulk Upload
+      summary: Get existing Subaward report(s)
+      description: Get existing Subaward report(s)
+      operationId: getGrantReport
+      parameters:
+        - name: Authorization
+          in: header
+          required: true
+          schema:
+            type: string
+        - name: api_key
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: FAIN
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: agencyCode
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: subawardReportNumber
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: reportStatus
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: subawardNumber
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: page
+          in: query
+          required: false
+          schema:
+            type: integer
+            format: int32
+            default: 0
+        - name: size
+          in: query
+          required: false
+          schema:
+            type: integer
+            format: int32
+            default: 10
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad Request
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SubawardsAPIResponseDto'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                type: object
+        '404':
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SubawardsAPIResponseDto'
+        '405':
+          description: Validation exception
+          content:
+            application/json:
+              schema:
+                type: object
+        '500':
+          description: Internal Server Error
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SubawardsAPIResponseDto'
+        '501':
+          description: Not Implemented
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SubawardsAPIResponseDto'
+    post:
+      tags:
+        - Assistance Bulk Upload
+      summary: Submit Subaward report
+      description: Submit one or multiple Subaward report for Assistance awards
+      operationId: saveGrantReport
+      parameters:
+        - name: Authorization
+          in: header
+          required: true
+          schema:
+            type: string
+        - name: api_key
+          in: query
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateGrantRequestObjectDto'
+        required: true
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SubawardsAPIResponseDto'
+        '400':
+          description: Bad Request
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SubawardsAPIResponseDto'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SubawardsAPIResponseDto'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SubawardsAPIResponseDto'
+        '404':
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SubawardsAPIResponseDto'
+        '405':
+          description: Validation exception
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SubawardsAPIResponseDto'
+        '500':
+          description: Internal Server Error
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SubawardsAPIResponseDto'
+        '501':
+          description: Not Implemented
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SubawardsAPIResponseDto'
+components:
+  schemas:
+    SubawardsAPIResponseDto:
+      type: object
+      properties:
+        id:
+          type: string
+        statusCode:
+          type: string
+        transactionId:
+          type: string
+        timeStamp:
+          type: string
+        subawardReportNumber:
+          type: string
+        reportStatus:
+          type: string
+        message:
+          type: object
+        errors:
+          uniqueItems: true
+          type: array
+          items:
+            type: string
+    Address:
+      type: object
+      properties:
+        street_address:
+          type: string
+        street_address2:
+          type: string
+        city:
+          type: string
+        country:
+          $ref: '#/components/schemas/Country'
+        stateOrProvince:
+          $ref: '#/components/schemas/StateOrProvince'
+        zipPlus4:
+          type: string
+        congressional_district:
+          type: string
+        zip:
+          type: string
+    Country:
+      type: object
+      properties:
+        code:
+          type: string
+        name:
+          type: string
+    RecoveryModelQuestions:
+      type: object
+      properties:
+        code:
+          type: string
+        isSelected:
+          type: string
+          enum:
+            - 'true'
+            - 'false'
+            - ''
+    StateOrProvince:
+      type: object
+      properties:
+        code:
+          type: string
+        name:
+          type: string
+    SubawardData:
+      type: object
+      properties:
+        subawardReportNumber:
+          type: string
+        submittedDate:
+          type: string
+        entityStatus:
+          type: string
+        subawardUEI:
+          type: string
+        subawardNumber:
+          type: string
+        subawardAmount:
+          type: string
+        subawardDate:
+          type: string
+        subawardDescription:
+          type: string
+        placeOfPerformance:
+          $ref: '#/components/schemas/Address'
+        recoveryModelQuestions:
+          type: array
+          items:
+            $ref: '#/components/schemas/RecoveryModelQuestions'
+        topPayEmployees:
+          type: array
+          items:
+            $ref: '#/components/schemas/TopPayEmployees'
+    TopPayEmployees:
+      type: object
+      properties:
+        full_name:
+          type: string
+        salary:
+          type: string
+    UpdateContractContractData:
+      type: object
+      properties:
+        contractNumber:
+          type: string
+        reportingAgencyCode:
+          type: string
+        idvReferenceNumber:
+          type: string
+        referenceAgencyCode:
+          type: string
+        programTitle:
+          type: string
+        reportStatus:
+          type: string
+        subawardData:
+          $ref: '#/components/schemas/SubawardData'
+    UpdateContractRequestObjectDto:
+      type: object
+      properties:
+        contractData:
+          $ref: '#/components/schemas/UpdateContractContractData'
+    UpdateGrantGrantData:
+      type: object
+      properties:
+        fain:
+          type: string
+        agencyCode:
+          type: string
+        reportStatus:
+          type: string
+        subawardData:
+          $ref: '#/components/schemas/SubawardData'
+    UpdateGrantRequestObjectDto:
+      type: object
+      properties:
+        assistanceData:
+          $ref: '#/components/schemas/UpdateGrantGrantData'
+    CreateContractContractData:
+      type: object
+      properties:
+        contractNumber:
+          type: string
+        reportingAgencyCode:
+          type: string
+        idvReferenceNumber:
+          type: string
+        referenceAgencyCode:
+          type: string
+        programTitle:
+          type: string
+        reportStatus:
+          type: string
+        subawardDataList:
+          type: array
+          items:
+            $ref: '#/components/schemas/SubawardData'
+    CreateContractRequestObjectDto:
+      type: object
+      properties:
+        contractData:
+          type: array
+          items:
+            $ref: '#/components/schemas/CreateContractContractData'
+    CreateGrantGrantData:
+      type: object
+      properties:
+        fain:
+          type: string
+        agencyCode:
+          type: string
+        reportStatus:
+          type: string
+        subawardDataList:
+          type: array
+          items:
+            $ref: '#/components/schemas/SubawardData'
+    CreateGrantRequestObjectDto:
+      type: object
+      properties:
+        assistanceData:
+          type: array
+          items:
+            $ref: '#/components/schemas/CreateGrantGrantData'
