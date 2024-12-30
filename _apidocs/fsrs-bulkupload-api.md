@@ -59,13 +59,13 @@ We limit call rates by day and account type.
 
 <p><small><a href="#">Back to top</a></small></p>
 
-### API Description
+## API Description
 
-#### Subcontract and Subaward Reports Executive Compensation Questions
+### Subcontract and Subaward Reports Executive Compensation Questions
 
 SAM.gov requires responses to subcontractor and subrecipient executive compensation questions to submit subcontract and subaward reports. If your subcontractor or subrecipient does not have responses to these questions on their SAM.gov entity record, you must provide responses in your request. The tables below outline the questions and corresponding codes for your requests.
 
-##### Subcontractor Questions
+#### Subcontractor Questions
 
 |                                   | Code              | Description                                   |
 | ----------------- | ----------------- | --------------------------------------------- |
@@ -73,7 +73,7 @@ SAM.gov requires responses to subcontractor and subrecipient executive compensat
 | Subcontractor Question 2| __2__	            | As provided to you by your subcontractor, in your subcontractor’s business or organization's preceding completed fiscal year, did its business or organization (the legal entity to which the Unique Entity ID it provided belongs) receive 80 percent or more of its annual gross revenues from Federal contracts (and subcontracts), loans, grants (and subgrants), cooperative agreements, and other forms of Federal financial assistance?|
 | Subcontractor Question 3| __3__	            | As provided to you by your subcontractor, does the public have access to information about the compensation of the executives in the subcontractor's business or organization (the legal entity to which the Unique Entity ID (SAM) it provided belongs) through periodic reports filed under section 13(a) or 15(d) of the Securities Exchange Act of 1934 (15 U.S.C. 78m(a), 78o(d)) or section 6104 of the Internal Revenue Code of 1986?|
 
-##### Subrecipient Questions
+#### Subrecipient Questions
 
 |                                   | Code              | Description                                   |
 | ----------------- | ----------------- | --------------------------------------------- |
@@ -83,7 +83,7 @@ SAM.gov requires responses to subcontractor and subrecipient executive compensat
 
 <p><small><a href="#">Back to top</a></small></p>
 
-#### Report Status
+### Report Status
 
 The table below lists subcontract and subaward report statuses.
 
@@ -2110,8 +2110,8 @@ You can view the full details of this API in the OpenAPI Specification file avai
 
 Error messages are returned as part of the web service call response. Errors are not specific to one method and may apply to more than one error.
 
-Error Code |	Error Message	| Description | Operation |
----------- | ------------- | ------------------ | --------- |
+|Error Code |	Error Message	| Description | Operation |
+|---------- | ------------- | ------------------ | --------- |
 |401	|	Provide valid authorization email.	|	Authorized email associated with your system account is required.	|	All |	
 |401	|	Provide a valid API Key.	|	Your valid  system account API key is required.	|	All |	
 |401	|This IP address is not associated with your system account. All requests must come from an IP address listed on your system account.	|	You entered an IP Address that was not included on your system account application.	|	All |	
