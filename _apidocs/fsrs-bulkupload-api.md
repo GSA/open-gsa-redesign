@@ -73,7 +73,7 @@ SAM.gov requires responses to subcontractor and subrecipient executive compensat
 | Subcontractor Question 2| __2__	            | As provided to you by your subcontractor, in your subcontractor’s business or organization's preceding completed fiscal year, did its business or organization (the legal entity to which the Unique Entity ID it provided belongs) receive 80 percent or more of its annual gross revenues from Federal contracts (and subcontracts), loans, grants (and subgrants), cooperative agreements, and other forms of Federal financial assistance?|
 | Subcontractor Question 3| __3__	            | As provided to you by your subcontractor, does the public have access to information about the compensation of the executives in the subcontractor's business or organization (the legal entity to which the Unique Entity ID (SAM) it provided belongs) through periodic reports filed under section 13(a) or 15(d) of the Securities Exchange Act of 1934 (15 U.S.C. 78m(a), 78o(d)) or section 6104 of the Internal Revenue Code of 1986?|
 
-#### Subrecipient Questions
+##### Subrecipient Questions
 
 |                                   | Code              | Description                                   |
 | ----------------- | ----------------- | --------------------------------------------- |
@@ -579,7 +579,7 @@ Authorization | header |  string | Yes | Valid and authorized SAM.gov user email
 Content-Type | header |  string | Yes | application/json
 api_key | query | string | Yes | Valid System Account API Key
 subawardReportNumber | path | string | Yes | Unique identifier for the subcontract report.
-Request JSON | Body | JSON | Yes | [Refer Update Subaward report Contract JSON](#update-subaward-report-contract-json)
+Request JSON | Body | JSON | Yes | [Refer Update Subcontract report Contract JSON](#update-subcontract-report-contract-json)
 
 #### Responses
 
@@ -1241,7 +1241,7 @@ reportStatus | string | Status of the subcontract or subaward report.
 message | string | Message indicating status of the operation. Also includes any informative warning messages.
 errors | JSON Array | If there are validation errors, they are sent back as a part of this errors array.
 
-#### Subcontract report warning Messages
+#### Subcontract report Warnings
 The API sends descriptive messages in the **message** element on create(POST) and update(PUT) requests for subcontract reports in the following scenarios:
 * When the sum of all subcontract amounts for the contract is greater than the Total Contract Value.
 * When the subcontract amount is greater than the Total Contract Value.
@@ -1251,7 +1251,7 @@ The API sends descriptive messages in the **message** element on create(POST) an
 * When there are existing subcontract reports for the same Contract Number and the same subcontractor with the same Subcontract ID and Subcontract Date submitted today.
 * When there are existing subcontract reports for the same Contract Number and the same subcontractor with the same Subcontract id, Subcontract Date and Subcontract Amount submitted today.
 
-#### Subaward report warning Messages
+#### Subaward report Warnings
 The API sends descriptive messages in the **message** element on create(POST) and update(PUT) requests for subaward reports in the following scenarios:
 * When the sum of all subaward amounts for the assistance is greater than the Total Award Value.
 * When the subaward amount is greater than the Total Award Value.
@@ -1963,7 +1963,7 @@ subawardDataList.subawardNumber | string |32 characters  | Yes | A number assign
 subawardDataList.subawardAmount |string  |32 characters | Yes | Subcontract amount for this award to this subcontractor. 
 subawardDataList.subawardDate |string |TIMESTAMP | Yes| The date subcontract was made in YYYY-MM-DD format.
 subawardDataList.subawardDescription |string  || Yes | Describes the subcontract requirements and is pulled from FPDS.gov.
-**contractData.subawardDataList.placeOfPerformance Details** | | | |  
+**contractData.subawardDataList. placeOfPerformance Details** | | | |  
 placeOfPerformance | JSON Object |NA |Yes | Subcontractor’s principal place of performance.
 placeOfPerformance.city | string || Yes |Subcontractor’s place of performance city name.
 placeOfPerformance.stateOrProvince | JSON Object |NA |Yes|Subcontractor’s place of performance state information. Specify the State Code and name.
@@ -1973,11 +1973,11 @@ placeOfPerformance.country | JSON Object | NA |Yes|Subcontractor’s place of pe
 placeOfPerformance.country.code | string || |Subcontractor’s place of performance country code.
 placeOfPerformance.country.name | string ||  |Subcontractor’s place of performance country name.
 placeOfPerformance.zipPlus4 | string ||Yes|Subcontractor’s place of performance ZIP Code +4.
-**contractData.subawardDataList.recoveryModelQuestions Details** | | | |  
+**contractData.subawardDataList. recoveryModelQuestions Details** | | | |  
 recoveryModelQuestions |JSON Array|NA |Yes, if the SAM registration for the entity does not already have this information for the Subcontractor. | Subcontractor’s executive compensation questions. There are three questions and three elements in this array.
 recoveryModelQuestions.code |string||Yes, if compensation question responses are being provided. | Code for the compensation question. Refer to the Subcontract and Subaward Reports Executive Compensation Questions section for details.
 recoveryModelQuestions.isSelected |string  || Yes, if compensation question responses are being provided. | A Boolean value representing the response to the compensation question.
-**contractData.subawardDataList.topPayEmployees Details** | | | |  
+**contractData.subawardDataList. topPayEmployees Details** | | | |  
 topPayEmployees|JSON Array|NA |Conditional - see Description. If required, the array requires 5 elements| This is the compensation information for the top five employees. The array has five elements for the five top-paid employees. This is required if the response to compensation question one is true, compensaion question two is true and compensation question three is false. If responses to the compensation questions are provided on the subcontractor’s SAM.gov entity registration, then this information is not required.
 topPayEmployees.fullName |string  ||Yes if subawardDataList.topPayEmployees is required| The full name of the top-paid employees.
 topPayEmployees.salary | string  ||Yes if subawardDataList.topPayEmployees is required|The total compensation of the top-paid employees.
@@ -2000,7 +2000,7 @@ subawardDataList.uei |string | 13 characters | Yes | Subrecipient’s Unique Ent
 subawardDataList.subawardAmount |string  | 20 characters| Yes | The subaward amount for this award.
 subawardDataList.subawardDate|string ||Yes |The date the subaward was made in YYYY-MM-DD format. 
 subawardDataList.subawardDescription |string  |   | Yes |
-**assistanceData.subawardDataList.placeOfPerformance Details** | | | |  
+**assistanceData.subawardDataList. placeOfPerformance Details** | | | |  
 placeOfPerformance | JSON Object ||Yes | Subrecipient’s principal place of performance
 placeOfPerformance.city | string || Yes |Subrecipient’s place of performance city name
 placeOfPerformance.stateOrProvince | JSON Object ||Yes|Subrecipient’s place of performance state information. Specify the state code and name.
@@ -2010,12 +2010,12 @@ placeOfPerformance.country | JSON Object ||Yes|Subrecipient’s place of perform
 placeOfPerformance.country.code | string || |Subrecipient’s place of performance country code
 placeOfPerformance.country.name | string ||  |Subrecipient’s place of performance country name
 placeOfPerformance.zipPlus4 | string ||Yes|Subrecipient’s place of performance  ZIP Code +4.
-**assistanceData.subawardDataList.recoveryModelQuestions Details** | | | |  
+**assistanceData.subawardDataList. recoveryModelQuestions Details** | | | |  
 recoveryModelQuestions |JSON Array|NA |Yes, if Compensation question responses are being provided. | Subrecipient’s executive compensation questions. There are two questions and two elements in this array.
 recoveryModelQuestions.code |string||Yes, if Compensation question responses are being provided. | Code for the compensation question. The code is 1 for the first question, 2 for the second question and 3 for the third question. Refer to the Subcontract and Subaward Reports Executive Compensation Questions section for details.
 recoveryModelQuestions.isSelected |string  || Yes, if Compensation question responses are being provided. | A Boolean value representing the response to the compensation question.
 subawardDataList.topPayEmployees|JSON Array|NA |Conditional - see Description. If required, the array requires 5 elements| This is the compensation information for the top five employees. The array has five elements for the five top-paid employees. This is required if the response to compensation question one is true and compensation question two is false. If responses to the compensation questions are provided on the subrecipient’s SAM.gov entity registration, then this information is not required.
-**assistanceData.subawardDataList.topPayEmployees Details** | | | |  
+**assistanceData.subawardDataList. topPayEmployees Details** | | | |  
 topPayEmployees.fullName |string  ||Yes if subawardDataList.topPayEmployees is required| The full name of the top-paid employees.
 topPayEmployees.salary | string  ||Yes if subawardDataList.topPayEmployees is required|The total compensation of the top-paid employees.
 
@@ -2041,7 +2041,7 @@ subawardData.subawardNumber | string |32 characters  | Yes | A number assigned b
 subawardData.subawardAmount |string  |32 characters | Yes | Subcontract amount for this award to this subcontractor. 
 subawardData.subawardDate |string |TIMESTAMP | Yes| The date subcontract was made in YYYY-MM-DD format.
 subawardData.subawardDescription |string  || Yes | Describes the subcontract requirements and is pulled from FPDS.gov.
-**contractData.subawardData.placeOfPerformance Details** | | | |  
+**contractData.subawardData. placeOfPerformance Details** | | | |  
 placeOfPerformance | JSON Object |NA |Yes | Subcontractor’s principal place of performance.
 placeOfPerformance.city | string || Yes |Subcontractor’s place of performance city name.
 placeOfPerformance.stateOrProvince | JSON Object |NA |Yes|Subcontractor’s place of performance state information. Specify the State Code and name.
@@ -2051,11 +2051,11 @@ placeOfPerformance.country | JSON Object | NA |Yes|Subcontractor’s place of pe
 placeOfPerformance.country.code | string || |Subcontractor’s place of performance country code.
 placeOfPerformance.country.name | string ||  |Subcontractor’s place of performance country name.
 placeOfPerformance.zipPlus4 | string ||Yes|Subcontractor’s place of performance ZIP Code +4.
-**contractData.subawardData.recoveryModelQuestions Details** | | | |  
+**contractData.subawardData. recoveryModelQuestions Details** | | | |  
 recoveryModelQuestions |JSON Array|NA |Yes, if the SAM registration for the entity does not already have this information for the Subcontractor. | Subcontractor’s executive compensation questions. There are three questions and three elements in this array.
 recoveryModelQuestions.code |string||Yes, if compensation question responses are being provided. | Code for the compensation question. Refer to the Subcontract and Subaward Reports Executive Compensation Questions section for details.
 recoveryModelQuestions.isSelected |string  || Yes, if compensation question responses are being provided. | A Boolean value representing the response to the compensation question.
-**contractData.subawardData.topPayEmployees Details** | | | |  
+**contractData.subawardData. topPayEmployees Details** | | | |  
 topPayEmployees|JSON Array|NA |Conditional - see Description. If required, the array requires 5 elements| This is the compensation information for the top five employees. The array has five elements for the five top-paid employees. This is required if the response to compensation question one is true, compensaion question two is true and compensation question three is false. If responses to the compensation questions are provided on the subcontractor’s SAM.gov entity registration, then this information is not required.
 topPayEmployees.fullName |string  ||Yes if subawardDataList.topPayEmployees is required| The full name of the top-paid employees.
 topPayEmployees.salary | string  ||Yes if subawardDataList.topPayEmployees is required|The total compensation of the top-paid employees.
@@ -2078,7 +2078,7 @@ subawardData.uei |string | 13 characters | Yes | Subrecipient’s Unique Entity 
 subawardData.subawardAmount |string  | 20 characters| Yes | The subaward amount for this award.
 subawardData.subawardDate|string ||Yes |The date the subaward was made in YYYY-MM-DD format. 
 subawardData.subawardDescription |string  |   | Yes |
-**assistanceData.subawardData.placeOfPerformance Details** | | | |  
+**assistanceData.subawardData. placeOfPerformance Details** | | | |  
 placeOfPerformance | JSON Object ||Yes | Subrecipient’s principal place of performance
 placeOfPerformance.city | string || Yes |Subrecipient’s place of performance city name
 placeOfPerformance.stateOrProvince | JSON Object ||Yes|Subrecipient’s place of performance state information. Specify the state code and name.
@@ -2088,12 +2088,12 @@ placeOfPerformance.country | JSON Object ||Yes|Subrecipient’s place of perform
 placeOfPerformance.country.code | string || |Subrecipient’s place of performance country code
 placeOfPerformance.country.name | string ||  |Subrecipient’s place of performance country name
 placeOfPerformance.zipPlus4 | string ||Yes|Subrecipient’s place of performance  ZIP Code +4.
-**assistanceData.subawardData.recoveryModelQuestions Details** | | | |  
+**assistanceData.subawardData. recoveryModelQuestions Details** | | | |  
 recoveryModelQuestions |JSON Array|NA |Yes, if Compensation question responses are being provided. | Subrecipient’s executive compensation questions. There are two questions and two elements in this array.
 recoveryModelQuestions.code |string||Yes, if Compensation question responses are being provided. | Code for the compensation question. The code is 1 for the first question, 2 for the second question and 3 for the third question. Refer to the Subcontract and Subaward Reports Executive Compensation Questions section for details.
 recoveryModelQuestions.isSelected |string  || Yes, if Compensation question responses are being provided. | A Boolean value representing the response to the compensation question.
 subawardDataList.topPayEmployees|JSON Array|NA |Conditional - see Description. If required, the array requires 5 elements| This is the compensation information for the top five employees. The array has five elements for the five top-paid employees. This is required if the response to compensation question one is true and compensation question two is false. If responses to the compensation questions are provided on the subrecipient’s SAM.gov entity registration, then this information is not required.
-**assistanceData.subawardData.topPayEmployees Details** | | | |  
+**assistanceData.subawardData. topPayEmployees Details** | | | |  
 topPayEmployees.fullName |string  ||Yes if subawardDataList.topPayEmployees is required| The full name of the top-paid employees.
 topPayEmployees.salary | string  ||Yes if subawardDataList.topPayEmployees is required|The total compensation of the top-paid employees.
 
