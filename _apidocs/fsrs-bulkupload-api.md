@@ -578,7 +578,8 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization | header |  string | Yes | Valid and authorized SAM.gov user email ID
 Content-Type | header |  string | Yes | application/json
 api_key | query | string | Yes | Valid System Account API Key
-subawardReportNumber | path | string | Yes | Unique identifier for the subcontract report. 
+subawardReportNumber | path | string | Yes | Unique identifier for the subcontract report.
+Request JSON | Body | JSON | Yes | [Refer Update Subaward report Contract JSON](#update-subaward-report-contract-json)
 
 #### Responses
 
@@ -729,6 +730,7 @@ Authorization | Header |  string | Yes | Valid and authorized SAM.gov user email
 Content-Type | header |  string | Yes | application/json
 api_key | query | string | Yes | Valid System Account API Key
 subawardReportNumber | path | string | Yes | Unique identifier for the subaward report.
+Request JSON | Body | JSON | Yes | [Refer Update Subaward report Assistance JSON](#update-subaward-report-assistance-json)
 
 #### Responses
 
@@ -1948,34 +1950,37 @@ The API sends descriptive messages in the **message** element on create(POST) an
 Name | Data Type |Field Length | Required |Description 
 -----|-----------|-------|------------|------------
 contractData | JSON Array | NA|Yes|Information about the prime contractor and the subcontract report(s). If the report is submitted for multiple prime contracts, then this array has multiple elements, one for each of the prime contract.
-contractData Details| | | | 
+**contractData Details**| | | | 
 contractData.contractNumber | string | 50 characters  | Yes |If this report is submitted for a contract, the contractNumber field should match the Contract ID for your contract as reported in FPDS.gov. The idvReferenceNumber should be left blank
 contractData.reportingAgencyCode | string | 32 characters  | Yes | The ID of the federal awarding agency as from FPDS.gov.
 contractData.idvReferenceNumber | string | 50 characters |Yes, if the report is for a Task order on a contract | If this report is submitted for a task order on a contract, enter the task order number in contractNumber field. Enter the contract number that matches the Referenced IDV field in FPDS.gov into the idvReferenceNumber field.
 contractData.referenceAgencyCode | string | 32 characters  | Yes, if the idvReferenceNumber is provided | The ID of the federal awarding agency associated with the IDV Referenced Number.
 contractData.programTitle | string || No | The program or project title. 
 contractData.subawardDataList |string  ||Yes  |Information about the subcontractor. If the report is submitted for multiple subcontractors, then this array will have multiple elements, one for each subcontractor.
-contractData.subawardDataList Details | | | |  
+**contractData.subawardDataList Details** | | | |  
 subawardDataList.subawardUEI | string | 13 characters | Yes | Subcontractor’s Unique Entity ID.
 subawardDataList.subawardNumber | string |32 characters  | Yes | A number assigned by the prime contractor to track this subcontract report.
 subawardDataList.subawardAmount |string  |32 characters | Yes | Subcontract amount for this award to this subcontractor. 
 subawardDataList.subawardDate |string |TIMESTAMP | Yes| The date subcontract was made in YYYY-MM-DD format.
 subawardDataList.subawardDescription |string  || Yes | Describes the subcontract requirements and is pulled from FPDS.gov.
-subawardDataList.placeOfPerformance | JSON Object |NA |Yes | Subcontractor’s principal place of performance.
-subawardDataList.placeOfPerformance.city | string || Yes |Subcontractor’s place of performance city name.
-subawardDataList.placeOfPerformance.stateOrProvince | JSON Object |NA |Yes|Subcontractor’s place of performance state information. Specify the State Code and name.
-subawardDataList.placeOfPerformance.stateOrProvince.code | string |||Subcontractor’s place of performance state code.
-subawardDataList.placeOfPerformance.stateOrProvince.name | string ||  |Subcontractor’s place of performance state name.
-subawardDataList.placeOfPerformance.country | JSON Object | NA |Yes|Subcontractor’s place of performance country Information. Specify the country code and name.
-subawardDataList.placeOfPerformance.country.code | string || |Subcontractor’s place of performance country code.
-subawardDataList.placeOfPerformance.country.name | string ||  |Subcontractor’s place of performance country name.
-subawardDataList.placeOfPerformance.zipPlus4 | string ||Yes|Subcontractor’s place of performance ZIP Code +4.
-subawardDataList.recoveryModelQuestions |JSON Array|NA |Yes, if the SAM registration for the entity does not already have this information for the Subcontractor. | Subcontractor’s executive compensation questions. There are three questions and three elements in this array.
-subawardDataList.recoveryModelQuestions.code |string||Yes, if compensation question responses are being provided. | Code for the compensation question. Refer to the Subcontract and Subaward Reports Executive Compensation Questions section for details.
-subawardDataList.recoveryModelQuestions.isSelected |string  || Yes, if compensation question responses are being provided. | A Boolean value representing the response to the compensation question.
-subawardDataList.topPayEmployees|JSON Array|NA |Conditional - see Description. If required, the array requires 5 elements| This is the compensation information for the top five employees. The array has five elements for the five top-paid employees. This is required if the response to compensation question one is true, compensaion question two is true and compensation question three is false. If responses to the compensation questions are provided on the subcontractor’s SAM.gov entity registration, then this information is not required.
-subawardDataList.topPayEmployees.fullName |string  ||Yes if subawardDataList.topPayEmployees is required| The full name of the top-paid employees.
-subawardDataList.topPayEmployees.salary | string  ||Yes if subawardDataList.topPayEmployees is required|The total compensation of the top-paid employees.
+**contractData.subawardDataList.placeOfPerformance Details** | | | |  
+placeOfPerformance | JSON Object |NA |Yes | Subcontractor’s principal place of performance.
+placeOfPerformance.city | string || Yes |Subcontractor’s place of performance city name.
+placeOfPerformance.stateOrProvince | JSON Object |NA |Yes|Subcontractor’s place of performance state information. Specify the State Code and name.
+placeOfPerformance.stateOrProvince.code | string |||Subcontractor’s place of performance state code.
+placeOfPerformance.stateOrProvince.name | string ||  |Subcontractor’s place of performance state name.
+placeOfPerformance.country | JSON Object | NA |Yes|Subcontractor’s place of performance country Information. Specify the country code and name.
+placeOfPerformance.country.code | string || |Subcontractor’s place of performance country code.
+placeOfPerformance.country.name | string ||  |Subcontractor’s place of performance country name.
+placeOfPerformance.zipPlus4 | string ||Yes|Subcontractor’s place of performance ZIP Code +4.
+**contractData.subawardDataList.recoveryModelQuestions Details** | | | |  
+recoveryModelQuestions |JSON Array|NA |Yes, if the SAM registration for the entity does not already have this information for the Subcontractor. | Subcontractor’s executive compensation questions. There are three questions and three elements in this array.
+recoveryModelQuestions.code |string||Yes, if compensation question responses are being provided. | Code for the compensation question. Refer to the Subcontract and Subaward Reports Executive Compensation Questions section for details.
+recoveryModelQuestions.isSelected |string  || Yes, if compensation question responses are being provided. | A Boolean value representing the response to the compensation question.
+**contractData.subawardDataList.topPayEmployees Details** | | | |  
+topPayEmployees|JSON Array|NA |Conditional - see Description. If required, the array requires 5 elements| This is the compensation information for the top five employees. The array has five elements for the five top-paid employees. This is required if the response to compensation question one is true, compensaion question two is true and compensation question three is false. If responses to the compensation questions are provided on the subcontractor’s SAM.gov entity registration, then this information is not required.
+topPayEmployees.fullName |string  ||Yes if subawardDataList.topPayEmployees is required| The full name of the top-paid employees.
+topPayEmployees.salary | string  ||Yes if subawardDataList.topPayEmployees is required|The total compensation of the top-paid employees.
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -1986,30 +1991,111 @@ subawardDataList.topPayEmployees.salary | string  ||Yes if subawardDataList.topP
 Name | Data Type | Field Length | Required | Description
 -----|-----------|---------|----------|------------
 assistanceData | JSON Array | NA| Yes | Information about the prime assistance awardee. If the report is submitted for multiple prime assistance awards, then this array has multiple elements, one for each of the prime assistance awards.
-assistanceData Details||||
-assistanceData.fain | string |  255 characters | Yes | The Award ID (FAIN) for the prime assistance award. 
-assistanceData.subawardDataList |string  ||Yes  |Information about the subrecipients. If the report is submitted for multiple subawards, then this array has multiple elements, one for each of the subawards.
-assistanceData.subawardDataList Details | || | 
+**assistanceData Details**||||
+fain | string |  255 characters | Yes | The Award ID (FAIN) for the prime assistance award. 
+subawardDataList |string  ||Yes  |Information about the subrecipients. If the report is submitted for multiple subawards, then this array has multiple elements, one for each of the subawards.
+**assistanceData.subawardDataList Details** | || | 
 subawardDataList.subawardNumber | string  | 32 characters |Yes  | Number assigned by the Prime to track this subaward.
 subawardDataList.uei |string | 13 characters | Yes | Subrecipient’s Unique Entity ID
 subawardDataList.subawardAmount |string  | 20 characters| Yes | The subaward amount for this award.
 subawardDataList.subawardDate|string ||Yes |The date the subaward was made in YYYY-MM-DD format. 
 subawardDataList.subawardDescription |string  |   | Yes |
-subawardDataList.placeOfPerformance | JSON Object ||Yes | Subrecipient’s principal place of performance
-subawardDataList.placeOfPerformance.city | string || Yes |Subrecipient’s place of performance city name
-subawardDataList.placeOfPerformance.stateOrProvince | JSON Object ||Yes|Subrecipient’s place of performance state information. Specify the state code and name.
-subawardDataList.placeOfPerformance.stateOrProvince.code | string |||Subrecipient’s place of performance state code
-subawardDataList.placeOfPerformance.stateOrProvince.name | string ||  |Subrecipient’s place of performance state name.
-subawardDataList.placeOfPerformance.country | JSON Object ||Yes|Subrecipient’s place of performance country information. Specify the country code and name.
-subawardDataList.placeOfPerformance.country.code | string || |Subrecipient’s place of performance country code
-subawardDataList.placeOfPerformance.country.name | string ||  |Subrecipient’s place of performance country name
-subawardDataList.placeOfPerformance.zipPlus4 | string ||Yes|Subrecipient’s place of performance  ZIP Code +4.
-subawardDataList.recoveryModelQuestions |JSON Array|NA |Yes, if Compensation question responses are being provided. | Subrecipient’s executive compensation questions. There are two questions and two elements in this array.
-subawardDataList.recoveryModelQuestions.code |string||Yes, if Compensation question responses are being provided. | Code for the compensation question. The code is 1 for the first question, 2 for the second question and 3 for the third question. Refer to the Subcontract and Subaward Reports Executive Compensation Questions section for details.
-subawardDataList.recoveryModelQuestions.isSelected |string  || Yes, if Compensation question responses are being provided. | A Boolean value representing the response to the compensation question.
+**assistanceData.subawardDataList.placeOfPerformance Details** | | | |  
+placeOfPerformance | JSON Object ||Yes | Subrecipient’s principal place of performance
+placeOfPerformance.city | string || Yes |Subrecipient’s place of performance city name
+placeOfPerformance.stateOrProvince | JSON Object ||Yes|Subrecipient’s place of performance state information. Specify the state code and name.
+placeOfPerformance.stateOrProvince.code | string |||Subrecipient’s place of performance state code
+placeOfPerformance.stateOrProvince.name | string ||  |Subrecipient’s place of performance state name.
+placeOfPerformance.country | JSON Object ||Yes|Subrecipient’s place of performance country information. Specify the country code and name.
+placeOfPerformance.country.code | string || |Subrecipient’s place of performance country code
+placeOfPerformance.country.name | string ||  |Subrecipient’s place of performance country name
+placeOfPerformance.zipPlus4 | string ||Yes|Subrecipient’s place of performance  ZIP Code +4.
+**assistanceData.subawardDataList.recoveryModelQuestions Details** | | | |  
+recoveryModelQuestions |JSON Array|NA |Yes, if Compensation question responses are being provided. | Subrecipient’s executive compensation questions. There are two questions and two elements in this array.
+recoveryModelQuestions.code |string||Yes, if Compensation question responses are being provided. | Code for the compensation question. The code is 1 for the first question, 2 for the second question and 3 for the third question. Refer to the Subcontract and Subaward Reports Executive Compensation Questions section for details.
+recoveryModelQuestions.isSelected |string  || Yes, if Compensation question responses are being provided. | A Boolean value representing the response to the compensation question.
 subawardDataList.topPayEmployees|JSON Array|NA |Conditional - see Description. If required, the array requires 5 elements| This is the compensation information for the top five employees. The array has five elements for the five top-paid employees. This is required if the response to compensation question one is true and compensation question two is false. If responses to the compensation questions are provided on the subrecipient’s SAM.gov entity registration, then this information is not required.
-subawardDataList.topPayEmployees.fullName |string  ||Yes if subawardDataList.topPayEmployees is required| The full name of the top-paid employees.
-subawardDataList.topPayEmployees.salary | string  ||Yes if subawardDataList.topPayEmployees is required|The total compensation of the top-paid employees.
+**assistanceData.subawardDataList.topPayEmployees Details** | | | |  
+topPayEmployees.fullName |string  ||Yes if subawardDataList.topPayEmployees is required| The full name of the top-paid employees.
+topPayEmployees.salary | string  ||Yes if subawardDataList.topPayEmployees is required|The total compensation of the top-paid employees.
+
+<p><small><a href="#">Back to top</a></small></p>
+
+### Update Subcontract Report Contract JSON
+
+* Field headers in the table must match with the field headers shown in the JSON example.  
+
+Name | Data Type |Field Length | Required |Description 
+-----|-----------|-------|------------|------------
+contractData | JSON Array | NA|Yes|Information about the prime contractor and the subcontract report(s). If the report is submitted for multiple prime contracts, then this array has multiple elements, one for each of the prime contract.
+**contractData Details**| | | | 
+contractData.contractNumber | string | 50 characters  | Yes |If this report is submitted for a contract, the contractNumber field should match the Contract ID for your contract as reported in FPDS.gov. The idvReferenceNumber should be left blank
+contractData.reportingAgencyCode | string | 32 characters  | Yes | The ID of the federal awarding agency as from FPDS.gov.
+contractData.idvReferenceNumber | string | 50 characters |Yes, if the report is for a Task order on a contract | If this report is submitted for a task order on a contract, enter the task order number in contractNumber field. Enter the contract number that matches the Referenced IDV field in FPDS.gov into the idvReferenceNumber field.
+contractData.referenceAgencyCode | string | 32 characters  | Yes, if the idvReferenceNumber is provided | The ID of the federal awarding agency associated with the IDV Referenced Number.
+contractData.programTitle | string || No | The program or project title. 
+contractData.subawardDataList |string  ||Yes  |Information about the subcontractor. If the report is submitted for multiple subcontractors, then this array will have multiple elements, one for each subcontractor.
+**contractData.subawardData Details** | | | |  
+subawardData.subawardUEI | string | 13 characters | Yes | Subcontractor’s Unique Entity ID.
+subawardData.subawardNumber | string |32 characters  | Yes | A number assigned by the prime contractor to track this subcontract report.
+subawardData.subawardAmount |string  |32 characters | Yes | Subcontract amount for this award to this subcontractor. 
+subawardData.subawardDate |string |TIMESTAMP | Yes| The date subcontract was made in YYYY-MM-DD format.
+subawardData.subawardDescription |string  || Yes | Describes the subcontract requirements and is pulled from FPDS.gov.
+**contractData.subawardData.placeOfPerformance Details** | | | |  
+placeOfPerformance | JSON Object |NA |Yes | Subcontractor’s principal place of performance.
+placeOfPerformance.city | string || Yes |Subcontractor’s place of performance city name.
+placeOfPerformance.stateOrProvince | JSON Object |NA |Yes|Subcontractor’s place of performance state information. Specify the State Code and name.
+placeOfPerformance.stateOrProvince.code | string |||Subcontractor’s place of performance state code.
+placeOfPerformance.stateOrProvince.name | string ||  |Subcontractor’s place of performance state name.
+placeOfPerformance.country | JSON Object | NA |Yes|Subcontractor’s place of performance country Information. Specify the country code and name.
+placeOfPerformance.country.code | string || |Subcontractor’s place of performance country code.
+placeOfPerformance.country.name | string ||  |Subcontractor’s place of performance country name.
+placeOfPerformance.zipPlus4 | string ||Yes|Subcontractor’s place of performance ZIP Code +4.
+**contractData.subawardData.recoveryModelQuestions Details** | | | |  
+recoveryModelQuestions |JSON Array|NA |Yes, if the SAM registration for the entity does not already have this information for the Subcontractor. | Subcontractor’s executive compensation questions. There are three questions and three elements in this array.
+recoveryModelQuestions.code |string||Yes, if compensation question responses are being provided. | Code for the compensation question. Refer to the Subcontract and Subaward Reports Executive Compensation Questions section for details.
+recoveryModelQuestions.isSelected |string  || Yes, if compensation question responses are being provided. | A Boolean value representing the response to the compensation question.
+**contractData.subawardData.topPayEmployees Details** | | | |  
+topPayEmployees|JSON Array|NA |Conditional - see Description. If required, the array requires 5 elements| This is the compensation information for the top five employees. The array has five elements for the five top-paid employees. This is required if the response to compensation question one is true, compensaion question two is true and compensation question three is false. If responses to the compensation questions are provided on the subcontractor’s SAM.gov entity registration, then this information is not required.
+topPayEmployees.fullName |string  ||Yes if subawardDataList.topPayEmployees is required| The full name of the top-paid employees.
+topPayEmployees.salary | string  ||Yes if subawardDataList.topPayEmployees is required|The total compensation of the top-paid employees.
+
+<p><small><a href="#">Back to top</a></small></p>
+
+### Update Subaward report Assistance JSON
+
+* Field headers in the table must match the field headers shown in the JSON example. 
+
+Name | Data Type | Field Length | Required | Description
+-----|-----------|---------|----------|------------
+assistanceData | JSON Array | NA| Yes | Information about the prime assistance awardee. If the report is submitted for multiple prime assistance awards, then this array has multiple elements, one for each of the prime assistance awards.
+**assistanceData Details**||||
+fain | string |  255 characters | Yes | The Award ID (FAIN) for the prime assistance award. 
+subawardDataList |string  ||Yes  |Information about the subrecipients. If the report is submitted for multiple subawards, then this array has multiple elements, one for each of the subawards.
+**assistanceData.subawardData Details** | || | 
+subawardData.subawardNumber | string  | 32 characters |Yes  | Number assigned by the Prime to track this subaward.
+subawardData.uei |string | 13 characters | Yes | Subrecipient’s Unique Entity ID
+subawardData.subawardAmount |string  | 20 characters| Yes | The subaward amount for this award.
+subawardData.subawardDate|string ||Yes |The date the subaward was made in YYYY-MM-DD format. 
+subawardData.subawardDescription |string  |   | Yes |
+**assistanceData.subawardData.placeOfPerformance Details** | | | |  
+placeOfPerformance | JSON Object ||Yes | Subrecipient’s principal place of performance
+placeOfPerformance.city | string || Yes |Subrecipient’s place of performance city name
+placeOfPerformance.stateOrProvince | JSON Object ||Yes|Subrecipient’s place of performance state information. Specify the state code and name.
+placeOfPerformance.stateOrProvince.code | string |||Subrecipient’s place of performance state code
+placeOfPerformance.stateOrProvince.name | string ||  |Subrecipient’s place of performance state name.
+placeOfPerformance.country | JSON Object ||Yes|Subrecipient’s place of performance country information. Specify the country code and name.
+placeOfPerformance.country.code | string || |Subrecipient’s place of performance country code
+placeOfPerformance.country.name | string ||  |Subrecipient’s place of performance country name
+placeOfPerformance.zipPlus4 | string ||Yes|Subrecipient’s place of performance  ZIP Code +4.
+**assistanceData.subawardData.recoveryModelQuestions Details** | | | |  
+recoveryModelQuestions |JSON Array|NA |Yes, if Compensation question responses are being provided. | Subrecipient’s executive compensation questions. There are two questions and two elements in this array.
+recoveryModelQuestions.code |string||Yes, if Compensation question responses are being provided. | Code for the compensation question. The code is 1 for the first question, 2 for the second question and 3 for the third question. Refer to the Subcontract and Subaward Reports Executive Compensation Questions section for details.
+recoveryModelQuestions.isSelected |string  || Yes, if Compensation question responses are being provided. | A Boolean value representing the response to the compensation question.
+subawardDataList.topPayEmployees|JSON Array|NA |Conditional - see Description. If required, the array requires 5 elements| This is the compensation information for the top five employees. The array has five elements for the five top-paid employees. This is required if the response to compensation question one is true and compensation question two is false. If responses to the compensation questions are provided on the subrecipient’s SAM.gov entity registration, then this information is not required.
+**assistanceData.subawardData.topPayEmployees Details** | | | |  
+topPayEmployees.fullName |string  ||Yes if subawardDataList.topPayEmployees is required| The full name of the top-paid employees.
+topPayEmployees.salary | string  ||Yes if subawardDataList.topPayEmployees is required|The total compensation of the top-paid employees.
 
 <p><small><a href="#">Back to top</a></small></p>
 
