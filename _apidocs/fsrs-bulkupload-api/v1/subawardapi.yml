@@ -6,22 +6,20 @@ info:
     name: GSA
   version: 0.1.0
 servers:
-  - url: https://api.sam.gov/contract/v1/subcontracts
-  - url: https://api.sam.gov/assistance/v1/subawards
   - url: https://api-alpha.sam.gov/contract/v1/subcontracts
   - url: https://api-alpha.sam.gov/assistance/v1/subawards
 tags:
   - name: Contracts-Bulk-Upload
-    description: All endpoints for Contracts Subawards Reporting
+    description: All endpoints for Subcontract Reporting
   - name: Assistance-Bulk-Upload
-    description: All endpoints for Assistance (Grants) Subawards Reporting
+    description: All endpoints for Subaward Reporting
 paths:
   /contract/v1/subcontracts/{subawardReportNumber}:
     get:
       tags:
         - Contracts Bulk Upload
-      summary: Get existing Contract Subaward report(s)
-      description: Get existing Contract Subaward report(s)
+      summary: Get existing Subcontract report(s)
+      description: Get existing Subcontract report(s)
       operationId: getContractReportByReportNumberAndStatus
       parameters:
         - name: Authorization
@@ -112,8 +110,8 @@ paths:
     put:
       tags:
         - Contracts Bulk Upload
-      summary: Update contracts report
-      description: Update previously submitted contracts report
+      summary: Update Subcontract report
+      description: Update previously submitted Subcontract report
       operationId: updateContractsReport
       parameters:
         - name: Authorization
@@ -205,8 +203,8 @@ paths:
     delete:
       tags:
         - Contracts Bulk Upload
-      summary: Delete Contract Subaward report
-      description: Delete Contract Subaward report
+      summary: Delete Subcontract report
+      description: Delete Subcontract report
       operationId: deleteContractReport
       parameters:
         - name: Authorization
@@ -290,8 +288,8 @@ paths:
     get:
       tags:
         - Assistance Bulk Upload
-      summary: Get existing Assistance Subaward report(s)
-      description: Get existing Assistance Subaward report(s)
+      summary: Get existing Subaward report(s)
+      description: Get existing Subaward report(s)
       operationId: getGrantReportByReportNumberAndStatus
       parameters:
         - name: Authorization
@@ -382,8 +380,8 @@ paths:
     put:
       tags:
         - Assistance Bulk Upload
-      summary: Update Assistance report
-      description: Update previously submitted Assistance report
+      summary: Update Subaward report
+      description: Update previously submitted Subaward report
       operationId: updateGrantsReport
       parameters:
         - name: Authorization
@@ -475,8 +473,8 @@ paths:
     delete:
       tags:
         - Assistance Bulk Upload
-      summary: Delete Assistance Subaward report
-      description: Delete Assistance Subaward report
+      summary: Delete Subaward report
+      description: Delete Subaward report
       operationId: deleteGrantReport
       parameters:
         - name: Authorization
@@ -560,8 +558,8 @@ paths:
     get:
       tags:
         - Contracts Bulk Upload
-      summary: Get existing Contract Subaward report(s)
-      description: Get existing Contract Subaward report(s)
+      summary: Get existing Subcontract report(s)
+      description: Get existing Subcontract report(s)
       operationId: getContractReport
       parameters:
         - name: Authorization
@@ -683,7 +681,7 @@ paths:
     post:
       tags:
         - Contracts Bulk Upload
-      summary: Submit contracts report
+      summary: Submit Subcontract report
       description: Submit one or multiple SubContract report for Contracts
       operationId: saveContractsReport
       parameters:
@@ -772,8 +770,8 @@ paths:
     get:
       tags:
         - Assistance Bulk Upload
-      summary: Get existing Assistance Subaward report(s)
-      description: Get existing Assistance Subaward report(s)
+      summary: Get existing Subaward report(s)
+      description: Get existing Subaward report(s)
       operationId: getGrantReport
       parameters:
         - name: Authorization
@@ -885,7 +883,7 @@ paths:
     post:
       tags:
         - Assistance Bulk Upload
-      summary: Submit Assistance report
+      summary: Submit Subaward report
       description: Submit one or multiple Subaward report for Assistance awards
       operationId: saveGrantReport
       parameters:
