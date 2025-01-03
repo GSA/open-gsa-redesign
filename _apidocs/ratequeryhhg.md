@@ -181,6 +181,7 @@ Every API request must have the API key in the x-api-key and Agency Token in the
   | zefflag |	Zero Emission Footprint indicator for the TSP |
   | companyName |	Name of the TSP |
   | telephone	| TSP's contact phone number |
+  | email | TSP's contact email address |
   | socioEconomicInd | TSP's Socio Economic Indicator |
   | tender | Tender Id used in the selected rate |
   | csi | Customer Satisfaction Index of the TSP |
@@ -274,6 +275,7 @@ Every API request must have the API key in the x-api-key and Agency Token in the
           "zefflag": false,
           "companyName": "HILLDRUP MOVING &",
           "telephone": "703-221-7155",
+          "email": "xxxx@xxx.test.com",
           "socioEconomicInd": null,
           "tender": "HT20",
           "csi": "111.62",
@@ -362,6 +364,7 @@ Every API request must have the API key in the x-api-key and Agency Token in the
           "zefflag": false,
           "companyName": "SUDDATH RELOCATION SERVICES, I",
           "telephone": "800-365-5463",
+          "email": "xxxx@xxx.test.com",
           "socioEconomicInd": null,
           "tender": "GS05",
           "csi": "109.02",
@@ -447,6 +450,7 @@ Every API request must have the API key in the x-api-key and Agency Token in the
           "zefflag": true,
           "companyName": "Stevens Moving & Storage, Inc.",
           "telephone": "800-955-5421",
+          "email": "xxxx@xxx.test.com",
           "socioEconomicInd": "w,s",
           "tender": "SX01",
           "csi": null,
@@ -564,8 +568,7 @@ Every API request must have the API key in the x-api-key and Agency Token in the
 ## API Specification File
   
   You can view the full details of this API in the API Specification file available here:
-  [TMSS HHG Rate Query API spec.xlsx](https://github.com/user-attachments/files/17575054/TMSS.HHG.Rate.Query.API.specs.xlsx)
-
+ [TMSS.HHG.Rate.Query.API.specs.xlsx](https://github.com/user-attachments/files/18260571/TMSS.HHG.Rate.Query.API.specs_updated_12272024.xlsx)
 
   
   
