@@ -130,7 +130,7 @@ subEntityTopPayEmployee | Sub Entity Top Pay Employee | string | v1
 ## Open API Specification File 
 
 You can view the full details of this API in the OpenAPI Specification file available here: 
-<a href="assistance-subaward-reporting-public-api/ffata-search-openapi.yml" download="ffata-search-openapi">OpenAPI File</a>
+<a href="/assistance-subaward-reporting-public-api/ffata-search-openapi.yml" download="ffata-search-openapi">OpenAPI File</a>
 
 
 <details>
