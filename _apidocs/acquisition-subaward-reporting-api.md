@@ -129,7 +129,7 @@ subEntityTopPayEmployee | Sub Entity Top Pay Employee | string | v1
 ## Open API Specification File 
 
 You can view the full details of this API in the OpenAPI Specification file available here: 
-
+<a href="v1/subawardreportingpublicapi.yaml" download="subawardreportingpublicapi">OpenAPI File</a>
 
 
 <details>
