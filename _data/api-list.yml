@@ -1,9 +1,6 @@
 - title: Acquisition Gateway Document Library API
   description: The Document Library contains templates and examples of a broad set of acquisition documents from all stages of the acquisition lifecycle.
   url: https://open.gsa.gov/api/ag-api/
-- title: Acquisition Subaward Reporting Public API
-  description: The Acquisition Subaward Reporting Public API provides published and deleted federal subcontract data.
-  url: https://open.gsa.gov/api/acquisition-subaward-reporting-api/
 - title: Analytics.usa.gov API
   description: The data for this API comes from Analytics.usa.gov, which is a unified Google Analytics account for U.S. federal government agencies known as the Digital Analytics Program. This program helps government agencies understand how people find, access, and use government services online. The program does not track individuals, and anonymizes the IP addresses of visitors.
   url: https://open.gsa.gov/api/dap/
@@ -13,9 +10,6 @@
 - title: Api.Data.Gov Metrics API
   description: api.data.gov is a free API management service for federal agencies. This API provides system metrics from api.data.gov.
   url: https://open.gsa.gov/api/apidatagov-metrics/
-- title: Assistance Subaward Reporting Public API
-  description: The Assistance Subaward Reporting Public API provides published and deleted federal subcontract data.
-  url: https://open.gsa.gov/api/assistance-subaward-reporting-api/
 - title: Contract-Awarded Labor Category (CALC) API
   description: CALC's API is used by CALC's front-end Data Explorer application to display labor rate data for awarded prices on GSA services schedules, and can also be accessed by any third-party application over the public internet. CALC (Contract Awarded Labor Category) tool searches awarded hourly rate prices on the eight GSA professional services schedules and returns comparable labor categories and prices based on search criteria and filters used.
   url: https://open.gsa.gov/api/dx-calc-api/
@@ -37,6 +31,12 @@
 - title: Regulations.gov API
   description: Regulations.gov offers a GET API that allows searching for documents, comments, and dockets. Additionally,  a POST API is offered that allows users to submit comments.
   url: https://open.gsa.gov/api/regulationsgov/
+- title: SAM.gov Acquisition Subaward Reporting Public API
+  description: The Acquisition Subaward Reporting Public API provides published and deleted federal subcontract data.
+  url: https://open.gsa.gov/api/acquisition-subaward-reporting-api/
+- title: SAM.gov Assistance Subaward Reporting Public API
+  description: The Assistance Subaward Reporting Public API provides published and deleted federal subaward data.
+  url: https://open.gsa.gov/api/assistance-subaward-reporting-api/
 - title: SAM.gov Entity/Exclusions Extracts Download API
   description: API to retrieve Entity/Exclusions Extracts using various searchable parameters or file name.
   url: https://open.gsa.gov/api/sam-entity-extracts-api/
