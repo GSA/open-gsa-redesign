@@ -97,7 +97,8 @@ To begin using this API, you will need to register for an API Key. You can sign 
 <noscript>Please enable JavaScript to signup for an <a href="http://api.data.gov/">api.data.gov</a> API key.</noscript>
 {% endraw %}  
 
-•	After registering for the API Key, you will need to send an email to errc@gsa.gov requesting the Agency Token (x-agency-token).  You must also attach to that email a completed copy of the Memorandum Of Understanding (MOU). [Click here to download the MOU template](https://github.com/user-attachments/files/17575007/GSA_FAS_ERRC_TMSS2_HHG_Rate_Query_API_MOU_Template.docx).
+•	After registering for the API Key, you will need to send an email to errc@gsa.gov requesting the Agency Token (x-agency-token).  You must also attach to that email a completed copy of the Memorandum Of Understanding (MOU). [Click here to download the MOU template](https://github.com/user-attachments/files/18496312/GSA_FAS_ERRC_TMSS2_HHG_Rate_Query_API_MOU_Template_01-15-25.docx).
+
 
 
 <p><small><a href="#">Back to top</a></small></p>
