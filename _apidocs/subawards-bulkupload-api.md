@@ -2132,7 +2132,7 @@ Error messages are returned as part of the web service call response. Errors are
 
 ### Validation Failure Error Messages
 
-The following section describes validation failure messages that are returned as a part of submitSubcontractReport, updateSubcontractReport, submitSubawardReport and updateSubawardReport.
+The following section describes validation failure messages that are returned as a part of submitSubcontractReport, updateSubcontractReport, submitSubawardReport and updateSubawardReport. 
 
 |	Field 	|	 Error Message 	|	Description 	|
 |	-----	|	------	|	---------------	|
@@ -2153,6 +2153,8 @@ The following section describes validation failure messages that are returned as
 |	country.name	|	Invalid subaward Place of Performance country name.	|	Subaward Place of Performance Section - Country name is invalid	|
 |	country.code and country.name	|	Subaward Place of Performance  country code and country name do not match.	|	Subaward Place of Performance Section - Country code and country name combination does not match	|
 |	stateOrProvince	|	Subaward Place of Performance stateOrProvince required.	|	Subaward Place of Performance Section - stateOrProvince is required	|
+|	stateOrProvince	|	Subaward Place of Performance state/Province code required.	|	If state/providence code is available for a country, Subaward Place of Performance Section - stateOrProvince is required	|
+|	stateOrProvince	|	Subaward Place of Performance state/Province name required.	|	If state/providence name is available for a country, Subaward Place of Performance Section - stateOrProvince is required	|
 |	stateOrProvince	|	Subaward Place of Performance state code and state name do not match.	|	Subaward Place of Performance Section - stateOrProvince code and stateOrProvince name combination does not match	|
 |	stateOrProvince	|	Invalid subaward Place of Performance state.	|	Only for US addresses: Subaward Place of Performance Section - State provided is invalid	|
 |	city	|	Subaward Place of Performance city required.	|	Only for US addresses: Subaward Place of Performance Section - City is required	|
