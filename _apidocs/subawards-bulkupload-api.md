@@ -638,7 +638,7 @@ See the [Response JSON](#response-json) section for the response structure and s
                "code":"VA",
                "name":"Virginia"
             },
-            "zipPlus4":"123456789"
+            "zipPlus4":"223010100"
          },
          "recoveryModelQuestions":[
             {
