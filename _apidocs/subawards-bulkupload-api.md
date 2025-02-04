@@ -186,7 +186,6 @@ The overall response is a JSON array containing the status of each subcontract r
          "reportingAgencyCode":"2100",
          "idvReferenceNumber":"GSTEST001",
          "referenceAgencyCode":"2147",
-         "programTitle":"Title of the program",
          "subawardDataList":[
             {
                "subawardUEI":"ABC987654321",
@@ -204,7 +203,7 @@ The overall response is a JSON array containing the status of each subcontract r
                      "code":"VA",
                      "name":"Virginia"
                   },
-                  "zipPlus4":"123456789"
+                  "zipPlus4":"223010100"
                },
                "recoveryModelQuestions":[
                   {
@@ -213,7 +212,7 @@ The overall response is a JSON array containing the status of each subcontract r
                   },
                   {
                      "code":"2",
-                     "isSelected":"false"
+                     "isSelected":"true"
                   },
                   {
                      "code":"3",
@@ -259,7 +258,7 @@ The overall response is a JSON array containing the status of each subcontract r
                      "code":"VA",
                      "name":"Virginia"
                   },
-                  "zipPlus4":"678901234"
+                  "zipPlus4":"201484801"
                },
                "recoveryModelQuestions":[
                   {
@@ -269,15 +268,20 @@ The overall response is a JSON array containing the status of each subcontract r
                   {
                      "code":"2",
                      "isSelected":"true"
+                  },
+                  {
+                     "code":"3",
+                     "isSelected":"true"
                   }
                ]
             }
          ]
       },
       {
-         "contractNumber":"W9123823PTESTCHILD",
+         "contractNumber":"W9123823PTEST_OR_CHILD",
          "reportingAgencyCode":"9700",
-         "programTitle":"Title of the program",
+         "idvReferenceNumber":"GSTEST002",
+         "referenceAgencyCode":"9700",         
          "subawardDataList":[
             {
                "subawardUEI":"ABC999999999",
@@ -295,7 +299,7 @@ The overall response is a JSON array containing the status of each subcontract r
                      "code":"GA",
                      "name":"Georgia"
                   },
-                  "zipPlus4":"12345"
+                  "zipPlus4":"303010001"
                },
                "recoveryModelQuestions":[
                   {
@@ -323,7 +327,6 @@ The overall response is a JSON array containing the status of each subcontract r
          "reportingAgencyCode":"2100",
          "idvReferenceNumber":"GSTEST001",
          "referenceAgencyCode":"2147",
-         "programTitle":"Title of the program",
          "subawardDataList":[
             {
                "subawardUEI":"ABC987654321",
@@ -404,7 +407,7 @@ The overall response is a JSON array containing the status of each subaward repo
       "subawardDataList": [
         {
           "subawardNumber": "XX-YY-00008",
-          "uei": "ABC123456789",
+          "subawardUEI": "ABC123456789",
           "subawardAmount": "100000",
           "subawardDate": "2010-10-01",
           "subawardDescription": "My Description",
@@ -418,15 +421,19 @@ The overall response is a JSON array containing the status of each subaward repo
               "code": "VA",
               "name": "Virginia"
             },
-            "zipPlus4": "123456789"
+            "zipPlus4": "223010100"
           },
           "recoveryModelQuestions": [
             {
-              "code": "3",
+              "code": "1",
               "isSelected": "true"
             },
             {
-              "code": "4",
+              "code": "2",
+              "isSelected": "true"
+            },
+            {
+              "code": "3",
               "isSelected": "false"
             }
           ],
@@ -461,7 +468,7 @@ The overall response is a JSON array containing the status of each subaward repo
       "subawardDataList": [
         {
           "subawardNumber": "XX-YY-12345",
-          "uei": "zzz123456789",
+          "subawardUEI": "zzz123456789",
           "subawardAmount": "150000",
           "subawardDate": "2023-04-17",
           "subawardDescription": "My Description",
@@ -475,18 +482,18 @@ The overall response is a JSON array containing the status of each subaward repo
               "code": "GA",
               "name": "Georgia"
             },
-            "zipPlus4": "123456789"
+            "zipPlus4": "303010001"
           },
           "recoveryModelQuestions": [
             {
-              "code": "3",
+              "code": "1",
               "isSelected": "false"
             }
           ]
         },
         {
           "subawardNumber": "AA-YY-12345",
-          "uei": "XYZ123456789",
+          "subawardUEI": "XYZ123456789",
           "subawardAmount": "150055",
           "subawardDate": "2023-04-17",
           "subawardDescription": "My Description",
@@ -500,16 +507,16 @@ The overall response is a JSON array containing the status of each subaward repo
               "code": "VA",
               "name": "Virginia"
             },
-            "zipPlus4": "678901234"
+            "zipPlus4": "201484801"
           },
           "recoveryModelQuestions": [
             {
-              "code": "3",
+              "code": "1",
               "isSelected": "true"
             },
             {
-              "code": "4",
-              "isSelected": "true"
+              "code": "2",
+              "isSelected": "false"
             }
           ]
         }
@@ -533,7 +540,7 @@ The overall response is a JSON array containing the status of each subaward repo
       "subawardDataList": [
         {
           "subawardNumber": "",
-          "uei": "zzz123456789",
+          "subawardUEI": "zzz123456789",
           "subawardAmount": "",
           "subawardDate": "",
           "subawardDescription": "",
@@ -615,7 +622,6 @@ See the [Response JSON](#response-json) section for the response structure and s
       "reportingAgencyCode":"2100",
       "idvReferenceNumber":"GSTEST001",
       "referenceAgencyCode":"2147",
-      "programTitle":"Title of the program",
       "subawardData":{
          "subawardUEI":"ABC987654321",
          "subawardNumber":"2303-TEST-05-0",
@@ -683,7 +689,6 @@ See the [Response JSON](#response-json) section for the response structure and s
       "reportingAgencyCode":"2100",
       "idvReferenceNumber":"GSTEST001",
       "referenceAgencyCode":"2147",
-      "programTitle":"Title of the program",
       "subawardData":{
          "subawardUEI":"ABC987654321",
          "subawardNumber":"",
@@ -768,7 +773,7 @@ See the [Response JSON](#response-json) section for the response structure and s
       "agencyCode": "9999",
       "subawardData":{
          "subawardNumber":"XX-YY-00008",
-         "uei":"ABC123456789",
+         "subawardUEI":"ABC123456789",
          "subawardAmount":"100000",
          "subawardDate":"2010-10-01",
          "subawardDescription":"My Description",
@@ -833,7 +838,7 @@ See the [Response JSON](#response-json) section for the response structure and s
       "agencyCode": "9999",
       "subawardData":{
          "subawardNumber":"",
-         "uei":"zzz123456789",
+         "subawardUEI":"zzz123456789",
          "subawardAmount":"",
          "subawardDate":"",
          "subawardDescription":"",
@@ -1419,7 +1424,6 @@ The API sends descriptive messages in the **message** element on create(POST) an
                   "reportingAgencyCode":"string",
                   "idvReferenceNumber":"string",
                   "referenceAgencyCode":"string",
-                  "programTitle":"string",
                   "subawardDataList":[
                      {
                         "subawardReportNumber":"51e2fad8-7b43-4b62-a870-45b3f250ea99",
@@ -1497,7 +1501,6 @@ The API sends descriptive messages in the **message** element on create(POST) an
                   "reportingAgencyCode":"string",
                   "idvReferenceNumber":"string",
                   "referenceAgencyCode":"string",
-                  "programTitle":"string",
                   "subawardDataList":[
                      {
                         "subawardReportNumber":"71e2fad8-7b43-4b62-a870-45b3f250ea98",
@@ -1564,7 +1567,6 @@ The API sends descriptive messages in the **message** element on create(POST) an
                "reportingAgencyCode":"string",
                "idvReferenceNumber":"string",
                "referenceAgencyCode":"string",
-               "programTitle":"string",
                "subawardDataList":[
                   {
                      "subawardReportNumber":"71e2fad8-7b43-4b62-a870-45b3f250ea98",
@@ -1954,7 +1956,6 @@ contractData.contractNumber | string | 50 characters  | Yes |If this report is s
 contractData.reportingAgencyCode | string | 32 characters  | Yes | The ID of the federal awarding agency as from FPDS.gov.
 contractData.idvReferenceNumber | string | 50 characters |Yes, if the report is for a Task order on a contract | If this report is submitted for a task order on a contract, enter the task order number in contractNumber field. Enter the contract number that matches the Referenced IDV field in FPDS.gov into the idvReferenceNumber field.
 contractData.referenceAgencyCode | string | 32 characters  | Yes, if the idvReferenceNumber is provided | The ID of the federal awarding agency associated with the IDV Referenced Number.
-contractData.programTitle | string || No | The program or project title. 
 contractData.subawardDataList |string  ||Yes  |Information about the subcontractor. If the report is submitted for multiple subcontractors, then this array will have multiple elements, one for each subcontractor.
 **contractData.subawardDataList Details** | | | |  
 subawardDataList.subawardUEI | string | 13 characters | Yes | Subcontractor’s Unique Entity ID.
@@ -2032,7 +2033,6 @@ contractData.contractNumber | string | 50 characters  | Yes |If this report is s
 contractData.reportingAgencyCode | string | 32 characters  | Yes | The ID of the federal awarding agency as from FPDS.gov.
 contractData.idvReferenceNumber | string | 50 characters |Yes, if the report is for a Task order on a contract | If this report is submitted for a task order on a contract, enter the task order number in contractNumber field. Enter the contract number that matches the Referenced IDV field in FPDS.gov into the idvReferenceNumber field.
 contractData.referenceAgencyCode | string | 32 characters  | Yes, if the idvReferenceNumber is provided | The ID of the federal awarding agency associated with the IDV Referenced Number.
-contractData.programTitle | string || No | The program or project title. 
 contractData.subawardDataList |string  ||Yes  |Information about the subcontractor. If the report is submitted for multiple subcontractors, then this array will have multiple elements, one for each subcontractor.
 **contractData.subawardData Details** | | | |  
 subawardData.subawardUEI | string | 13 characters | Yes | Subcontractor’s Unique Entity ID.
