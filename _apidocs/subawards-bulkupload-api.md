@@ -222,23 +222,23 @@ The overall response is a JSON array containing the status of each subcontract r
                ],
                "topPayEmployees":[
                   {
-                     "fullName":"John White",
+                     "full_name":"John White",
                      "salary":"100000"
                   },
                   {
-                     "fullName":"Employee Green",
+                     "full_name":"Employee Green",
                      "salary":"120000"
                   },
                   {
-                     "fullName":"Employee Red",
+                     "full_name":"Employee Red",
                      "salary":"96000"
                   },
                   {
-                     "fullName":"Employee Orange",
+                     "full_name":"Employee Orange",
                      "salary":"250000"
                   },
                   {
-                     "fullName":"Employee Blue",
+                     "full_name":"Employee Blue",
                      "salary":"290000"
                   }
                ]
@@ -432,23 +432,23 @@ The overall response is a JSON array containing the status of each subaward repo
           ],
           "topPayEmployees": [
             {
-              "fullName": "John White",
+              "full_name": "John White",
               "salary": "100000"
             },
             {
-              "fullName": "Employee Green",
+              "full_name": "Employee Green",
               "salary": "120000"
             },
             {
-              "fullName": "Employee Red",
+              "full_name": "Employee Red",
               "salary": "96000"
             },
             {
-              "fullName": "Employee Orange",
+              "full_name": "Employee Orange",
               "salary": "250000"
             },
             {
-              "fullName": "Employee Blue",
+              "full_name": "Employee Blue",
               "salary": "290000"
             }
           ]
@@ -457,6 +457,7 @@ The overall response is a JSON array containing the status of each subaward repo
     },
     {
       "fain": "1001ZZZ420",
+      "agencyCode": "9999",
       "subawardDataList": [
         {
           "subawardNumber": "XX-YY-12345",
@@ -528,6 +529,7 @@ The overall response is a JSON array containing the status of each subaward repo
   "assistanceData": [
     {
       "fain": "1001ZZZ420",
+      "agencyCode": "9999",
       "subawardDataList": [
         {
           "subawardNumber": "",
@@ -644,23 +646,23 @@ See the [Response JSON](#response-json) section for the response structure and s
          ],
          "topPayEmployees":[
             {
-               "fullName":"John White",
+               "full_name":"John White",
                "salary":"100000"
             },
             {
-               "fullName":"Employee Green",
+               "full_name":"Employee Green",
                "salary":"120000"
             },
             {
-               "fullName":"Employee Red",
+               "full_name":"Employee Red",
                "salary":"96000"
             },
             {
-               "fullName":"Employee Orange",
+               "full_name":"Employee Orange",
                "salary":"250000"
             },
             {
-               "fullName":"Employee Blue",
+               "full_name":"Employee Blue",
                "salary":"290000"
             }
          ]
@@ -682,7 +684,7 @@ See the [Response JSON](#response-json) section for the response structure and s
       "idvReferenceNumber":"GSTEST001",
       "referenceAgencyCode":"2147",
       "programTitle":"Title of the program",
-      "subawardDataList":{
+      "subawardData":{
          "subawardUEI":"ABC987654321",
          "subawardNumber":"",
          "subawardAmount":"",
@@ -763,8 +765,8 @@ See the [Response JSON](#response-json) section for the response structure and s
 {
    "assistanceData":{
       "fain":"1001KS1420",
+      "agencyCode": "9999",
       "subawardData":{
-         "subawardReportNumber":"51e2fad8-7b43-4b62-a870-45b3f250ea99",
          "subawardNumber":"XX-YY-00008",
          "uei":"ABC123456789",
          "subawardAmount":"100000",
@@ -794,23 +796,23 @@ See the [Response JSON](#response-json) section for the response structure and s
          ],
          "topPayEmployees":[
             {
-               "fullName":"John White",
+               "full_name":"John White",
                "salary":"100000"
             },
             {
-               "fullName":"Employee Green",
+               "full_name":"Employee Green",
                "salary":"120000"
             },
             {
-               "fullName":"Employee Red",
+               "full_name":"Employee Red",
                "salary":"96000"
             },
             {
-               "fullName":"Employee Orange",
+               "full_name":"Employee Orange",
                "salary":"250000"
             },
             {
-               "fullName":"Employee Blue",
+               "full_name":"Employee Blue",
                "salary":"290000"
             }
          ]
@@ -828,8 +830,8 @@ See the [Response JSON](#response-json) section for the response structure and s
 {
    "assistanceData":{
       "fain":"1001ZZZ420",
-      "subawardDataList":{
-         "subawardReportNumber":"45b3f2d8-7b43-4b62-a870-45b3f250b435",
+      "agencyCode": "9999",
+      "subawardData":{
          "subawardNumber":"",
          "uei":"zzz123456789",
          "subawardAmount":"",
@@ -1452,23 +1454,23 @@ The API sends descriptive messages in the **message** element on create(POST) an
                         ],
                         "topPayEmployees":[
                            {
-                              "fullName":"sub1",
+                              "full_name":"sub1",
                               "salary":"100"
                            },
                            {
-                              "fullName":"sub2",
+                              "full_name":"sub2",
                               "salary":"200"
                            },
                            {
-                              "fullName":"sub3",
+                              "full_name":"sub3",
                               "salary":"300"
                            },
                            {
-                              "fullName":"sub4",
+                              "full_name":"sub4",
                               "salary":"400"
                            },
                            {
-                              "fullName":"sub5",
+                              "full_name":"sub5",
                               "salary":"500"
                            }
                         ]
@@ -1793,23 +1795,23 @@ The API sends descriptive messages in the **message** element on create(POST) an
                         ],
                         "topPayEmployees":[
                            {
-                              "fullName":"sub1",
+                              "full_name":"sub1",
                               "salary":"100"
                            },
                            {
-                              "fullName":"sub2",
+                              "full_name":"sub2",
                               "salary":"200"
                            },
                            {
-                              "fullName":"sub3",
+                              "full_name":"sub3",
                               "salary":"300"
                            },
                            {
-                              "fullName":"sub4",
+                              "full_name":"sub4",
                               "salary":"400"
                            },
                            {
-                              "fullName":"sub5",
+                              "full_name":"sub5",
                               "salary":"500"
                            }
                         ]
@@ -1976,7 +1978,7 @@ recoveryModelQuestions.code |string||Yes, if compensation question responses are
 recoveryModelQuestions.isSelected |string  || Yes, if compensation question responses are being provided. | A Boolean value representing the response to the compensation question.
 **contractData.subawardDataList. topPayEmployees Details** | | | |  
 topPayEmployees|JSON Array|NA |Conditional - see Description. If required, the array requires 5 elements| This is the compensation information for the top five employees. The array has five elements for the five top-paid employees. This is required if the response to compensation question one is true, compensaion question two is true and compensation question three is false. If responses to the compensation questions are provided on the subcontractor’s alpha.SAM.gov entity registration, then this information is not required.
-topPayEmployees.fullName |string  ||Yes if subawardDataList.topPayEmployees is required| The full name of the top-paid employees.
+topPayEmployees.full_name |string  ||Yes if subawardDataList.topPayEmployees is required| The full name of the top-paid employees.
 topPayEmployees.salary | string  ||Yes if subawardDataList.topPayEmployees is required|The total compensation of the top-paid employees.
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -2013,7 +2015,7 @@ recoveryModelQuestions.code |string||Yes, if Compensation question responses are
 recoveryModelQuestions.isSelected |string  || Yes, if Compensation question responses are being provided. | A Boolean value representing the response to the compensation question.
 subawardDataList.topPayEmployees|JSON Array|NA |Conditional - see Description. If required, the array requires 5 elements| This is the compensation information for the top five employees. The array has five elements for the five top-paid employees. This is required if the response to compensation question one is true and compensation question two is false. If responses to the compensation questions are provided on the subrecipient’s alpha.SAM.gov entity registration, then this information is not required.
 **assistanceData.subawardDataList. topPayEmployees Details** | | | |  
-topPayEmployees.fullName |string  ||Yes if subawardDataList.topPayEmployees is required| The full name of the top-paid employees.
+topPayEmployees.full_name |string  ||Yes if subawardDataList.topPayEmployees is required| The full name of the top-paid employees.
 topPayEmployees.salary | string  ||Yes if subawardDataList.topPayEmployees is required|The total compensation of the top-paid employees.
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -2054,7 +2056,7 @@ recoveryModelQuestions.code |string||Yes, if compensation question responses are
 recoveryModelQuestions.isSelected |string  || Yes, if compensation question responses are being provided. | A Boolean value representing the response to the compensation question.
 **contractData.subawardData. topPayEmployees Details** | | | |  
 topPayEmployees|JSON Array|NA |Conditional - see Description. If required, the array requires 5 elements| This is the compensation information for the top five employees. The array has five elements for the five top-paid employees. This is required if the response to compensation question one is true, compensaion question two is true and compensation question three is false. If responses to the compensation questions are provided on the subcontractor’s alpha.SAM.gov entity registration, then this information is not required.
-topPayEmployees.fullName |string  ||Yes if subawardDataList.topPayEmployees is required| The full name of the top-paid employees.
+topPayEmployees.full_name |string  ||Yes if subawardDataList.topPayEmployees is required| The full name of the top-paid employees.
 topPayEmployees.salary | string  ||Yes if subawardDataList.topPayEmployees is required|The total compensation of the top-paid employees.
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -2091,7 +2093,7 @@ recoveryModelQuestions.code |string||Yes, if Compensation question responses are
 recoveryModelQuestions.isSelected |string  || Yes, if Compensation question responses are being provided. | A Boolean value representing the response to the compensation question.
 subawardDataList.topPayEmployees|JSON Array|NA |Conditional - see Description. If required, the array requires 5 elements| This is the compensation information for the top five employees. The array has five elements for the five top-paid employees. This is required if the response to compensation question one is true and compensation question two is false. If responses to the compensation questions are provided on the subrecipient’s alpha.SAM.gov entity registration, then this information is not required.
 **assistanceData.subawardData. topPayEmployees Details** | | | |  
-topPayEmployees.fullName |string  ||Yes if subawardDataList.topPayEmployees is required| The full name of the top-paid employees.
+topPayEmployees.full_name |string  ||Yes if subawardDataList.topPayEmployees is required| The full name of the top-paid employees.
 topPayEmployees.salary | string  ||Yes if subawardDataList.topPayEmployees is required|The total compensation of the top-paid employees.
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -2174,7 +2176,7 @@ The following section describes validation failure messages that are returned as
 |	topPayEmployees	|	Name and total compensation required for subawardee’s top five executives.	|	If compensation question one answer is true, compensation question two answer is true, and compensation question three answer is false, then topPayEmployees is required	|
 |	topPayEmployees.salary	|	Use numbers only up to 12 digits for total compensation.	|	Sub Top Pay Employees: salary must contain only digits and not exceed 12 digits	|
 |	topPayEmployees.salary	|	Compensation amount required.	|	Sub topPayEmployees.salary is required	|
-|	topPayEmployees.fullName 	|	Executive name required.	|	Sub topPayEmployees.fullName is required	|
+|	topPayEmployees.full_name 	|	Executive name required.	|	Sub topPayEmployees.full_name is required	|
 
 <p><small><a href="#">Back to top</a></small></p>
 
