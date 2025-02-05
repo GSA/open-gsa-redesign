@@ -769,7 +769,7 @@ See the [Response JSON](#response-json) section for the response structure and s
 <code><pre>
 {
    "assistanceData":{
-      "fain":"1001KS1420",
+      "fain": "1001KS1420",
       "agencyCode": "9999",
       "subawardData":{
          "subawardNumber":"XX-YY-00008",
@@ -787,18 +787,22 @@ See the [Response JSON](#response-json) section for the response structure and s
                "code":"VA",
                "name":"Virginia"
             },
-            "zipPlus4":"123456789"
+            "zipPlus4":"223010100"
          },
          "recoveryModelQuestions":[
             {
-               "code":"3",
-               "isSelected":"true"
+              "code": "1",
+              "isSelected": "true"
             },
             {
-               "code":"4",
-               "isSelected":"false"
+              "code": "2",
+              "isSelected": "true"
+            },
+            {
+              "code": "3",
+              "isSelected": "false"
             }
-         ],
+          ],
          "topPayEmployees":[
             {
                "full_name":"John White",
@@ -1236,7 +1240,7 @@ All subcontract and subaward API endpoints return a response JSON. The following
 Response Element | Response Type | Description
 -----------------|---------------|------------
  _ | JSON Array | One element for each Subaward report in request
-id | string | For a contract report, it is the concatenated values of contractNumber, reportingAgency, idvRefrenceNumber, referenceAgencyCode, subawardNumber, subawardDate, subawardAmount and submittedDate separated by ':'. For a Assistance report, it is the concatenated value of fainNumber, subawardNumber, subawardDate, subawardAmount and submittedDate separated by ':'. For a GET or DELETE request, if the request is unsuccessful, then it is the concatenated value of the search parameters separated by ":".
+id | string | For a contract report, it is the concatenated values of contractNumber, reportingAgency, idvRefrenceNumber, referenceAgencyCode, subawardNumber, subawardDate, subawardAmount and submittedDate separated by ':'. For an assistance report, it is the concatenated value of fainNumber, agencyCode, subawardNumber, subawardDate, subawardAmount and submittedDate separated by ':'. For a GET or DELETE request, if the request is unsuccessful, then it is the concatenated value of the search parameters separated by ":".
 statusCode | string | The HTTP Status code for the Subaward report element
 transactionId | string | Internal ID used by the alpha.SAM.gov support team to trace issues. You can provide this to the support team if you report an issue.
 timeStamp | string | Date and time when the request was processed
@@ -1291,8 +1295,8 @@ The API sends descriptive messages in the **message** element on create(POST) an
     "reportStatus": "Draft",
     "message": "Report was saved but failed some validations. Please fix the errors and submit an update request.",
     "errors": [
-      "Subaward Amount is required",
-      "Sub award Place of Performance Section - City provided is invalid."
+      "Subaward Amount required",
+      "Invalid subcontractor Place of Performance city."
     ]
   },
   {
@@ -1304,7 +1308,7 @@ The API sends descriptive messages in the **message** element on create(POST) an
     "reportStatus": "Not Saved",
     "message": "Could not save the report. Please fix the errors and submit again.",
     "errors": [
-      "Sub contractor UNIQUE ENTITY ID # is required"
+      "Provide a subcontractor Unique Entity ID."
     ]
   }
 ]
@@ -1346,8 +1350,8 @@ The API sends descriptive messages in the **message** element on create(POST) an
     "reportStatus": "Draft",
     "message": "Report was saved but failed some validations. Please fix the errors and submit an update request.",
     "errors": [
-      "Subaward Amount is required",
-      "Sub award Place of Performance Section - City provided is invalid."
+      "Subaward Amount required",
+      "Invalid subaward Place of Performance city."
     ]
   }
 }
@@ -1483,9 +1487,7 @@ The API sends descriptive messages in the **message** element on create(POST) an
                }
             ]
          },
-         "errors":[
-            
-         ]
+         "errors":[]
       },
       {
          "id":"contractNumber:reportingAgency:idvRefrenceNumber:referenceAgencyCode:subawardNumber:subawardDate:subawardAmount:submittedDate",
@@ -1534,9 +1536,7 @@ The API sends descriptive messages in the **message** element on create(POST) an
                }
             ]
          },
-         "errors":[
-            
-         ]
+         "errors":[]
       }
    ],
    "page":0,
@@ -1632,8 +1632,8 @@ The API sends descriptive messages in the **message** element on create(POST) an
     "reportStatus": "Draft",
     "message": "Report was saved but failed some validations. Please fix the errors and submit an update request.",
     "errors": [
-      "Subaward Amount is required",
-      "Sub award Place of Performance Section - City provided is invalid."
+      "Subaward Amount required",
+      "Subaward Place of Performance state code and state name do not match."
     ]
   },
   {
@@ -1645,7 +1645,7 @@ The API sends descriptive messages in the **message** element on create(POST) an
     "reportStatus": "Not Saved",
     "message": "Could not save the report. Please fix the errors and submit again.",
     "errors": [
-      "Sub assistanceor UNIQUE ENTITY ID # is required"
+      "Invalid subaward Place of Performance ZIP Code +4."
     ]
   }
 ]
@@ -1687,8 +1687,8 @@ The API sends descriptive messages in the **message** element on create(POST) an
     "reportStatus": "Draft",
     "message": "Report was saved but failed some validations. Please fix the errors and submit an update request.",
     "errors": [
-      "Subaward Amount is required",
-      "Sub award Place of Performance Section - City provided is invalid."
+      "Subaward Date cannot be in the future.",
+      "Subaward Place of Performance required."
     ]
   }
 }
@@ -1822,9 +1822,7 @@ The API sends descriptive messages in the **message** element on create(POST) an
                }
             ]
          },
-         "errors":[
-            
-         ]
+         "errors":[]
       },
       {
          "id": "fain:subawardNumber:subawardDate:subawardAmount:submittedDate",
@@ -1871,9 +1869,7 @@ The API sends descriptive messages in the **message** element on create(POST) an
                }
             ]
          },
-         "errors":[
-            
-         ]
+         "errors":[]
       }
    ],
    "page":0,
@@ -1992,11 +1988,12 @@ Name | Data Type | Field Length | Required | Description
 -----|-----------|---------|----------|------------
 assistanceData | JSON Array | NA| Yes | Information about the prime assistance awardee. If the report is submitted for multiple prime assistance awards, then this array has multiple elements, one for each of the prime assistance awards.
 **assistanceData Details**||||
-fain | string |  255 characters | Yes | The Award ID (FAIN) for the prime assistance award. 
+fain | string |  255 characters | Yes | The Award ID (FAIN) for the prime assistance award.
+agencyCode | string | 32 characters  | Yes | The ID of the federal funding agency.
 subawardDataList |string  ||Yes  |Information about the subrecipients. If the report is submitted for multiple subawards, then this array has multiple elements, one for each of the subawards.
 **assistanceData.subawardDataList Details** | || | 
 subawardDataList.subawardNumber | string  | 32 characters |Yes  | Number assigned by the Prime to track this subaward.
-subawardDataList.uei |string | 13 characters | Yes | Subrecipient’s Unique Entity ID
+subawardDataList.subawardUEI |string | 13 characters | Yes | Subrecipient’s Unique Entity ID
 subawardDataList.subawardAmount |string  | 20 characters| Yes | The subaward amount for this award.
 subawardDataList.subawardDate|string ||Yes |The date the subaward was made in YYYY-MM-DD format. 
 subawardDataList.subawardDescription |string  |   | Yes |
@@ -2069,11 +2066,12 @@ Name | Data Type | Field Length | Required | Description
 -----|-----------|---------|----------|------------
 assistanceData | JSON Array | NA| Yes | Information about the prime assistance awardee. If the report is submitted for multiple prime assistance awards, then this array has multiple elements, one for each of the prime assistance awards.
 **assistanceData Details**||||
-fain | string |  255 characters | Yes | The Award ID (FAIN) for the prime assistance award. 
+fain | string |  255 characters | Yes | The Award ID (FAIN) for the prime assistance award.
+agencyCode | string | 32 characters  | Yes | The ID of the federal funding agency.
 subawardDataList |string  ||Yes  |Information about the subrecipients. If the report is submitted for multiple subawards, then this array has multiple elements, one for each of the subawards.
 **assistanceData.subawardData Details** | || | 
 subawardData.subawardNumber | string  | 32 characters |Yes  | Number assigned by the Prime to track this subaward.
-subawardData.uei |string | 13 characters | Yes | Subrecipient’s Unique Entity ID
+subawardData.subawardUEI |string | 13 characters | Yes | Subrecipient’s Unique Entity ID
 subawardData.subawardAmount |string  | 20 characters| Yes | The subaward amount for this award.
 subawardData.subawardDate|string ||Yes |The date the subaward was made in YYYY-MM-DD format. 
 subawardData.subawardDescription |string  |   | Yes |
