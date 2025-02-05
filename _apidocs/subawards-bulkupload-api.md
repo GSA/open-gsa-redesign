@@ -128,7 +128,7 @@ Endpoint Name | Description |
 -----|-----------------
 Submit subaward report | Used to submit subaward reports for reporting on one or more assistance awards.
 Update subaward report | Used to update a previously published subaward report for an assistance award.
-Delete subaward report | Used to delete subaward reports for an assistance award.
+Delete subaward report | Used to delete a subaward report for an assistance award.
 Get subaward report | Used to get details for a subaward report for an assistance award.
 Search subaward report | Used to get subaward reports for assistance awards based on optional search criteria.
 
@@ -871,7 +871,7 @@ See the [Response JSON](#response-json) section for the response structure and s
 
 ------- | -------
 **Request Type** | DELETE
-**URL** | /contract/v1/subcontracts/{subawardReportNumber}
+**URL** | /contract/v1/subcontracts/{subawardReportNumber}/
 **Summary** | User will be able to delete subcontract report(s)
 **Consumes** | application/JSON
 **Produces** | Refer [Response JSON](#response-json)
@@ -884,7 +884,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization | Header |  string | Yes | Valid and authorized alpha.SAM.gov user email ID
 api_key | query | string | Yes | Valid System Account API Key
 subawardReportNumber | path | string | Yes | Unique identifier for the subcontract report.
-status | query | string | No | Status of the subcontract report.
+status | query | string | Yes | Status of the subcontract report.
 
 #### Responses
 
@@ -911,20 +911,13 @@ Provide the status (Draft, Published or Reopened as a Query Param) in the reques
 </p>
 </details>
 
-<details>
-<summary>Example 2: Delete request to delete a subcontract report in all statuses, Published, Reopened or Draft, for a contract when status is not provided</summary>
-<p>
-Do not provide any status in the request.
-</p>
-</details>
-
 <p><small><a href="#">Back to top</a></small></p>
 
 ### Delete Subaward Report
 
 ------- | -------
 **Request Type** | DELETE
-**URL** | /assistance/v1/subawards/{subawardReportNumber}
+**URL** | /assistance/v1/subawards/{subawardReportNumber}/
 **Summary** | User will be able to delete subaward report(s)
 **Consumes** | Request Parameters
 **Produces** | Refer [Response JSON](#response-json)
@@ -937,7 +930,7 @@ Parameter Name | Parameter Type | Data Type  | Required | Description
 Authorization | Header |  string | Yes | Valid and authorized alpha.SAM.gov user email ID
 api_key | query | string | Yes | Valid System Account API Key
 subawardReportNumber | path | string | Yes | Unique identifier for the subaward report.
-status | query | string | No | Status of the subaward report.
+status | query | string | Yes | Status of the subaward report.
 
 #### Responses
 
@@ -961,13 +954,6 @@ See the [Response JSON](#response-json) section for the response structure and s
 <summary>Example 1: Delete request to delete a subaward report</summary>
 <p>
 Provide the status (Draft, Published or Reopened as a Query Param) in the request.
-</p>
-</details>
-
-<details>
-<summary>Example 2: Delete request to delete subaward reports in all statuses, Published, Reopened, or Draft, when status is not provided</summary>
-<p>
-Do not provide any status in the request.
 </p>
 </details>
 
@@ -1360,7 +1346,7 @@ The API sends descriptive messages in the **message** element on create(POST) an
 </details>
 
 <details>
-<summary>Example 4: Delete (DELETE) request for a subcontract report when only the subcontractReportNumber was provided, Published and Reopened reports exist, and both are deleted successfully. One element is returned for each deleted report. </summary>
+<summary>Example 4: Delete (DELETE) request for a subcontract report when Published and Reopened reports exist. For the subcontractReportNumber, status was provided as Published, and both the Published and Reopened reports are deleted successfully. One element is returned for each deleted report. </summary>
 <p>
 <code><pre>
 [
@@ -1401,7 +1387,7 @@ The API sends descriptive messages in the **message** element on create(POST) an
     "timeStamp": "2024-02-25T16:58:09.183947300",
     "message": "The report could not be deleted. Please fix the errors and submit the delete request again.",
     "errors": [
-      "Please provide a valid value for the report status. It can be Draft, Published, Reopened or left blank."
+      "No record found for the data provided."
     ]
   }
 }
@@ -1697,7 +1683,7 @@ The API sends descriptive messages in the **message** element on create(POST) an
 </details>
 
 <details>
-<summary>Example 4: Delete (DELETE) request for a subaward report when only the subawardReportNumber is provided, published and reopened reports exist, and both are deleted successfully. One element is returned for each deleted report. </summary>
+<summary>Example 4: Delete (DELETE) request for a subaward report when Published and Reopened reports exist. For the subawardReportNumber, status is provided as Published, and both the Published and Reopened reports are deleted successfully. One element is returned for each deleted report.</summary>
 <p>
 <code><pre>
 [
@@ -1738,7 +1724,7 @@ The API sends descriptive messages in the **message** element on create(POST) an
     "timeStamp": "2024-02-25T16:58:09.183947300",
     "message": "The report could not be deleted. Please fix the errors and submit the delete request again.",
     "errors": [
-      "Please provide a valid value for the report status. It can be Draft, Published, Reopened or left blank."
+      "No record found for the data provided."
     ]
   }
 }
