@@ -1081,6 +1081,7 @@ idvReferenceNumber | query | string | No | The Referenced IDV for the contract
 referenceAgencyCode | query | string | No | The Reference Agency Code for the Referenced IDV
 subawardReportNumber | query | string | No | Unique identifier for the subcontract report
 reportStatus | query | string | No | The status of the Subaward Report to fetch (Draft, Published or Reopened)
+subawardNumber | query | string | No |  The number assigned by the prime contractor to track this subcontract report
 page | query | string | No | The page number for the response to be retrieved (default is 0 which is the first page)
 size | query | string | No | The page size (default is 10)
 
@@ -1161,6 +1162,7 @@ FAIN | query | string | No | The Award ID (FAIN) for the award
 agencyCode | query | string | No | The agency code for the assistance award
 subawardReportNumber | query | string | No | Unique identifier for the subaward report 
 reportStatus | query | string | No | The status of the subaward Report to fetch (Draft, Published or Reopened)
+subawardNumber | query | string | No |  The number assigned by the prime awardee to track this subaward report
 page | query | string | No | The page number for the response to be retrieved (default is 0 which is the first page)
 size | query | string | No | The page size (default is 10)
 
@@ -1935,14 +1937,14 @@ Name | Data Type |Field Length | Required |Description
 contractData | JSON Array | NA|Yes|Information about the prime contractor and the subcontract report(s). If the report is submitted for multiple prime contracts, then this array has multiple elements, one for each of the prime contract.
 **contractData Details**| | | | 
 contractData.contractNumber | string | 50 characters  | Yes |If this report is submitted for a contract, the contractNumber field should match the Contract ID for your contract as reported in FPDS.gov. The idvReferenceNumber should be left blank
-contractData.reportingAgencyCode | string | 32 characters  | Yes | The ID of the federal awarding agency as from FPDS.gov.
+contractData.reportingAgencyCode | string | 4 characters  | Yes | The ID of the federal awarding agency as from FPDS.gov.
 contractData.idvReferenceNumber | string | 50 characters |Yes, if the report is for a Task order on a contract | If this report is submitted for a task order on a contract, enter the task order number in contractNumber field. Enter the contract number that matches the Referenced IDV field in FPDS.gov into the idvReferenceNumber field.
-contractData.referenceAgencyCode | string | 32 characters  | Yes, if the idvReferenceNumber is provided | The ID of the federal awarding agency associated with the IDV Referenced Number.
-contractData.subawardDataList |string  ||Yes  |Information about the subcontractor. If the report is submitted for multiple subcontractors, then this array will have multiple elements, one for each subcontractor.
+contractData.referenceAgencyCode | string | 4 characters  | Yes, if the idvReferenceNumber is provided | The ID of the federal awarding agency associated with the IDV Referenced Number.
+contractData.subawardDataList |JSON Array  ||Yes  |Information about the subcontractor. If the report is submitted for multiple subcontractors, then this array will have multiple elements, one for each subcontractor.
 **contractData.subawardDataList Details** | | | |  
 subawardDataList.subawardUEI | string | 13 characters | Yes | Subcontractor’s Unique Entity ID.
-subawardDataList.subawardNumber | string |32 characters  | Yes | A number assigned by the prime contractor to track this subcontract report.
-subawardDataList.subawardAmount |string  |32 characters | Yes | Subcontract amount for this award to this subcontractor. 
+subawardDataList.subawardNumber | string |100 characters  | Yes | A number assigned by the prime contractor to track this subcontract report.
+subawardDataList.subawardAmount |string  |18,2 characters | Yes | Subcontract amount for this award to this subcontractor. 2 digits after decimal are accepted.
 subawardDataList.subawardDate |string |TIMESTAMP | Yes| The date subcontract was made in YYYY-MM-DD format.
 subawardDataList.subawardDescription |string  || Yes | Describes the subcontract requirements and is pulled from FPDS.gov.
 **contractData.subawardDataList. placeOfPerformance Details** | | | |  
@@ -1976,7 +1978,7 @@ assistanceData | JSON Array | NA| Yes | Information about the prime assistance a
 **assistanceData Details**||||
 fain | string |  255 characters | Yes | The Award ID (FAIN) for the prime assistance award.
 agencyCode | string | 32 characters  | Yes | The ID of the federal funding agency.
-subawardDataList |string  ||Yes  |Information about the subrecipients. If the report is submitted for multiple subawards, then this array has multiple elements, one for each of the subawards.
+subawardDataList |string  ||JSON Array  |Information about the subrecipients. If the report is submitted for multiple subawards, then this array has multiple elements, one for each of the subawards.
 **assistanceData.subawardDataList Details** | || | 
 subawardDataList.subawardNumber | string  | 32 characters |Yes  | Number assigned by the Prime to track this subaward.
 subawardDataList.subawardUEI |string | 13 characters | Yes | Subrecipient’s Unique Entity ID
@@ -1997,8 +1999,8 @@ placeOfPerformance.zipPlus4 | string ||Yes|Subrecipient’s place of performance
 recoveryModelQuestions |JSON Array|NA |Yes, if Compensation question responses are being provided. | Subrecipient’s executive compensation questions. There are two questions and two elements in this array.
 recoveryModelQuestions.code |string||Yes, if Compensation question responses are being provided. | Code for the compensation question. The code is 1 for the first question, 2 for the second question and 3 for the third question. Refer to the Subcontract and Subaward Reports Executive Compensation Questions section for details.
 recoveryModelQuestions.isSelected |string  || Yes, if Compensation question responses are being provided. | A Boolean value representing the response to the compensation question.
-subawardDataList.topPayEmployees|JSON Array|NA |Conditional - see Description. If required, the array requires 5 elements| This is the compensation information for the top five employees. The array has five elements for the five top-paid employees. This is required if the response to compensation question one is true and compensation question two is false. If responses to the compensation questions are provided on the subrecipient’s alpha.SAM.gov entity registration, then this information is not required.
 **assistanceData.subawardDataList. topPayEmployees Details** | | | |  
+subawardDataList.topPayEmployees|JSON Array|NA |Conditional - see Description. If required, the array requires 5 elements| This is the compensation information for the top five employees. The array has five elements for the five top-paid employees. This is required if the response to compensation question one is true and compensation question two is false. If responses to the compensation questions are provided on the subrecipient’s alpha.SAM.gov entity registration, then this information is not required.
 topPayEmployees.full_name |string  ||Yes if subawardDataList.topPayEmployees is required| The full name of the top-paid employees.
 topPayEmployees.salary | string  ||Yes if subawardDataList.topPayEmployees is required|The total compensation of the top-paid employees.
 
@@ -2010,13 +2012,13 @@ topPayEmployees.salary | string  ||Yes if subawardDataList.topPayEmployees is re
 
 Name | Data Type |Field Length | Required |Description 
 -----|-----------|-------|------------|------------
-contractData | JSON Array | NA|Yes|Information about the prime contractor and the subcontract report(s). If the report is submitted for multiple prime contracts, then this array has multiple elements, one for each of the prime contract.
+contractData | JSON Object | NA|Yes|Information about the prime contractor and the subcontract report. 
 **contractData Details**| | | | 
 contractData.contractNumber | string | 50 characters  | Yes |If this report is submitted for a contract, the contractNumber field should match the Contract ID for your contract as reported in FPDS.gov. The idvReferenceNumber should be left blank
 contractData.reportingAgencyCode | string | 32 characters  | Yes | The ID of the federal awarding agency as from FPDS.gov.
 contractData.idvReferenceNumber | string | 50 characters |Yes, if the report is for a Task order on a contract | If this report is submitted for a task order on a contract, enter the task order number in contractNumber field. Enter the contract number that matches the Referenced IDV field in FPDS.gov into the idvReferenceNumber field.
 contractData.referenceAgencyCode | string | 32 characters  | Yes, if the idvReferenceNumber is provided | The ID of the federal awarding agency associated with the IDV Referenced Number.
-contractData.subawardDataList |string  ||Yes  |Information about the subcontractor. If the report is submitted for multiple subcontractors, then this array will have multiple elements, one for each subcontractor.
+contractData.subawardData |JSON Object  ||Yes  |Information about the subcontractor. 
 **contractData.subawardData Details** | | | |  
 subawardData.subawardUEI | string | 13 characters | Yes | Subcontractor’s Unique Entity ID.
 subawardData.subawardNumber | string |32 characters  | Yes | A number assigned by the prime contractor to track this subcontract report.
@@ -2050,11 +2052,11 @@ topPayEmployees.salary | string  ||Yes if subawardDataList.topPayEmployees is re
 
 Name | Data Type | Field Length | Required | Description
 -----|-----------|---------|----------|------------
-assistanceData | JSON Array | NA| Yes | Information about the prime assistance awardee. If the report is submitted for multiple prime assistance awards, then this array has multiple elements, one for each of the prime assistance awards.
+assistanceData | JSON Object | NA| Yes | Information about the prime assistance awardee and the subaward report.
 **assistanceData Details**||||
-fain | string |  255 characters | Yes | The Award ID (FAIN) for the prime assistance award.
-agencyCode | string | 32 characters  | Yes | The ID of the federal funding agency.
-subawardDataList |string  ||Yes  |Information about the subrecipients. If the report is submitted for multiple subawards, then this array has multiple elements, one for each of the subawards.
+assistanceData.fain | string |  255 characters | Yes | The Award ID (FAIN) for the prime assistance award.
+assistanceData.agencyCode | string | 32 characters  | Yes | The ID of the federal funding agency.
+assistanceData.subawardData |JSON Object  ||Yes  |Information about the subrecipient. 
 **assistanceData.subawardData Details** | || | 
 subawardData.subawardNumber | string  | 32 characters |Yes  | Number assigned by the Prime to track this subaward.
 subawardData.subawardUEI |string | 13 characters | Yes | Subrecipient’s Unique Entity ID
@@ -2075,8 +2077,8 @@ placeOfPerformance.zipPlus4 | string ||Yes|Subrecipient’s place of performance
 recoveryModelQuestions |JSON Array|NA |Yes, if Compensation question responses are being provided. | Subrecipient’s executive compensation questions. There are two questions and two elements in this array.
 recoveryModelQuestions.code |string||Yes, if Compensation question responses are being provided. | Code for the compensation question. The code is 1 for the first question, 2 for the second question and 3 for the third question. Refer to the Subcontract and Subaward Reports Executive Compensation Questions section for details.
 recoveryModelQuestions.isSelected |string  || Yes, if Compensation question responses are being provided. | A Boolean value representing the response to the compensation question.
-subawardDataList.topPayEmployees|JSON Array|NA |Conditional - see Description. If required, the array requires 5 elements| This is the compensation information for the top five employees. The array has five elements for the five top-paid employees. This is required if the response to compensation question one is true and compensation question two is false. If responses to the compensation questions are provided on the subrecipient’s alpha.SAM.gov entity registration, then this information is not required.
-**assistanceData.subawardData. topPayEmployees Details** | | | |  
+**assistanceData.subawardData. topPayEmployees Details** | | | | 
+subawardDataList.topPayEmployees|JSON Array|NA |Conditional - see Description. If required, the array requires 5 elements| This is the compensation information for the top five employees. The array has five elements for the five top-paid employees. This is required if the response to compensation question one is true and compensation question two is false. If responses to the compensation questions are provided on the subrecipient’s alpha.SAM.gov entity registration, then this information is not required. 
 topPayEmployees.full_name |string  ||Yes if subawardDataList.topPayEmployees is required| The full name of the top-paid employees.
 topPayEmployees.salary | string  ||Yes if subawardDataList.topPayEmployees is required|The total compensation of the top-paid employees.
 
