@@ -571,7 +571,7 @@ The overall response is a JSON array containing the status of each subaward repo
 
 ------- | -------
 **Request Type** | PUT
-**URL** | /contract/v1/subcontracts/{subawardReportNumber}
+**URL** | /contract/v1/subcontracts/{subawardReportNumber}/
 **Summary** | You can update a subcontract report
 **Consumes** | application/JSON
 **Produces** | Refer [Response JSON](#response-json)
@@ -720,7 +720,7 @@ See the [Response JSON](#response-json) section for the response structure and s
 
 ------- | -------
 **Request Type** | PUT
-**URL** | /assistance/v1/subawards/{subawardReportNumber}
+**URL** | /assistance/v1/subawards/{subawardReportNumber}/
 **Summary** | You can update a subaward report
 **Consumes** | application/JSON
 **Produces** | Refer [Response JSON](#response-json)
@@ -963,7 +963,7 @@ Provide the status (Draft, Published or Reopened as a Query Param) in the reques
 
 ------- | -------
 **Request Type** | GET
-**URL** | /contract/v1/subcontracts/{subawardReportNumber}
+**URL** | /contract/v1/subcontracts/{subawardReportNumber}/
 **Summary** |  User will be able to retrieve a specific subcontract report
 **Consumes** | Request Parameters
 **Produces** | Refer [Response JSON](#response-json)
@@ -1013,7 +1013,7 @@ Requests return a JSON response that is the same as the POST Response JSON. The 
 
 ------- | -------
 **Request Type** | GET
-**URL** | /assistance/v1/subawards/{subawardReportNumber}
+**URL** | /assistance/v1/subawards/{subawardReportNumber}/
 **Summary** | User will be able to retrieve a specific subaward report
 **Consumes** | application/JSON
 **Produces** | Refer [Response JSON](#response-json)
@@ -1063,7 +1063,7 @@ Requests return a JSON response that is the same as the POST Response JSON. The 
 
 ------- | -------
 **Request Type** | GET
-**URL** | /contract/v1/subcontracts
+**URL** | /contract/v1/subcontracts/
 **Summary** |  You can get specific subcontract reports based on the provided search criteria.
 **Consumes** | Request Parameters as described below
 **Produces** | A paginated response. Refer [Response JSON](#response-json)
@@ -1145,7 +1145,7 @@ Requests return a JSON response that is the same as the POST Response JSON. The 
 
 ------- | -------
 **Request Type** | GET
-**URL** | /assistance/v1/subawards
+**URL** | /assistance/v1/subawards/
 **Summary** |  You can get specific subaward reports based on the provided search criteria
 **Consumes** | Request Parameters as described below
 **Produces** | A paginated response. Refer [Response JSON](#response-json)
