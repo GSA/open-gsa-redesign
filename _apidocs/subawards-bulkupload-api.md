@@ -94,7 +94,7 @@ Code | Value     | Description
 <p><small><a href="#">Back to top</a></small></p>
 
 ## GENC Standards
-alpha.SAM.gov uses the [Geopolitical Entities, Names, and Codes (GENC) standards](https://geonames.nga.mil/geonames/GeographicNamesSearch/), which provide country and administrative area codes recognized by the U.S. government. Please refer to the [Error Messages](#validation-failure-error-messages)  section for specific details for these errors.
+alpha.SAM.gov uses the [Geopolitical Entities, Names, and Codes (GENC) standards](https://geonames.nga.mil/geonames/GeographicNamesSearch/), which provide country and administrative area codes recognized by the U.S. government. All location fields (country, state/province, territory) must follow these standards. Please provide country and state/province information using GENC standards. Refer to the table below to get this information.
 
 ### API Fields
 
