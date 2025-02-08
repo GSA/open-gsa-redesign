@@ -94,13 +94,13 @@ Code | Value     | Description
 <p><small><a href="#">Back to top</a></small></p>
 
 ## GENC Standards
-alpha.SAM.gov uses the [Geopolitical Entities, Names, and Codes (GENC) standards](https://geonames.nga.mil/geonames/GeographicNamesSearch/), which provide country and administrative area codes recognized by the U.S. government. All location fields (country, state/province, territory) must follow these standards. Please provide country and state/province information using GENC standards. Refer to the table below to get this information.
+alpha.SAM.gov uses the [Geopolitical Entities, Names, and Codes (GENC) standards](https://geonames.nga.mil/geonames/GeographicNamesSearch/), which provide country and administrative area codes recognized by the U.S. government. All location fields (country, state/province, territory) must follow these standards.
 
 ### API Fields
 
 Field Name | Data Source  | Valid Statuses  | Input Type
 ---------------|------------|----------|------------
-Country Code |  Country_Code MUST come from https://geonames.nga.mil/geonames/GNSHome/index.html and only allowed sources | Active, Inactive (GET calls Only) | Three (3) characters
+Country Code |  countryCode MUST come from https://geonames.nga.mil/geonames/GNSHome/index.html and only allowed sources | Active, Inactive (GET calls Only) | Three (3) characters
 Country Name |  fullName MUST come from https://geonames.nga.mil/geonames/GNSHome/index.html and only allowed sources |   | TEXT
 State | State MUST come from https://geonames.nga.mil/geonames/GNSHome/index.html and only allowed sources   | Listed from the selected country | Two (2) characters
 
