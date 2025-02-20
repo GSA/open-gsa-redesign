@@ -5,41 +5,6 @@ banner-heading: SAM.gov Entity Management API
 <!--<link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/swagger-ui.css" >-->
 <!--<link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/custom.css" >-->
 
-<div class="usa-alert usa-alert-warning" id="site-wide-alert" role="alert">
-   <div class="usa-alert-body">
-     <p class="usa-alert-text">
-        Version 4 (V4) of the Entity Management API was released on:
-        <ul style="padding-left: 50px;">
-            <li><b>Alpha:</b> November 25, 2024</li>
-            <li><b>Production:</b> December 6, 2024</li>
-        </ul><br/>
-        V4 includes a new <b>Exceeds Domestic Threshold field</b> under the <b>Reps and Certs Section -> Certification Subsection</b> in the <b>FAR Responses List of Answers</b> and <b>DFAR Responses List of Answers </b>lists, and the <b>Qualifications Subsection</b> in the <b>Architect Engineer Responses</b> list.<br/><br/>
-         The field locations are as follows:
-        <ul style="padding-left: 50px;">
-        <li>
-         <code>
-           repsAndCerts section -> certifications sub-section -> fARResponses list -> listOfAnswers list -> endProductsList list -> exceedsDomesticThreshold string
-        </code>
-        </li>
-        <li>
-         <code>
-           repsAndCerts section -> certifications sub-section -> dFARResponses list -> listOfAnswers list -> endProductsList list -> exceedsDomesticThreshold string
-        </code>
-        </li>
-        <li>
-         <code>
-           repsAndCerts section -> qualifications sub-section -> architectEngineerResponses list -> listOfAnswers list -> endProductsList list -> exceedsDomesticThreshold string
-        </code>
-        </li>
-        </ul>
-        The new field is a Yes/No value and is added as part of Reps and Certs (version 72). This change does not resolve Reps and Certs issues impacting other services. No other SAM.gov APIs are impacted as part of this change.
-        <br><br>
-        Please update your systems to use the latest Entity Management API if necessary.
-     </p>
-   </div>
- </div>
-
-
 ## Overview
 The Entity Management API allows users to request Unclassified ("Public"), Controlled Unclassified Information (CUI) "For Official Use Only" (FOUO) or CUI "Sensitive" entity data, based on the sensitivity level of the user account and through several optional request parameters.
 
@@ -12409,6 +12374,6 @@ Disclaimer:
 | 06/27/2023 | v4.3    | * Uploaded a revised Data Dictionary with updated Socio Economic Self Selections.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
 | 08/22/2023 | v4.4    | * Uploaded a revised Data Dictionary with updated Business Types.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
 | 09/29/2023 | v4.5    | * Updated "Additional Help References" documentation to link to SAM.gov Data Services page.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
-| 12/06/2024 | v4.6    | * A new V4 Entity Management API has been created, enabling the response for the Exceeds Domestic Threshold field within the Reps and Certs section of the API response.As part of this change, below are the associated changes made to this OpenGSA page:<br><br> * Added Entity Management V4 endpoint information to the Getting Started section.<br><br> * Updated the API Description -> Query String Parameters and Response Schema sub-sections to reflect available parameters and response fields in V4.<br><br> * Updated the OpenAPI Specification File to include the V4 endpoints.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| 12/06/2024 | v4.6    | * A new V4 Entity Management API has been created, enabling the response for the Exceeds Domestic Threshold field within the Reps and Certs section of the API response.As part of this change, below are the associated changes made to this OpenGSA page:<br><br> * Added Entity Management V4 endpoint information to the Getting Started section.<br><br> * Updated the API Description -> Query String Parameters and Response Schema sub-sections to reflect available parameters and response fields in V4.<br><br> * Updated the OpenAPI Specification File to include the V4 endpoints.
 
 <p><small><a href="#">Back to top</a></small></p>
