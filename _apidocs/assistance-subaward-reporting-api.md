@@ -70,9 +70,9 @@ Use filters to get specific results.
 
 Filter | Description | Required | Data Type | Applicable Versions 
 ----- | ------| ----- | ----- | -----
-uniqueAwardKey | Business key to identify subawards under each prime. Unique for a contract and gives complete subaward information pertaining to that contract  | No | Alphanumeric | v1
+primeAwardKey | Business key to identify subawards under each prime. Unique for an award and gives complete subaward information pertaining to that award.  | No | Alphanumeric | v1
 fain | Unique Identifier for grant awards. | No | Alphanumeric | v1
-agencyCode | Allows user to pull prime information to identify the contract family. | No | Numeric | v1
+agencyCode | Allows user to pull prime information to identify the award family. | No | Numeric | v1
 fromDate | Allows users to filter by From Date. By specifying From and To Dates, records can be retreived spanning multiple years with no yearly limit. If both From Date and To Date are provided, user will retrieve records that fall within that inclusive date range. | No | string | v1
 toDate | Allows users to filter by To Date. If only the From Date is provided, the query will automatically set the To Date as current date.| No | string | v1
 
@@ -81,8 +81,8 @@ toDate | Allows users to filter by To Date. If only the From Date is provided, t
 
 Status Name | Value 
 ----- | ----- 
-Published | Returns all published subaward information for a contract. If no status is passed as a parameter, Published is the default value.
-Deleted | Returns deleted records submitted for a contract. Delete must be passed as a status to return deleted records.
+Published | Returns all published subaward information for an award. If no status is passed as a parameter, Published is the default value.
+Deleted | Returns deleted records submitted for an award. Delete must be passed as a status to return deleted records.
 
 
 ## GET Assistance Response Parameters
@@ -96,7 +96,7 @@ totalRecords | Total Records | int | v1
 pageNumber | Page Number. If the user does not pass any value, the system will default pageNumber = 0  | int | v1
 nextPageLink | Next Page Link | string | v1
 previousPageLink | Previous Page Link | string | v1
-uniqueAwardKey | Unique Award Key | string | v1
+primeAwardKey | Unique Award Key | string | v1
 PIID | PIID | string | v1
 agencyId | Agency ID | string | v1
 referencedIDVPIID | Reference IDV PIID | string | v1
@@ -108,7 +108,7 @@ subAwardNumber | Subaward Number | string | v1
 subAwardAmount | Subaward Amount | string | v1
 subAwardDate | Subaward Date | string | v1
 subEntityUei | Sub Entity UEI | string | v1
-subTopPayEmployee | Sub Top Pay Employee | string | v1
+subAwardTopPayEmployee | Sub Top Pay Employee | string | v1
 subEntityLegalBusinessName | Sub Entity Legal Business Name | string | v1
 subEntityDoingBusinessAsName | Sub Entity Doing Business As | string | v1
 primeAwardType | Award Type | string | v1 
@@ -117,10 +117,10 @@ primeEntityUei | Prime Awardee UEI | string | v1
 primeEntityName | Prime Awardee Legal Business Name | string | v1
 baseAwardDateSigned | Base Award Date Signed | string | v1
 descriptionOfRequirement | Description of Requirement | string | v1
-primeNaics | NAICS Code | string | v1
+subAwardNaics | Sub Award NAICS Code | string | v1
 primeOrganizationInfo | Contracting Subtier Name | string | v1
 subEntityPhysicalAddress | Sub Entity Physical Address | string | v1
-subBusinessType | Sub Business Type | string | v1 
+subAwardBusinessType | Sub Award Business Type | string | v1 
 subEntityParentLegalBusinessName | Sub Entity Parent Legal Business Name | string | v1 
 subParentUei | Sub Parent UEI | string | v1
 subEntityTopPayEmployee | Sub Entity Top Pay Employee | string | v1
@@ -163,7 +163,7 @@ You can view the full details of this API in the OpenAPI Specification file avai
         schema:
           type: string
           default: Published
-      - name: uniqueAwardKey
+      - name: primeAwardKey
         in: query
         required: false
         schema:
@@ -297,7 +297,7 @@ From Date value is after To Date value. | From Date cannot be after To date. Ple
 To Date value is after Current Date value. | To Date cannot be after the current date. Please provide valid input.
 Content in Description link is not available. | Description Not Found.
 Status Value is invalid. | Valid status values are: Deleted, Published. 
-UniqueAwardKey is invalid. | UniqueAwardKey must consist of alphanumeric characters only, with the underscore '_' being the only allowed special character.
+primeAwardKey is invalid. | PrimeAwardKey must consist of alphanumeric characters only, with the underscore '_' being the only allowed special character.
 PIID value is invalid. | PIID value must be alphanumeric. 
 ReferencedIDVPIID value is invalid. | Referenced IDV PIID value must be alphanumeric. 
 AgencyID value is invalid. | Agency ID value must be a four-digit number. 
@@ -310,14 +310,14 @@ No API Key is provided. | No API key was supplied. Please submit with a valid AP
 ## Examples
 
 
-### Example 1: Search Published Records by UniqueAwardKey
+### Example 1: Search Published Records by PrimeAwardKey
 
 <details>
     <summary>Request URL</summary>
 
-Production URL: https://api.sam.gov/assistance/v1/subawards/search?pageSize=25&pageNumber=0&uniqueAwardKey=ASST_NON_27MN12002L97E1_6925&api_key={{api_key}} <br>
+Production URL: https://api.sam.gov/assistance/v1/subawards/search?pageSize=25&pageNumber=0&primeAwardKey=ASST_NON_27MN12002L97E1_6925&api_key={{api_key}} <br>
  <br>
-Alpha URL: https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?pageSize=25&pageNumber=0&uniqueAwardKey=ASST_NON_27MN12002L97E1_6925&api_key={{api_key}} <br>
+Alpha URL: https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?pageSize=25&pageNumber=0&primeAwardKey=ASST_NON_27MN12002L97E1_6925&api_key={{api_key}} <br>
 </details>
 
 <details>
@@ -372,7 +372,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?pag
       "assistanceType": null,
       "primeEntityUei": "JL4EX4R4A647",
       "primeEntityName": "Minnesota Department Of Transportation",
-      "uniqueAwardKey": "ASST_NON_27MN12002L97E1_6925",
+      "primeAwardKey": "ASST_NON_27MN12002L97E1_6925",
       "vendorPhysicalAddress": {
         "streetAddress": null,
         "streetAddress2": null,
@@ -391,8 +391,8 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?pag
       "subDbaName": null,
       "subParentName": null,
       "subParentUei": null,
-      "subBusinessType": null,
-      "subTopPayEmployee": null
+      "subAwardBusinessType": null,
+      "subAwardTopPayEmployee": null
     }
   ]
 }
@@ -463,7 +463,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?pag
       "assistanceType": null,
       "primeEntityUei": "JL4EX4R4A647",
       "primeEntityName": "Minnesota Department Of Transportation",
-      "uniqueAwardKey": "ASST_NON_27MN12002L97E1_6925",
+      "primeAwardKey": "ASST_NON_27MN12002L97E1_6925",
       "vendorPhysicalAddress": {
         "streetAddress": null,
         "streetAddress2": null,
@@ -482,8 +482,8 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?pag
       "subDbaName": null,
       "subParentName": null,
       "subParentUei": null,
-      "subBusinessType": null,
-      "subTopPayEmployee": null
+      "subAwardBusinessType": null,
+      "subAwardTopPayEmployee": null
     }
   ]
 }
@@ -496,9 +496,9 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?pag
 <details>
     <summary>Request URL</summary>
 
-Production URL: https://api.sam.gov/assistance/v1/subawards/search?pageSize=25&pageNumber=0&fain=27MN12002L97E1&uniqueAwardKey=ASST_NON_27MN12002L97E1_6925&agencyCode=6925&fromDate=2012-01-01&toDate=2013-09-29&api_key={{api_key}} <br>
+Production URL: https://api.sam.gov/assistance/v1/subawards/search?pageSize=25&pageNumber=0&fain=27MN12002L97E1&primeAwardKey=ASST_NON_27MN12002L97E1_6925&agencyCode=6925&fromDate=2012-01-01&toDate=2013-09-29&api_key={{api_key}} <br>
  <br>
-Alpha URL: https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?pageSize=25&pageNumber=0&fain=27MN12002L97E1&uniqueAwardKey=ASST_NON_27MN12002L97E1_6925&agencyCode=6925&fromDate=2012-01-01&toDate=2013-09-29&api_key={{api_key}} <br>
+Alpha URL: https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?pageSize=25&pageNumber=0&fain=27MN12002L97E1&primeAwardKey=ASST_NON_27MN12002L97E1_6925&agencyCode=6925&fromDate=2012-01-01&toDate=2013-09-29&api_key={{api_key}} <br>
 </details>
 
 <details>
@@ -553,7 +553,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?pag
       "assistanceType": null,
       "primeEntityUei": "JL4EX4R4A647",
       "primeEntityName": "Minnesota Department Of Transportation",
-      "uniqueAwardKey": "ASST_NON_27MN12002L97E1_6925",
+      "primeAwardKey": "ASST_NON_27MN12002L97E1_6925",
       "vendorPhysicalAddress": {
         "streetAddress": null,
         "streetAddress2": null,
@@ -572,8 +572,8 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?pag
       "subDbaName": null,
       "subParentName": null,
       "subParentUei": null,
-      "subBusinessType": null,
-      "subTopPayEmployee": null
+      "subAwardBusinessType": null,
+      "subAwardTopPayEmployee": null
     }
   ]
 }
@@ -643,7 +643,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?sta
       "assistanceType": null,
       "primeEntityUei": "G7FMER65EXJ9",
       "primeEntityName": "Va Dept Of Transportation",
-      "uniqueAwardKey": "ASST_NON_515128374M3001_6925",
+      "primeAwardKey": "ASST_NON_515128374M3001_6925",
       "vendorPhysicalAddress": {
         "streetAddress": "311 S POLLARD STREET",
         "streetAddress2": null,
@@ -662,7 +662,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?sta
       "subDbaName": null,
       "subParentName": "VINTON, TOWN OF",
       "subParentUei": "FBA2ZQK26QV3",
-      "subBusinessType": [
+      "subAwardBusinessType": [
         {
           "code": "12",
           "name": "U.S. Local Government"
@@ -676,7 +676,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?sta
           "name": "Township"
         }
       ],
-      "subTopPayEmployee": null
+      "subAwardTopPayEmployee": null
     },
     {
       "status": "Deleted",
@@ -718,7 +718,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?sta
       "assistanceType": null,
       "primeEntityUei": "RQ3MKLRJ4LV6",
       "primeEntityName": "State of New Hampshire",
-      "uniqueAwardKey": "ASST_NON_2010AHFX0058_1550",
+      "primeAwardKey": "ASST_NON_2010AHFX0058_1550",
       "vendorPhysicalAddress": {
         "streetAddress": "351 CHESTNUT ST",
         "streetAddress2": null,
@@ -737,7 +737,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?sta
       "subDbaName": null,
       "subParentName": "MANCHESTER, CITY OF",
       "subParentUei": "Z93ZBNUC43X8",
-      "subBusinessType": [
+      "subAwardBusinessType": [
         {
           "code": "12",
           "name": "U.S. Local Government"
@@ -747,7 +747,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?sta
           "name": "Municipality"
         }
       ],
-      "subTopPayEmployee": null
+      "subAwardTopPayEmployee": null
     },
     {
       "status": "Deleted",
@@ -789,7 +789,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?sta
       "assistanceType": null,
       "primeEntityUei": "HS5HWWK1AAU5",
       "primeEntityName": "Texas State University-San Marcos",
-      "uniqueAwardKey": "ASST_NON_1240036_4900",
+      "primeAwardKey": "ASST_NON_1240036_4900",
       "vendorPhysicalAddress": {
         "streetAddress": "9101 TUSCANY WAY",
         "streetAddress2": null,
@@ -808,7 +808,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?sta
       "subDbaName": null,
       "subParentName": "AUSTIN COMMUNITY COLLEGE",
       "subParentUei": "ZSFBTJE461W5",
-      "subBusinessType": [
+      "subAwardBusinessType": [
         {
           "code": "A8",
           "name": "Nonprofit Organization"
@@ -822,7 +822,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?sta
           "name": "State Controlled Institution of Higher Learning"
         }
       ],
-      "subTopPayEmployee": null
+      "subAwardTopPayEmployee": null
     }
   ]
 }
@@ -835,9 +835,9 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?sta
 <details>
     <summary>Request URL</summary>
 
-Production URL: https://api.sam.gov/assistance/v1/subawards/search?status=Deleted&pageSize=25&pageNumber=0&uniqueAwardKey=ASST_NON_1240036_4900&fain=1240036&agencyCode=4900&fromDate=2013-01-01&toDate=2013-12-31&api_key={{api_key}} <br>
+Production URL: https://api.sam.gov/assistance/v1/subawards/search?status=Deleted&pageSize=25&pageNumber=0&primeAwardKey=ASST_NON_1240036_4900&fain=1240036&agencyCode=4900&fromDate=2013-01-01&toDate=2013-12-31&api_key={{api_key}} <br>
  <br>
-Alpha URL: https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?status=Deleted&pageSize=25&pageNumber=0&uniqueAwardKey=ASST_NON_1240036_4900&fain=1240036&agencyCode=4900&fromDate=2013-01-01&toDate=2013-12-31&api_key={{api_key}} <br>
+Alpha URL: https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?status=Deleted&pageSize=25&pageNumber=0&primeAwardKey=ASST_NON_1240036_4900&fain=1240036&agencyCode=4900&fromDate=2013-01-01&toDate=2013-12-31&api_key={{api_key}} <br>
 </details>
 
 <details>
@@ -892,7 +892,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?sta
       "assistanceType": null,
       "primeEntityUei": "HS5HWWK1AAU5",
       "primeEntityName": "Texas State University-San Marcos",
-      "uniqueAwardKey": "ASST_NON_1240036_4900",
+      "primeAwardKey": "ASST_NON_1240036_4900",
       "vendorPhysicalAddress": {
         "streetAddress": "9101 TUSCANY WAY",
         "streetAddress2": null,
@@ -911,7 +911,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?sta
       "subDbaName": null,
       "subParentName": "AUSTIN COMMUNITY COLLEGE",
       "subParentUei": "ZSFBTJE461W5",
-      "subBusinessType": [
+      "subAwardBusinessType": [
         {
           "code": "A8",
           "name": "Nonprofit Organization"
@@ -925,7 +925,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?sta
           "name": "State Controlled Institution of Higher Learning"
         }
       ],
-      "subTopPayEmployee": null
+      "subAwardTopPayEmployee": null
     }
   ]
 }
@@ -998,7 +998,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?pag
             "assistanceType": null,
             "primeEntityUei": "PCBXEVWE3V75",
             "primeEntityName": "OKLAHOMA STATE OF",
-            "uniqueAwardKey": "ASST_NON_4438DROKTTHP     04_7022",
+            "primeAwardKey": "ASST_NON_4438DROKTTHP     04_7022",
             "vendorPhysicalAddress": {
                 "streetAddress": "8858 SOUTH PRINCETON",
                 "streetAddress2": null,
@@ -1017,7 +1017,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?pag
             "subDbaName": null,
             "subParentName": "OKLAHOMA, STATE OF",
             "subParentUei": "EMSCXBHK78V7",
-            "subBusinessType": [
+            "subAwardBusinessType": [
                 {
                     "code": "23",
                     "name": "Minority-Owned Business"
@@ -1035,7 +1035,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?pag
                     "name": "Subchapter S Corporation"
                 }
             ],
-            "subTopPayEmployee": []
+            "subAwardTopPayEmployee": []
         }
     ]
 }
@@ -1108,7 +1108,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?sta
             "assistanceType": null,
             "primeEntityUei": "NTLHJXM55KZ6",
             "primeEntityName": "Arizona State University",
-            "uniqueAwardKey": "ASST_NON_1250440_4900",
+            "primeAwardKey": "ASST_NON_1250440_4900",
             "vendorPhysicalAddress": {
                 "streetAddress": "6521 HIGHWAY 69 S Ste O",
                 "streetAddress2": "null",
@@ -1127,8 +1127,8 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?sta
             "subDbaName": null,
             "subParentName": "ARIZONA STATE UNIVERSITY",
             "subParentUei": "HX59VKHQH1V7",
-            "subBusinessType": [],
-            "subTopPayEmployee": [
+            "subAwardBusinessType": [],
+            "subAwardTopPayEmployee": [
                 {
                     "salary": "100",
                     "fullname": "sub1"
