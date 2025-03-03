@@ -68,7 +68,7 @@ Use filters to get specific results.
 
 Filter | Description | Required | Data Type | Applicable Versions 
 ----- | ------| ----- | ----- | -----
-uniqueAwardKey | Business key to identify subawards under each prime. Unique for a contract and gives complete subaward information pertaining to that contract  | No | Alphanumeric | v1
+primeContractKey | Business key to identify subawards under each prime. Unique for a contract and gives complete subcontract information pertaining to that contract  | No | Alphanumeric | v1
 PIID | Allows user to pull one single record with multiple subawards. The total records that will be shown is the number of subawards. | No | Alphanumeric | v1
 agencyId | Allows user to pull prime information to identify the contract family. | No | Numeric | v1
 referencedIdvPIID | Allows user to pull prime information to identify the contract family. | No | Alphanumeric | v1
@@ -97,7 +97,7 @@ totalRecords | Total Records | int | v1
 pageNumber | Page Number. If the user does not pass any value, the system will default pageNumber = 0  | int | v1
 nextPageLink | Next Page Link | string | v1
 previousPageLink | Previous Page Link | string | v1
-uniqueAwardKey | Unique Award Key | string | v1
+primeContractKey | Prime Contract Key | string | v1
 PIID | PIID | string | v1
 agencyId | Agency ID | string | v1
 referencedIDVPIID | Reference IDV PIID | string | v1
@@ -116,14 +116,14 @@ totalContractValue | Total Contract Value | string | v1
 primeEntityUei | Prime Awardee UEI | string | v1 
 primeEntityName | Prime Awardee Legal Business Name | string | v1
 baseAwardDateSigned | Base Award Date Signed | string | v1
-descriptionOfRequirement | Description of Requirement | string | v1
-primeNaics | NAICS Code | string | v1
+descriptionOfRequirement | Description of Requirement for Prime Award | string | v1
+subContractorNaics | Sub Contractor NAICS Code | string | v1
 primeOrganizationInfo | Contracting Subtier Name | string | v1
 subEntityPhysicalAddress | Sub Entity Physical Address | string | v1
-subBusinessType | Sub Business Type | string | v1 
+subContractorBusinessType | Sub Contractor Business Type | string | v1 
 subEntityParentLegalBusinessName | Sub Entity Parent Legal Business Name | string | v1 
 subParentUei | Sub Parent UEI | string | v1
-subEntityTopPayEmployee | Sub Entity Top Pay Employee | string | v1
+subContractorTopPayEmployee | Sub Contractor Top Pay Employee | string | v1
 
 
 ## Open API Specification File 
@@ -163,7 +163,7 @@ You can view the full details of this API in the OpenAPI Specification file avai
         schema:
           type: string
           default: Published
-      - name: uniqueAwardKey
+      - name: primeContractKey
         in: query
         required: false
         schema:
@@ -296,7 +296,7 @@ From Date value is after To Date value. | From Date cannot be after To date. Ple
 To Date value is after Current Date value. | To Date cannot be after the current date. Please provide valid input.
 Content in Description link is not available. | Description Not Found.
 Status Value is invalid. | Valid status values are: Deleted, Published. 
-UniqueAwardKey is invalid. | UniqueAwardKey must consist of alphanumeric characters only, with the underscore '_' being the only allowed special character.
+primeContractKey is invalid. | PrimeContractKey must consist of alphanumeric characters only, with the underscore '_' being the only allowed special character.
 PIID value is invalid. | PIID value must be alphanumeric. 
 ReferencedIDVPIID value is invalid. | Referenced IDV PIID value must be alphanumeric. 
 AgencyID value is invalid. | Agency ID value must be a four-digit number. 
@@ -332,7 +332,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
   "previousPageLink": "https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pageNumber=0&pageSize=1",
   "data": [
     {
-      "uniqueAwardKey": "CONT_AWD_SPE8EM20F111S_9700_SPM8EJ14D0011_9700",
+      "primeContractKey": "CONT_AWD_SPE8EM20F111S_9700_SPM8EJ14D0011_9700",
       "piid": "SPE8EM20F111S",
       "agencyId": "9700",
       "referencedIDVPIID": "SPM8EJ14D0011",
@@ -351,7 +351,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       "primeEntityName": "ATLANTIC DIVING SUPPLY, INC.",
       "baseAwardDateSigned": "2020-02-19",
       "descriptionOfRequirement": "4549096622!UH1Y CANOPY AND NOSE COVER",
-      "primeNaics": {
+      "subContractorNaics": {
         "code": "423850",
         "description": "SERVICE ESTABLISHMENT EQUIPMENT AND SUPPLIES MERCHANT WHOLESALERS"
       },
@@ -396,7 +396,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "038622445"
       },
-      "subBusinessType": [
+      "subContractorBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -408,7 +408,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       ],
       "subParentUei": null,
       "subEntityDoingBusinessAsName": "ADS",
-      "subTopPayEmployee": null,
+      "subContractorTopPayEmployee": null,
       "subEntityParentLegalBusinessName": null
     }
   ]
@@ -440,7 +440,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
   "previousPageLink": "https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pageNumber=0&pageSize=1",
   "data": [
     {
-      "uniqueAwardKey": "CONT_AWD_SPE8EM20F111S_9700_SPM8EJ14D0011_9700",
+      "primeContractKey": "CONT_AWD_SPE8EM20F111S_9700_SPM8EJ14D0011_9700",
       "piid": "SPE8EM20F111S",
       "agencyId": "9700",
       "referencedIDVPIID": "SPM8EJ14D0011",
@@ -459,7 +459,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       "primeEntityName": "ATLANTIC DIVING SUPPLY, INC.",
       "baseAwardDateSigned": "2020-02-19",
       "descriptionOfRequirement": "4549096622!UH1Y CANOPY AND NOSE COVER",
-      "primeNaics": {
+      "subContractorNaics": {
         "code": "423850",
         "description": "SERVICE ESTABLISHMENT EQUIPMENT AND SUPPLIES MERCHANT WHOLESALERS"
       },
@@ -504,7 +504,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "038622445"
       },
-      "subBusinessType": [
+      "subContractorBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -516,7 +516,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       ],
       "subParentUei": null,
       "subEntityDoingBusinessAsName": "ADS",
-      "subTopPayEmployee": null,
+      "subContractorTopPayEmployee": null,
       "subEntityParentLegalBusinessName": null
     }
   ]
@@ -548,7 +548,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?st
   "previousPageLink": "https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pageNumber=0&pageSize=25",
   "data": [
     {
-      "uniqueAwardKey": "CONT_AWD_FA860420F6109_9700_FA860415D7976_9700",
+      "primeContractKey": "CONT_AWD_FA860420F6109_9700_FA860415D7976_9700",
       "piid": "FA860420F6109",
       "agencyId": "9700",
       "referencedIDVPIID": "FA860415D7976",
@@ -567,7 +567,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?st
       "primeEntityName": "RADIANCE TECHNOLOGIES, INC.",
       "baseAwardDateSigned": "2020-02-18",
       "descriptionOfRequirement": "ADVANCED TECHNICAL EXPLOITATION PROGRAM TWO",
-      "primeNaics": {
+      "subContractorNaics": {
         "code": "541712",
         "description": "RESEARCH AND DEVELOPMENT IN THE PHYSICAL, ENGINEERING, AND LIFE SCIENCES (EXCEPT BIOTECHNOLOGY)"
       },
@@ -612,7 +612,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?st
         },
         "zip": "803013206"
       },
-      "subBusinessType": [
+      "subContractorBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -620,7 +620,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?st
       ],
       "subParentUei": "NKVZLJL93QT6",
       "subEntityDoingBusinessAsName": null,
-            "subTopPayEmployee": [
+            "subContractorTopPayEmployee": [
                 {
                     "salary": "6145690",
                     "fullname": "Mark A Caylor"
@@ -673,7 +673,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
   "previousPageLink": "https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pageNumber=0&pageSize=25",
   "data": [
     {
-      "uniqueAwardKey": "CONT_AWD_47QFSA20F0057_4732_GS00Q14OADU428_4732",
+      "primeContractKey": "CONT_AWD_47QFSA20F0057_4732_GS00Q14OADU428_4732",
       "piid": "47QFSA20F0057",
       "agencyId": "4732",
       "referencedIDVPIID": "GS00Q14OADU428",
@@ -692,7 +692,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       "primeEntityName": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
       "baseAwardDateSigned": "2020-05-05",
       "descriptionOfRequirement": "SOFTWARE LIFE CYCLE DEVELOPMENT",
-      "primeNaics": {
+      "subContractorNaics": {
         "code": "541712",
         "description": "RESEARCH AND DEVELOPMENT IN THE PHYSICAL, ENGINEERING, AND LIFE SCIENCES (EXCEPT BIOTECHNOLOGY)"
       },
@@ -737,7 +737,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "153170404"
       },
-      "subBusinessType": [
+      "subContractorBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -745,11 +745,11 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       ],
       "subParentUei": "TY4MJLKVJJ27",
       "subEntityDoingBusinessAsName": "SAIC",
-      "subTopPayEmployee": null,
+      "subContractorTopPayEmployee": null,
       "subEntityParentLegalBusinessName": "ANSYS, INC."
     },
     {
-      "uniqueAwardKey": "CONT_AWD_47QFSA20F0057_4732_GS00Q14OADU428_4732",
+      "primeContractKey": "CONT_AWD_47QFSA20F0057_4732_GS00Q14OADU428_4732",
       "piid": "47QFSA20F0057",
       "agencyId": "4732",
       "referencedIDVPIID": "GS00Q14OADU428",
@@ -768,7 +768,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       "primeEntityName": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
       "baseAwardDateSigned": "2020-05-05",
       "descriptionOfRequirement": "SOFTWARE LIFE CYCLE DEVELOPMENT",
-      "primeNaics": {
+      "subContractorNaics": {
         "code": "541712",
         "description": "RESEARCH AND DEVELOPMENT IN THE PHYSICAL, ENGINEERING, AND LIFE SCIENCES (EXCEPT BIOTECHNOLOGY)"
       },
@@ -813,7 +813,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "201242259"
       },
-      "subBusinessType": [
+      "subContractorBusinessType": [
         {
           "code": "27",
           "name": "Self-Certified Small Disadvantaged Business"
@@ -833,11 +833,11 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       ],
       "subParentUei": null,
       "subEntityDoingBusinessAsName": "SAIC",
-      "subTopPayEmployee": null,
+      "subContractorTopPayEmployee": null,
       "subEntityParentLegalBusinessName": null
     },
     {
-      "uniqueAwardKey": "CONT_AWD_47QFSA20F0057_4732_GS00Q14OADU428_4732",
+      "primeContractKey": "CONT_AWD_47QFSA20F0057_4732_GS00Q14OADU428_4732",
       "piid": "47QFSA20F0057",
       "agencyId": "4732",
       "referencedIDVPIID": "GS00Q14OADU428",
@@ -856,7 +856,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       "primeEntityName": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
       "baseAwardDateSigned": "2020-05-05",
       "descriptionOfRequirement": "SOFTWARE LIFE CYCLE DEVELOPMENT",
-      "primeNaics": {
+      "subContractorNaics": {
         "code": "541712",
         "description": "RESEARCH AND DEVELOPMENT IN THE PHYSICAL, ENGINEERING, AND LIFE SCIENCES (EXCEPT BIOTECHNOLOGY)"
       },
@@ -901,7 +901,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "325052320"
       },
-      "subBusinessType": [
+      "subContractorBusinessType": [
         {
           "code": "23",
           "name": "Minority-Owned business"
@@ -933,11 +933,11 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       ],
       "subParentUei": null,
       "subEntityDoingBusinessAsName": "SAIC",
-      "subTopPayEmployee": null,
+      "subContractorTopPayEmployee": null,
       "subEntityParentLegalBusinessName": null
     },
     {
-      "uniqueAwardKey": "CONT_AWD_47QFSA20F0057_4732_GS00Q14OADU428_4732",
+      "primeContractKey": "CONT_AWD_47QFSA20F0057_4732_GS00Q14OADU428_4732",
       "piid": "47QFSA20F0057",
       "agencyId": "4732",
       "referencedIDVPIID": "GS00Q14OADU428",
@@ -956,7 +956,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       "primeEntityName": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
       "baseAwardDateSigned": "2020-05-05",
       "descriptionOfRequirement": "SOFTWARE LIFE CYCLE DEVELOPMENT",
-      "primeNaics": {
+      "subContractorNaics": {
         "code": "541712",
         "description": "RESEARCH AND DEVELOPMENT IN THE PHYSICAL, ENGINEERING, AND LIFE SCIENCES (EXCEPT BIOTECHNOLOGY)"
       },
@@ -1001,7 +1001,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "358056230"
       },
-      "subBusinessType": [
+      "subContractorBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -1021,11 +1021,11 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       ],
       "subParentUei": "Q3MZZE4YNBS9",
       "subEntityDoingBusinessAsName": "SAIC",
-      "subTopPayEmployee": null,
+      "subContractorTopPayEmployee": null,
       "subEntityParentLegalBusinessName": "BROCKWELL TECHNOLOGIES, INC."
     },
     {
-      "uniqueAwardKey": "CONT_AWD_47QFSA20F0057_4732_GS00Q14OADU428_4732",
+      "primeContractKey": "CONT_AWD_47QFSA20F0057_4732_GS00Q14OADU428_4732",
       "piid": "47QFSA20F0057",
       "agencyId": "4732",
       "referencedIDVPIID": "GS00Q14OADU428",
@@ -1044,7 +1044,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       "primeEntityName": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
       "baseAwardDateSigned": "2020-05-05",
       "descriptionOfRequirement": "SOFTWARE LIFE CYCLE DEVELOPMENT",
-      "primeNaics": {
+      "subContractorNaics": {
         "code": "541712",
         "description": "RESEARCH AND DEVELOPMENT IN THE PHYSICAL, ENGINEERING, AND LIFE SCIENCES (EXCEPT BIOTECHNOLOGY)"
       },
@@ -1089,7 +1089,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "217015239"
       },
-      "subBusinessType": [
+      "subContractorBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -1101,11 +1101,11 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       ],
       "subParentUei": null,
       "subEntityDoingBusinessAsName": "SAIC",
-      "subTopPayEmployee": null,
+      "subContractorTopPayEmployee": null,
       "subEntityParentLegalBusinessName": null
     },
     {
-      "uniqueAwardKey": "CONT_AWD_47QFPA20F0025_4732_GS00Q14OADS619_4732",
+      "primeContractKey": "CONT_AWD_47QFPA20F0025_4732_GS00Q14OADS619_4732",
       "piid": "47QFPA20F0025",
       "agencyId": "4732",
       "referencedIDVPIID": "GS00Q14OADS619",
@@ -1124,7 +1124,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       "primeEntityName": "TECOLOTE RESEARCH, INC.",
       "baseAwardDateSigned": "2020-04-30",
       "descriptionOfRequirement": "SAF2 - ADVISORY AND ASSISTANCE SERVICES FOR SPACE AND MISSILE SYSTEMS CENTER ATLAS X DIVISION",
-      "primeNaics": {
+      "subContractorNaics": {
         "code": "541712",
         "description": "RESEARCH AND DEVELOPMENT IN THE PHYSICAL, ENGINEERING, AND LIFE SCIENCES (EXCEPT BIOTECHNOLOGY)"
       },
@@ -1169,7 +1169,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "902754880"
       },
-      "subBusinessType": [
+      "subContractorBusinessType": [
         {
           "code": "23",
           "name": "Minority-Owned business"
@@ -1201,11 +1201,11 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       ],
       "subParentUei": null,
       "subEntityDoingBusinessAsName": null,
-      "subTopPayEmployee": null,
+      "subContractorTopPayEmployee": null,
       "subEntityParentLegalBusinessName": null
     },
     {
-      "uniqueAwardKey": "CONT_AWD_47QFSA20F0057_4732_GS00Q14OADU428_4732",
+      "primeContractKey": "CONT_AWD_47QFSA20F0057_4732_GS00Q14OADU428_4732",
       "piid": "47QFSA20F0057",
       "agencyId": "4732",
       "referencedIDVPIID": "GS00Q14OADU428",
@@ -1224,7 +1224,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       "primeEntityName": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
       "baseAwardDateSigned": "2020-05-05",
       "descriptionOfRequirement": "SOFTWARE LIFE CYCLE DEVELOPMENT",
-      "primeNaics": {
+      "subContractorNaics": {
         "code": "541712",
         "description": "RESEARCH AND DEVELOPMENT IN THE PHYSICAL, ENGINEERING, AND LIFE SCIENCES (EXCEPT BIOTECHNOLOGY)"
       },
@@ -1269,7 +1269,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "926144715"
       },
-      "subBusinessType": [
+      "subContractorBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -1285,11 +1285,11 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       ],
       "subParentUei": null,
       "subEntityDoingBusinessAsName": "SAIC",
-      "subTopPayEmployee": null,
+      "subContractorTopPayEmployee": null,
       "subEntityParentLegalBusinessName": null
     },
     {
-      "uniqueAwardKey": "CONT_AWD_47QFSA20F0057_4732_GS00Q14OADU428_4732",
+      "primeContractKey": "CONT_AWD_47QFSA20F0057_4732_GS00Q14OADU428_4732",
       "piid": "47QFSA20F0057",
       "agencyId": "4732",
       "referencedIDVPIID": "GS00Q14OADU428",
@@ -1308,7 +1308,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       "primeEntityName": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
       "baseAwardDateSigned": "2020-05-05",
       "descriptionOfRequirement": "SOFTWARE LIFE CYCLE DEVELOPMENT",
-      "primeNaics": {
+      "subContractorNaics": {
         "code": "541712",
         "description": "RESEARCH AND DEVELOPMENT IN THE PHYSICAL, ENGINEERING, AND LIFE SCIENCES (EXCEPT BIOTECHNOLOGY)"
       },
@@ -1353,7 +1353,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "201713400"
       },
-      "subBusinessType": [
+      "subContractorBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -1365,7 +1365,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       ],
       "subParentUei": "NKVZLJL93QT6",
       "subEntityDoingBusinessAsName": "SAIC",
-            "subTopPayEmployee": [
+            "subContractorTopPayEmployee": [
                 {
                     "salary": "6145690",
                     "fullname": "Mark A Caylor"
@@ -1390,7 +1390,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       "subEntityParentLegalBusinessName": "NORTHROP GRUMMAN CORPORATION"
     },
     {
-      "uniqueAwardKey": "CONT_AWD_47QFSA20F0066_4732_H9222215D0022_9700",
+      "primeContractKey": "CONT_AWD_47QFSA20F0066_4732_H9222215D0022_9700",
       "piid": "47QFSA20F0066",
       "agencyId": "4732",
       "referencedIDVPIID": "H9222215D0022",
@@ -1409,7 +1409,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       "primeEntityName": "BOOZ ALLEN HAMILTON INC.",
       "baseAwardDateSigned": "2020-05-28",
       "descriptionOfRequirement": "J3 INTERNATIONAL SUPPORT",
-      "primeNaics": {
+      "subContractorNaics": {
         "code": "541611",
         "description": "ADMINISTRATIVE MANAGEMENT AND GENERAL MANAGEMENT CONSULTING SERVICES"
       },
@@ -1454,7 +1454,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "787501223"
       },
-      "subBusinessType": [
+      "subContractorBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -1462,11 +1462,11 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       ],
       "subParentUei": "FUPBY1L1EEA8",
       "subEntityDoingBusinessAsName": null,
-      "subTopPayEmployee": null,
+      "subContractorTopPayEmployee": null,
       "subEntityParentLegalBusinessName": "MADISON SPRINGFIELD INC."
     },
     {
-      "uniqueAwardKey": "CONT_AWD_47QFSA20F0057_4732_GS00Q14OADU428_4732",
+      "primeContractKey": "CONT_AWD_47QFSA20F0057_4732_GS00Q14OADU428_4732",
       "piid": "47QFSA20F0057",
       "agencyId": "4732",
       "referencedIDVPIID": "GS00Q14OADU428",
@@ -1485,7 +1485,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       "primeEntityName": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
       "baseAwardDateSigned": "2020-05-05",
       "descriptionOfRequirement": "SOFTWARE LIFE CYCLE DEVELOPMENT",
-      "primeNaics": {
+      "subContractorNaics": {
         "code": "541712",
         "description": "RESEARCH AND DEVELOPMENT IN THE PHYSICAL, ENGINEERING, AND LIFE SCIENCES (EXCEPT BIOTECHNOLOGY)"
       },
@@ -1530,7 +1530,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "308093185"
       },
-      "subBusinessType": [
+      "subContractorBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -1542,7 +1542,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       ],
       "subParentUei": "Q6S9MZTEFMS5",
       "subEntityDoingBusinessAsName": "SAIC",
-            "subTopPayEmployee": [
+            "subContractorTopPayEmployee": [
                 {
                     "salary": "295348",
                     "fullname": "John K Dewey"
@@ -1567,7 +1567,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       "subEntityParentLegalBusinessName": "JANUS RESEARCH GROUP, LLC"
     },
     {
-      "uniqueAwardKey": "CONT_AWD_47QFSA20F0057_4732_GS00Q14OADU428_4732",
+      "primeContractKey": "CONT_AWD_47QFSA20F0057_4732_GS00Q14OADU428_4732",
       "piid": "47QFSA20F0057",
       "agencyId": "4732",
       "referencedIDVPIID": "GS00Q14OADU428",
@@ -1586,7 +1586,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       "primeEntityName": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
       "baseAwardDateSigned": "2020-05-05",
       "descriptionOfRequirement": "SOFTWARE LIFE CYCLE DEVELOPMENT",
-      "primeNaics": {
+      "subContractorNaics": {
         "code": "541712",
         "description": "RESEARCH AND DEVELOPMENT IN THE PHYSICAL, ENGINEERING, AND LIFE SCIENCES (EXCEPT BIOTECHNOLOGY)"
       },
@@ -1631,7 +1631,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "221023388"
       },
-      "subBusinessType": [
+      "subContractorBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -1643,11 +1643,11 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       ],
       "subParentUei": "VHHLEJG67DG5",
       "subEntityDoingBusinessAsName": "SAIC",
-      "subTopPayEmployee": null,
+      "subContractorTopPayEmployee": null,
       "subEntityParentLegalBusinessName": "SELECT GROUP LLC, THE"
     },
     {
-      "uniqueAwardKey": "CONT_AWD_47QFSA20F0057_4732_GS00Q14OADU428_4732",
+      "primeContractKey": "CONT_AWD_47QFSA20F0057_4732_GS00Q14OADU428_4732",
       "piid": "47QFSA20F0057",
       "agencyId": "4732",
       "referencedIDVPIID": "GS00Q14OADU428",
@@ -1666,7 +1666,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       "primeEntityName": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
       "baseAwardDateSigned": "2020-05-05",
       "descriptionOfRequirement": "SOFTWARE LIFE CYCLE DEVELOPMENT",
-      "primeNaics": {
+      "subContractorNaics": {
         "code": "541712",
         "description": "RESEARCH AND DEVELOPMENT IN THE PHYSICAL, ENGINEERING, AND LIFE SCIENCES (EXCEPT BIOTECHNOLOGY)"
       },
@@ -1711,7 +1711,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "210761112"
       },
-      "subBusinessType": [
+      "subContractorBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -1723,11 +1723,11 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       ],
       "subParentUei": "GVWENMHJ4Y87",
       "subEntityDoingBusinessAsName": "SAIC",
-      "subTopPayEmployee": null,
+      "subContractorTopPayEmployee": null,
       "subEntityParentLegalBusinessName": "Allegis Group, Inc."
     },
     {
-      "uniqueAwardKey": "CONT_AWD_47QFPA20F0025_4732_GS00Q14OADS619_4732",
+      "primeContractKey": "CONT_AWD_47QFPA20F0025_4732_GS00Q14OADS619_4732",
       "piid": "47QFPA20F0025",
       "agencyId": "4732",
       "referencedIDVPIID": "GS00Q14OADS619",
@@ -1746,7 +1746,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       "primeEntityName": "TECOLOTE RESEARCH, INC.",
       "baseAwardDateSigned": "2020-04-30",
       "descriptionOfRequirement": "SAF2 - ADVISORY AND ASSISTANCE SERVICES FOR SPACE AND MISSILE SYSTEMS CENTER ATLAS X DIVISION",
-      "primeNaics": {
+      "subContractorNaics": {
         "code": "541712",
         "description": "RESEARCH AND DEVELOPMENT IN THE PHYSICAL, ENGINEERING, AND LIFE SCIENCES (EXCEPT BIOTECHNOLOGY)"
       },
@@ -1791,7 +1791,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "902454404"
       },
-      "subBusinessType": [
+      "subContractorBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -1811,11 +1811,11 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       ],
       "subParentUei": null,
       "subEntityDoingBusinessAsName": null,
-      "subTopPayEmployee": null,
+      "subContractorTopPayEmployee": null,
       "subEntityParentLegalBusinessName": null
     },
     {
-      "uniqueAwardKey": "CONT_AWD_47QFSA20F0057_4732_GS00Q14OADU428_4732",
+      "primeContractKey": "CONT_AWD_47QFSA20F0057_4732_GS00Q14OADU428_4732",
       "piid": "47QFSA20F0057",
       "agencyId": "4732",
       "referencedIDVPIID": "GS00Q14OADU428",
@@ -1834,7 +1834,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       "primeEntityName": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
       "baseAwardDateSigned": "2020-05-05",
       "descriptionOfRequirement": "SOFTWARE LIFE CYCLE DEVELOPMENT",
-      "primeNaics": {
+      "subContractorNaics": {
         "code": "541712",
         "description": "RESEARCH AND DEVELOPMENT IN THE PHYSICAL, ENGINEERING, AND LIFE SCIENCES (EXCEPT BIOTECHNOLOGY)"
       },
@@ -1879,7 +1879,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "900174674"
       },
-      "subBusinessType": [
+      "subContractorBusinessType": [
         {
           "code": "27",
           "name": "Self-Certified Small Disadvantaged Business"
@@ -1891,11 +1891,11 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       ],
       "subParentUei": null,
       "subEntityDoingBusinessAsName": "SAIC",
-      "subTopPayEmployee": null,
+      "subContractorTopPayEmployee": null,
       "subEntityParentLegalBusinessName": null
     },
     {
-      "uniqueAwardKey": "CONT_AWD_47QFSA20F0057_4732_GS00Q14OADU428_4732",
+      "primeContractKey": "CONT_AWD_47QFSA20F0057_4732_GS00Q14OADU428_4732",
       "piid": "47QFSA20F0057",
       "agencyId": "4732",
       "referencedIDVPIID": "GS00Q14OADU428",
@@ -1914,7 +1914,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       "primeEntityName": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
       "baseAwardDateSigned": "2020-05-05",
       "descriptionOfRequirement": "SOFTWARE LIFE CYCLE DEVELOPMENT",
-      "primeNaics": {
+      "subContractorNaics": {
         "code": "541712",
         "description": "RESEARCH AND DEVELOPMENT IN THE PHYSICAL, ENGINEERING, AND LIFE SCIENCES (EXCEPT BIOTECHNOLOGY)"
       },
@@ -1959,7 +1959,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "330194879"
       },
-      "subBusinessType": [
+      "subContractorBusinessType": [
         {
           "code": "23",
           "name": "Minority-Owned business"
@@ -1979,11 +1979,11 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       ],
       "subParentUei": null,
       "subEntityDoingBusinessAsName": "SAIC",
-      "subTopPayEmployee": null,
+      "subContractorTopPayEmployee": null,
       "subEntityParentLegalBusinessName": null
     },
     {
-      "uniqueAwardKey": "CONT_AWD_47QFSA20F0057_4732_GS00Q14OADU428_4732",
+      "primeContractKey": "CONT_AWD_47QFSA20F0057_4732_GS00Q14OADU428_4732",
       "piid": "47QFSA20F0057",
       "agencyId": "4732",
       "referencedIDVPIID": "GS00Q14OADU428",
@@ -2002,7 +2002,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       "primeEntityName": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
       "baseAwardDateSigned": "2020-05-05",
       "descriptionOfRequirement": "SOFTWARE LIFE CYCLE DEVELOPMENT",
-      "primeNaics": {
+      "subContractorNaics": {
         "code": "541712",
         "description": "RESEARCH AND DEVELOPMENT IN THE PHYSICAL, ENGINEERING, AND LIFE SCIENCES (EXCEPT BIOTECHNOLOGY)"
       },
@@ -2047,7 +2047,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "325476638"
       },
-      "subBusinessType": [
+      "subContractorBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -2055,11 +2055,11 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       ],
       "subParentUei": "MKCAUUG2K7H6",
       "subEntityDoingBusinessAsName": "SAIC",
-      "subTopPayEmployee": null,
+      "subContractorTopPayEmployee": null,
       "subEntityParentLegalBusinessName": "JACOBS ENGINEERING GROUP INC."
     },
     {
-      "uniqueAwardKey": "CONT_AWD_47QFSA20F0057_4732_GS00Q14OADU428_4732",
+      "primeContractKey": "CONT_AWD_47QFSA20F0057_4732_GS00Q14OADU428_4732",
       "piid": "47QFSA20F0057",
       "agencyId": "4732",
       "referencedIDVPIID": "GS00Q14OADU428",
@@ -2078,7 +2078,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       "primeEntityName": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
       "baseAwardDateSigned": "2020-05-05",
       "descriptionOfRequirement": "SOFTWARE LIFE CYCLE DEVELOPMENT",
-      "primeNaics": {
+      "subContractorNaics": {
         "code": "541712",
         "description": "RESEARCH AND DEVELOPMENT IN THE PHYSICAL, ENGINEERING, AND LIFE SCIENCES (EXCEPT BIOTECHNOLOGY)"
       },
@@ -2123,7 +2123,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "325782398"
       },
-      "subBusinessType": [
+      "subContractorBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -2135,7 +2135,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       ],
       "subParentUei": null,
       "subEntityDoingBusinessAsName": "SAIC",
-      "subTopPayEmployee": null,
+      "subContractorTopPayEmployee": null,
       "subEntityParentLegalBusinessName": null
     }
   ]
@@ -2144,7 +2144,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
 </p>
 </details>
 
-### Example 5: Search Published Records by Agency ID, ReferenceIDVPIID, and Unique Award Key from yyyy-MM-dd to yyyy-MM-dd 
+### Example 5: Search Published Records by Agency ID, ReferenceIDVPIID, and Prime Contract Key from yyyy-MM-dd to yyyy-MM-dd 
 
 <details>
     <summary>Request URL</summary>
@@ -2167,7 +2167,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
   "previousPageLink": "https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pageNumber=0&pageSize=1",
   "data": [
     {
-      "uniqueAwardKey": "CONT_AWD_SPE8EM20F111S_9700_SPM8EJ14D0011_9700",
+      "primeContractKey": "CONT_AWD_SPE8EM20F111S_9700_SPM8EJ14D0011_9700",
       "piid": "SPE8EM20F111S",
       "agencyId": "9700",
       "referencedIDVPIID": "SPM8EJ14D0011",
@@ -2186,7 +2186,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       "primeEntityName": "ATLANTIC DIVING SUPPLY, INC.",
       "baseAwardDateSigned": "2020-02-19",
       "descriptionOfRequirement": "4549096622!UH1Y CANOPY AND NOSE COVER",
-      "primeNaics": {
+      "subContractorNaics": {
         "code": "423850",
         "description": "SERVICE ESTABLISHMENT EQUIPMENT AND SUPPLIES MERCHANT WHOLESALERS"
       },
@@ -2231,7 +2231,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "038622445"
       },
-      "subBusinessType": [
+      "subContractorBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -2243,7 +2243,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       ],
       "subParentUei": null,
       "subEntityDoingBusinessAsName": "ADS",
-      "subTopPayEmployee": null,
+      "subContractorTopPayEmployee": null,
       "subEntityParentLegalBusinessName": null
     }
   ]
@@ -2275,7 +2275,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
   "previousPageLink": "https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pageNumber=0&pageSize=25",
   "data": [
     {
-      "uniqueAwardKey": "CONT_AWD_W91QVN20F0157_9700_W52P1J18DA075_9700",
+      "primeContractKey": "CONT_AWD_W91QVN20F0157_9700_W52P1J18DA075_9700",
       "piid": "W91QVN20F0157",
       "agencyId": "9700",
       "referencedIDVPIID": "W52P1J18DA075",
@@ -2294,7 +2294,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       "primeEntityName": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
       "baseAwardDateSigned": "2020-01-31",
       "descriptionOfRequirement": "CYBERSECURITY, NETWORK OPERATIONS&MAINTENANCE (O&M) OF INFORMATION TECHNOLOGY SUPPORT FOR USACISA-P",
-      "primeNaics": {
+      "subContractorNaics": {
         "code": "541519",
         "description": "OTHER COMPUTER RELATED SERVICES"
       },
@@ -2339,7 +2339,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "208146193"
       },
-      "subBusinessType": [
+      "subContractorBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -2355,7 +2355,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       ],
       "subParentUei": "XVNBJ1QJY5N4",
       "subEntityDoingBusinessAsName": "SAIC",
-            "subTopPayEmployee": [
+            "subContractorTopPayEmployee": [
                 {
                     "salary": "6145690",
                     "fullname": "Mark A Caylor"
@@ -2380,7 +2380,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       "subEntityParentLegalBusinessName": "TRIBALCO, LLC"
     },
     {
-      "uniqueAwardKey": "CONT_AWD_W91QVN20F0157_9700_W52P1J18DA075_9700",
+      "primeContractKey": "CONT_AWD_W91QVN20F0157_9700_W52P1J18DA075_9700",
       "piid": "W91QVN20F0157",
       "agencyId": "9700",
       "referencedIDVPIID": "W52P1J18DA075",
@@ -2399,7 +2399,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       "primeEntityName": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
       "baseAwardDateSigned": "2020-01-31",
       "descriptionOfRequirement": "CYBERSECURITY, NETWORK OPERATIONS&MAINTENANCE (O&M) OF INFORMATION TECHNOLOGY SUPPORT FOR USACISA-P",
-      "primeNaics": {
+      "subContractorNaics": {
         "code": "541519",
         "description": "OTHER COMPUTER RELATED SERVICES"
       },
@@ -2444,7 +2444,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "631463002"
       },
-      "subBusinessType": [
+      "subContractorBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -2456,11 +2456,11 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       ],
       "subParentUei": "XLLLFFAR2YT7",
       "subEntityDoingBusinessAsName": "SAIC",
-      "subTopPayEmployee": null,
+      "subContractorTopPayEmployee": null,
       "subEntityParentLegalBusinessName": "World Wide Technology Holding Co., LLC"
     },
     {
-      "uniqueAwardKey": "CONT_AWD_W91QVN20F0157_9700_W52P1J18DA075_9700",
+      "primeContractKey": "CONT_AWD_W91QVN20F0157_9700_W52P1J18DA075_9700",
       "piid": "W91QVN20F0157",
       "agencyId": "9700",
       "referencedIDVPIID": "W52P1J18DA075",
@@ -2479,7 +2479,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       "primeEntityName": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
       "baseAwardDateSigned": "2020-01-31",
       "descriptionOfRequirement": "CYBERSECURITY, NETWORK OPERATIONS&MAINTENANCE (O&M) OF INFORMATION TECHNOLOGY SUPPORT FOR USACISA-P",
-      "primeNaics": {
+      "subContractorNaics": {
         "code": "541519",
         "description": "OTHER COMPUTER RELATED SERVICES"
       },
@@ -2524,7 +2524,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "631463002"
       },
-      "subBusinessType": [
+      "subContractorBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -2536,11 +2536,11 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       ],
       "subParentUei": "C1X5PJL441B8",
       "subEntityDoingBusinessAsName": null,
-      "subTopPayEmployee": null,
+      "subContractorTopPayEmployee": null,
       "subEntityParentLegalBusinessName": null
     },
     {
-      "uniqueAwardKey": "CONT_AWD_W91QVN20F0157_9700_W52P1J18DA075_9700",
+      "primeContractKey": "CONT_AWD_W91QVN20F0157_9700_W52P1J18DA075_9700",
       "piid": "W91QVN20F0157",
       "agencyId": "9700",
       "referencedIDVPIID": "W52P1J18DA075",
@@ -2559,7 +2559,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       "primeEntityName": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
       "baseAwardDateSigned": "2020-01-31",
       "descriptionOfRequirement": "CYBERSECURITY, NETWORK OPERATIONS&MAINTENANCE (O&M) OF INFORMATION TECHNOLOGY SUPPORT FOR USACISA-P",
-      "primeNaics": {
+      "subContractorNaics": {
         "code": "541519",
         "description": "OTHER COMPUTER RELATED SERVICES"
       },
@@ -2604,7 +2604,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "631463002"
       },
-      "subBusinessType": [
+      "subContractorBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -2616,11 +2616,11 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       ],
       "subParentUei": "C1X5PJL441B8",
       "subEntityDoingBusinessAsName": null,
-      "subTopPayEmployee": null,
+      "subContractorTopPayEmployee": null,
       "subEntityParentLegalBusinessName": null
     },
     {
-      "uniqueAwardKey": "CONT_AWD_W91QVN20F0157_9700_W52P1J18DA075_9700",
+      "primeContractKey": "CONT_AWD_W91QVN20F0157_9700_W52P1J18DA075_9700",
       "piid": "W91QVN20F0157",
       "agencyId": "9700",
       "referencedIDVPIID": "W52P1J18DA075",
@@ -2639,7 +2639,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       "primeEntityName": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
       "baseAwardDateSigned": "2020-01-31",
       "descriptionOfRequirement": "CYBERSECURITY, NETWORK OPERATIONS&MAINTENANCE (O&M) OF INFORMATION TECHNOLOGY SUPPORT FOR USACISA-P",
-      "primeNaics": {
+      "subContractorNaics": {
         "code": "541519",
         "description": "OTHER COMPUTER RELATED SERVICES"
       },
@@ -2684,7 +2684,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "201715346"
       },
-      "subBusinessType": [
+      "subContractorBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -2696,7 +2696,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       ],
       "subParentUei": null,
       "subEntityDoingBusinessAsName": null,
-            "subTopPayEmployee": [
+            "subContractorTopPayEmployee": [
                 {
                     "salary": "6145690",
                     "fullname": "Mark A Caylor"
@@ -2721,7 +2721,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       "subEntityParentLegalBusinessName": null
     },
     {
-      "uniqueAwardKey": "CONT_AWD_W91QVN20F0157_9700_W52P1J18DA075_9700",
+      "primeContractKey": "CONT_AWD_W91QVN20F0157_9700_W52P1J18DA075_9700",
       "piid": "W91QVN20F0157",
       "agencyId": "9700",
       "referencedIDVPIID": "W52P1J18DA075",
@@ -2740,7 +2740,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       "primeEntityName": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
       "baseAwardDateSigned": "2020-01-31",
       "descriptionOfRequirement": "CYBERSECURITY, NETWORK OPERATIONS&MAINTENANCE (O&M) OF INFORMATION TECHNOLOGY SUPPORT FOR USACISA-P",
-      "primeNaics": {
+      "subContractorNaics": {
         "code": "541519",
         "description": "OTHER COMPUTER RELATED SERVICES"
       },
@@ -2785,7 +2785,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "20171"
       },
-      "subBusinessType": [
+      "subContractorBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -2797,7 +2797,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       ],
       "subParentUei": "HG4LTWDKQ5M9",
       "subEntityDoingBusinessAsName": "SAIC",
-            "subTopPayEmployee": [
+            "subContractorTopPayEmployee": [
                 {
                     "salary": "6145690",
                     "fullname": "Mark A Caylor"
@@ -2822,7 +2822,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       "subEntityParentLegalBusinessName": "Hig Capital Management, Inc."
     },
     {
-      "uniqueAwardKey": "CONT_AWD_W91QVN20F0157_9700_W52P1J18DA075_9700",
+      "primeContractKey": "CONT_AWD_W91QVN20F0157_9700_W52P1J18DA075_9700",
       "piid": "W91QVN20F0157",
       "agencyId": "9700",
       "referencedIDVPIID": "W52P1J18DA075",
@@ -2841,7 +2841,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       "primeEntityName": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
       "baseAwardDateSigned": "2020-01-31",
       "descriptionOfRequirement": "CYBERSECURITY, NETWORK OPERATIONS&MAINTENANCE (O&M) OF INFORMATION TECHNOLOGY SUPPORT FOR USACISA-P",
-      "primeNaics": {
+      "subContractorNaics": {
         "code": "541519",
         "description": "OTHER COMPUTER RELATED SERVICES"
       },
@@ -2886,7 +2886,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "208146193"
       },
-      "subBusinessType": [
+      "subContractorBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -2902,7 +2902,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       ],
       "subParentUei": "XVNBJ1QJY5N4",
       "subEntityDoingBusinessAsName": "SAIC",
-            "subTopPayEmployee": [
+            "subContractorTopPayEmployee": [
                 {
                     "salary": "6145690",
                     "fullname": "Mark A Caylor"
@@ -2927,7 +2927,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       "subEntityParentLegalBusinessName": "TRIBALCO, LLC"
     },
     {
-      "uniqueAwardKey": "CONT_AWD_W91QVN20F0157_9700_W52P1J18DA075_9700",
+      "primeContractKey": "CONT_AWD_W91QVN20F0157_9700_W52P1J18DA075_9700",
       "piid": "W91QVN20F0157",
       "agencyId": "9700",
       "referencedIDVPIID": "W52P1J18DA075",
@@ -2946,7 +2946,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       "primeEntityName": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
       "baseAwardDateSigned": "2020-01-31",
       "descriptionOfRequirement": "CYBERSECURITY, NETWORK OPERATIONS&MAINTENANCE (O&M) OF INFORMATION TECHNOLOGY SUPPORT FOR USACISA-P",
-      "primeNaics": {
+      "subContractorNaics": {
         "code": "541519",
         "description": "OTHER COMPUTER RELATED SERVICES"
       },
@@ -2991,7 +2991,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": null
       },
-      "subBusinessType": [
+      "subContractorBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -3003,11 +3003,11 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       ],
       "subParentUei": null,
       "subEntityDoingBusinessAsName": "SAIC",
-      "subTopPayEmployee": null,
+      "subContractorTopPayEmployee": null,
       "subEntityParentLegalBusinessName": null
     },
     {
-      "uniqueAwardKey": "CONT_AWD_W91QVN20F0157_9700_W52P1J18DA075_9700",
+      "primeContractKey": "CONT_AWD_W91QVN20F0157_9700_W52P1J18DA075_9700",
       "piid": "W91QVN20F0157",
       "agencyId": "9700",
       "referencedIDVPIID": "W52P1J18DA075",
@@ -3026,7 +3026,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       "primeEntityName": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
       "baseAwardDateSigned": "2020-01-31",
       "descriptionOfRequirement": "CYBERSECURITY, NETWORK OPERATIONS&MAINTENANCE (O&M) OF INFORMATION TECHNOLOGY SUPPORT FOR USACISA-P",
-      "primeNaics": {
+      "subContractorNaics": {
         "code": "541519",
         "description": "OTHER COMPUTER RELATED SERVICES"
       },
@@ -3071,7 +3071,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "208146193"
       },
-      "subBusinessType": [
+      "subContractorBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -3087,7 +3087,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       ],
       "subParentUei": "PMXRWJCNCDQ8",
       "subEntityDoingBusinessAsName": null,
-            "subTopPayEmployee": [
+            "subContractorTopPayEmployee": [
                 {
                     "salary": "6145690",
                     "fullname": "Mark A Caylor"
@@ -3112,7 +3112,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       "subEntityParentLegalBusinessName": null
     },
     {
-      "uniqueAwardKey": "CONT_AWD_W91QVN20F0157_9700_W52P1J18DA075_9700",
+      "primeContractKey": "CONT_AWD_W91QVN20F0157_9700_W52P1J18DA075_9700",
       "piid": "W91QVN20F0157",
       "agencyId": "9700",
       "referencedIDVPIID": "W52P1J18DA075",
@@ -3131,7 +3131,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       "primeEntityName": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
       "baseAwardDateSigned": "2020-01-31",
       "descriptionOfRequirement": "CYBERSECURITY, NETWORK OPERATIONS&MAINTENANCE (O&M) OF INFORMATION TECHNOLOGY SUPPORT FOR USACISA-P",
-      "primeNaics": {
+      "subContractorNaics": {
         "code": "541519",
         "description": "OTHER COMPUTER RELATED SERVICES"
       },
@@ -3176,7 +3176,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "201666510"
       },
-      "subBusinessType": [
+      "subContractorBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -3200,7 +3200,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       "subEntityParentLegalBusinessName": null
     },
     {
-      "uniqueAwardKey": "CONT_AWD_W91QVN20F0157_9700_W52P1J18DA075_9700",
+      "primeContractKey": "CONT_AWD_W91QVN20F0157_9700_W52P1J18DA075_9700",
       "piid": "W91QVN20F0157",
       "agencyId": "9700",
       "referencedIDVPIID": "W52P1J18DA075",
@@ -3219,7 +3219,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       "primeEntityName": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
       "baseAwardDateSigned": "2020-01-31",
       "descriptionOfRequirement": "CYBERSECURITY, NETWORK OPERATIONS&MAINTENANCE (O&M) OF INFORMATION TECHNOLOGY SUPPORT FOR USACISA-P",
-      "primeNaics": {
+      "subContractorNaics": {
         "code": "541519",
         "description": "OTHER COMPUTER RELATED SERVICES"
       },
@@ -3264,7 +3264,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "201715346"
       },
-      "subBusinessType": [
+      "subContractorBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -3276,7 +3276,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       ],
       "subParentUei": null,
       "subEntityDoingBusinessAsName": null,
-                "subTopPayEmployee": [
+                "subContractorTopPayEmployee": [
                 {
                     "salary": "6145690",
                     "fullname": "Mark A Caylor"
@@ -3301,7 +3301,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       "subEntityParentLegalBusinessName": null
     },
     {
-      "uniqueAwardKey": "CONT_AWD_W91QVN20F0157_9700_W52P1J18DA075_9700",
+      "primeContractKey": "CONT_AWD_W91QVN20F0157_9700_W52P1J18DA075_9700",
       "piid": "W91QVN20F0157",
       "agencyId": "9700",
       "referencedIDVPIID": "W52P1J18DA075",
@@ -3320,7 +3320,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       "primeEntityName": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
       "baseAwardDateSigned": "2020-01-31",
       "descriptionOfRequirement": "CYBERSECURITY, NETWORK OPERATIONS&MAINTENANCE (O&M) OF INFORMATION TECHNOLOGY SUPPORT FOR USACISA-P",
-      "primeNaics": {
+      "subContractorNaics": {
         "code": "541519",
         "description": "OTHER COMPUTER RELATED SERVICES"
       },
@@ -3365,7 +3365,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "786827000"
       },
-      "subBusinessType": [
+      "subContractorBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -3377,7 +3377,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       ],
       "subParentUei": "TJCDPVN6RNP7",
       "subEntityDoingBusinessAsName": null,
-             "subTopPayEmployee": [
+             "subContractorTopPayEmployee": [
                 {
                     "salary": "6145690",
                     "fullname": "Mark A Caylor"
@@ -3402,7 +3402,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       "subEntityParentLegalBusinessName": null
     },
     {
-      "uniqueAwardKey": "CONT_AWD_W91QVN20F0157_9700_W52P1J18DA075_9700",
+      "primeContractKey": "CONT_AWD_W91QVN20F0157_9700_W52P1J18DA075_9700",
       "piid": "W91QVN20F0157",
       "agencyId": "9700",
       "referencedIDVPIID": "W52P1J18DA075",
@@ -3421,7 +3421,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       "primeEntityName": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
       "baseAwardDateSigned": "2020-01-31",
       "descriptionOfRequirement": "CYBERSECURITY, NETWORK OPERATIONS&MAINTENANCE (O&M) OF INFORMATION TECHNOLOGY SUPPORT FOR USACISA-P",
-      "primeNaics": {
+      "subContractorNaics": {
         "code": "541519",
         "description": "OTHER COMPUTER RELATED SERVICES"
       },
@@ -3466,7 +3466,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "201905230"
       },
-      "subBusinessType": [
+      "subContractorBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -3474,11 +3474,11 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       ],
       "subParentUei": null,
       "subEntityDoingBusinessAsName": "SAIC",
-      "subTopPayEmployee": null,
+      "subContractorTopPayEmployee": null,
       "subEntityParentLegalBusinessName": null
     },
     {
-      "uniqueAwardKey": "CONT_AWD_W91QVN20F0157_9700_W52P1J18DA075_9700",
+      "primeContractKey": "CONT_AWD_W91QVN20F0157_9700_W52P1J18DA075_9700",
       "piid": "W91QVN20F0157",
       "agencyId": "9700",
       "referencedIDVPIID": "W52P1J18DA075",
@@ -3497,7 +3497,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       "primeEntityName": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
       "baseAwardDateSigned": "2020-01-31",
       "descriptionOfRequirement": "CYBERSECURITY, NETWORK OPERATIONS&MAINTENANCE (O&M) OF INFORMATION TECHNOLOGY SUPPORT FOR USACISA-P",
-      "primeNaics": {
+      "subContractorNaics": {
         "code": "541519",
         "description": "OTHER COMPUTER RELATED SERVICES"
       },
@@ -3542,7 +3542,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "201911554"
       },
-      "subBusinessType": [
+      "subContractorBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -3554,11 +3554,11 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       ],
       "subParentUei": "L2BEJTQ3DBN5",
       "subEntityDoingBusinessAsName": "SAIC",
-      "subTopPayEmployee": null,
+      "subContractorTopPayEmployee": null,
       "subEntityParentLegalBusinessName": "HYPERION, INC."
     },
     {
-      "uniqueAwardKey": "CONT_AWD_W91QVN20F0157_9700_W52P1J18DA075_9700",
+      "primeContractKey": "CONT_AWD_W91QVN20F0157_9700_W52P1J18DA075_9700",
       "piid": "W91QVN20F0157",
       "agencyId": "9700",
       "referencedIDVPIID": "W52P1J18DA075",
@@ -3577,7 +3577,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       "primeEntityName": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
       "baseAwardDateSigned": "2020-01-31",
       "descriptionOfRequirement": "CYBERSECURITY, NETWORK OPERATIONS&MAINTENANCE (O&M) OF INFORMATION TECHNOLOGY SUPPORT FOR USACISA-P",
-      "primeNaics": {
+      "subContractorNaics": {
         "code": "541519",
         "description": "OTHER COMPUTER RELATED SERVICES"
       },
@@ -3622,7 +3622,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "221822228"
       },
-      "subBusinessType": [
+      "subContractorBusinessType": [
         {
           "code": "23",
           "name": "Minority-Owned business"
@@ -3650,7 +3650,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       ],
       "subParentUei": null,
       "subEntityDoingBusinessAsName": null,
-              "subTopPayEmployee": [
+              "subContractorTopPayEmployee": [
                 {
                     "salary": "6145690",
                     "fullname": "Mark A Caylor"
@@ -3675,7 +3675,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       "subEntityParentLegalBusinessName": null
     },
     {
-      "uniqueAwardKey": "CONT_AWD_W91QVN20F0157_9700_W52P1J18DA075_9700",
+      "primeContractKey": "CONT_AWD_W91QVN20F0157_9700_W52P1J18DA075_9700",
       "piid": "W91QVN20F0157",
       "agencyId": "9700",
       "referencedIDVPIID": "W52P1J18DA075",
@@ -3694,7 +3694,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       "primeEntityName": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
       "baseAwardDateSigned": "2020-01-31",
       "descriptionOfRequirement": "CYBERSECURITY, NETWORK OPERATIONS&MAINTENANCE (O&M) OF INFORMATION TECHNOLOGY SUPPORT FOR USACISA-P",
-      "primeNaics": {
+      "subContractorNaics": {
         "code": "541519",
         "description": "OTHER COMPUTER RELATED SERVICES"
       },
@@ -3739,7 +3739,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "221822228"
       },
-      "subBusinessType": [
+      "subContractorBusinessType": [
         {
           "code": "23",
           "name": "Minority-Owned business"
@@ -3767,7 +3767,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       ],
       "subParentUei": null,
       "subEntityDoingBusinessAsName": null,
-             "subTopPayEmployee": [
+             "subContractorTopPayEmployee": [
                 {
                     "salary": "6145690",
                     "fullname": "Mark A Caylor"
@@ -3792,7 +3792,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       "subEntityParentLegalBusinessName": null
     },
     {
-      "uniqueAwardKey": "CONT_AWD_W91QVN20F0157_9700_W52P1J18DA075_9700",
+      "primeContractKey": "CONT_AWD_W91QVN20F0157_9700_W52P1J18DA075_9700",
       "piid": "W91QVN20F0157",
       "agencyId": "9700",
       "referencedIDVPIID": "W52P1J18DA075",
@@ -3811,7 +3811,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       "primeEntityName": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
       "baseAwardDateSigned": "2020-01-31",
       "descriptionOfRequirement": "CYBERSECURITY, NETWORK OPERATIONS&MAINTENANCE (O&M) OF INFORMATION TECHNOLOGY SUPPORT FOR USACISA-P",
-      "primeNaics": {
+      "subContractorNaics": {
         "code": "541519",
         "description": "OTHER COMPUTER RELATED SERVICES"
       },
@@ -3856,7 +3856,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "221822228"
       },
-      "subBusinessType": [
+      "subContractorBusinessType": [
         {
           "code": "23",
           "name": "Minority-Owned business"
@@ -3884,7 +3884,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       ],
       "subParentUei": null,
       "subEntityDoingBusinessAsName": "SAIC",
-               "subTopPayEmployee": [
+               "subContractorTopPayEmployee": [
                 {
                     "salary": "6145690",
                     "fullname": "Mark A Caylor"
@@ -3909,7 +3909,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       "subEntityParentLegalBusinessName": null
     },
     {
-      "uniqueAwardKey": "CONT_AWD_W91QVN20F0157_9700_W52P1J18DA075_9700",
+      "primeContractKey": "CONT_AWD_W91QVN20F0157_9700_W52P1J18DA075_9700",
       "piid": "W91QVN20F0157",
       "agencyId": "9700",
       "referencedIDVPIID": "W52P1J18DA075",
@@ -3928,7 +3928,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       "primeEntityName": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
       "baseAwardDateSigned": "2020-01-31",
       "descriptionOfRequirement": "CYBERSECURITY, NETWORK OPERATIONS&MAINTENANCE (O&M) OF INFORMATION TECHNOLOGY SUPPORT FOR USACISA-P",
-      "primeNaics": {
+      "subContractorNaics": {
         "code": "541519",
         "description": "OTHER COMPUTER RELATED SERVICES"
       },
@@ -3973,7 +3973,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "201905230"
       },
-      "subBusinessType": [
+      "subContractorBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -3981,11 +3981,11 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       ],
       "subParentUei": "DT8KJHZXVJH5",
       "subEntityDoingBusinessAsName": "SAIC",
-      "subTopPayEmployee": null,
+      "subContractorTopPayEmployee": null,
       "subEntityParentLegalBusinessName": "CARAHSOFT TECHNOLOGY CORP"
     },
     {
-      "uniqueAwardKey": "CONT_AWD_W91QVN20F0157_9700_W52P1J18DA075_9700",
+      "primeContractKey": "CONT_AWD_W91QVN20F0157_9700_W52P1J18DA075_9700",
       "piid": "W91QVN20F0157",
       "agencyId": "9700",
       "referencedIDVPIID": "W52P1J18DA075",
@@ -4004,7 +4004,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       "primeEntityName": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
       "baseAwardDateSigned": "2020-01-31",
       "descriptionOfRequirement": "CYBERSECURITY, NETWORK OPERATIONS&MAINTENANCE (O&M) OF INFORMATION TECHNOLOGY SUPPORT FOR USACISA-P",
-      "primeNaics": {
+      "subContractorNaics": {
         "code": "541519",
         "description": "OTHER COMPUTER RELATED SERVICES"
       },
@@ -4049,7 +4049,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "201706230"
       },
-      "subBusinessType": [
+      "subContractorBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -4061,11 +4061,11 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       ],
       "subParentUei": null,
       "subEntityDoingBusinessAsName": "SAIC",
-      "subTopPayEmployee": null,
+      "subContractorTopPayEmployee": null,
       "subEntityParentLegalBusinessName": null
     },
     {
-      "uniqueAwardKey": "CONT_AWD_W91QVN20F0157_9700_W52P1J18DA075_9700",
+      "primeContractKey": "CONT_AWD_W91QVN20F0157_9700_W52P1J18DA075_9700",
       "piid": "W91QVN20F0157",
       "agencyId": "9700",
       "referencedIDVPIID": "W52P1J18DA075",
@@ -4084,7 +4084,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       "primeEntityName": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
       "baseAwardDateSigned": "2020-01-31",
       "descriptionOfRequirement": "CYBERSECURITY, NETWORK OPERATIONS&MAINTENANCE (O&M) OF INFORMATION TECHNOLOGY SUPPORT FOR USACISA-P",
-      "primeNaics": {
+      "subContractorNaics": {
         "code": "541519",
         "description": "OTHER COMPUTER RELATED SERVICES"
       },
@@ -4129,7 +4129,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "921105167"
       },
-      "subBusinessType": [
+      "subContractorBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -4149,7 +4149,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       ],
       "subParentUei": null,
       "subEntityDoingBusinessAsName": "SAIC",
-            "subTopPayEmployee": [
+            "subContractorTopPayEmployee": [
                 {
                     "salary": "6145690",
                     "fullname": "Mark A Caylor"
@@ -4174,7 +4174,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       "subEntityParentLegalBusinessName": null
     },
     {
-      "uniqueAwardKey": "CONT_AWD_W91QVN20F0157_9700_W52P1J18DA075_9700",
+      "primeContractKey": "CONT_AWD_W91QVN20F0157_9700_W52P1J18DA075_9700",
       "piid": "W91QVN20F0157",
       "agencyId": "9700",
       "referencedIDVPIID": "W52P1J18DA075",
@@ -4193,7 +4193,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       "primeEntityName": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
       "baseAwardDateSigned": "2020-01-31",
       "descriptionOfRequirement": "CYBERSECURITY, NETWORK OPERATIONS&MAINTENANCE (O&M) OF INFORMATION TECHNOLOGY SUPPORT FOR USACISA-P",
-      "primeNaics": {
+      "subContractorNaics": {
         "code": "541519",
         "description": "OTHER COMPUTER RELATED SERVICES"
       },
@@ -4238,7 +4238,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "631463002"
       },
-      "subBusinessType": [
+      "subContractorBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -4250,11 +4250,11 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       ],
       "subParentUei": "C1X5PJL441B8",
       "subEntityDoingBusinessAsName": null,
-      "subTopPayEmployee": null,
+      "subContractorTopPayEmployee": null,
       "subEntityParentLegalBusinessName": null
     },
     {
-      "uniqueAwardKey": "CONT_AWD_W91QVN20F0157_9700_W52P1J18DA075_9700",
+      "primeContractKey": "CONT_AWD_W91QVN20F0157_9700_W52P1J18DA075_9700",
       "piid": "W91QVN20F0157",
       "agencyId": "9700",
       "referencedIDVPIID": "W52P1J18DA075",
@@ -4273,7 +4273,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       "primeEntityName": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
       "baseAwardDateSigned": "2020-01-31",
       "descriptionOfRequirement": "CYBERSECURITY, NETWORK OPERATIONS&MAINTENANCE (O&M) OF INFORMATION TECHNOLOGY SUPPORT FOR USACISA-P",
-      "primeNaics": {
+      "subContractorNaics": {
         "code": "541519",
         "description": "OTHER COMPUTER RELATED SERVICES"
       },
@@ -4318,7 +4318,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "208146193"
       },
-      "subBusinessType": [
+      "subContractorBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -4334,7 +4334,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       ],
       "subParentUei": "XVNBJ1QJY5N4",
       "subEntityDoingBusinessAsName": "SAIC",
-               "subTopPayEmployee": [
+               "subContractorTopPayEmployee": [
                 {
                     "salary": "6145690",
                     "fullname": "Mark A Caylor"
@@ -4359,7 +4359,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       "subEntityParentLegalBusinessName": "TRIBALCO, LLC"
     },
     {
-      "uniqueAwardKey": "CONT_AWD_W91QVN20F0157_9700_W52P1J18DA075_9700",
+      "primeContractKey": "CONT_AWD_W91QVN20F0157_9700_W52P1J18DA075_9700",
       "piid": "W91QVN20F0157",
       "agencyId": "9700",
       "referencedIDVPIID": "W52P1J18DA075",
@@ -4378,7 +4378,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       "primeEntityName": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
       "baseAwardDateSigned": "2020-01-31",
       "descriptionOfRequirement": "CYBERSECURITY, NETWORK OPERATIONS&MAINTENANCE (O&M) OF INFORMATION TECHNOLOGY SUPPORT FOR USACISA-P",
-      "primeNaics": {
+      "subContractorNaics": {
         "code": "541519",
         "description": "OTHER COMPUTER RELATED SERVICES"
       },
@@ -4423,7 +4423,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "631463002"
       },
-      "subBusinessType": [
+      "subContractorBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -4435,11 +4435,11 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       ],
       "subParentUei": "C1X5PJL441B8",
       "subEntityDoingBusinessAsName": null,
-      "subTopPayEmployee": null,
+      "subContractorTopPayEmployee": null,
       "subEntityParentLegalBusinessName": null
     },
     {
-      "uniqueAwardKey": "CONT_AWD_W91QVN20F0157_9700_W52P1J18DA075_9700",
+      "primeContractKey": "CONT_AWD_W91QVN20F0157_9700_W52P1J18DA075_9700",
       "piid": "W91QVN20F0157",
       "agencyId": "9700",
       "referencedIDVPIID": "W52P1J18DA075",
@@ -4458,7 +4458,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       "primeEntityName": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
       "baseAwardDateSigned": "2020-01-31",
       "descriptionOfRequirement": "CYBERSECURITY, NETWORK OPERATIONS&MAINTENANCE (O&M) OF INFORMATION TECHNOLOGY SUPPORT FOR USACISA-P",
-      "primeNaics": {
+      "subContractorNaics": {
         "code": "541519",
         "description": "OTHER COMPUTER RELATED SERVICES"
       },
@@ -4503,7 +4503,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "201715346"
       },
-      "subBusinessType": [
+      "subContractorBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -4515,7 +4515,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       ],
       "subParentUei": "HG4LTWDKQ5M9",
       "subEntityDoingBusinessAsName": "SAIC",
-            "subTopPayEmployee": [
+            "subContractorTopPayEmployee": [
                 {
                     "salary": "6145690",
                     "fullname": "Mark A Caylor"
@@ -4540,7 +4540,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       "subEntityParentLegalBusinessName": null
     },
     {
-      "uniqueAwardKey": "CONT_AWD_W91QVN20F0157_9700_W52P1J18DA075_9700",
+      "primeContractKey": "CONT_AWD_W91QVN20F0157_9700_W52P1J18DA075_9700",
       "piid": "W91QVN20F0157",
       "agencyId": "9700",
       "referencedIDVPIID": "W52P1J18DA075",
@@ -4559,7 +4559,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       "primeEntityName": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
       "baseAwardDateSigned": "2020-01-31",
       "descriptionOfRequirement": "CYBERSECURITY, NETWORK OPERATIONS&MAINTENANCE (O&M) OF INFORMATION TECHNOLOGY SUPPORT FOR USACISA-P",
-      "primeNaics": {
+      "subContractorNaics": {
         "code": "541519",
         "description": "OTHER COMPUTER RELATED SERVICES"
       },
@@ -4604,7 +4604,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "201715346"
       },
-      "subBusinessType": [
+      "subContractorBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -4616,7 +4616,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
       ],
       "subParentUei": "HG4LTWDKQ5M9",
       "subEntityDoingBusinessAsName": "SAIC",
-            "subTopPayEmployee": [
+            "subContractorTopPayEmployee": [
                 {
                     "salary": "6145690",
                     "fullname": "Mark A Caylor"
@@ -4669,7 +4669,7 @@ Alpha URL:  https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?p
   "previousPageLink": "https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pageNumber=1&pageSize=1&status=Published&fromDate=2023-11-07&toDate=2023-11-08",
   "data": [
     {
-      "uniqueAwardKey": "CONT_AWD_SPE8EM20F111S_9700_SPM8EJ14D0011_9700",
+      "primeContractKey": "CONT_AWD_SPE8EM20F111S_9700_SPM8EJ14D0011_9700",
       "piid": "SPE8EM20F111S",
       "agencyId": "9700",
       "referencedIDVPIID": "SPM8EJ14D0011",
@@ -4688,7 +4688,7 @@ Alpha URL:  https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?p
       "primeEntityName": "ATLANTIC DIVING SUPPLY, INC.",
       "baseAwardDateSigned": "2020-02-19",
       "descriptionOfRequirement": "4549096622!UH1Y CANOPY AND NOSE COVER",
-      "primeNaics": {
+      "subContractorNaics": {
         "code": "423850",
         "description": "SERVICE ESTABLISHMENT EQUIPMENT AND SUPPLIES MERCHANT WHOLESALERS"
       },
@@ -4733,7 +4733,7 @@ Alpha URL:  https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?p
         },
         "zip": "038622445"
       },
-      "subBusinessType": [
+      "subContractorBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -4745,7 +4745,7 @@ Alpha URL:  https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?p
       ],
       "subParentUei": null,
       "subEntityDoingBusinessAsName": "ADS",
-      "subTopPayEmployee": null,
+      "subContractorTopPayEmployee": null,
       "subEntityParentLegalBusinessName": null
     }
   ]
@@ -4777,7 +4777,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?st
   "previousPageLink": "https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?status=Deleted&pageNumber=1&pageSize=1&status=Published&fromDate=2023-11-07&toDate=2023-11-08",
   "data": [
     {
-      "uniqueAwardKey": "CONT_AWD_SPE8EM20F111S_9700_SPM8EJ14D0011_9700",
+      "primeContractKey": "CONT_AWD_SPE8EM20F111S_9700_SPM8EJ14D0011_9700",
       "PIID": "SPE8EM20F111S",
       "agencyId": "9700",
       "referencedIDVPIID": "SPM8EJ14D0011",
@@ -4796,7 +4796,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?st
       "primeEntityName": "ATLANTIC DIVING SUPPLY, INC.",
       "baseAwardDateSigned": "2020-02-19",
       "descriptionOfRequirement": "4549096622!UH1Y CANOPY AND NOSE COVER",
-      "primeNaics": {
+      "subContractorNaics": {
         "code": "423850",
         "description": "SERVICE ESTABLISHMENT EQUIPMENT AND SUPPLIES MERCHANT WHOLESALERS"
       },
@@ -4841,7 +4841,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?st
         },
         "zip": "038622445"
       },
-      "subBusinessType": [
+      "subContractorBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -4853,7 +4853,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?st
       ],
       "subParentUei": null,
       "subEntityDoingBusinessAsName": "ADS",
-      "subTopPayEmployee": null,
+      "subContractorTopPayEmployee": null,
       "subEntityParentLegalBusinessName": null
     }
   ]
