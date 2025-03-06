@@ -97,10 +97,8 @@ pageNumber | Page Number. If the user does not pass any value, the system will d
 nextPageLink | Next Page Link | string | v1
 previousPageLink | Previous Page Link | string | v1
 primeAwardKey | Unique Award Key | string | v1
-PIID | PIID | string | v1
-agencyId | Agency ID | string | v1
-referencedIDVPIID | Reference IDV PIID | string | v1
-referencedIDVAgencyId | Reference IDV Agency PIID | string | v1
+FAIN | FAIN | string | v1
+agencyCode | Agency Code | string | v1
 subawardReportId | Subaward Report ID | string | v1 
 subawardReportNumber | Subaward Report Number | string | v1
 submittedDate | Submitted Date | string | v1
@@ -168,27 +166,17 @@ You can view the full details of this API in the OpenAPI Specification file avai
         required: false
         schema:
           type: string
-      - name: PIID
+      - name: FAIN
         in: query
         required: false
         schema:
           type: string
-      - name: agencyId
-        in: query
-        required: false
-        schema:
-          type: string
-      - name: referencedIDVAgencyId
+      - name: agencyCode
         in: query
         required: false
         schema:
           type: string
       - name: primeAwardType
-        in: query
-        required: false
-        schema:
-          type: string
-      - name: referencedIDVPIID
         in: query
         required: false
         schema:
@@ -298,9 +286,8 @@ To Date value is after Current Date value. | To Date cannot be after the current
 Content in Description link is not available. | Description Not Found.
 Status Value is invalid. | Valid status values are: Deleted, Published. 
 primeAwardKey is invalid. | PrimeAwardKey must consist of alphanumeric characters only, with the underscore '_' being the only allowed special character.
-PIID value is invalid. | PIID value must be alphanumeric. 
-ReferencedIDVPIID value is invalid. | Referenced IDV PIID value must be alphanumeric. 
-AgencyID value is invalid. | Agency ID value must be a four-digit number. 
+FAIN value is invalid. | FAIN value must be alphanumeric. 
+AgencyCode value is invalid. | Agency Code value must be a four-digit number. 
 ReferencedIDV value is invalid. | ReferencedIDV agency ID value must be a four-digit number.
 PrimeAwardType value is invalid. | Prime award type value must be alphanumeric.
 API Key is invalid. | An invalid API key was supplied.
