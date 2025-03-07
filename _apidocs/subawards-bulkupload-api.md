@@ -29,7 +29,7 @@ Access the Subaward Reporting Bulk Upload API from the following Production or A
 #### Get a System Account
 A system account enables you to use this API to publish multiple subcontract or subaward reports to SAM.gov at once using software or web services. Follow these steps to get a system account with subaward reporting permissions:
 1. Get an entity reporting Data Entry or Administrator role with subaward permissions enabled on your SAM.gov user account. If you do not have the entity reporting role, request it from your Entity Administrator.
-2. Request the Non-Federal System Administrator role by reaching out to samtesting@gsa.gov
+2. Request the Non-Federal System Administrator role by reaching out to fsd.gov
 3. Once you have the Non-Federal System Administrator role, sign in to SAM.gov. Locate the System Account section in your Workspace and select the section title.
 4. Select the **New Account** button. Enter the required information and submit the application.
 
