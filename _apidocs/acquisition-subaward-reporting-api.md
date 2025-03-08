@@ -121,7 +121,7 @@ descriptionOfRequirement | Description of Requirement for Prime Award | string |
 subContractorNaics | Sub Contractor NAICS Code | string | v1
 primeOrganizationInfo | Contracting Subtier Name | string | v1
 subEntityPhysicalAddress | Sub Entity Physical Address | string | v1
-subContractorBusinessType | Sub Contractor Business Type | string | v1 
+subBusinessType | Sub Contractor Business Type | string | v1 
 subEntityParentLegalBusinessName | Sub Entity Parent Legal Business Name | string | v1 
 subParentUei | Sub Parent UEI | string | v1
 subContractorTopPayEmployee | Sub Contractor Top Pay Employee | string | v1
@@ -397,7 +397,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "038622445"
       },
-      "subContractorBusinessType": [
+      "subBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -505,7 +505,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "038622445"
       },
-      "subContractorBusinessType": [
+      "subBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -613,7 +613,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?st
         },
         "zip": "803013206"
       },
-      "subContractorBusinessType": [
+      "subBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -738,7 +738,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "153170404"
       },
-      "subContractorBusinessType": [
+      "subBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -814,7 +814,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "201242259"
       },
-      "subContractorBusinessType": [
+      "subBusinessType": [
         {
           "code": "27",
           "name": "Self-Certified Small Disadvantaged Business"
@@ -902,7 +902,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "325052320"
       },
-      "subContractorBusinessType": [
+      "subBusinessType": [
         {
           "code": "23",
           "name": "Minority-Owned business"
@@ -1002,7 +1002,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "358056230"
       },
-      "subContractorBusinessType": [
+      "subBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -1090,7 +1090,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "217015239"
       },
-      "subContractorBusinessType": [
+      "subBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -1170,7 +1170,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "902754880"
       },
-      "subContractorBusinessType": [
+      "subBusinessType": [
         {
           "code": "23",
           "name": "Minority-Owned business"
@@ -1270,7 +1270,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "926144715"
       },
-      "subContractorBusinessType": [
+      "subBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -1354,7 +1354,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "201713400"
       },
-      "subContractorBusinessType": [
+      "subBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -1455,7 +1455,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "787501223"
       },
-      "subContractorBusinessType": [
+      "subBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -1531,7 +1531,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "308093185"
       },
-      "subContractorBusinessType": [
+      "subBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -1632,7 +1632,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "221023388"
       },
-      "subContractorBusinessType": [
+      "subBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -1712,7 +1712,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "210761112"
       },
-      "subContractorBusinessType": [
+      "subBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -1792,7 +1792,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "902454404"
       },
-      "subContractorBusinessType": [
+      "subBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -1880,7 +1880,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "900174674"
       },
-      "subContractorBusinessType": [
+      "subBusinessType": [
         {
           "code": "27",
           "name": "Self-Certified Small Disadvantaged Business"
@@ -1960,7 +1960,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "330194879"
       },
-      "subContractorBusinessType": [
+      "subBusinessType": [
         {
           "code": "23",
           "name": "Minority-Owned business"
@@ -2048,7 +2048,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "325476638"
       },
-      "subContractorBusinessType": [
+      "subBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -2124,7 +2124,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "325782398"
       },
-      "subContractorBusinessType": [
+      "subBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -2232,7 +2232,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "038622445"
       },
-      "subContractorBusinessType": [
+      "subBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -2340,7 +2340,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "208146193"
       },
-      "subContractorBusinessType": [
+      "subBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -2445,7 +2445,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "631463002"
       },
-      "subContractorBusinessType": [
+      "subBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -2525,7 +2525,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "631463002"
       },
-      "subContractorBusinessType": [
+      "subBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -2605,7 +2605,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "631463002"
       },
-      "subContractorBusinessType": [
+      "subBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -2685,7 +2685,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "201715346"
       },
-      "subContractorBusinessType": [
+      "subBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -2786,7 +2786,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "20171"
       },
-      "subContractorBusinessType": [
+      "subBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -2887,7 +2887,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "208146193"
       },
-      "subContractorBusinessType": [
+      "subBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -2992,7 +2992,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": null
       },
-      "subContractorBusinessType": [
+      "subBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -3072,7 +3072,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "208146193"
       },
-      "subContractorBusinessType": [
+      "subBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -3177,7 +3177,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "201666510"
       },
-      "subContractorBusinessType": [
+      "subBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -3265,7 +3265,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "201715346"
       },
-      "subContractorBusinessType": [
+      "subBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -3366,7 +3366,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "786827000"
       },
-      "subContractorBusinessType": [
+      "subBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -3467,7 +3467,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "201905230"
       },
-      "subContractorBusinessType": [
+      "subBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -3543,7 +3543,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "201911554"
       },
-      "subContractorBusinessType": [
+      "subBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -3623,7 +3623,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "221822228"
       },
-      "subContractorBusinessType": [
+      "subBusinessType": [
         {
           "code": "23",
           "name": "Minority-Owned business"
@@ -3740,7 +3740,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "221822228"
       },
-      "subContractorBusinessType": [
+      "subBusinessType": [
         {
           "code": "23",
           "name": "Minority-Owned business"
@@ -3857,7 +3857,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "221822228"
       },
-      "subContractorBusinessType": [
+      "subBusinessType": [
         {
           "code": "23",
           "name": "Minority-Owned business"
@@ -3974,7 +3974,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "201905230"
       },
-      "subContractorBusinessType": [
+      "subBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -4050,7 +4050,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "201706230"
       },
-      "subContractorBusinessType": [
+      "subBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -4130,7 +4130,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "921105167"
       },
-      "subContractorBusinessType": [
+      "subBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -4239,7 +4239,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "631463002"
       },
-      "subContractorBusinessType": [
+      "subBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -4319,7 +4319,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "208146193"
       },
-      "subContractorBusinessType": [
+      "subBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -4424,7 +4424,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "631463002"
       },
-      "subContractorBusinessType": [
+      "subBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -4504,7 +4504,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "201715346"
       },
-      "subContractorBusinessType": [
+      "subBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -4605,7 +4605,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?pa
         },
         "zip": "201715346"
       },
-      "subContractorBusinessType": [
+      "subBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -4734,7 +4734,7 @@ Alpha URL:  https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?p
         },
         "zip": "038622445"
       },
-      "subContractorBusinessType": [
+      "subBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
@@ -4842,7 +4842,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search?st
         },
         "zip": "038622445"
       },
-      "subContractorBusinessType": [
+      "subBusinessType": [
         {
           "code": "2X",
           "name": "For-Profit Organization"
