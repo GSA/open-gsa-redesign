@@ -119,7 +119,7 @@ descriptionOfRequirement | Description of Requirement | string | v1
 subAwardNaics | Sub Award NAICS Code | string | v1
 primeOrganizationInfo | Contracting Subtier Name | string | v1
 subEntityPhysicalAddress | Sub Entity Physical Address | string | v1
-subAwardBusinessType | Sub Award Business Type | string | v1 
+subBusinessType | Sub Award Business Type | string | v1 
 subEntityParentLegalBusinessName | Sub Entity Parent Legal Business Name | string | v1 
 subParentUei | Sub Parent UEI | string | v1
 subEntityTopPayEmployee | Sub Entity Top Pay Employee | string | v1
@@ -379,7 +379,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?pag
       "subDbaName": null,
       "subParentName": null,
       "subParentUei": null,
-      "subAwardBusinessType": null,
+      "subBusinessType": null,
       "subAwardTopPayEmployee": null
     }
   ]
@@ -470,7 +470,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?pag
       "subDbaName": null,
       "subParentName": null,
       "subParentUei": null,
-      "subAwardBusinessType": null,
+      "subBusinessType": null,
       "subAwardTopPayEmployee": null
     }
   ]
@@ -560,7 +560,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?pag
       "subDbaName": null,
       "subParentName": null,
       "subParentUei": null,
-      "subAwardBusinessType": null,
+      "subBusinessType": null,
       "subAwardTopPayEmployee": null
     }
   ]
@@ -650,7 +650,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?sta
       "subDbaName": null,
       "subParentName": "VINTON, TOWN OF",
       "subParentUei": "FBA2ZQK26QV3",
-      "subAwardBusinessType": [
+      "subBusinessType": [
         {
           "code": "12",
           "name": "U.S. Local Government"
@@ -725,7 +725,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?sta
       "subDbaName": null,
       "subParentName": "MANCHESTER, CITY OF",
       "subParentUei": "Z93ZBNUC43X8",
-      "subAwardBusinessType": [
+      "subBusinessType": [
         {
           "code": "12",
           "name": "U.S. Local Government"
@@ -796,7 +796,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?sta
       "subDbaName": null,
       "subParentName": "AUSTIN COMMUNITY COLLEGE",
       "subParentUei": "ZSFBTJE461W5",
-      "subAwardBusinessType": [
+      "subBusinessType": [
         {
           "code": "A8",
           "name": "Nonprofit Organization"
@@ -899,7 +899,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?sta
       "subDbaName": null,
       "subParentName": "AUSTIN COMMUNITY COLLEGE",
       "subParentUei": "ZSFBTJE461W5",
-      "subAwardBusinessType": [
+      "subBusinessType": [
         {
           "code": "A8",
           "name": "Nonprofit Organization"
@@ -1005,7 +1005,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?pag
             "subDbaName": null,
             "subParentName": "OKLAHOMA, STATE OF",
             "subParentUei": "EMSCXBHK78V7",
-            "subAwardBusinessType": [
+            "subBusinessType": [
                 {
                     "code": "23",
                     "name": "Minority-Owned Business"
@@ -1115,7 +1115,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?sta
             "subDbaName": null,
             "subParentName": "ARIZONA STATE UNIVERSITY",
             "subParentUei": "HX59VKHQH1V7",
-            "subAwardBusinessType": [],
+            "subBusinessType": [],
             "subAwardTopPayEmployee": [
                 {
                     "salary": "100",
