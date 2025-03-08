@@ -91,7 +91,7 @@ Deleted | Returns deleted records submitted for a contract. Delete must be passe
 
 The Acquisition Subaward Reporting Public API offers response parameters described in this section. The API response returns a JSON summarized view of the subawards based on your request filters.
 
-Field Name	| Description | Data Type|Applicable Versions
+Field Name	| Description | Data Type| Applicable Versions
 ----- | ----- | ----- | -----  
 totalPages | Total Pages | int | v1
 totalRecords | Total Records | int | v1
@@ -118,13 +118,14 @@ primeEntityUei | Prime Awardee UEI | string | v1
 primeEntityName | Prime Awardee Legal Business Name | string | v1
 baseAwardDateSigned | Base Award Date Signed | string | v1
 descriptionOfRequirement | Description of Requirement for Prime Award | string | v1
-subContractorNaics | Sub Contractor NAICS Code | string | v1
+primeNaics | Sub Contractor NAICS Code | string | v1
 primeOrganizationInfo | Contracting Subtier Name | string | v1
-subEntityPhysicalAddress | Sub Entity Physical Address | string | v1
+entityPhysicalAddress | Sub Entity Physical Address | string | v1
 subBusinessType | Sub Contractor Business Type | string | v1 
 subEntityParentLegalBusinessName | Sub Entity Parent Legal Business Name | string | v1 
 subParentUei | Sub Parent UEI | string | v1
-subContractorTopPayEmployee | Sub Contractor Top Pay Employee | string | v1
+subAwardDescription | Sub Award Description | string | v1
+subTopPayEmployee | Sub Contractor Top Pay Employee | string | v1
 
 
 ## Open API Specification File 
