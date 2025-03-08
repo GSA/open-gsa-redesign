@@ -27,8 +27,8 @@ Access the Assistance Subaward Reporting Public API from the following Productio
 ### API Endpoints
 
 **Production**
-* https://api.sam.gov/assistance/v1/subawards/search
-* https://api.sam.gov/assistance/v1/subawards/search?status=Deleted
+* https://api.sam.gov/prod/assistance/v1/subawards/search
+* https://api.sam.gov/prod/assistance/v1/subawards/search?status=Deleted
 
 **Alpha**
 * https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search
