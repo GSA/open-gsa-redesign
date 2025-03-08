@@ -90,16 +90,20 @@ Deleted | Returns deleted records submitted for an award. Delete must be passed 
 
 The Assistance Subaward Reporting Public API offers respone parameters described in this section. The API response returns a JSON summarized view of the subawards based on your request filters.
 
-Field Name	| Description | Data Type|Applicable Versions
+Field Name	| Description | Data Type| Applicable Versions
 ----- | ----- | ----- | -----  
 totalPages | Total Pages | int | v1
 totalRecords | Total Records | int | v1
 pageNumber | Page Number. If the user does not pass any value, the system will default pageNumber = 0  | int | v1
 nextPageLink | Next Page Link | string | v1
 previousPageLink | Previous Page Link | string | v1
+status | Status of Subaward | string | v1
 primeAwardKey | Unique Award Key | string | v1
 FAIN | FAIN | string | v1
 agencyCode | Agency Code | string | v1
+actionDate | Action Date | string | v1
+baseAssistanceTypeCode | Base Assistance Type Code | string | v1
+baseAssistanceTypeDesc | Base Assistance Type Description | string | v1
 subawardReportId | Subaward Report ID | string | v1 
 subawardReportNumber | Subaward Report Number | string | v1
 submittedDate | Submitted Date | string | v1
@@ -107,22 +111,37 @@ subAwardNumber | Subaward Number | string | v1
 subAwardAmount | Subaward Amount | string | v1
 subAwardDate | Subaward Date | string | v1
 subEntityUei | Sub Entity UEI | string | v1
-subAwardTopPayEmployee | Sub Top Pay Employee | string | v1
+subVendorUei | Sub Vendor UEI | string | v1
+subVendorName | Sub Vendor Name | string | v1
+subTopPayEmployee | Sub Top Pay Employee | string | v1
 subEntityLegalBusinessName | Sub Entity Legal Business Name | string | v1
 subEntityDoingBusinessAsName | Sub Entity Doing Business As | string | v1
+subVendorName | Sub Vendor Name | string | v1
 primeAwardType | Award Type | string | v1 
 totalContractValue | Total Contract Value | string | v1
+assistanceType | Prime Awardee Assistance Type | string | v1
 primeEntityUei | Prime Awardee UEI | string | v1 
 primeEntityName | Prime Awardee Legal Business Name | string | v1
 baseAwardDateSigned | Base Award Date Signed | string | v1
 descriptionOfRequirement | Description of Requirement | string | v1
 subAwardNaics | Sub Award NAICS Code | string | v1
-primeOrganizationInfo | Contracting Subtier Name | string | v1
+subAwardDescription | Sub Award Description | string | v1
+OrganizationInfo | Contracting Subtier Name | string | v1
 subEntityPhysicalAddress | Sub Entity Physical Address | string | v1
 subBusinessType | Sub Award Business Type | string | v1 
-subEntityParentLegalBusinessName | Sub Entity Parent Legal Business Name | string | v1 
+subDbaName | Sub DBA Name | string | v1
+subParentName | Sub Entity Parent Legal Business Name | string | v1 
 subParentUei | Sub Parent UEI | string | v1
-subEntityTopPayEmployee | Sub Entity Top Pay Employee | string | v1
+subTopPayEmployee | Sub Entity Top Pay Employee | string | v1
+reportUpdatedDate | Report Updated Date | string | v1
+baseObligationDate | Base Obligation Date | string | v1 
+projectDescription | Project Description | string | v1
+placeOfPerformance | Place of Performance | string | v1
+totalFedFundingAmount | Total Fed Funding Amount | string | v1
+vendorPhysicalAddress | Vendor Physical Address | string | v1
+streetAddress | Street Address | string | v1
+streetAddress2 | Street Address Line Two | string | v1
+assistanceListingNumber | Assistance Listing Number | string | v1
 
 
 ## Open API Specification File 
@@ -380,7 +399,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?pag
       "subParentName": null,
       "subParentUei": null,
       "subBusinessType": null,
-      "subAwardTopPayEmployee": null
+      "subTopPayEmployee": null
     }
   ]
 }
@@ -471,7 +490,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?pag
       "subParentName": null,
       "subParentUei": null,
       "subBusinessType": null,
-      "subAwardTopPayEmployee": null
+      "subTopPayEmployee": null
     }
   ]
 }
@@ -561,7 +580,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?pag
       "subParentName": null,
       "subParentUei": null,
       "subBusinessType": null,
-      "subAwardTopPayEmployee": null
+      "subTopPayEmployee": null
     }
   ]
 }
@@ -664,7 +683,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?sta
           "name": "Township"
         }
       ],
-      "subAwardTopPayEmployee": null
+      "subTopPayEmployee": null
     },
     {
       "status": "Deleted",
@@ -735,7 +754,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?sta
           "name": "Municipality"
         }
       ],
-      "subAwardTopPayEmployee": null
+      "subTopPayEmployee": null
     },
     {
       "status": "Deleted",
@@ -810,7 +829,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?sta
           "name": "State Controlled Institution of Higher Learning"
         }
       ],
-      "subAwardTopPayEmployee": null
+      "subTopPayEmployee": null
     }
   ]
 }
@@ -913,7 +932,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?sta
           "name": "State Controlled Institution of Higher Learning"
         }
       ],
-      "subAwardTopPayEmployee": null
+      "subTopPayEmployee": null
     }
   ]
 }
@@ -1023,7 +1042,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?pag
                     "name": "Subchapter S Corporation"
                 }
             ],
-            "subAwardTopPayEmployee": []
+            "subTopPayEmployee": []
         }
     ]
 }
@@ -1116,7 +1135,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?sta
             "subParentName": "ARIZONA STATE UNIVERSITY",
             "subParentUei": "HX59VKHQH1V7",
             "subBusinessType": [],
-            "subAwardTopPayEmployee": [
+            "subTopPayEmployee": [
                 {
                     "salary": "100",
                     "fullname": "sub1"
