@@ -27,7 +27,8 @@ Access the Acquisition Subaward Reporting Public API from the following Producti
 ### API Endpoints
 
 **Production**
-* Target Availability in Spring 2025
+* https://api.sam.gov/contract/v1/subcontracts/search
+* https://api.sam.gov/contract/v1/subcontracts/search?status=Deleted
 
 **Alpha**
 * https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search
@@ -120,7 +121,7 @@ descriptionOfRequirement | Description of Requirement for Prime Award | string |
 subContractorNaics | Sub Contractor NAICS Code | string | v1
 primeOrganizationInfo | Contracting Subtier Name | string | v1
 subEntityPhysicalAddress | Sub Entity Physical Address | string | v1
-subContractorBusinessType | Sub Contractor Business Type | string | v1 
+subBusinessType | Sub Contractor Business Type | string | v1 
 subEntityParentLegalBusinessName | Sub Entity Parent Legal Business Name | string | v1 
 subParentUei | Sub Parent UEI | string | v1
 subContractorTopPayEmployee | Sub Contractor Top Pay Employee | string | v1
