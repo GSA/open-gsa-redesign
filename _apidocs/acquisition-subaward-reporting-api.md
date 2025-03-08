@@ -27,8 +27,8 @@ Access the Acquisition Subaward Reporting Public API from the following Producti
 ### API Endpoints
 
 **Production**
-* https://api.sam.gov/contract/v1/subcontracts/search
-* https://api.sam.gov/contract/v1/subcontracts/search?status=Deleted
+* https://api.sam.gov/prod/contract/v1/subcontracts/search
+* https://api.sam.gov/prod/contract/v1/subcontracts/search?status=Deleted
 
 **Alpha**
 * https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search
