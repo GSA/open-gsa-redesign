@@ -5,7 +5,7 @@ banner-heading: SAM.gov Acquisition Subaward Reporting Public API
 
 ## Overview
 
-The Acquisition Subaward Reporting Public API provides published and deleted federal subcontract data. The production Acquisition Subaward Reporting Public API has a target launch date of Spring 2025.
+The Acquisition Subaward Reporting Public API provides published and deleted federal subcontract data. 
 
 
 **Tips and Key Features of the Acquisition Subaward Outbound API**
