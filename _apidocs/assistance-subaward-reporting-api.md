@@ -5,7 +5,7 @@ banner-heading: SAM.gov Assistance Subaward Reporting Public API
 
 ## Overview
 
-The Assistance Subaward Reporting Public API provides published and deleted federal subaward data. The production Assistance Subaward Reporting Public API has a target launch date of Spring 2025.
+The Assistance Subaward Reporting Public API provides published and deleted federal subaward data.
 
 
 **Tips and Key Features of the Assistance Subaward Outbound API**
