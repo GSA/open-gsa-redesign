@@ -5,7 +5,7 @@ banner-heading: SAM.gov Assistance Subaward Reporting Public API
 
 ## Overview
 
-The Assistance Subaward Reporting Public API provides published and deleted federal subaward data. The production Assistance Subaward Reporting Public API has a target launch date of Spring 2025.
+The Assistance Subaward Reporting Public API provides published and deleted federal subaward data.
 
 
 **Tips and Key Features of the Assistance Subaward Outbound API**
@@ -27,7 +27,8 @@ Access the Assistance Subaward Reporting Public API from the following Productio
 ### API Endpoints
 
 **Production**
-* Target Availability in Spring 2025
+* https://api.sam.gov/prod/assistance/v1/subawards/search
+* https://api.sam.gov/prod/assistance/v1/subawards/search?status=Deleted
 
 **Alpha**
 * https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search
@@ -89,18 +90,20 @@ Deleted | Returns deleted records submitted for an award. Delete must be passed 
 
 The Assistance Subaward Reporting Public API offers respone parameters described in this section. The API response returns a JSON summarized view of the subawards based on your request filters.
 
-Field Name	| Description | Data Type|Applicable Versions
+Field Name	| Description | Data Type| Applicable Versions
 ----- | ----- | ----- | -----  
 totalPages | Total Pages | int | v1
 totalRecords | Total Records | int | v1
 pageNumber | Page Number. If the user does not pass any value, the system will default pageNumber = 0  | int | v1
 nextPageLink | Next Page Link | string | v1
 previousPageLink | Previous Page Link | string | v1
+status | Status of Subaward | string | v1
 primeAwardKey | Unique Award Key | string | v1
-PIID | PIID | string | v1
-agencyId | Agency ID | string | v1
-referencedIDVPIID | Reference IDV PIID | string | v1
-referencedIDVAgencyId | Reference IDV Agency PIID | string | v1
+FAIN | FAIN | string | v1
+agencyCode | Agency Code | string | v1
+actionDate | Action Date | string | v1
+baseAssistanceTypeCode | Base Assistance Type Code | string | v1
+baseAssistanceTypeDesc | Base Assistance Type Description | string | v1
 subawardReportId | Subaward Report ID | string | v1 
 subawardReportNumber | Subaward Report Number | string | v1
 submittedDate | Submitted Date | string | v1
@@ -108,22 +111,37 @@ subAwardNumber | Subaward Number | string | v1
 subAwardAmount | Subaward Amount | string | v1
 subAwardDate | Subaward Date | string | v1
 subEntityUei | Sub Entity UEI | string | v1
-subAwardTopPayEmployee | Sub Top Pay Employee | string | v1
+subVendorUei | Sub Vendor UEI | string | v1
+subVendorName | Sub Vendor Name | string | v1
+subTopPayEmployee | Sub Top Pay Employee | string | v1
 subEntityLegalBusinessName | Sub Entity Legal Business Name | string | v1
 subEntityDoingBusinessAsName | Sub Entity Doing Business As | string | v1
+subVendorName | Sub Vendor Name | string | v1
 primeAwardType | Award Type | string | v1 
 totalContractValue | Total Contract Value | string | v1
+assistanceType | Prime Awardee Assistance Type | string | v1
 primeEntityUei | Prime Awardee UEI | string | v1 
 primeEntityName | Prime Awardee Legal Business Name | string | v1
 baseAwardDateSigned | Base Award Date Signed | string | v1
 descriptionOfRequirement | Description of Requirement | string | v1
 subAwardNaics | Sub Award NAICS Code | string | v1
-primeOrganizationInfo | Contracting Subtier Name | string | v1
+subAwardDescription | Sub Award Description | string | v1
+OrganizationInfo | Contracting Subtier Name | string | v1
 subEntityPhysicalAddress | Sub Entity Physical Address | string | v1
-subAwardBusinessType | Sub Award Business Type | string | v1 
-subEntityParentLegalBusinessName | Sub Entity Parent Legal Business Name | string | v1 
+subBusinessType | Sub Award Business Type | string | v1 
+subDbaName | Sub DBA Name | string | v1
+subParentName | Sub Entity Parent Legal Business Name | string | v1 
 subParentUei | Sub Parent UEI | string | v1
-subEntityTopPayEmployee | Sub Entity Top Pay Employee | string | v1
+subTopPayEmployee | Sub Entity Top Pay Employee | string | v1
+reportUpdatedDate | Report Updated Date | string | v1
+baseObligationDate | Base Obligation Date | string | v1 
+projectDescription | Project Description | string | v1
+placeOfPerformance | Place of Performance | string | v1
+totalFedFundingAmount | Total Fed Funding Amount | string | v1
+vendorPhysicalAddress | Vendor Physical Address | string | v1
+streetAddress | Street Address | string | v1
+streetAddress2 | Street Address Line Two | string | v1
+assistanceListingNumber | Assistance Listing Number | string | v1
 
 
 ## Open API Specification File 
@@ -168,27 +186,17 @@ You can view the full details of this API in the OpenAPI Specification file avai
         required: false
         schema:
           type: string
-      - name: PIID
+      - name: FAIN
         in: query
         required: false
         schema:
           type: string
-      - name: agencyId
-        in: query
-        required: false
-        schema:
-          type: string
-      - name: referencedIDVAgencyId
+      - name: agencyCode
         in: query
         required: false
         schema:
           type: string
       - name: primeAwardType
-        in: query
-        required: false
-        schema:
-          type: string
-      - name: referencedIDVPIID
         in: query
         required: false
         schema:
@@ -298,9 +306,8 @@ To Date value is after Current Date value. | To Date cannot be after the current
 Content in Description link is not available. | Description Not Found.
 Status Value is invalid. | Valid status values are: Deleted, Published. 
 primeAwardKey is invalid. | PrimeAwardKey must consist of alphanumeric characters only, with the underscore '_' being the only allowed special character.
-PIID value is invalid. | PIID value must be alphanumeric. 
-ReferencedIDVPIID value is invalid. | Referenced IDV PIID value must be alphanumeric. 
-AgencyID value is invalid. | Agency ID value must be a four-digit number. 
+FAIN value is invalid. | FAIN value must be alphanumeric. 
+AgencyCode value is invalid. | Agency Code value must be a four-digit number. 
 ReferencedIDV value is invalid. | ReferencedIDV agency ID value must be a four-digit number.
 PrimeAwardType value is invalid. | Prime award type value must be alphanumeric.
 API Key is invalid. | An invalid API key was supplied.
@@ -391,8 +398,8 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?pag
       "subDbaName": null,
       "subParentName": null,
       "subParentUei": null,
-      "subAwardBusinessType": null,
-      "subAwardTopPayEmployee": null
+      "subBusinessType": null,
+      "subTopPayEmployee": null
     }
   ]
 }
@@ -482,8 +489,8 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?pag
       "subDbaName": null,
       "subParentName": null,
       "subParentUei": null,
-      "subAwardBusinessType": null,
-      "subAwardTopPayEmployee": null
+      "subBusinessType": null,
+      "subTopPayEmployee": null
     }
   ]
 }
@@ -572,8 +579,8 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?pag
       "subDbaName": null,
       "subParentName": null,
       "subParentUei": null,
-      "subAwardBusinessType": null,
-      "subAwardTopPayEmployee": null
+      "subBusinessType": null,
+      "subTopPayEmployee": null
     }
   ]
 }
@@ -662,7 +669,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?sta
       "subDbaName": null,
       "subParentName": "VINTON, TOWN OF",
       "subParentUei": "FBA2ZQK26QV3",
-      "subAwardBusinessType": [
+      "subBusinessType": [
         {
           "code": "12",
           "name": "U.S. Local Government"
@@ -676,7 +683,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?sta
           "name": "Township"
         }
       ],
-      "subAwardTopPayEmployee": null
+      "subTopPayEmployee": null
     },
     {
       "status": "Deleted",
@@ -737,7 +744,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?sta
       "subDbaName": null,
       "subParentName": "MANCHESTER, CITY OF",
       "subParentUei": "Z93ZBNUC43X8",
-      "subAwardBusinessType": [
+      "subBusinessType": [
         {
           "code": "12",
           "name": "U.S. Local Government"
@@ -747,7 +754,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?sta
           "name": "Municipality"
         }
       ],
-      "subAwardTopPayEmployee": null
+      "subTopPayEmployee": null
     },
     {
       "status": "Deleted",
@@ -808,7 +815,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?sta
       "subDbaName": null,
       "subParentName": "AUSTIN COMMUNITY COLLEGE",
       "subParentUei": "ZSFBTJE461W5",
-      "subAwardBusinessType": [
+      "subBusinessType": [
         {
           "code": "A8",
           "name": "Nonprofit Organization"
@@ -822,7 +829,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?sta
           "name": "State Controlled Institution of Higher Learning"
         }
       ],
-      "subAwardTopPayEmployee": null
+      "subTopPayEmployee": null
     }
   ]
 }
@@ -911,7 +918,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?sta
       "subDbaName": null,
       "subParentName": "AUSTIN COMMUNITY COLLEGE",
       "subParentUei": "ZSFBTJE461W5",
-      "subAwardBusinessType": [
+      "subBusinessType": [
         {
           "code": "A8",
           "name": "Nonprofit Organization"
@@ -925,7 +932,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?sta
           "name": "State Controlled Institution of Higher Learning"
         }
       ],
-      "subAwardTopPayEmployee": null
+      "subTopPayEmployee": null
     }
   ]
 }
@@ -1017,7 +1024,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?pag
             "subDbaName": null,
             "subParentName": "OKLAHOMA, STATE OF",
             "subParentUei": "EMSCXBHK78V7",
-            "subAwardBusinessType": [
+            "subBusinessType": [
                 {
                     "code": "23",
                     "name": "Minority-Owned Business"
@@ -1035,7 +1042,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?pag
                     "name": "Subchapter S Corporation"
                 }
             ],
-            "subAwardTopPayEmployee": []
+            "subTopPayEmployee": []
         }
     ]
 }
@@ -1127,8 +1134,8 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?sta
             "subDbaName": null,
             "subParentName": "ARIZONA STATE UNIVERSITY",
             "subParentUei": "HX59VKHQH1V7",
-            "subAwardBusinessType": [],
-            "subAwardTopPayEmployee": [
+            "subBusinessType": [],
+            "subTopPayEmployee": [
                 {
                     "salary": "100",
                     "fullname": "sub1"

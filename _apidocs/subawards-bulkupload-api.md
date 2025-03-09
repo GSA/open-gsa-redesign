@@ -6,10 +6,9 @@ banner-heading: SAM.gov Subaward reporting Bulk Upload API
 ## Overview 
 
 This documentation provides information for publishing subcontract and subaward reports to SAM.gov. 
-Only the SAM.gov test environment - alpha.SAM.gov - is available to test subcontract and subaward report uploads. The production Subaward Reporting Bulk Upload API has a target launch date of Spring 2025.
 
 **Tips and Key Features of the Subaward Reporting Bulk Upload API** 
-* You must have an alpha.SAM.gov system account with reporting permissions and a system account API key to use this API to report subcontracts and subawards.
+* You must have a SAM.gov system account with reporting permissions and a system account API key to use this API to report subcontracts and subawards.
 * You can use the same system account for an entity and any of its child entities. You do not need separate system accounts for each child entity.
 * You need separate system accounts to bulk report for entities not in the same hierarchy.
 * API requests must use a REST API connection type.
@@ -20,7 +19,7 @@ Only the SAM.gov test environment - alpha.SAM.gov - is available to test subcont
 Access the Subaward Reporting Bulk Upload API from the following Production or Alpha environments:
 
 **Production** 
-* Target availability in Spring 2025
+* https://api.SAM.gov/prod
 
 **Alpha** 
 * https://api-alpha.SAM.gov/prodlike
@@ -28,30 +27,30 @@ Access the Subaward Reporting Bulk Upload API from the following Production or A
 ### Authentication, Authorization and API Keys
 
 #### Get a System Account
-A system account enables you to use this API to publish multiple subcontract or subaward reports to alpha.SAM.gov at once using software or web services. Follow these steps to get a system account with subaward reporting permissions:
-1. Get an entity reporting Data Entry or Administrator role with subaward permissions enabled on your alpha.SAM.gov user account. If you do not have the entity reporting role, request it from your Entity Administrator.
-2. Request the Non-Federal System Administrator role by reaching out to samtesting@gsa.gov
-3. Once you have the Non-Federal System Administrator role, sign in to alpha.SAM.gov. Locate the System Account section in your Workspace and select the section title.
+A system account enables you to use this API to publish multiple subcontract or subaward reports to SAM.gov at once using software or web services. Follow these steps to get a system account with subaward reporting permissions:
+1. Get an entity reporting Data Entry or Administrator role with subaward permissions enabled on your SAM.gov user account. If you do not have the entity reporting role, request it from your Entity Administrator.
+2. Request the Non-Federal System Administrator role by reaching out to fsd.gov
+3. Once you have the Non-Federal System Administrator role, sign in to SAM.gov. Locate the System Account section in your Workspace and select the section title.
 4. Select the **New Account** button. Enter the required information and submit the application.
 
 The General Services Administration reviews system account applications. You will be notified by email when an application is approved or rejected.
 
-If you apply for a system account without receiving the Non-Federal System Administrator role, you can still use a system account to pull other types of alpha.SAM.gov data by API, but you will not have the permissions required to publish subcontract or subaward reports to alpha.SAM.gov. 
+If you apply for a system account without receiving the Non-Federal System Administrator role, you can still use a system account to pull other types of SAM.gov data by API, but you will not have the permissions required to publish subcontract or subaward reports to SAM.gov. 
 
 #### Get a System Account API Key 
 We require a system account API key to use this API. Once your system account is approved, get an API key from the System Account Workspace. When your system account is new, you must set up a system account password before generating your API key. Once your password is set up, you must enter it to get your API key. 
 
 API keys are valid for 90 days. New keys are automatically generated 15 days before the key expires. New and current keys are active and valid during the 15-day period until the current key expires on the 90th day.
 
-If using the Alpha environment API, get your API key from your alpha.SAM.gov System Account Workspace.  
+Get your API key from your SAM.gov System Account Workspace.   
 
 #### API Key Rate Limits 
 We limit call rates by day and account type.
 
 |   Type of Account   | Type of API Key   | API Daily Rate Limit   |
 | ---------------------------------- | ----------------- | ----------------- |
-| Non-federal user with no role to an entity in alpha.SAM.gov | Personal API key | 10 requests/day |
-| Non-federal user with a role to an entity in alpha.SAM.gov |  Personal API key | 1,000 requests/day |
+| Non-federal user with no role to an entity in SAM.gov | Personal API key | 10 requests/day |
+| Non-federal user with a role to an entity in SAM.gov |  Personal API key | 1,000 requests/day |
 | Non-federal system account user | System account API key | 1,000 requests/day |
 
 <p><small><a href="#">Back to top</a></small></p>
@@ -60,7 +59,7 @@ We limit call rates by day and account type.
 
 ### Subcontract and Subaward Reports Executive Compensation Questions
 
-alpha.SAM.gov requires responses to subcontractor and subrecipient executive compensation questions to submit subcontract and subaward reports. If your subcontractor or subrecipient does not have responses to these questions on their alpha.SAM.gov entity record, you must provide responses in your request. The tables below outline the questions and corresponding codes for your requests.
+SAM.gov requires responses to subcontractor and subrecipient executive compensation questions to submit subcontract and subaward reports. If your subcontractor or subrecipient does not have responses to these questions on their SAM.gov entity record, you must provide responses in your request. The tables below outline the questions and corresponding codes for your requests.
 
 #### Subcontractor Questions
 
@@ -88,13 +87,13 @@ Code | Value     | Description
 -----|-----------------|-----------------
 1     | Draft | A report has been started and saved but has not been published and requires additional information or updates to be published. 
 2     | Published | A report has all required information and is successfully published.
-3     | Reopened | When you update a published report, we create a reopened version. alpha.SAM.gov keeps the published version public until you publish the updates.
+3     | Reopened | When you update a published report, we create a reopened version. SAM.gov keeps the published version public until you publish the updates.
 4     | Deleted | A report has been deleted. Deleted reports are not publicly available.
 
 <p><small><a href="#">Back to top</a></small></p>
 
 ## GENC Standards
-alpha.SAM.gov uses the [Geopolitical Entities, Names, and Codes (GENC) standards](https://geonames.nga.mil/geonames/GeographicNamesSearch/), which provide country and administrative area codes recognized by the U.S. government. All location fields (country, state/province, territory) must follow these standards.
+SAM.gov uses the [Geopolitical Entities, Names, and Codes (GENC) standards](https://geonames.nga.mil/geonames/GeographicNamesSearch/), which provide country and administrative area codes recognized by the U.S. government. All location fields (country, state/province, territory) must follow these standards.
 
 ### API Fields
 
@@ -148,7 +147,7 @@ The following section describes each of the above endpoints in detail.
 
 Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
-Authorization | header |  string | Yes | Valid and authorized alpha.SAM.gov user email ID
+Authorization | header |  string | Yes | Valid and authorized SAM.gov user email ID
 Content-Type | header |  string | Yes | application/json
 api_key | query | string | Yes | Valid System Account API Key
 Request JSON | Body | JSON | Yes | [Refer Submit Subcontract report Contract JSON](#submit-subcontract-report-contract-json)
@@ -176,7 +175,7 @@ The overall response is a JSON array containing the status of each subcontract r
 #### Examples
 
 <details>
-<summary>Example 1: Submit subcontract reports for multiple contracts and subcontracts under them. The example includes task order where the Referenced IDV is required, and the subcontractor’s executive compensation information is already on the subcontractor’s alpha.SAM.gov entity record.</summary>
+<summary>Example 1: Submit subcontract reports for multiple contracts and subcontracts under them. The example includes task order where the Referenced IDV is required, and the subcontractor’s executive compensation information is already on the subcontractor’s SAM.gov entity record.</summary>
 <p>
 <code><pre>
 {
@@ -367,7 +366,7 @@ The overall response is a JSON array containing the status of each subcontract r
 
 Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
-Authorization | Header |  string | Yes | Valid and authorized alpha.SAM.gov user email ID
+Authorization | Header |  string | Yes | Valid and authorized SAM.gov user email ID
 Content-Type | header |  string | Yes | application/json
 api_key | query | string | Yes | Valid System Account API Key
 Request JSON | Body | JSON | Yes | [Refer Submit Subaward report Assistance JSON](#submit-subaward-report-assistance-json)
@@ -396,7 +395,7 @@ The overall response is a JSON array containing the status of each subaward repo
 #### Examples
 
 <details>
-<summary>Example 1: Submit subaward reports for multiple assistance awards and subawards under them. The example includes the subrecipient’s executive compensation information is already on the subrecipient’s alpha.SAM.gov entity record.</summary>
+<summary>Example 1: Submit subaward reports for multiple assistance awards and subawards under them. The example includes the subrecipient’s executive compensation information is already on the subrecipient’s SAM.gov entity record.</summary>
 <p>
 <code><pre>
 {
@@ -581,7 +580,7 @@ The overall response is a JSON array containing the status of each subaward repo
 
 Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
-Authorization | header |  string | Yes | Valid and authorized alpha.SAM.gov user email ID
+Authorization | header |  string | Yes | Valid and authorized SAM.gov user email ID
 Content-Type | header |  string | Yes | application/json
 api_key | query | string | Yes | Valid System Account API Key
 subawardReportNumber | path | string | Yes | Unique identifier for the subcontract report.
@@ -730,7 +729,7 @@ See the [Response JSON](#response-json) section for the response structure and s
 
 Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
-Authorization | Header |  string | Yes | Valid and authorized alpha.SAM.gov user email ID
+Authorization | Header |  string | Yes | Valid and authorized SAM.gov user email ID
 Content-Type | header |  string | Yes | application/json
 api_key | query | string | Yes | Valid System Account API Key
 subawardReportNumber | path | string | Yes | Unique identifier for the subaward report.
@@ -881,7 +880,7 @@ See the [Response JSON](#response-json) section for the response structure and s
 
 Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
-Authorization | Header |  string | Yes | Valid and authorized alpha.SAM.gov user email ID
+Authorization | Header |  string | Yes | Valid and authorized SAM.gov user email ID
 api_key | query | string | Yes | Valid System Account API Key
 subawardReportNumber | path | string | Yes | Unique identifier for the subcontract report.
 status | query | string | Yes | Status of the subcontract report.
@@ -927,7 +926,7 @@ Provide the status (Draft, Published or Reopened as a Query Param) in the reques
 
 Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
-Authorization | Header |  string | Yes | Valid and authorized alpha.SAM.gov user email ID
+Authorization | Header |  string | Yes | Valid and authorized SAM.gov user email ID
 api_key | query | string | Yes | Valid System Account API Key
 subawardReportNumber | path | string | Yes | Unique identifier for the subaward report.
 status | query | string | Yes | Status of the subaward report.
@@ -973,7 +972,7 @@ Provide the status (Draft, Published or Reopened as a Query Param) in the reques
 
 Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
-Authorization | Header |  string | Yes | Valid and authorized alpha.SAM.gov user email ID
+Authorization | Header |  string | Yes | Valid and authorized SAM.gov user email ID
 api_key | query | string | Yes | Valid System Account API Key
 subawardReportNumber | path | string | Yes | Unique identifier for the subcontract report.
 status | query | string | No | Status of the subcontract report
@@ -1023,7 +1022,7 @@ Requests return a JSON response that is the same as the POST Response JSON. The 
 
 Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
-Authorization | Header |  string | Yes | Valid and authorized alpha.SAM.gov user email ID
+Authorization | Header |  string | Yes | Valid and authorized SAM.gov user email ID
 api_key | query | string | Yes | Valid System Account API Key
 subawardReportNumber | path | string | Yes | Unique identifier for the subaward report.
 status | query | string | No | Status of the subaward report
@@ -1073,7 +1072,7 @@ Requests return a JSON response that is the same as the POST Response JSON. The 
 
 Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
-Authorization | Header |  string | Yes | Valid and authorized alpha.SAM.gov user email ID
+Authorization | Header |  string | Yes | Valid and authorized SAM.gov user email ID
 api_key | query | string | Yes | Valid System Account API Key
 contractNumber | query | string | No | The Contract ID (PIID)
 reportingAgencyCode | query | string | No | The agency code for the contract
@@ -1156,7 +1155,7 @@ Requests return a JSON response that is the same as the POST Response JSON. The 
 
 Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
-Authorization | Header |  string | Yes | Valid and authorized alpha.SAM.gov user email ID
+Authorization | Header |  string | Yes | Valid and authorized SAM.gov user email ID
 api_key | query | string | Yes | Valid System Account API Key
 FAIN | query | string | No | The Award ID (FAIN) for the award
 agencyCode | query | string | No | The agency code for the assistance award
@@ -1230,7 +1229,7 @@ Response Element | Response Type | Description
  _ | JSON Array | One element for each Subaward report in request
 id | string | For a contract report, it is the concatenated values of contractNumber, reportingAgency, idvRefrenceNumber, referenceAgencyCode, subawardNumber, subawardDate, subawardAmount and submittedDate separated by ':'. For an assistance report, it is the concatenated value of fainNumber, agencyCode, subawardNumber, subawardDate, subawardAmount and submittedDate separated by ':'. For a GET or DELETE request, if the request is unsuccessful, then it is the concatenated value of the search parameters separated by ":".
 statusCode | string | The HTTP Status code for the Subaward report element
-transactionId | string | Internal ID used by the alpha.SAM.gov support team to trace issues. You can provide this to the support team if you report an issue.
+transactionId | string | Internal ID used by the SAM.gov support team to trace issues. You can provide this to the support team if you report an issue.
 timeStamp | string | Date and time when the request was processed
 subawardReportNumber | string | Unique identifier for the subcontract or subaward report. This ID can be used for any subsequent update/delete calls
 reportStatus | string | Status of the subcontract or subaward report. 
@@ -1962,7 +1961,7 @@ recoveryModelQuestions |JSON Array|NA |Yes, if the SAM registration for the enti
 recoveryModelQuestions.code |string||Yes, if compensation question responses are being provided. | Code for the compensation question. Refer to the Subcontract and Subaward Reports Executive Compensation Questions section for details.
 recoveryModelQuestions.isSelected |string  || Yes, if compensation question responses are being provided. | A Boolean value representing the response to the compensation question.
 **contractData.subawardDataList. topPayEmployees Details** | | | |  
-topPayEmployees|JSON Array|NA |Conditional - see Description. If required, the array requires 5 elements| This is the compensation information for the top five employees. The array has five elements for the five top-paid employees. This is required if the response to compensation question one is true, compensaion question two is true and compensation question three is false. If responses to the compensation questions are provided on the subcontractor’s alpha.SAM.gov entity registration, then this information is not required.
+topPayEmployees|JSON Array|NA |Conditional - see Description. If required, the array requires 5 elements| This is the compensation information for the top five employees. The array has five elements for the five top-paid employees. This is required if the response to compensation question one is true, compensaion question two is true and compensation question three is false. If responses to the compensation questions are provided on the subcontractor’s SAM.gov entity registration, then this information is not required.
 topPayEmployees.full_name |string  ||Yes if subawardDataList.topPayEmployees is required| The full name of the top-paid employees.
 topPayEmployees.salary | string  ||Yes if subawardDataList.topPayEmployees is required|The total compensation of the top-paid employees.
 
@@ -2000,7 +1999,7 @@ recoveryModelQuestions |JSON Array|NA |Yes, if Compensation question responses a
 recoveryModelQuestions.code |string||Yes, if Compensation question responses are being provided. | Code for the compensation question. The code is 1 for the first question, 2 for the second question and 3 for the third question. Refer to the Subcontract and Subaward Reports Executive Compensation Questions section for details.
 recoveryModelQuestions.isSelected |string  || Yes, if Compensation question responses are being provided. | A Boolean value representing the response to the compensation question.
 **assistanceData.subawardDataList. topPayEmployees Details** | | | |  
-subawardDataList.topPayEmployees|JSON Array|NA |Conditional - see Description. If required, the array requires 5 elements| This is the compensation information for the top five employees. The array has five elements for the five top-paid employees. This is required if the response to compensation question one is true and compensation question two is false. If responses to the compensation questions are provided on the subrecipient’s alpha.SAM.gov entity registration, then this information is not required.
+subawardDataList.topPayEmployees|JSON Array|NA |Conditional - see Description. If required, the array requires 5 elements| This is the compensation information for the top five employees. The array has five elements for the five top-paid employees. This is required if the response to compensation question one is true and compensation question two is false. If responses to the compensation questions are provided on the subrecipient’s SAM.gov entity registration, then this information is not required.
 topPayEmployees.full_name |string  ||Yes if subawardDataList.topPayEmployees is required| The full name of the top-paid employees.
 topPayEmployees.salary | string  ||Yes if subawardDataList.topPayEmployees is required|The total compensation of the top-paid employees.
 
@@ -2040,7 +2039,7 @@ recoveryModelQuestions |JSON Array|NA |Yes, if the SAM registration for the enti
 recoveryModelQuestions.code |string||Yes, if compensation question responses are being provided. | Code for the compensation question. Refer to the Subcontract and Subaward Reports Executive Compensation Questions section for details.
 recoveryModelQuestions.isSelected |string  || Yes, if compensation question responses are being provided. | A Boolean value representing the response to the compensation question.
 **contractData.subawardData. topPayEmployees Details** | | | |  
-topPayEmployees|JSON Array|NA |Conditional - see Description. If required, the array requires 5 elements| This is the compensation information for the top five employees. The array has five elements for the five top-paid employees. This is required if the response to compensation question one is true, compensaion question two is true and compensation question three is false. If responses to the compensation questions are provided on the subcontractor’s alpha.SAM.gov entity registration, then this information is not required.
+topPayEmployees|JSON Array|NA |Conditional - see Description. If required, the array requires 5 elements| This is the compensation information for the top five employees. The array has five elements for the five top-paid employees. This is required if the response to compensation question one is true, compensaion question two is true and compensation question three is false. If responses to the compensation questions are provided on the subcontractor’s SAM.gov entity registration, then this information is not required.
 topPayEmployees.full_name |string  ||Yes if subawardDataList.topPayEmployees is required| The full name of the top-paid employees.
 topPayEmployees.salary | string  ||Yes if subawardDataList.topPayEmployees is required|The total compensation of the top-paid employees.
 
@@ -2078,7 +2077,7 @@ recoveryModelQuestions |JSON Array|NA |Yes, if Compensation question responses a
 recoveryModelQuestions.code |string||Yes, if Compensation question responses are being provided. | Code for the compensation question. The code is 1 for the first question, 2 for the second question and 3 for the third question. Refer to the Subcontract and Subaward Reports Executive Compensation Questions section for details.
 recoveryModelQuestions.isSelected |string  || Yes, if Compensation question responses are being provided. | A Boolean value representing the response to the compensation question.
 **assistanceData.subawardData. topPayEmployees Details** | | | | 
-subawardDataList.topPayEmployees|JSON Array|NA |Conditional - see Description. If required, the array requires 5 elements| This is the compensation information for the top five employees. The array has five elements for the five top-paid employees. This is required if the response to compensation question one is true and compensation question two is false. If responses to the compensation questions are provided on the subrecipient’s alpha.SAM.gov entity registration, then this information is not required. 
+subawardDataList.topPayEmployees|JSON Array|NA |Conditional - see Description. If required, the array requires 5 elements| This is the compensation information for the top five employees. The array has five elements for the five top-paid employees. This is required if the response to compensation question one is true and compensation question two is false. If responses to the compensation questions are provided on the subrecipient’s SAM.gov entity registration, then this information is not required. 
 topPayEmployees.full_name |string  ||Yes if subawardDataList.topPayEmployees is required| The full name of the top-paid employees.
 topPayEmployees.salary | string  ||Yes if subawardDataList.topPayEmployees is required|The total compensation of the top-paid employees.
 
@@ -2152,7 +2151,7 @@ The following section describes validation failure messages that are returned as
 |	zipPlus4	|	No congressional district found for the address provided. Try again with 9 digits ZIP Code or enter a different address.	|	Only for US addresses: Subaward Place of Performance Section - Congressional District could not be derived with the information provided.	|
 |	zipPlus4	|	Subaward Place of Performance ZIP Code +4 cannot exceed 9 characters.	|	Subaward Place of Performance Section - ZIP Code +4 cannot exceed nine characters	|
 |	**recoveryModelQuestions validations**	|		|		|
-|	recoveryModelQuestions 	|	No executive compensation information found for the Unique Entity ID provided. Answer executive compensation questions on the recoveryModelQuestions JSON element.	|	Responses to compensation questions are required if they are not available for the subcontractor's or subrecepient's alpha.SAM.gov registration	|
+|	recoveryModelQuestions 	|	No executive compensation information found for the Unique Entity ID provided. Answer executive compensation questions on the recoveryModelQuestions JSON element.	|	Responses to compensation questions are required if they are not available for the subcontractor's or subrecepient's SAM.gov registration	|
 |	recoveryModelQuestions 	|	Compensation question one code and response required.	|	Compensation Q1 code and response are required if responses to compensation questions is provided	|
 |	recoveryModelQuestions 	|	Compensation questions two code and response required.	|	Compensation Q2 code and response are required	|
 |	recoveryModelQuestions 	|	Compensation questions three code and response required.	|	Compensation Q3 code and response are required	|
