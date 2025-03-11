@@ -1172,7 +1172,7 @@ Alpha URL: https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search?sta
 
 Date | Version | Description
 ------|---------------|---------
-mm/dd/yyy | v1.0 | Base Version
+03/07/2025 | v1.0 | Base Version
 
 
 
