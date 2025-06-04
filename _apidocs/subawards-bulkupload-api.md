@@ -25,13 +25,13 @@ Access the Subaward Reporting Bulk Upload API from the following Production or A
 * https://api-alpha.SAM.gov/prodlike
 
 ### Completing Authentication, Authorization and API Keys
-To ensure data quality in the SAM.gov live environment, you must complete a Subaward Bulk Upload test in Alpha.sam.gov.
+To ensure data quality in the Alpha.sam.gov live environment, you must complete a Subaward Bulk Upload test in Alpha.sam.gov.
 #### User Account Creation
 1. Create a user account on Alpha.sam.gov
 2. Skip this step if you already have an account
 
 #### Entity Registration
-1. Register your entity in alpha.sam.gov
+1. Register your entity in Alpha.sam.gov
 2. Skip this step if you already have an account
 
 #### Obtain Reporting Permissions
@@ -40,7 +40,7 @@ To ensure data quality in the SAM.gov live environment, you must complete a Suba
 3. Ensure subaward permissions are enabled
 
 #### System Account Application Process
-1. Sign in to alpha.sam.gov
+1. Sign in to Alpha.sam.gov
 2. Navigate to the System Account section in your Workspace.
 3. Select "New Account"
 4. Complete and submit required information
@@ -53,14 +53,14 @@ To ensure data quality in the SAM.gov live environment, you must complete a Suba
 We require a system account API key to use this API. Once your system account is approved, get an API key from the System Account Workspace. When your system account is new, you must set up a system account password before generating your API key. Once your password is set up, you must enter it to get your API key.
 
 <b>NOTE:</b> API keys are valid for <b>90 days.</b> New keys are automatically generated 15 days before the key expires. New and current keys are active and valid during the 15-day period until the current key expires on the 90th day.
-Get your API key from your apha.sam.gov System Account Workspace.
+Get your API key from your Alpha.sam.gov System Account Workspace.
 
 #### Bulk Upload Testing
 1. Test Subaward Bulk Upload Data File in Alpha.sam.gov for more details, review the instructions below.
 2. Verify data format passes verification
 
 #### Final Steps
-1. To complete your Subaward System Account request, follow the same workflow on www.sam.gov that you previously executed in alpha.sam.gov.
+1. To complete your Subaward System Account request, follow the same workflow on www.sam.gov that you previously executed in Alpha.sam.gov.
 2. Be prepared to provide your Alpha System Account name during the process.
  
 If you apply for a system account without receiving the Non-Federal System Administrator role, you can still use a system account to pull other types of SAM.gov data by API, but you will not have the permissions required to publish subcontract or subaward reports to SAM.gov.
