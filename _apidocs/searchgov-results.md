@@ -5,7 +5,7 @@ banner-heading: Search.gov Results API
 
 ## Overview
 
-Search.gov is a service of the General Services Administration, providing search engine capability to federal agencies for their public websites. To learn more about Search.gov and how to set up your site for search, please review the [site launch guide](https://search.gov/manual/site-launch-guide.html).
+Search.gov is a service of the General Services Administration, providing search engine capability to federal agencies for their public websites. To learn more about Search.gov and how to set up your site for search, please review the [site launch guide](https://search.gov/get-started/site-launch-guide.html).
 
 This API exposes all relevant Search.gov results “modules” in a single JSON call, including the following:
 
@@ -13,7 +13,6 @@ This API exposes all relevant Search.gov results “modules” in a single JSON 
   * Best bets
   * Health topics
   * Job openings
-  * Recent tweets
   * Recent news
   * Recent video news
   * Federal Register documents
@@ -21,9 +20,9 @@ This API exposes all relevant Search.gov results “modules” in a single JSON 
 
 ## Getting Started
 
-The endpoint is `https://api.gsa.gov/technology/searchgov/v2/results/i14y`.
+The endpoint is `https://api.gsa.gov/technology/searchgov/v2/results/i14y`. You must use https. 
 
-You must use https. You can find your access key on the API Access Key page of the Search.gov Admin Center.
+You can find your access key in the [Search.gov Admin Center](https://search.usa.gov/login). On the left side navigation, click the "Activate" (`</>`) icon, and select the API Access Key page.
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -38,9 +37,9 @@ You can view the full details of this API in the OpenAPI Specification file avai
 
 The endpoint you use to retrieve web results through this API will depend on the method we used to index your content. If we don't yet have your content indexed, you won't see results in the API.
   
-We can index content using your [XML sitemap](https://search.gov/blog/sitemaps.html) (preferred) or [RSS feeds](https://search.gov/manual/rss.html). We can also deploy a crawler on a limited basis.
+We can index content using your [XML sitemap](https://search.gov/indexing/sitemaps.html) (preferred) or [RSS feeds](https://search.gov/admin-center/content/rss.html). We can also deploy a crawler on a limited basis.
   
-Sites indexed via sitemaps or crawling will use the `/i14y` endpoint. Because most users are in this category, the example API calls below are to this endpoint. Sites indexed via RSS will use the top level `/` endpoint, please modify your calls accordingly.
+Sites indexed via sitemaps or crawling will use the `/i14y` endpoint. Because most users are in this category, the example API calls below are to this endpoint. Sites using our [Supplemental URLs feature](https://search.gov/admin-center/content/domains-advanced.html) will use the top level `/` endpoint, please modify your calls accordingly.
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -64,12 +63,35 @@ Sites indexed via sitemaps or crawling will use the `/i14y` endpoint. Because mo
   | limit (optional)                | Defines the number of results to return. The default is 20, but you can specify between 1 and 50 results. <br> Example: `limit=5`
   | offset (optional)               | Defines the number of results you want to skip from the first result. The offset is used for implementing pagination. The default is 0 and the maximum is 999. <br> Example: `offset=20`
   | sort\_by (optional)             | Allowed variables are date and relevance. The default sort is relevance. Add `sort_by=date` to sort by date.
+  | sitelimit (optional)             | Limits the results to the subdomains and/or subfolders provided. Multiple values can be passed using a space-separated list. Example: `sitelimit=search.gov/about search.gov/get-started`. The values passed in the sitelimit must be in scope of the Domains list in the Search.gov Admin Center for your search site.
+
+  Faceted search offers a set of filters people can use to narrow their results. We support filters for tags, audience, content type, file (MIME) type, and three custom use fields. To enable faceted search on your results page, use the parameters below. You must set `include_facets=true` for these parameters to be applied. For more context on how we index content into these fields, see our [metadata documentation](https://search.gov/indexing/metadata.html).
+
+  Faceted search is available only through the /i14y endpoint. 
+
+  | Parameters                      | Description
+  | :--								| :--
+  | include_facets      			| The default is `false`. To enable facet features, set this to `true` 
+  | audience                        | Returns results that match any of the specified terms in the Audience field. Ex. `audience=students, policymakers` would return results with an audience of students **or** policymakers. Accepts a comma-separated list of strings. 
+  | content_type                    | Returns results that match any of the specified terms in the Content Type field. Ex. `content_type=article, blog post` would return results with a content type of article **or** blog post. Accepts a comma-separated list of strings. 
+  | created_since                   | Sets a lower bound for the `created` date. Date must be in ISO Format (YYYY-MM-DD).
+  | created_until                   | Sets an upper bound for the `created` date. Date must be in ISO Format (YYYY-MM-DD).
+  | mime_type                       | Returns results that match any of the specified terms in the mime_type field, which indicates the file type of the document. Ex. `mime_type=text/html, application/pdf` would return results with a MIME type of text/html **or** application/pdf. Accepts a comma-separated list of strings. [Read about common MIME types](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types).
+  | searchgov_custom1               | Returns results that match any of the specified terms in the searchgov_custom1 field. Accepts a comma-separated list of strings.
+  | searchgov_custom2               | Returns results that match any of the specified terms in the searchgov_custom2 field. Accepts a comma-separated list of strings.
+  | searchgov_custom3               | Returns results that match any of the specified terms in the searchgov_custom3 field. Accepts a comma-separated list of strings.
+  | tags                            | Returns results that match any of the specified terms in the tags field. Accepts a comma-separated list of strings.
+  | updated_since                   | Sets a lower bound for the `changed` date. Date must be in ISO Format (YYYY-MM-DD).
+  | updated_until                   | Sets an upper bound for the `changed` date. Date must be in ISO Format (YYYY-MM-DD).
+
 
 ## Expected Results
 
   Each item returns a unique set of fields. Each array will only have contents if there are results in that search feature matching the query.
   
   Before you begin: If you set up the Routed Query feature in the Search.gov Admin Center, you will need to set up some additional logic. If there's a match between the query and the Routed Query, we'll return only the `route_to` URL. Otherwise we'll return the full results set. See <a href="#rq">Routed Queries</a>.
+
+  If you have `facets_enabled=true`, you will receive additional fields as noted below.
 
   * ### query
   
@@ -82,6 +104,10 @@ Sites indexed via sitemaps or crawling will use the `/i14y` endpoint. Because mo
   * ### web:next_offset
 
       Offset for the subsequent results.
+
+  * ### web:include_facets
+
+      Shows `true` if facets are enabled, and `false` if not.
 
   * ### web:spelling_correction
 
@@ -97,6 +123,40 @@ Sites indexed via sitemaps or crawling will use the `/i14y` endpoint. Because mo
       | url              | URL of the document
       | snippet          | Summary of the document
       | publication_date | Publication date of the document (not available on commercial results)
+      | thumbnail_url    | The [Open Graph](https://ogp.me/) image associated with the document
+
+      **If `include_facets=true` in your request**, the following fields may show as well. We only display fields with content, so some result sets may not have all fields indicated here.
+
+      | Values       | Description
+      | :--          | :--
+      | audience | Audience of the document
+      | content_type | Content type of the document
+      | mime_type    | MIME type (i.e. file type) of the document
+      | tags         | Tags associated with the document
+      | searchgov_custom1 | Search.gov custom field 1 content associated with the document
+      | searchgov_custom2 | Search.gov custom field 2 content associated with the document
+      | searchgov_custom3 | Search.gov custom field 3 content associated with the document
+      | updated_date      | The last updated date of the document 
+
+  * ### web:aggregations
+    
+    Aggregated information on facet fields, values, and their associated document counts. This is only shown if `include_facets=true`.
+
+    Each object in the aggregations array will have the following properties:
+
+    | Values       | Description
+    | :--          | :--
+    | agg_key | Name of the facet value
+    | doc_count | Number of documents matching the facet value
+
+    If the field represents a date range, additional properties will be present to indicate the start and end dates of the range.
+
+    | Values       | Description
+    | :--          | :--
+    | to           | Returns the upper bound of the date range in Unix epoch time
+    | from         | Returns the lower bound of the date range in Unix epoch time
+    | to_as_string | Returns the upper bound of the date range as a string in M/D/YYYY format
+    | from_as_string | Returns the lower bound of the date range as a string in M/D/YYYY format
 
   * ### text\_best_bets
 
@@ -164,17 +224,6 @@ Sites indexed via sitemaps or crawling will use the `/i14y` endpoint. Because mo
       | rate\_interval\_code			| Rate interval code of the job opening
       | org\_codes						| Organization codes
 
-  * ### recent_tweets
-
-      | Values            	| Description
-      | :--               	| :--
-      | text              	| Text of the tweet
-      | url               	| URL of the tweet
-      | name              	| Name of the tweet author
-      | screen\_name       	| Screen name of the tweet author
-      | profile\_image_url 	| URL of the tweet author profile image
-      | created\_at 		| Date of creation      
-
   * ### federal\_register_documents
 
       Federal Register documents
@@ -222,12 +271,14 @@ Sites indexed via sitemaps or crawling will use the `/i14y` endpoint. Because mo
       | source           | Source of the recent video news
       | thumbnail_url    | Thumbnail URL of the recent video news
 
+
+
 <p><small><a href="#">Back to top</a></small></p>
 
 <a name="rq"/>
 ## Routed Queries
 
-If you have [Routed Queries](https://search.gov/manual/routed-queries.html) set up in your Admin Center, then any matching query terms will change the API response.
+If you have [Routed Queries](https://search.gov/admin-center/content/routed-queries.html) set up in your Admin Center, then any matching query terms will change the API response.
 
 For instance, if you set the query `example` to route to `https://www.search.gov`, then the expected response will be the following:
 
@@ -237,6 +288,6 @@ To fully implement this, you will have to add logic that will process this respo
 
 ## Contact Us
 
-Please never hesitate to reach out! [Email the Search.gov team](mailto:search@support.digitalgov.gov). 
+Please never hesitate to reach out! [Email the Search.gov team](mailto:search@gsa.gov). 
 
 <p><small><a href="#">Back to top</a></small></p>

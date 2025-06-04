@@ -1,13 +1,13 @@
 openapi: 3.0.0
 info:
-  title: "GSA Perdiem API"
+  title: "GSA Per diem API"
   description: >-
-    Per Diem Rates are the allowed reimbursement rates for hotel stays and meals for federal travelers. Rates are set for each of the federal government's fiscal years (October 1st to September 30th) GSA is responsible for setting the rates in the continental United States. Many businesses and other organizations adopt these rates as well. This API provides access to the current rate information.
+    Per diem rates are the allowed reimbursement rates for hotel stays and meals for federal travelers. Rates are set for each of the federal government's fiscal years (October 1st to September 30th) GSA is responsible for setting the rates in the continental United States. Many businesses and other organizations adopt these rates as well. This API provides access to the current rate information.
   version: 2.0.0
 paths:
   /v2/rates/city/{city}/state/{state}/year/{year}:
     get:
-      summary: "Get perdiem rates by city/state/year"
+      summary: "Get per diem rates by city, state, and year"
       parameters:
       - name: "city"
         in: "path"
@@ -25,7 +25,7 @@ paths:
           format: string
       - name: "year"
         in: "path"
-        description: "The fical-year to filter by"
+        description: "The fiscal year to filter by"
         required: true
         schema:
           type: string
@@ -40,7 +40,7 @@ paths:
 
   /v2/rates/state/{state}/year/{year}:
     get:
-      summary: "Get perdiem rates for all counties/cities, by state and year"
+      summary: "Get per diem rates for all counties/cities, by state and year"
       parameters:
       - name: "state"
         in: "path"
@@ -51,7 +51,7 @@ paths:
           format: string
       - name: "year"
         in: "path"
-        description: "The fical-year to filter by"
+        description: "The fiscal year to filter by"
         required: true
         schema:
           type: string
@@ -66,18 +66,18 @@ paths:
 
   /v2/rates/zip/{zip}/year/{year}:
     get:
-      summary: "Get perdiem rates by ZipCode and year"
+      summary: "Get per diem rates by ZIP code and year"
       parameters:
       - name: "zip"
         in: "path"
-        description: "The ZipCode to filter by"
+        description: "The ZIP code to filter by"
         required: true
         schema:
           type: integer
           format: integer
       - name: "year"
         in: "path"
-        description: "The fical-year to filter by"
+        description: "The fiscal year to filter by"
         required: true
         schema:
           type: string
@@ -92,11 +92,11 @@ paths:
 
   /v2/rates/conus/lodging/{year}:
     get:
-      summary: "Lodging Rates for the Continental U.S. by Year"
+      summary: "Lodging rates for the Continental US by year"
       parameters:
       - name: "year"
         in: "path"
-        description: "The fical-year to filter by"
+        description: "The fiscal year to filter by"
         required: true
         schema:
           type: string
@@ -112,11 +112,11 @@ paths:
 
   /v2/rates/conus/zipcodes/{year}:
     get:
-      summary: "Mapping of Destination-IDs to ZipCode and State locations"
+      summary: "Mapping of ZIP code to Destination-IDs and state locations"
       parameters:
       - name: "year"
         in: "path"
-        description: "The fical-year to filter by"
+        description: "The fiscal year to filter by"
         required: true
         schema:
           type: string

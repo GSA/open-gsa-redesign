@@ -14,7 +14,7 @@ When Congress passes laws, federal agencies implement those laws through regulat
 
 ## Getting Started
 
-To begin using this API, you will need to register for an API Key. You can sign up for an API key here: [API key signup page on api.data.gov](https://api.data.gov/signup/).
+To begin using this API, you will need to register for an API Key below. 
 
 If you want to use commenting API, you MUST use the form below to register for an API key.
 
@@ -44,7 +44,7 @@ If you want to use commenting API, you MUST use the form below to register for a
 
     // OPTIONAL: Provide a URL to your own contact page to link to for user
     // support. Defaults to "https://api.data.gov/contact/"
-    contactUrl: 'https://beta.regulations.gov/support',
+    contactUrl: 'https://www.regulations.gov/support',
 
     // OPTIONAL: Set to true to verify the user's e-mail address by only
     // sending them their API key via e-mail, and not displaying it on the
@@ -164,14 +164,84 @@ A submissionKey can be retrieved using `/v4/submission-keys` endpoint.
 submissionType should be set to API.
 
 <p><small><a href="#">Back to top</a></small></p>
+  
+## Data Limitations
+
+A recent [GAO report](https://www.gao.gov/products/gao-21-103181) expressed concerns over whether comment data is fully described to the public, including any limitations. Various aspects of the commenting process can create limitations for certain external users of public comment data and some data fields are managed solely by agencies. For agency-specific commenting practices, contact [eRulemaking@gsa.gov](mailto:eRulemaking@gsa.gov). The Open API Specification document has been updated with information on agency configurable fields. For convenience, the data is also provided below in a concise format:
+  
+#### List of fields that are always publicly viewable on a comment
+  
+Here is the list of fields that is always available in the JSON response for a comment:
+
+* agencyId
+* comment
+* commentOnId
+* docketId
+* documentId - This field is returned as an Id of the document in the JSON response.
+* documentType
+* postedDate
+* receiveDate
+* restrictReason - if restrictReasonType is set to "Other"
+* restrictReasonType - if the document is restricted
+* reasonWithdrawn - if the comment has been withdrawn
+* title
+* trackingNbr
+* withdrawn
+
+#### List of agency configurable comment fields
+
+Agency configured fields can be updated by an agency at any point in time and made accessible or inaccessible in the JSON response of a comment. Here is the list of these fields:
+
+* city
+* country
+* docAbstract
+* firstName
+* govAgency  
+* govAgencyType
+* lastName
+* legacyId
+* organization
+* pageCount
+* postmarkDate
+* stateProvinceRegion
+* subtype
+* zip
+
+#### List of fields that are never publicly viewable on a comment 
+
+* originalDocumentId
+* address1
+* address2
+* email
+* phone
+* fax
+  
+## Post Comment API Validation
+  
+#### Common Validations for all comments
+  
+* `commentOnDocumentId`, `comment` and `submissionType` are required fields.
+* If `sendEmailReceipt` is true, `email` field is required.
+* An emoji is not a valid character.
+* If a field has a maximum length requirement, the requirement is applied to both, the number of characters and the number of bytes. 
+* `submitterType` field must be one of these allowed values: `ANONYMOUS`, `INDIVIDUAL`, `ORGANIZATION`.
+* `submissionType` field must be set to `API`.
+* Field value for `comment` must be less than or equals to 5000 characters/bytes.
+* Field value for `email` must be less than or equals to 100 characters/bytes.
+  
+#### Individual Comment Validations
+
+* `firstName` and `lastName` are required fields.
+* Field value for `firstName` and `lastName` must be less than or equals to 25 characters/bytes.
+* Field value for `city`, `stateProvinceRegion`, `phone` and `country` must be less than or equals to 50 characters/bytes.
+* Field value for `zip` field must have less than or equals to 10 characters/bytes.
+  
+#### Organization Comment Validations
+
+* `organization` and `organizationType` are required fields.
+* Field value for `organization` field must have less than or equals to 120 characters/bytes.
 
 ## Examples
-
-<div style="padding: 15px; border: 1px solid; margin-bottom: 20px; border-radius: 4px; color: gray; background: rgba(90, 90, 90, 0.04); border-color: #cccccc;">
-   
-Note: The examples below use unencoded bracket characters `[` and `]` for readability, however, these characters should be percent-encoded using `%5B` and `%5D`.  For example, the posted date search filter should be specified as `filter%5BpostedDate%5D`. See <a href="https://jsonapi.org/format/1.1/#appendix-query-details-square-brackets" target="_blank">Square Brackets in Parameter Names</a> section in json-api standards for additional information.
-
-</div>
 
 #### Searching for documents
 
@@ -549,6 +619,12 @@ Users should be able to access our staging API at https://api-staging.regulation
 #### I have an API key. How many requests can I make per hour and how do I know I am about to reach my request limit?
 
 Please review https://api.data.gov/docs/rate-limits/ for information on rate limits. Commenting API is restricted to 50 requests per minute with a secondary limit of 500 requests per hour.
+  
+#### Can I request rate limit increases for my keys? 
+
+GSA may grant a rate limit increase on the GET keys for an indefinite period. Such requests must establish the need to justify the rate limit increases. Each submission will be reviewed and considered on a case-by-case basis. GSA is unable to increase the rate limits for POST API keys upon requests at this time. However, the current POST API key holders can request one additional key without going through the validation process again.
+  
+<p><small><a href="#">Back to top</a></small></p>
 
 ## API Calls
 

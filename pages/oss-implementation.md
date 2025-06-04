@@ -92,7 +92,7 @@ tags:
     - jekyll
     - cto
 contact:
-    email: cto@gsa.gov
+    email: open@gsa.gov
 ```
 
 **Example JSON File (`.codeinventory.json`)**
@@ -109,7 +109,7 @@ contact:
     "cto"
   ],
   "contact": {
-    "email": "cto@gsa.gov"
+    "email": "open@gsa.gov"
   }
 }
 ```

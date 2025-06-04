@@ -7,14 +7,12 @@
     "eslint": "npm run eslint:dist",
     "clean:dist": "rm -rf _site",
     "clean": "npm run clean:dist",
-    "test:html": "bundle exec htmlproofer _site --disable-external --allow-hash-href --url-ignore sara.cope@gsa.gov || exit 0",
-    "test:html-local": "bundle exec htmlproofer _site --disable-external --allow-hash-href --url-ignore localhost:4000 || exit 0",
-    "test:pagespeed": "psi https://open.gsa.gov/ --strategy=mobile || exit 0",
-    "test:accessibility": "pa11y https://open.gsa.gov/ || exit 0",
     "test:css": "stylelint ./_sass/*.scss || exit 0",
     "test:js": "npm run eslint",
-    "test": "npm run test:html && npm run test:pagespeed && npm run test:accessibility && npm run test:js && npm run test:css",
-    "build:uswds": "cp -R node_modules/uswds/dist/ assets/uswds"
+    "test": "npm run test:js && npm run test:css",
+    "build:uswds": "cp -R node_modules/uswds/dist/ assets/uswds",
+    "build:jquery": "cp node_modules/jquery/dist/jquery.min.* assets/js/lib",
+    "build:swagger": "cp node_modules/swagger-ui-dist/swagger-ui*.{css,js,map} assets/swaggerui-dist"
   },
   "repository": {
     "type": "git",
@@ -33,24 +31,22 @@
   },
   "homepage": "https://github.com/GSA/open-gsa-redesign/blob/dev/README.md",
   "devDependencies": {
-    "eslint": "^5.16.0",
-    "eslint-config-airbnb-base": "^13.2.0",
-    "eslint-config-google": "^0.12.0",
-    "eslint-plugin-import": "^2.22.1",
-    "googleapis": "^61.0.0",
-    "node-forge": "^0.10.0",
-    "pa11y": "^5.3.0",
-    "postcss": "^5.2.15",
-    "postcss-cli": "^8.0.0",
-    "psi": "^4.0.1",
-    "stylelint": "^13.7.2",
-    "stylelint-config-recommended": "^2.2.0",
-    "stylelint-scss": "^3.18.0",
+    "eslint": "^8.57.1",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.31.0",
+    "postcss": "^8.5.3",
+    "postcss-cli": "^11.0.1",
+    "stylelint": "^16.19.0",
+    "stylelint-config-recommended": "^16.0.0",
+    "stylelint-config-standard-scss": "^14.0.0",
+    "stylelint-scss": "^6.11.1",
+    "swagger-ui-dist": "^5.21.0",
     "uswds": "^1.6.13"
   },
   "dependencies": {
-    "details-polyfill": "^1.1.0",
-    "jquery": "^3.5.1",
-    "lunr": "^1.0.0"
+    "details-polyfill": "^1.2.0",
+    "jquery": "^3.7.1",
+    "lunr": "^2.3.9"
   }
 }

@@ -1,27 +1,27 @@
 ---
-title: Beta.SAM.Gov Public Location Services API 
-banner-heading: Beta.SAM.Gov Public Location Services API 
+title: SAM.gov Public Location Services API 
+banner-heading: SAM.gov Public Location Services API 
 ---
 
 ## Overview
 
-The Public Location Services API provides Location Services data (Country, State, City, and ZIP) and is to be used when validating location data that is being submitted to the Beta.SAM.gov ONLY. Beta.SAM is not the authoritative source for location data and is agglomerating data from 3rd parties to operate the application. Location Public Services API only supports United States currently.
+The Public Location Services API provides Location Services data (Country, State, City, and ZIP) and is to be used when validating location data that is being submitted to the SAM.gov ONLY. SAM.gov is not the authoritative source for location data and is agglomerating data from 3rd parties to operate the application. Location Public Services API used to support only United States. As part of GENC updates, currently Location Services State API supports Foreign Countries aswell.
 
 *Note: If valid search parameter (e.g. searchby=statecode) from the options listed in the description is not provided, all records will be returned*
 
 
 ## Getting Started
 
-Get Opportunities API can be accessed from Beta or Alpha environments via the following urls:
+Get Location API can be accessed from Production or Alpha environments via the following urls:
 
-* Beta: https://api.sam.gov (Coming Soon)
+* Production: https://api.sam.gov 
 * Alpha: https://api-alpha.sam.gov 
 
 ## Authentication and API Keys
 User of this API must provide a System Account API key to use this Location Services API. 
 
 In order to use Public Location Services API, the following is required:
-* Valid beta.SAM.GOV Federal Government System Account API Key
+* Valid SAM.gov Federal Government System Account API Key
 
 #### Generating a System Account API Key
 * Users registered with a government email address and have appropriate System Account Manager or System Account Admin role may request a system account for data access.
@@ -126,7 +126,7 @@ Request Parameters
 Parameter Name | Parameter Type | Data Type  | Required | Description
 ---------------|----------------|------------|----------|------------
 api_key | query | string | Yes | Valid System Account API Key
-searchby | query | string | No |  Enter the parameter to search the country information: <br> - countryname <br>- iso2 <br>- iso3
+searchby | query | string | No |  Enter the parameter to search the country information: <br> - countryname  <br>- iso3 ( which is mapped to GENC code)
 q | query | string | No (Yes if searchby is provided)|  Enter the value of the parameter you typed for searchby <br><br> Example:<br> countryname: United States <br> iso2: US <br> iso3: USA <br><br> If searchby is provided, q must have exact spelling to return valid results (ex. United States). If the searchby field is left blank, q would operate general search (ex. United)
 active | query | string | No | The active indicator specifies whether the city is active or inactive. Type "Y" for a list of active city names. Type "N" for a list of inactive city names
 
@@ -187,13 +187,13 @@ api_key | query | string | Yes | Valid System Account API Key
 cc | query | string | No | Enter the 3-digit Country Code to retrieve the States within that Country <br><br> Example: <br> United States: USA
 searchby | query | string | No | Enter the search parameter to search the state information: <br> - statecode <br> - statename <br> - statetype <br>
 q | query | string | No (Yes if searchby is provided) |  Enter the value of the parameter for searchby <br><br> Example: <br> statename: Virginia <br> statecode: VA <br> statetype: State (state types: State, Capital, Military, Minor Outlying Islands, Associated State, and Territory) <br><br> You can input multiple values for the parameter by separating the values by a comma (for example: if searchby is statetype, q could be Military, Capital. This would return the Military and Capital states). If the searchby field is left blank, q would operate as general search
-active | query | string | No | The active indicator specifies whether the city is active or inactive. Type "Y" for a list of active city names. Type "N" for a list of inactive city names
+active | query | string | No | The active indicator specifies whether the state is active or inactive. Type "Y" for a list of active state names. Type "N" for a list of inactive state names
 
 Responses
 
 HTTP Status Code | Response Type | Reason  | Description
 -----------------|---------------|---------|------------
-200 | string | List of Opportunities | JSON 
+200 | string | List of States | JSON 
 
 Response Element | Response Type |  Description
 -----------------|---------------|------------
@@ -207,7 +207,7 @@ country.countryCode2 | string | Country Code 2
 countrycode | string | Country Code
 href | URL Link to the response
 
-Example: Look up state of Virginia
+Example 1 : Look up state of Virginia
 
 https://api.sam.gov/locationservices/v1/states?api_key=[Enter System Account Api Key]&searchby=state&q=VA
 
@@ -227,6 +227,48 @@ https://api.sam.gov/locationservices/v1/states?api_key=[Enter System Account Api
                     "countryFullName": "United States of America",
                     "countryCode2": "US",
                     "countrycode": "USA"
+                },
+                "_links": {
+                    "self": {
+                        "href": ""
+                    }
+                }
+            }
+        ]
+    }
+}
+</pre></code>
+</p>
+</details>
+
+Example 2 : Look up subdivision , 'Andaman and Nicobar Islands' of Foriegn Country
+
+https://api.sam.gov/locationservices/v1/states?api_key=[Enter System Account Api Key]&searchby=state&q=AN
+
+<details>
+<summary>Response</summary>
+<p>
+<code><pre>
+{
+       "_embedded": {
+        "stateList": [
+            {
+                "stateId" : 22933,
+                "stateCode": "AN",
+                "state": "Andaman and Nicobar Islands",
+                "stateType": "union territory",
+                "country": {
+                  "countryId": 118,
+                  "country": "INDIA",
+                  "countryFullName": "Republic of India",
+                  "activeInd": "Y",
+                  "countryCode2": "IN",
+                  "countryNumber": 356,
+                  "activeStartDate": "2023-03-26",
+                  "countrySource": "GENC",
+                  "countryShortName": "India",
+                  "dodQualifyingCountry": " ",
+                  "countrycode": "IND"
                 },
                 "_links": {
                     "self": {
@@ -423,7 +465,7 @@ You can view the full details of this API in the OpenAPI Specification file avai
     get:
       tags:
         - locationservices
-      summary: 'API to get a list of states'
+      summary: 'API to get a list of states/provinces/subdivisons for both USA and Foreign countries'
       operationId: getlocationserviceslookupstates
       consumes:
         - application/json
@@ -548,7 +590,7 @@ You can view the full details of this API in the OpenAPI Specification file avai
 
 ## Contact Us
 
-* Reach out to the beta.sam.gov team at [www.fsd.gov](https://www.fsd.gov)
+* Reach out to the SAM.gov team at [www.fsd.gov](https://www.fsd.gov)
 
 ## Change Log
 
@@ -557,5 +599,6 @@ Date | Version | Description
 4/21/2020 | v1.0 | Base Version
 5/11/2020 | v1.1| OpenAPI Specification File Added
 9/8/2020 |v1.2| Updated Formatting
+4/20/2023 |v1.3| Updated Country and State API details to include GENC updates
 
 <p><small><a href="#">Back to top</a></small></p>

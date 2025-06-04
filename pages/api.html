@@ -19,7 +19,7 @@ banner-text: These following GSA APIs cover a range of important data and functi
                 {% for apis in site.data.api-list %}
                     <article class="data-listing">
                         <header>
-                            <h3 class="title">{{ apis.title }}</h3>
+                            <h3 class="title" id="{{apis.title | replace: " ", "-" }}_{{forloop.index}}">{{ apis.title }}</h3>
                         </header>
                         <div class="content">
                             <p class="txt">

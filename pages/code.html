@@ -21,7 +21,7 @@ banner-button-title: View GSA open source code
           <i class="icon flag fa-users"></i>
           <h3>M-16-21</h3>
           <p>The White House policy telling federal agencies to account for code developed by the agency and publish at least 20% to the public.</p>
-          <div class="usa-button-block"><a href="https://sourcecode.cio.gov/" class="usa-button  usa-button-outline">View</a>
+          <div class="usa-button-block"><a href="https://obamawhitehouse.archives.gov/sites/default/files/omb/memoranda/2016/m_16_21.pdf" class="usa-button  usa-button-outline">View</a>
           </div>
       </div>
 
@@ -50,7 +50,7 @@ banner-button-title: View GSA open source code
             {% for code in site.data.code %}
                 <article class="data-listing">
                     <header>
-                        <h3 class="title">{{ code.title }}</h3>
+                        <h3 class="title" id="{{code.title | replace: " ", "-" }}_{{forloop.index}}">{{ code.title }}</h3>
                     </header>
                     <div class="content">
                         <p class="txt">
