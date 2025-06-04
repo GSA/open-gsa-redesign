@@ -25,31 +25,45 @@ Access the Subaward Reporting Bulk Upload API from the following Production or A
 * https://api-alpha.SAM.gov/prodlike
 
 ### Completing Authentication, Authorization and API Keys
-
-#### Get a System Account
 To ensure data quality in the SAM.gov live environment, you must complete a Subaward Bulk Upload test in Alpha.sam.gov.
-A system account enables you to use this API to publish multiple subcontract or subaward reports to SAM.gov at once using software or web services. Follow these steps to get a system account with subaward reporting permissions:
-1. Create an account on Alpha.sam.gov, if you do not already have one.
-2. Register your entity in AlphaSAM, if it is not already registered.
-3. Request your Entity Administrator to assign the following roles on your user account, if you do not already have these roles
-   a. Administrator or Data Entry role under the Entity Reporting domain with subaward permissions enabled
-   b. Non-Federal System Administrator role 
-   c. If no administrator is available, reach out for assistance on FSD.gov
-4. Once you have the Non-Federal System Administrator role, locate the System Account section in your Alpha Workspace and select the section title.
-5. Select the New Account button. Enter the required information and submit the application
-   a. If you apply for a system account without receiving the Non-Federal System Administrator role, you can still use a system account to pull other types of SAM.gov data by API, but you will not have the permissions required to publish subcontract or subaward reports to SAM.gov.
-6. The General Services Administration will review your system account application. You will receive an email notification of approval or rejection
+#### User Account Creation
+1. Create a user account on Alpha.sam.gov
+2. Skip this step if you already have an account
 
-If you apply for a system account without receiving the Non-Federal System Administrator role, you can still use a system account to pull other types of SAM.gov data by API, but you will not have the permissions required to publish subcontract or subaward reports to SAM.gov. 
+#### Entity Registration
+1. Register your entity in alpha.sam.gov
+2. Skip this step if you already have an account
 
+#### Obtain Reporting Permissions
+1. Acquire Administrator or data entry role under entity reporting domain and Non-Federal System Administrator role under system accounts in alpha.sam.gov for your entity by requesting it from your Entity Administrator. If no Entity Administrator is available, you can request both the roles by reaching out to fsd.gov
+2. Skip this step if you already have an account.
+3. Ensure subaward permissions are enabled
+
+#### System Account Application Process
+1. Sign in to alpha.sam.gov
+2. Navigate to the System Account section in your Workspace.
+3. Select "New Account"
+4. Complete and submit required information
+
+#### Application Review
+1. General Services Administration will review your application
+2. You will receive an email notification of approval or rejection
+   
 #### Get a System Account API Key 
-We require a system account API key to use this API. Once your system account is approved, get an API key from the System Account Workspace. When your system account is new, you must set up a system account password before generating your API key. Once your password is set up, you must enter it to get your API key. API keys are valid for 90 days. New keys are automatically generated 15 days before the key expires. New and current keys are active and valid during the 15-day period until the current key expires on the 90th day. 
+We require a system account API key to use this API. Once your system account is approved, get an API key from the System Account Workspace. When your system account is new, you must set up a system account password before generating your API key. Once your password is set up, you must enter it to get your API key.
 
-Test the Bulk Upload feature in AlphaSAM using the instructions below. Verify data format passes verification. 
+<b>NOTE:</b> API keys are valid for <b>90 days.</b> New keys are automatically generated 15 days before the key expires. New and current keys are active and valid during the 15-day period until the current key expires on the 90th day.
+Get your API key from your apha.sam.gov System Account Workspace.
 
-To complete your Subaward System Account request in the SAM.gov live environment, follow the same workflow on SAM.gov that you previously executed in AlphaSAM.
+#### Bulk Upload Testing
+1. Test Subaward Bulk Upload Data File in Alpha.sam.gov for more details, review the instructions below.
+2. Verify data format passes verification
 
-Be prepared to provide your Alpha System Account name during the process.
+#### Final Steps
+1. To complete your Subaward System Account request, follow the same workflow on www.sam.gov that you previously executed in alpha.sam.gov.
+2. Be prepared to provide your Alpha System Account name during the process.
+ 
+If you apply for a system account without receiving the Non-Federal System Administrator role, you can still use a system account to pull other types of SAM.gov data by API, but you will not have the permissions required to publish subcontract or subaward reports to SAM.gov.
 
 #### API Key Rate Limits 
 We limit call rates by day and account type.
