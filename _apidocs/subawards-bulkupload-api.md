@@ -24,7 +24,7 @@ Access the Subaward Reporting Bulk Upload API from the following Production or A
 **Alpha** 
 * https://api-alpha.SAM.gov/prodlike
 
-### Authentication, Authorization and API Keys
+### Completing Authentication, Authorization and API Keys
 
 #### Get a System Account
 To ensure data quality in the SAM.gov live environment, you must complete a Subaward Bulk Upload test in Alpha.sam.gov.
