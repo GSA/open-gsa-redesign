@@ -8,7 +8,7 @@ paths:
     get:
       tags:
         - search-result
-      summary: Retrieve listings of a Content Type (workgroup) based on keyword
+      summary: Retrieve listings of a content type (workgroup) based on keyword
       parameters:
         - in: path
           name: workgroup
