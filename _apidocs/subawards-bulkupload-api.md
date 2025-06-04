@@ -46,7 +46,9 @@ If you apply for a system account without receiving the Non-Federal System Admin
 We require a system account API key to use this API. Once your system account is approved, get an API key from the System Account Workspace. When your system account is new, you must set up a system account password before generating your API key. Once your password is set up, you must enter it to get your API key. API keys are valid for 90 days. New keys are automatically generated 15 days before the key expires. New and current keys are active and valid during the 15-day period until the current key expires on the 90th day. 
 
 Test the Bulk Upload feature in AlphaSAM using the instructions below. Verify data format passes verification. 
-To complete your Subaward System Account request in the SAM.gov live environment, follow the same workflow on SAM.gov that you previously executed in AlphaSAM. 
+
+To complete your Subaward System Account request in the SAM.gov live environment, follow the same workflow on SAM.gov that you previously executed in AlphaSAM.
+
 Be prepared to provide your Alpha System Account name during the process.
 
 #### API Key Rate Limits 
