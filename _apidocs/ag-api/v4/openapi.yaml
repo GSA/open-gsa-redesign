@@ -1,0 +1,75 @@
+swagger: '2.0'
+info:
+  title: AG Listings API
+  version: 4.0.0
+basePath: /api/v4.0/listings
+paths:
+  '/{workgroup}?search={keyword}':
+    get:
+      tags:
+        - search-result
+      summary: Retrieve listings of a Content Type (workgroup) based on keyword
+      parameters:
+        - in: path
+          name: workgroup
+          description: Content Type (workgroup) to search in
+          type: string
+          required: true
+        - in: query
+          name: keyword
+          description: Keywords to filter the search results
+          type: string
+          required: false
+      responses:
+        '200':
+          description: List of search results
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Workgroup'
+  '/{workgroup}/resource/{pid}':
+    get:
+      tags:
+        - search-result
+      summary: Retrieve a specific listing by PID
+      parameters:
+        - in: path
+          name: workgroup
+          description: Content Type (workgroup) to search in
+          type: string
+          required: true
+        - in: path
+          name: pid
+          description: ID of the listing to retrieve
+          type: integer
+          required: true
+      responses:
+        '200':
+          description: Listing details
+          schema:
+            $ref: '#/definitions/Detail'
+        '404':
+          description: Listing not found
+definitions:
+  Workgroup:
+    properties:
+      pid:
+        description: Listing Unique Identifier
+        type: integer
+      title:
+        description: Listing title
+        type: string
+      summary:
+        description: Listing summary
+        type: string
+  Detail:
+    properties:
+      pid:
+        description: Listing Unique Identifier
+        type: integer
+      title:
+        description: Listing title
+        type: string
+      description:
+        description: Listing description
+        type: string
