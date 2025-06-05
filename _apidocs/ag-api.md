@@ -1,6 +1,6 @@
 ---
-title: Acquisition Gateway Public API
-banner-heading: Acquisition Gateway Public API
+title: Acquisition Gateway Public Listings API
+banner-heading: Acquisition Gateway Public Listings API
 ---
 
 <link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/swagger-ui.css" >
