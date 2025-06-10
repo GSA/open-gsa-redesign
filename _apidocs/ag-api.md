@@ -13,7 +13,9 @@ banner-heading: Acquisition Gateway Public Listings API
        This project is a placeholder
      </strong>
      <p class="usa-alert-text">
-        This project is a placeholder for AG Listings API (No APIs are available)</br>
+        This project is a placeholder for AG Listings API (No APIs are available)
+     </p>
+     <p class="usa-alert-text">
         Have feedback or questions? <a href="https://github.com/GSA/ag-api/issues">Please let us know</a>!
      </p>
    </div>
