@@ -17,7 +17,7 @@ This data is presented in a visual format on itdashboard.gov.
 
 ## Getting Started
 
-To use our API, request an api key below and visit our <a href="https://gsa.github.io/ITDB-schema/public-by-2025/api/data/gov/docs/index.html"> full API documentation </a>
+To use our API, request an api key below and visit our <a href="https://gsa.github.io/ITDB-schema/public-by-2026/api/data/gov/docs/index.html"> full API documentation </a>
 
 {% raw %}
 <div id="apidatagov_signup">Loading signup form...</div>
@@ -107,7 +107,7 @@ To use our API, request an api key below and visit our <a href="https://gsa.gith
 ## OpenAPI Specification File
 
 You can view the full details of this API in the OpenAPI Specification file available as part of our full API documentation, located here:
-<a href="https://gsa.github.io/ITDB-schema/public-by-2025/api/data/gov/docs/index.html"> IT Collect API Documentation </a>
+<a href="https://gsa.github.io/ITDB-schema/public-by-2026/api/data/gov/docs/index.html"> IT Collect API Documentation </a>
 
 <p><small><a href="#">Back to top</a></small></p>
 
