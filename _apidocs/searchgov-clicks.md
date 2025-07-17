@@ -5,9 +5,11 @@ banner-heading: Search.gov Clicks API
 
 ### Click Tracking API Instructions
 
-The click tracking API endpoint lets you send in click events, which allows you to see click data on your Admin Click Analytics page. We also use this click data to strengthen the search results algorithm for your site.
+The click tracking API endpoint lets you send in click events, which allows you to see click data on your Admin Click Analytics page. We also use this click data to strengthen the search results algorithm for your site. 
 
-Read more about click tracking [here](https://search.gov/manual/clicks.html). This API uses the **post** method for click tracking.
+This API uses the **post** method for click tracking.
+
+Check out the Search.gov help manual for more information about [how to analyze the click data](https://search.gov/admin-center/analytics/clicks.html). 
 
 ## Getting Started
 
@@ -38,8 +40,6 @@ Please note that we only support this particular content type
 You can view the full details of this API in the OpenAPI Specification file available here:
 <a href="v2/openapi.yml">Open API specification file for the Clicks API</a>
 
-
-
 ## Required Parameters
 
 All parameters below are required unless noted otherwise. As a reminder, all parameters must be uri-encoded.
@@ -53,8 +53,8 @@ All parameters below are required unless noted otherwise. As a reminder, all par
   |query		| The search term that surfaced this result and ended in a click.
   | affiliate		| You can find your site handle in the Admin Center on your settings page.
   | position | The position/rank of the result on your search results page. Was it the first result or the second?
-  | module_code         | The module code for the source of the clicked result. Must be a valid module code. See [https://search.gov/manual/module-codes.html](https://search.gov/manual/module-codes.html)
-  | access_key          | Your API access key. You can find this under Your Site > Activate > API Key. **Note:** The API key from api.data.gov will *not* work for this API. It must be the one from Search.gov's admin center.
+  | module_code         | The [module code](https://search.gov/admin-center/analytics/module-codes.html) for the source of the clicked result. Must be a valid module code.
+  | access_key          | Your API access key. You can find this under Your Site > Activate > API Key in the [Admin Center](https://search.usa.gov/sites). Be sure to use the API key from the Admin Center, not the API key from api.data.gov.
 
 -----
 
@@ -71,10 +71,10 @@ All parameters below are required unless noted otherwise. As a reminder, all par
 
 ## Terms of Service
 ​
-By using this API, you agree to our [Terms of Service](https://search.gov/tos.html).
+By using this API, you agree to our [Terms of Service](https://search.gov/about/tos.html).
 
-## Contact Us
+## Support
 
-Please never hesitate to reach out! [Email the Search.gov team](mailto:search@gsa.gov). 
+Visit [Search.gov](https://search.gov/) for additional information and [support](https://search.gov/support.html).
 
 <p><small><a href="#">Back to top</a></small></p>

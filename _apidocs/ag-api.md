@@ -9,11 +9,11 @@ banner-heading: Acquisition Gateway Public Listings API
 <!-- Alpha status alert -->
 <div class="usa-alert usa-alert-warning" id="site-wide-alert" role="alert">
    <div class="usa-alert-body">
-     <strong>
-       This project is a placeholder
-     </strong>
+     <strong>This project is a placeholder</strong>
      <p class="usa-alert-text">
-        This project is a placeholder for AG Listings API (No APIs are available)</br>
+        This project is a placeholder for AG Listings API (No APIs are available)
+     </p>
+     <p class="usa-alert-text">
         Have feedback or questions? <a href="https://github.com/GSA/ag-api/issues">Please let us know</a>!
      </p>
    </div>

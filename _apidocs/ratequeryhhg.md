@@ -569,9 +569,8 @@ Every API request must have the API key in the x-api-key and Agency Token in the
 ## API Specification File
   
   You can view the full details of this API in the API Specification file available here:
- [TMSS.HHG.Rate.Query.API.specs.xlsx](https://github.com/user-attachments/files/18260571/TMSS.HHG.Rate.Query.API.specs_updated_12272024.xlsx)
+  [TMSS.HHG.Rate.Query.API.specs.xlsx](https://github.com/user-attachments/files/20905804/TMSS.HHG.Rate.Query.API.specs_updated_06242025.xlsx)
 
-  
   
   
   
