@@ -1,6 +1,6 @@
 swagger: '2.0'
 info:
-  title: AG Document Library API
+  title: AG Document Library API (decommissioned)
   version: 1.0.0
 basePath: /acquisition/cap/v1/
 paths:
