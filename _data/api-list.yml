@@ -29,7 +29,7 @@
   description: This API contains the allowed reimbursement rates for hotel stays and meals for federal travelers.
   url: https://open.gsa.gov/api/perdiem/
 - title: Regulations.gov API
-  description: Regulations.gov offers a GET API that allows searching for documents, comments, and dockets. Additionally,  a POST API is offered that allows users to submit comments.
+  description: Regulations.gov offers a GET API that allows searching for documents, comments, and dockets.
   url: https://open.gsa.gov/api/regulationsgov/
 - title: SAM.gov Acquisition Subaward Reporting Public API
   description: The Acquisition Subaward Reporting Public API provides published and deleted federal subcontract data.
