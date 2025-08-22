@@ -137,6 +137,132 @@ If the provided PIID is an FSS, the summary will include a summary of BPAs refer
 
 ## API Description
 
+### Query String Parameters
+
+The getList Contracts API offers several optional search parameters that can be provided independently or in combination with each other.
+
+Request Parameters that API accepts	| Description | Required| Data Type| Applicable Versions
+----- | ----- | ----- | ----- | -----
+api_key | Public key of users | Yes | String | v1
+limit | Total number of records to be retrieved per page. This field must be a numberMax Value = 100. The default limit value is 10.  | No | Int | v1
+offset | Indicates the page index. Default offset starts with 0 | No | Int | v1
+dollarsObligated | Allows for a single positive or negative Dollar value or a Dollar range. | Examples: dollarsObligated=-1000.99, dollarsObligated=[5000.99,100000.99] | No |String | v1  
+totalDollarsObligated | Allows for a single positive or negative Dollar value or a Dollar range. | Examples: totalDollarsObligated=100000.99, totalDollarsObligated=[5000.99,100000.99] | No | String | v1  
+approvedDate | Allows a single Date or a Date range. Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY] | Examples: approvedDate=01/01/2019, approvedDate=[01/01/2019,05/29/2019] | No | String | v1  
+awardeeCageCode | Allows a single 5-character CAGE Code value or up to 100 values or null. | Example: awardeeCageCode=00000, awardeeCageCode=00000~11111~11321 | No | String | v1  
+closedDate | Allows a single Date or a Date range. Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY] | Examples: closedDate=01/01/2019, closedDate=[01/01/2019,05/29/2019] | No | String | v1  
+closedStatus | Allows a text. | Examples: closedStatus=Yes, closedStatus=No | No | String | v1  
+solicitationID | Allows a text. | Example: solicitationID=47QCDE25PTEST | No | String | v1  
+solicitationDate | Allows a single Date or a Date range. Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY] | Examples: solicitationDate=01/01/2019, solicitationDate=[01/01/2019,05/29/2019] | No | String | v1  
+documentVersion | Allows a text. | Example: documentVersion=1.5 | No | String | v1  
+documentStatus | Allows a text. By default when status is not provided, only Awards and IDVs with a status of Final will be returned. | Examples: documentStatus=DRAFT, documentStatus=FINAL, documentStatus=All | No | String | v1  
+piid | Allows a text. | Example: piid=127EAS25FTEST | No | String | v1  
+awardOrIDV | Allows a text. | Examples: awardOrIDV=IDV, awardOrIDV=Award | No | String | v1  
+awardOrIDVTypeCode | Allows a 1 character code. | Example: awardOrIDVTypeCode=B | No | String | v1  
+awardOrIDVTypeName | Allows a text. | Example: awardOrIDVTypeName=PURCHASE ORDER | No | String | v1  
+contractingSubtierCode | Allows 4 character code | Example: contractingSubtierCode=2100 | No | String | v1  
+contractingSubtierName | Allows Partial or Complete value. | Example: contractingSubtierName=PUBLIC BUILDINGS SERVICE | No | String | v1  
+contractingDepartmentCode | Allows 4 character code | Example: contractingDepartmentCode=9700 | No | String | v1  
+contractingDepartmentName | Allows Partial or Complete value. | Example: contractingDepartmentName=GENERAL SERVICES | No | String | v1  
+contractingOfficeCode | Allows 6 character code | Example: contractingOfficeCode=47QCCA | No | String | v1  
+coBusSizeDeterminationCode | Allows a 1 character code | Example: coBusSizeDeterminationCode=S | No | String | v1  
+coBusSizeDeterminationName | Allows a text | Example: coBusSizeDeterminationName=SMALL BUSINESS | No | String | v1  
+createdDate | Allows a single Date or a Date range. Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY] | Examples: createdDate=01/01/2019, createdDate=[01/01/2019,05/29/2019] | No | String | v1  
+currentCompletionDate | Allows a single Date or a Date range. Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY] | Examples: currentCompletionDate=01/01/2019, currentCompletionDate=[01/01/2019,05/29/2019] | No | String | v1  
+dateSigned | Allows a single Date or a Date range. Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY] | Examples: dateSigned=01/01/2019, dateSigned=[01/01/2019,05/29/2019] | No | String | v1  
+awardeeZipCode | Allows either a 5 or 9-digit code for US zip codes, or any digit postal code for non-US postal codes. | Examples: awardeeZipCode=022015678, awardeeZipCode=110054 | No | String | v1  
+awardeeCityName | Allows a text. | Example: awardeeCityName=Austin | No | String | v1  
+awardeeCongressionalDistrict | Allows a 2 digit code. | Example: awardeeCongressionalDistrict=01 | No | String | v1  
+awardeeCountryCode | Allows a 3 character code. | Example: awardeeCountryCode=USA | No | String | v1  
+awardeeCountryName | Allows Partial or Complete value. | Example: awardeeCountryName=UNITED STATES | No | String | v1  
+awardeeDoingBusinessAsName|Allows Partial or Complete value.|awardeeDoingBusinessAsName=ENTITY NAME|No|String|v1
+awardeeStateCode|Allows a 2 character code.|awardeeStateCode=NC|No|String|v1
+awardeeStateName|Allows Partial or Complete value.|awardeeStateName=NORTH CAROLINA|No|String|v1
+fiscalYear|Allows a 4 character code.|fiscalYear=2024|No|String|v1
+fundingSubtierCode|Allows 4 character code|fundingSubtierCode=4732|No|String|v1
+fundingSubtierName|Allows Partial or Complete value.|fundingSubtierName=PUBLIC BUILDINGS SERVICE|No|String|v1
+fundingDepartmentCode|Allows 4 character code|fundingDepartmentCode=4700|No|String|v1
+fundingDepartmentName|Allows Partial or Complete value.|fundingDepartmentName=GENERAL SERVICES ADMINISTRATION|No|String|v1
+lastModifiedDate|Allows a single Date or a Date range.|lastModifiedDate=01/01/2019 or lastModifiedDate=[01/01/2019,05/29/2019]|No|String|v1
+awardeeLegalBusinessName|Allows Partial or Complete value.|awardeeLegalBusinessName=ENTITY LEGAL NAME|No|String|v1
+clingerCohenActCode|Allows a 1 character code.|clingerCohenActCode=Y|No|String|v1
+clingerCohenActName|Allows a text.|clingerCohenActName=No|No|String|v1
+materialsSuppliesArticlesAndEquipCode|Allows a 1 character code.|materialsSuppliesArticlesAndEquipCode=N|No|String|v1
+materialsSuppliesArticlesAndEquipName|Allows a text.|materialsSuppliesArticlesAndEquipName=Yes|No|String|v1
+laborStandardsCode|Allows a 1 character code.|laborStandardsCode=X|No|String|v1
+laborStandardsName|Allows a text.|laborStandardsName=No|No|String|v1
+constructionWageRateRequirementsCode|Allows a 1 character code.|constructionWageRateRequirementsCode=N|No|String|v1
+constructionWageRateRequirementsName|Allows a text.|constructionWageRateRequirementsName=Yes|No|String|v1
+localAreaSetAsideName|Allows a text or null.|localAreaSetAsideName=Yes or localAreaSetAsideName=No|No|String|v1
+modificationNumber|Allows 6 character code.|modificationNumber=P00001|No|String|v1
+extentCompetedCode|Allows a 1 character code.|extentCompetedCode=B|No|String|v1
+extentCompetedName|Allows a text.|extentCompetedName=NOT COMPETED|No|String|v1
+typeOfSetAsideCode|Allows a text.|typeOfSetAsideCode=SBA|No|String|v1
+typeOfSetAsideName|Allows a text.|typeOfSetAsideName=BUY INDIAN|No|String|v1
+solicitationProceduresCode|Allows a text.|solicitationProceduresCode=NP|No|String|v1
+solicitationProceduresName|Allows a text.|solicitationProceduresName=TWO STEP|No|String|v1
+contractOpportunitiesNoticeCode|Allows a 1 character code.|contractOpportunitiesNoticeCode=X|No|String|v1
+contractOpportunitiesNoticeName|Allows a text.|contractOpportunitiesNoticeName=Yes|No|String|v1
+multiyearContractName|Allows a text|multiyearContractName=Yes or multiyearContractName=No|No|String|v1
+numberOfOffersReceived|Allows a text.|numberOfOffersReceived=3|No|String|v1
+naicsCode|Allows a single 6-character NAICS value or up to 100 values or null or not null.|naicsCode=513310 or naicsCode=513310~513311~513312|No|String|v1
+nationalInterestActionCode|Allows 4 character code.|nationalInterestActionCode=H17I|No|String|v1
+nationalInterestActionName|Allows Partial or Complete value.|nationalInterestActionName=HURRICANE IRMA 2017|No|String|v1
+periodOfPerformanceStartDate|Allows a single Date or a Date range.|periodOfPerformanceStartDate=01/01/2019 or periodOfPerformanceStartDate=[01/01/2019,05/29/2019]|No|String|v1
+piidSubtierCode|Allows 4 character code|piidSubtierCode=8000|No|String|v1
+piidSubtierName|Allows Partial or Complete value.|piidSubtierName=PUBLIC BUILDINGS SERVICE|No|String|v1
+placeOfPerformCityName|Allows a text.|placeOfPerformCityName=Austin|No|String|v1
+placeOfPerformCongressionalDistrict|Allows a 2 digit code.|placeOfPerformCongressionalDistrict=01|No|String|v1
+placeOfPerformCountryCode|Allows a 3 character code.|placeOfPerformCountryCode=USA|No|String|v1
+placeOfPerformCountryName|Allows Partial or Complete value.|placeOfPerformCountryName=UNITED STATES|No|String|v1
+placeOfPerformStateCode|Allows a 2 character code.|placeOfPerformStateCode=NC|No|String|v1
+placeOfPerformStateName|Allows Partial or Complete value.|placeOfPerformStateName=NORTH CAROLINA|No|String|v1
+placeOfPerformZipCode|Allows either a 5 or 9-digit code for US zip codes, or any digit postal code for non-US postal codes.|placeOfPerformZipCode=022012341 or placeOfPerformZipCode=110054|No|String|v1
+productOrServiceCode|Allows a 4-character PSC value or up to 100 values.|productOrServiceCode=X1QA or productOrServiceCode=X1QA~1005~C1AA|No|String|v1
+productOrServiceType|Allows a text.|productOrServiceType=SERVICE or productOrServiceType=PRODUCT|No|String|v1
+reasonForModificationCode|Allows 1 character code.|reasonForModificationCode=A|No|String|v1
+reasonForModificationName|Allows Partial or Complete value.|reasonForModificationName=FUNDING ONLY ACTION|No|String|v1
+referencedIdvPIIDSubtierCode|Allows 4 character code.|referencedIdvPIIDSubtierCode=8000|No|String|v1
+referencedIdvPIIDSubtierName|Allows a text.|referencedIdvPIIDSubtierName=DEPT OF DEFENSE|No|String|v1
+referencedIdvPiid|Allows a text.|referencedIdvPiid=47QRAA23DTE5T|No|String|v1
+referencedIdvMultipleOrSingleCode|Allows 1 character code.|referencedIdvMultipleOrSingleCode=S|No|String|v1
+referencedIdvMultipleOrSingleName|Allows a text.|referencedIdvMultipleOrSingleName=MULTIPLE|No|String|v1
+referencedIdvPart8OrPart13|Allows a text.|referencedIdvPart8OrPart13=Part8|No|String|v1
+referencedIdvTypeCode|Allows 1 character code.|referencedIdvTypeCode=A|No|String|v1
+referencedIdvTypeName|Allows a text.|referencedIdvTypeName=FSS|No|String|v1
+transactionNumber|Allows a text|Example: transactionNumber=16|No|String|v1
+piidAggregation=yes|Allows a text.|Return PIID Aggregation data in response. PIID parameter is required when piidaggregation is provided.|Example: piidAggregation=yes&piid=47QALD23PTEST|No|String|v1
+awardeeBusinessTypeCode|Allows 2 character code or null.|Example: awardeeBusinessTypeCode=2L|No|String|v1
+awardeeBusinessTypeName|Allows partial or complete value search.|Example: awardeeBusinessTypeName=HOSPITAL|No|String|v1
+sourceSelectionProcessCode|Allows a text|Example: sourceSelectionProcessCode=LPTA|No|String|v1
+sourceSelectionProcessName|Allows partial or complete value search.|Example: sourceSelectionProcessName=OTHER|No|String|v1
+format|Allows users to download data into the JSON and CSV asynchronous file formats.|Example: format=csv.|No|String|v1
+emailId|When used in conjunction with the format parameter, allows user to get JSON or CSV asynchronous file download links with tokens sent to the email address associated to the API key used in the request.|Example: emailId=Yes&format=JSON|No|String|v1
+typeOfContractPricingCode|Allows 1 character code.|Example: typeOfContractPricingCode=J|No|String|v1
+typeOfContractPricingName|Allows partial or complete value search.|Example: typeOfContractPricingName=FIRM FIXED PRICE|No|String|v1
+ultimateCompletionDate|Allows a single Date or a Date range.|Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]|Examples: ultimateCompletionDate=01/01/2019, ultimateCompletionDate=[01/01/2019,05/29/2019]|No|String|v1
+ultimateContractValue|Allows for a single positive or negative Dollar value or a Dollar range.|Examples: ultimateContractValue=100000.99, ultimateContractValue=[5000.99,100000.99]|No|String|v1
+totalUltimateContractValue|Allows for a single positive or negative Dollar value or a Dollar range.|Examples: totalUltimateContractValue=100000.99, totalUltimateContractValue=[5000.99,100000.99]|No|String|v1
+awardeeUniqueEntityId|Allows a single 12-character value or up to 100 values.|Example: awardeeUniqueEntityId=RV56IG5JM6G9 awardeeUniqueEntityId=RV56IG5JM6G9~BR5F3G5JM6TR|No|String|v1
+consortiaUEI|Allows a single 12-character value or up to 100 values.|Example: consortiaUEI=RV56IG5JM6G9 consortiaUEI=RV56IG5JM6G9~BR5F3G5JM6TR|No|String|v1
+consortiaLegalBusinessName|Allows a text.|Example: consortiaLegalBusinessName=ENTITY NAME||||No|String|v1
+nonGovernmentDollars|Allows for a single positive or negative Dollar value or a Dollar range.|Examples: nonGovernmentDollars=100000.99, nonGovernmentDollars=[5000.99,100000.99]|No|String|v1
+totalNonGovernmentDollars|Allows for a single positive or negative Dollar value or a Dollar range.|Examples: totalNonGovernmentDollars=100000.99, totalNonGovernmentDollars=[5000.99,100000.99]|No|String|v1
+nonTraditionalGovernmentEntityParticipationCode|Allows a text|Example: nonTraditionalGovernmentEntityParticipationCode=DEC|No|String|v1
+nonTraditionalGovernmentEntityParticipationName|Allows a text|Example: nonTraditionalGovernmentEntityParticipationName=COST SHARING|No|String|v1
+typeOfAgreementName|Allows a text|Example: typeOfAgreementName=PRODUCTION|No|String|v1
+far1102ExceptionCode|Allows a 1 character code.|Example: far1102ExceptionCode=3|No|String|v1
+far1102ExceptionName|Allows a text.|Example: far1102ExceptionName=CLASSIFIED CONTRACTS|No|String|v1
+includeSections|Allows to filter data by sections.|The applicable sections are contractId, coreData, contract, entityInformation, and nasaSpecific.|Examples: includeSections=contractId,entityInformation; includeSections=contractId,contract,nasaSpecific|No|String|v1
+q|Allows a text. Supports free text search|||No|String|v1
+fundingOfficeCode|Allows a 6 character code|Example: fundingOfficeCode=47QCCA|No|String|v1
+ultimateParentLegalBusinessName|Allows partial or complete value search.|Example: ultimateParentLegalBusinessName=ENTITY NAME|No|String|v1
+ultimateParentUniqueEntityId|Allows a single 12-character value or up to 100 values.|Example: ultimateParentUniqueEntityId=R5PKHW7GWD94 ultimateParentUniqueEntityId=R5PKHW7GWD94~BR5F3G5JM6TR|No|String|v1
+createdBy|Allows a text.|Example: createdBy=TEST_USER_101|No|String|v1
+approvedBy|Allows a text.|Example: approvedBy=TEST_USER_101|No|String|v1
+lastModifiedBy|Allows a text.|Example: lastModifiedBy=TEST_USER_101|No|String|v1
+closedBy|Allows a text.|Example: closedBy=TEST_USER_101|No|String|v1
+
 ### GetList contract Response Parameters
 
 | Response Parameters| Description | Data Type | Applicable Versions|
@@ -369,7 +495,6 @@ If the provided PIID is an FSS, the summary will include a summary of BPAs refer
 | awardDetails.dates.lastDateToOrder | Last Date to Order | String | v1 |
 | awardDetails.dates.fiscalYear | Fiscal Year | String | v1 |
 | awardDetails.dollars | Contract Dollars Information.Action Obligation Base And Exercised Options Value Base and All Options Value (Total Contract Value)Fee Paid for Use of IDVTotal Estimated Order ValueNon-Government Dollars | JSON Object | v1 |
-
 | awardDetails.dollars.actionObligation | Action Obligation | String | v1 |
 | awardDetails.dollars.baseDollarsObligated | Base Dollars Obligated | String | v1 |
 | awardDetails.dollars.baseAndExercisedOptionsValue | Base And Exercised Options Value | String | v1 |
@@ -751,9 +876,351 @@ If the provided PIID is an FSS, the summary will include a summary of BPAs refer
 | awardDetails.transactionData.closedStatus | Closed Status | String | v1 |
 
 
+## Sample Response 
+
+The following is a sample response containing dummy data. The purpose is to demonstrate the complete structure of the JSON response.
+
+ ````
+{
+  "totalRecords": "1",
+  "limit": "10",
+  "offset": "0",
+  "piidAggregation": {
+    "awardFamilySummary": {
+      "count": "3",
+      "totalDollars": "150000"
+    },
+    "referencingDosOrBpaCallsSummary": {
+      "baseCount": "2",
+      "totalCount": "5",
+      "totalDollars": "120000"
+    },
+    "bpaSummary": {
+      "baseCount": "1",
+      "totalCount": "3",
+      "totalDollars": "80000"
+    },
+    "bpaCallSummary": {
+      "baseCount": "1",
+      "totalCount": "2",
+      "totalDollars": "40000"
+    }
+  },
+  "awardSummary": [
+    {
+      "contractId": {
+        "subtier": {
+          "code": "1234",
+          "name": "NASA"
+        },
+        "piid": "NN1234567",
+        "modificationNumber": "01",
+        "transactionNumber": "0001",
+        "referencedIDVSubtier": {
+          "code": "5678",
+          "name": "GSA"
+        },
+        "referencedIDVPiid": "IDV123456",
+        "referencedIDVModificationNumber": "00",
+        "reasonForModification": {
+          "code": "A1",
+          "name": "Funding Increase"
+        }
+      },
+      "oldContractId": {
+        "subtier": {
+          "code": "9876",
+          "name": "DOE"
+        },
+        "piid": "OLD9876543",
+        "modificationNumber": "00",
+        "transactionNumber": "0002",
+        "referencedIDVSubtier": {
+          "code": "5432",
+          "name": "DOD"
+        },
+        "referencedIDVPiid": "OLDIDV321",
+        "referencedIDVModificationNumber": "00"
+      },
+      "coreData": {
+        "coreVersionId": "v1.0",
+        "solicitationId": "SOL12345",
+        "solicitationDate": "08/01/2025",
+        "awardOrIDV": "Award",
+        "awardOrIDVType": {
+          "code": "A",
+          "name": "Definitive Contract"
+        },
+        "initiative": {
+          "code": "INIT1",
+          "name": "Clean Energy"
+        },
+        "federalOrganization": {
+          "contractingInformation": {
+            "contractingDepartment": {
+              "code": "NASA",
+              "name": "National Aeronautics and Space Administration"
+            },
+            "contractingSubtier": {
+              "code": "4200",
+              "name": "NASA Headquarters"
+            },
+            "contractingOffice": {
+              "code": "HQ0001",
+              "name": "NASA Office 1"
+            }
+          },
+          "fundingInformation": {
+            "fundingDepartment": {
+              "code": "NASA",
+              "name": "National Aeronautics and Space Administration"
+            },
+            "fundingSubtier": {
+              "code": "4300",
+              "name": "NASA Goddard"
+            },
+            "fundingOffice": {
+              "code": "GD0001",
+              "name": "NASA Goddard Office"
+            },
+            "foreignFunding": {
+              "code": "N",
+              "name": "No"
+            }
+          }
+        },
+        "acquisitionData": {
+          "typeOfContractPricing": {
+            "code": "F",
+            "name": "Firm Fixed Price"
+          },
+          "multiyearContract": {
+            "code": "Y",
+            "name": "Yes"
+          },
+          "majorProgramCode": "XYZ",
+          "programAcronym": "ACE",
+          "nationalInterestAction": {
+            "code": "H09Z",
+            "name": "COVID-19"
+          },
+          "performanceBasedServiceContract": {
+            "code": "P",
+            "name": "Partial"
+          },
+          "consolidatedContract": {
+            "code": "C",
+            "name": "Consolidated"
+          },
+          "typeOfIdc": {
+            "code": "A",
+            "name": "Indefinite Delivery Contract"
+          },
+          "multipleOrSingleAwardIdc": {
+            "code": "M",
+            "name": "Multiple Awards"
+          },
+          "reasonForInterAgencyContracting": {
+            "code": "R1",
+            "name": "Required"
+          },
+          "contractFinancing": {
+            "code": "C1",
+            "name": "Commercial Financing"
+          }
+        },
+        "legislativeMandates": {
+          "clingerCohenAct": {
+            "code": "Y",
+            "name": "Yes"
+          },
+          "materialsSuppliesArticlesEquipment": {
+            "code": "N",
+            "name": "No"
+          },
+          "laborStandards": {
+            "code": "Y",
+            "name": "Yes"
+          },
+          "constructionWageRateRequirements": {
+            "code": "N",
+            "name": "No"
+          },
+          "interagencyContractingAuthority": {
+            "code": "I1",
+            "name": "Interagency Agreement"
+          },
+          "otherStatutoryAuthority": "Public Law 123"
+        },
+        "principalPlaceOfPerformance": {
+          "city": {
+            "code": "12345",
+            "name": "Greenbelt"
+          },
+          "county": {
+            "code": "C001",
+            "name": "Prince George's"
+          },
+          "state": {
+            "code": "MD",
+            "name": "Maryland"
+          },
+          "zipCode": "20771",
+          "congressionalDistrict": "MD-04",
+          "country": {
+            "code": "USA",
+            "name": "United States"
+          }
+        }
+      },
+      "awardDetails": {
+        "dates": {
+          "dateSigned": "2025-08-01",
+          "periodOfPerformanceStartDate": "2025-08-15",
+          "currentCompletionDate": "2026-08-14",
+          "ultimateCompletionDate": "2027-08-14",
+          "lastDateToOrder": "2026-12-31",
+          "fiscalYear": "2025"
+        },
+        "dollars": {
+          "actionObligation": "50000",
+          "baseDollarsObligated": "50000",
+          "baseAndExercisedOptionsValue": "70000",
+          "baseAndAllOptionsValue": "100000",
+          "feePaidForUseOfService": "1500",
+          "totalEstimatedOrderValue": "110000",
+          "nonGovernmentDollars": "5000"
+        },
+        "transactionData": {
+          "status": "Approved",
+          "version": "1.0",
+          "createdBy": "jdoe",
+          "createdDate": "2025-07-15T10:00:00Z",
+          "lastModifiedBy": "asmith",
+          "lastModifiedDate": "2025-08-01T15:30:00Z",
+          "approvedBy": "reviewer1",
+          "approvedDate": "2025-08-01T16:00:00Z",
+          "closedBy": null,
+          "closedDate": null,
+          "closedStatus": null
+        }
+      }
+    }
+  ]
+}
+````
+
+
+## HTTP Response Codes
+
+The API will return one of the following responses:
+
+| Code | Description |
+|-------|-------------|
+| 200 | The API call is successful. |
+| 400 | Application Level Error Messages: Invalid "Date" format: v1: "message":"Dates must be specified in the MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY] format.", "detail":"Any Date parameter must be provided in the MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY] format." |
+| 400 | Invalid "Dollar" format: v1: "message":"Dollars must be specified in a numeric format excluding commas or in the range format contained within brackets with a comma separating the lower range and upper range [Lower Range,Upper Range].", "detail":"Any Dollar parameter must be provided in the numeric format excluding commas or [Lower Range,Upper Range] format." |
+| 400 | Invalid Search Parameter: v1: "message":"The search parameter, < user-provided invalid parameter > does not exist.", "detail":"Please refer to https://open.gsa.gov/api/XXXX-XX/ for a list of allowable search parameters." |
+| 400 | If 'includeSections', 'emailId' or 'format' is sent in the "q" parameter: v1: "message":"The search parameters 'includeSections','emailId', 'piidaggregation', and 'format' are not permitted inside Query Param(q)", "detail":"Please provide these parameters separately". |
+| 400 | More than 100 UEI values are sent: v1: "message":"More than 100 Unique Entity IDs are not allowed.", "detail":"Please limit the number of Unique Entity IDs to 100." |
+| 400 | More than 100 Parent UEI values are sent: v1: "message":"More than 100 Parent Unique Entity IDs are not allowed.", "detail":"Please limit the number of Parent Unique Entity IDs to 100." |
+| 400 | More than 100 Consortia UEI values are sent: v1: "message":"More than 100 Consortia Unique Entity IDs are not allowed.", "detail":"Please limit the number of Consortia Unique Entity IDs to 100." |
+| 400 | More than 100 CAGE Code values are sent: v1: "message":"More than 100 CAGE Codes are not allowed.", "detail":"Please limit the number of CAGE Codes to 100." |
+| 400 | More than 100 PSC Codes are sent: v1: "message":"More than 100 Product or Service Codes are not allowed.", "detail":"Please limit the number of Product or Service Codes to 100." |
+| 400 | More than 100 NAICS Codes are sent: v1: "message":"More than 100 NAICS Codes are not allowed.", "detail":"Please limit the number of NAICS Codes to 100." |
+| 400 | "emailId" is sent on its own: v1 "message":"The search parameter 'emailId' must be provided in conjunction with the search parameter 'format.", "detail":"Users can opt for receiving the requested JSON/CSV files in their emails." |
+| 400 | "piidaggregation" is sent on its own: v1: message":"The search parameter 'piidaggregation' must be provided in conjunction with the search parameter 'piid'.", "detail":"The 'piidaggregation' parameter cannot be provided on its own." |
+| 400 | "piidaggregation" is sent with a PIID that is not unique: v1: message":"The search parameter 'piidaggregation' must be provided in conjunction with the search parameters 'piid' and 'referencedIdvPiid' when the 'piid' is not unique.", "detail":"The 'piidaggregation' parameter must return a unique record." |
+| 400 | File size exceeded for JSON or CSV exports: v1: "message":"Total Number of Records: < the total number > exceeded the maximum allowable limit: 1,000,000. Please provide a suitable search parameter to refine your search.", "detail":"Count Exceeded Error" |
+| 400 | JSON or CSV file generation is in-progress: v1: "message": "The requested JSON or CSV file is not generated yet. Please try again later.", "details": "Larger files will take some time to process." |
+| 400 | Using an expired Token for downloading JSON or CSV files: v1: "message":"The requested JSON or CSV file token is expired.","detail":"Please verify the token number." ,"detail":"Please verify the token number." |
+| 400 | Different IP Address than that mentioned in the System Account: v1: "message":"IP Addresses associated with this System Account are different from that sending the request. Please submit your requests from a valid system.", "detail":"Please verify your IP Address sending this request is associated with this System Account." |
+| 400 | Insufficient API Key privileges to download a JSON or CSV File: v1: The API Key is not authorized to access this < file type > Extract |
+| 403 | Forbidden |
+| 403 | 1. Missing API Key: v1: No API Key was supplied. Please submit with a valid API key. |
+| 403 | 2. An invalid API Key: v1: An invalid API key was supplied. Please submit with a valid API key. |
+| 403 | 3. A disabled API Key: v1: The API key supplied has been disabled. Please submit with a valid API key. |
+| 404 | No Data found |
+| 500 | Internal Server Error |
 
 
 
 
+## Sample Request Examples
 
 
+### Example 1: 
+Example 1: Get Base Contracts modified between January 1st, 2025 and today, Contracted by DoD with a Dollar Obligated between $0.00 and $100,000,000.99. 
+<br>**Request URL:** Endpoint URL
+<br>lastModifiedDate=[01/01/2025,]&dollarsObligated=[0.0,100000000.99]&modificationNumber=0&contractingDepartmentCode=9700
+<br>**Response URL:**
+
+Example 2: Get Modifications to Purchase Orders Approved between January 1st, 2025 and August 19th, 2025 with a NIACS code of 513310 or 513311 or 513312.
+<br>**Request URL:** Endpoint URL
+<br>awardOrIDVTypeName=PURCHASE ORDER&approvedDate=[01/01/2025,08/19/2025]& modificationNumber!=0&naicsCode=513310~513311~513312
+<br>**Response URL:**
+
+Example 3: Get only the Contract IDs for GSA IDVs closed between January 1st, 2025 and today.
+<br>**Request URL:** Endpoint URL
+<br>awardOrIDV=IDV&closedDate=[01/01/2025,]&contractingDepartmentCode=4700&includeSections=contractId
+<br>**Response URL:**
+
+Example 4: Get Service Contracts performed in Virginia in FY25 with a Contracting Officer's Business Size Selection of Small, and only return the Contract ID, Contract, and Entity Information
+<br>**Request URL:** Endpoint URL
+<br>coBusSizeDeterminationCode=S&placeOfPerformStateCode=VA&fiscalYear=2025&productOrServiceType=SERVICE&includeSections=contractId,contract,entityInformation
+<br>**Response URL:**
+
+## Additional Information
+
+You can view the full details of the differences between the FPDS legacy API and SAM.gov API
+ available here: Document To be created [FPDSvsSAM-ContractDataAPI.docx](https://docs.google.com/document/d/1DJHNRKTGiG4dgT2O9PBiAUj47Qh83SHj/edit).
+
+Disclaimer:  **Limitation on Permissible Use of Dun & Bradstreet, Inc. (D&B) Data**
+
+
+* This website contains data supplied by third party information suppliers, including Dun & Bradstreet (D&B). For the purposes of the following limitation on permissible use of D&B data, which includes each entity’s DUNS Number and its associated business information, “D&B Open Data” is defined as the following data elements: Legal Business Name, Street Address, City Name, State/Province Name, Country Name, County Code, State/Province Code, State/Province Abbreviation, ZIP/Postal Code, Country Name and Country Code. Entity registration, exclusion, or contract award records in SAM may contain D&B-supplied data. Applicable records containing D&B data include all base award notices with an award date earlier than 4/4/2022. These records show the Entity Validation Service (EVS) Source as D&B in outbound data streams.
+* D&B hereby grants you, the user, a license for a limited, non-exclusive right to use D&B Open Data within the limitations set forth herein. By using this website you agree that you shall not use D&B Open Data without giving written attribution to the source of such data (i.e., D&B) and shall not access, use or disseminate D&B Open Data in bulk, (i.e., in amounts sufficient for use as an original source or as a substitute for the product and/or service being licensed hereunder).
+* Except for data elements identified above as D&B Open Data, under no circumstances are you authorized to use any other D&B data for commercial, resale or marketing purposes (e.g., identifying, quantifying, segmenting and/or analyzing customers and prospective customers). Systematic access (electronic harvesting) or extraction of content from the website, including the use of “bots” or “spiders”, is prohibited. Federal government entities are authorized to use the D&B data for purposes of acquisition as defined in FAR 2.101 and for the purpose of managing Federal awards, including sub-awards, or reporting Federal award information.
+* GSA assumes no liability for the use of the D&B data once it is downloaded or accessed. The D&B data is provided “as is” without warranty of any kind. The D&B data is the intellectual property of D&B. In no event will D&B or any third party information supplier be liable in any way with regard to the use of the D&B data. For more information about the scope of permissible use of D&B data licensed hereunder, please contact D&B at datause_govt@dnb.com.
+
+## Contact Us
+
+* Reach out to the SAM.gov team at www.fsd.gov for inquiries and help desk support.
+  1. Before contacting the help desk, conduct your own initial troubleshooting
+      1. Conduct a recent review of the open.gsa.gov/api specifications
+      2. Confirm that the API key being used is still active
+      3. Confirm that the system account you are using has “read public” permissions as applicable (PUBLIC Calls)
+      4. **Confirm that the IP addresses registered with your system account are current**
+  2. When submitting help desk tickets for API or system connection issues, provide the following:
+      1. The exact API requests that you were trying to send
+      2. The exact error messages that you were receiving
+      3. The exact dates and times when you received the errors
+      4. Screenshots (with the actual API request and the error) [Attach to the ticket]
+      5. The System Account ID/Name that was trying to make API calls
+      6. Screenshots of the parameters used for API call [Attach to the ticket]
+      7. Screenshots of the Headers used for the API call [Attach to the ticket]
+* Users requesting access to the test site (alpha.sam.gov) should follow the below steps. These steps ONLY apply to alpha.sam.gov access requests.
+  1. Navigate to [www.fsd.gov](www.fsd.gov)
+  2. Sign into the FSD platform using your FSD credentials
+  3. Select “Create an Incident”
+  4. Create an Incident
+      1. **System Name:** System for Award Management (SAM)
+      2. **Is this related to the American Rescue Plan Act?:** No
+      3. **Issue Type:** Other
+      4. **Business Type:** Other
+      5. **Subject (select 1):**
+          1. **Option A:** I need a role to test in alpha.sam.gov.
+          2. **Option B:** System account approval in alpha.sam.gov
+      6.  **Please describe the issue:** (Copy and paste the below information into the ticket, filling in your information within the brackets)
+          1. **Option A:** I have already navigated to alpha.sam.gov and created a user account, following the same steps for  [creating an account](https://www.fsd.gov/gsafsd_sp?id=gsafsd_kb_articles&sys_id=81d067071b80b0109ac5ddb6bc4bcb63) in sam.gov. I would like to conduct testing but do not have the necessary role(s) in alpha.sam.gov. The account that needs role assignment is associated with [EMAIL ADDRESS]. I request a [ROLE] role for the [DOMAIN] domain in alpha.sam.gov.
+          2. **Option B:** I am creating/editing a system account and have submitted my account in alpha.sam.gov for approval. I would like to request alpha.sam.gov system account review and approval for [Name of the alpha.sam.gov system account].
+
+## Change Log
+
+Date | Version | Description
+------|---------------|---------
+[Date that API is released to Alpha/Prod] | v1.0 | Base Version
+
+
+
+<p><small><a href="#">Back to top</a></small></p>
