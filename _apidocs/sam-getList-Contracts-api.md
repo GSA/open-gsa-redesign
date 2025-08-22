@@ -266,7 +266,7 @@ closedBy|Allows a text.|Example: closedBy=TEST_USER_101|No|String|v1
 ### GetList contract Response Parameters
 
 | Response Parameters| Description | Data Type | Applicable Versions|
-|------|---------------|-----------|-----| 
+|----- | ----- | ----- | ----- | 
 |totalRecords | Total Records in Response | Number | v1 |
 |limit | Limit of Response | Number | v1 |
 |offset | Offset of Response | Number | v1 |
@@ -487,14 +487,14 @@ closedBy|Allows a text.|Example: closedBy=TEST_USER_101|No|String|v1
 | coreData.preferenceProgramsInformation | Preference Programs Information | JSON Object | v1 |
 | coreData.preferenceProgramsInformation.priceEvaluationPercentDifference | Price Evaluation Percent Difference | String | v1 |
 | awardDetails | Award Details Information: | JSON Object | v1 |
-| awardDetails.dates | Contract Dates Information.Date SignedEffective DateCurrent Completion DateUltimate Completion DateLast Date to OrderFiscal Year | JSON Object | v1 |
+| awardDetails.dates | Contract Dates Information.<ul><li>Date Signed</li><li>Effective Date</li><li>Current Completion Date</li><li>Ultimate Completion Date</li><li>Last Date to Order</li><li>Fiscal Year</li></ul> | JSON Object | v1 |
 | awardDetails.dates.dateSigned | Date Signed | String | v1 |
 | awardDetails.dates.periodOfPerformanceStartDate | Period of Performance Start Date | String | v1 |
 | awardDetails.dates.currentCompletionDate | Current Completion Date | String | v1 |
 | awardDetails.dates.ultimateCompletionDate | Ultimate Completion Date | String | v1 |
 | awardDetails.dates.lastDateToOrder | Last Date to Order | String | v1 |
 | awardDetails.dates.fiscalYear | Fiscal Year | String | v1 |
-| awardDetails.dollars | Contract Dollars Information.Action Obligation Base And Exercised Options Value Base and All Options Value (Total Contract Value)Fee Paid for Use of IDVTotal Estimated Order ValueNon-Government Dollars | JSON Object | v1 |
+| awardDetails.dollars | Contract Dollars Information.<ul><li>Action Obligation</li><li> Base And Exercised Options Value</li><li> Base and All Options Value (Total Contract Value)</li><li>Fee Paid for Use of IDV</li><li>Total Estimated Order Value</li><li>Non-Government Dollars</li></ul> | JSON Object | v1 |
 | awardDetails.dollars.actionObligation | Action Obligation | String | v1 |
 | awardDetails.dollars.baseDollarsObligated | Base Dollars Obligated | String | v1 |
 | awardDetails.dollars.baseAndExercisedOptionsValue | Base And Exercised Options Value | String | v1 |
@@ -502,12 +502,12 @@ closedBy|Allows a text.|Example: closedBy=TEST_USER_101|No|String|v1
 | awardDetails.dollars.feePaidForUseOfService | Fee Paid for Use of Service | String | v1 |
 | awardDetails.dollars.totalEstimatedOrderValue | Total Estimated Order Value | String | v1 |
 | awardDetails.dollars.nonGovernmentDollars | Non-Government Dollars | String | v1 |
-| awardDetails.totalContractDollars | Total Contract Dollars Information.Total Action ObligationTotal Base And Exercised Options ValueTotal Base and All Options ValueTotal Non-Government Dollars | JSON Object | v1 |
+| awardDetails.totalContractDollars | Total Contract Dollars Information.<ul><li>Total Action Obligation</li><li>Total Base And Exercised Options Value</li><li>Total Base and All Options Value</li><li>Total Non-Government Dollars</li></ul> | JSON Object | v1 |
 | awardDetails.totalContractDollars.totalActionObligation | Total Action Obligation | String | v1 |
 | awardDetails.totalContractDollars.totalBaseAndExercisedOptionsValue | Total Base And Exercised Options Value | String | v1 |
 | awardDetails.totalContractDollars.totalBaseAndAllOptionsValue | Total Base and All Options Value | String | v1 |
 | awardDetails.totalContractDollars.totalNonGovernmentDollars | Total Non-Government Dollars | String | v1 |
-| awardDetails.treasuryAccount | Treasury Account Information. Treasury Account Subtier IdentifierTreasury Account Main Account CodeTreasury Account Sub Account Code | JSON Object | v1 |
+| awardDetails.treasuryAccount | Treasury Account Information.<ul><li>Treasury Account Subtier Identifier</li><li>Treasury Account Main Account Code</li><li>Treasury Account Sub Account Code</li></ul> | JSON Object | v1 |
 | awardDetails.treasuryAccount.agencyIdentifier | Treasury Account Subtier Identifier | String | v1 |
 | awardDetails.treasuryAccount.mainAccountCode | Treasury Account Main Account Code | String | v1 |
 | awardDetails.treasuryAccount.subAccountCode | Treasury Account Sub Account Code | String | v1 |
