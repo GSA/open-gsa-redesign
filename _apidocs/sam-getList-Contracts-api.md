@@ -140,8 +140,8 @@ If the provided PIID is an FSS, the summary will include a summary of BPAs refer
 ### GetList contract Response Parameters
 
 | Response Parameters| Description | Data Type | Applicable Versions|
-| ---------------------------|---------------|-------------------|-----|
-| totalRecords | Total Records in Response | Number | v1 |
+|------|---------------|-----------|-----| 
+|totalRecords | Total Records in Response | Number | v1 |
 |limit | Limit of Response | Number | v1 |
 |offset | Offset of Response | Number | v1 |
 |piidAggregation| PIID Aggregation | JSON Object | v1 |
@@ -162,7 +162,7 @@ If the provided PIID is an FSS, the summary will include a summary of BPAs refer
 |piidAggregation.bpaCallSummary.totalDollars| Total Dollars obligated on BPA Calls referencing a BPA that references the PIID provided. | String |  v1 |
 |piidAggregation.bpaCallSummary.totalDollars| Total Dollars obligated on BPA Calls referencing a BPA that references the PIID provided. | String |  v1 |
 |awardSummary| Award Summary | JSON Array |  v1 |
-|contractId| Contract ID Information:</br>Subtier</br>PIID</br>Modification Number</br>Transaction Number</br>Referenced IDV Subtier</br>Referenced IDV PIID</br>Referenced IDV Modification Number | JSON Object |  v1 |
+|contractId| Contract ID Information:</br><ul><li>Subtier</li><li>PIID</li><li>Modification Number</li><li>Transaction Number</li><li>Referenced IDV Subtier</li><li>Referenced IDV PIID</li><li>Referenced IDV Modification Number</li></ul> | JSON Object |  v1 |
 |contractId.subtier| Subtier Code | String |  v1 |
 |contractId.subtier.name| Subtier Name | String |  v1 |
 |contractId.piid| PIID | String |  v1 |
@@ -176,7 +176,7 @@ If the provided PIID is an FSS, the summary will include a summary of BPAs refer
 |contractId.reasonForModification| Reason For Modification | JSON Object |  v1 |
 |contractId.reasonForModification.code| Reason For Modification Code |  String |  v1 |
 |contractId.reasonForModification.name| Reason For Modification Name |  String |  v1 |
-|oldContractId| Old Contract ID Information:</br>Subtier</br>PIID</br>Modification Number</br>Transaction Number</br>Referenced IDV Subtier</br>Referenced IDV PIID</br>Referenced IDV Modification Number | JSON Array |  v1 |
+|oldContractId| Old Contract ID Information:</br><ul><li>Subtier</li><li>PIID</li><li>Modification Number</li><li>Transaction Number</li><li>Referenced IDV Subtier</li><li>Referenced IDV PIID</li><li>Referenced IDV Modification Number</li></ul>| JSON Array |  v1 |
 |oldContractId.subtier| Subtier  | JSON Object |  v1 |
 |oldContractId.subtier.code| Subtier Code |  String |  v1 |
 |oldContractId.subtier.name| Subtier Name |  String |  v1 |
@@ -193,7 +193,7 @@ If the provided PIID is an FSS, the summary will include a summary of BPAs refer
 |oldContractId.referencedIDVSubtier.name| Referenced IDV Subtier Name|  String |  v1 |
 |oldContractId.referencedIDVPiid| Referenced IDV PIID|  String |  v1 |
 |oldContractId.referencedIDVModificationNumber| Referenced IDV Modification Number |  String |  v1 |
-|coreData|Core Information:</br> Core Version ID </br> Solicitation ID</br> Solicitation Date</br> Title</br> Contract Action Type</br> Initiative</br> Contracting Information:</br> Funding Information</br> Type of Contract Pricing</br> Multiyear Contract</br> Major Program Code</br>Program Acronym</br> National Interest Action</br>Performance Based Service Contract</br> Contingency Humanitarian Peace Keeping Operation</br> Consolidated Contract</br> Clinger Cohen Act</br> Materials Supplies Articles Equipment</br> Labor Standards</br>Construction Wage Rate Requirements</br>Recovered Material Clauses</br> Place of Performance</br>  Product Or Service</br> Principal NAICS</br>  Contract Bundling</br> DoD Acquisition Program</br> DoD Claimant Program</br> Government Furnished Property</br> Extent Competed</br> Solicitation Procedures</br> Type Of Set Aside</br> SBIR/STTR</br> Statutory Exception To Fair Opportunity</br> Reason Not Competed (Other Than Full And Open Competition)</br> Authority</br> Local Area Set Aside</br> A76 Action</br> Source Selection Process</br> Type of IDC</br> Multiple or Single Award IDC |  String |  v1 |
+|coreData|Core Information:</br><ul><li> Core Version ID </li><li> Solicitation ID</li><li> Solicitation Date</li><li> Title</li><li> Contract Action Type</li><li> Initiative</li><li> Contracting Information:</li><li> Funding Information</li><li>Type of Contract Pricing</li><li> Multiyear Contract</li><li> Major Program Code</li><li>Program Acronym</li><li> National Interest Action</li><li>Performance Based Service Contract</li><li> Contingency Humanitarian Peace Keeping Operation</li><li>Consolidated Contract</li><li>Clinger Cohen Act</li><li> Materials Supplies Articles Equipment</li><li> Labor Standards</li><li>Construction Wage Rate Requirements</li><li>Recovered Material Clauses</li><li> Place of Performance</li><li> Product Or Service</li><li>Principal NAICS</li><li>Contract Bundling</li><li>DoD Acquisition Program</li><li> DoD Claimant Program</li><li>Government Furnished Property</li><li> Extent Competed</li><li> Solicitation Procedures</li><li>Type Of Set Aside</li><li> SBIR/STTR</li><li> Statutory Exception To Fair Opportunity</li><li> Reason Not Competed (Other Than Full And Open Competition)</li><li> Authority</li><li> Local Area Set Aside</li><li> A76 Action</li><li> Source Selection Process</li><li> Type of IDC</li><li> Multiple or Single Award IDC</li></ul> |  String |  v1 |
 |coreData.coreVersionId| Core Version ID |  String |  v1 |
 |coreData.solicitationId| Solicitation ID |  String |  v1 |
 |coreData.solicitationDate| Solicitation Date |  String |  v1 |
@@ -205,7 +205,7 @@ If the provided PIID is an FSS, the summary will include a summary of BPAs refer
 |coreData.initiative.code| Initiative Code |  String |  v1 |
 |coreData.initiative.name| Initiative Name |  String |  v1 |
 |coreData.federalOrganization| Federal Organization | JSON Object |  v1 |
-|coreData.federalOrganization.contractingInformation| Contracting Information:</br>Contracting Department</br>Contracting Subtier</br>Contracting Office | JSON Object |  v1 |
+|coreData.federalOrganization.contractingInformation| Contracting Information:</br><ul><li>Contracting Department</li><li>Contracting Subtier</li><li>Contracting Office </li></ul>| JSON Object |  v1 |
 |coreData.federalOrganization.contractingInformation.contractingDepartment | Contracting Department | JSON Object |  v1 |
 |coreData.federalOrganization.contractingInformation.contractingDepartment.code| Contracting Department Code | String |  v1 |
 |coreData.federalOrganization.contractingInformation.contractingDepartment.name| Contracting Department Name | String |  v1 |
@@ -215,7 +215,7 @@ If the provided PIID is an FSS, the summary will include a summary of BPAs refer
 |coreData.federalOrganization.contractingInformation.contractingOffice| Contracting Office | JSON Object |  v1 |
 |coreData.federalOrganization.contractingInformation.contractingOffice.code| Contracting Office Code | String |  v1 |
 |coreData.federalOrganization.contractingInformation.contractingOffice.name| Contracting Office Name | String |  v1 |
-|coreData.federalOrganization.fundingInformation| Funding Information:</br>Funding Department</br>Funding Subtier</br>Funding Office</br>Foreign Funding | String |  v1 |
+|coreData.federalOrganization.fundingInformation| Funding Information:</br><ul><li>Funding Department</li><li>Funding Subtier</li><li>Funding Office</li><li>Foreign Funding</li></ul>| String |  v1 |
 |coreData.federalOrganization.fundingInformation.fundingDepartment| Funding Department | JSON Object |  v1 |
 |coreData.federalOrganization.fundingInformation.fundingDepartment.code| Funding Department Code | String |  v1 |
 |coreData.federalOrganization.fundingInformation.fundingDepartment.name| Funding Department Name | String |  v1 |
@@ -275,7 +275,7 @@ If the provided PIID is an FSS, the summary will include a summary of BPAs refer
 | coreData.legislativeMandates.interagencyContractingAuthority.code | Interagency Contracting Authority Code | String | v1 |
 | coreData.legislativeMandates.interagencyContractingAuthority.name | Interagency Contracting Authority Name | String | v1 |
 | coreData.legislativeMandates.otherStatutoryAuthority | Other Statutory Authority | String | v1 |
-| coreData.principalPlaceOfPerformance | Place of Performance</br>Location Code</br>County</br>City</br>ZIP Code</br>State </br>Congressional District</br>Country | JSON Object | v1 |
+| coreData.principalPlaceOfPerformance | Place of Performance</br><ul><li>Location Code</li><li>County</li><li>City</li><li>ZIP Code</li><li>State</li><li>Congressional District</li><li>Country</li></ul>| JSON Object | v1 |
 | coreData.principalPlaceOfPerformance.city | City | String | v1 |
 | coreData.principalPlaceOfPerformance.city.code | City Code | String | v1 |
 | coreData.principalPlaceOfPerformance.city.name | City Name | String | v1 |
@@ -369,7 +369,6 @@ If the provided PIID is an FSS, the summary will include a summary of BPAs refer
 | awardDetails.dates.lastDateToOrder | Last Date to Order | String | v1 |
 | awardDetails.dates.fiscalYear | Fiscal Year | String | v1 |
 | awardDetails.dollars | Contract Dollars Information.Action Obligation Base And Exercised Options Value Base and All Options Value (Total Contract Value)Fee Paid for Use of IDVTotal Estimated Order ValueNon-Government Dollars | JSON Object | v1 |
-
 | awardDetails.dollars.actionObligation | Action Obligation | String | v1 |
 | awardDetails.dollars.baseDollarsObligated | Base Dollars Obligated | String | v1 |
 | awardDetails.dollars.baseAndExercisedOptionsValue | Base And Exercised Options Value | String | v1 |
