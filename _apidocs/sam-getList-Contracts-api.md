@@ -146,122 +146,122 @@ Request Parameters that API accepts	| Description | Required| Data Type| Applica
 api_key | Public key of users | Yes | String | v1
 limit | Total number of records to be retrieved per page. This field must be a numberMax Value = 100. The default limit value is 10.  | No | Int | v1
 offset | Indicates the page index. Default offset starts with 0 | No | Int | v1
-dollarsObligated | Allows for a single positive or negative Dollar value or a Dollar range. | Examples: dollarsObligated=-1000.99, dollarsObligated=[5000.99,100000.99] | No |String | v1  
-totalDollarsObligated | Allows for a single positive or negative Dollar value or a Dollar range. | Examples: totalDollarsObligated=100000.99, totalDollarsObligated=[5000.99,100000.99] | No | String | v1  
-approvedDate | Allows a single Date or a Date range. Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY] | Examples: approvedDate=01/01/2019, approvedDate=[01/01/2019,05/29/2019] | No | String | v1  
-awardeeCageCode | Allows a single 5-character CAGE Code value or up to 100 values or null. | Example: awardeeCageCode=00000, awardeeCageCode=00000~11111~11321 | No | String | v1  
-closedDate | Allows a single Date or a Date range. Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY] | Examples: closedDate=01/01/2019, closedDate=[01/01/2019,05/29/2019] | No | String | v1  
-closedStatus | Allows a text. | Examples: closedStatus=Yes, closedStatus=No | No | String | v1  
-solicitationID | Allows a text. | Example: solicitationID=47QCDE25PTEST | No | String | v1  
-solicitationDate | Allows a single Date or a Date range. Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY] | Examples: solicitationDate=01/01/2019, solicitationDate=[01/01/2019,05/29/2019] | No | String | v1  
-documentVersion | Allows a text. | Example: documentVersion=1.5 | No | String | v1  
-documentStatus | Allows a text. By default when status is not provided, only Awards and IDVs with a status of Final will be returned. | Examples: documentStatus=DRAFT, documentStatus=FINAL, documentStatus=All | No | String | v1  
-piid | Allows a text. | Example: piid=127EAS25FTEST | No | String | v1  
-awardOrIDV | Allows a text. | Examples: awardOrIDV=IDV, awardOrIDV=Award | No | String | v1  
-awardOrIDVTypeCode | Allows a 1 character code. | Example: awardOrIDVTypeCode=B | No | String | v1  
-awardOrIDVTypeName | Allows a text. | Example: awardOrIDVTypeName=PURCHASE ORDER | No | String | v1  
-contractingSubtierCode | Allows 4 character code | Example: contractingSubtierCode=2100 | No | String | v1  
-contractingSubtierName | Allows Partial or Complete value. | Example: contractingSubtierName=PUBLIC BUILDINGS SERVICE | No | String | v1  
-contractingDepartmentCode | Allows 4 character code | Example: contractingDepartmentCode=9700 | No | String | v1  
-contractingDepartmentName | Allows Partial or Complete value. | Example: contractingDepartmentName=GENERAL SERVICES | No | String | v1  
-contractingOfficeCode | Allows 6 character code | Example: contractingOfficeCode=47QCCA | No | String | v1  
-coBusSizeDeterminationCode | Allows a 1 character code | Example: coBusSizeDeterminationCode=S | No | String | v1  
-coBusSizeDeterminationName | Allows a text | Example: coBusSizeDeterminationName=SMALL BUSINESS | No | String | v1  
-createdDate | Allows a single Date or a Date range. Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY] | Examples: createdDate=01/01/2019, createdDate=[01/01/2019,05/29/2019] | No | String | v1  
-currentCompletionDate | Allows a single Date or a Date range. Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY] | Examples: currentCompletionDate=01/01/2019, currentCompletionDate=[01/01/2019,05/29/2019] | No | String | v1  
-dateSigned | Allows a single Date or a Date range. Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY] | Examples: dateSigned=01/01/2019, dateSigned=[01/01/2019,05/29/2019] | No | String | v1  
-awardeeZipCode | Allows either a 5 or 9-digit code for US zip codes, or any digit postal code for non-US postal codes. | Examples: awardeeZipCode=022015678, awardeeZipCode=110054 | No | String | v1  
-awardeeCityName | Allows a text. | Example: awardeeCityName=Austin | No | String | v1  
-awardeeCongressionalDistrict | Allows a 2 digit code. | Example: awardeeCongressionalDistrict=01 | No | String | v1  
-awardeeCountryCode | Allows a 3 character code. | Example: awardeeCountryCode=USA | No | String | v1  
-awardeeCountryName | Allows Partial or Complete value. | Example: awardeeCountryName=UNITED STATES | No | String | v1  
-awardeeDoingBusinessAsName|Allows Partial or Complete value.|awardeeDoingBusinessAsName=ENTITY NAME|No|String|v1
-awardeeStateCode|Allows a 2 character code.|awardeeStateCode=NC|No|String|v1
-awardeeStateName|Allows Partial or Complete value.|awardeeStateName=NORTH CAROLINA|No|String|v1
-fiscalYear|Allows a 4 character code.|fiscalYear=2024|No|String|v1
-fundingSubtierCode|Allows 4 character code|fundingSubtierCode=4732|No|String|v1
-fundingSubtierName|Allows Partial or Complete value.|fundingSubtierName=PUBLIC BUILDINGS SERVICE|No|String|v1
-fundingDepartmentCode|Allows 4 character code|fundingDepartmentCode=4700|No|String|v1
-fundingDepartmentName|Allows Partial or Complete value.|fundingDepartmentName=GENERAL SERVICES ADMINISTRATION|No|String|v1
-lastModifiedDate|Allows a single Date or a Date range.|lastModifiedDate=01/01/2019 or lastModifiedDate=[01/01/2019,05/29/2019]|No|String|v1
-awardeeLegalBusinessName|Allows Partial or Complete value.|awardeeLegalBusinessName=ENTITY LEGAL NAME|No|String|v1
-clingerCohenActCode|Allows a 1 character code.|clingerCohenActCode=Y|No|String|v1
-clingerCohenActName|Allows a text.|clingerCohenActName=No|No|String|v1
-materialsSuppliesArticlesAndEquipCode|Allows a 1 character code.|materialsSuppliesArticlesAndEquipCode=N|No|String|v1
-materialsSuppliesArticlesAndEquipName|Allows a text.|materialsSuppliesArticlesAndEquipName=Yes|No|String|v1
-laborStandardsCode|Allows a 1 character code.|laborStandardsCode=X|No|String|v1
-laborStandardsName|Allows a text.|laborStandardsName=No|No|String|v1
-constructionWageRateRequirementsCode|Allows a 1 character code.|constructionWageRateRequirementsCode=N|No|String|v1
-constructionWageRateRequirementsName|Allows a text.|constructionWageRateRequirementsName=Yes|No|String|v1
-localAreaSetAsideName|Allows a text or null.|localAreaSetAsideName=Yes or localAreaSetAsideName=No|No|String|v1
-modificationNumber|Allows 6 character code.|modificationNumber=P00001|No|String|v1
-extentCompetedCode|Allows a 1 character code.|extentCompetedCode=B|No|String|v1
-extentCompetedName|Allows a text.|extentCompetedName=NOT COMPETED|No|String|v1
-typeOfSetAsideCode|Allows a text.|typeOfSetAsideCode=SBA|No|String|v1
-typeOfSetAsideName|Allows a text.|typeOfSetAsideName=BUY INDIAN|No|String|v1
-solicitationProceduresCode|Allows a text.|solicitationProceduresCode=NP|No|String|v1
-solicitationProceduresName|Allows a text.|solicitationProceduresName=TWO STEP|No|String|v1
-contractOpportunitiesNoticeCode|Allows a 1 character code.|contractOpportunitiesNoticeCode=X|No|String|v1
-contractOpportunitiesNoticeName|Allows a text.|contractOpportunitiesNoticeName=Yes|No|String|v1
-multiyearContractName|Allows a text|multiyearContractName=Yes or multiyearContractName=No|No|String|v1
-numberOfOffersReceived|Allows a text.|numberOfOffersReceived=3|No|String|v1
-naicsCode|Allows a single 6-character NAICS value or up to 100 values or null or not null.|naicsCode=513310 or naicsCode=513310~513311~513312|No|String|v1
-nationalInterestActionCode|Allows 4 character code.|nationalInterestActionCode=H17I|No|String|v1
-nationalInterestActionName|Allows Partial or Complete value.|nationalInterestActionName=HURRICANE IRMA 2017|No|String|v1
-periodOfPerformanceStartDate|Allows a single Date or a Date range.|periodOfPerformanceStartDate=01/01/2019 or periodOfPerformanceStartDate=[01/01/2019,05/29/2019]|No|String|v1
-piidSubtierCode|Allows 4 character code|piidSubtierCode=8000|No|String|v1
-piidSubtierName|Allows Partial or Complete value.|piidSubtierName=PUBLIC BUILDINGS SERVICE|No|String|v1
-placeOfPerformCityName|Allows a text.|placeOfPerformCityName=Austin|No|String|v1
-placeOfPerformCongressionalDistrict|Allows a 2 digit code.|placeOfPerformCongressionalDistrict=01|No|String|v1
-placeOfPerformCountryCode|Allows a 3 character code.|placeOfPerformCountryCode=USA|No|String|v1
-placeOfPerformCountryName|Allows Partial or Complete value.|placeOfPerformCountryName=UNITED STATES|No|String|v1
-placeOfPerformStateCode|Allows a 2 character code.|placeOfPerformStateCode=NC|No|String|v1
-placeOfPerformStateName|Allows Partial or Complete value.|placeOfPerformStateName=NORTH CAROLINA|No|String|v1
-placeOfPerformZipCode|Allows either a 5 or 9-digit code for US zip codes, or any digit postal code for non-US postal codes.|placeOfPerformZipCode=022012341 or placeOfPerformZipCode=110054|No|String|v1
-productOrServiceCode|Allows a 4-character PSC value or up to 100 values.|productOrServiceCode=X1QA or productOrServiceCode=X1QA~1005~C1AA|No|String|v1
-productOrServiceType|Allows a text.|productOrServiceType=SERVICE or productOrServiceType=PRODUCT|No|String|v1
-reasonForModificationCode|Allows 1 character code.|reasonForModificationCode=A|No|String|v1
-reasonForModificationName|Allows Partial or Complete value.|reasonForModificationName=FUNDING ONLY ACTION|No|String|v1
-referencedIdvPIIDSubtierCode|Allows 4 character code.|referencedIdvPIIDSubtierCode=8000|No|String|v1
-referencedIdvPIIDSubtierName|Allows a text.|referencedIdvPIIDSubtierName=DEPT OF DEFENSE|No|String|v1
-referencedIdvPiid|Allows a text.|referencedIdvPiid=47QRAA23DTE5T|No|String|v1
-referencedIdvMultipleOrSingleCode|Allows 1 character code.|referencedIdvMultipleOrSingleCode=S|No|String|v1
-referencedIdvMultipleOrSingleName|Allows a text.|referencedIdvMultipleOrSingleName=MULTIPLE|No|String|v1
-referencedIdvPart8OrPart13|Allows a text.|referencedIdvPart8OrPart13=Part8|No|String|v1
-referencedIdvTypeCode|Allows 1 character code.|referencedIdvTypeCode=A|No|String|v1
-referencedIdvTypeName|Allows a text.|referencedIdvTypeName=FSS|No|String|v1
-transactionNumber|Allows a text|Example: transactionNumber=16|No|String|v1
-piidAggregation=yes|Allows a text.|Return PIID Aggregation data in response. PIID parameter is required when piidaggregation is provided.|Example: piidAggregation=yes&piid=47QALD23PTEST|No|String|v1
-awardeeBusinessTypeCode|Allows 2 character code or null.|Example: awardeeBusinessTypeCode=2L|No|String|v1
-awardeeBusinessTypeName|Allows partial or complete value search.|Example: awardeeBusinessTypeName=HOSPITAL|No|String|v1
-sourceSelectionProcessCode|Allows a text|Example: sourceSelectionProcessCode=LPTA|No|String|v1
-sourceSelectionProcessName|Allows partial or complete value search.|Example: sourceSelectionProcessName=OTHER|No|String|v1
-format|Allows users to download data into the JSON and CSV asynchronous file formats.|Example: format=csv.|No|String|v1
-emailId|When used in conjunction with the format parameter, allows user to get JSON or CSV asynchronous file download links with tokens sent to the email address associated to the API key used in the request.|Example: emailId=Yes&format=JSON|No|String|v1
-typeOfContractPricingCode|Allows 1 character code.|Example: typeOfContractPricingCode=J|No|String|v1
-typeOfContractPricingName|Allows partial or complete value search.|Example: typeOfContractPricingName=FIRM FIXED PRICE|No|String|v1
-ultimateCompletionDate|Allows a single Date or a Date range.|Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]|Examples: ultimateCompletionDate=01/01/2019, ultimateCompletionDate=[01/01/2019,05/29/2019]|No|String|v1
-ultimateContractValue|Allows for a single positive or negative Dollar value or a Dollar range.|Examples: ultimateContractValue=100000.99, ultimateContractValue=[5000.99,100000.99]|No|String|v1
-totalUltimateContractValue|Allows for a single positive or negative Dollar value or a Dollar range.|Examples: totalUltimateContractValue=100000.99, totalUltimateContractValue=[5000.99,100000.99]|No|String|v1
-awardeeUniqueEntityId|Allows a single 12-character value or up to 100 values.|Example: awardeeUniqueEntityId=RV56IG5JM6G9 awardeeUniqueEntityId=RV56IG5JM6G9~BR5F3G5JM6TR|No|String|v1
-consortiaUEI|Allows a single 12-character value or up to 100 values.|Example: consortiaUEI=RV56IG5JM6G9 consortiaUEI=RV56IG5JM6G9~BR5F3G5JM6TR|No|String|v1
-consortiaLegalBusinessName|Allows a text.|Example: consortiaLegalBusinessName=ENTITY NAME||||No|String|v1
-nonGovernmentDollars|Allows for a single positive or negative Dollar value or a Dollar range.|Examples: nonGovernmentDollars=100000.99, nonGovernmentDollars=[5000.99,100000.99]|No|String|v1
-totalNonGovernmentDollars|Allows for a single positive or negative Dollar value or a Dollar range.|Examples: totalNonGovernmentDollars=100000.99, totalNonGovernmentDollars=[5000.99,100000.99]|No|String|v1
-nonTraditionalGovernmentEntityParticipationCode|Allows a text|Example: nonTraditionalGovernmentEntityParticipationCode=DEC|No|String|v1
-nonTraditionalGovernmentEntityParticipationName|Allows a text|Example: nonTraditionalGovernmentEntityParticipationName=COST SHARING|No|String|v1
-typeOfAgreementName|Allows a text|Example: typeOfAgreementName=PRODUCTION|No|String|v1
-far1102ExceptionCode|Allows a 1 character code.|Example: far1102ExceptionCode=3|No|String|v1
-far1102ExceptionName|Allows a text.|Example: far1102ExceptionName=CLASSIFIED CONTRACTS|No|String|v1
-includeSections|Allows to filter data by sections.|The applicable sections are contractId, coreData, contract, entityInformation, and nasaSpecific.|Examples: includeSections=contractId,entityInformation; includeSections=contractId,contract,nasaSpecific|No|String|v1
-q|Allows a text. Supports free text search|||No|String|v1
-fundingOfficeCode|Allows a 6 character code|Example: fundingOfficeCode=47QCCA|No|String|v1
-ultimateParentLegalBusinessName|Allows partial or complete value search.|Example: ultimateParentLegalBusinessName=ENTITY NAME|No|String|v1
-ultimateParentUniqueEntityId|Allows a single 12-character value or up to 100 values.|Example: ultimateParentUniqueEntityId=R5PKHW7GWD94 ultimateParentUniqueEntityId=R5PKHW7GWD94~BR5F3G5JM6TR|No|String|v1
-createdBy|Allows a text.|Example: createdBy=TEST_USER_101|No|String|v1
-approvedBy|Allows a text.|Example: approvedBy=TEST_USER_101|No|String|v1
-lastModifiedBy|Allows a text.|Example: lastModifiedBy=TEST_USER_101|No|String|v1
-closedBy|Allows a text.|Example: closedBy=TEST_USER_101|No|String|v1
+dollarsObligated | Allows for a single positive or negative Dollar value or a Dollar range. <br> Examples: dollarsObligated=-1000.99, dollarsObligated=[5000.99,100000.99] | No |String | v1  
+totalDollarsObligated | Allows for a single positive or negative Dollar value or a Dollar range. <br> Examples: totalDollarsObligated=100000.99, totalDollarsObligated=[5000.99,100000.99] | No | String | v1  
+approvedDate | Allows a single Date or a Date range. Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY] <br> Examples: approvedDate=01/01/2019, approvedDate=[01/01/2019,05/29/2019] | No | String | v1  
+awardeeCageCode | Allows a single 5-character CAGE Code value or up to 100 values or null. <br> Example: awardeeCageCode=00000, awardeeCageCode=00000~11111~11321 | No | String | v1  
+closedDate | Allows a single Date or a Date range. Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY] <br> Examples: closedDate=01/01/2019, closedDate=[01/01/2019,05/29/2019] | No | String | v1  
+closedStatus | Allows a text. <br> Examples: closedStatus=Yes, closedStatus=No | No | String | v1  
+solicitationID | Allows a text. <br> Example: solicitationID=47QCDE25PTEST | No | String | v1  
+solicitationDate | Allows a single Date or a Date range. Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY] <br> Examples: solicitationDate=01/01/2019, solicitationDate=[01/01/2019,05/29/2019] | No | String | v1  
+documentVersion | Allows a text. <br> Example: documentVersion=1.5 | No | String | v1  
+documentStatus | Allows a text. By default when status is not provided, only Awards and IDVs with a status of Final will be returned. <br> Examples: documentStatus=DRAFT, documentStatus=FINAL, documentStatus=All | No | String | v1  
+piid | Allows a text. <br> Example: piid=127EAS25FTEST | No | String | v1  
+awardOrIDV | Allows a text. <br>Examples: awardOrIDV=IDV, awardOrIDV=Award | No | String | v1  
+awardOrIDVTypeCode | Allows a 1 character code. <br> Example: awardOrIDVTypeCode=B | No | String | v1  
+awardOrIDVTypeName | Allows a text. <br> Example: awardOrIDVTypeName=PURCHASE ORDER | No | String | v1  
+contractingSubtierCode | Allows 4 character code <br> Example: contractingSubtierCode=2100 | No | String | v1  
+contractingSubtierName | Allows Partial or Complete value. <br> Example: contractingSubtierName=PUBLIC BUILDINGS SERVICE | No | String | v1  
+contractingDepartmentCode | Allows 4 character code <br> Example: contractingDepartmentCode=9700 | No | String | v1  
+contractingDepartmentName | Allows Partial or Complete value. <br> Example: contractingDepartmentName=GENERAL SERVICES | No | String | v1  
+contractingOfficeCode | Allows 6 character code <br> Example: contractingOfficeCode=47QCCA | No | String | v1  
+coBusSizeDeterminationCode | Allows a 1 character code <br> Example: coBusSizeDeterminationCode=S | No | String | v1  
+coBusSizeDeterminationName | Allows a text <br> Example: coBusSizeDeterminationName=SMALL BUSINESS | No | String | v1  
+createdDate | Allows a single Date or a Date range. Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY] <br> Examples: createdDate=01/01/2019, createdDate=[01/01/2019,05/29/2019] | No | String | v1  
+currentCompletionDate | Allows a single Date or a Date range. Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY] <br> Examples: currentCompletionDate=01/01/2019, currentCompletionDate=[01/01/2019,05/29/2019] | No | String | v1  
+dateSigned | Allows a single Date or a Date range. Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY] <br> Examples: dateSigned=01/01/2019, dateSigned=[01/01/2019,05/29/2019] | No | String | v1  
+awardeeZipCode | Allows either a 5 or 9-digit code for US zip codes, or any digit postal code for non-US postal codes. <br> Examples: awardeeZipCode=022015678, awardeeZipCode=110054 | No | String | v1  
+awardeeCityName | Allows a text. <br> Example: awardeeCityName=Austin | No | String | v1  
+awardeeCongressionalDistrict | Allows a 2 digit code. <br> Example: awardeeCongressionalDistrict=01 | No | String | v1  
+awardeeCountryCode | Allows a 3 character code. <br> Example: awardeeCountryCode=USA | No | String | v1  
+awardeeCountryName | Allows Partial or Complete value. <br> Example: awardeeCountryName=UNITED STATES | No | String | v1  
+awardeeDoingBusinessAsName|Allows Partial or Complete value.<br> awardeeDoingBusinessAsName=ENTITY NAME|No|String|v1
+awardeeStateCode|Allows a 2 character code. <br>awardeeStateCode=NC|No|String|v1
+awardeeStateName|Allows Partial or Complete value.<br>awardeeStateName=NORTH CAROLINA|No|String|v1
+fiscalYear|Allows a 4 character code.<br>fiscalYear=2024|No|String|v1
+fundingSubtierCode|Allows 4 character code<br>fundingSubtierCode=4732|No|String|v1
+fundingSubtierName|Allows Partial or Complete value.<br>fundingSubtierName=PUBLIC BUILDINGS SERVICE|No|String|v1
+fundingDepartmentCode|Allows 4 character code <br>fundingDepartmentCode=4700|No|String|v1
+fundingDepartmentName|Allows Partial or Complete value.<br>fundingDepartmentName=GENERAL SERVICES ADMINISTRATION|No|String|v1
+lastModifiedDate|Allows a single Date or a Date range.<br>lastModifiedDate=01/01/2019 or lastModifiedDate=[01/01/2019,05/29/2019]|No|String|v1
+awardeeLegalBusinessName|Allows Partial or Complete value.<br>awardeeLegalBusinessName=ENTITY LEGAL NAME|No|String|v1
+clingerCohenActCode|Allows a 1 character code.<br>clingerCohenActCode=Y|No|String|v1
+clingerCohenActName|Allows a text.<br>clingerCohenActName=No|No|String|v1
+materialsSuppliesArticlesAndEquipCode|Allows a 1 character code.<br>materialsSuppliesArticlesAndEquipCode=N|No|String|v1
+materialsSuppliesArticlesAndEquipName|Allows a text.<br>materialsSuppliesArticlesAndEquipName=Yes|No|String|v1
+laborStandardsCode|Allows a 1 character code.<br>laborStandardsCode=X|No|String|v1
+laborStandardsName|Allows a text.<br>laborStandardsName=No|No|String|v1
+constructionWageRateRequirementsCode|Allows a 1 character code.<br>constructionWageRateRequirementsCode=N|No|String|v1
+constructionWageRateRequirementsName|Allows a text.<br>constructionWageRateRequirementsName=Yes|No|String|v1
+localAreaSetAsideName|Allows a text or null.<br>localAreaSetAsideName=Yes or localAreaSetAsideName=No|No|String|v1
+modificationNumber|Allows 6 character code.<br>modificationNumber=P00001|No|String|v1
+extentCompetedCode|Allows a 1 character code.<br>extentCompetedCode=B|No|String|v1
+extentCompetedName|Allows a text.<br>extentCompetedName=NOT COMPETED|No|String|v1
+typeOfSetAsideCode|Allows a text.<br>typeOfSetAsideCode=SBA|No|String|v1
+typeOfSetAsideName|Allows a text.<br>typeOfSetAsideName=BUY INDIAN|No|String|v1
+solicitationProceduresCode|Allows a text.<br>solicitationProceduresCode=NP|No|String|v1
+solicitationProceduresName|Allows a text.<br>solicitationProceduresName=TWO STEP|No|String|v1
+contractOpportunitiesNoticeCode|Allows a 1 character code.<br>contractOpportunitiesNoticeCode=X|No|String|v1
+contractOpportunitiesNoticeName|Allows a text.<br>contractOpportunitiesNoticeName=Yes|No|String|v1
+multiyearContractName|Allows a text<br>multiyearContractName=Yes or multiyearContractName=No|No|String|v1
+numberOfOffersReceived|Allows a text.<br>numberOfOffersReceived=3|No|String|v1
+naicsCode|Allows a single 6-character NAICS value or up to 100 values or null or not null.<br>naicsCode=513310 or naicsCode=513310~513311~513312|No|String|v1
+nationalInterestActionCode|Allows 4 character code.<br>nationalInterestActionCode=H17I|No|String|v1
+nationalInterestActionName|Allows Partial or Complete value.<br>nationalInterestActionName=HURRICANE IRMA 2017|No|String|v1
+periodOfPerformanceStartDate|Allows a single Date or a Date range.<br>periodOfPerformanceStartDate=01/01/2019 or periodOfPerformanceStartDate=[01/01/2019,05/29/2019]|No|String|v1
+piidSubtierCode|Allows 4 character code<br>piidSubtierCode=8000|No|String|v1
+piidSubtierName|Allows Partial or Complete value.<br>piidSubtierName=PUBLIC BUILDINGS SERVICE|No|String|v1
+placeOfPerformCityName|Allows a text.<br>placeOfPerformCityName=Austin|No|String|v1
+placeOfPerformCongressionalDistrict|Allows a 2 digit code.<br>placeOfPerformCongressionalDistrict=01|No|String|v1
+placeOfPerformCountryCode|Allows a 3 character code.<br>placeOfPerformCountryCode=USA|No|String|v1
+placeOfPerformCountryName|Allows Partial or Complete value.<br>placeOfPerformCountryName=UNITED STATES|No|String|v1
+placeOfPerformStateCode|Allows a 2 character code.<br>placeOfPerformStateCode=NC|No|String|v1
+placeOfPerformStateName|Allows Partial or Complete value.<br>placeOfPerformStateName=NORTH CAROLINA|No|String|v1
+placeOfPerformZipCode|Allows either a 5 or 9-digit code for US zip codes, or any digit postal code for non-US postal codes.<br>placeOfPerformZipCode=022012341 or placeOfPerformZipCode=110054|No|String|v1
+productOrServiceCode|Allows a 4-character PSC value or up to 100 values.<br>productOrServiceCode=X1QA or productOrServiceCode=X1QA~1005~C1AA|No|String|v1
+productOrServiceType|Allows a text.<br>productOrServiceType=SERVICE or productOrServiceType=PRODUCT|No|String|v1
+reasonForModificationCode|Allows 1 character code.<br>reasonForModificationCode=A|No|String|v1
+reasonForModificationName|Allows Partial or Complete value.<br>reasonForModificationName=FUNDING ONLY ACTION|No|String|v1
+referencedIdvPIIDSubtierCode|Allows 4 character code.<br>referencedIdvPIIDSubtierCode=8000|No|String|v1
+referencedIdvPIIDSubtierName|Allows a text.<br>referencedIdvPIIDSubtierName=DEPT OF DEFENSE|No|String|v1
+referencedIdvPiid|Allows a text.<br>referencedIdvPiid=47QRAA23DTE5T|No|String|v1
+referencedIdvMultipleOrSingleCode|Allows 1 character code.<br>referencedIdvMultipleOrSingleCode=S|No|String|v1
+referencedIdvMultipleOrSingleName|Allows a text.<br>referencedIdvMultipleOrSingleName=MULTIPLE|No|String|v1
+referencedIdvPart8OrPart13|Allows a text.<br>referencedIdvPart8OrPart13=Part8|No|String|v1
+referencedIdvTypeCode|Allows 1 character code.<br>referencedIdvTypeCode=A|No|String|v1
+referencedIdvTypeName|Allows a text.<br>referencedIdvTypeName=FSS|No|String|v1
+transactionNumber|Allows a text<br>Example: transactionNumber=16|No|String|v1
+piidAggregation=yes|Allows a text. Return PIID Aggregation data in response. PIID parameter is required when piidaggregation is provided.<br>Example: piidAggregation=yes&piid=47QALD23PTEST|No|String|v1
+awardeeBusinessTypeCode|Allows 2 character code or null.<br>Example: awardeeBusinessTypeCode=2L|No|String|v1
+awardeeBusinessTypeName|Allows partial or complete value search.<br>Example: awardeeBusinessTypeName=HOSPITAL|No|String|v1
+sourceSelectionProcessCode|Allows a text<br>Example: sourceSelectionProcessCode=LPTA|No|String|v1
+sourceSelectionProcessName|Allows partial or complete value search.<br>Example: sourceSelectionProcessName=OTHER|No|String|v1
+format|Allows users to download data into the JSON and CSV asynchronous file formats.<br>Example: format=csv.|No|String|v1
+emailId|When used in conjunction with the format parameter, allows user to get JSON or CSV asynchronous file download links with tokens sent to the email address associated to the API key used in the request.<br>Example: emailId=Yes&format=JSON|No|String|v1
+typeOfContractPricingCode|Allows 1 character code.<br>Example: typeOfContractPricingCode=J|No|String|v1
+typeOfContractPricingName|Allows partial or complete value search.<br>Example: typeOfContractPricingName=FIRM FIXED PRICE|No|String|v1
+ultimateCompletionDate|Allows a single Date or a Date range.<br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]<br>Examples: ultimateCompletionDate=01/01/2019, ultimateCompletionDate=[01/01/2019,05/29/2019]|No|String|v1
+ultimateContractValue|Allows for a single positive or negative Dollar value or a Dollar range.<br>Examples: ultimateContractValue=100000.99, ultimateContractValue=[5000.99,100000.99]|No|String|v1
+totalUltimateContractValue|Allows for a single positive or negative Dollar value or a Dollar range.<br>Examples: totalUltimateContractValue=100000.99, totalUltimateContractValue=[5000.99,100000.99]|No|String|v1
+awardeeUniqueEntityId|Allows a single 12-character value or up to 100 values.<br>Example: awardeeUniqueEntityId=RV56IG5JM6G9 awardeeUniqueEntityId=RV56IG5JM6G9~BR5F3G5JM6TR|No|String|v1
+consortiaUEI|Allows a single 12-character value or up to 100 values.<br>Example: consortiaUEI=RV56IG5JM6G9 consortiaUEI=RV56IG5JM6G9~BR5F3G5JM6TR|No|String|v1
+consortiaLegalBusinessName|Allows a text.<br>Example: consortiaLegalBusinessName=ENTITY NAME||||No|String|v1
+nonGovernmentDollars|Allows for a single positive or negative Dollar value or a Dollar range.<br>Examples: nonGovernmentDollars=100000.99, nonGovernmentDollars=[5000.99,100000.99]|No|String|v1
+totalNonGovernmentDollars|Allows for a single positive or negative Dollar value or a Dollar range.<br>Examples: totalNonGovernmentDollars=100000.99, totalNonGovernmentDollars=[5000.99,100000.99]|No|String|v1
+nonTraditionalGovernmentEntityParticipationCode|Allows a text<br>Example: nonTraditionalGovernmentEntityParticipationCode=DEC|No|String|v1
+nonTraditionalGovernmentEntityParticipationName|Allows a text<br>Example: nonTraditionalGovernmentEntityParticipationName=COST SHARING|No|String|v1
+typeOfAgreementName|Allows a text<br>Example: typeOfAgreementName=PRODUCTION|No|String|v1
+far1102ExceptionCode|Allows a 1 character code.<br>Example: far1102ExceptionCode=3|No|String|v1
+far1102ExceptionName|Allows a text.<br>Example: far1102ExceptionName=CLASSIFIED CONTRACTS|No|String|v1
+includeSections|Allows to filter data by sections.<br>The applicable sections are contractId, coreData, contract, entityInformation, and nasaSpecific.<br>Examples: includeSections=contractId,entityInformation; includeSections=contractId,contract,nasaSpecific|No|String|v1
+q|Allows a text. Supports free text search|No|String|v1
+fundingOfficeCode|Allows a 6 character code<br>Example: fundingOfficeCode=47QCCA|No|String|v1
+ultimateParentLegalBusinessName|Allows partial or complete value search.<br>Example: ultimateParentLegalBusinessName=ENTITY NAME|No|String|v1
+ultimateParentUniqueEntityId|Allows a single 12-character value or up to 100 values.<br>Example: ultimateParentUniqueEntityId=R5PKHW7GWD94 ultimateParentUniqueEntityId=R5PKHW7GWD94~BR5F3G5JM6TR|No|String|v1
+createdBy|Allows a text.<br>Example: createdBy=TEST_USER_101|No|String|v1
+approvedBy|Allows a text.<br>Example: approvedBy=TEST_USER_101|No|String|v1
+lastModifiedBy|Allows a text.<br>Example: lastModifiedBy=TEST_USER_101|No|String|v1
+closedBy|Allows a text.<br>Example: closedBy=TEST_USER_101|No|String|v1
 
 ### GetList contract Response Parameters
 
