@@ -15,8 +15,8 @@ Delivery/Task Orders                               Federal Supply Schedules
 Government-Wide Agency Contracts                   Purchase Orders  
 Basic Ordering Agreements                          Definitive Contracts
 Blanket Purchasing Agreements                      BPA Calls
-Indefinite Delivery Contracts					   Other Transaction Orders	
-Other Transaction IDVs							   Other Transaction Agreements	
+Indefinite Delivery Contracts                      Other Transaction Orders	
+Other Transaction IDVs                             Other Transaction Agreements	
 ```
 
 ## Revealed/Unrevealed Data
@@ -29,7 +29,7 @@ Revealed data includes contracts that were either funded or awarded by a Civilia
 - It returns synchronous responses.
 - It returns ten records per page in the JSON format by default, and allows users to increase the response to 100 records per page through the use of the limit parameter.
 - It can return only the first 400,000 records.
-- The following characters are not allowed to be sent in the parameter values with the API request: & | { } ^ \
+- The following characters are not allowed to be sent in the parameter values with the API request: & \| { } ^ \
 
 ## Additional Features of the getList Contracts API
 It can serve as an Extract API with the addition of the “format” parameter in the request. Following are the key features of the getList Contracts Extract API:
@@ -89,11 +89,10 @@ If the provided PIID is an FSS, the summary will include a summary of BPAs refer
 * Users must have a Federal System Account and the respective API Key in SAM.gov.
 * Users can make GET calls using any Browser or a Restful API client such as Postman.
 
-
 ### Individual (Personal) Accounts
 
 * The SAM.gov Federal or non-Federal registered users must obtain the API Key from the https://sam.gov/profile/details page using the field, “Public API Key”.<br>
-  ![image info](v1/EYE_IMAGE.JPG)
+  ![image info](v1/EYE_IMAGE.JPG)  
 * Click on the “Eye” icon, enter the “Enter One-time Password” (this value will be sent to your email address that is associated with your registered account), hit “Submit”, for the API Key value to appear in the box.
 
 ### System Accounts
@@ -116,6 +115,7 @@ If the provided PIID is an FSS, the summary will include a summary of BPAs refer
     * System Account Password
     * System Account API Key
 
+
 ### API Key Rate Limits
 
 | Type of User Account| Type of API Key | Default API Daily Rate Limit 
@@ -126,6 +126,7 @@ If the provided PIID is an FSS, the summary will include a summary of BPAs refer
 | Non-federal System user | System account API key| 1,000 requests/day |
 | Federal System user | System account API key | 10,000 requests/day |
 
+
 ### Utilizing the API Extract
 * To retrieve Entity data in the CSV format, “format=csv” must be provided in the request.
 * To retrieve Entity data in the JSON format, “format=json” must be provided in the request.
@@ -133,12 +134,11 @@ If the provided PIID is an FSS, the summary will include a summary of BPAs refer
 * In the file downloadable URL, the phrase REPLACE_WITH_API_KEY must be replaced with a valid API Key and sent as another request.
 * If the file is ready for download, then the users can retrieve it. If the file is not ready for download, then the users will need to try again in some time.
 
-<p><small><a href="#">Back to top</a></small></p>
 
 ## API Description
 
 ### Query String Parameters
-
+<details>
 The getList Contracts API offers several optional search parameters that can be provided independently or in combination with each other.
 
 Request Parameters that API accepts	| Description | Required| Data Type| Applicable Versions
@@ -245,7 +245,7 @@ ultimateContractValue|Allows for a single positive or negative Dollar value or a
 totalUltimateContractValue|Allows for a single positive or negative Dollar value or a Dollar range.<br>Examples: totalUltimateContractValue=100000.99, totalUltimateContractValue=[5000.99,100000.99]|No|String|v1
 awardeeUniqueEntityId|Allows a single 12-character value or up to 100 values.<br>Example: awardeeUniqueEntityId=RV56IG5JM6G9 awardeeUniqueEntityId=RV56IG5JM6G9~BR5F3G5JM6TR|No|String|v1
 consortiaUEI|Allows a single 12-character value or up to 100 values.<br>Example: consortiaUEI=RV56IG5JM6G9 consortiaUEI=RV56IG5JM6G9~BR5F3G5JM6TR|No|String|v1
-consortiaLegalBusinessName|Allows a text.<br>Example: consortiaLegalBusinessName=ENTITY NAME||||No|String|v1
+consortiaLegalBusinessName|Allows a text.<br>Example: consortiaLegalBusinessName=ENTITY NAME|No|String|v1
 nonGovernmentDollars|Allows for a single positive or negative Dollar value or a Dollar range.<br>Examples: nonGovernmentDollars=100000.99, nonGovernmentDollars=[5000.99,100000.99]|No|String|v1
 totalNonGovernmentDollars|Allows for a single positive or negative Dollar value or a Dollar range.<br>Examples: totalNonGovernmentDollars=100000.99, totalNonGovernmentDollars=[5000.99,100000.99]|No|String|v1
 nonTraditionalGovernmentEntityParticipationCode|Allows a text<br>Example: nonTraditionalGovernmentEntityParticipationCode=DEC|No|String|v1
@@ -262,9 +262,10 @@ createdBy|Allows a text.<br>Example: createdBy=TEST_USER_101|No|String|v1
 approvedBy|Allows a text.<br>Example: approvedBy=TEST_USER_101|No|String|v1
 lastModifiedBy|Allows a text.<br>Example: lastModifiedBy=TEST_USER_101|No|String|v1
 closedBy|Allows a text.<br>Example: closedBy=TEST_USER_101|No|String|v1
+</details>
 
 ### GetList contract Response Parameters
-
+<details>
 | Response Parameters| Description | Data Type | Applicable Versions|
 |----- | ----- | ----- | ----- | 
 |totalRecords | Total Records in Response | Number | v1 |
@@ -288,7 +289,7 @@ closedBy|Allows a text.<br>Example: closedBy=TEST_USER_101|No|String|v1
 |piidAggregation.bpaCallSummary.totalDollars| Total Dollars obligated on BPA Calls referencing a BPA that references the PIID provided. | String |  v1 |
 |piidAggregation.bpaCallSummary.totalDollars| Total Dollars obligated on BPA Calls referencing a BPA that references the PIID provided. | String |  v1 |
 |awardSummary| Award Summary | JSON Array |  v1 |
-|contractId| Contract ID Information:</br><ul><li>Subtier</li><li>PIID</li><li>Modification Number</li><li>Transaction Number</li><li>Referenced IDV Subtier</li><li>Referenced IDV PIID</li><li>Referenced IDV Modification Number</li></ul> | JSON Object |  v1 |
+|contractId| Contract ID Information: Contract ID Information:<br>Subtier<br>PIID<br>Modification Number<br>Transaction Number<br>Referenced IDV Subtier<br>Referenced IDV PIID<br>Referenced IDV Modification Number  | JSON Object |  v1 |
 |contractId.subtier| Subtier Code | String |  v1 |
 |contractId.subtier.name| Subtier Name | String |  v1 |
 |contractId.piid| PIID | String |  v1 |
@@ -302,7 +303,7 @@ closedBy|Allows a text.<br>Example: closedBy=TEST_USER_101|No|String|v1
 |contractId.reasonForModification| Reason For Modification | JSON Object |  v1 |
 |contractId.reasonForModification.code| Reason For Modification Code |  String |  v1 |
 |contractId.reasonForModification.name| Reason For Modification Name |  String |  v1 |
-|oldContractId| Old Contract ID Information:</br><ul><li>Subtier</li><li>PIID</li><li>Modification Number</li><li>Transaction Number</li><li>Referenced IDV Subtier</li><li>Referenced IDV PIID</li><li>Referenced IDV Modification Number</li></ul>| JSON Array |  v1 |
+|oldContractId| Old Contract ID Information: <br>Subtier<br>PIID<br>Modification Number<br>Transaction Number<br>Referenced IDV Subtier<br>Referenced IDV PIID<br>Referenced IDV Modification Number| JSON Array |  v1 |
 |oldContractId.subtier| Subtier  | JSON Object |  v1 |
 |oldContractId.subtier.code| Subtier Code |  String |  v1 |
 |oldContractId.subtier.name| Subtier Name |  String |  v1 |
@@ -319,7 +320,7 @@ closedBy|Allows a text.<br>Example: closedBy=TEST_USER_101|No|String|v1
 |oldContractId.referencedIDVSubtier.name| Referenced IDV Subtier Name|  String |  v1 |
 |oldContractId.referencedIDVPiid| Referenced IDV PIID|  String |  v1 |
 |oldContractId.referencedIDVModificationNumber| Referenced IDV Modification Number |  String |  v1 |
-|coreData|Core Information:</br><ul><li> Core Version ID </li><li> Solicitation ID</li><li> Solicitation Date</li><li> Title</li><li> Contract Action Type</li><li> Initiative</li><li> Contracting Information:</li><li> Funding Information</li><li>Type of Contract Pricing</li><li> Multiyear Contract</li><li> Major Program Code</li><li>Program Acronym</li><li> National Interest Action</li><li>Performance Based Service Contract</li><li> Contingency Humanitarian Peace Keeping Operation</li><li>Consolidated Contract</li><li>Clinger Cohen Act</li><li> Materials Supplies Articles Equipment</li><li> Labor Standards</li><li>Construction Wage Rate Requirements</li><li>Recovered Material Clauses</li><li> Place of Performance</li><li> Product Or Service</li><li>Principal NAICS</li><li>Contract Bundling</li><li>DoD Acquisition Program</li><li> DoD Claimant Program</li><li>Government Furnished Property</li><li> Extent Competed</li><li> Solicitation Procedures</li><li>Type Of Set Aside</li><li> SBIR/STTR</li><li> Statutory Exception To Fair Opportunity</li><li> Reason Not Competed (Other Than Full And Open Competition)</li><li> Authority</li><li> Local Area Set Aside</li><li> A76 Action</li><li> Source Selection Process</li><li> Type of IDC</li><li> Multiple or Single Award IDC</li></ul> |  String |  v1 |
+|coreData | Core Information:<br>Core Version ID<br>Solicitation ID<br>Solicitation Date<br>Title<br>Contract Action Type<br>Initiative<br>Contracting Information:<br>Funding Information<br>Type of Contract Pricing<br>Multiyear Contract<br>Major Program Code<br>Program Acronym<br>National Interest Action<br>Performance Based Service Contract<br>Contingency Humanitarian Peace Keeping Operation<br>Consolidated Contract<br>Clinger Cohen Act<br>Materials Supplies Articles Equipment<br>Labor Standards<br>Construction Wage Rate Requirements<br>Recovered Material Clauses<br>Place of Performance<br>Product Or Service<br>Principal NAICS<br>Contract Bundling<br>DoD Acquisition Program<br>DoD Claimant Program<br>Government Furnished Property<br>Extent Competed<br>Solicitation Procedures<br>Type Of Set Aside<br>SBIR/STTR<br>Statutory Exception To Fair Opportunity<br>Reason Not Competed (Other Than Full And Open Competition)<br>Authority<br>Local Area Set Aside<br>A76 Action<br>Source Selection Process<br>Type of IDC<br>Multiple or Single Award IDC | JSON Object | v1 |
 |coreData.coreVersionId| Core Version ID |  String |  v1 |
 |coreData.solicitationId| Solicitation ID |  String |  v1 |
 |coreData.solicitationDate| Solicitation Date |  String |  v1 |
@@ -331,7 +332,7 @@ closedBy|Allows a text.<br>Example: closedBy=TEST_USER_101|No|String|v1
 |coreData.initiative.code| Initiative Code |  String |  v1 |
 |coreData.initiative.name| Initiative Name |  String |  v1 |
 |coreData.federalOrganization| Federal Organization | JSON Object |  v1 |
-|coreData.federalOrganization.contractingInformation| Contracting Information:</br><ul><li>Contracting Department</li><li>Contracting Subtier</li><li>Contracting Office </li></ul>| JSON Object |  v1 |
+|coreData.federalOrganization.contractingInformation | Contracting Information:<br>Contracting Department<br>Contracting Subtier<br>Contracting Office | JSON Object | v1 |
 |coreData.federalOrganization.contractingInformation.contractingDepartment | Contracting Department | JSON Object |  v1 |
 |coreData.federalOrganization.contractingInformation.contractingDepartment.code| Contracting Department Code | String |  v1 |
 |coreData.federalOrganization.contractingInformation.contractingDepartment.name| Contracting Department Name | String |  v1 |
@@ -341,7 +342,7 @@ closedBy|Allows a text.<br>Example: closedBy=TEST_USER_101|No|String|v1
 |coreData.federalOrganization.contractingInformation.contractingOffice| Contracting Office | JSON Object |  v1 |
 |coreData.federalOrganization.contractingInformation.contractingOffice.code| Contracting Office Code | String |  v1 |
 |coreData.federalOrganization.contractingInformation.contractingOffice.name| Contracting Office Name | String |  v1 |
-|coreData.federalOrganization.fundingInformation| Funding Information:</br><ul><li>Funding Department</li><li>Funding Subtier</li><li>Funding Office</li><li>Foreign Funding</li></ul>| String |  v1 |
+|coreData.federalOrganization.fundingInformation | Funding Information:<br>Funding Department<br>Funding Subtier<br>Funding Office<br>Foreign Funding | String | v1 |
 |coreData.federalOrganization.fundingInformation.fundingDepartment| Funding Department | JSON Object |  v1 |
 |coreData.federalOrganization.fundingInformation.fundingDepartment.code| Funding Department Code | String |  v1 |
 |coreData.federalOrganization.fundingInformation.fundingDepartment.name| Funding Department Name | String |  v1 |
@@ -401,7 +402,7 @@ closedBy|Allows a text.<br>Example: closedBy=TEST_USER_101|No|String|v1
 | coreData.legislativeMandates.interagencyContractingAuthority.code | Interagency Contracting Authority Code | String | v1 |
 | coreData.legislativeMandates.interagencyContractingAuthority.name | Interagency Contracting Authority Name | String | v1 |
 | coreData.legislativeMandates.otherStatutoryAuthority | Other Statutory Authority | String | v1 |
-| coreData.principalPlaceOfPerformance | Place of Performance</br><ul><li>Location Code</li><li>County</li><li>City</li><li>ZIP Code</li><li>State</li><li>Congressional District</li><li>Country</li></ul>| JSON Object | v1 |
+| coreData.principalPlaceOfPerformance | Place of Performance:<br>Location Code<br>County<br>City<br>ZIP Code<br>State<br>Congressional District<br>Country | JSON Object | v1 |
 | coreData.principalPlaceOfPerformance.city | City | String | v1 |
 | coreData.principalPlaceOfPerformance.city.code | City Code | String | v1 |
 | coreData.principalPlaceOfPerformance.city.name | City Name | String | v1 |
@@ -487,14 +488,14 @@ closedBy|Allows a text.<br>Example: closedBy=TEST_USER_101|No|String|v1
 | coreData.preferenceProgramsInformation | Preference Programs Information | JSON Object | v1 |
 | coreData.preferenceProgramsInformation.priceEvaluationPercentDifference | Price Evaluation Percent Difference | String | v1 |
 | awardDetails | Award Details Information: | JSON Object | v1 |
-| awardDetails.dates | Contract Dates Information.<ul><li>Date Signed</li><li>Effective Date</li><li>Current Completion Date</li><li>Ultimate Completion Date</li><li>Last Date to Order</li><li>Fiscal Year</li></ul> | JSON Object | v1 |
+| awardDetails.dates | Contract Dates Information:<br>Date Signed<br>Effective Date<br>Current Completion Date<br>Ultimate Completion Date<br>Last Date to Order<br>Fiscal Year | JSON Object | v1 |
 | awardDetails.dates.dateSigned | Date Signed | String | v1 |
 | awardDetails.dates.periodOfPerformanceStartDate | Period of Performance Start Date | String | v1 |
 | awardDetails.dates.currentCompletionDate | Current Completion Date | String | v1 |
 | awardDetails.dates.ultimateCompletionDate | Ultimate Completion Date | String | v1 |
 | awardDetails.dates.lastDateToOrder | Last Date to Order | String | v1 |
 | awardDetails.dates.fiscalYear | Fiscal Year | String | v1 |
-| awardDetails.dollars | Contract Dollars Information.<ul><li>Action Obligation</li><li> Base And Exercised Options Value</li><li> Base and All Options Value (Total Contract Value)</li><li>Fee Paid for Use of IDV</li><li>Total Estimated Order Value</li><li>Non-Government Dollars</li></ul> | JSON Object | v1 |
+| awardDetails.dollars | Contract Dollars Information:<br>Action Obligation<br>Base And Exercised Options Value<br>Base and All Options Value (Total Contract Value)<br>Fee Paid for Use of IDV<br>Total Estimated Order Value<br>Non-Government Dollars | JSON Object | v1 |
 | awardDetails.dollars.actionObligation | Action Obligation | String | v1 |
 | awardDetails.dollars.baseDollarsObligated | Base Dollars Obligated | String | v1 |
 | awardDetails.dollars.baseAndExercisedOptionsValue | Base And Exercised Options Value | String | v1 |
@@ -502,12 +503,12 @@ closedBy|Allows a text.<br>Example: closedBy=TEST_USER_101|No|String|v1
 | awardDetails.dollars.feePaidForUseOfService | Fee Paid for Use of Service | String | v1 |
 | awardDetails.dollars.totalEstimatedOrderValue | Total Estimated Order Value | String | v1 |
 | awardDetails.dollars.nonGovernmentDollars | Non-Government Dollars | String | v1 |
-| awardDetails.totalContractDollars | Total Contract Dollars Information.<ul><li>Total Action Obligation</li><li>Total Base And Exercised Options Value</li><li>Total Base and All Options Value</li><li>Total Non-Government Dollars</li></ul> | JSON Object | v1 |
+| awardDetails.totalContractDollars | Total Contract Dollars Information:<br>Total Action Obligation<br>Total Base And Exercised Options Value<br>Total Base and All Options Value<br>Total Non-Government Dollars | JSON Object | v1 |
 | awardDetails.totalContractDollars.totalActionObligation | Total Action Obligation | String | v1 |
 | awardDetails.totalContractDollars.totalBaseAndExercisedOptionsValue | Total Base And Exercised Options Value | String | v1 |
 | awardDetails.totalContractDollars.totalBaseAndAllOptionsValue | Total Base and All Options Value | String | v1 |
 | awardDetails.totalContractDollars.totalNonGovernmentDollars | Total Non-Government Dollars | String | v1 |
-| awardDetails.treasuryAccount | Treasury Account Information.<ul><li>Treasury Account Subtier Identifier</li><li>Treasury Account Main Account Code</li><li>Treasury Account Sub Account Code</li></ul> | JSON Object | v1 |
+| awardDetails.treasuryAccount | Treasury Account Information:<br>Treasury Account Subtier Identifier<br>Treasury Account Main Account Code<br>Treasury Account Sub Account Code | JSON Object | v1 |
 | awardDetails.treasuryAccount.agencyIdentifier | Treasury Account Subtier Identifier | String | v1 |
 | awardDetails.treasuryAccount.mainAccountCode | Treasury Account Main Account Code | String | v1 |
 | awardDetails.treasuryAccount.subAccountCode | Treasury Account Sub Account Code | String | v1 |
@@ -811,7 +812,7 @@ closedBy|Allows a text.<br>Example: closedBy=TEST_USER_101|No|String|v1
 | awardDetails.awardeeData.consortia.country | Consortia Country | JSON Object | v1 |
 | awardDetails.awardeeData.consortia.country.code | Consortia Country Code | String | v1 |
 | awardDetails.awardeeData.consortia.country.name | Consortia Country Name | String | v1 |
-| awardDetails.nasaSpecificData| NASA Specific Data:<ul><li>Offeror's Proposal Number</li><li>PR Number</li><li>Accession Number</li><li>Installation Unique</li><li>Administrative CO.</li><li>Contracting Officer Code</li><li>Buyer Code</li><li>COR Organization Code</li><li>COR Name</li><li>Alternate COR Name</li><li>Funded Through Date</li><li>Contract Fund Code</li><li>Management Reporting Requirements</li><li>Accounting Installation</li><li>Field Of Science or Engineering</li><li>Contract Administrations Delegated</li><li>CFDA Program Identification Number</li><li>Principal Investigator First Name</li><li>Principal Investigator Middle Initial</li><li>Principal Investigator Last Name</li><li>Alternate Principal Investigator First Name</li><li>Alternate Principal Investigator Middle Initial</li><li>Alternate Principal Investigator Last Name</li><li>Close Out PR</li><li>Advisory/Assistance Services Contract</li><li>Support Services Type Contract</li><li>New Technology or Patent Clause</li><li>Property Financial Reporting</li><li>Value Engineering Clause</li><li>Security Code</li><li>Is Physically Complete</li><li>Physical Completion Date</li><li>Final Invoice Paid Date</li><li>Solicitation Issue Date</li><li>Cancellation Date</li><li>Destroy Date</li><li>Non-Federal Funding Amount</li></ul>|JSON Object | v1 |
+| awardDetails.nasaSpecificData | NASA Specific Data:<br>Offeror's Proposal Number<br>PR Number<br>Accession Number<br>Installation Unique<br>Administrative CO.<br>Contracting Officer Code<br>Buyer Code<br>COR Organization Code<br>COR Name<br>Alternate COR Name<br>Funded Through Date<br>Contract Fund Code<br>Management Reporting Requirements<br>Accounting Installation<br>Field Of Science or Engineering<br>Contract Administrations Delegated<br>CFDA Program Identification Number<br>Principal Investigator First Name<br>Principal Investigator Middle Initial<br>Principal Investigator Last Name<br>Alternate Principal Investigator First Name<br>Alternate Principal Investigator Middle Initial<br>Alternate Principal Investigator Last Name<br>Close Out PR<br>Advisory/Assistance Services Contract<br>Support Services Type Contract<br>New Technology or Patent Clause<br>Property Financial Reporting<br>Value Engineering Clause<br>Security Code<br>Is Physically Complete<br>Physical Completion Date<br>Final Invoice Paid Date<br>Solicitation Issue Date<br>Cancellation Date<br>Destroy Date<br>Non-Federal Funding Amount | JSON Object | v1 | cvxz
 | awardDetails.nasaSpecificData.offerorsProposalNumber | Offeror's Proposal Number | String | v1 |
 | awardDetails.nasaSpecificData.prNumber | PR Number | String | v1 |
 | awardDetails.nasaSpecificData.accessionNumber | Accession Number | String | v1 |
@@ -874,7 +875,8 @@ closedBy|Allows a text.<br>Example: closedBy=TEST_USER_101|No|String|v1
 | awardDetails.transactionData.closedBy | Closed By | String | v1 |
 | awardDetails.transactionData.closedDate | Closed Date | String | v1 |
 | awardDetails.transactionData.closedStatus | Closed Status | String | v1 |
-
+</details>
+<p><small><a href="#">Back to top</a></small></p>
 
 ## Sample Response 
 
@@ -1109,7 +1111,7 @@ The following is a sample response containing dummy data. The purpose is to demo
   ]
 }
 ````
-
+<p><small><a href="#">Back to top</a></small></p>
 
 ## HTTP Response Codes
 
@@ -1144,36 +1146,37 @@ The API will return one of the following responses:
 | 500 | Internal Server Error |
 
 
-
+<p><small><a href="#">Back to top</a></small></p>
 
 ## Sample Request Examples
 
 
-### Example 1: 
-Example 1: Get Base Contracts modified between January 1st, 2025 and today, Contracted by DoD with a Dollar Obligated between $0.00 and $100,000,000.99. 
+### Example 1: Get Base Contracts modified between January 1st, 2025 and today, Contracted by DoD with a Dollar Obligated between $0.00 and $100,000,000.99. 
 <br>**Request URL:** Endpoint URL
 <br>lastModifiedDate=[01/01/2025,]&dollarsObligated=[0.0,100000000.99]&modificationNumber=0&contractingDepartmentCode=9700
 <br>**Response URL:**
 
-Example 2: Get Modifications to Purchase Orders Approved between January 1st, 2025 and August 19th, 2025 with a NIACS code of 513310 or 513311 or 513312.
+### Example 2: Get Modifications to Purchase Orders Approved between January 1st, 2025 and August 19th, 2025 with a NIACS code of 513310 or 513311 or 513312.
 <br>**Request URL:** Endpoint URL
 <br>awardOrIDVTypeName=PURCHASE ORDER&approvedDate=[01/01/2025,08/19/2025]& modificationNumber!=0&naicsCode=513310~513311~513312
 <br>**Response URL:**
 
-Example 3: Get only the Contract IDs for GSA IDVs closed between January 1st, 2025 and today.
+### Example 3: Get only the Contract IDs for GSA IDVs closed between January 1st, 2025 and today.
 <br>**Request URL:** Endpoint URL
 <br>awardOrIDV=IDV&closedDate=[01/01/2025,]&contractingDepartmentCode=4700&includeSections=contractId
 <br>**Response URL:**
 
-Example 4: Get Service Contracts performed in Virginia in FY25 with a Contracting Officer's Business Size Selection of Small, and only return the Contract ID, Contract, and Entity Information
+### Example 4: Get Service Contracts performed in Virginia in FY25 with a Contracting Officer's Business Size Selection of Small, and only return the Contract ID, Contract, and Entity Information
 <br>**Request URL:** Endpoint URL
 <br>coBusSizeDeterminationCode=S&placeOfPerformStateCode=VA&fiscalYear=2025&productOrServiceType=SERVICE&includeSections=contractId,contract,entityInformation
 <br>**Response URL:**
 
+<p><small><a href="#">Back to top</a></small></p>
+
 ## Additional Information
 
 You can view the full details of the differences between the FPDS legacy API and SAM.gov API
- available here: Document To be created [FPDSvsSAM-ContractDataAPI.docx](https://docs.google.com/document/d/1DJHNRKTGiG4dgT2O9PBiAUj47Qh83SHj/edit).
+ available here: [Variance Document](https://open.gsa.gov/api/entity-api/LegacySAMvsBetaSAM-EntityManagementAPI.pdf).
 
 Disclaimer:  **Limitation on Permissible Use of Dun & Bradstreet, Inc. (D&B) Data**
 
@@ -1182,6 +1185,8 @@ Disclaimer:  **Limitation on Permissible Use of Dun & Bradstreet, Inc. (D&B) Dat
 * D&B hereby grants you, the user, a license for a limited, non-exclusive right to use D&B Open Data within the limitations set forth herein. By using this website you agree that you shall not use D&B Open Data without giving written attribution to the source of such data (i.e., D&B) and shall not access, use or disseminate D&B Open Data in bulk, (i.e., in amounts sufficient for use as an original source or as a substitute for the product and/or service being licensed hereunder).
 * Except for data elements identified above as D&B Open Data, under no circumstances are you authorized to use any other D&B data for commercial, resale or marketing purposes (e.g., identifying, quantifying, segmenting and/or analyzing customers and prospective customers). Systematic access (electronic harvesting) or extraction of content from the website, including the use of “bots” or “spiders”, is prohibited. Federal government entities are authorized to use the D&B data for purposes of acquisition as defined in FAR 2.101 and for the purpose of managing Federal awards, including sub-awards, or reporting Federal award information.
 * GSA assumes no liability for the use of the D&B data once it is downloaded or accessed. The D&B data is provided “as is” without warranty of any kind. The D&B data is the intellectual property of D&B. In no event will D&B or any third party information supplier be liable in any way with regard to the use of the D&B data. For more information about the scope of permissible use of D&B data licensed hereunder, please contact D&B at datause_govt@dnb.com.
+
+<p><small><a href="#">Back to top</a></small></p>
 
 ## Contact Us
 
@@ -1214,6 +1219,9 @@ Disclaimer:  **Limitation on Permissible Use of Dun & Bradstreet, Inc. (D&B) Dat
       6.  **Please describe the issue:** (Copy and paste the below information into the ticket, filling in your information within the brackets)
           1. **Option A:** I have already navigated to alpha.sam.gov and created a user account, following the same steps for  [creating an account](https://www.fsd.gov/gsafsd_sp?id=gsafsd_kb_articles&sys_id=81d067071b80b0109ac5ddb6bc4bcb63) in sam.gov. I would like to conduct testing but do not have the necessary role(s) in alpha.sam.gov. The account that needs role assignment is associated with [EMAIL ADDRESS]. I request a [ROLE] role for the [DOMAIN] domain in alpha.sam.gov.
           2. **Option B:** I am creating/editing a system account and have submitted my account in alpha.sam.gov for approval. I would like to request alpha.sam.gov system account review and approval for [Name of the alpha.sam.gov system account].
+
+
+<p><small><a href="#">Back to top</a></small></p>
 
 ## Change Log
 
