@@ -137,8 +137,9 @@ If the provided PIID is an FSS, the summary will include a summary of BPAs refer
 
 ## API Description
 
-### Query String Parameters
 <details>
+<summary><strong>Query String Parameters</strong></summary>
+
 The getList Contracts API offers several optional search parameters that can be provided independently or in combination with each other.
 
 Request Parameters that API accepts	| Description | Required| Data Type| Applicable Versions
@@ -264,8 +265,12 @@ lastModifiedBy|Allows a text.<br>Example: lastModifiedBy=TEST_USER_101|No|String
 closedBy|Allows a text.<br>Example: closedBy=TEST_USER_101|No|String|v1
 </details>
 
-### GetList contract Response Parameters
+
 <details>
+<summary><strong>GetList contract Response Parameters</strong></summary>
+
+Based on the request parameters and account associated with the API Key provided in the request, the API returns the following response parameters.
+
 | Response Parameters| Description | Data Type | Applicable Versions|
 |----- | ----- | ----- | ----- | 
 |totalRecords | Total Records in Response | Number | v1 |
