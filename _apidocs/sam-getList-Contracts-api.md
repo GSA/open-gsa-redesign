@@ -986,8 +986,11 @@ If the provided PIID is an FSS, the summary will include a summary of BPAs refer
     </tr>
     </tbody>
 </table>
+</details>
 
+<br>
 
+<details>
 <summary><strong>GetList contract Response Parameters</strong></summary>
 <br> Based on the request parameters and account associated with the API Key provided in the request, the API returns the following response parameters.
 <table>
