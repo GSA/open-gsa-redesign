@@ -86,7 +86,7 @@ If the provided PIID is an FSS, the summary will include a summary of BPAs refer
 
 **To access unrevealed contract data:**
 * Available only to users assigned to DoD.
-* Users must have a Federal System Account and the respective API Key in SAM.gov.
+* Users must have a Federal Individual (Personal) account or a Federal System Account and the respective API Key in SAM.gov.
 * Users can make GET calls using any Browser or a Restful API client such as Postman.
 
 ### Individual (Personal) Accounts
@@ -4107,7 +4107,7 @@ The API will return one of the following responses:
 ## Additional Information
 
 You can view the full details of the differences between the FPDS legacy API and SAM.gov API
- available here: [Variance Document](https://open.gsa.gov/api/entity-api/LegacySAMvsBetaSAM-EntityManagementAPI.pdf).
+ available here: [Variance Document](https://open.gsa.gov/api/sam-getList-Contracts-api/FPDSvsSAM-ContractDataAPI.pdf).
 
 Disclaimer:  **Limitation on Permissible Use of Dun & Bradstreet, Inc. (D&B) Data**
 
