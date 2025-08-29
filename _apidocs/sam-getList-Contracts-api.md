@@ -139,9 +139,7 @@ If the provided PIID is an FSS, the summary will include a summary of BPAs refer
 
 <details>
 <summary><strong>Query String Parameters</strong></summary>
-<br>
-
-The getList Contracts API offers several optional search parameters that can be provided independently or in combination with each other.
+<br>The getList Contracts API offers several optional search parameters that can be provided independently or in combination with each other.
 <table>
     <thead>
       <tr>
@@ -987,15 +985,13 @@ The getList Contracts API offers several optional search parameters that can be 
         <td>v1</td>
     </tr>
 </table>
+
 </details>
 
 
 <details>
 <summary><strong>GetList contract Response Parameters</strong></summary>
-<br>
-
-Based on the request parameters and account associated with the API Key provided in the request, the API returns the following response parameters.
-
+<br> Based on the request parameters and account associated with the API Key provided in the request, the API returns the following response parameters.
 <table>
     <thead>
         <td>Response Parameters</td>
@@ -5256,7 +5252,9 @@ Based on the request parameters and account associated with the API Key provided
 </table>
 
 </details>
+
 <p><small><a href="#">Back to top</a></small></p>
+
 
 
 ## HTTP Response Codes
