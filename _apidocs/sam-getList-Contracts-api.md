@@ -984,6 +984,7 @@ If the provided PIID is an FSS, the summary will include a summary of BPAs refer
         <td>String</td>
         <td>v1</td>
     </tr>
+    </tbody>
 </table>
 
 </details>
@@ -1000,6 +1001,7 @@ If the provided PIID is an FSS, the summary will include a summary of BPAs refer
         <td>Applicable Versions</td>
         <td></td>
     </thead>
+    <tbody>
     <tr>
         <td>totalRecords</td>
         <td>Total Records in Response</td>
@@ -5249,6 +5251,7 @@ If the provided PIID is an FSS, the summary will include a summary of BPAs refer
         <td>v1</td>
         <td></td>
     </tr>
+    </tbody>
 </table>
 
 </details>
