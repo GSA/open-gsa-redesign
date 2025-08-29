@@ -4812,7 +4812,6 @@ If the provided PIID is an FSS, the summary will include a summary of BPAs refer
         <td>NASA Specific Data:<br>Offeror&#39;s Proposal Number<br>PR Number<br>Accession Number<br>Installation Unique<br>Administrative CO.<br>Contracting Officer Code<br>Buyer Code<br>COR Organization Code<br>COR Name<br>Alternate COR Name<br>Funded Through Date<br>Contract Fund Code<br>Management Reporting Requirements<br>Accounting Installation<br>Field Of Science or Engineering<br>Contract Administrations Delegated<br>CFDA Program Identification Number<br>Principal Investigator First Name<br>Principal Investigator Middle Initial<br>Principal Investigator Last Name<br>Alternate Principal Investigator First Name<br>Alternate Principal Investigator Middle Initial<br>Alternate Principal Investigator Last Name<br>Close Out PR<br>Advisory/Assistance Services Contract<br>Support Services Type Contract<br>New Technology or Patent Clause<br>Property Financial Reporting<br>Value Engineering Clause<br>Security Code<br>Is Physically Complete<br>Physical Completion Date<br>Final Invoice Paid Date<br>Solicitation Issue Date<br>Cancellation Date<br>Destroy Date<br>Non-Federal Funding Amount</td>
         <td>JSON Object</td>
         <td>v1</td>
-        <td>cvxz</td>
     </tr>
     <tr>
         <td>awardDetails.nasaSpecificData.offerorsProposalNumber</td>
