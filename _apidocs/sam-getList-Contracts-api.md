@@ -4107,7 +4107,7 @@ The API will return one of the following responses:
 ## Additional Information
 
 You can view the full details of the differences between the FPDS legacy API and SAM.gov API
- available here: [Variance Document](https://open.gsa.gov/api/sam-getList-Contracts-api/FPDSvsSAM-ContractDataAPI.pdf).
+ available here: [Variance Document](https://open.gsa.gov/api/sam-getList-Contracts-api/v1/FPDSvsSAM-ContractDataAPI.pdf)
 
 Disclaimer:  **Limitation on Permissible Use of Dun & Bradstreet, Inc. (D&B) Data**
 
