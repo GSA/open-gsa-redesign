@@ -142,8 +142,7 @@ If the provided PIID is an FSS, the summary will include a summary of BPAs refer
 <br>
 
 The getList Contracts API offers several optional search parameters that can be provided independently or in combination with each other.
-
- <table>
+<table>
     <thead>
       <tr>
         <th>Request Parameter</th>
@@ -177,756 +176,756 @@ The getList Contracts API offers several optional search parameters that can be 
     </tr>
     <tr>
         <td>dollarsObligated</td>
-        <td>Allows for a single positive or negative Dollar value or a Dollar range. &lt;br&gt; Examples: dollarsObligated=-1000.99, dollarsObligated=[5000.99,100000.99]</td>
+        <td>Allows for a single positive or negative Dollar value or a Dollar range. <br> Examples: dollarsObligated=-1000.99, dollarsObligated=[5000.99,100000.99]</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>totalDollarsObligated</td>
-        <td>Allows for a single positive or negative Dollar value or a Dollar range. &lt;br&gt; Examples: totalDollarsObligated=100000.99, totalDollarsObligated=[5000.99,100000.99]</td>
+        <td>Allows for a single positive or negative Dollar value or a Dollar range. <br> Examples: totalDollarsObligated=100000.99, totalDollarsObligated=[5000.99,100000.99]</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>approvedDate</td>
-        <td>Allows a single Date or a Date range. Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY] &lt;br&gt; Examples: approvedDate=01/01/2019, approvedDate=[01/01/2019,05/29/2019]</td>
+        <td>Allows a single Date or a Date range. Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY] <br> Examples: approvedDate=01/01/2019, approvedDate=[01/01/2019,05/29/2019]</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>awardeeCageCode</td>
-        <td>Allows a single 5-character CAGE Code value or up to 100 values or null. &lt;br&gt; Example: awardeeCageCode=00000, awardeeCageCode=00000~11111~11321</td>
+        <td>Allows a single 5-character CAGE Code value or up to 100 values or null. <br> Example: awardeeCageCode=00000, awardeeCageCode=00000~11111~11321</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>closedDate</td>
-        <td>Allows a single Date or a Date range. Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY] &lt;br&gt; Examples: closedDate=01/01/2019, closedDate=[01/01/2019,05/29/2019]</td>
+        <td>Allows a single Date or a Date range. Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY] <br> Examples: closedDate=01/01/2019, closedDate=[01/01/2019,05/29/2019]</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>closedStatus</td>
-        <td>Allows a text. &lt;br&gt; Examples: closedStatus=Yes, closedStatus=No</td>
+        <td>Allows a text. <br> Examples: closedStatus=Yes, closedStatus=No</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>solicitationID</td>
-        <td>Allows a text. &lt;br&gt; Example: solicitationID=47QCDE25PTEST</td>
+        <td>Allows a text. <br> Example: solicitationID=47QCDE25PTEST</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>solicitationDate</td>
-        <td>Allows a single Date or a Date range. Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY] &lt;br&gt; Examples: solicitationDate=01/01/2019, solicitationDate=[01/01/2019,05/29/2019]</td>
+        <td>Allows a single Date or a Date range. Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY] <br> Examples: solicitationDate=01/01/2019, solicitationDate=[01/01/2019,05/29/2019]</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>documentVersion</td>
-        <td>Allows a text. &lt;br&gt; Example: documentVersion=1.5</td>
+        <td>Allows a text. <br> Example: documentVersion=1.5</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>documentStatus</td>
-        <td>Allows a text. By default when status is not provided, only Awards and IDVs with a status of Final will be returned. &lt;br&gt; Examples: documentStatus=DRAFT, documentStatus=FINAL, documentStatus=All</td>
+        <td>Allows a text. By default when status is not provided, only Awards and IDVs with a status of Final will be returned. <br> Examples: documentStatus=DRAFT, documentStatus=FINAL, documentStatus=All</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>piid</td>
-        <td>Allows a text. &lt;br&gt; Example: piid=127EAS25FTEST</td>
+        <td>Allows a text. <br> Example: piid=127EAS25FTEST</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>awardOrIDV</td>
-        <td>Allows a text. &lt;br&gt;Examples: awardOrIDV=IDV, awardOrIDV=Award</td>
+        <td>Allows a text. <br>Examples: awardOrIDV=IDV, awardOrIDV=Award</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>awardOrIDVTypeCode</td>
-        <td>Allows a 1 character code. &lt;br&gt; Example: awardOrIDVTypeCode=B</td>
+        <td>Allows a 1 character code. <br> Example: awardOrIDVTypeCode=B</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>awardOrIDVTypeName</td>
-        <td>Allows a text. &lt;br&gt; Example: awardOrIDVTypeName=PURCHASE ORDER</td>
+        <td>Allows a text. <br> Example: awardOrIDVTypeName=PURCHASE ORDER</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>contractingSubtierCode</td>
-        <td>Allows 4 character code &lt;br&gt; Example: contractingSubtierCode=2100</td>
+        <td>Allows 4 character code <br> Example: contractingSubtierCode=2100</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>contractingSubtierName</td>
-        <td>Allows Partial or Complete value. &lt;br&gt; Example: contractingSubtierName=PUBLIC BUILDINGS SERVICE</td>
+        <td>Allows Partial or Complete value. <br> Example: contractingSubtierName=PUBLIC BUILDINGS SERVICE</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>contractingDepartmentCode</td>
-        <td>Allows 4 character code &lt;br&gt; Example: contractingDepartmentCode=9700</td>
+        <td>Allows 4 character code <br> Example: contractingDepartmentCode=9700</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>contractingDepartmentName</td>
-        <td>Allows Partial or Complete value. &lt;br&gt; Example: contractingDepartmentName=GENERAL SERVICES</td>
+        <td>Allows Partial or Complete value. <br> Example: contractingDepartmentName=GENERAL SERVICES</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>contractingOfficeCode</td>
-        <td>Allows 6 character code &lt;br&gt; Example: contractingOfficeCode=47QCCA</td>
+        <td>Allows 6 character code <br> Example: contractingOfficeCode=47QCCA</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>coBusSizeDeterminationCode</td>
-        <td>Allows a 1 character code &lt;br&gt; Example: coBusSizeDeterminationCode=S</td>
+        <td>Allows a 1 character code <br> Example: coBusSizeDeterminationCode=S</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>coBusSizeDeterminationName</td>
-        <td>Allows a text &lt;br&gt; Example: coBusSizeDeterminationName=SMALL BUSINESS</td>
+        <td>Allows a text <br> Example: coBusSizeDeterminationName=SMALL BUSINESS</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>createdDate</td>
-        <td>Allows a single Date or a Date range. Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY] &lt;br&gt; Examples: createdDate=01/01/2019, createdDate=[01/01/2019,05/29/2019]</td>
+        <td>Allows a single Date or a Date range. Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY] <br> Examples: createdDate=01/01/2019, createdDate=[01/01/2019,05/29/2019]</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>currentCompletionDate</td>
-        <td>Allows a single Date or a Date range. Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY] &lt;br&gt; Examples: currentCompletionDate=01/01/2019, currentCompletionDate=[01/01/2019,05/29/2019]</td>
+        <td>Allows a single Date or a Date range. Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY] <br> Examples: currentCompletionDate=01/01/2019, currentCompletionDate=[01/01/2019,05/29/2019]</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>dateSigned</td>
-        <td>Allows a single Date or a Date range. Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY] &lt;br&gt; Examples: dateSigned=01/01/2019, dateSigned=[01/01/2019,05/29/2019]</td>
+        <td>Allows a single Date or a Date range. Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY] <br> Examples: dateSigned=01/01/2019, dateSigned=[01/01/2019,05/29/2019]</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>awardeeZipCode</td>
-        <td>Allows either a 5 or 9-digit code for US zip codes, or any digit postal code for non-US postal codes. &lt;br&gt; Examples: awardeeZipCode=022015678, awardeeZipCode=110054</td>
+        <td>Allows either a 5 or 9-digit code for US zip codes, or any digit postal code for non-US postal codes. <br> Examples: awardeeZipCode=022015678, awardeeZipCode=110054</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>awardeeCityName</td>
-        <td>Allows a text. &lt;br&gt; Example: awardeeCityName=Austin</td>
+        <td>Allows a text. <br> Example: awardeeCityName=Austin</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>awardeeCongressionalDistrict</td>
-        <td>Allows a 2 digit code. &lt;br&gt; Example: awardeeCongressionalDistrict=01</td>
+        <td>Allows a 2 digit code. <br> Example: awardeeCongressionalDistrict=01</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>awardeeCountryCode</td>
-        <td>Allows a 3 character code. &lt;br&gt; Example: awardeeCountryCode=USA</td>
+        <td>Allows a 3 character code. <br> Example: awardeeCountryCode=USA</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>awardeeCountryName</td>
-        <td>Allows Partial or Complete value. &lt;br&gt; Example: awardeeCountryName=UNITED STATES</td>
+        <td>Allows Partial or Complete value. <br> Example: awardeeCountryName=UNITED STATES</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>awardeeDoingBusinessAsName</td>
-        <td>Allows Partial or Complete value.&lt;br&gt; awardeeDoingBusinessAsName=ENTITY NAME</td>
+        <td>Allows Partial or Complete value.<br> awardeeDoingBusinessAsName=ENTITY NAME</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>awardeeStateCode</td>
-        <td>Allows a 2 character code. &lt;br&gt;awardeeStateCode=NC</td>
+        <td>Allows a 2 character code. <br>awardeeStateCode=NC</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>awardeeStateName</td>
-        <td>Allows Partial or Complete value.&lt;br&gt;awardeeStateName=NORTH CAROLINA</td>
+        <td>Allows Partial or Complete value.<br>awardeeStateName=NORTH CAROLINA</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>fiscalYear</td>
-        <td>Allows a 4 character code.&lt;br&gt;fiscalYear=2024</td>
+        <td>Allows a 4 character code.<br>fiscalYear=2024</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>fundingSubtierCode</td>
-        <td>Allows 4 character code&lt;br&gt;fundingSubtierCode=4732</td>
+        <td>Allows 4 character code<br>fundingSubtierCode=4732</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>fundingSubtierName</td>
-        <td>Allows Partial or Complete value.&lt;br&gt;fundingSubtierName=PUBLIC BUILDINGS SERVICE</td>
+        <td>Allows Partial or Complete value.<br>fundingSubtierName=PUBLIC BUILDINGS SERVICE</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>fundingDepartmentCode</td>
-        <td>Allows 4 character code &lt;br&gt;fundingDepartmentCode=4700</td>
+        <td>Allows 4 character code <br>fundingDepartmentCode=4700</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>fundingDepartmentName</td>
-        <td>Allows Partial or Complete value.&lt;br&gt;fundingDepartmentName=GENERAL SERVICES ADMINISTRATION</td>
+        <td>Allows Partial or Complete value.<br>fundingDepartmentName=GENERAL SERVICES ADMINISTRATION</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>lastModifiedDate</td>
-        <td>Allows a single Date or a Date range.&lt;br&gt;lastModifiedDate=01/01/2019 or lastModifiedDate=[01/01/2019,05/29/2019]</td>
+        <td>Allows a single Date or a Date range.<br>lastModifiedDate=01/01/2019 or lastModifiedDate=[01/01/2019,05/29/2019]</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>awardeeLegalBusinessName</td>
-        <td>Allows Partial or Complete value.&lt;br&gt;awardeeLegalBusinessName=ENTITY LEGAL NAME</td>
+        <td>Allows Partial or Complete value.<br>awardeeLegalBusinessName=ENTITY LEGAL NAME</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>clingerCohenActCode</td>
-        <td>Allows a 1 character code.&lt;br&gt;clingerCohenActCode=Y</td>
+        <td>Allows a 1 character code.<br>clingerCohenActCode=Y</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>clingerCohenActName</td>
-        <td>Allows a text.&lt;br&gt;clingerCohenActName=No</td>
+        <td>Allows a text.<br>clingerCohenActName=No</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>materialsSuppliesArticlesAndEquipCode</td>
-        <td>Allows a 1 character code.&lt;br&gt;materialsSuppliesArticlesAndEquipCode=N</td>
+        <td>Allows a 1 character code.<br>materialsSuppliesArticlesAndEquipCode=N</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>materialsSuppliesArticlesAndEquipName</td>
-        <td>Allows a text.&lt;br&gt;materialsSuppliesArticlesAndEquipName=Yes</td>
+        <td>Allows a text.<br>materialsSuppliesArticlesAndEquipName=Yes</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>laborStandardsCode</td>
-        <td>Allows a 1 character code.&lt;br&gt;laborStandardsCode=X</td>
+        <td>Allows a 1 character code.<br>laborStandardsCode=X</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>laborStandardsName</td>
-        <td>Allows a text.&lt;br&gt;laborStandardsName=No</td>
+        <td>Allows a text.<br>laborStandardsName=No</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>constructionWageRateRequirementsCode</td>
-        <td>Allows a 1 character code.&lt;br&gt;constructionWageRateRequirementsCode=N</td>
+        <td>Allows a 1 character code.<br>constructionWageRateRequirementsCode=N</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>constructionWageRateRequirementsName</td>
-        <td>Allows a text.&lt;br&gt;constructionWageRateRequirementsName=Yes</td>
+        <td>Allows a text.<br>constructionWageRateRequirementsName=Yes</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>localAreaSetAsideName</td>
-        <td>Allows a text or null.&lt;br&gt;localAreaSetAsideName=Yes or localAreaSetAsideName=No</td>
+        <td>Allows a text or null.<br>localAreaSetAsideName=Yes or localAreaSetAsideName=No</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>modificationNumber</td>
-        <td>Allows 6 character code.&lt;br&gt;modificationNumber=P00001</td>
+        <td>Allows 6 character code.<br>modificationNumber=P00001</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>extentCompetedCode</td>
-        <td>Allows a 1 character code.&lt;br&gt;extentCompetedCode=B</td>
+        <td>Allows a 1 character code.<br>extentCompetedCode=B</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>extentCompetedName</td>
-        <td>Allows a text.&lt;br&gt;extentCompetedName=NOT COMPETED</td>
+        <td>Allows a text.<br>extentCompetedName=NOT COMPETED</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>typeOfSetAsideCode</td>
-        <td>Allows a text.&lt;br&gt;typeOfSetAsideCode=SBA</td>
+        <td>Allows a text.<br>typeOfSetAsideCode=SBA</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>typeOfSetAsideName</td>
-        <td>Allows a text.&lt;br&gt;typeOfSetAsideName=BUY INDIAN</td>
+        <td>Allows a text.<br>typeOfSetAsideName=BUY INDIAN</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>solicitationProceduresCode</td>
-        <td>Allows a text.&lt;br&gt;solicitationProceduresCode=NP</td>
+        <td>Allows a text.<br>solicitationProceduresCode=NP</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>solicitationProceduresName</td>
-        <td>Allows a text.&lt;br&gt;solicitationProceduresName=TWO STEP</td>
+        <td>Allows a text.<br>solicitationProceduresName=TWO STEP</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>contractOpportunitiesNoticeCode</td>
-        <td>Allows a 1 character code.&lt;br&gt;contractOpportunitiesNoticeCode=X</td>
+        <td>Allows a 1 character code.<br>contractOpportunitiesNoticeCode=X</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>contractOpportunitiesNoticeName</td>
-        <td>Allows a text.&lt;br&gt;contractOpportunitiesNoticeName=Yes</td>
+        <td>Allows a text.<br>contractOpportunitiesNoticeName=Yes</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>multiyearContractName</td>
-        <td>Allows a text&lt;br&gt;multiyearContractName=Yes or multiyearContractName=No</td>
+        <td>Allows a text<br>multiyearContractName=Yes or multiyearContractName=No</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>numberOfOffersReceived</td>
-        <td>Allows a text.&lt;br&gt;numberOfOffersReceived=3</td>
+        <td>Allows a text.<br>numberOfOffersReceived=3</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>naicsCode</td>
-        <td>Allows a single 6-character NAICS value or up to 100 values or null or not null.&lt;br&gt;naicsCode=513310 or naicsCode=513310~513311~513312</td>
+        <td>Allows a single 6-character NAICS value or up to 100 values or null or not null.<br>naicsCode=513310 or naicsCode=513310~513311~513312</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>nationalInterestActionCode</td>
-        <td>Allows 4 character code.&lt;br&gt;nationalInterestActionCode=H17I</td>
+        <td>Allows 4 character code.<br>nationalInterestActionCode=H17I</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>nationalInterestActionName</td>
-        <td>Allows Partial or Complete value.&lt;br&gt;nationalInterestActionName=HURRICANE IRMA 2017</td>
+        <td>Allows Partial or Complete value.<br>nationalInterestActionName=HURRICANE IRMA 2017</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>periodOfPerformanceStartDate</td>
-        <td>Allows a single Date or a Date range.&lt;br&gt;periodOfPerformanceStartDate=01/01/2019 or periodOfPerformanceStartDate=[01/01/2019,05/29/2019]</td>
+        <td>Allows a single Date or a Date range.<br>periodOfPerformanceStartDate=01/01/2019 or periodOfPerformanceStartDate=[01/01/2019,05/29/2019]</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>piidSubtierCode</td>
-        <td>Allows 4 character code&lt;br&gt;piidSubtierCode=8000</td>
+        <td>Allows 4 character code<br>piidSubtierCode=8000</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>piidSubtierName</td>
-        <td>Allows Partial or Complete value.&lt;br&gt;piidSubtierName=PUBLIC BUILDINGS SERVICE</td>
+        <td>Allows Partial or Complete value.<br>piidSubtierName=PUBLIC BUILDINGS SERVICE</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>placeOfPerformCityName</td>
-        <td>Allows a text.&lt;br&gt;placeOfPerformCityName=Austin</td>
+        <td>Allows a text.<br>placeOfPerformCityName=Austin</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>placeOfPerformCongressionalDistrict</td>
-        <td>Allows a 2 digit code.&lt;br&gt;placeOfPerformCongressionalDistrict=01</td>
+        <td>Allows a 2 digit code.<br>placeOfPerformCongressionalDistrict=01</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>placeOfPerformCountryCode</td>
-        <td>Allows a 3 character code.&lt;br&gt;placeOfPerformCountryCode=USA</td>
+        <td>Allows a 3 character code.<br>placeOfPerformCountryCode=USA</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>placeOfPerformCountryName</td>
-        <td>Allows Partial or Complete value.&lt;br&gt;placeOfPerformCountryName=UNITED STATES</td>
+        <td>Allows Partial or Complete value.<br>placeOfPerformCountryName=UNITED STATES</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>placeOfPerformStateCode</td>
-        <td>Allows a 2 character code.&lt;br&gt;placeOfPerformStateCode=NC</td>
+        <td>Allows a 2 character code.<br>placeOfPerformStateCode=NC</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>placeOfPerformStateName</td>
-        <td>Allows Partial or Complete value.&lt;br&gt;placeOfPerformStateName=NORTH CAROLINA</td>
+        <td>Allows Partial or Complete value.<br>placeOfPerformStateName=NORTH CAROLINA</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>placeOfPerformZipCode</td>
-        <td>Allows either a 5 or 9-digit code for US zip codes, or any digit postal code for non-US postal codes.&lt;br&gt;placeOfPerformZipCode=022012341 or placeOfPerformZipCode=110054</td>
+        <td>Allows either a 5 or 9-digit code for US zip codes, or any digit postal code for non-US postal codes.<br>placeOfPerformZipCode=022012341 or placeOfPerformZipCode=110054</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>productOrServiceCode</td>
-        <td>Allows a 4-character PSC value or up to 100 values.&lt;br&gt;productOrServiceCode=X1QA or productOrServiceCode=X1QA~1005~C1AA</td>
+        <td>Allows a 4-character PSC value or up to 100 values.<br>productOrServiceCode=X1QA or productOrServiceCode=X1QA~1005~C1AA</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>productOrServiceType</td>
-        <td>Allows a text.&lt;br&gt;productOrServiceType=SERVICE or productOrServiceType=PRODUCT</td>
+        <td>Allows a text.<br>productOrServiceType=SERVICE or productOrServiceType=PRODUCT</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>reasonForModificationCode</td>
-        <td>Allows 1 character code.&lt;br&gt;reasonForModificationCode=A</td>
+        <td>Allows 1 character code.<br>reasonForModificationCode=A</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>reasonForModificationName</td>
-        <td>Allows Partial or Complete value.&lt;br&gt;reasonForModificationName=FUNDING ONLY ACTION</td>
+        <td>Allows Partial or Complete value.<br>reasonForModificationName=FUNDING ONLY ACTION</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>referencedIdvPIIDSubtierCode</td>
-        <td>Allows 4 character code.&lt;br&gt;referencedIdvPIIDSubtierCode=8000</td>
+        <td>Allows 4 character code.<br>referencedIdvPIIDSubtierCode=8000</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>referencedIdvPIIDSubtierName</td>
-        <td>Allows a text.&lt;br&gt;referencedIdvPIIDSubtierName=DEPT OF DEFENSE</td>
+        <td>Allows a text.<br>referencedIdvPIIDSubtierName=DEPT OF DEFENSE</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>referencedIdvPiid</td>
-        <td>Allows a text.&lt;br&gt;referencedIdvPiid=47QRAA23DTE5T</td>
+        <td>Allows a text.<br>referencedIdvPiid=47QRAA23DTE5T</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>referencedIdvMultipleOrSingleCode</td>
-        <td>Allows 1 character code.&lt;br&gt;referencedIdvMultipleOrSingleCode=S</td>
+        <td>Allows 1 character code.<br>referencedIdvMultipleOrSingleCode=S</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>referencedIdvMultipleOrSingleName</td>
-        <td>Allows a text.&lt;br&gt;referencedIdvMultipleOrSingleName=MULTIPLE</td>
+        <td>Allows a text.<br>referencedIdvMultipleOrSingleName=MULTIPLE</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>referencedIdvPart8OrPart13</td>
-        <td>Allows a text.&lt;br&gt;referencedIdvPart8OrPart13=Part8</td>
+        <td>Allows a text.<br>referencedIdvPart8OrPart13=Part8</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>referencedIdvTypeCode</td>
-        <td>Allows 1 character code.&lt;br&gt;referencedIdvTypeCode=A</td>
+        <td>Allows 1 character code.<br>referencedIdvTypeCode=A</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>referencedIdvTypeName</td>
-        <td>Allows a text.&lt;br&gt;referencedIdvTypeName=FSS</td>
+        <td>Allows a text.<br>referencedIdvTypeName=FSS</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>transactionNumber</td>
-        <td>Allows a text&lt;br&gt;Example: transactionNumber=16</td>
+        <td>Allows a text<br>Example: transactionNumber=16</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>piidAggregation=yes</td>
-        <td>Allows a text. Return PIID Aggregation data in response. PIID parameter is required when piidaggregation is provided.&lt;br&gt;Example: piidAggregation=yes&amp;piid=47QALD23PTEST</td>
+        <td>Allows a text. Return PIID Aggregation data in response. PIID parameter is required when piidaggregation is provided.<br>Example: piidAggregation=yes&amp;piid=47QALD23PTEST</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>awardeeBusinessTypeCode</td>
-        <td>Allows 2 character code or null.&lt;br&gt;Example: awardeeBusinessTypeCode=2L</td>
+        <td>Allows 2 character code or null.<br>Example: awardeeBusinessTypeCode=2L</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>awardeeBusinessTypeName</td>
-        <td>Allows partial or complete value search.&lt;br&gt;Example: awardeeBusinessTypeName=HOSPITAL</td>
+        <td>Allows partial or complete value search.<br>Example: awardeeBusinessTypeName=HOSPITAL</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>sourceSelectionProcessCode</td>
-        <td>Allows a text&lt;br&gt;Example: sourceSelectionProcessCode=LPTA</td>
+        <td>Allows a text<br>Example: sourceSelectionProcessCode=LPTA</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>sourceSelectionProcessName</td>
-        <td>Allows partial or complete value search.&lt;br&gt;Example: sourceSelectionProcessName=OTHER</td>
+        <td>Allows partial or complete value search.<br>Example: sourceSelectionProcessName=OTHER</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>format</td>
-        <td>Allows users to download data into the JSON and CSV asynchronous file formats.&lt;br&gt;Example: format=csv.</td>
+        <td>Allows users to download data into the JSON and CSV asynchronous file formats.<br>Example: format=csv.</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>emailId</td>
-        <td>When used in conjunction with the format parameter, allows user to get JSON or CSV asynchronous file download links with tokens sent to the email address associated to the API key used in the request.&lt;br&gt;Example: emailId=Yes&amp;format=JSON</td>
+        <td>When used in conjunction with the format parameter, allows user to get JSON or CSV asynchronous file download links with tokens sent to the email address associated to the API key used in the request.<br>Example: emailId=Yes&amp;format=JSON</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>typeOfContractPricingCode</td>
-        <td>Allows 1 character code.&lt;br&gt;Example: typeOfContractPricingCode=J</td>
+        <td>Allows 1 character code.<br>Example: typeOfContractPricingCode=J</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>typeOfContractPricingName</td>
-        <td>Allows partial or complete value search.&lt;br&gt;Example: typeOfContractPricingName=FIRM FIXED PRICE</td>
+        <td>Allows partial or complete value search.<br>Example: typeOfContractPricingName=FIRM FIXED PRICE</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>ultimateCompletionDate</td>
-        <td>Allows a single Date or a Date range.&lt;br&gt;Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]&lt;br&gt;Examples: ultimateCompletionDate=01/01/2019, ultimateCompletionDate=[01/01/2019,05/29/2019]</td>
+        <td>Allows a single Date or a Date range.<br>Formats: MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY]<br>Examples: ultimateCompletionDate=01/01/2019, ultimateCompletionDate=[01/01/2019,05/29/2019]</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>ultimateContractValue</td>
-        <td>Allows for a single positive or negative Dollar value or a Dollar range.&lt;br&gt;Examples: ultimateContractValue=100000.99, ultimateContractValue=[5000.99,100000.99]</td>
+        <td>Allows for a single positive or negative Dollar value or a Dollar range.<br>Examples: ultimateContractValue=100000.99, ultimateContractValue=[5000.99,100000.99]</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>totalUltimateContractValue</td>
-        <td>Allows for a single positive or negative Dollar value or a Dollar range.&lt;br&gt;Examples: totalUltimateContractValue=100000.99, totalUltimateContractValue=[5000.99,100000.99]</td>
+        <td>Allows for a single positive or negative Dollar value or a Dollar range.<br>Examples: totalUltimateContractValue=100000.99, totalUltimateContractValue=[5000.99,100000.99]</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>awardeeUniqueEntityId</td>
-        <td>Allows a single 12-character value or up to 100 values.&lt;br&gt;Example: awardeeUniqueEntityId=RV56IG5JM6G9 awardeeUniqueEntityId=RV56IG5JM6G9~BR5F3G5JM6TR</td>
+        <td>Allows a single 12-character value or up to 100 values.<br>Example: awardeeUniqueEntityId=RV56IG5JM6G9 awardeeUniqueEntityId=RV56IG5JM6G9~BR5F3G5JM6TR</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>consortiaUEI</td>
-        <td>Allows a single 12-character value or up to 100 values.&lt;br&gt;Example: consortiaUEI=RV56IG5JM6G9 consortiaUEI=RV56IG5JM6G9~BR5F3G5JM6TR</td>
+        <td>Allows a single 12-character value or up to 100 values.<br>Example: consortiaUEI=RV56IG5JM6G9 consortiaUEI=RV56IG5JM6G9~BR5F3G5JM6TR</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>consortiaLegalBusinessName</td>
-        <td>Allows a text.&lt;br&gt;Example: consortiaLegalBusinessName=ENTITY NAME</td>
+        <td>Allows a text.<br>Example: consortiaLegalBusinessName=ENTITY NAME</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>nonGovernmentDollars</td>
-        <td>Allows for a single positive or negative Dollar value or a Dollar range.&lt;br&gt;Examples: nonGovernmentDollars=100000.99, nonGovernmentDollars=[5000.99,100000.99]</td>
+        <td>Allows for a single positive or negative Dollar value or a Dollar range.<br>Examples: nonGovernmentDollars=100000.99, nonGovernmentDollars=[5000.99,100000.99]</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>totalNonGovernmentDollars</td>
-        <td>Allows for a single positive or negative Dollar value or a Dollar range.&lt;br&gt;Examples: totalNonGovernmentDollars=100000.99, totalNonGovernmentDollars=[5000.99,100000.99]</td>
+        <td>Allows for a single positive or negative Dollar value or a Dollar range.<br>Examples: totalNonGovernmentDollars=100000.99, totalNonGovernmentDollars=[5000.99,100000.99]</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>nonTraditionalGovernmentEntityParticipationCode</td>
-        <td>Allows a text&lt;br&gt;Example: nonTraditionalGovernmentEntityParticipationCode=DEC</td>
+        <td>Allows a text<br>Example: nonTraditionalGovernmentEntityParticipationCode=DEC</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>nonTraditionalGovernmentEntityParticipationName</td>
-        <td>Allows a text&lt;br&gt;Example: nonTraditionalGovernmentEntityParticipationName=COST SHARING</td>
+        <td>Allows a text<br>Example: nonTraditionalGovernmentEntityParticipationName=COST SHARING</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>typeOfAgreementName</td>
-        <td>Allows a text&lt;br&gt;Example: typeOfAgreementName=PRODUCTION</td>
+        <td>Allows a text<br>Example: typeOfAgreementName=PRODUCTION</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>far1102ExceptionCode</td>
-        <td>Allows a 1 character code.&lt;br&gt;Example: far1102ExceptionCode=3</td>
+        <td>Allows a 1 character code.<br>Example: far1102ExceptionCode=3</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>far1102ExceptionName</td>
-        <td>Allows a text.&lt;br&gt;Example: far1102ExceptionName=CLASSIFIED CONTRACTS</td>
+        <td>Allows a text.<br>Example: far1102ExceptionName=CLASSIFIED CONTRACTS</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>includeSections</td>
-        <td>Allows to filter data by sections.&lt;br&gt;The applicable sections are contractId, coreData, contract, entityInformation, and nasaSpecific.&lt;br&gt;Examples: includeSections=contractId,entityInformation; includeSections=contractId,contract,nasaSpecific</td>
+        <td>Allows to filter data by sections.<br>The applicable sections are contractId, coreData, contract, entityInformation, and nasaSpecific.<br>Examples: includeSections=contractId,entityInformation; includeSections=contractId,contract,nasaSpecific</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
@@ -940,55 +939,54 @@ The getList Contracts API offers several optional search parameters that can be 
     </tr>
     <tr>
         <td>fundingOfficeCode</td>
-        <td>Allows a 6 character code&lt;br&gt;Example: fundingOfficeCode=47QCCA</td>
+        <td>Allows a 6 character code<br>Example: fundingOfficeCode=47QCCA</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>ultimateParentLegalBusinessName</td>
-        <td>Allows partial or complete value search.&lt;br&gt;Example: ultimateParentLegalBusinessName=ENTITY NAME</td>
+        <td>Allows partial or complete value search.<br>Example: ultimateParentLegalBusinessName=ENTITY NAME</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>ultimateParentUniqueEntityId</td>
-        <td>Allows a single 12-character value or up to 100 values.&lt;br&gt;Example: ultimateParentUniqueEntityId=R5PKHW7GWD94 ultimateParentUniqueEntityId=R5PKHW7GWD94~BR5F3G5JM6TR</td>
+        <td>Allows a single 12-character value or up to 100 values.<br>Example: ultimateParentUniqueEntityId=R5PKHW7GWD94 ultimateParentUniqueEntityId=R5PKHW7GWD94~BR5F3G5JM6TR</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>createdBy</td>
-        <td>Allows a text.&lt;br&gt;Example: createdBy=TEST_USER_101</td>
+        <td>Allows a text.<br>Example: createdBy=TEST_USER_101</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>approvedBy</td>
-        <td>Allows a text.&lt;br&gt;Example: approvedBy=TEST_USER_101</td>
+        <td>Allows a text.<br>Example: approvedBy=TEST_USER_101</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>lastModifiedBy</td>
-        <td>Allows a text.&lt;br&gt;Example: lastModifiedBy=TEST_USER_101</td>
+        <td>Allows a text.<br>Example: lastModifiedBy=TEST_USER_101</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
     <tr>
         <td>closedBy</td>
-        <td>Allows a text.&lt;br&gt;Example: closedBy=TEST_USER_101</td>
+        <td>Allows a text.<br>Example: closedBy=TEST_USER_101</td>
         <td>No</td>
         <td>String</td>
         <td>v1</td>
     </tr>
 </table>
-
 </details>
 
 
@@ -1155,7 +1153,7 @@ Based on the request parameters and account associated with the API Key provided
     </tr>
     <tr>
         <td>contractId</td>
-        <td>Contract ID Information: Contract ID Information:&lt;br&gt;Subtier&lt;br&gt;PIID&lt;br&gt;Modification Number&lt;br&gt;Transaction Number&lt;br&gt;Referenced IDV Subtier&lt;br&gt;Referenced IDV PIID&lt;br&gt;Referenced IDV Modification Number</td>
+        <td>Contract ID Information: Contract ID Information:<br>Subtier<br>PIID<br>Modification Number<br>Transaction Number<br>Referenced IDV Subtier<br>Referenced IDV PIID<br>Referenced IDV Modification Number</td>
         <td>JSON Object</td>
         <td>v1</td>
         <td></td>
@@ -1253,7 +1251,7 @@ Based on the request parameters and account associated with the API Key provided
     </tr>
     <tr>
         <td>oldContractId</td>
-        <td>Old Contract ID Information: &lt;br&gt;Subtier&lt;br&gt;PIID&lt;br&gt;Modification Number&lt;br&gt;Transaction Number&lt;br&gt;Referenced IDV Subtier&lt;br&gt;Referenced IDV PIID&lt;br&gt;Referenced IDV Modification Number</td>
+        <td>Old Contract ID Information: <br>Subtier<br>PIID<br>Modification Number<br>Transaction Number<br>Referenced IDV Subtier<br>Referenced IDV PIID<br>Referenced IDV Modification Number</td>
         <td>JSON Array</td>
         <td>v1</td>
         <td></td>
@@ -1372,7 +1370,7 @@ Based on the request parameters and account associated with the API Key provided
     </tr>
     <tr>
         <td>coreData</td>
-        <td>Core Information:&lt;br&gt;Core Version ID&lt;br&gt;Solicitation ID&lt;br&gt;Solicitation Date&lt;br&gt;Title&lt;br&gt;Contract Action Type&lt;br&gt;Initiative&lt;br&gt;Contracting Information:&lt;br&gt;Funding Information&lt;br&gt;Type of Contract Pricing&lt;br&gt;Multiyear Contract&lt;br&gt;Major Program Code&lt;br&gt;Program Acronym&lt;br&gt;National Interest Action&lt;br&gt;Performance Based Service Contract&lt;br&gt;Contingency Humanitarian Peace Keeping Operation&lt;br&gt;Consolidated Contract&lt;br&gt;Clinger Cohen Act&lt;br&gt;Materials Supplies Articles Equipment&lt;br&gt;Labor Standards&lt;br&gt;Construction Wage Rate Requirements&lt;br&gt;Recovered Material Clauses&lt;br&gt;Place of Performance&lt;br&gt;Product Or Service&lt;br&gt;Principal NAICS&lt;br&gt;Contract Bundling&lt;br&gt;DoD Acquisition Program&lt;br&gt;DoD Claimant Program&lt;br&gt;Government Furnished Property&lt;br&gt;Extent Competed&lt;br&gt;Solicitation Procedures&lt;br&gt;Type Of Set Aside&lt;br&gt;SBIR/STTR&lt;br&gt;Statutory Exception To Fair Opportunity&lt;br&gt;Reason Not Competed (Other Than Full And Open Competition)&lt;br&gt;Authority&lt;br&gt;Local Area Set Aside&lt;br&gt;A76 Action&lt;br&gt;Source Selection Process&lt;br&gt;Type of IDC&lt;br&gt;Multiple or Single Award IDC</td>
+        <td>Core Information: <br>Core Version ID<br>Solicitation ID<br>Solicitation Date<br>Title<br>Contract Action Type<br>Initiative<br>Contracting Information:<br>Funding Information<br>Type of Contract Pricing<br>Multiyear Contract<br>Major Program Code<br>Program Acronym<br>National Interest Action<br>Performance Based Service Contract<br>Contingency Humanitarian Peace Keeping Operation<br>Consolidated Contract<br>Clinger Cohen Act<br>Materials Supplies Articles Equipment<br>Labor Standards<br>Construction Wage Rate Requirements<br>Recovered Material Clauses<br>Place of Performance<br>Product Or Service<br>Principal NAICS<br>Contract Bundling<br>DoD Acquisition Program<br>DoD Claimant Program<br>Government Furnished Property<br>Extent Competed<br>Solicitation Procedures<br>Type Of Set Aside<br>SBIR/STTR<br>Statutory Exception To Fair Opportunity<br>Reason Not Competed (Other Than Full And Open Competition)<br>Authority<br>Local Area Set Aside<br>A76 Action<br>Source Selection Process<br>Type of IDC<br>Multiple or Single Award IDC</td>
         <td>JSON Object</td>
         <td>v1</td>
         <td></td>
@@ -1456,7 +1454,7 @@ Based on the request parameters and account associated with the API Key provided
     </tr>
     <tr>
         <td>coreData.federalOrganization.contractingInformation</td>
-        <td>Contracting Information:&lt;br&gt;Contracting Department&lt;br&gt;Contracting Subtier&lt;br&gt;Contracting Office</td>
+        <td>Contracting Information:<br>Contracting Department<br>Contracting Subtier<br>Contracting Office</td>
         <td>JSON Object</td>
         <td>v1</td>
         <td></td>
@@ -1526,7 +1524,7 @@ Based on the request parameters and account associated with the API Key provided
     </tr>
     <tr>
         <td>coreData.federalOrganization.fundingInformation</td>
-        <td>Funding Information:&lt;br&gt;Funding Department&lt;br&gt;Funding Subtier&lt;br&gt;Funding Office&lt;br&gt;Foreign Funding</td>
+        <td>Funding Information:<br>Funding Department<br>Funding Subtier<br>Funding Office<br>Foreign Funding</td>
         <td>String</td>
         <td>v1</td>
         <td></td>
@@ -1946,7 +1944,7 @@ Based on the request parameters and account associated with the API Key provided
     </tr>
     <tr>
         <td>coreData.principalPlaceOfPerformance</td>
-        <td>Place of Performance:&lt;br&gt;Location Code&lt;br&gt;County&lt;br&gt;City&lt;br&gt;ZIP Code&lt;br&gt;State&lt;br&gt;Congressional District&lt;br&gt;Country</td>
+        <td>Place of Performance:<br>Location Code<br>County<br>City<br>ZIP Code<br>State<br>Congressional District<br>Country</td>
         <td>JSON Object</td>
         <td>v1</td>
         <td></td>
@@ -2548,7 +2546,7 @@ Based on the request parameters and account associated with the API Key provided
     </tr>
     <tr>
         <td>awardDetails.dates</td>
-        <td>Contract Dates Information:&lt;br&gt;Date Signed&lt;br&gt;Effective Date&lt;br&gt;Current Completion Date&lt;br&gt;Ultimate Completion Date&lt;br&gt;Last Date to Order&lt;br&gt;Fiscal Year</td>
+        <td>Contract Dates Information:<br>Date Signed<br>Effective Date<br>Current Completion Date<br>Ultimate Completion Date<br>Last Date to Order<br>Fiscal Year</td>
         <td>JSON Object</td>
         <td>v1</td>
         <td></td>
@@ -2597,7 +2595,7 @@ Based on the request parameters and account associated with the API Key provided
     </tr>
     <tr>
         <td>awardDetails.dollars</td>
-        <td>Contract Dollars Information:&lt;br&gt;Action Obligation&lt;br&gt;Base And Exercised Options Value&lt;br&gt;Base and All Options Value (Total Contract Value)&lt;br&gt;Fee Paid for Use of IDV&lt;br&gt;Total Estimated Order Value&lt;br&gt;Non-Government Dollars</td>
+        <td>Contract Dollars Information:<br>Action Obligation<br>Base And Exercised Options Value<br>Base and All Options Value (Total Contract Value)<br>Fee Paid for Use of IDV<br>Total Estimated Order Value<br>Non-Government Dollars</td>
         <td>JSON Object</td>
         <td>v1</td>
         <td></td>
@@ -2653,7 +2651,7 @@ Based on the request parameters and account associated with the API Key provided
     </tr>
     <tr>
         <td>awardDetails.totalContractDollars</td>
-        <td>Total Contract Dollars Information:&lt;br&gt;Total Action Obligation&lt;br&gt;Total Base And Exercised Options Value&lt;br&gt;Total Base and All Options Value&lt;br&gt;Total Non-Government Dollars</td>
+        <td>Total Contract Dollars Information:<br>Total Action Obligation<br>Total Base And Exercised Options Value<br>Total Base and All Options Value<br>Total Non-Government Dollars</td>
         <td>JSON Object</td>
         <td>v1</td>
         <td></td>
@@ -2688,7 +2686,7 @@ Based on the request parameters and account associated with the API Key provided
     </tr>
     <tr>
         <td>awardDetails.treasuryAccount</td>
-        <td>Treasury Account Information:&lt;br&gt;Treasury Account Subtier Identifier&lt;br&gt;Treasury Account Main Account Code&lt;br&gt;Treasury Account Sub Account Code</td>
+        <td>Treasury Account Information:<br>Treasury Account Subtier Identifier<br>Treasury Account Main Account Code<br>Treasury Account Sub Account Code</td>
         <td>JSON Object</td>
         <td>v1</td>
         <td></td>
@@ -4816,7 +4814,7 @@ Based on the request parameters and account associated with the API Key provided
     </tr>
     <tr>
         <td>awardDetails.nasaSpecificData</td>
-        <td>NASA Specific Data:&lt;br&gt;Offeror&#39;s Proposal Number&lt;br&gt;PR Number&lt;br&gt;Accession Number&lt;br&gt;Installation Unique&lt;br&gt;Administrative CO.&lt;br&gt;Contracting Officer Code&lt;br&gt;Buyer Code&lt;br&gt;COR Organization Code&lt;br&gt;COR Name&lt;br&gt;Alternate COR Name&lt;br&gt;Funded Through Date&lt;br&gt;Contract Fund Code&lt;br&gt;Management Reporting Requirements&lt;br&gt;Accounting Installation&lt;br&gt;Field Of Science or Engineering&lt;br&gt;Contract Administrations Delegated&lt;br&gt;CFDA Program Identification Number&lt;br&gt;Principal Investigator First Name&lt;br&gt;Principal Investigator Middle Initial&lt;br&gt;Principal Investigator Last Name&lt;br&gt;Alternate Principal Investigator First Name&lt;br&gt;Alternate Principal Investigator Middle Initial&lt;br&gt;Alternate Principal Investigator Last Name&lt;br&gt;Close Out PR&lt;br&gt;Advisory/Assistance Services Contract&lt;br&gt;Support Services Type Contract&lt;br&gt;New Technology or Patent Clause&lt;br&gt;Property Financial Reporting&lt;br&gt;Value Engineering Clause&lt;br&gt;Security Code&lt;br&gt;Is Physically Complete&lt;br&gt;Physical Completion Date&lt;br&gt;Final Invoice Paid Date&lt;br&gt;Solicitation Issue Date&lt;br&gt;Cancellation Date&lt;br&gt;Destroy Date&lt;br&gt;Non-Federal Funding Amount</td>
+        <td>NASA Specific Data:<br>Offeror&#39;s Proposal Number<br>PR Number<br>Accession Number<br>Installation Unique<br>Administrative CO.<br>Contracting Officer Code<br>Buyer Code<br>COR Organization Code<br>COR Name<br>Alternate COR Name<br>Funded Through Date<br>Contract Fund Code<br>Management Reporting Requirements<br>Accounting Installation<br>Field Of Science or Engineering<br>Contract Administrations Delegated<br>CFDA Program Identification Number<br>Principal Investigator First Name<br>Principal Investigator Middle Initial<br>Principal Investigator Last Name<br>Alternate Principal Investigator First Name<br>Alternate Principal Investigator Middle Initial<br>Alternate Principal Investigator Last Name<br>Close Out PR<br>Advisory/Assistance Services Contract<br>Support Services Type Contract<br>New Technology or Patent Clause<br>Property Financial Reporting<br>Value Engineering Clause<br>Security Code<br>Is Physically Complete<br>Physical Completion Date<br>Final Invoice Paid Date<br>Solicitation Issue Date<br>Cancellation Date<br>Destroy Date<br>Non-Federal Funding Amount</td>
         <td>JSON Object</td>
         <td>v1</td>
         <td>cvxz</td>
