@@ -774,13 +774,6 @@ If the provided PIID is an FSS, the summary will include a summary of BPAs refer
             <td>v1</td>
         </tr>
         <tr>
-            <td>awardeeBusinessTypeCode</td>
-            <td>Allows 2 character code or null.<br>Example: awardeeBusinessTypeCode=2L</td>
-            <td>No</td>
-            <td>String</td>
-            <td>v1</td>
-        </tr>
-        <tr>
             <td>awardeeBusinessTypeName</td>
             <td>Allows partial or complete value search.<br>Example: awardeeBusinessTypeName=HOSPITAL</td>
             <td>No</td>
@@ -4087,7 +4080,7 @@ The API will return one of the following responses:
 <br>**Request URL:** Endpoint URL
 <br>lastModifiedDate=[01/01/2025,]&dollarsObligated=[0.0,100000000.99]&modificationNumber=0&contractingDepartmentCode=9700
 <br>**Response URL:**
- 
+
 ### Example 2: Get Modifications to Purchase Orders Approved between January 1st, 2025 and August 19th, 2025 with a NIACS code of 513310 or 513311 or 513312.             
 <br>**Request URL:** Endpoint URL
 <br>awardOrIDVTypeName=PURCHASE ORDER&approvedDate=[01/01/2025,08/19/2025]& modificationNumber!=0&naicsCode=513310~513311~513312
