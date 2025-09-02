@@ -128,8 +128,8 @@ If the provided PIID is an FSS, the summary will include a summary of BPAs refer
 
 
 ### Utilizing the API Extract
-* To retrieve Entity data in the CSV format, “format=csv” must be provided in the request.
-* To retrieve Entity data in the JSON format, “format=json” must be provided in the request.
+* To retrieve Contract data in the CSV format, “format=csv” must be provided in the request.
+* To retrieve Contract data in the JSON format, “format=json” must be provided in the request.
 * If the request is executed successfully, then a file downloadable URL with Token will be returned. This URL can also be obtained in emails by providing “emailId=Yes” in the request.
 * In the file downloadable URL, the phrase REPLACE_WITH_API_KEY must be replaced with a valid API Key and sent as another request.
 * If the file is ready for download, then the users can retrieve it. If the file is not ready for download, then the users will need to try again in some time.
@@ -4051,28 +4051,29 @@ The API will return one of the following responses:
 | Code | Description |
 |-------|-------------|
 | 200 | The API call is successful. |
-| 400 | Application Level Error Messages: Invalid "Date" format: v1: "message":"Dates must be specified in the MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY] format.", "detail":"Any Date parameter must be provided in the MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY] format." |
-| 400 | Invalid "Dollar" format: v1: "message":"Dollars must be specified in a numeric format excluding commas or in the range format contained within brackets with a comma separating the lower range and upper range [Lower Range,Upper Range].", "detail":"Any Dollar parameter must be provided in the numeric format excluding commas or [Lower Range,Upper Range] format." |
-| 400 | Invalid Search Parameter: v1: "message":"The search parameter, < user-provided invalid parameter > does not exist.", "detail":"Please refer to https://open.gsa.gov/api/XXXX-XX/ for a list of allowable search parameters." |
-| 400 | If 'includeSections', 'emailId' or 'format' is sent in the "q" parameter: v1: "message":"The search parameters 'includeSections','emailId', 'piidaggregation', and 'format' are not permitted inside Query Param(q)", "detail":"Please provide these parameters separately". |
-| 400 | More than 100 UEI values are sent: v1: "message":"More than 100 Unique Entity IDs are not allowed.", "detail":"Please limit the number of Unique Entity IDs to 100." |
-| 400 | More than 100 Parent UEI values are sent: v1: "message":"More than 100 Parent Unique Entity IDs are not allowed.", "detail":"Please limit the number of Parent Unique Entity IDs to 100." |
-| 400 | More than 100 Consortia UEI values are sent: v1: "message":"More than 100 Consortia Unique Entity IDs are not allowed.", "detail":"Please limit the number of Consortia Unique Entity IDs to 100." |
-| 400 | More than 100 CAGE Code values are sent: v1: "message":"More than 100 CAGE Codes are not allowed.", "detail":"Please limit the number of CAGE Codes to 100." |
-| 400 | More than 100 PSC Codes are sent: v1: "message":"More than 100 Product or Service Codes are not allowed.", "detail":"Please limit the number of Product or Service Codes to 100." |
-| 400 | More than 100 NAICS Codes are sent: v1: "message":"More than 100 NAICS Codes are not allowed.", "detail":"Please limit the number of NAICS Codes to 100." |
-| 400 | "emailId" is sent on its own: v1 "message":"The search parameter 'emailId' must be provided in conjunction with the search parameter 'format.", "detail":"Users can opt for receiving the requested JSON/CSV files in their emails." |
-| 400 | "piidaggregation" is sent on its own: v1: message":"The search parameter 'piidaggregation' must be provided in conjunction with the search parameter 'piid'.", "detail":"The 'piidaggregation' parameter cannot be provided on its own." |
-| 400 | "piidaggregation" is sent with a PIID that is not unique: v1: message":"The search parameter 'piidaggregation' must be provided in conjunction with the search parameters 'piid' and 'referencedIdvPiid' when the 'piid' is not unique.", "detail":"The 'piidaggregation' parameter must return a unique record." |
-| 400 | File size exceeded for JSON or CSV exports: v1: "message":"Total Number of Records: < the total number > exceeded the maximum allowable limit: 1,000,000. Please provide a suitable search parameter to refine your search.", "detail":"Count Exceeded Error" |
-| 400 | JSON or CSV file generation is in-progress: v1: "message": "The requested JSON or CSV file is not generated yet. Please try again later.", "details": "Larger files will take some time to process." |
-| 400 | Using an expired Token for downloading JSON or CSV files: v1: "message":"The requested JSON or CSV file token is expired.","detail":"Please verify the token number." ,"detail":"Please verify the token number." |
-| 400 | Different IP Address than that mentioned in the System Account: v1: "message":"IP Addresses associated with this System Account are different from that sending the request. Please submit your requests from a valid system.", "detail":"Please verify your IP Address sending this request is associated with this System Account." |
-| 400 | Insufficient API Key privileges to download a JSON or CSV File: v1: The API Key is not authorized to access this < file type > Extract |
+| 400 | Application Level Error Messages |
+| 400 | - Invalid "Date" format: v1: "message":"Dates must be specified in the MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY] format.", "detail":"Any Date parameter must be provided in the MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY] format." |
+| 400 | - Invalid "Dollar" format: v1: "message":"Dollars must be specified in a numeric format excluding commas or in the range format contained within brackets with a comma separating the lower range and upper range [Lower Range,Upper Range].", "detail":"Any Dollar parameter must be provided in the numeric format excluding commas or [Lower Range,Upper Range] format." |
+| 400 | - Invalid Search Parameter: v1: "message":"The search parameter, < user-provided invalid parameter > does not exist.", "detail":"Please refer to https://open.gsa.gov/api/XXXX-XX/ for a list of allowable search parameters." |
+| 400 | - If 'includeSections', 'emailId' or 'format' is sent in the "q" parameter: v1: "message":"The search parameters 'includeSections','emailId', 'piidaggregation', and 'format' are not permitted inside Query Param(q)", "detail":"Please provide these parameters separately". |
+| 400 | - More than 100 UEI values are sent: v1: "message":"More than 100 Unique Entity IDs are not allowed.", "detail":"Please limit the number of Unique Entity IDs to 100." |
+| 400 | - More than 100 Parent UEI values are sent: v1: "message":"More than 100 Parent Unique Entity IDs are not allowed.", "detail":"Please limit the number of Parent Unique Entity IDs to 100." |
+| 400 | - More than 100 Consortia UEI values are sent: v1: "message":"More than 100 Consortia Unique Entity IDs are not allowed.", "detail":"Please limit the number of Consortia Unique Entity IDs to 100." |
+| 400 | - More than 100 CAGE Code values are sent: v1: "message":"More than 100 CAGE Codes are not allowed.", "detail":"Please limit the number of CAGE Codes to 100." |
+| 400 | - More than 100 PSC Codes are sent: v1: "message":"More than 100 Product or Service Codes are not allowed.", "detail":"Please limit the number of Product or Service Codes to 100." |
+| 400 | - More than 100 NAICS Codes are sent: v1: "message":"More than 100 NAICS Codes are not allowed.", "detail":"Please limit the number of NAICS Codes to 100." |
+| 400 | - "emailId" is sent on its own: v1 "message":"The search parameter 'emailId' must be provided in conjunction with the search parameter 'format.", "detail":"Users can opt for receiving the requested JSON/CSV files in their emails." |
+| 400 | - "piidaggregation" is sent on its own: v1: message":"The search parameter 'piidaggregation' must be provided in conjunction with the search parameter 'piid'.", "detail":"The 'piidaggregation' parameter cannot be provided on its own." |
+| 400 | - "piidaggregation" is sent with a PIID that is not unique: v1: message":"The search parameter 'piidaggregation' must be provided in conjunction with the search parameters 'piid' and 'referencedIdvPiid' when the 'piid' is not unique.", "detail":"The 'piidaggregation' parameter must return a unique record." |
+| 400 | - File size exceeded for JSON or CSV exports: v1: "message":"Total Number of Records: < the total number > exceeded the maximum allowable limit: 1,000,000. Please provide a suitable search parameter to refine your search.", "detail":"Count Exceeded Error" |
+| 400 | - JSON or CSV file generation is in-progress: v1: "message": "The requested JSON or CSV file is not generated yet. Please try again later.", "details": "Larger files will take some time to process." |
+| 400 | - Using an expired Token for downloading JSON or CSV files: v1: "message":"The requested JSON or CSV file token is expired.","detail":"Please verify the token number." ,"detail":"Please verify the token number." |
+| 400 | - Different IP Address than that mentioned in the System Account: v1: "message":"IP Addresses associated with this System Account are different from that sending the request. Please submit your requests from a valid system.", "detail":"Please verify your IP Address sending this request is associated with this System Account." |
+| 400 | - Insufficient API Key privileges to download a JSON or CSV File: v1: The API Key is not authorized to access this < file type > Extract |
 | 403 | Forbidden |
-| 403 | 1. Missing API Key: v1: No API Key was supplied. Please submit with a valid API key. |
-| 403 | 2. An invalid API Key: v1: An invalid API key was supplied. Please submit with a valid API key. |
-| 403 | 3. A disabled API Key: v1: The API key supplied has been disabled. Please submit with a valid API key. |
+| 403 | - Missing API Key: v1: No API Key was supplied. Please submit with a valid API key. |
+| 403 | - An invalid API Key: v1: An invalid API key was supplied. Please submit with a valid API key. |
+| 403 | - A disabled API Key: v1: The API key supplied has been disabled. Please submit with a valid API key. |
 | 404 | No Data found |
 | 500 | Internal Server Error |
 
@@ -4086,8 +4087,8 @@ The API will return one of the following responses:
 <br>**Request URL:** Endpoint URL
 <br>lastModifiedDate=[01/01/2025,]&dollarsObligated=[0.0,100000000.99]&modificationNumber=0&contractingDepartmentCode=9700
 <br>**Response URL:**
-
-### Example 2: Get Modifications to Purchase Orders Approved between January 1st, 2025 and August 19th, 2025 with a NIACS code of 513310 or 513311 or 513312.
+ 
+### Example 2: Get Modifications to Purchase Orders Approved between January 1st, 2025 and August 19th, 2025 with a NIACS code of 513310 or 513311 or 513312.             
 <br>**Request URL:** Endpoint URL
 <br>awardOrIDVTypeName=PURCHASE ORDER&approvedDate=[01/01/2025,08/19/2025]& modificationNumber!=0&naicsCode=513310~513311~513312
 <br>**Response URL:**
