@@ -4036,6 +4036,13 @@ If the provided PIID is an FSS, the summary will include a summary of BPAs refer
 <p><small><a href="#">Back to top</a></small></p>
 
 
+## OpenAPI Specification File
+
+You can view the full details of this API in the OpenAPI Specification file available here: Open API specification file for the Contracts API
+
+## Additional Help References
+
+Go to [SAM.gov Data Services](https://sam.gov/data-services/Data%20Dictionary/Contract%20Awards) for mapping and Data Dictionary documents.
 
 ## HTTP Response Codes
 
@@ -4073,28 +4080,24 @@ The API will return one of the following responses:
 
 <p><small><a href="#">Back to top</a></small></p>
 
-## Sample Request Examples
+## Examples
 
 
 ### Example 1: Get Base Contracts modified between January 1st, 2025 and today, Contracted by DoD with a Dollar Obligated between $0.00 and $100,000,000.99. 
-<br>**Request URL:** Endpoint URL
-<br>lastModifiedDate=[01/01/2025,]&dollarsObligated=[0.0,100000000.99]&modificationNumber=0&contractingDepartmentCode=9700
-<br>**Response URL:**
+<details> <summary>Request URL: </summary> <strong>Alpha URL : </strong>https://api-alpha.sam.gov/contract-awards/v1/contracts?api_key=< API Key >&lastModifiedDate=[01/01/2025,]&dollarsObligated=[0.0,100000000.99]&modificationNumber=0&contractingDepartmentCode=9700</details>
+<details> <summary> Response (JSON Output)</summary></details>
 
 ### Example 2: Get Modifications to Purchase Orders Approved between January 1st, 2025 and August 19th, 2025 with a NIACS code of 513310 or 513311 or 513312.             
-<br>**Request URL:** Endpoint URL
-<br>awardOrIDVTypeName=PURCHASE ORDER&approvedDate=[01/01/2025,08/19/2025]& modificationNumber!=0&naicsCode=513310~513311~513312
-<br>**Response URL:**
+<details> <summary>Request URL: </summary> <strong>Alpha URL : </strong>https://api-alpha.sam.gov/contract-awards/v1/contracts?api_key=< API Key >&awardOrIDVTypeName=PURCHASE ORDER&approvedDate=[01/01/2025,08/19/2025]& modificationNumber!=0&naicsCode=513310~513311~513312</details>
+<details> <summary> Response (JSON Output)</summary></details>
 
 ### Example 3: Get only the Contract IDs for GSA IDVs closed between January 1st, 2025 and today.
-<br>**Request URL:** Endpoint URL
-<br>awardOrIDV=IDV&closedDate=[01/01/2025,]&contractingDepartmentCode=4700&includeSections=contractId
-<br>**Response URL:**
+<details> <summary>Request URL: </summary> <strong>Alpha URL : </strong>https://api-alpha.sam.gov/contract-awards/v1/contracts?api_key=< API Key >&awardOrIDV=IDV&closedDate=[01/01/2025,]&contractingDepartmentCode=4700&includeSections=contractId</details>
+<details> <summary> Response (JSON Output)</summary></details>
 
 ### Example 4: Get Service Contracts performed in Virginia in FY25 with a Contracting Officer's Business Size Selection of Small, and only return the Contract ID, Contract, and Entity Information
-<br>**Request URL:** Endpoint URL
-<br>coBusSizeDeterminationCode=S&placeOfPerformStateCode=VA&fiscalYear=2025&productOrServiceType=SERVICE&includeSections=contractId,contract,entityInformation
-<br>**Response URL:**
+<details> <summary>Request URL: </summary> <strong>Alpha URL : </strong> https://api-alpha.sam.gov/contract-awards/v1/contracts?api_key=< API Key >&coBusSizeDeterminationCode=S&placeOfPerformStateCode=VA&fiscalYear=2025&productOrServiceType=SERVICE&includeSections=contractId,contract,entityInformation</details>
+<details> <summary> Response (JSON Output)</summary></details>
 
 <p><small><a href="#">Back to top</a></small></p>
 
