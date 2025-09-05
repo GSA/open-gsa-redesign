@@ -4138,16 +4138,13 @@ Disclaimer:  **Limitation on Permissible Use of Dun & Bradstreet, Inc. (D&B) Dat
   2. Sign into the FSD platform using your FSD credentials
   3. Select “Create an Incident”
   4. Create an Incident
-      1. **System Name:** System for Award Management (SAM)
-      2. **Is this related to the American Rescue Plan Act?:** No
-      3. **Issue Type:** Other
-      4. **Business Type:** Other
-      5. **Subject (select 1):**
-          1. **Option A:** I need a role to test in alpha.sam.gov.
-          2. **Option B:** System account approval in alpha.sam.gov
-      6.  **Please describe the issue:** (Copy and paste the below information into the ticket, filling in your information within the brackets)
-          1. **Option A:** I have already navigated to alpha.sam.gov and created a user account, following the same steps for  [creating an account](https://www.fsd.gov/gsafsd_sp?id=gsafsd_kb_articles&sys_id=81d067071b80b0109ac5ddb6bc4bcb63) in sam.gov. I would like to conduct testing but do not have the necessary role(s) in alpha.sam.gov. The account that needs role assignment is associated with [EMAIL ADDRESS]. I request a [ROLE] role for the [DOMAIN] domain in alpha.sam.gov.
-          2. **Option B:** I am creating/editing a system account and have submitted my account in alpha.sam.gov for approval. I would like to request alpha.sam.gov system account review and approval for [Name of the alpha.sam.gov system account].
+      1. **System Name:** SAM(System for Award Management)
+      2. **Issue Type 1:** System Accounts
+      3. **Issue Type 2:** Manage Account
+      4. **Subject (select 1):**
+          System account approval in alpha.sam.gov
+      5.  **Please describe the issue:** (Copy and paste the below information into the ticket, filling in your information within the brackets)
+          I am creating/editing a system account and have submitted my account in alpha.sam.gov for approval. I would like to request alpha.sam.gov system account review and approval for [Name of the alpha.sam.gov system account].
 
 
 <p><small><a href="#">Back to top</a></small></p>
