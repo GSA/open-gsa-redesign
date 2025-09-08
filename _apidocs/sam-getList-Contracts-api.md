@@ -4141,10 +4141,11 @@ Disclaimer:  **Limitation on Permissible Use of Dun & Bradstreet, Inc. (D&B) Dat
       1. **System Name:** SAM(System for Award Management)
       2. **Issue Type 1:** System Accounts
       3. **Issue Type 2:** Manage Account
-      4. **Subject (select 1):**
-          System account approval in alpha.sam.gov
-      5.  **Please describe the issue:** (Copy and paste the below information into the ticket, filling in your information within the brackets)
-          I am creating/editing a system account and have submitted my account in alpha.sam.gov for approval. I would like to request alpha.sam.gov system account review and approval for [Name of the alpha.sam.gov system account].
+      4. **Subject:**
+            System account approval in alpha.sam.gov
+      5. **Please describe your issue:** (Copy and paste the below information into the ticket, filling in your information within the brackets)
+            
+            I am creating/editing a system account and have submitted my account in alpha.sam.gov for approval. I would like to request alpha.sam.gov system account review and approval for [Name of the alpha.sam.gov system account].
 
 
 <p><small><a href="#">Back to top</a></small></p>
