@@ -1,6 +1,6 @@
 ---
-title: SAM.gov GetList Contracts API
-banner-heading: SAM.gov GetList Contracts API
+title: SAM.gov GetList Contracts API - Draft Document
+banner-heading: SAM.gov GetList Contracts API - Draft Document
 ---
 <!--<link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/swagger-ui.css" >-->
 <!--<link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/custom.css" >-->
@@ -70,8 +70,7 @@ If the provided PIID is an FSS, the summary will include a summary of BPAs refer
 ### API endpoints
 
 **Production:**
-* https://api.sam.gov/contract-awards/v1/contracts?api_key=<A VALID API KEY>
-* https://api.sam.gov/contract-awards/v1/contracts?
+
 
 **Alpha:**
 * https://api-alpha.sam.gov/contract-awards/v1/contracts?api_key=
@@ -4144,7 +4143,6 @@ Disclaimer:  **Limitation on Permissible Use of Dun & Bradstreet, Inc. (D&B) Dat
       4. **Subject:**
             System account approval in alpha.sam.gov
       5. **Please describe your issue:** (Copy and paste the below information into the ticket, filling in your information within the brackets)
-            
             I am creating/editing a system account and have submitted my account in alpha.sam.gov for approval. I would like to request alpha.sam.gov system account review and approval for [Name of the alpha.sam.gov system account].
 
 
