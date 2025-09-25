@@ -89,8 +89,6 @@ If you want to use commenting API, you MUST use the form below to register for a
 <noscript>Please enable JavaScript to signup for an <a href="http://api.data.gov/">api.data.gov</a> API key.</noscript>
 {% endraw %}  
 
-Comment posting capability of API key is available to authorized federal government entities only.
-
 After registration, you will need to provide this API key in the `X-Api-Key` HTTP header with every API request.
 
 | HTTP Header Name | Description |
@@ -99,27 +97,9 @@ After registration, you will need to provide this API key in the `X-Api-Key` HTT
 
 <p><small><a href="#">Back to top</a></small></p>
 
-## Terms of Participation
-
-The eRulemaking post Application Programming Interface (API), informally referred to as the Comment API, is provided as a convenience to facilitate the bulk upload of comments from a number of different commenters. The use of the Comment API requires a key, which may be obtained through the [open GSA](https://open.gsa.gov/api/regulationsgov/#getting-started) website. 
-
-By registering for, receiving and using a key to the Comment API, the key holder agrees to the following terms and conditions:
-
-1. When developing interfaces for commenters who will submit comment language and/or attachments through the Comment API, the key holder will include in the interface:
-      1. A link to the same [terms of participation](https://www.regulations.gov/user-notice) and [privacy notice](https://www.regulations.gov/privacy-notice) that users encounter on the comment form for Regulations.gov, and
-      2. A link to the Federal Register notice or other specific document in Regulations.gov for which the key holder is collecting or facilitating comments to be delivered through the Comment API.
-
-2. The key holder certifies that:
-      1. I will only submit comments through the Comment API that it has gathered through lawful means and that, to the best of the key holder’s knowledge, represent comments from real persons, and 
-      2. It has not and will not submit comments of its own creation under fictitious or misappropriated identities or otherwise in violation of federal law.
-
-3. The API key may be disabled if an API key holder is determined to have violated these Terms of Participation. 
-
-<p><small><a href="#">Back to top</a></small></p>
-
 ## API Description
 
-Regulations.gov offers a GET API for documents, comments, and dockets and a POST API for comments. These endpoints can be used for searching document, comments and dockets, and posting a comment.
+Regulations.gov offers a GET API for documents, comments, and dockets. These endpoints can be used for searching documents, comments, and dockets.
 
 #### Searching for documents
 
@@ -148,20 +128,6 @@ A docket is an organizational folder containing multiple documents. Dockets can 
 #### Detailed information for a single docket
 
 In order to obtain more details about a single docket, you can use the endpoint `/v4/dockets/{docketId}`. Each docket has its own set of attributes, which vary based on the Agency posting the docket. Another defining characteristic is if the docket is a Rulemaking or a Nonrulemaking Docket
-
-#### Posting a comment
-
-User can post a comment using the endpoint `/v4/comments`. User can post the comment using one of the following submitter types:
-
-* Individual
-* Organization
-* Anonymous
-
-If user would like to attach files with their submission, user can get a presigned url for the amazon s3 bucket using the endpoint `/v4/file-upload-urls`
-
-A submissionKey can be retrieved using `/v4/submission-keys` endpoint.
-
-submissionType should be set to API.
 
 <p><small><a href="#">Back to top</a></small></p>
   
@@ -215,31 +181,6 @@ Agency configured fields can be updated by an agency at any point in time and ma
 * email
 * phone
 * fax
-  
-## Post Comment API Validation
-  
-#### Common Validations for all comments
-  
-* `commentOnDocumentId`, `comment` and `submissionType` are required fields.
-* If `sendEmailReceipt` is true, `email` field is required.
-* An emoji is not a valid character.
-* If a field has a maximum length requirement, the requirement is applied to both, the number of characters and the number of bytes. 
-* `submitterType` field must be one of these allowed values: `ANONYMOUS`, `INDIVIDUAL`, `ORGANIZATION`.
-* `submissionType` field must be set to `API`.
-* Field value for `comment` must be less than or equals to 5000 characters/bytes.
-* Field value for `email` must be less than or equals to 100 characters/bytes.
-  
-#### Individual Comment Validations
-
-* `firstName` and `lastName` are required fields.
-* Field value for `firstName` and `lastName` must be less than or equals to 25 characters/bytes.
-* Field value for `city`, `stateProvinceRegion`, `phone` and `country` must be less than or equals to 50 characters/bytes.
-* Field value for `zip` field must have less than or equals to 10 characters/bytes.
-  
-#### Organization Comment Validations
-
-* `organization` and `organizationType` are required fields.
-* Field value for `organization` field must have less than or equals to 120 characters/bytes.
 
 ## Examples
 
@@ -429,146 +370,6 @@ To retrieve detailed information on a docket, the following query can be used:
 https://api.regulations.gov/v4/dockets/EPA-HQ-OAR-2003-0129?api_key=DEMO_KEY
 ```
 
-#### Posting a comment
-
-* Posting an anonymous comment without attachment:
-
-  ```json
-  POST https://api.regulations.gov/v4/comments {
-    "data": {
-      "attributes": {
-        "commentOnDocumentId":"FDA-2009-N-0501-0012",
-        "comment":"test comment",
-        "submissionType":"API",
-        "submitterType":"ANONYMOUS"
-      },
-      "type":"comments"
-    }
-  }
-  ```
-
-  Note: No submission key is needed for comments with no attached files.
-
-* Posting a comment with attachment:
-
-  * Step 1: Get a submission key: 
-  
-    ```json
-    POST https://api.regulations.gov/v4/submission-keys {
-      "data": {
-        "type":"submission-keys"
-      }
-    }
-    ```
-
-  * Step 2: Get presigned url for each attachment:
-  
-    ```json
-    POST https://api.regulations.gov/v4/file-upload-urls {
-      "data": {
-        "type":"file-upload-urls",
-        "attributes": {
-          "fileName":"test.jpg",
-          "submissionKey":"kex-d31z-fe04",
-          "contentType":"image/jpeg"
-        }
-      }
-    }
-    ```
-
-  * Step 3: Upload binaries to presigned url
-
-  * Step 4: Submit your comment
-  
-    ```json
-    POST https://api.regulations.gov/v4/comments {
-      "data": {
-        "attributes": {
-          "commentOnDocumentId":"FDA-2009-N-0501-0012",
-          "comment":"test comment",
-          "submissionType":"API",
-          "submissionKey":"kex-d31z-fe04",
-          "submitterType":"ANONYMOUS",
-          "files":[ "test.jpg" ]
-        },
-        "type":"comments"
-      }
-    }
-    ```
-
-* Posting a comment with agency category:
-
-  * Step 1: Get agency categories for agency: 
-  
-    ```
-    https://api.regulations.gov/v4/agency-categories?filter[acronym]=FDA&api_key=DEMO_KEY
-    ```
-
-  * Step 2: Submit your comment with category:
-  
-    ```json
-    POST https://api.regulations.gov/v4/comments {
-      "data": {
-        "attributes": {
-          "commentOnDocumentId":"FDA-2009-N-0501-0012",
-          "comment":"test comment",
-          "submissionType":"API",
-          "submitterType":"ANONYMOUS",
-          "category":"Academia - E0007"
-        },
-        "type":"comments"
-      }
-    }
-    ```
-* Posting multiple submissions in a single comment:
-
-  To post a comment with attachment that carries 5 submissions, user should follow the following steps:
-
-  * Step 1: Get a submission key: 
-  
-    ```json
-    POST https://api.regulations.gov/v4/submission-keys {
-      "data": {
-        "type":"submission-keys"
-      }
-    }
-    ```
-
-  * Step 2: Get presigned url for the attachment with multiple submissions:
-  
-    ```json
-    POST https://api.regulations.gov/v4/file-upload-urls {
-      "data": {
-        "type":"file-upload-urls",
-        "attributes": {
-          "fileName":"multipleSubmissions.pdf",
-          "submissionKey":"kex-d31z-fe04",
-          "contentType":"image/jpeg"
-        }
-      }
-    }
-    ```
-
-  * Step 3: Upload binaries to presigned url
-
-  * Step 4: Submit your comment with 
-  
-    ```json
-    POST https://api.regulations.gov/v4/comments {
-      "data": {
-        "attributes": {
-          "commentOnDocumentId":"FDA-2009-N-0501-0012",
-          "comment":"test comment",
-          "submissionType":"API",
-          "submissionKey":"kex-d31z-fe04",
-          "submitterType":"ANONYMOUS",
-          "files":[ "multipleSubmissions.pdf" ],
-          "numItemsReceived": 5
-        },
-        "type":"comments"
-      }
-    }
-    ```
 <p><small><a href="#">Back to top</a></small></p>
 
 ## OpenAPI Specification File
@@ -600,14 +401,6 @@ We have added an example that shows how to retrieve more than 5000 comments on a
 
 Please note the new parameter `lastModifiedDate` is in beta and may be removed when we have a permanent bulk download solution available.
 
-#### I submitted a comment, but I am unable to find it on regs. What happened to my comment?
-
-Comments created via API are not made available in Regulations.gov right away. Agencies need to approve before the newly created comment can be posted out to Regulations.gov.
-
-#### I am seeing 400 errors from commenting API. What am I doing wrong?
-
-Please make sure you are setting Content-Type to application/vnd.api+json in request header.
-
 #### What is DEMO_KEY api key?
 
 As indicated by name, DEMO_KEY should only be used for demonstration purposes. We have added this api_key to our examples to make it easier for users to copy/paste the urls. It should not be used for anything more than exploring our APIs. 
@@ -622,7 +415,7 @@ Please review https://api.data.gov/docs/rate-limits/ for information on rate lim
   
 #### Can I request rate limit increases for my keys? 
 
-GSA may grant a rate limit increase on the GET keys for an indefinite period. Such requests must establish the need to justify the rate limit increases. Each submission will be reviewed and considered on a case-by-case basis. GSA is unable to increase the rate limits for POST API keys upon requests at this time. However, the current POST API key holders can request one additional key without going through the validation process again.
+GSA may grant a rate limit increase on the GET keys for an indefinite period. Such requests must establish the need to justify the rate limit increases. Each submission will be reviewed and considered on a case-by-case basis.
   
 <p><small><a href="#">Back to top</a></small></p>
 
