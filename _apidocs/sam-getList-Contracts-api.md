@@ -73,8 +73,8 @@ If the provided PIID is an FSS, the summary will include a summary of BPAs refer
 
 
 **Alpha:**
-* https://api-alpha.sam.gov/contract-awards/v1/contracts?api_key=
-* https://api-alpha.sam.gov/contract-awards/v1/contracts?
+* https://api-alpha.sam.gov/contract-awards/v1/search?api_key=
+* https://api-alpha.sam.gov/contract-awards/v1/search?
 
 
 ### User Requirements
@@ -4138,12 +4138,12 @@ Disclaimer:  **Limitation on Permissible Use of Dun & Bradstreet, Inc. (D&B) Dat
   3. Select “Create an Incident”
   4. Create an Incident
       1. **System Name:** SAM(System for Award Management)
-      2. **Issue Type 1:** System Accounts
+      2. **Issue Type:** System Accounts
       3. **Issue Type 2:** Manage Account
       4. **Subject:**
             System account approval in alpha.sam.gov
       5. **Please describe your issue:** (Copy and paste the below information into the ticket, filling in your information within the brackets)
-            I am creating/editing a system account and have submitted my account in alpha.sam.gov for approval. I would like to request alpha.sam.gov system account review and approval for [Name of the alpha.sam.gov system account].
+            1. I am creating/editing a system account and have submitted my account in alpha.sam.gov for approval. I would like to request alpha.sam.gov system account review and approval for [Name of the alpha.sam.gov system account].
 
 
 <p><small><a href="#">Back to top</a></small></p>

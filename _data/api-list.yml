@@ -40,7 +40,7 @@
 - title: SAM.gov Entity/Exclusions Extracts Download API
   description: API to retrieve Entity/Exclusions Extracts using various searchable parameters or file name.
   url: https://open.gsa.gov/api/sam-entity-extracts-api/
-- title: SAM.gov Contract Awards API - Draft Document
+- title: SAM.gov Contract Awards API - Draft Document 
   description: API to retrieve list of contracts from SAM.gov using various searchable parameters.
   url: https://open.gsa.gov/api/contract-awards/
 - title: SAM.gov Entity Management API
