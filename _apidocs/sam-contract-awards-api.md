@@ -69,9 +69,6 @@ If the provided PIID is an FSS, the summary will include a summary of BPAs refer
 
 ### API endpoints
 
-**Production:**
-
-
 **Alpha:**
 * https://api-alpha.sam.gov/contract-awards/v1/search?api_key=
 * https://api-alpha.sam.gov/contract-awards/v1/search?
@@ -4152,7 +4149,7 @@ Disclaimer:  **Limitation on Permissible Use of Dun & Bradstreet, Inc. (D&B) Dat
 
 Date | Version | Description
 ------|---------------|---------
-[Date that API is released to Alpha/Prod] | v1.0 | Base Version
+[TBD] | v1.0 | Base Version
 
 
 
