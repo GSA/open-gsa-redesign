@@ -1,12 +1,12 @@
 ---
-title: SAM.gov GetList Contracts API - Draft Document
-banner-heading: SAM.gov GetList Contracts API - Draft Document
+title: SAM.gov Contract Awards API - Draft Document
+banner-heading: SAM.gov Contract Awards API - Draft Document
 ---
 <!--<link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/swagger-ui.css" >-->
 <!--<link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/custom.css" >-->
 
 ## Overview
-The getList contracts API allows users to request revealed Award and IDV contract data, and unrevealed Award and IDV contract data, based on the user’s account and/or system account accessing the Contracts API.
+The Contract Awards API allows users to request revealed Award and IDV contract data, and unrevealed Award and IDV contract data, based on the user’s account and/or system account accessing the Contracts API.
 
 Award and IDV contract data consists of:
 
@@ -23,7 +23,7 @@ Other Transaction IDVs                             Other Transaction Agreements
 
 Revealed data includes contracts that were either funded or awarded by a Civilian Subtier, as well as contracts funded and awarded by DoD, provided the Date Signed is at least 90 days prior to today's date. Unrevealed data consists of all revealed contracts, plus DoD contracts that were funded and awarded with a Date Signed less than 90 days prior to today. Additionally, the UEI and Name for the Immediate Parent and Domestic Parent of the Awardee is included in the Unrevealed API response and excluded from the Revealed API response.
 
-## Key Features of the getList Contracts API
+## Key Features of the Contract Awards API
 
 - It offers several optional search parameters, filtering by sections, AND (&), OR (~), NOT (!) conditions, null searches, and a free text search q to obtain the desired data.
 - It returns synchronous responses.
@@ -31,7 +31,7 @@ Revealed data includes contracts that were either funded or awarded by a Civilia
 - It can return only the first 400,000 records.
 - The following characters are not allowed to be sent in the parameter values with the API request: & \| { } ^ \
 
-## Additional Features of the getList Contracts API
+## Additional Features of the Contract Awards API
 It can serve as an Extract API with the addition of the “format” parameter in the request. Following are the key features of the getList Contracts Extract API:
 
 - It offers several optional search parameters, filtering by sections, AND, OR, NOT conditions and a free text search q to obtain the desired data.
@@ -101,7 +101,7 @@ If the provided PIID is an FSS, the summary will include a summary of BPAs refer
 * Users must create their System Account using the “System Accounts” widget and get it approved.
 * Users must then set the password for the System Account.
 * After the above step is successfully completed, users will see a new section for retrieving the API Key. Users must enter the password to retrieve this value.
-* System Accounts must satisfy the following criteria to successfully utilize the getList contracts API:
+* System Accounts must satisfy the following criteria to successfully utilize the Contract Awards API:
 
 
     * System Information<br/>
@@ -137,7 +137,7 @@ If the provided PIID is an FSS, the summary will include a summary of BPAs refer
 ## API Description
 
 <details>
-    <summary><strong>Query String Parameters: </strong><br>The getList Contracts API offers several optional search parameters that can be provided independently or in combination with each other.</summary>
+    <summary><strong>Query String Parameters: </strong><br>The Contract Awards API offers several optional search parameters that can be provided independently or in combination with each other.</summary>
     <table>
         <thead>
         <tr>
