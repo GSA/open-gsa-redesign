@@ -4131,7 +4131,7 @@ Disclaimer:  **Limitation on Permissible Use of Dun & Bradstreet, Inc. (D&B) Dat
       6. Screenshots of the parameters used for API call [Attach to the ticket]
       7. Screenshots of the Headers used for the API call [Attach to the ticket]
 * Users requesting access to the test site (alpha.sam.gov) should follow the below steps. These steps ONLY apply to alpha.sam.gov access requests.
-  1. Navigate to [www.fsd.gov](www.fsd.gov)
+  1. Navigate to [www.fsd.gov](https://www.fsd.gov)
   2. Sign into the FSD platform using your FSD credentials
   3. Select “Create an Incident”
   4. Create an Incident
