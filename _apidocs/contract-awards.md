@@ -19,11 +19,11 @@ Indefinite Delivery Contracts                      Other Transaction Orders
 Other Transaction IDVs                             Other Transaction Agreements	
 ```
 
-## Revealed/Unrevealed Data
+### Revealed/Unrevealed Data
 
 Revealed data includes contracts that were either funded or awarded by a Civilian Subtier, as well as contracts funded and awarded by DoD, provided the Date Signed is at least 90 days prior to today's date. Unrevealed data consists of all revealed contracts, plus DoD contracts that were funded and awarded with a Date Signed less than 90 days prior to today. Additionally, the UEI and Name for the Immediate Parent and Domestic Parent of the Awardee is included in the Unrevealed API response and excluded from the Revealed API response.
 
-## Key Features of the Contract Awards API
+### Key Features of the Contract Awards API
 
 - It offers several optional search parameters, filtering by sections, AND (&), OR (~), NOT (!) conditions, null searches, and a free text search q to obtain the desired data.
 - It returns synchronous responses.
@@ -31,7 +31,9 @@ Revealed data includes contracts that were either funded or awarded by a Civilia
 - It can return only the first 400,000 records.
 - The following characters are not allowed to be sent in the parameter values with the API request: & \| { } ^ \
 
-## Additional Features of the Contract Awards API
+### Additional Features of the Contract Awards API
+
+#### Extract
 It can serve as an Extract API with the addition of the “format” parameter in the request. Following are the key features of the getList Contracts Extract API:
 
 - It offers several optional search parameters, filtering by sections, AND, OR, NOT conditions and a free text search q to obtain the desired data.
@@ -39,7 +41,7 @@ It can serve as an Extract API with the addition of the “format” parameter i
 - It returns data in the JSON or CSV format as selected by the user.
 - It can return only the first 1,000,000 records.
 
-## PIID Aggregation
+#### PIID Aggregation
 
 The piidAggregation parameter allows users to retrieve a high-level summary of a contract and any contracts that reference it. This parameter must be used in conjunction with the piid parameter. If the piid alone is not unique, the parameter referencedIdvPiid must also be provided.
 
@@ -62,6 +64,10 @@ If the provided PIID is an FSS, the summary will include a summary of BPAs refer
  - The number of Base BPA Calls referencing the BPAs (excluding modifications)
  - The number of BPA Calls referencing the BPAs
  - The total dollars obligated on those BPA Calls
+ 
+#### Deleted Contracts
+
+The Contract Awards API can be used to pull the deleted contracts by sending the query parameter 'deletedStatus'. When the query parameter 'deletedStatus' is sent in the API request, the Contract Award API will return deleted contracts only. The same revealed/unrevealed logic will be applied when parameter 'deletedStatus' is provided in the request. The Contract Awards API will have the capability to return contracts deleted within the last 6 months.
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -71,7 +77,7 @@ If the provided PIID is an FSS, the summary will include a summary of BPAs refer
 
 **Alpha:**
 * https://api-alpha.sam.gov/contract-awards/v1/search?api_key=
-* https://api-alpha.sam.gov/contract-awards/v1/search?
+* https://api-alpha.sam.gov/contract-awards/v1/search?deleteStatus=yes&api_key=
 
 
 ### User Requirements
@@ -85,13 +91,13 @@ If the provided PIID is an FSS, the summary will include a summary of BPAs refer
 * Users must have a Federal Individual (Personal) account or a Federal System Account and the respective API Key in SAM.gov.
 * Users can make GET calls using any Browser or a Restful API client such as Postman.
 
-### Individual (Personal) Accounts
+#### Individual (Personal) Accounts
 
 * The SAM.gov Federal or non-Federal registered users must obtain the API Key from the https://sam.gov/profile/details page using the field, “Public API Key”.<br>
   ![image info](v1/EYE_IMAGE.JPG)  
 * Click on the “Eye” icon, enter the “Enter One-time Password” (this value will be sent to your email address that is associated with your registered account), hit “Submit”, for the API Key value to appear in the box.
 
-### System Accounts
+#### System Accounts
 
 * The SAM.gov non-Federal registered users must request for a System Account. If their registration and request criteria are satisfied, then they will be provided with the System Accounts” widget on their SAM.gov “Workspace” page.
 * The SAM.gov Federal registered users must contact their CCB representatives for obtaining the “System Accounts” widget on their SAM.gov “Workspace” page.
@@ -233,6 +239,13 @@ If the provided PIID is an FSS, the summary will include a summary of BPAs refer
         <tr>
             <td>documentStatus</td>
             <td>Allows a text. By default when status is not provided, only Awards and IDVs with a status of Final will be returned. <br> Examples: documentStatus=DRAFT, documentStatus=FINAL, documentStatus=All</td>
+            <td>No</td>
+            <td>String</td>
+            <td>v1</td>
+        </tr>
+		  <tr>
+            <td>deleteStatus</td>
+            <td>Allows value equal to 'yes'. Returns contracts deleted within the last 6 months.<br> Example: deleteStatus=yes</td>
             <td>No</td>
             <td>String</td>
             <td>v1</td>
@@ -4066,6 +4079,8 @@ The API will return one of the following responses:
 | 400 | - Using an expired Token for downloading JSON or CSV files: v1: "message":"The requested JSON or CSV file token is expired.","detail":"Please verify the token number." ,"detail":"Please verify the token number." |
 | 400 | - Different IP Address than that mentioned in the System Account: v1: "message":"IP Addresses associated with this System Account are different from that sending the request. Please submit your requests from a valid system.", "detail":"Please verify your IP Address sending this request is associated with this System Account." |
 | 400 | - Insufficient API Key privileges to download a JSON or CSV File: v1: The API Key is not authorized to access this < file type > Extract |
+| 400 | - Query parameters deletedStatus and documentStatus sent in the same request: v1: "message":"Query parameters deletedStatus and documentStatus can not be sent in the same request. Please submit your requests with either deletedStatus or documentStatus.", "detail":"Please submit your requests with either deletedStatus or documentStatus." |
+| 400 | - Query parameter limit sent with a value greater than 100: v1: "message":"The max value allowed for parameter "limit" is 100", "detail":"Please provide a value equal to or less than 100 for the query parameter limit." |
 | 403 | Forbidden |
 | 403 | - Missing API Key: v1: No API Key was supplied. Please submit with a valid API key. |
 | 403 | - An invalid API Key: v1: An invalid API key was supplied. Please submit with a valid API key. |
@@ -4081,19 +4096,23 @@ The API will return one of the following responses:
 
 
 ### Example 1: Get Base Contracts modified between January 1st, 2025 and today, Contracted by DoD with a Dollar Obligated between $0.00 and $100,000,000.99. 
-<details> <summary>Request URL: </summary> <strong>Alpha URL : </strong>https://api-alpha.sam.gov/contract-awards/v1/contracts?api_key=< API Key >&lastModifiedDate=[01/01/2025,]&dollarsObligated=[0.0,100000000.99]&modificationNumber=0&contractingDepartmentCode=9700</details>
+<details> <summary>Request URL: </summary> <strong>Alpha URL : </strong>https://api-alpha.sam.gov/contract-awards/v1/search?api_key=< API Key >&lastModifiedDate=[01/01/2025,]&dollarsObligated=[0.0,100000000.99]&modificationNumber=0&contractingDepartmentCode=9700</details>
 <details> <summary> Response (JSON Output)</summary></details>
 
 ### Example 2: Get Modifications to Purchase Orders Approved between January 1st, 2025 and August 19th, 2025 with a NIACS code of 513310 or 513311 or 513312.             
-<details> <summary>Request URL: </summary> <strong>Alpha URL : </strong>https://api-alpha.sam.gov/contract-awards/v1/contracts?api_key=< API Key >&awardOrIDVTypeName=PURCHASE ORDER&approvedDate=[01/01/2025,08/19/2025]& modificationNumber!=0&naicsCode=513310~513311~513312</details>
+<details> <summary>Request URL: </summary> <strong>Alpha URL : </strong>https://api-alpha.sam.gov/contract-awards/v1/search?api_key=< API Key >&awardOrIDVTypeName=PURCHASE ORDER&approvedDate=[01/01/2025,08/19/2025]& modificationNumber!=0&naicsCode=513310~513311~513312</details>
 <details> <summary> Response (JSON Output)</summary></details>
 
 ### Example 3: Get only the Contract IDs for GSA IDVs closed between January 1st, 2025 and today.
-<details> <summary>Request URL: </summary> <strong>Alpha URL : </strong>https://api-alpha.sam.gov/contract-awards/v1/contracts?api_key=< API Key >&awardOrIDV=IDV&closedDate=[01/01/2025,]&contractingDepartmentCode=4700&includeSections=contractId</details>
+<details> <summary>Request URL: </summary> <strong>Alpha URL : </strong>https://api-alpha.sam.gov/contract-awards/v1/search?api_key=< API Key >&awardOrIDV=IDV&closedDate=[01/01/2025,]&contractingDepartmentCode=4700&includeSections=contractId</details>
 <details> <summary> Response (JSON Output)</summary></details>
 
 ### Example 4: Get Service Contracts performed in Virginia in FY25 with a Contracting Officer's Business Size Selection of Small, and only return the Contract ID, Contract, and Entity Information
-<details> <summary>Request URL: </summary> <strong>Alpha URL : </strong> https://api-alpha.sam.gov/contract-awards/v1/contracts?api_key=< API Key >&coBusSizeDeterminationCode=S&placeOfPerformStateCode=VA&fiscalYear=2025&productOrServiceType=SERVICE&includeSections=contractId,contract,entityInformation</details>
+<details> <summary>Request URL: </summary> <strong>Alpha URL : </strong> https://api-alpha.sam.gov/contract-awards/v1/search?api_key=< API Key >&coBusSizeDeterminationCode=S&placeOfPerformStateCode=VA&fiscalYear=2025&productOrServiceType=SERVICE&includeSections=contractId,contract,entityInformation</details>
+<details> <summary> Response (JSON Output)</summary></details>
+
+### Example 5: Get Deleted Contracts modified between Oct 1st and Oct 2nd, 2025, and return only the Contract ID.
+<details> <summary>Request URL: </summary> <strong>Alpha URL : </strong> https://api-alpha.sam.gov/contract-awards/v1/search?api_key=< API Key >&deleteStatus=yes&lastModifiedDate=[10/01/2025,10/02/2025]&includeSections=contractId</details>
 <details> <summary> Response (JSON Output)</summary></details>
 
 <p><small><a href="#">Back to top</a></small></p>
