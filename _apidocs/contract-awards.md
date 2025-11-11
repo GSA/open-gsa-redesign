@@ -10,14 +10,24 @@ The Contract Awards API allows users to request revealed Award and IDV contract 
 
 Award and IDV contract data consists of:
 
-```
-Delivery/Task Orders                               Federal Supply Schedules
-Government-Wide Agency Contracts                   Purchase Orders  
-Basic Ordering Agreements                          Definitive Contracts
-Blanket Purchasing Agreements                      BPA Calls
-Indefinite Delivery Contracts                      Other Transaction Orders	
-Other Transaction IDVs                             Other Transaction Agreements	
-```
+<div style="display: flex;">
+  <div style="flex: 1;">
+    Delivery/Task Orders<br>
+    Government-Wide Agency Contracts<br>
+    Basic Ordering Agreements<br>
+    Blanket Purchasing Agreements<br>
+    Indefinite Delivery Contracts<br>
+    Other Transaction IDVs
+  </div>
+  <div style="flex: 1;">
+    Federal Supply Schedules<br>
+    Purchase Orders<br>
+    Definitive Contracts<br>
+    BPA Calls<br>
+    Other Transaction Orders<br>
+    Other Transaction Agreements
+  </div>
+</div>
 
 ### Revealed/Unrevealed Data
 
@@ -77,7 +87,7 @@ The Contract Awards API can be used to pull the deleted contracts by sending the
 
 **Alpha:**
 * https://api-alpha.sam.gov/contract-awards/v1/search?api_key=
-* https://api-alpha.sam.gov/contract-awards/v1/search?deleteStatus=yes&api_key=
+* https://api-alpha.sam.gov/contract-awards/v1/search?deletedStatus=yes&api_key=
 
 
 ### User Requirements
@@ -244,8 +254,8 @@ The Contract Awards API can be used to pull the deleted contracts by sending the
             <td>v1</td>
         </tr>
 		  <tr>
-            <td>deleteStatus</td>
-            <td>Allows value equal to 'yes'. Returns contracts deleted within the last 6 months.<br> Example: deleteStatus=yes</td>
+            <td>deletedStatus</td>
+            <td>Allows value equal to 'yes'. Returns contracts deleted within the last 6 months.<br> Example: deletedStatus=yes</td>
             <td>No</td>
             <td>String</td>
             <td>v1</td>
@@ -4112,7 +4122,7 @@ The API will return one of the following responses:
 <details> <summary> Response (JSON Output)</summary></details>
 
 ### Example 5: Get Deleted Contracts modified between Oct 1st and Oct 2nd, 2025, and return only the Contract ID.
-<details> <summary>Request URL: </summary> <strong>Alpha URL : </strong> https://api-alpha.sam.gov/contract-awards/v1/search?api_key=< API Key >&deleteStatus=yes&lastModifiedDate=[10/01/2025,10/02/2025]&includeSections=contractId</details>
+<details> <summary>Request URL: </summary> <strong>Alpha URL : </strong> https://api-alpha.sam.gov/contract-awards/v1/search?api_key=< API Key >&deletedStatus=yes&lastModifiedDate=[10/01/2025,10/02/2025]&includeSections=contractId</details>
 <details> <summary> Response (JSON Output)</summary></details>
 
 <p><small><a href="#">Back to top</a></small></p>
