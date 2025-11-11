@@ -12,20 +12,24 @@ Award and IDV contract data consists of:
 
 <div style="display: flex;">
   <div style="flex: 1;">
-    Delivery/Task Orders<br>
-    Government-Wide Agency Contracts<br>
-    Basic Ordering Agreements<br>
-    Blanket Purchasing Agreements<br>
-    Indefinite Delivery Contracts<br>
-    Other Transaction IDVs
+    <ul>
+        <li>Delivery/Task Orders</li>
+        <li>Government-Wide Agency Contracts</li>
+        <li>Basic Ordering Agreements</li>
+        <li>Blanket Purchasing Agreements</li>
+        <li>Indefinite Delivery Contracts</li>
+        <li>Other Transaction IDVs</li>
+    </ul>
   </div>
   <div style="flex: 1;">
-    Federal Supply Schedules<br>
-    Purchase Orders<br>
-    Definitive Contracts<br>
-    BPA Calls<br>
-    Other Transaction Orders<br>
-    Other Transaction Agreements
+    <ul>
+        <li>Federal Supply Schedules</li>
+        <li>Purchase Orders</li>
+        <li>Definitive Contracts</li>
+        <li>BPA Calls</li>
+        <li>Other Transaction Orders</li>
+        <li>Other Transaction Agreements</li>
+    </ul>
   </div>
 </div>
 
@@ -4068,29 +4072,30 @@ Go to [SAM.gov Data Services](https://sam.gov/data-services/Data%20Dictionary/Co
 The API will return one of the following responses:
 
 | Code | Description |
-|-------|-------------|
+|:---:|:---|
 | 200 | The API call is successful. |
 | 400 | Application Level Error Messages |
-| 400 | - Invalid "Date" format: v1: "message":"Dates must be specified in the MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY] format.", "detail":"Any Date parameter must be provided in the MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY] format." |
-| 400 | - Invalid "Dollar" format: v1: "message":"Dollars must be specified in a numeric format excluding commas or in the range format contained within brackets with a comma separating the lower range and upper range [Lower Range,Upper Range].", "detail":"Any Dollar parameter must be provided in the numeric format excluding commas or [Lower Range,Upper Range] format." |
-| 400 | - Invalid Search Parameter: v1: "message":"The search parameter, < user-provided invalid parameter > does not exist.", "detail":"Please refer to https://open.gsa.gov/api/XXXX-XX/ for a list of allowable search parameters." |
-| 400 | - If 'includeSections', 'emailId' or 'format' is sent in the "q" parameter: v1: "message":"The search parameters 'includeSections','emailId', 'piidaggregation', and 'format' are not permitted inside Query Param(q)", "detail":"Please provide these parameters separately". |
-| 400 | - More than 100 UEI values are sent: v1: "message":"More than 100 Unique Entity IDs are not allowed.", "detail":"Please limit the number of Unique Entity IDs to 100." |
-| 400 | - More than 100 Parent UEI values are sent: v1: "message":"More than 100 Parent Unique Entity IDs are not allowed.", "detail":"Please limit the number of Parent Unique Entity IDs to 100." |
-| 400 | - More than 100 Consortia UEI values are sent: v1: "message":"More than 100 Consortia Unique Entity IDs are not allowed.", "detail":"Please limit the number of Consortia Unique Entity IDs to 100." |
-| 400 | - More than 100 CAGE Code values are sent: v1: "message":"More than 100 CAGE Codes are not allowed.", "detail":"Please limit the number of CAGE Codes to 100." |
-| 400 | - More than 100 PSC Codes are sent: v1: "message":"More than 100 Product or Service Codes are not allowed.", "detail":"Please limit the number of Product or Service Codes to 100." |
-| 400 | - More than 100 NAICS Codes are sent: v1: "message":"More than 100 NAICS Codes are not allowed.", "detail":"Please limit the number of NAICS Codes to 100." |
-| 400 | - "emailId" is sent on its own: v1 "message":"The search parameter 'emailId' must be provided in conjunction with the search parameter 'format.", "detail":"Users can opt for receiving the requested JSON/CSV files in their emails." |
-| 400 | - "piidaggregation" is sent on its own: v1: message":"The search parameter 'piidaggregation' must be provided in conjunction with the search parameter 'piid'.", "detail":"The 'piidaggregation' parameter cannot be provided on its own." |
-| 400 | - "piidaggregation" is sent with a PIID that is not unique: v1: message":"The search parameter 'piidaggregation' must be provided in conjunction with the search parameters 'piid' and 'referencedIdvPiid' when the 'piid' is not unique.", "detail":"The 'piidaggregation' parameter must return a unique record." |
-| 400 | - File size exceeded for JSON or CSV exports: v1: "message":"Total Number of Records: < the total number > exceeded the maximum allowable limit: 1,000,000. Please provide a suitable search parameter to refine your search.", "detail":"Count Exceeded Error" |
+| 400 | - Invalid "Date" format: v1: "message": "Dates must be specified in the MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY] format.", "detail": "Any Date parameter must be provided in the MM/DD/YYYY or [MM/DD/YYYY,MM/DD/YYYY] format." |
+| 400 | - Invalid "Dollar" format: v1: "message": "Dollars must be specified in a numeric format excluding commas or in the range format contained within brackets with a comma separating the lower range and upper range [Lower Range,Upper Range].", "detail": "Any Dollar parameter must be provided in the numeric format excluding commas or [Lower Range,Upper Range] format." |
+| 400 | - Invalid Search Parameter: v1: "message": "The search parameter, < user-provided invalid parameter > does not exist.", "detail": "Please refer to https://open.gsa.gov/api/contract-awards/ for a list of allowable search parameters." |
+| 400 | - If 'includeSections', 'emailId' or 'format' is sent in the "q" parameter: v1: "message": "The search parameters 'includeSections','emailId', 'piidaggregation', and 'format' are not permitted inside Query Param(q)", "detail": "Please provide these parameters separately". |
+| 400 | - More than 100 UEI values are sent: v1: "message": "More than 100 Unique Entity IDs are not allowed.", "detail": "Please limit the number of Unique Entity IDs to 100." |
+| 400 | - More than 100 Parent UEI values are sent: v1: "message": "More than 100 Parent Unique Entity IDs are not allowed.", "detail": "Please limit the number of Parent Unique Entity IDs to 100." |
+| 400 | - More than 100 Consortia UEI values are sent: v1: "message": "More than 100 Consortia Unique Entity IDs are not allowed.", "detail": "Please limit the number of Consortia Unique Entity IDs to 100." |
+| 400 | - More than 100 CAGE Code values are sent: v1: "message": "More than 100 CAGE Codes are not allowed.", "detail": "Please limit the number of CAGE Codes to 100." |
+| 400 | - More than 100 PSC Codes are sent: v1: "message": "More than 100 Product or Service Codes are not allowed.", "detail": "Please limit the number of Product or Service Codes to 100." |
+| 400 | - More than 100 NAICS Codes are sent: v1: "message": "More than 100 NAICS Codes are not allowed.", "detail": "Please limit the number of NAICS Codes to 100." |
+| 400 | - "emailId" is sent on its own: v1 "message": "The search parameter 'emailId' must be provided in conjunction with the search parameter 'format'.", "detail": "Users can opt for receiving the requested JSON/CSV files in their emails." |
+| 400 | - "piidaggregation" is sent on its own: v1: message": "The search parameter 'piidaggregation' must be provided in conjunction with the search parameter 'piid'.", "detail": "The 'piidaggregation' parameter cannot be provided on its own." |
+| 400 | - "piidaggregation" is sent with a PIID that is not unique: v1: message": "The search parameter 'piidaggregation' must be provided in conjunction with the search parameters 'piid' and 'referencedIdvPiid' when the 'piid' is not unique.", "detail": "The 'piidaggregation' parameter must return a unique record." |
+| 400 | - File size exceeded for JSON or CSV exports: v1: "message": "Total Number of Records: < the total number > exceeded the maximum allowable limit: 1,000,000. Please provide a suitable search parameter to refine your search.", "detail": "Count Exceeded Error" |
 | 400 | - JSON or CSV file generation is in-progress: v1: "message": "The requested JSON or CSV file is not generated yet. Please try again later.", "details": "Larger files will take some time to process." |
-| 400 | - Using an expired Token for downloading JSON or CSV files: v1: "message":"The requested JSON or CSV file token is expired.","detail":"Please verify the token number." ,"detail":"Please verify the token number." |
-| 400 | - Different IP Address than that mentioned in the System Account: v1: "message":"IP Addresses associated with this System Account are different from that sending the request. Please submit your requests from a valid system.", "detail":"Please verify your IP Address sending this request is associated with this System Account." |
-| 400 | - Insufficient API Key privileges to download a JSON or CSV File: v1: The API Key is not authorized to access this < file type > Extract |
-| 400 | - Query parameters deletedStatus and documentStatus sent in the same request: v1: "message":"Query parameters deletedStatus and documentStatus can not be sent in the same request. Please submit your requests with either deletedStatus or documentStatus.", "detail":"Please submit your requests with either deletedStatus or documentStatus." |
-| 400 | - Query parameter limit sent with a value greater than 100: v1: "message":"The max value allowed for parameter "limit" is 100", "detail":"Please provide a value equal to or less than 100 for the query parameter limit." |
+| 400 | - Using an expired Token for downloading JSON or CSV files: v1: "message": "The requested JSON or CSV file token is expired.","detail": "Please verify the token number."|
+| 400 | - Different IP Address than that mentioned in the System Account: v1: "message": "IP Addresses associated with this System Account are different from that sending the request. Please submit your requests from a valid system.", "detail": "Please verify your IP Address sending this request is associated with this System Account." |
+| 400 | - Insufficient API Key privileges to download a JSON or CSV File: v1: "message": "The API Key is not authorized to access this < file type > Extract" |
+| 400 | - Query parameters 'deletedStatus' and 'documentStatus' sent in the same request: v1: "message": "Query parameters 'deletedStatus' and 'documentStatus' can not be sent in the same request. Please submit your requests with either 'deletedStatus' or 'documentStatus'.", "detail": "Please submit your requests with either deletedStatus or documentStatus." |
+| 400 | - Query parameter limit sent with a value greater than 100: v1: "message": "The max value allowed for parameter "limit" is 100", "detail": "Please provide a value equal to or less than 100 for the query parameter limit." |
+| 400 | Query parameter 'limit' multiplied by 'offset' is greater than 400,000:<br>v1: "message":"You may only page through the first 400,000 records. Any request where "offset" x "limit" is greater than 400,000 will be rejected."<br>"detail": "Please provide values equal to or less than 400,000 for the query parameters 'offset' x 'limit'."|
 | 403 | Forbidden |
 | 403 | - Missing API Key: v1: No API Key was supplied. Please submit with a valid API key. |
 | 403 | - An invalid API Key: v1: An invalid API key was supplied. Please submit with a valid API key. |
