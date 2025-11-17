@@ -1130,6 +1130,11 @@ The Contract Awards API can be used to pull the deleted contracts by sending the
         <tr>
             <td>contractId.subtier</td>
             <td>Subtier Code</td>
+            <td>JSON object</td>
+            <td>v1</td></tr>
+		 <tr>
+            <td>contractId.subtier.code</td>
+            <td>Subtier Code</td>
             <td>String</td>
             <td>v1</td></tr>
         <tr>
@@ -4087,8 +4092,8 @@ The API will return one of the following responses:
 | 400 | - More than 100 PSC Codes are sent:<br>v1:<br>"message": "More than 100 Product or Service Codes are not allowed."<br>"detail": "Please limit the number of Product or Service Codes to 100." |
 | 400 | - More than 100 NAICS Codes are sent:<br>v1:<br>"message": "More than 100 NAICS Codes are not allowed."<br>"detail": "Please limit the number of NAICS Codes to 100." |
 | 400 | - "emailId" is sent on its own:<br>v1:<br>"message": "The search parameter 'emailId' must be provided in conjunction with the search parameter 'format'."<br>"detail": "Users can opt for receiving the requested JSON/CSV files in their emails." |
-| 400 | - "piidaggregation" is sent on its own:<br>v1:<br>message": "The search parameter 'piidaggregation' must be provided in conjunction with the search parameter 'piid'."<br>"detail": "The 'piidaggregation' parameter cannot be provided on its own." |
-| 400 | - "piidaggregation" is sent with a PIID that is not unique:<br>v1:<br>message": "The search parameter 'piidaggregation' must be provided in conjunction with the search parameters 'piid' and 'referencedIdvPiid' when the 'piid' is not unique."<br>"detail": "The 'piidaggregation' parameter must return a unique record." |
+| 400 | - "piidaggregation" is sent on its own:<br>v1:<br>"message": "The search parameter 'piidaggregation' must be provided in conjunction with the search parameter 'piid'."<br>"detail": "The 'piidaggregation' parameter cannot be provided on its own." |
+| 400 | - "piidaggregation" is sent with a PIID that is not unique:<br>v1:<br>"message": "The search parameter 'piidaggregation' must be provided in conjunction with the search parameters 'piid' and 'referencedIdvPiid' when the 'piid' is not unique."<br>"detail": "The 'piidaggregation' parameter must return a unique record." |
 | 400 | - File size exceeded for JSON or CSV exports:<br>v1:<br>"message": "Total Number of Records: < the total number > exceeded the maximum allowable limit: 1,000,000. Please provide a suitable search parameter to refine your search."<br>"detail": "Count Exceeded Error" |
 | 400 | - JSON or CSV file generation is in-progress:<br>v1:<br>"message": "The requested JSON or CSV file is not generated yet. Please try again later."<br>"details": "Larger files will take some time to process." |
 | 400 | - Using an expired Token for downloading JSON or CSV files:<br>v1:<br>"message": "The requested JSON or CSV file token is expired."<br>"detail": "Please verify the token number."|
@@ -4096,7 +4101,7 @@ The API will return one of the following responses:
 | 400 | - Insufficient API Key privileges to download a JSON or CSV File:<br>v1:<br>"message": "The API Key is not authorized to access this < file type > Extract" |
 | 400 | - Query parameters 'deletedStatus' and 'documentStatus' sent in the same request:<br>v1:<br>"message": "Query parameters 'deletedStatus' and 'documentStatus' can not be sent in the same request. Please submit your requests with either 'deletedStatus' or 'documentStatus'."<br>"detail": "Please submit your requests with either deletedStatus or documentStatus." |
 | 400 | - Query parameter limit sent with a value greater than 100:<br>v1:<br>"message": "The max value allowed for parameter 'limit' is 100."<br>"detail": "Please provide a value equal to or less than 100 for the query parameter 'limit'." |
-| 400 | - Query parameter 'limit' multiplied by 'offset' is greater than 400,000:<br>v1:<br>"message":"You may only page through the first 400,000 records. Any request where 'offset' x 'limit' is greater than 400,000 will be rejected."<br>"detail": "Please provide values equal to or less than 400,000 for the query parameters 'offset' x 'limit'."|
+| 400 | - Query parameter 'limit' multiplied by 'offset' is greater than 400,000:<br>v1:<br>"message": "You may only page through the first 400,000 records. Any request where 'offset' x 'limit' is greater than 400,000 will be rejected."<br>"detail": "Please provide values equal to or less than 400,000 for the query parameters 'offset' x 'limit'."|
 | 403 | Forbidden |
 | 403 | - Missing API Key:<br>v1:<br>"message": "No API Key was supplied. Please submit with a valid API key." |
 | 403 | - An invalid API Key:<br>v1:<br>"message": "An invalid API key was supplied. Please submit with a valid API key." |
