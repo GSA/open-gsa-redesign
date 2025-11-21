@@ -938,7 +938,7 @@ The Contract Awards API can be used to pull the deleted contracts by sending the
         </tr>
         <tr>
             <td>includeSections</td>
-            <td>Allows to filter data by sections.<br>The applicable sections are contractId, coreData, contract, entityInformation, and nasaSpecific.<br>Examples: includeSections=contractId,entityInformation; includeSections=contractId,contract,nasaSpecific</td>
+            <td>Allows to filter data by sections.<br>The applicable sections are contractId, coreData, awardDetails, awardeeData, and nasaSpecific.<br>Examples: includeSections=contractId,awardeeData; includeSections=contractId,awardDetails,nasaSpecific</td>
             <td>No</td>
             <td>String</td>
             <td>v1</td>
@@ -1129,7 +1129,7 @@ The Contract Awards API can be used to pull the deleted contracts by sending the
             <td>v1</td></tr>
         <tr>
             <td>contractId.subtier</td>
-            <td>Subtier Code</td>
+            <td>Subtier</td>
             <td>JSON object</td>
             <td>v1</td></tr>
 		 <tr>
@@ -4127,8 +4127,8 @@ The API will return one of the following responses:
 <details> <summary>Request URL: </summary> <strong>Alpha URL : </strong>https://api-alpha.sam.gov/contract-awards/v1/search?api_key=< API Key >&awardOrIDV=IDV&closedDate=[01/01/2025,]&contractingDepartmentCode=4700&includeSections=contractId</details>
 <details> <summary> Response (JSON Output)</summary></details>
 
-### Example 4: Get Service Contracts performed in Virginia in FY25 with a Contracting Officer's Business Size Selection of Small, and only return the Contract ID, Contract, and Entity Information
-<details> <summary>Request URL: </summary> <strong>Alpha URL : </strong> https://api-alpha.sam.gov/contract-awards/v1/search?api_key=< API Key >&coBusSizeDeterminationCode=S&placeOfPerformStateCode=VA&fiscalYear=2025&productOrServiceType=SERVICE&includeSections=contractId,contract,entityInformation</details>
+### Example 4: Get Service Contracts performed in Virginia in FY25 with a Contracting Officer's Business Size Selection of Small, and only return the Contract ID, Award Details, and Awardee Data
+<details> <summary>Request URL: </summary> <strong>Alpha URL : </strong> https://api-alpha.sam.gov/contract-awards/v1/search?api_key=< API Key >&coBusSizeDeterminationCode=S&placeOfPerformStateCode=VA&fiscalYear=2025&productOrServiceType=SERVICE&includeSections=contractId,awardDetails,awardeeData</details>
 <details> <summary> Response (JSON Output)</summary></details>
 
 ### Example 5: Get Deleted Contracts modified between Oct 1st and Oct 2nd, 2025, and return only the Contract ID.
