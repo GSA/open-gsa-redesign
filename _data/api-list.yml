@@ -76,9 +76,6 @@
 - title: Search.gov Search Results API
   description: For Search.gov customers. This API exposes all relevant results “modules” in a single JSON call, including web results, best bets, health topics, job openings, recent tweets, recent news, recent videos, Federal Register documents, and related searches. Used to pull search results from our service to display on a website or mobile application.
   url: https://open.gsa.gov/api/searchgov-results/
-- title: Search.gov Type-ahead Suggestions API
-  description: For Search.gov customers. This API exposes the type-ahead suggestions that often appear below the search box as searchers enter their search terms.
-  url: https://open.gsa.gov/api/searchgov-suggestions/
 - title: Site Scanning API
   description: The Site Scanning API provides a wide range of scan data for public federal websites and their website health and best practices.
   url: https://open.gsa.gov/api/site-scanning-api/
