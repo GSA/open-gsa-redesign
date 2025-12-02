@@ -133,15 +133,15 @@ This API has one primary endpoint:
 | Request Element | Description |
 | ---- | ----------- |
 | agencyLocationCode |	Customer Location Code |
-| queryType	| Tpe of Query |
+| queryType	| Type of Query |
 | pickupDate	| Pick up/ Move Date |
 | sroType	| Shipment/Rate Type |
 | sroId	| Shipment / SRO Id |
 | estimatedWeight	| Estimated weight of the Shipment |
 | estimatedMileage	| Miles |
-| originZip	| Pickup/ Orgin Zip code |
+| originZip	| Pickup/ Origin Zip code |
 | destinationZip	| Delivery/Destination Zip code |
-| originCountryCode	| Pickup/Orgin Country Code |
+| originCountryCode	| Pickup/Origin Country Code |
 | destinationCountryCode	| Delivery/Destination Country Code |
 | originProvince	| Pickup/Origin province code if the Origin country is Canada |
 | destinProvince	| Delivery/Destinationprovince code if the Destination country is Canada |
@@ -196,10 +196,10 @@ This API has one primary endpoint:
 | accessorialsResults |Accessorials results |
 | estimatedCost |total cost of the individual accessorial  |
 | frtAccessorialId |DB id of the accessoral code |
-| unitsId |DB id of the acessorial unit type |
+| unitsId |DB id of the accessorial unit type |
 | quantity |applicable quantity |
 | accessorialCode |accessorial code from the request |
-| accessorialCost |acessorial cost in integer |
+| accessorialCost |accessorial cost in integer |
 | usage |Usage from the request |
 
 
@@ -219,7 +219,7 @@ The API will return one of the following responses:
 | HTTP Response Code | Description |
 | ---- | ----------- |
 | 200 | Successful. Data will be returned in JSON format. |
-| 400 | Bad request. Verify the query string parmaters that were provided. |
+| 400 | Bad request. Verify the query string parameters that were provided. |
 | 403 | API key is not correct or was not provided. |
 | 404	| Not Found
 | 408	| Request Timeout
@@ -355,7 +355,7 @@ Response :
   **API Query Parameters:**
   
   This API must be used by including at least one of the following params
-   - the City Name or a biginning letter of the city name or a few beginning letters of the City Name
+   - the City Name or a beginning letter of the city name or a few beginning letters of the City Name
    - Zip code or a beginning digit of a zip code or a few beginning digits of a Zip code
 
   **Expected Response**
@@ -366,14 +366,14 @@ Response :
   | zipCode |	Zip Code |
   | zipClassificationCode |	ZIP classification codes (P - PO Box, U - unclassified, " " - no classification) |
   | cityName |	City Name |
-  | cityAbbrev |	City Abbrevation (if availabale) |
+  | cityAbbrev |	City Abbreviation (if available) |
   | stateAbbrev |	State Code |
   | countyNo |	County Number |
   | countyName |	County Name |
   | createdDate |	Initial Data creation Date |
   | updateProgram |	Update Program (internal use) |
   | updateId |	For internal use |
-  | updateDate |	Date of last updation (internal use) |
+  | updateDate |	Date of last update (internal use) |
   | stateId |	For internal use |
 
   <p><small><a href="#">Back to top</a></small></p>
