@@ -4089,7 +4089,7 @@ The API will return one of the following responses:
 <details>
   <summary>Response (JSON Output)</summary>
   
-```json
+<pre>
   {
     "awardSummary": [
         {
@@ -4586,7 +4586,7 @@ The API will return one of the following responses:
     "limit": "1",
     "offset": "1"
 }
-```
+</pre>
 </details>
 
 
@@ -4606,8 +4606,8 @@ The API will return one of the following responses:
 
 <details>
   <summary>Response (JSON Output)</summary>
-```json
-  {
+<pre>
+ {
     "awardSummary": [
         {
             "contractId": {
@@ -4615,16 +4615,16 @@ The API will return one of the following responses:
                     "code": "1344",
                     "name": "US PATENT AND TRADEMARK OFFICE"
                 },
-                "piid": "1333BJ25A00210044",
+                "piid": "1333BJ25P00212001",
                 "modificationNumber": "0",
-                "referencedIDVModificationNumber": "0"
+                "transactionNumber": "0"
             },
             "coreData": {
                 "coreVersionId": "1.5",
-                "awardOrIDV": "IDV",
+                "awardOrIDV": "AWARD",
                 "awardOrIDVType": {
-                    "code": "E",
-                    "name": "BPA"
+                    "code": "B",
+                    "name": "PURCHASE ORDER"
                 },
                 "federalOrganization": {
                     "contractingInformation": {
@@ -4643,7 +4643,7 @@ The API will return one of the following responses:
                     },
                     "fundingInformation": {
                         "fundingDepartment": {
-                            "code": "1300                ",
+                            "code": "1300",
                             "name": "COMMERCE, DEPARTMENT OF"
                         },
                         "fundingSubtier": {
@@ -4668,24 +4668,21 @@ The API will return one of the following responses:
                     "multiyearContract": {
                         "name": "NO"
                     },
+                    "programAcronym": "N/A",
                     "performanceBasedServiceContract": {
-                        "code": "X",
-                        "name": "NOT APPLICABLE"
+                        "code": "N",
+                        "name": "NO - SERVICE WHERE PBA IS NOT USED."
                     },
                     "consolidatedContract": {
-                        "code": "A",
-                        "name": "CONSOLIDATED REQUIREMENTS"
+                        "code": "D",
+                        "name": "NOT CONSOLIDATED"
                     },
-                    "multipleOrSingleAwardIdc": {
-                        "code": "M"
+                    "typeOfIdc": {
+                        "code": "N/A"
                     },
                     "reasonForInterAgencyContracting": {
                         "code": "X",
                         "name": "NOT APPLICABLE"
-                    },
-                    "contractFinancing": {
-                        "code": "N/A",
-                        "name": "N/A"
                     }
                 },
                 "legislativeMandates": {
@@ -4694,23 +4691,46 @@ The API will return one of the following responses:
                         "name": "N"
                     },
                     "materialsSuppliesArticlesEquipment": {
-                        "code": "N",
-                        "name": "NO"
+                        "code": "X",
+                        "name": "NOT APPLICABLE"
                     },
                     "laborStandards": {
-                        "code": "N",
-                        "name": "NO"
+                        "code": "X",
+                        "name": "NOT APPLICABLE"
                     },
                     "constructionWageRateRequirements": {
-                        "code": "N",
-                        "name": "NO"
+                        "code": "X",
+                        "name": "NOT APPLICABLE"
                     },
                     "interagencyContractingAuthority": {
                         "code": "X",
                         "name": "NOT APPLICABLE"
                     }
                 },
+                "principalPlaceOfPerformance": {
+                    "city": {
+                        "name": "FAIRFAX"
+                    },
+                    "county": {
+                        "code": "59",
+                        "name": "FAIRFAX"
+                    },
+                    "state": {
+                        "code": "VA",
+                        "name": "VIRGINIA"
+                    },
+                    "zipCode": "220334920",
+                    "congressionalDistrict": "11",
+                    "country": {
+                        "code": "USA",
+                        "name": "UNITED STATES"
+                    }
+                },
                 "productOrServiceInformation": {
+                    "recoveredMaterialClauses": {
+                        "code": "C",
+                        "name": "NO CLAUSES INCLUDED AND NO SUSTAINABILITY INCLUDED"
+                    },
                     "productOrService": {
                         "type": "SERVICE",
                         "code": "R410",
@@ -4723,79 +4743,83 @@ The API will return one of the following responses:
                         }
                     ],
                     "contractBundling": {
-                        "code": "E",
-                        "name": "BUNDLED REQUIREMENTS"
-                    },
-                    "dodAcquisitionProgram": {
-                        "code": "N/A",
-                        "name": "N/A"
+                        "code": "H",
+                        "name": "NOT BUNDLED"
                     },
                     "gfeGfp": {
                         "code": "N",
                         "name": "TRANSACTION DOES NOT USE GFE/GFP"
                     },
-                    "informationTechnologyCommercialItemCategory": {
-                        "code": "N/A",
-                        "name": "N/A"
-                    },
                     "countryOfOrigin": {
-                        "code": "N/A",
-                        "name": "N/A"
+                        "code": "USA",
+                        "name": "UNITED STATES"
                     }
                 },
                 "competitionInformation": {
-                    "extentCompeted": {
-                        "code": "N/A",
-                        "name": "N/A"
+                    "solicitationProcedures": {
+                        "code": "SP1",
+                        "name": "SIMPLIFIED ACQUISITION"
+                    },
+                    "typeOfSetAside": {
+                        "code": "NONE",
+                        "name": "NO SET ASIDE USED."
+                    },
+                    "localAreaSetAside": {
+                        "name": "N"
+                    },
+                    "sourceSelectionProcess": {
+                        "code": "O",
+                        "name": "Other"
                     },
                     "preAwardSynopsisRequirement": {
-                        "code": "N/A",
-                        "name": "N/A"
+                        "code": "N",
+                        "name": "No"
                     },
                     "smallBusinessCompetitivenessDemonstrationProgram": {
                         "name": "NO"
+                    },
+                    "numberOfOffersSource": {
+                        "code": "F",
+                        "name": "This Action"
                     }
                 },
                 "acquisitionMarketingData": {
                     "whoCanUse": {
-                        "code": "ONLY MY AGENCY",
-                        "name": "ONLY THE AGENCY AWARDING THE CONTRACT MAY PLACE ORDERS."
-                    }
+                        "code": "N/A"
+                    },
+                    "emailAddress": "N/A"
                 }
             },
             "awardDetails": {
                 "dates": {
-                    "dateSigned": "2025-08-08T04:00:00.000Z",
-                    "periodOfPerformanceStartDate": "2024-04-01 00:00:00.000",
-                    "lastDateToOrder": "2025-12-31 00:00:00.000",
+                    "dateSigned": "2024-10-23T04:00:00.000Z",
+                    "periodOfPerformanceStartDate": "2025-01-01 00:00:00.000",
+                    "currentCompletionDate": "2025-12-31 00:00:00.000",
+                    "ultimateCompletionDate": "2025-12-31 00:00:00.000",
                     "fiscalYear": "2025"
                 },
                 "dollars": {
-                    "actionObligation": "0",
-                    "baseDollarsObligated": "0",
-                    "baseAndAllOptionsValue": "200",
-                    "totalEstimatedOrderValue": "0"
+                    "actionObligation": "50.0",
+                    "baseDollarsObligated": "50",
+                    "baseAndExercisedOptionsValue": "50",
+                    "baseAndAllOptionsValue": "100000",
+                    "feePaidForUseOfService": "0"
                 },
                 "totalContractDollars": {
-                    "totalActionObligation": "0",
-                    "totalBaseAndExercisedOptionsValue": "0",
-                    "totalBaseAndAllOptionsValue": "250"
+                    "totalActionObligation": "50.000000000000",
+                    "totalBaseAndExercisedOptionsValue": "50.0",
+                    "totalBaseAndAllOptionsValue": "100000"
                 },
                 "contractData": {
-                    "part8OrPart13": "PART13",
                     "purchaseCardAsPaymentMethod": {
                         "name": "NO"
                     },
                     "undefinitizedAction": {
                         "code": "NO"
                     },
-                    "costAccountingStandardsClause": {
-                        "code": "X",
-                        "name": "NOT APPLICABLE EXEMPT FROM CAS"
-                    },
                     "natureOfServices": {
-                        "code": "OT",
-                        "name": "OTHER FUNCTIONS"
+                        "code": "CL        ",
+                        "name": "CLOSELY ASSOCIATED"
                     },
                     "emergencyAcquisition": {
                         "code": "X",
@@ -4808,16 +4832,16 @@ The API will return one of the following responses:
                 "productOrServiceInformation": {
                     "descriptionOfContractRequirement": "TEST",
                     "useOfEpaDesignatedProducts": {
-                        "code": "N/A",
-                        "name": "N/A"
+                        "code": "E",
+                        "name": "NOT REQUIRED"
                     },
                     "placeOfManufacture": {
-                        "code": "N/A",
-                        "name": "N/A"
+                        "code": "C",
+                        "name": "NOT A MANUFACTURED END PRODUCT"
                     },
                     "domesticOrForeignEntity": {
-                        "code": "C",
-                        "name": "FOREIGN-OWNED BUSINESS INCORPORATED IN THE U.S."
+                        "code": "O",
+                        "name": "OTHER FOREIGN ENTITY (E.G. FOREIGN GOVERNMENT)"
                     }
                 },
                 "competitionInformation": {
@@ -4825,21 +4849,34 @@ The API will return one of the following responses:
                         "code": "A",
                         "name": "COMMERCIAL PRODUCTS/SERVICES"
                     },
-                    "extentCompetedForReferencedIdv": {
-                        "code": "N/A",
-                        "name": "N/A"
+                    "commercialItemTestProgram": {
+                        "code": "N",
+                        "name": "NO"
                     },
-                    "idvTypeOfSetAside": {
-                        "code": "N/A",
-                        "name": "N/A"
+                    "evaluatedPreference": {
+                        "code": "NONE",
+                        "name": "NO PREFERENCE USED"
+                    },
+                    "numberOfOffersReceived": "1",
+                    "typeOfSetAsideSource": {
+                        "code": "F",
+                        "name": "This Action"
+                    },
+                    "numberOfOffersSource": {
+                        "code": "F",
+                        "name": "This Action"
+                    },
+                    "contractOpportunitiesNotice": {
+                        "code": "X",
+                        "name": "NOT APPLICABLE"
                     },
                     "alternativeAdvertising": {
-                        "code": "N/A",
-                        "name": "N/A"
+                        "code": "N",
+                        "name": "NO"
                     },
                     "synopsisWaiverException": {
-                        "code": "N/A",
-                        "name": "N/A"
+                        "code": "N",
+                        "name": "NOT APPLICABLE."
                     }
                 },
                 "preferenceProgramsInformation": {
@@ -4849,13 +4886,9 @@ The API will return one of the following responses:
                             "name": "OTHER THAN SMALL BUSINESS"
                         }
                     ],
-                    "reasonNotAwardedToSmallDisadvantagedBusiness": {
-                        "code": "N/A",
-                        "name": "N/A"
-                    },
-                    "reasonNotAwardedToSmallBusiness": {
-                        "code": "N/A",
-                        "name": "N/A"
+                    "subcontractPlan": {
+                        "code": "B",
+                        "name": "PLAN NOT REQUIRED "
                     }
                 },
                 "legislativeMandates": {
@@ -4865,13 +4898,14 @@ The API will return one of the following responses:
                     }
                 },
                 "contractMarketingData": {
-                    "individualOrderLimit": "100"
+                    "typeOfFeeForUseOfService": {
+                        "code": "N/A"
+                    },
+                    "orderingProcedure": "N/A"
                 },
                 "awardeeData": {
                     "awardeeHeader": {
                         "awardeeName": "CGI FEDERAL INC.",
-                        "awardeeAlternateName": "CGI FEDERAL INC",
-                        "legalBusinessName": "CGI FEDERAL INC.",
                         "awardeeNameFromContract": "CGI FEDERAL INC."
                     },
                     "awardeeUEIInformation": {
@@ -4898,7 +4932,7 @@ The API will return one of the following responses:
                     "awardeeAlternateSiteCode": "22033",
                     "awardeeRegistrationDetails": {
                         "registrationDate": "2004-07-29 00:00:00.000",
-                        "renewalDate": "2026-07-09 00:00:00.000"
+                        "renewalDate": "2025-07-16 00:00:00.000"
                     },
                     "awardeeBusinessTypes": {
                         "isUsFederalGovernment": {
@@ -5022,35 +5056,25 @@ The API will return one of the following responses:
                         "sbaCertifiedWomenOwnedSmallBusiness": "NO"
                     }
                 },
-                "nasaSpecificData": {
-                    "contractFundCode": "N/A",
-                    "principalInvestigatOrFirstName": "N/A",
-                    "principalInvestigatOrMiddleInitial": "N/A",
-                    "principalInvestigatOrLastName": "N/A",
-                    "alternatePrincipalInvestigatorFirstName": "N/A",
-                    "alternatePrincipalInvestigatOrMiddleInitial": "N/A",
-                    "alternatePrincipalInvestigatOrLastName": "N/A",
-                    "closeoutPR": "N/A"
-                },
                 "transactionData": {
-                    "status": "FINAL               ",
+                    "status": "FINAL",
                     "version": "1.5",
                     "createdBy": "MOMHELP",
-                    "createdDate": "2025-08-13T15:21:31.000Z",
-                    "lastModifiedBy": "MOMHELP",
-                    "lastModifiedDate": "2025-08-18T17:42:38.000Z",
-                    "approvedBy": "MOMHELP",
-                    "approvedDate": "2025-08-18T17:42:38.000Z",
+                    "createdDate": "2025-02-07T16:21:50.000Z",
+                    "lastModifiedBy": "PTOJLB",
+                    "lastModifiedDate": "2025-02-07T17:15:47.000Z",
+                    "approvedBy": "PTOJLB",
+                    "approvedDate": "2025-02-07T17:15:47.000Z",
                     "closedStatus": "N"
                 }
             }
         }
     ],
-    "totalRecords": "461",
+    "totalRecords": "30",
     "limit": "1",
     "offset": "1"
 }
-```
+</pre>
 </details>
 
 ### Example 3: Get only the Contract IDs for GSA IDVs closed between January 1st, 2025 and today.
@@ -5070,7 +5094,7 @@ The API will return one of the following responses:
 <details>
   <summary>Response (JSON Output)</summary>
    
-```json
+<pre>
   {
     "awardSummary": [
         {
@@ -5144,7 +5168,7 @@ The API will return one of the following responses:
     "limit": "5",
     "offset": "1"
 }
-```
+</pre>
 </details>
 
 ### Example 4: Get Service Contracts performed in Virginia in FY25 with a Contracting Officer's Business Size Selection of Small, and only return the Contract ID, Award Details, and Awardee Data
@@ -5164,7 +5188,7 @@ The API will return one of the following responses:
 <details>
   <summary>Response (JSON Output)</summary>
   
-```json
+<pre>
   {
     "awardSummary": [
         {
@@ -5350,7 +5374,7 @@ The API will return one of the following responses:
     "limit": "1",
     "offset": "1"
 }
-```
+</pre>
 </details>
 
 ### Example 5: Get Deleted Contracts modified between Oct 1st and Oct 2nd, 2025, and return only the Contract ID.
@@ -5370,7 +5394,7 @@ The API will return one of the following responses:
 <details>
   <summary>Response (JSON Output)</summary>
 
-```json
+<pre>
   {
     "awardSummary": [
         {
@@ -5464,7 +5488,7 @@ The API will return one of the following responses:
     "limit": "5",
     "offset": "25"
 }
-```
+</pre>
 </details>
 
 <p><small><a href="#">Back to top</a></small></p>
