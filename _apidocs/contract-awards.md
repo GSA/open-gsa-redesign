@@ -1,6 +1,6 @@
 ---
-title: SAM.gov Contract Awards API - Draft Document
-banner-heading: SAM.gov Contract Awards API - Draft Document
+title: SAM.gov Contract Awards API
+banner-heading: SAM.gov Contract Awards API
 ---
 <!--<link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/swagger-ui.css" >-->
 <!--<link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/custom.css" >-->
@@ -88,6 +88,10 @@ The Contract Awards API can be used to pull the deleted contracts by sending the
 ## Getting Started
 
 ### API endpoints
+
+**Production:**
+* https://api.sam.gov/contract-awards/v1/search?api_key=
+* https://api.sam.gov/contract-awards/v1/search?deletedStatus=yes&api_key=
 
 **Alpha:**
 * https://api-alpha.sam.gov/contract-awards/v1/search?api_key=
@@ -246,13 +250,6 @@ The Contract Awards API can be used to pull the deleted contracts by sending the
         <tr>
             <td>documentVersion</td>
             <td>Allows a text. <br> Example: documentVersion=1.5</td>
-            <td>No</td>
-            <td>String</td>
-            <td>v1</td>
-        </tr>
-        <tr>
-            <td>documentStatus</td>
-            <td>Allows a text. By default when status is not provided, only Awards and IDVs with a status of Final will be returned. <br> Examples: documentStatus=DRAFT, documentStatus=FINAL, documentStatus=All</td>
             <td>No</td>
             <td>String</td>
             <td>v1</td>
@@ -3805,61 +3802,21 @@ The Contract Awards API can be used to pull the deleted contracts by sending the
         <tr>
             <td>awardDetails.nasaSpecificData.contractFundCode</td>
             <td>Contract Fund Code</td>
-            <td>JSON Object</td>
-            <td>v1</td></tr>
-        <tr>
-            <td>awardDetails.nasaSpecificData.contractFundCode.code</td>
-            <td>Contract Fund Code Code</td>
-            <td>String</td>
-            <td>v1</td></tr>
-        <tr>
-            <td>awardDetails.nasaSpecificData.contractFundCode.name</td>
-            <td>Contract Fund Code Name</td>
             <td>String</td>
             <td>v1</td></tr>
         <tr>
             <td>awardDetails.nasaSpecificData.managementReportingRequirements</td>
             <td>Management Reporting Requirements</td>
-            <td>JSON Object</td>
-            <td>v1</td></tr>
-        <tr>
-            <td>awardDetails.nasaSpecificData.managementReportingRequirements.code</td>
-            <td>Management Reporting Requirements Code</td>
-            <td>String</td>
-            <td>v1</td></tr>
-        <tr>
-            <td>awardDetails.nasaSpecificData.managementReportingRequirements.name</td>
-            <td>Management Reporting Requirements Name</td>
             <td>String</td>
             <td>v1</td></tr>
         <tr>
             <td>awardDetails.nasaSpecificData.accountingInstallation</td>
             <td>Accounting Installation</td>
-            <td>JSON Object</td>
-            <td>v1</td></tr>
-        <tr>
-            <td>awardDetails.nasaSpecificData.accountingInstallation.code</td>
-            <td>Accounting Installation Code</td>
-            <td>String</td>
-            <td>v1</td></tr>
-        <tr>
-            <td>awardDetails.nasaSpecificData.accountingInstallation.name</td>
-            <td>Accounting Installation Name</td>
             <td>String</td>
             <td>v1</td></tr>
         <tr>
             <td>awardDetails.nasaSpecificData.fieldOfScienceOrEngineering</td>
             <td>Field Of Science or Engineering</td>
-            <td>JSON Object</td>
-            <td>v1</td></tr>
-        <tr>
-            <td>awardDetails.nasaSpecificData.fieldOfScienceOrEngineering.code</td>
-            <td>Field Of Science or Engineering Code</td>
-            <td>String</td>
-            <td>v1</td></tr>
-        <tr>
-            <td>awardDetails.nasaSpecificData.fieldOfScienceOrEngineering.name</td>
-            <td>Field Of Science or Engineering Name</td>
             <td>String</td>
             <td>v1</td></tr>
         <tr>
@@ -4115,25 +4072,1399 @@ The API will return one of the following responses:
 ## Examples
 
 
-### Example 1: Get Base Contracts modified between January 1st, 2025 and today, Contracted by DoD with a Dollar Obligated between $0.00 and $100,000,000.99. 
-<details> <summary>Request URL: </summary> <strong>Alpha URL : </strong>https://api-alpha.sam.gov/contract-awards/v1/search?api_key=< API Key >&lastModifiedDate=[01/01/2025,]&dollarsObligated=[0.0,100000000.99]&modificationNumber=0&contractingDepartmentCode=9700</details>
-<details> <summary> Response (JSON Output)</summary></details>
+### Example 1: Get Base Contracts modified between January 1st, 2025 and today, Contracted by DoD with a Dollar Obligated between $0.00 and $100,000,000.99.
 
-### Example 2: Get Modifications to Purchase Orders Approved between January 1st, 2025 and August 19th, 2025 with a NIACS code of 513310 or 513311 or 513312.             
-<details> <summary>Request URL: </summary> <strong>Alpha URL : </strong>https://api-alpha.sam.gov/contract-awards/v1/search?api_key=< API Key >&awardOrIDVTypeName=PURCHASE ORDER&approvedDate=[01/01/2025,08/19/2025]& modificationNumber!=0&naicsCode=513310~513311~513312</details>
-<details> <summary> Response (JSON Output)</summary></details>
+<details>
+  <summary>Request URL:</summary>
+
+  <strong>Production URL:</strong>  
+  https://api.sam.gov/contract-awards/v1/search?api_key=< API Key >&lastModifiedDate=[01/01/2025,]&dollarsObligated=[0.0,100000000.99]&modificationNumber=0&contractingDepartmentCode=9700  
+
+  <br>
+
+  <strong>Alpha URL:</strong>  
+  https://api-alpha.sam.gov/contract-awards/v1/search?api_key=< API Key >&lastModifiedDate=[01/01/2025,]&dollarsObligated=[0.0,100000000.99]&modificationNumber=0&contractingDepartmentCode=9700
+
+</details>
+
+<details>
+  <summary>Response (JSON Output)</summary>
+  
+  ```json
+  {
+    "awardSummary": [
+        {
+            "contractId": {
+                "subtier": {
+                    "code": "9700",
+                    "name": "DEPT OF DEFENSE"
+                },
+                "piid": "SPMYM119P0391",
+                "modificationNumber": "0",
+                "transactionNumber": "0",
+                "referencedIDVModificationNumber": "0"
+            },
+            "coreData": {
+                "coreVersionId": "1.5",
+                "awardOrIDV": "AWARD",
+                "awardOrIDVType": {
+                    "code": "B",
+                    "name": "PURCHASE ORDER"
+                },
+                "federalOrganization": {
+                    "contractingInformation": {
+                        "contractingDepartment": {
+                            "code": "9700",
+                            "name": "DEPT OF DEFENSE"
+                        },
+                        "contractingSubtier": {
+                            "code": "97AS",
+                            "name": "DEFENSE LOGISTICS AGENCY"
+                        },
+                        "contractingOffice": {
+                            "code": "SPMYM1",
+                            "name": "DLA MARITIME - NORFOLK"
+                        }
+                    },
+                    "fundingInformation": {
+                        "fundingDepartment": {
+                            "code": "9700",
+                            "name": "DEPT OF DEFENSE"
+                        },
+                        "fundingSubtier": {
+                            "code": "1700",
+                            "name": "DEPT OF THE NAVY"
+                        },
+                        "fundingOffice": {
+                            "code": "N42158",
+                            "name": "NORFOLK NAVAL SHIPYARD GF"
+                        },
+                        "foreignFunding": {
+                            "code": "X",
+                            "name": "NOT APPLICABLE"
+                        }
+                    }
+                },
+                "acquisitionData": {
+                    "typeOfContractPricing": {
+                        "code": "J",
+                        "name": "FIRM FIXED PRICE"
+                    },
+                    "multiyearContract": {
+                        "name": "NO"
+                    },
+                    "programAcronym": "N/A",
+                    "nationalInterestAction": {
+                        "code": "NONE",
+                        "name": "NONE"
+                    },
+                    "performanceBasedServiceContract": {
+                        "code": "X",
+                        "name": "NOT APPLICABLE"
+                    },
+                    "consolidatedContract": {
+                        "code": "D",
+                        "name": "NOT CONSOLIDATED"
+                    },
+                    "typeOfIdc": {
+                        "code": "N/A"
+                    },
+                    "reasonForInterAgencyContracting": {
+                        "code": "X",
+                        "name": "NOT APPLICABLE"
+                    },
+                    "contractFinancing": {
+                        "code": "Z",
+                        "name": "NOT APPLICABLE"
+                    }
+                },
+                "legislativeMandates": {
+                    "clingerCohenAct": {
+                        "code": "NO",
+                        "name": "N"
+                    },
+                    "materialsSuppliesArticlesEquipment": {
+                        "code": "X",
+                        "name": "NOT APPLICABLE"
+                    },
+                    "laborStandards": {
+                        "code": "X",
+                        "name": "NOT APPLICABLE"
+                    },
+                    "constructionWageRateRequirements": {
+                        "code": "X",
+                        "name": "NOT APPLICABLE"
+                    },
+                    "interagencyContractingAuthority": {
+                        "code": "X",
+                        "name": "NOT APPLICABLE"
+                    }
+                },
+                "principalPlaceOfPerformance": {
+                    "city": {
+                        "name": "PORTSMOUTH"
+                    },
+                    "county": {
+                        "code": "740",
+                        "name": "PORTSMOUTH CITY"
+                    },
+                    "state": {
+                        "code": "VA",
+                        "name": "VIRGINIA"
+                    },
+                    "zipCode": "237094000",
+                    "congressionalDistrict": "03",
+                    "country": {
+                        "code": "USA",
+                        "name": "UNITED STATES"
+                    }
+                },
+                "productOrServiceInformation": {
+                    "recoveredMaterialClauses": {
+                        "code": "C",
+                        "name": "NO CLAUSES INCLUDED AND NO SUSTAINABILITY INCLUDED"
+                    },
+                    "productOrService": {
+                        "type": "PRODUCT",
+                        "code": "5440",
+                        "name": "SCAFFOLDING EQUIPMENT AND CONCRETE FORMS"
+                    },
+                    "principalNaics": [
+                        {
+                            "code": "332111",
+                            "name": "IRON AND STEEL FORGING"
+                        }
+                    ],
+                    "contractBundling": {
+                        "code": "H",
+                        "name": "NOT BUNDLED"
+                    },
+                    "dodAcquisitionProgram": {
+                        "code": "000",
+                        "name": "NONE"
+                    },
+                    "dodClaimantProgram": {
+                        "code": "C9E",
+                        "name": "ALL OTHERS NOT IDENTIFIABLE TO ANY OTHER PROCUREMENT PROGRAM"
+                    },
+                    "gfeGfp": {
+                        "code": "N",
+                        "name": "TRANSACTION DOES NOT USE GFE/GFP"
+                    },
+                    "informationTechnologyCommercialItemCategory": {
+                        "code": "Z",
+                        "name": "Z"
+                    },
+                    "countryOfOrigin": {
+                        "code": "USA",
+                        "name": "UNITED STATES"
+                    }
+                },
+                "competitionInformation": {
+                    "solicitationProcedures": {
+                        "code": "SP1",
+                        "name": "SIMPLIFIED ACQUISITION"
+                    },
+                    "typeOfSetAside": {
+                        "code": "NONE",
+                        "name": "NO SET ASIDE USED."
+                    },
+                    "otherThanFullAndOpenCompetition": {
+                        "code": "SP2",
+                        "name": "SAP NON-COMPETITION (FAR 13)"
+                    },
+                    "localAreaSetAside": {
+                        "name": "N"
+                    },
+                    "a76Action": {
+                        "code": "N",
+                        "name": "NO"
+                    },
+                    "preAwardSynopsisRequirement": {
+                        "code": "N",
+                        "name": "No"
+                    },
+                    "smallBusinessCompetitivenessDemonstrationProgram": {
+                        "name": "NO"
+                    },
+                    "numberOfOffersSource": {
+                        "code": "F",
+                        "name": "This Action"
+                    }
+                },
+                "acquisitionMarketingData": {
+                    "whoCanUse": {
+                        "code": "N/A"
+                    },
+                    "emailAddress": "N/A"
+                }
+            },
+            "awardDetails": {
+                "dates": {
+                    "dateSigned": "2019-01-03T05:00:00.000Z",
+                    "periodOfPerformanceStartDate": "2019-01-03 00:00:00.000",
+                    "currentCompletionDate": "2019-04-05 00:00:00.000",
+                    "ultimateCompletionDate": "2019-04-05 00:00:00.000",
+                    "fiscalYear": "2019"
+                },
+                "dollars": {
+                    "actionObligation": "4544.5",
+                    "baseDollarsObligated": "4544.5",
+                    "baseAndExercisedOptionsValue": "4544.5",
+                    "baseAndAllOptionsValue": "4544.5",
+                    "feePaidForUseOfService": "0"
+                },
+                "totalContractDollars": {
+                    "totalActionObligation": "4544.500000000000",
+                    "totalBaseAndExercisedOptionsValue": "4544.5",
+                    "totalBaseAndAllOptionsValue": "4544.5"
+                },
+                "treasuryAccount": {
+                    "agencyIdentifier": "17",
+                    "mainAccountCode": "1804"
+                },
+                "contractData": {
+                    "purchaseCardAsPaymentMethod": {
+                        "name": "NO"
+                    },
+                    "undefinitizedAction": {
+                        "code": "NO"
+                    },
+                    "emergencyAcquisition": {
+                        "code": "X",
+                        "name": "NOT APPLICABLE"
+                    },
+                    "referencedIDVMultipleOrSingle": {
+                        "name": "MULTIPLE AWARD"
+                    }
+                },
+                "productOrServiceInformation": {
+                    "descriptionOfContractRequirement": "N4215883123959 O-STEEL TOE BOARD",
+                    "useOfEpaDesignatedProducts": {
+                        "code": "E",
+                        "name": "NOT REQUIRED"
+                    },
+                    "placeOfManufacture": {
+                        "code": "D",
+                        "name": "MFG IN U.S."
+                    },
+                    "domesticOrForeignEntity": {
+                        "code": "A",
+                        "name": "U.S. OWNED BUSINESS"
+                    },
+                    "seaTransportation": {
+                        "code": "U",
+                        "name": "UNKNOWN"
+                    }
+                },
+                "competitionInformation": {
+                    "commercialProductsAndServicesAcquisitionProcedures": {
+                        "code": "A",
+                        "name": "COMMERCIAL ITEM"
+                    },
+                    "commercialItemTestProgram": {
+                        "code": "N",
+                        "name": "NO"
+                    },
+                    "evaluatedPreference": {
+                        "code": "NONE",
+                        "name": "NO PREFERENCE USED"
+                    },
+                    "numberOfOffersReceived": "1",
+                    "typeOfSetAsideSource": {
+                        "code": "F",
+                        "name": "This Action"
+                    },
+                    "numberOfOffersSource": {
+                        "code": "F",
+                        "name": "This Action"
+                    },
+                    "contractOpportunitiesNotice": {
+                        "code": "X",
+                        "name": "NOT APPLICABLE"
+                    },
+                    "alternativeAdvertising": {
+                        "code": "N",
+                        "name": "NO"
+                    },
+                    "synopsisWaiverException": {
+                        "code": "N",
+                        "name": "NOT APPLICABLE."
+                    }
+                },
+                "preferenceProgramsInformation": {
+                    "contractingOfficerBusinessSizeDetermination": [
+                        {
+                            "code": "O",
+                            "name": "OTHER THAN SMALL BUSINESS"
+                        }
+                    ],
+                    "subcontractPlan": {
+                        "code": "B",
+                        "name": "PLAN NOT REQUIRED "
+                    }
+                },
+                "legislativeMandates": {
+                    "additionalReporting": {
+                        "code": "NONE",
+                        "name": "NONE OF THE ABOVE"
+                    }
+                },
+                "contractMarketingData": {
+                    "typeOfFeeForUseOfService": {
+                        "code": "N/A"
+                    },
+                    "orderingProcedure": "N/A"
+                },
+                "awardeeData": {
+                    "awardeeHeader": {
+                        "awardeeName": "LAYHER, INC.",
+                        "awardeeNameFromContract": "LAYHER, INC."
+                    },
+                    "awardeeUEIInformation": {
+                        "uniqueEntityId": "MASERJCJRAB7",
+                        "cageCode": "43KD6",
+                        "awardeeUltimateParentUniqueEntityId": "MASERJCJRAB7",
+                        "awardeeUltimateParentName": "LAYHER  INC."
+                    },
+                    "awardeeLocation": {
+                        "streetAddress1": "8225 HANSEN RD",
+                        "city": "HOUSTON",
+                        "state": {
+                            "code": "TX",
+                            "name": "TEXAS"
+                        },
+                        "zip": "770751010",
+                        "country": {
+                            "code": "USA",
+                            "name": "UNITED STATES"
+                        },
+                        "congressionalDistrict": "29",
+                        "phoneNumber": "7139471444",
+                        "faxNumber": "7139471441",
+                        "awardeeDataSource": "D&B"
+                    },
+                    "awardeeAlternateSiteCode": "77075",
+                    "awardeeRegistrationDetails": {
+                        "registrationDate": "2005-08-22 00:00:00.000",
+                        "renewalDate": "2019-06-04 00:00:00.000"
+                    },
+                    "awardeeBusinessTypes": {
+                        "isUsFederalGovernment": {
+                            "usFederalGovernment": "NO",
+                            "federalAgency": "NO",
+                            "federallyFundedResearchAndDevelopmentCorp": "NO"
+                        },
+                        "usStateGovernment": "NO",
+                        "foreignGovernment": "NO",
+                        "usTribalGovernment": "NO",
+                        "communityDevelopmentCorporationOwnedConcern": "NO",
+                        "isUsLocalGovernment": {
+                            "usLocalGovernment": "NO",
+                            "city": "NO",
+                            "county": "NO",
+                            "intermunicipal": "NO",
+                            "localGovernmentOwned": "NO",
+                            "municipality": "NO",
+                            "schooldistrict": "NO",
+                            "township": "NO"
+                        },
+                        "usGovernmentEntity": "NO",
+                        "laborSurplusAreaFirm": "NO",
+                        "businessOrOrganization": {
+                            "corporateEntityNotTaxExempt": "YES",
+                            "corporateEntityTaxExempt": "NO",
+                            "partnershipOrLimitedLiabilityPartnership": "NO",
+                            "soleProprietorship": "NO",
+                            "smallAgriculturalCooperative": "NO",
+                            "internationalOrganization": "NO"
+                        }
+                    },
+                    "socioEconomicData": {
+                        "alaskanNativeCorporationOwnedFirm": "NO",
+                        "americanIndianOwned": "NO",
+                        "indianTribeFederallyRecognized": "NO",
+                        "nativeHawaiianOrganizationOwnedFirm": "NO",
+                        "triballyOwnedFirm": "NO",
+                        "veteranOwnedBusiness": "NO",
+                        "serviceDisabledVeteranOwnedBusiness": "NO",
+                        "isMinorityOwnedBusiness": {
+                            "minorityOwnedBusiness": "NO",
+                            "asianPacificAmericanOwned": "NO",
+                            "blackAmericanOwned": "NO",
+                            "hispanicAmericanOwned": "NO",
+                            "nativeAmericanOwned": "NO",
+                            "subcontinentAsianAsianIndianAmericanOwned": "NO",
+                            "individualOrConcernOtherThanOneOfThePreceding": "NO"
+                        },
+                        "womenOwnedBusiness": "NO",
+                        "womenOwnedSmallBusiness": "NO",
+                        "economicallyDisadvantagedWomenOwnedSmallBusiness": "NO",
+                        "womenOwnedSmallBusinessJointVenture": "NO",
+                        "economicallyDisadvantagedWomenOwnedSmallBusinessJointVenture": "NO",
+                        "emergingSmallBusiness": "NO",
+                        "VerySmallBusiness": "NO"
+                    },
+                    "lineOfBusiness": {
+                        "communityDevelopmentCorporation": "NO",
+                        "domesticShelter": "NO",
+                        "educationalInstitution": "NO",
+                        "foundation": "NO",
+                        "hospital": "NO",
+                        "manufacturerOfGoods": "YES",
+                        "veterinaryHospital": "NO",
+                        "hispanicServicingInstitution": "NO"
+                    },
+                    "relationshipWithFederalGovernment": {
+                        "contracts": "NO",
+                        "federalassistanceawards": "YES",
+                        "allawards": "NO"
+                    },
+                    "otherGovernmentalEntities": {
+                        "airportAuthority": "NO",
+                        "councilOfGovernments": "NO",
+                        "housingAuthoritiesPublicTribal": "NO",
+                        "interstateEntity": "NO",
+                        "planningCommission": "NO",
+                        "portAuthority": "NO",
+                        "transitAuthority": "NO"
+                    },
+                    "organizationFactors": {
+                        "subchapterSCorporation": "NO",
+                        "limitedLiabilityCorporation": "NO",
+                        "foreignOwned": "NO",
+                        "theAbilityOneProgram": "NO",
+                        "profitStructure": {
+                            "forProfitOrganization": "YES",
+                            "nonProfitOrganization": "NO",
+                            "otherNotForProfitOrganization": "NO"
+                        },
+                        "organizationType": "CORPORATE NOT TAX EXEMPT",
+                        "stateOfIncorporation": "DELAWARE",
+                        "countryOfIncorporation": "UNITED STATES"
+                    },
+                    "educationalEntities": {
+                        "historicallyBlackCollegeOrUniversity": "NO",
+                        "minorityInstitution": "NO",
+                        "privateUniversityOrCollege": "NO",
+                        "schoolOfForestry": "NO",
+                        "stateControlledInstitutionOfHigherLearning": "NO",
+                        "tribalCollege": "NO",
+                        "veterinaryCollege": "NO",
+                        "alaskanNativeServicingInstitution": "NO",
+                        "nativeHawaiianServicingInstitution": "NO",
+                        "1862LandGrantCollege": "NO",
+                        "1890LandGrantCollege": "NO",
+                        "1994LandGrantCollege": "NO"
+                    },
+                    "certifications": {
+                        "sbaCertified8aProgramParticipant": "NO",
+                        "sbaCertified8aJointVenture": "NO",
+                        "selfCertifiedHubZoneJointVenture": "NO",
+                        "sbaCertifiedSmallDisadvantagedBusiness": "NO",
+                        "sbaCertifiedHubZoneFirm": "NO",
+                        "selfCertifiedSmallDisadvantagedBusiness": "NO",
+                        "dotCertifiedDisadvantagedBusinessEnterprise": "NO"
+                    }
+                },
+                "transactionData": {
+                    "status": "FINAL",
+                    "version": "1.5",
+                    "createdBy": "ROMEL.JACKSON.SPMYM1@DLA.MIL",
+                    "createdDate": "2019-01-02T15:29:43.000Z",
+                    "lastModifiedBy": "FPDSADMIN",
+                    "lastModifiedDate": "2025-01-24T20:23:20.000Z",
+                    "approvedBy": "BEVERLY.HINES.SPMYM1@DLA.MIL",
+                    "approvedDate": "2019-01-03T13:44:34.000Z",
+                    "closedBy": "FPDSADMIN",
+                    "closedDate": "2025-01-24 15:23:20.000",
+                    "closedStatus": "Y"
+                }
+            }
+        }
+    ],
+    "totalRecords": "25061",
+    "limit": "1",
+    "offset": "1"
+}
+```
+</details>
+
+
+### Example 2: Get Purchase Orders Approved between January 1st, 2025 and August 19th, 2025 with a NIACS code of 513310 or 513311 or 513312.             
+<details>
+  <summary>Request URL:</summary>
+
+  <strong>Production URL:</strong>  
+  https://api.sam.gov/contract-awards/v1/search?api_key=< API Key >&awardOrIDVTypeName=PURCHASE ORDER&approvedDate=[01/01/2025,08/19/2025]&naicsCode=513310~541512~111150  
+
+  <br>
+
+  <strong>Alpha URL:</strong>  
+  https://api-alpha.sam.gov/contract-awards/v1/search?api_key=< API Key >&awardOrIDVTypeName=PURCHASE ORDER&approvedDate=[01/01/2025,08/19/2025]&naicsCode=513310~541512~111150
+
+</details>
+
+<details>
+  <summary>Response (JSON Output)</summary>
+  ```json
+  {
+    "awardSummary": [
+        {
+            "contractId": {
+                "subtier": {
+                    "code": "1344",
+                    "name": "US PATENT AND TRADEMARK OFFICE"
+                },
+                "piid": "1333BJ25A00210044",
+                "modificationNumber": "0",
+                "referencedIDVModificationNumber": "0"
+            },
+            "coreData": {
+                "coreVersionId": "1.5",
+                "awardOrIDV": "IDV",
+                "awardOrIDVType": {
+                    "code": "E",
+                    "name": "BPA"
+                },
+                "federalOrganization": {
+                    "contractingInformation": {
+                        "contractingDepartment": {
+                            "code": "1300",
+                            "name": "COMMERCE, DEPARTMENT OF"
+                        },
+                        "contractingSubtier": {
+                            "code": "1344",
+                            "name": "US PATENT AND TRADEMARK OFFICE"
+                        },
+                        "contractingOffice": {
+                            "code": "1333BJ",
+                            "name": "DEPT OF COMMERCE PTO"
+                        }
+                    },
+                    "fundingInformation": {
+                        "fundingDepartment": {
+                            "code": "1300                ",
+                            "name": "COMMERCE, DEPARTMENT OF"
+                        },
+                        "fundingSubtier": {
+                            "code": "1344",
+                            "name": "US PATENT AND TRADEMARK OFFICE"
+                        },
+                        "fundingOffice": {
+                            "code": "1333BJ",
+                            "name": "DEPT OF COMMERCE PTO"
+                        },
+                        "foreignFunding": {
+                            "code": "X",
+                            "name": "NOT APPLICABLE"
+                        }
+                    }
+                },
+                "acquisitionData": {
+                    "typeOfContractPricing": {
+                        "code": "J",
+                        "name": "FIRM FIXED PRICE"
+                    },
+                    "multiyearContract": {
+                        "name": "NO"
+                    },
+                    "performanceBasedServiceContract": {
+                        "code": "X",
+                        "name": "NOT APPLICABLE"
+                    },
+                    "consolidatedContract": {
+                        "code": "A",
+                        "name": "CONSOLIDATED REQUIREMENTS"
+                    },
+                    "multipleOrSingleAwardIdc": {
+                        "code": "M"
+                    },
+                    "reasonForInterAgencyContracting": {
+                        "code": "X",
+                        "name": "NOT APPLICABLE"
+                    },
+                    "contractFinancing": {
+                        "code": "N/A",
+                        "name": "N/A"
+                    }
+                },
+                "legislativeMandates": {
+                    "clingerCohenAct": {
+                        "code": "NO",
+                        "name": "N"
+                    },
+                    "materialsSuppliesArticlesEquipment": {
+                        "code": "N",
+                        "name": "NO"
+                    },
+                    "laborStandards": {
+                        "code": "N",
+                        "name": "NO"
+                    },
+                    "constructionWageRateRequirements": {
+                        "code": "N",
+                        "name": "NO"
+                    },
+                    "interagencyContractingAuthority": {
+                        "code": "X",
+                        "name": "NOT APPLICABLE"
+                    }
+                },
+                "productOrServiceInformation": {
+                    "productOrService": {
+                        "type": "SERVICE",
+                        "code": "R410",
+                        "name": "SUPPORT- PROFESSIONAL: PROGRAM EVALUATION/REVIEW/DEVELOPMENT"
+                    },
+                    "principalNaics": [
+                        {
+                            "code": "541512",
+                            "name": "COMPUTER SYSTEMS DESIGN SERVICES"
+                        }
+                    ],
+                    "contractBundling": {
+                        "code": "E",
+                        "name": "BUNDLED REQUIREMENTS"
+                    },
+                    "dodAcquisitionProgram": {
+                        "code": "N/A",
+                        "name": "N/A"
+                    },
+                    "gfeGfp": {
+                        "code": "N",
+                        "name": "TRANSACTION DOES NOT USE GFE/GFP"
+                    },
+                    "informationTechnologyCommercialItemCategory": {
+                        "code": "N/A",
+                        "name": "N/A"
+                    },
+                    "countryOfOrigin": {
+                        "code": "N/A",
+                        "name": "N/A"
+                    }
+                },
+                "competitionInformation": {
+                    "extentCompeted": {
+                        "code": "N/A",
+                        "name": "N/A"
+                    },
+                    "preAwardSynopsisRequirement": {
+                        "code": "N/A",
+                        "name": "N/A"
+                    },
+                    "smallBusinessCompetitivenessDemonstrationProgram": {
+                        "name": "NO"
+                    }
+                },
+                "acquisitionMarketingData": {
+                    "whoCanUse": {
+                        "code": "ONLY MY AGENCY",
+                        "name": "ONLY THE AGENCY AWARDING THE CONTRACT MAY PLACE ORDERS."
+                    }
+                }
+            },
+            "awardDetails": {
+                "dates": {
+                    "dateSigned": "2025-08-08T04:00:00.000Z",
+                    "periodOfPerformanceStartDate": "2024-04-01 00:00:00.000",
+                    "lastDateToOrder": "2025-12-31 00:00:00.000",
+                    "fiscalYear": "2025"
+                },
+                "dollars": {
+                    "actionObligation": "0",
+                    "baseDollarsObligated": "0",
+                    "baseAndAllOptionsValue": "200",
+                    "totalEstimatedOrderValue": "0"
+                },
+                "totalContractDollars": {
+                    "totalActionObligation": "0",
+                    "totalBaseAndExercisedOptionsValue": "0",
+                    "totalBaseAndAllOptionsValue": "250"
+                },
+                "contractData": {
+                    "part8OrPart13": "PART13",
+                    "purchaseCardAsPaymentMethod": {
+                        "name": "NO"
+                    },
+                    "undefinitizedAction": {
+                        "code": "NO"
+                    },
+                    "costAccountingStandardsClause": {
+                        "code": "X",
+                        "name": "NOT APPLICABLE EXEMPT FROM CAS"
+                    },
+                    "natureOfServices": {
+                        "code": "OT",
+                        "name": "OTHER FUNCTIONS"
+                    },
+                    "emergencyAcquisition": {
+                        "code": "X",
+                        "name": "NOT APPLICABLE"
+                    },
+                    "referencedIDVMultipleOrSingle": {
+                        "name": "MULTIPLE AWARD"
+                    }
+                },
+                "productOrServiceInformation": {
+                    "descriptionOfContractRequirement": "TEST",
+                    "useOfEpaDesignatedProducts": {
+                        "code": "N/A",
+                        "name": "N/A"
+                    },
+                    "placeOfManufacture": {
+                        "code": "N/A",
+                        "name": "N/A"
+                    },
+                    "domesticOrForeignEntity": {
+                        "code": "C",
+                        "name": "FOREIGN-OWNED BUSINESS INCORPORATED IN THE U.S."
+                    }
+                },
+                "competitionInformation": {
+                    "commercialProductsAndServicesAcquisitionProcedures": {
+                        "code": "A",
+                        "name": "COMMERCIAL PRODUCTS/SERVICES"
+                    },
+                    "extentCompetedForReferencedIdv": {
+                        "code": "N/A",
+                        "name": "N/A"
+                    },
+                    "idvTypeOfSetAside": {
+                        "code": "N/A",
+                        "name": "N/A"
+                    },
+                    "alternativeAdvertising": {
+                        "code": "N/A",
+                        "name": "N/A"
+                    },
+                    "synopsisWaiverException": {
+                        "code": "N/A",
+                        "name": "N/A"
+                    }
+                },
+                "preferenceProgramsInformation": {
+                    "contractingOfficerBusinessSizeDetermination": [
+                        {
+                            "code": "O",
+                            "name": "OTHER THAN SMALL BUSINESS"
+                        }
+                    ],
+                    "reasonNotAwardedToSmallDisadvantagedBusiness": {
+                        "code": "N/A",
+                        "name": "N/A"
+                    },
+                    "reasonNotAwardedToSmallBusiness": {
+                        "code": "N/A",
+                        "name": "N/A"
+                    }
+                },
+                "legislativeMandates": {
+                    "additionalReporting": {
+                        "code": "NONE",
+                        "name": "NONE OF THE ABOVE"
+                    }
+                },
+                "contractMarketingData": {
+                    "individualOrderLimit": "100"
+                },
+                "awardeeData": {
+                    "awardeeHeader": {
+                        "awardeeName": "CGI FEDERAL INC.",
+                        "awardeeAlternateName": "CGI FEDERAL INC",
+                        "legalBusinessName": "CGI FEDERAL INC.",
+                        "awardeeNameFromContract": "CGI FEDERAL INC."
+                    },
+                    "awardeeUEIInformation": {
+                        "uniqueEntityId": "TRKEP1HEBNS5",
+                        "cageCode": "3YVK7",
+                        "awardeeUltimateParentUniqueEntityId": "TRKEP1HEBNS5",
+                        "awardeeUltimateParentName": "CGI FEDERAL INC."
+                    },
+                    "awardeeLocation": {
+                        "streetAddress1": "12601 FAIR LAKES CIR # 100",
+                        "city": "FAIRFAX",
+                        "state": {
+                            "code": "VA",
+                            "name": "VIRGINIA"
+                        },
+                        "zip": "220334920",
+                        "country": {
+                            "code": "USA",
+                            "name": "UNITED STATES"
+                        },
+                        "congressionalDistrict": "11",
+                        "awardeeDataSource": "E&Y"
+                    },
+                    "awardeeAlternateSiteCode": "22033",
+                    "awardeeRegistrationDetails": {
+                        "registrationDate": "2004-07-29 00:00:00.000",
+                        "renewalDate": "2026-07-09 00:00:00.000"
+                    },
+                    "awardeeBusinessTypes": {
+                        "isUsFederalGovernment": {
+                            "usFederalGovernment": "NO",
+                            "federalAgency": "NO",
+                            "federallyFundedResearchAndDevelopmentCorp": "NO"
+                        },
+                        "usStateGovernment": "NO",
+                        "foreignGovernment": "NO",
+                        "usTribalGovernment": "NO",
+                        "communityDevelopmentCorporationOwnedConcern": "NO",
+                        "isUsLocalGovernment": {
+                            "usLocalGovernment": "NO",
+                            "city": "NO",
+                            "county": "NO",
+                            "intermunicipal": "NO",
+                            "localGovernmentOwned": "NO",
+                            "municipality": "NO",
+                            "schooldistrict": "NO",
+                            "township": "NO"
+                        },
+                        "usGovernmentEntity": "NO",
+                        "laborSurplusAreaFirm": "NO",
+                        "businessOrOrganization": {
+                            "corporateEntityNotTaxExempt": "YES",
+                            "corporateEntityTaxExempt": "NO",
+                            "partnershipOrLimitedLiabilityPartnership": "NO",
+                            "soleProprietorship": "NO",
+                            "smallAgriculturalCooperative": "NO",
+                            "internationalOrganization": "NO"
+                        }
+                    },
+                    "socioEconomicData": {
+                        "alaskanNativeCorporationOwnedFirm": "NO",
+                        "americanIndianOwned": "NO",
+                        "indianTribeFederallyRecognized": "NO",
+                        "nativeHawaiianOrganizationOwnedFirm": "NO",
+                        "triballyOwnedFirm": "NO",
+                        "veteranOwnedBusiness": "NO",
+                        "serviceDisabledVeteranOwnedBusiness": "NO",
+                        "serviceDisabledVeteranOwnedBusinessJointVenture": "NO",
+                        "isMinorityOwnedBusiness": {
+                            "minorityOwnedBusiness": "NO",
+                            "asianPacificAmericanOwned": "NO",
+                            "blackAmericanOwned": "NO",
+                            "hispanicAmericanOwned": "NO",
+                            "nativeAmericanOwned": "NO",
+                            "subcontinentAsianAsianIndianAmericanOwned": "NO",
+                            "individualOrConcernOtherThanOneOfThePreceding": "NO"
+                        },
+                        "womenOwnedBusiness": "NO",
+                        "womenOwnedSmallBusiness": "NO",
+                        "economicallyDisadvantagedWomenOwnedSmallBusiness": "NO",
+                        "womenOwnedSmallBusinessJointVenture": "NO",
+                        "economicallyDisadvantagedWomenOwnedSmallBusinessJointVenture": "NO",
+                        "emergingSmallBusiness": "NO",
+                        "smallBusinessJointVenture": "NO",
+                        "VerySmallBusiness": "NO"
+                    },
+                    "lineOfBusiness": {
+                        "communityDevelopmentCorporation": "NO",
+                        "domesticShelter": "NO",
+                        "educationalInstitution": "NO",
+                        "foundation": "NO",
+                        "hospital": "NO",
+                        "manufacturerOfGoods": "NO",
+                        "veterinaryHospital": "NO",
+                        "hispanicServicingInstitution": "NO"
+                    },
+                    "relationshipWithFederalGovernment": {
+                        "contracts": "NO",
+                        "federalassistanceawards": "YES",
+                        "allawards": "NO"
+                    },
+                    "otherGovernmentalEntities": {
+                        "airportAuthority": "NO",
+                        "councilOfGovernments": "NO",
+                        "housingAuthoritiesPublicTribal": "NO",
+                        "interstateEntity": "NO",
+                        "planningCommission": "NO",
+                        "portAuthority": "NO",
+                        "transitAuthority": "NO"
+                    },
+                    "organizationFactors": {
+                        "subchapterSCorporation": "NO",
+                        "limitedLiabilityCorporation": "NO",
+                        "foreignOwned": "YES",
+                        "theAbilityOneProgram": "NO",
+                        "profitStructure": {
+                            "forProfitOrganization": "YES",
+                            "nonProfitOrganization": "NO",
+                            "otherNotForProfitOrganization": "NO"
+                        },
+                        "organizationType": "CORPORATE NOT TAX EXEMPT",
+                        "stateOfIncorporation": "DELAWARE",
+                        "countryOfIncorporation": "UNITED STATES"
+                    },
+                    "educationalEntities": {
+                        "historicallyBlackCollegeOrUniversity": "NO",
+                        "minorityInstitution": "NO",
+                        "privateUniversityOrCollege": "NO",
+                        "schoolOfForestry": "NO",
+                        "stateControlledInstitutionOfHigherLearning": "NO",
+                        "tribalCollege": "NO",
+                        "veterinaryCollege": "NO",
+                        "alaskanNativeServicingInstitution": "NO",
+                        "nativeHawaiianServicingInstitution": "NO",
+                        "1862LandGrantCollege": "NO",
+                        "1890LandGrantCollege": "NO",
+                        "1994LandGrantCollege": "NO"
+                    },
+                    "certifications": {
+                        "sbaCertified8aProgramParticipant": "NO",
+                        "sbaCertified8aJointVenture": "NO",
+                        "selfCertifiedHubZoneJointVenture": "NO",
+                        "sbaCertifiedSmallDisadvantagedBusiness": "NO",
+                        "sbaCertifiedHubZoneFirm": "NO",
+                        "sbaCertifiedEconomicallyDisadvantagedWomenOwnedSmallBusiness": "NO",
+                        "selfCertifiedSmallDisadvantagedBusiness": "NO",
+                        "dotCertifiedDisadvantagedBusinessEnterprise": "NO",
+                        "sbaCertifiedWomenOwnedSmallBusiness": "NO"
+                    }
+                },
+                "nasaSpecificData": {
+                    "contractFundCode": "N/A",
+                    "principalInvestigatOrFirstName": "N/A",
+                    "principalInvestigatOrMiddleInitial": "N/A",
+                    "principalInvestigatOrLastName": "N/A",
+                    "alternatePrincipalInvestigatorFirstName": "N/A",
+                    "alternatePrincipalInvestigatOrMiddleInitial": "N/A",
+                    "alternatePrincipalInvestigatOrLastName": "N/A",
+                    "closeoutPR": "N/A"
+                },
+                "transactionData": {
+                    "status": "FINAL               ",
+                    "version": "1.5",
+                    "createdBy": "MOMHELP",
+                    "createdDate": "2025-08-13T15:21:31.000Z",
+                    "lastModifiedBy": "MOMHELP",
+                    "lastModifiedDate": "2025-08-18T17:42:38.000Z",
+                    "approvedBy": "MOMHELP",
+                    "approvedDate": "2025-08-18T17:42:38.000Z",
+                    "closedStatus": "N"
+                }
+            }
+        }
+    ],
+    "totalRecords": "461",
+    "limit": "1",
+    "offset": "1"
+}
+  ```
+</details>
 
 ### Example 3: Get only the Contract IDs for GSA IDVs closed between January 1st, 2025 and today.
-<details> <summary>Request URL: </summary> <strong>Alpha URL : </strong>https://api-alpha.sam.gov/contract-awards/v1/search?api_key=< API Key >&awardOrIDV=IDV&closedDate=[01/01/2025,]&contractingDepartmentCode=4700&includeSections=contractId</details>
-<details> <summary> Response (JSON Output)</summary></details>
+<details>
+  <summary>Request URL:</summary>
+
+  <strong>Production URL:</strong>  
+  https://api.sam.gov/contract-awards/v1/search?api_key=< API Key >&awardOrIDV=IDV&closedDate=[01/01/2025,]&contractingDepartmentCode=4700&includeSections=contractId
+
+  <br>
+
+  <strong>Alpha URL:</strong>  
+  https://api-alpha.sam.gov/contract-awards/v1/search?api_key=< API Key >&awardOrIDV=IDV&closedDate=[01/01/2025,]&contractingDepartmentCode=4700&includeSections=contractId
+
+</details>
+
+<details>
+  <summary>Response (JSON Output)</summary>
+   
+   ```json
+  {
+    "awardSummary": [
+        {
+            "contractId": {
+                "subtier": {
+                    "code": "4700",
+                    "name": "GENERAL SERVICES ADMINISTRATION"
+                },
+                "piid": "47340223MTEST",
+                "modificationNumber": "0"
+            }
+        },
+        {
+            "contractId": {
+                "subtier": {
+                    "code": "4730",
+                    "name": "FEDERAL ACQUISITION SERVICE"
+                },
+                "piid": "GS35F0511T",
+                "modificationNumber": "PM3346",
+                "reasonForModification": {
+                    "code": "M",
+                    "name": "OTHER ADMINISTRATIVE ACTION"
+                }
+            }
+        },
+        {
+            "contractId": {
+                "subtier": {
+                    "code": "4730",
+                    "name": "FEDERAL ACQUISITION SERVICE"
+                },
+                "piid": "GS35F0511T",
+                "modificationNumber": "PA3143DELPROD",
+                "reasonForModification": {
+                    "code": "M",
+                    "name": "OTHER ADMINISTRATIVE ACTION"
+                }
+            }
+        },
+        {
+            "contractId": {
+                "subtier": {
+                    "code": "4730",
+                    "name": "FEDERAL ACQUISITION SERVICE"
+                },
+                "piid": "GS35F0511T",
+                "modificationNumber": "1011",
+                "reasonForModification": {
+                    "code": "M",
+                    "name": "OTHER ADMINISTRATIVE ACTION"
+                }
+            }
+        },
+        {
+            "contractId": {
+                "subtier": {
+                    "code": "4732",
+                    "name": "FEDERAL ACQUISITION SERVICE"
+                },
+                "piid": "GS35F0265X",
+                "modificationNumber": "PS2357",
+                "reasonForModification": {
+                    "code": "M",
+                    "name": "OTHER ADMINISTRATIVE ACTION"
+                }
+            }
+        }
+    ],
+    "totalRecords": "7111",
+    "limit": "5",
+    "offset": "1"
+}
+  ```
+</details>
 
 ### Example 4: Get Service Contracts performed in Virginia in FY25 with a Contracting Officer's Business Size Selection of Small, and only return the Contract ID, Award Details, and Awardee Data
-<details> <summary>Request URL: </summary> <strong>Alpha URL : </strong> https://api-alpha.sam.gov/contract-awards/v1/search?api_key=< API Key >&coBusSizeDeterminationCode=S&placeOfPerformStateCode=VA&fiscalYear=2025&productOrServiceType=SERVICE&includeSections=contractId,awardDetails,awardeeData</details>
-<details> <summary> Response (JSON Output)</summary></details>
+<details>
+  <summary>Request URL:</summary>
+
+  <strong>Production URL:</strong>  
+  https://api.sam.gov/contract-awards/v1/search?api_key=< API Key >&coBusSizeDeterminationCode=S&placeOfPerformStateCode=VA&fiscalYear=2025&productOrServiceType=SERVICE&includeSections=contractId,awardDetails,awardeeData
+
+  <br>
+
+  <strong>Alpha URL:</strong>  
+  https://api-alpha.sam.gov/contract-awards/v1/search?api_key=< API Key >&coBusSizeDeterminationCode=S&placeOfPerformStateCode=VA&fiscalYear=2025&productOrServiceType=SERVICE&includeSections=contractId,awardDetails,awardeeData
+
+</details>
+
+<details>
+  <summary>Response (JSON Output)</summary>
+    ```json
+  {
+    "awardSummary": [
+        {
+            "contractId": {
+                "subtier": {
+                    "code": "1605",
+                    "name": "OFFICE OF THE ASSISTANT SECRETARY FOR ADMINISTRATION AND MANAGEMENT"
+                },
+                "piid": "1605C125F02020",
+                "modificationNumber": "P00002",
+                "transactionNumber": "0",
+                "referencedIDVSubtier": {
+                    "code": "4732",
+                    "name": "FEDERAL ACQUISITION SERVICE"
+                },
+                "referencedIDVPiid": "47QTCA19D0032",
+                "referencedIDVModificationNumber": "0",
+                "reasonForModification": {
+                    "code": "M",
+                    "name": "OTHER ADMINISTRATIVE ACTION"
+                }
+            },
+            "awardDetails": {
+                "awardeeData": {
+                    "awardeeHeader": {
+                        "awardeeName": "HORIZON INDUSTRIES, LIMITED",
+                        "awardeeNameFromContract": "HORIZON INDUSTRIES, LIMITED"
+                    },
+                    "awardeeUEIInformation": {
+                        "uniqueEntityId": "TP8ZGDNC1M94",
+                        "cageCode": "1UH05",
+                        "awardeeUltimateParentUniqueEntityId": "TP8ZGDNC1M94",
+                        "awardeeUltimateParentName": "HORIZON INDUSTRIES  LIMITED"
+                    },
+                    "awardeeLocation": {
+                        "streetAddress1": "8245 BOONE BLVD STE 300",
+                        "city": "VIENNA",
+                        "state": {
+                            "code": "VA",
+                            "name": "VIRGINIA"
+                        },
+                        "zip": "221823851",
+                        "country": {
+                            "code": "USA",
+                            "name": "UNITED STATES"
+                        },
+                        "congressionalDistrict": "11",
+                        "phoneNumber": "7039554665",
+                        "faxNumber": "7032422325",
+                        "awardeeDataSource": "D&B"
+                    },
+                    "awardeeAlternateSiteCode": "22182",
+                    "awardeeRegistrationDetails": {
+                        "registrationDate": "2001-07-05 00:00:00.000",
+                        "renewalDate": "2019-08-23 00:00:00.000"
+                    },
+                    "awardeeBusinessTypes": {
+                        "isUsFederalGovernment": {
+                            "usFederalGovernment": "NO",
+                            "federalAgency": "NO",
+                            "federallyFundedResearchAndDevelopmentCorp": "NO"
+                        },
+                        "usStateGovernment": "NO",
+                        "foreignGovernment": "NO",
+                        "usTribalGovernment": "NO",
+                        "communityDevelopmentCorporationOwnedConcern": "NO",
+                        "isUsLocalGovernment": {
+                            "usLocalGovernment": "NO",
+                            "city": "NO",
+                            "county": "NO",
+                            "intermunicipal": "NO",
+                            "localGovernmentOwned": "NO",
+                            "municipality": "NO",
+                            "schooldistrict": "NO",
+                            "township": "NO"
+                        },
+                        "usGovernmentEntity": "NO",
+                        "laborSurplusAreaFirm": "NO",
+                        "businessOrOrganization": {
+                            "corporateEntityNotTaxExempt": "YES",
+                            "corporateEntityTaxExempt": "NO",
+                            "partnershipOrLimitedLiabilityPartnership": "NO",
+                            "soleProprietorship": "NO",
+                            "smallAgriculturalCooperative": "NO",
+                            "internationalOrganization": "NO"
+                        }
+                    },
+                    "socioEconomicData": {
+                        "alaskanNativeCorporationOwnedFirm": "NO",
+                        "americanIndianOwned": "NO",
+                        "indianTribeFederallyRecognized": "NO",
+                        "nativeHawaiianOrganizationOwnedFirm": "NO",
+                        "triballyOwnedFirm": "NO",
+                        "veteranOwnedBusiness": "NO",
+                        "serviceDisabledVeteranOwnedBusiness": "NO",
+                        "serviceDisabledVeteranOwnedBusinessJointVenture": "NO",
+                        "isMinorityOwnedBusiness": {
+                            "minorityOwnedBusiness": "NO",
+                            "asianPacificAmericanOwned": "NO",
+                            "blackAmericanOwned": "NO",
+                            "hispanicAmericanOwned": "NO",
+                            "nativeAmericanOwned": "NO",
+                            "subcontinentAsianAsianIndianAmericanOwned": "NO",
+                            "individualOrConcernOtherThanOneOfThePreceding": "NO"
+                        },
+                        "womenOwnedBusiness": "NO",
+                        "womenOwnedSmallBusiness": "NO",
+                        "economicallyDisadvantagedWomenOwnedSmallBusiness": "NO",
+                        "womenOwnedSmallBusinessJointVenture": "NO",
+                        "economicallyDisadvantagedWomenOwnedSmallBusinessJointVenture": "NO",
+                        "emergingSmallBusiness": "NO",
+                        "smallBusinessJointVenture": "NO",
+                        "VerySmallBusiness": "NO"
+                    },
+                    "lineOfBusiness": {
+                        "communityDevelopmentCorporation": "NO",
+                        "domesticShelter": "NO",
+                        "educationalInstitution": "NO",
+                        "foundation": "NO",
+                        "hospital": "NO",
+                        "manufacturerOfGoods": "NO",
+                        "veterinaryHospital": "NO",
+                        "hispanicServicingInstitution": "NO"
+                    },
+                    "relationshipWithFederalGovernment": {
+                        "contracts": "NO",
+                        "federalassistanceawards": "YES",
+                        "allawards": "NO"
+                    },
+                    "otherGovernmentalEntities": {
+                        "airportAuthority": "NO",
+                        "councilOfGovernments": "NO",
+                        "housingAuthoritiesPublicTribal": "NO",
+                        "interstateEntity": "NO",
+                        "planningCommission": "NO",
+                        "portAuthority": "NO",
+                        "transitAuthority": "NO"
+                    },
+                    "organizationFactors": {
+                        "subchapterSCorporation": "YES",
+                        "limitedLiabilityCorporation": "NO",
+                        "foreignOwned": "NO",
+                        "theAbilityOneProgram": "NO",
+                        "profitStructure": {
+                            "forProfitOrganization": "YES",
+                            "nonProfitOrganization": "NO",
+                            "otherNotForProfitOrganization": "NO"
+                        },
+                        "organizationType": "CORPORATE NOT TAX EXEMPT",
+                        "stateOfIncorporation": "VIRGINIA",
+                        "countryOfIncorporation": "UNITED STATES"
+                    },
+                    "educationalEntities": {
+                        "historicallyBlackCollegeOrUniversity": "NO",
+                        "minorityInstitution": "NO",
+                        "privateUniversityOrCollege": "NO",
+                        "schoolOfForestry": "NO",
+                        "stateControlledInstitutionOfHigherLearning": "NO",
+                        "tribalCollege": "NO",
+                        "veterinaryCollege": "NO",
+                        "alaskanNativeServicingInstitution": "NO",
+                        "nativeHawaiianServicingInstitution": "NO",
+                        "1862LandGrantCollege": "NO",
+                        "1890LandGrantCollege": "NO",
+                        "1994LandGrantCollege": "NO"
+                    },
+                    "certifications": {
+                        "sbaCertified8aProgramParticipant": "NO",
+                        "sbaCertified8aJointVenture": "NO",
+                        "selfCertifiedHubZoneJointVenture": "NO",
+                        "sbaCertifiedSmallDisadvantagedBusiness": "NO",
+                        "sbaCertifiedHubZoneFirm": "NO",
+                        "sbaCertifiedEconomicallyDisadvantagedWomenOwnedSmallBusiness": "NO",
+                        "selfCertifiedSmallDisadvantagedBusiness": "NO",
+                        "dotCertifiedDisadvantagedBusinessEnterprise": "NO",
+                        "sbaCertifiedWomenOwnedSmallBusiness": "NO"
+                    }
+                }
+            }
+        }
+    ],
+    "totalRecords": "469",
+    "limit": "1",
+    "offset": "1"
+}
+  ```
+</details>
 
 ### Example 5: Get Deleted Contracts modified between Oct 1st and Oct 2nd, 2025, and return only the Contract ID.
-<details> <summary>Request URL: </summary> <strong>Alpha URL : </strong> https://api-alpha.sam.gov/contract-awards/v1/search?api_key=< API Key >&deletedStatus=yes&lastModifiedDate=[10/01/2025,10/02/2025]&includeSections=contractId</details>
-<details> <summary> Response (JSON Output)</summary></details>
+<details>
+  <summary>Request URL:</summary>
+
+  <strong>Production URL:</strong>  
+  https://api.sam.gov/contract-awards/v1/search?api_key=< API Key >&deletedStatus=yes&lastModifiedDate=[10/01/2025,10/02/2025]&includeSections=contractId
+
+  <br>
+
+  <strong>Alpha URL:</strong>  
+  https://api-alpha.sam.gov/contract-awards/v1/search?api_key=< API Key >&deletedStatus=yes&lastModifiedDate=[10/01/2025,10/02/2025]&includeSections=contractId
+
+</details>
+
+<details>
+  <summary>Response (JSON Output)</summary>
+    ```json
+  {
+    "awardSummary": [
+        {
+            "contractId": {
+                "subtier": {
+                    "code": "3600",
+                    "name": "VETERANS AFFAIRS, DEPARTMENT OF"
+                },
+                "piid": "VA25715J1359",
+                "modificationNumber": "0",
+                "transactionNumber": "0",
+                "referencedIDVSubtier": {
+                    "code": "3600",
+                    "name": "VETERANS AFFAIRS, DEPARTMENT OF"
+                },
+                "referencedIDVPiid": "V797P3148M",
+                "referencedIDVModificationNumber": "P00013"
+            }
+        },
+        {
+            "contractId": {
+                "subtier": {
+                    "code": "9700",
+                    "name": "DEPT OF DEFENSE"
+                },
+                "piid": "SPE7M520V0512",
+                "modificationNumber": "P00001",
+                "transactionNumber": "0",
+                "reasonForModification": {
+                    "code": "N",
+                    "name": "LEGAL CONTRACT CANCELLATION"
+                }
+            }
+        },
+        {
+            "contractId": {
+                "subtier": {
+                    "code": "9700",
+                    "name": "DEPT OF DEFENSE"
+                },
+                "piid": "0001",
+                "modificationNumber": "0",
+                "transactionNumber": "0",
+                "referencedIDVSubtier": {
+                    "code": "9700",
+                    "name": "DEPT OF DEFENSE"
+                },
+                "referencedIDVPiid": "SPE4A214D0004",
+                "referencedIDVModificationNumber": "0"
+            }
+        },
+        {
+            "contractId": {
+                "subtier": {
+                    "code": "9700",
+                    "name": "DEPT OF DEFENSE"
+                },
+                "piid": "SPE4A414V5661",
+                "modificationNumber": "P00001",
+                "transactionNumber": "0",
+                "referencedIDVModificationNumber": "0",
+                "reasonForModification": {
+                    "code": "M",
+                    "name": "OTHER ADMINISTRATIVE ACTION"
+                }
+            }
+        },
+        {
+            "contractId": {
+                "subtier": {
+                    "code": "1544",
+                    "name": "U.S. MARSHALS SERVICE"
+                },
+                "piid": "DJM17D24D0024",
+                "modificationNumber": "13",
+                "transactionNumber": "0",
+                "referencedIDVSubtier": {
+                    "code": "1544",
+                    "name": "U.S. MARSHALS SERVICE"
+                },
+                "referencedIDVPiid": "DJM15A32V0007",
+                "referencedIDVModificationNumber": "0",
+                "reasonForModification": {
+                    "code": "C",
+                    "name": "FUNDING ONLY ACTION"
+                }
+            }
+        }
+    ],
+    "totalRecords": "162",
+    "limit": "5",
+    "offset": "25"
+}
+  ```
+</details>
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -4189,7 +5520,7 @@ Disclaimer:  **Limitation on Permissible Use of Dun & Bradstreet, Inc. (D&B) Dat
 
 Date | Version | Description
 ------|---------------|---------
-[TBD] | v1.0 | Base Version
+12/05/2025 | v1.0 | Base Version
 
 
 
