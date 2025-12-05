@@ -6,7 +6,7 @@ banner-heading: SAM.gov Contract Awards API
 <!--<link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/custom.css" >-->
 
 ## Overview
-The Contract Awards API allows users to request revealed Award and IDV contract data, and unrevealed Award and IDV contract data, based on the user’s account and/or system account accessing the Contracts API.
+The Contract Awards API allows users to request revealed Award and IDV contract data, and unrevealed Award and IDV contract data, based on the user’s account and/or system account accessing the Contract Awards API.
 
 Award and IDV contract data consists of:
 
@@ -4023,7 +4023,7 @@ The Contract Awards API can be used to pull the deleted contracts by sending the
 
 ## OpenAPI Specification File
 
-You can view the full details of this API in the OpenAPI Specification file available here: Open API specification file for the Contracts API
+You can view the full details of this API in the OpenAPI Specification file available here: <a href="v1/openapi.yaml">Open API specification file for the Contract Awards API</a>
 
 ## Additional Help References
 
@@ -4101,7 +4101,6 @@ The API will return one of the following responses:
                 "piid": "SPMYM119P0391",
                 "modificationNumber": "0",
                 "transactionNumber": "0",
-                "referencedIDVModificationNumber": "0"
             },
             "coreData": {
                 "coreVersionId": "1.5",
@@ -4314,7 +4313,7 @@ The API will return one of the following responses:
                     "feePaidForUseOfService": "0"
                 },
                 "totalContractDollars": {
-                    "totalActionObligation": "4544.500000000000",
+                    "totalActionObligation": "4544.5",
                     "totalBaseAndExercisedOptionsValue": "4544.5",
                     "totalBaseAndAllOptionsValue": "4544.5"
                 },
@@ -4806,7 +4805,7 @@ The API will return one of the following responses:
                     "feePaidForUseOfService": "0"
                 },
                 "totalContractDollars": {
-                    "totalActionObligation": "50.000000000000",
+                    "totalActionObligation": "50.0",
                     "totalBaseAndExercisedOptionsValue": "50.0",
                     "totalBaseAndAllOptionsValue": "100000"
                 },

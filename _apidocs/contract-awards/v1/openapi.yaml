@@ -1,0 +1,407 @@
+openapi: 3.0.1
+info:
+  title: Contract Award API
+  description: Contract Award API for Get List
+  termsOfService: ""
+  contact:
+    name: GSA
+    url: www.sam.gov
+    email: reply@gsa.gov
+  version: "1.0"
+servers:
+- url: //api.sam.gov/
+  description: Generated server url
+paths:
+  /contractawards/v1/search:
+    get:
+      tags:
+      - contract-award-controller
+      summary: Contract Award Get List Details
+      operationId: getAwardDetails
+      parameters:
+      - name: contractRequest
+        in: query
+        required: true
+        schema:
+          $ref: "#/components/schemas/ContractRequest"
+      - name: api_key
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: x-Api-Roles
+        in: header
+        required: false
+        schema:
+          type: string
+      - name: offset
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+          default: 1
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+          default: 10
+      - name: format
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        "403":
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                type: object
+            text/plain:
+              schema:
+                type: object
+        "200":
+          description: Successfully retrieved list
+          content:
+            application/json:
+              schema:
+                type: object
+            text/plain:
+              schema:
+                type: object
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+            text/plain:
+              schema:
+                type: object
+        "404":
+          description: Resource not found
+          content:
+            application/json:
+              schema:
+                type: object
+            text/plain:
+              schema:
+                type: object
+  /contractawards/v1/download:
+    get:
+      tags:
+      - contract-award-controller
+      operationId: downloadAwardData
+      parameters:
+      - name: exportLoggingInfo
+        in: query
+        required: true
+        schema:
+          $ref: "#/components/schemas/ExportLoggingInfo"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/zip:
+              schema:
+                type: object
+components:
+  schemas:
+    ContractRequest:
+      type: object
+      properties:
+        api_key:
+          type: string
+        limit:
+          type: string
+        offset:
+          type: string
+        format:
+          type: string
+        emailId:
+          type: string
+        dollarsObligated:
+          type: string
+        totalDollarsObligated:
+          type: string
+        approvedDate:
+          type: string
+        awardeeCageCode:
+          type: string
+        closedDate:
+          type: string
+        closedStatus:
+          type: string
+        deletedStatus:
+          type: string
+        solicitationID:
+          type: string
+        solicitationDate:
+          type: string
+        documentVersion:
+          type: string
+        awardOrIDV:
+          type: string
+        awardOrIDVTypeCode:
+          type: string
+        awardOrIDVTypeName:
+          type: string
+        contractingSubtierCode:
+          type: string
+        contractingSubtierName:
+          type: string
+        contractingDepartmentCode:
+          type: string
+        contractingDepartmentName:
+          type: string
+        contractingOfficeCode:
+          type: string
+        coBusSizeDeterminationCode:
+          type: string
+        coBusSizeDeterminationName:
+          type: string
+        createdDate:
+          type: string
+        currentCompletionDate:
+          type: string
+        dateSigned:
+          type: string
+        awardeeZipCode:
+          type: string
+        awardeeCityName:
+          type: string
+        awardeeCongressionalDistrict:
+          type: string
+        awardeeCountryCode:
+          type: string
+        awardeeCountryName:
+          type: string
+        awardeeDoingBusinessAsName:
+          type: string
+        awardeeStateCode:
+          type: string
+        awardeeStateName:
+          type: string
+        fiscalYear:
+          type: string
+        fundingSubtierCode:
+          type: string
+        fundingSubtierName:
+          type: string
+        fundingDepartmentCode:
+          type: string
+        fundingDepartmentName:
+          type: string
+        lastModifiedDate:
+          type: string
+        awardeeLegalBusinessName:
+          type: string
+        clingerCohenActCode:
+          type: string
+        clingerCohenActName:
+          type: string
+        materialsSuppliesArticlesAndEquipCode:
+          type: string
+        materialsSuppliesArticlesAndEquipName:
+          type: string
+        laborStandardsCode:
+          type: string
+        laborStandardsName:
+          type: string
+        constructionWageRateRequirementsCode:
+          type: string
+        constructionWageRateRequirementsName:
+          type: string
+        localAreaSetAsideName:
+          type: string
+        modificationNumber:
+          type: string
+        extentCompetedCode:
+          type: string
+        extentCompetedName:
+          type: string
+        typeOfSetAsideCode:
+          type: string
+        typeOfSetAsideName:
+          type: string
+        solicitationProceduresCode:
+          type: string
+        solicitationProceduresName:
+          type: string
+        contractOpportunitiesNoticeCode:
+          type: string
+        contractOpportunitiesNoticeName:
+          type: string
+        multiyearContractName:
+          type: string
+        numberOfOffersReceived:
+          type: string
+        naicsCode:
+          type: string
+        nationalInterestActionCode:
+          type: string
+        nationalInterestActionName:
+          type: string
+        periodOfPerformanceStartDate:
+          type: string
+        piidSubtierCode:
+          type: string
+        piidSubtierName:
+          type: string
+        placeOfPerformCityName:
+          type: string
+        placeOfPerformCongressionalDistrict:
+          type: string
+        placeOfPerformCountryCode:
+          type: string
+        placeOfPerformCountryName:
+          type: string
+        placeOfPerformStateCode:
+          type: string
+        placeOfPerformStateName:
+          type: string
+        placeOfPerformZipCode:
+          type: string
+        productOrServiceCode:
+          type: string
+        productOrServiceType:
+          type: string
+        reasonForModificationCode:
+          type: string
+        reasonForModificationName:
+          type: string
+        referencedIdvPIIDSubtierCode:
+          type: string
+        referencedIdvPIIDSubtierName:
+          type: string
+        referencedIdvPiid:
+          type: string
+        referencedIdvMultipleOrSingleCode:
+          type: string
+        referencedIdvMultipleOrSingleName:
+          type: string
+        referencedIdvPart8OrPart13:
+          type: string
+        referencedIdvTypeCode:
+          type: string
+        referencedIdvTypeName:
+          type: string
+        transactionNumber:
+          type: string
+        piidAggregation:
+          type: string
+        awardeeBusinessTypeCode:
+          type: string
+        awardeeBusinessTypeName:
+          type: string
+        sourceSelectionProcessCode:
+          type: string
+        sourceSelectionProcessName:
+          type: string
+        typeOfContractPricingName:
+          type: string
+        ultimateCompletionDate:
+          type: string
+        ultimateContractValue:
+          type: string
+        totalUltimateContractValue:
+          type: string
+        awardeeUniqueEntityId:
+          type: string
+        consortiaUEI:
+          type: string
+        consortiaLegalBusinessName:
+          type: string
+        nonGovernmentDollars:
+          type: string
+        totalNonGovernmentDollars:
+          type: string
+        nonTraditionalGovernmentEntityParticipationCode:
+          type: string
+        nonTraditionalGovernmentEntityParticipationName:
+          type: string
+        typeOfAgreementName:
+          type: string
+        far1102ExceptionCode:
+          type: string
+        far1102ExceptionName:
+          type: string
+        includeSections:
+          type: string
+        q:
+          type: string
+        fundingOfficeCode:
+          type: string
+        ultimateParentLegalBusinessName:
+          type: string
+        ultimateParentUniqueEntityId:
+          type: string
+        createdBy:
+          type: string
+        approvedBy:
+          type: string
+        lastModifiedBy:
+          type: string
+        closedBy:
+          type: string
+        piid:
+          type: string
+        typeOfContractPricingCode:
+          type: string
+    ExportLoggingInfo:
+      type: object
+      properties:
+        api_key:
+          type: string
+        fileName:
+          type: string
+        id:
+          type: integer
+          format: int64
+        userId:
+          type: string
+        domain:
+          type: string
+        downloadType:
+          type: integer
+          format: int32
+        format:
+          type: string
+        searchType:
+          type: string
+        searchCriteria:
+          type: string
+        createDate:
+          type: string
+          format: date-time
+        expireDate:
+          type: string
+          format: date-time
+        status:
+          type: string
+        fileLocationS3:
+          type: string
+        lastDownloadDate:
+          type: string
+          format: date-time
+        lastUpdatedDate:
+          type: string
+          format: date-time
+        token:
+          type: string
+        count:
+          type: integer
+          format: int64
+        searchURL:
+          type: string
+        sensitivityLevel:
+          type: string
+        message:
+          type: string
+        deleted:
+          type: boolean
+        expired:
+          type: boolean
