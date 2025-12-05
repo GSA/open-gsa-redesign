@@ -4589,7 +4589,7 @@ The API will return one of the following responses:
 </details>
 
 
-### Example 2: Get Purchase Orders Approved between January 1st, 2025 and August 19th, 2025 with a NIACS code of 513310 or 513311 or 513312.             
+### Example 2: Get Purchase Orders Approved between January 1st, 2025 and August 19th, 2025 with a NIACS code of 513310 or 541512 or 111150.             
 <details>
   <summary>Request URL:</summary>
 
