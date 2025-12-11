@@ -1,19 +1,29 @@
 ---
-title: Search.gov Clicks API
-banner-heading: Search.gov Clicks API
+title: SearchGov clicks API
+banner-heading: SearchGov clicks API
 ---
 
-### Click Tracking API Instructions
+## Overview
 
-The click tracking API endpoint lets you send in click events, which allows you to see click data on your Admin Click Analytics page. We also use this click data to strengthen the search results algorithm for your site. 
+[SearchGov](https://digital.gov/guides/search) is the search engine built specifically for federal websites. 
+
+SearchGov supports over 200 million searches a year across one-third of federal domains by providing a configurable search engine that allows you to customize search experiences for the public.
+
+This API exposes all relevant clicks in a single JSON call. Use this clicks API along with the [SearchGov results API](searchgov-results.html) to optimize your search results.
+
+## Tracking clicks 
+
+Use this Clicks API endpoint to send in click events. This allows you to:
+* Access click data in the Analytics section of the Admin Center
+* Improve the relevance of search results because we use click data to rank results 
 
 This API uses the **post** method for click tracking.
 
-Check out the Search.gov help manual for more information about [how to analyze the click data](https://search.gov/admin-center/analytics/clicks.html). 
+Visit our guide for more information about [how to analyze your search analytics](https://digital.gov/guides/search/analyze), including search terms and clicks. 
 
-## Getting Started
+## Getting started
 
-The endpoint is `https://api.gsa.gov/technology/searchgov/v2/clicks/`
+The endpoint is `https://api.gsa.gov/technology/searchgov/v2/clicks/`. You must use https.
 
 Parameters include:
 * url
@@ -23,8 +33,7 @@ Parameters include:
 * module_code
 * access_key
 
-
-A full example of this is 
+A full example of this is: 
 
 `curl -i -X POST \
 -H "Content-Type: application/x-www-form-urlencoded" \
@@ -35,17 +44,15 @@ A full example of this is
 Please note that we only support this particular content type
 `(application/x-www-form-urlencoded).`
 
-## OpenAPI Specification File
+Get your access key on the API Access Key page in the [Admin Center](https://search.usa.gov/sites).
 
-You can view the full details of this API in the OpenAPI Specification file available here:
-<a href="v2/openapi.yml">Open API specification file for the Clicks API</a>
+View the full details of this API in the <a href="v2/openapi.yml">Open API specification file for the Clicks API</a>. 
 
-## Required Parameters
+## API parameters
 
 All parameters below are required unless noted otherwise. As a reminder, all parameters must be uri-encoded.
-* You can find your site handle on the Search.gov Admin Center Settings page.
-* Your access key is unique to your site handle so they must be paired properly to return results. If you have more than one search site set up, make sure you’ve selected the right one to get the right handle/key combination.
-
+* Get your site handle on the Settings page in the Admin Center.
+* Your access key is unique to your site handle, so it must be paired properly with the site handle to return results. If you have more than one search site set up, make sure you select the right one to get the right handle/key combination.
 
  | Parameters                      | Description
   | :--								| :--
@@ -53,28 +60,22 @@ All parameters below are required unless noted otherwise. As a reminder, all par
   |query		| The search term that surfaced this result and ended in a click.
   | affiliate		| You can find your site handle in the Admin Center on your settings page.
   | position | The position/rank of the result on your search results page. Was it the first result or the second?
-  | module_code         | The [module code](https://search.gov/admin-center/analytics/module-codes.html) for the source of the clicked result. Must be a valid module code.
+  | module_code         | The module code for the source of the clicked result. Must be a valid module code.
   | access_key          | Your API access key. You can find this under Your Site > Activate > API Key in the [Admin Center](https://search.usa.gov/sites). Be sure to use the API key from the Admin Center, not the API key from api.data.gov.
 
 -----
 
+## Expected results
 
-## Expected Results
-
-*   **Success** - A response status code of 200 and empty body.
-*   **Missing Required Parameters** - A response status code of 400 and an error message describing the missing parameters. `["Query can't be blank"]`
-*   **Invalid Or Inactive Affiliate** - A response status code of 401 and an error message. `["Affiliate is invalid"]`
-*   **Invalid API Access Key** - A response status code of 401 and an error message. `["Access key is invalid"]`
-*   **Unparseable URL** - A response status code of 401 and an error message. `["Url is not a valid format"]`
-*   **Invalid Module Code** - A response status code of 401 and an error message. `["Module code {MODULE} is not a valid module"]`
+*   **Success:** Response status code of 200 and empty body.
+*   **Missing Required Parameters:** Response status code of 400 and an error message describing the missing parameters. `["Query can't be blank"]`
+*   **Invalid Or Inactive Affiliate:** Response status code of 401 and an error message. `["Affiliate is invalid"]`
+*   **Invalid API Access Key:** Response status code of 401 and an error message. `["Access key is invalid"]`
+*   **Unparseable URL:** Response status code of 401 and an error message. `["Url is not a valid format"]`
+*   **Invalid Module Code:** Response status code of 401 and an error message. `["Module code {MODULE} is not a valid module"]`
 ​
+## Request support
 
-## Terms of Service
-​
-By using this API, you agree to our [Terms of Service](https://search.gov/about/tos.html).
+Review our guide, [Optimizing site search with SearchGov](https://digital.gov/guides/search), for more information on how to set up, design, optimize, and analyze your search experience. You can also check the system status and review the terms of service.
 
-## Support
-
-Visit [Search.gov](https://search.gov/) for additional information and [support](https://search.gov/support.html).
-
-<p><small><a href="#">Back to top</a></small></p>
+If you have any other questions, please [email the SearchGov team](mailto:search@gsa.gov).
