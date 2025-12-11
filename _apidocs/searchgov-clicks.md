@@ -9,7 +9,7 @@ banner-heading: SearchGov clicks API
 
 SearchGov supports over 200 million searches a year across one-third of federal domains by providing a configurable search engine that allows you to customize search experiences for the public.
 
-This API exposes all relevant clicks in a single JSON call. Use this clicks API along with the [SearchGov results API](searchgov-results.html) to optimize your search results.
+This API exposes all relevant clicks in a single JSON call. Use this clicks API along with the [SearchGov results API](https://open.gsa.gov/api/searchgov-results/) to optimize your search results.
 
 ## Tracking clicks 
 
