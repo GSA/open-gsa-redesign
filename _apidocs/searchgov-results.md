@@ -5,30 +5,26 @@ banner-heading: SearchGov results API
 
 ## Overview
 
-[SearchGov](https://digital.gov/guides/search) is the search engine built specifically for federal websites. 
+[SearchGov](https://digital.gov/guides/search) is the search engine built specifically for federal websites. We support over 200 million searches a year across one-third of federal domains by providing a configurable search engine that allows you to customize search experiences for the public.
 
-SearchGov supports over 200 million searches a year across one-third of federal domains by providing a configurable search engine that allows you to customize search experiences for the public.
+Most customers use our hosted search results page, but you can use two APIs you to display results within your own website.
 
-Most customers use the hosted search results page, but you can use our two SearchGov APIs you to display results within your own website.
-
-1. **Results API.** Use this results API to receive web results, best bets, news, and videos in one JSON call.
-2. **[Clicks API](https://open.gsa.gov/api/searchgov-clicks/).** Be sure to use the clicks API with the search results API to send us click data. This data improves the relevance of your web results.
+1. **Results API.** Use the results API to receive search results.
+2. **Clicks API.** Use the [clicks API](https://open.gsa.gov/api/searchgov-clicks/) to send us click data. This data improves the relevance of your web results.
 
 While using these APIs gives you more control over the look and feel of the search results, you will need a team of designers, engineers, and other digital service experts to create your search experience and maintain it over time.
 
 ## Getting started
 
-The first thing you need to do is [set up your search experience](https://digital.gov/guides/search/set-up). 
-
-Follow the prompts to create an account and the required five steps to go live with SearchGov, including adding the domains you want included in your search results.
+The first thing you need to do is [set up your search experience](https://digital.gov/guides/search/set-up). Follow the prompts to create an account and the required five steps to go live with SearchGov, including adding the domains you want included in your search results.
 
 We use your [robots.txt file](https://digital.gov/resources/introduction-robots-txt-files) and [XML sitemap](https://digital.gov/resources/introduction-xml-sitemaps) to crawl of your website and index your content. Be sure to properly configure them to [optimize your content](https://digital.gov/guides/search/optimize).
 
-If we do not have your content indexed, you will not see results in the API.
+If we do not have your content indexed, you will not receive any search results via the results API.
 
-## API parameters
+## API endpoint and parameters
 
-The API endpoint is:
+The endpoint is:
 
 ```https://api.gsa.gov/technology/searchgov/v2/results/i14y```
 
@@ -36,13 +32,13 @@ Three parameters are required.
 
   | Required parameters             | Descriptions and examples
   | :--								| :--
-  | affiliate						| Your site's unique site handle that you created when you set up your search experience. Find your site handle on the Settings page in the Admin Center. Example: <br> `affiliate=agencygov`
-  |	access\_key						| Your site's unique API access key that we autonmatically generated when you set up your search experience. Find your access key on the API Access Key page in the Admin Center. Example: <br> `access_key=k-zbHnApYd0PfakAdWA7BBWT43S5jos7CJfa_OQ7MS4=`
-  | query						    | The query entered by a user via your site's search box. Example: <br> `query=hello+world`
+  | affiliate						| The unique site handle you created for the affiliate site when you set up your search experience. Find your site handle on the Settings page in the Admin Center. Example: <br><br> `affiliate=agencygov`
+  |	access\_key						| The site's unique API access key that was automatically generated when you set up your search experience. Find your access key on the API Access Key page in the Admin Center. Example: <br><br> `access_key=k-zbHnApYd0PfakAdWA7BBWT43S5jos7CJfa_OQ7MS4=`
+  | query						    | The query entered by a user via your site's search box. Example: <br><br> `query=hello+world`
 
-Each access key is unique to its associated site handle. If you have more than one affiliated site set up in the Admin Center, be sure to pair them properly.
+Each access key is unique to its associated site handle. If you have more than one affiliate site set up in the Admin Center, be sure to pair them properly.
 
-The following API query contains all three required parameters using these examples: 
+Here is an API query that contains all three required parameters using these examples: 
 
 ```https://api.gsa.gov/technology/searchgov/v2/results/i14y?affiliate=agencygov&access_key=k-zbHnApYd0PfakAdWA7BBWT43S5jos7CJfa_OQ7MS4=&query=hello+world```
 
@@ -50,12 +46,12 @@ All other parameters are optional.
 
 | Optional parameters				| Descriptions and examples
 | :--								| :--
-| enable\_highlighting			| By default, we highlight all relevant, matched keywords in the search results by setting this value to 'true'. The opening Unicode character for highlighting is 'U+E000' and the closing character is 'U+E001'. You need to decide how to display these characters &mdash; whether as bold, italic, or another style. You can use 'false' to remove the highlighting. Example: <br> `enable_highlighting=false`
-| limit							| By default, we return 20 results. You can specify between 1 and 50 results. Example: <br> `limit=50`
-| offset							| By default, we set the offset to 0. The offset defines the number of results skipped from the first result. You can use the offset parameter to implement pagination. The maximum value is 999. Example: <br> `offset=10`
-| sort\_by						| By default, we return results sorted by 'relevance'. You can also sort by 'date'. Example: <br> `sort_by=date` 
-| sitelimit						| By default, we return all results within the scope of the domains you set up in the Admin Center. You can use the sitelimit parameter to limits the results to only content within specific subdomains or subfolders. You can include multiple sitelimit values using a space-separated list. The sitelimit values must be within the scope of the domains set up in the Admin Center. Examples: <br> `sitelimit=pra.digital.gov` or `sitelimit=digital.gov/guides` for a site set up to search across the entire digital.gov domain by default
-| api\_key						| By default, you can make 1,000 requests per hour using your SearchGov access key. If you need higher rate limits, please [email the SearchGov team](mailto:search@gsa.gov) for information on how to set up an [API.Data.gov API key](https://api.data.gov/docs/developer-manual/) to increase them.
+| enable\_highlighting			| By default, we highlight all relevant, matched keywords in the search results by setting this value to 'true'. <br><br>The opening Unicode character for highlighting is 'U+E000' and the closing character is 'U+E001'. You need to decide how to display these characters &mdash; whether as bold, italic, or another style. <br><br>You can use 'false' to remove the highlighting. Example: <br><br> `enable_highlighting=false`
+| limit							| By default, we return 20 results. You can specify between 1 and 50 results. Example: <br><br> `limit=50`
+| offset							| By default, we set the offset to 0. The offset defines the number of results skipped from the first result. You can use the offset parameter to implement pagination. The maximum value is 999. Example: <br><br> `offset=10`
+| sort\_by						| By default, we return results sorted by 'relevance'. You can also sort by 'date'. Example: <br><br> `sort_by=date` 
+| sitelimit						| By default, we return all results within the scope of the domains you set up in the Admin Center. <br><br>You can use the sitelimit parameter to limits the results to only content within specific subdomains or subfolders. You can include multiple sitelimit values using a space-separated list. The sitelimit values must be within the scope of the domains set up in the Admin Center. Examples: <br><br> `sitelimit=pra.digital.gov` or `sitelimit=digital.gov/guides` for a site set up to search across the entire digital.gov domain by default
+| api\_key						| By default, you can make 1,000 requests per hour using your SearchGov access key. <br><br>If you need higher rate limits, please [email the SearchGov team](mailto:search@gsa.gov) for information on how to set up an [API.Data.gov API key](https://api.data.gov/docs/developer-manual/) to increase these limits.
 
 Preformatted request strings with your unique values are provided on the Search Results API Instructions in the Activate section of the Admin Center. 
 
