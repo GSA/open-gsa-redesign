@@ -128,7 +128,7 @@ The Contract Awards API can be used to pull the deleted contracts by sending the
     * System Information<br/>
       Unique System ID: The System Account ID
     * Permissions<br/>
-      Contract Data: read public –> Gives access to the contract data.<br/>      
+      Contract-Awards: read public –> Gives access to the contract-awards data.<br/>      
     * Security Information<br/>
       IP Address: List all the IP Addresses that the System invokes the API from.
     * Type of Connection: REST APIs
@@ -747,13 +747,6 @@ The Contract Awards API can be used to pull the deleted contracts by sending the
         <tr>
             <td>referencedIdvMultipleOrSingleCode</td>
             <td>Allows 1 character code.<br>referencedIdvMultipleOrSingleCode=S</td>
-            <td>No</td>
-            <td>String</td>
-            <td>v1</td>
-        </tr>
-        <tr>
-            <td>referencedIdvMultipleOrSingleName</td>
-            <td>Allows a text.<br>referencedIdvMultipleOrSingleName=MULTIPLE</td>
             <td>No</td>
             <td>String</td>
             <td>v1</td>
