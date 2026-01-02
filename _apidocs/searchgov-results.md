@@ -12,7 +12,7 @@ SearchGov supports over 200 million searches a year across one-third of federal 
 Most customers use the hosted search results page, but you can use our two SearchGov APIs you to display results within your own website.
 
 1. Results API. Use the results API to receive web results, best bets, news, and videos in one JSON call.
-2. <a href="searchgov-clicks/">Clicks API</a>. Use the clicks API with the search results API to send us click data. This data improves the relevance of your web results.
+2. [Clicks API](https://open.gsa.gov/api/searchgov-clicks/). Use the clicks API with the search results API to send us click data. This data improves the relevance of your web results.
 
 While using the APIs gives you more control over the look and feel of the search results, you will need a team of designers, engineers, and other digital service experts to create your search experience and maintain it over time.
 
@@ -60,7 +60,7 @@ All other parameters are optional.
 
 Preformatted request strings with your unique values are provided on the Search Results API Instructions in the Activate section of the [Admin Center](https://search.usa.gov/sites/). 
 
-You can also view the full details of this API in the <a href="v2/openapi.yml">Open API specification file for the Results API</a>.
+You can also view the full details of this API in the [Open API specification file for the Results API](https://open.gsa.gov/api/searchgov-clicks/v2/openapi.yml).
 
 ## Expected results
 
