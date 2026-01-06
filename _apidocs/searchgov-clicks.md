@@ -5,74 +5,74 @@ banner-heading: SearchGov clicks API
 
 ## Overview
 
-[SearchGov](https://digital.gov/guides/search) is the search engine built specifically for federal websites. 
+[SearchGov](https://digital.gov/guides/search) is the search engine built specifically for federal websites. We support over 200 million searches a year across one-third of federal domains by providing a configurable search engine that allows you to customize search experiences for the public.
 
-SearchGov supports over 200 million searches a year across one-third of federal domains by providing a configurable search engine that allows you to customize search experiences for the public.
+Most customers use our hosted search results page, but you can use two APIs you to display results within your own website.
 
-This API exposes all relevant clicks in a single JSON call. Use this clicks API along with the [SearchGov results API](https://open.gsa.gov/api/searchgov-results/) to optimize your search results.
+1. **Results API.** Use the [results API](https://open.gsa.gov/api/searchgov-results/) to receive search results.
+2. **Clicks API.** Use the clicks API to send us click data. This data improves the relevance of your web results.
 
-## Tracking clicks 
-
-Use this Clicks API endpoint to send in click events. This allows you to:
-* Access click data in the Analytics section of the Admin Center
-* Improve the relevance of search results because we use click data to rank results 
-
-This API uses the **post** method for click tracking.
-
-Visit our guide for more information about [how to analyze your search analytics](https://digital.gov/guides/search/analyze), including search terms and clicks. 
+While using these APIs gives you more control over the look and feel of the search results, you will need a team of designers, engineers, and other digital service experts to create your search experience and maintain it over time.
 
 ## Getting started
 
-The endpoint is `https://api.gsa.gov/technology/searchgov/v2/clicks/`. You must use https.
+The first thing you need to do is [set up your search experience](https://digital.gov/guides/search/set-up). Follow the prompts to create an account and the required five steps to go live with SearchGov, including adding the domains you want included in your search results.
 
-Parameters include:
-* url
-* query
-* affiliate
-* position
-* module_code
-* access_key
+Visit our guide for more information about [how to analyze your search analytics](https://digital.gov/guides/search/analyze), including search terms and clicks. 
 
-A full example of this is: 
+## API endpoint and parameters
 
-`curl -i -X POST \
+The endpoint is:
+
+```https://api.gsa.gov/technology/searchgov/v2/clicks/```
+
+All parameters are required. 
+
+| Parameters        | Description
+| :--								           | :--
+| affiliate		           | The unique site handle you created for the affiliate site when you set up your search experience. Find your site handle on the Settings page in the Admin Center. Example: <br><br> `affiliate=agencygov`
+| access\_key           | The site's unique API access key that was automatically generated when you set up your search experience. Find your access key on the API Access Key page in the Admin Center. Example: <br><br> `access_key=k-zbHnApYd0PfakAdWA7BBWT43S5jos7CJfa_OQ7MS4=`
+|query		                | The query entered by a user via your site's search box, which resulted in a click. Example: <br><br> `query=hello%20world`
+| url			                | The URL of the result that was clicked on search results page.
+| position              | The ranked position of the clicked result, such as first or second.
+| module_code           | The module code of the clicked result. Must be a valid module code.
+
+These are the valid module codes.
+
+| Code            | Module
+| :--								     | :--
+| AIDOC     	     | Collections
+| BOOS	     	     | Text best bets
+| I14Y		     	    | Web results
+| QRTD		     	    | Routed queries
+
+Each access key is unique to its associated site handle. If you have more than one affiliate site set up in the Admin Center, be sure to pair them properly.
+
+This API uses the `POST` method to send us the click data. Here is an API query that contains all three required parameters using these examples: 
+
+```curl -i -X POST \
 -H "Content-Type: application/x-www-form-urlencoded" \
 -H "Content-Length: 0" \
 -A "user agent string" \
-"https://api.gsa.gov/technology/searchgov/v2/clicks/?url=https://foo.gov/clicked&affiliate=<AFFILIATE_NAME>&access_key=<AFFILIATE_ACCESS_KEY>&module_code=BOOS&query=test%20query&position=1"`
+"https://api.gsa.gov/technology/searchgov/v2/clicks/?affiliate=agencygov&access_key=k-zbHnApYd0PfakAdWA7BBWT43S5jos7CJfa_OQ7MS4=&query=hello%20world&url=https://www.agency.gov/policy/very-important-page.gov&position=3&module_code=I14Y"```
 
-Please note that we only support this particular content type
-`(application/x-www-form-urlencoded).`
-
-Get your access key on the API Access Key page in the [Admin Center](https://search.usa.gov/sites).
-
-View the full details of this API in the <a href="v2/openapi.yml">Open API specification file for the Clicks API</a>. 
-
-## API parameters
-
-All parameters below are required unless noted otherwise. As a reminder, all parameters must be uri-encoded.
-* Get your site handle on the Settings page in the Admin Center.
-* Your access key is unique to your site handle, so it must be paired properly with the site handle to return results. If you have more than one search site set up, make sure you select the right one to get the right handle/key combination.
-
- | Parameters                      | Description
-  | :--								| :--
-  | url			| The URL of the link that was clicked.
-  |query		| The search term that surfaced this result and ended in a click.
-  | affiliate		| You can find your site handle in the Admin Center on your settings page.
-  | position | The position/rank of the result on your search results page. Was it the first result or the second?
-  | module_code         | The module code for the source of the clicked result. Must be a valid module code.
-  | access_key          | Your API access key. You can find this under Your Site > Activate > API Key in the [Admin Center](https://search.usa.gov/sites). Be sure to use the API key from the Admin Center, not the API key from api.data.gov.
-
------
+You can also view the full details of this API in the [Open API specification file for the SearchGov Clicks API](https://open.gsa.gov/api/searchgov-clicks/v2/openapi.yml).
 
 ## Expected results
 
-*   **Success:** Response status code of 200 and empty body.
-*   **Missing Required Parameters:** Response status code of 400 and an error message describing the missing parameters. `["Query can't be blank"]`
-*   **Invalid Or Inactive Affiliate:** Response status code of 401 and an error message. `["Affiliate is invalid"]`
-*   **Invalid API Access Key:** Response status code of 401 and an error message. `["Access key is invalid"]`
-*   **Unparseable URL:** Response status code of 401 and an error message. `["Url is not a valid format"]`
-*   **Invalid Module Code:** Response status code of 401 and an error message. `["Module code {MODULE} is not a valid module"]`
+### Success
+
+We return a response status code of 200 with an empty body.
+
+### Error messages
+
+We might return a 400 or 401 response code with an error message if you are:
+
+* **Missing required parameters:** 400 error with a message such as 'Query can't be blank'
+* **Using an invalid or inactive affiliate site:** 401 error with a message such as 'Affiliate is invalid'
+* **Using an invalid access key:** 401 error with a message such as 'Access key is invalid'
+* **Posting an unparseable URL:** 401 error with a message such as 'URL is not a valid format'
+* **Posting an invalid module code:** 401 error with a message such as 'Module code DOC is not a valid module'
 ​
 ## Request support
 
