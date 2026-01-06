@@ -3,18 +3,20 @@ title: SearchGov results API
 banner-heading: SearchGov results API
 ---
 
-## Overview
+## About SearchGov
 
 [SearchGov](https://digital.gov/guides/search) is the search engine built specifically for federal websites. We support over 200 million searches a year across one-third of federal domains by providing a configurable search engine that allows you to customize search experiences for the public.
 
-Most customers use our hosted search results page, but you can use two APIs you to display results within your own website.
+Most customers use our hosted search results page, but you can use our two APIs to display results within your own website.
 
-1. **Results API.** Use the results API to receive search results.
-2. **Clicks API.** Use the [clicks API](https://open.gsa.gov/api/searchgov-clicks/) to send us click data. This data improves the relevance of your web results.
+1. **Results API** to receive search results. Keep reading for more information on the results API.
+2. **Clicks API** to send us click data. Sending us this data improves the relevance of your web results. Be sure to review the related documentation for the [clicks API](https://open.gsa.gov/api/searchgov-clicks/).
+
+You must use both APIs for a complete search experience.
 
 While using these APIs gives you more control over the look and feel of the search results, you will need a team of designers, engineers, and other digital service experts to create your search experience and maintain it over time.
 
-## Getting started
+## Getting started with the results API
 
 The first thing you need to do is [set up your search experience](https://digital.gov/guides/search/set-up). Follow the prompts to create an account and the required five steps to go live with SearchGov, including adding the domains you want included in your search results.
 
@@ -22,7 +24,9 @@ We use your [robots.txt file](https://digital.gov/resources/introduction-robots-
 
 If we do not have your content indexed, you will not receive any search results via the results API.
 
-## API endpoint and parameters
+After the results API is working as expected, you will also need to set up the [clicks API](https://open.gsa.gov/api/searchgov-clicks/).
+
+## Results API endpoint and parameters
 
 The endpoint is:
 
