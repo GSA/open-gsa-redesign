@@ -34,13 +34,13 @@ Three parameters are required.
   | :--								| :--
   | affiliate						| The unique site handle you created for the affiliate site when you set up your search experience. Find your site handle on the Settings page in the Admin Center. Example: <br><br> `affiliate=agencygov`
   |	access\_key						| The site's unique API access key that was automatically generated when you set up your search experience. Find your access key on the API Access Key page in the Admin Center. Example: <br><br> `access_key=k-zbHnApYd0PfakAdWA7BBWT43S5jos7CJfa_OQ7MS4=`
-  | query						    | The query entered by a user via your site's search box. Example: <br><br> `query=hello+world`
+  | query						    | The query entered by a user via your site's search box. Example: <br><br> `query=hello%20world`
 
 Each access key is unique to its associated site handle. If you have more than one affiliate site set up in the Admin Center, be sure to pair them properly.
 
 Here is an API query that contains all three required parameters using these examples: 
 
-```https://api.gsa.gov/technology/searchgov/v2/results/i14y?affiliate=agencygov&access_key=k-zbHnApYd0PfakAdWA7BBWT43S5jos7CJfa_OQ7MS4=&query=hello+world```
+```https://api.gsa.gov/technology/searchgov/v2/results/i14y?affiliate=agencygov&access_key=k-zbHnApYd0PfakAdWA7BBWT43S5jos7CJfa_OQ7MS4=&query=hello%20world```
 
 All other parameters are optional.
 
@@ -53,9 +53,7 @@ All other parameters are optional.
 | sitelimit						| By default, we return all results within the scope of the domains you set up in the Admin Center. <br><br>You can use the sitelimit parameter to limits the results to only content within specific subdomains or subfolders. You can include multiple sitelimit values using a space-separated list. The sitelimit values must be within the scope of the domains set up in the Admin Center. Examples: <br><br> `sitelimit=pra.digital.gov` or `sitelimit=digital.gov/guides` for a site set up to search across the entire digital.gov domain by default
 | api\_key						| By default, you can make 1,000 requests per hour using your SearchGov access key. <br><br>If you need higher rate limits, please [email the SearchGov team](mailto:search@gsa.gov) for information on how to set up an [API.Data.gov API key](https://api.data.gov/docs/developer-manual/) to increase these limits.
 
-Preformatted request strings with your unique values are provided on the Search Results API Instructions in the Activate section of the Admin Center. 
-
-You can also view the full details of this API in the [Open API specification file for the Results API](https://open.gsa.gov/api/searchgov-clicks/v2/openapi.yml).
+You can also view the full details of this API in the [Open API specification file for the Results API](https://open.gsa.gov/api/searchgov-results/v2/openapi.yml).
 
 ## Expected results
 
