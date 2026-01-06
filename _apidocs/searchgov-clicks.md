@@ -3,24 +3,28 @@ title: SearchGov clicks API
 banner-heading: SearchGov clicks API
 ---
 
-## Overview
+## About SearchGov
 
 [SearchGov](https://digital.gov/guides/search) is the search engine built specifically for federal websites. We support over 200 million searches a year across one-third of federal domains by providing a configurable search engine that allows you to customize search experiences for the public.
 
-Most customers use our hosted search results page, but you can use two APIs you to display results within your own website.
+Most customers use our hosted search results page, but you can use our two APIs to display results within your website. 
 
-1. **Results API.** Use the [results API](https://open.gsa.gov/api/searchgov-results/) to receive search results.
-2. **Clicks API.** Use the clicks API to send us click data. This data improves the relevance of your web results.
+1. **Results API** to receive search results. Be sure to review the related documentation for the [results API](https://open.gsa.gov/api/searchgov-results/).
+2. **Clicks API** to send us click data. Sending us this data improves the relevance of your web results. Keep reading for more information on the clicks API.
 
-While using these APIs gives you more control over the look and feel of the search results, you will need a team of designers, engineers, and other digital service experts to create your search experience and maintain it over time.
+You must use both APIs for a complete search experience.
 
-## Getting started
+While using the APIs gives you more control over the look and feel of the search results, you will need a team of designers, engineers, and other digital service experts to create your search experience and maintain it over time.
+
+## Getting started with the clicks API
 
 The first thing you need to do is [set up your search experience](https://digital.gov/guides/search/set-up). Follow the prompts to create an account and the required five steps to go live with SearchGov, including adding the domains you want included in your search results.
 
-Visit our guide for more information about [how to analyze your search analytics](https://digital.gov/guides/search/analyze), including search terms and clicks. 
+Then, you need to set up the [results API](https://open.gsa.gov/api/searchgov-results/). 
 
-## API endpoint and parameters
+After the results API is working as expected, you can set up the clicks API.
+
+## Clicks API endpoint and parameters
 
 The endpoint is:
 
@@ -40,11 +44,11 @@ All parameters are required.
 These are the valid module codes.
 
 | Code            | Module
-| :--								     | :--
-| AIDOC     	     | Collections
-| BOOS	     	     | Text best bets
-| I14Y		     	    | Web results
-| QRTD		     	    | Routed queries
+| :--							| :--
+| AIDOC     	    | Collections
+| BOOS	     	    | Text best bets
+| I14Y		     	  | Web results
+| QRTD		     	  | Routed queries
 
 Each access key is unique to its associated site handle. If you have more than one affiliate site set up in the Admin Center, be sure to pair them properly.
 
@@ -56,7 +60,7 @@ This API uses the `POST` method to send us the click data. Here is an API query 
 ```-A "user agent string" \```<br>
 ```"https://api.gsa.gov/technology/searchgov/v2/clicks/?affiliate=agencygov&access_key=k-zbHnApYd0PfakAdWA7BBWT43S5jos7CJfa_OQ7MS4=&query=hello%20world&url=https://www.agency.gov/policy/very-important-page.gov&position=3&module_code=I14Y"```
 
-You can also view the full details of this API in the [Open API specification file for the SearchGov Clicks API](https://open.gsa.gov/api/searchgov-clicks/v2/openapi.yml).
+You can also view the full details of this clicks API in the [Open API specification file for the SearchGov Clicks API](https://open.gsa.gov/api/searchgov-clicks/v2/openapi.yml).
 
 ## Expected results
 
