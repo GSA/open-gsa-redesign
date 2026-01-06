@@ -10,7 +10,7 @@ banner-heading: SearchGov results API
 Most customers use our hosted search results page, but you can use our two APIs to display results within your own website.
 
 1. **Results API** to receive search results. Keep reading for more information on the results API.
-2. **Clicks API** to send us click data. Sending us this data improves the relevance of your web results. Be sure to review the related documentation for the [clicks API](https://open.gsa.gov/api/searchgov-clicks/).
+2. **Clicks API** to send us click data. Be sure to review the related documentation for the [clicks API](https://open.gsa.gov/api/searchgov-clicks/).
 
 You must use both APIs for a complete search experience.
 
