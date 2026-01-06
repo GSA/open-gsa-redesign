@@ -1,46 +1,46 @@
 openapi: 3.0.0
 info:
-  title: Search.gov Clicks API
-  description: Search.gov is a service of the General Services Administration, providing search engine capability to federal agencies for their public websites. This API enables you to send click events to the Search.gov console.
+  title: SearchGov clicks API
+  description: SearchGov is a configurable search engine built by the government, for the government, with the government. Use the clicks API to send us click data and improve the relevance of your search results.
   version: 2.0
 
 paths:
   /clicks/:
     get:
-      summary: Click Tracking
-      description: 'This endpoint allows you to send in click events.'
+      summary: Click tracking
+      description: 'This endpoint allows you to send in click data.'
       parameters:
         - name: url
           in: query
-          description: 'The URL of the link that was clicked.'
+          description: 'The URL of the result that was clicked on search results page.'
           required: true
           schema:
               type: string
               format: string
         - name: query
           in: query
-          description: 'The search term that surfaced this result and ended in a click.'
+          description: 'The query entered by a user via your site’s search box, which resulted in a click.'
           required: true
           schema:
             type: string
             format: string
         - name: affiliate
           in: query
-          description: 'You can find your site handle in the Admin Center on your settings page.'
+          description: 'The unique site handle you created for the affiliate site when you set up your search experience. Find your site handle on the Settings page in the Admin Center.'
           required: true
           schema:
             type: string
             format: string
         - name: position
           in: query
-          description: 'The position/rank of the result on your search results page. Was it the first result or the second?'
+          description: 'The ranked position of the clicked result, such as first or second.'
           required: true
           schema:
             type: integer
             format: string
         - name: module_code
           in: query
-          description: 'The module code for the source of the clicked result. Must be a valid module code. See manual for more information'
+          description: 'The module code of the clicked result. Must be a valid module code.'
           required: true
           schema:
             type: integer
@@ -48,7 +48,7 @@ paths:
             default: 20
         - name: access_key
           in: query
-          description: 'Your API access key. You can find this under Your Site > Activate > API Key. Note: The API key from api.data.gov will not work for this API. It must be the one from the Search.gov admin center.'
+          description: 'The site’s unique API access key that was automatically generated when you set up your search experience. Find your access key on the API Access Key page in the Admin Center.'
           required: true
           schema:
             type: integer
@@ -83,11 +83,11 @@ paths:
 
       responses:            
         "200":
-          description: Successfully retrieved list
+          description: Successfully retrieved click data.
         "400":
-          description: Query can't be blank.
+          description: Query cannot be blank.
         "401":
-          description: Errors with inputs, such as access keys, URLs or module codes.
+          description: Errors with inputs, such as an unparseable URL or invalid affiliate site, access key, or module code.
           
 components:
   securitySchemes:
