@@ -10,7 +10,7 @@ banner-heading: SearchGov clicks API
 Most customers use our hosted search results page, but you can use our two APIs to display results within your website. 
 
 1. **Results API** to receive search results. Be sure to review the related documentation for the [results API](https://open.gsa.gov/api/searchgov-results/).
-2. **Clicks API** to send us click data. Sending us this data improves the relevance of your web results. Keep reading for more information on the clicks API.
+2. **Clicks API** to send us click data. Keep reading for more information on the clicks API.
 
 You must use both APIs for a complete search experience.
 
@@ -23,6 +23,8 @@ The first thing you need to do is [set up your search experience](https://digita
 Then, you need to set up the [results API](https://open.gsa.gov/api/searchgov-results/). 
 
 After the results API is working as expected, you can set up the clicks API.
+
+Sending us your click data provides you with insight into what resources are valued by your users. The data also helps us monitor your search service for problems. Visit our guide for more information about [how to analyze your search analytics](https://digital.gov/guides/search/analyze), including search terms and clicks.
 
 ## Clicks API endpoint and parameters
 
