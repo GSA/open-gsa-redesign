@@ -50,29 +50,25 @@ Each access key is unique to its associated site handle. If you have more than o
 
 This API uses the `POST` method to send us the click data. Here is an API query that contains all three required parameters using these examples: 
 
-```curl -i -X POST \
--H "Content-Type: application/x-www-form-urlencoded" \
--H "Content-Length: 0" \
--A "user agent string" \
-"https://api.gsa.gov/technology/searchgov/v2/clicks/?affiliate=agencygov&access_key=k-zbHnApYd0PfakAdWA7BBWT43S5jos7CJfa_OQ7MS4=&query=hello%20world&url=https://www.agency.gov/policy/very-important-page.gov&position=3&module_code=I14Y"```
+```curl -i -X POST \```
+```-H "Content-Type: application/x-www-form-urlencoded" \```
+```-H "Content-Length: 0" \```
+```-A "user agent string" \```
+```"https://api.gsa.gov/technology/searchgov/v2/clicks/?affiliate=agencygov&access_key=k-zbHnApYd0PfakAdWA7BBWT43S5jos7CJfa_OQ7MS4=&query=hello%20world&url=https://www.agency.gov/policy/very-important-page.gov&position=3&module_code=I14Y"```
 
 You can also view the full details of this API in the [Open API specification file for the SearchGov Clicks API](https://open.gsa.gov/api/searchgov-clicks/v2/openapi.yml).
 
 ## Expected results
 
-### Success
-
 We return a response status code of 200 with an empty body.
-
-### Error messages
 
 We might return a 400 or 401 response code with an error message if you are:
 
-* **Missing required parameters:** 400 error with a message such as 'Query can't be blank'
-* **Using an invalid or inactive affiliate site:** 401 error with a message such as 'Affiliate is invalid'
-* **Using an invalid access key:** 401 error with a message such as 'Access key is invalid'
-* **Posting an unparseable URL:** 401 error with a message such as 'URL is not a valid format'
-* **Posting an invalid module code:** 401 error with a message such as 'Module code DOC is not a valid module'
+* Missing required parameters (400 error with a message such as 'Query can't be blank')
+* Using an invalid or inactive affiliate site (401 error with a message such as 'Affiliate is invalid')
+* Using an invalid access key (401 error with a message such as 'Access key is invalid')
+* Posting an unparseable URL (401 error with a message such as 'URL is not a valid format')
+* Posting an invalid module code (401 error with a message such as 'Module code DOC is not a valid module')
 
 ## Request support
 
