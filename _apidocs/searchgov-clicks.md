@@ -73,7 +73,7 @@ We might return a 400 or 401 response code with an error message if you are:
 * **Using an invalid access key:** 401 error with a message such as 'Access key is invalid'
 * **Posting an unparseable URL:** 401 error with a message such as 'URL is not a valid format'
 * **Posting an invalid module code:** 401 error with a message such as 'Module code DOC is not a valid module'
-​
+
 ## Request support
 
 Review our guide, [Optimizing site search with SearchGov](https://digital.gov/guides/search), for more information on how to set up, design, optimize, and analyze your search experience. You can also check the system status and review the terms of service.
