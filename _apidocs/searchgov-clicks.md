@@ -50,10 +50,10 @@ Each access key is unique to its associated site handle. If you have more than o
 
 This API uses the `POST` method to send us the click data. Here is an API query that contains all three required parameters using these examples: 
 
-```curl -i -X POST \```
-```-H "Content-Type: application/x-www-form-urlencoded" \```
-```-H "Content-Length: 0" \```
-```-A "user agent string" \```
+```curl -i -X POST \```<br>
+```-H "Content-Type: application/x-www-form-urlencoded" \```<br>
+```-H "Content-Length: 0" \```<br>
+```-A "user agent string" \```<br>
 ```"https://api.gsa.gov/technology/searchgov/v2/clicks/?affiliate=agencygov&access_key=k-zbHnApYd0PfakAdWA7BBWT43S5jos7CJfa_OQ7MS4=&query=hello%20world&url=https://www.agency.gov/policy/very-important-page.gov&position=3&module_code=I14Y"```
 
 You can also view the full details of this API in the [Open API specification file for the SearchGov Clicks API](https://open.gsa.gov/api/searchgov-clicks/v2/openapi.yml).
