@@ -33,7 +33,7 @@ paths:
             format: string
         - name: position
           in: query
-          description: 'The ranked position of the clicked result, such as first or second.'
+          description: 'The ranked position of the clicked result, such as 1 or 2.'
           required: true
           schema:
             type: integer
