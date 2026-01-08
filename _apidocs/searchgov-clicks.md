@@ -40,7 +40,7 @@ All parameters are required.
 | access\_key           | The site's unique API access key that was automatically generated when you set up your search experience. Find your access key on the API Access Key page in the Admin Center. Example: <br><br> `access_key=k-zbHnApYd0PfakAdWA7BBWT43S5jos7CJfa_OQ7MS4=`
 |query		                | The query entered by a user via your site's search box, which resulted in a click. Example: <br><br> `query=hello%20world`
 | url			                | The URL of the result that was clicked on search results page.
-| position              | The ranked position of the clicked result, such as first or second.
+| position              | The ranked position of the clicked result, such as 1 or 2.
 | module_code           | The module code of the clicked result. Must be a valid module code.
 
 These are the valid module codes.
