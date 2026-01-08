@@ -3,18 +3,20 @@ title: SearchGov results API
 banner-heading: SearchGov results API
 ---
 
-## Overview
+## About SearchGov
 
 [SearchGov](https://digital.gov/guides/search) is the search engine built specifically for federal websites. We support over 200 million searches a year across one-third of federal domains by providing a configurable search engine that allows you to customize search experiences for the public.
 
-Most customers use our hosted search results page, but you can use two APIs you to display results within your own website.
+Most customers use our hosted search results page, but you can use our two APIs to display results within your own website.
 
-1. **Results API.** Use the results API to receive search results.
-2. **Clicks API.** Use the [clicks API](https://open.gsa.gov/api/searchgov-clicks/) to send us click data. This data improves the relevance of your web results.
+1. **Results API** to receive search results. Keep reading for more information on the results API.
+2. **Clicks API** to send us click data. Be sure to review the related documentation for the [clicks API](https://open.gsa.gov/api/searchgov-clicks/).
+
+You must use both APIs for a complete search experience.
 
 While using these APIs gives you more control over the look and feel of the search results, you will need a team of designers, engineers, and other digital service experts to create your search experience and maintain it over time.
 
-## Getting started
+## Getting started with the results API
 
 The first thing you need to do is [set up your search experience](https://digital.gov/guides/search/set-up). Follow the prompts to create an account and the required five steps to go live with SearchGov, including adding the domains you want included in your search results.
 
@@ -22,7 +24,9 @@ We use your [robots.txt file](https://digital.gov/resources/introduction-robots-
 
 If we do not have your content indexed, you will not receive any search results via the results API.
 
-## API endpoint and parameters
+After the results API is working as expected, you will also need to set up the [clicks API](https://open.gsa.gov/api/searchgov-clicks/).
+
+## Results API endpoint and parameters
 
 The endpoint is:
 
@@ -34,13 +38,13 @@ Three parameters are required.
   | :--								| :--
   | affiliate						| The unique site handle you created for the affiliate site when you set up your search experience. Find your site handle on the Settings page in the Admin Center. Example: <br><br> `affiliate=agencygov`
   |	access\_key						| The site's unique API access key that was automatically generated when you set up your search experience. Find your access key on the API Access Key page in the Admin Center. Example: <br><br> `access_key=k-zbHnApYd0PfakAdWA7BBWT43S5jos7CJfa_OQ7MS4=`
-  | query						    | The query entered by a user via your site's search box. Example: <br><br> `query=hello+world`
+  | query						    | The query entered by a user via your site's search box. Example: <br><br> `query=hello%20world`
 
 Each access key is unique to its associated site handle. If you have more than one affiliate site set up in the Admin Center, be sure to pair them properly.
 
 Here is an API query that contains all three required parameters using these examples: 
 
-```https://api.gsa.gov/technology/searchgov/v2/results/i14y?affiliate=agencygov&access_key=k-zbHnApYd0PfakAdWA7BBWT43S5jos7CJfa_OQ7MS4=&query=hello+world```
+```https://api.gsa.gov/technology/searchgov/v2/results/i14y?affiliate=agencygov&access_key=k-zbHnApYd0PfakAdWA7BBWT43S5jos7CJfa_OQ7MS4=&query=hello%20world```
 
 All other parameters are optional.
 
@@ -53,9 +57,7 @@ All other parameters are optional.
 | sitelimit						| By default, we return all results within the scope of the domains you set up in the Admin Center. <br><br>You can use the sitelimit parameter to limits the results to only content within specific subdomains or subfolders. You can include multiple sitelimit values using a space-separated list. The sitelimit values must be within the scope of the domains set up in the Admin Center. Examples: <br><br> `sitelimit=pra.digital.gov` or `sitelimit=digital.gov/guides` for a site set up to search across the entire digital.gov domain by default
 | api\_key						| By default, you can make 1,000 requests per hour using your SearchGov access key. <br><br>If you need higher rate limits, please [email the SearchGov team](mailto:search@gsa.gov) for information on how to set up an [API.Data.gov API key](https://api.data.gov/docs/developer-manual/) to increase these limits.
 
-Preformatted request strings with your unique values are provided on the Search Results API Instructions in the Activate section of the Admin Center. 
-
-You can also view the full details of this API in the [Open API specification file for the Results API](https://open.gsa.gov/api/searchgov-clicks/v2/openapi.yml).
+You can also view the full details of this API in the [Open API specification file for the Results API](https://open.gsa.gov/api/searchgov-results/v2/openapi.yml).
 
 ## Expected results
 
