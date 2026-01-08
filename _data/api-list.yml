@@ -70,11 +70,11 @@
 - title: SAM.gov Subaward reporting Bulk Upload API
   description: This API provides information for publishing subcontract and subaward reports to SAM.gov
   url: https://open.gsa.gov/api/subawards-bulkupload-api/
-- title: Search.gov Clicks API
-  description: For Search.gov customers. This API allows you to collect click data for both analytics reporting and as an input to relevance ranking of search results.
+- title: SearchGov Clicks API
+  description: For SearchGov customers. Use the clicks API to send SearchGov your click data. You must use both APIs for a complete search experience.
   url: https://open.gsa.gov/api/searchgov-clicks/
-- title: Search.gov Search Results API
-  description: For Search.gov customers. This API exposes all relevant results “modules” in a single JSON call, including web results, best bets, health topics, job openings, recent tweets, recent news, recent videos, Federal Register documents, and related searches. Used to pull search results from our service to display on a website or mobile application.
+- title: SearchGov Results API
+  description: For SearchGov customers. Use the results API to receive search results from SearchGov. You must use both APIs for a complete search experience.
   url: https://open.gsa.gov/api/searchgov-results/
 - title: Site Scanning API
   description: The Site Scanning API provides a wide range of scan data for public federal websites and their website health and best practices.
