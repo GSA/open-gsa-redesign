@@ -32,14 +32,14 @@ The endpoint is:
 
 ```https://api.gsa.gov/technology/searchgov/v2/clicks/```
 
-All parameters are required. 
+Six parameters are required. 
 
-| Parameters        | Description
-| :--								           | :--
-| affiliate		           | The unique site handle you created for the affiliate site when you set up your search experience. Find your site handle on the Settings page in the Admin Center. Example: <br><br> `affiliate=agencygov`
+| Required parameters   | Description
+| :--								    | :--
+| affiliate		          | The unique site handle you created for the affiliate site when you set up your search experience. Find your site handle on the Settings page in the Admin Center. Example: <br><br> `affiliate=agencygov`
 | access\_key           | The site's unique API access key that was automatically generated when you set up your search experience. Find your access key on the API Access Key page in the Admin Center. Example: <br><br> `access_key=k-zbHnApYd0PfakAdWA7BBWT43S5jos7CJfa_OQ7MS4=`
-|query		                | The query entered by a user via your site's search box, which resulted in a click. Example: <br><br> `query=hello%20world`
-| url			                | The URL of the result that was clicked on search results page.
+|query		              | The query entered by a user via your site's search box, which resulted in a click. Example: <br><br> `query=hello%20world`
+| url			              | The URL of the result that was clicked on search results page.
 | position              | The ranked position of the clicked result, such as 1 or 2.
 | module_code           | The module code of the clicked result. Must be a valid module code.
 
@@ -52,9 +52,17 @@ These are the valid module codes.
 | I14Y		     	  | Web results
 | QRTD		     	  | Routed queries
 
+Three parameters are optional.
+
+| Optional parameters     | Description
+| :--								      | :--
+| client_ip             | The IP address of the user who clicked on the result.
+| user_agent            | The user agent of the user who clicked on the result.
+| referrer		            | The URL of the page the user was on when clicking on the result.
+
 Each access key is unique to its associated site handle. If you have more than one affiliate site set up in the Admin Center, be sure to pair them properly.
 
-This API uses the `POST` method to send us the click data. Here is an API query that contains all three required parameters using these examples: 
+This API uses the `POST` method to send us the click data. Here is an API query that contains all six required parameters using these examples: 
 
 ```curl -i -X POST \```<br>
 ```-H "Content-Type: application/x-www-form-urlencoded" \```<br>
