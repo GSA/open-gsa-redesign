@@ -10,20 +10,6 @@ paths:
       summary: Click tracking
       description: 'This endpoint allows you to send in click data.'
       parameters:
-        - name: url
-          in: query
-          description: 'The URL of the result that was clicked on search results page.'
-          required: true
-          schema:
-              type: string
-              format: string
-        - name: query
-          in: query
-          description: 'The query entered by a user via your site’s search box, which resulted in a click.'
-          required: true
-          schema:
-            type: string
-            format: string
         - name: affiliate
           in: query
           description: 'The unique site handle you created for the affiliate site when you set up your search experience. Find your site handle on the Settings page in the Admin Center.'
@@ -31,6 +17,28 @@ paths:
           schema:
             type: string
             format: string
+        - name: access_key
+          in: query
+          description: 'The site’s unique API access key that was automatically generated when you set up your search experience. Find your access key on the API Access Key page in the Admin Center.'
+          required: true
+          schema:
+            type: integer
+            format: integer
+            default: 0
+        - name: query
+          in: query
+          description: 'The query entered by a user via your site’s search box, which resulted in a click.'
+          required: true
+          schema:
+            type: string
+            format: string
+        - name: url
+          in: query
+          description: 'The URL of the result that was clicked on search results page.'
+          required: true
+          schema:
+              type: string
+              format: string
         - name: position
           in: query
           description: 'The ranked position of the clicked result, such as 1 or 2.'
@@ -46,38 +54,27 @@ paths:
             type: integer
             format: integer
             default: 20
-        - name: access_key
-          in: query
-          description: 'The site’s unique API access key that was automatically generated when you set up your search experience. Find your access key on the API Access Key page in the Admin Center.'
-          required: true
-          schema:
-            type: integer
-            format: integer
-            default: 0
         - name: client_ip
           in: query
-          description: 'The IP address of the user who clicked.'
-          required: true
-          schema:
-            type: string
-            format: string
-            default: relevance
-        - name: user_agent
-          in: query
-          description: 'The user agent of the user who clicked.'
-          required: true
-          schema:
-            type: string
-            format: string
-            default: relevance
-        - name: referrer
-          in: query
-          description: 'The URL of the results page the searcher was on.'
+          description: 'The IP address of the user who clicked on the result.'
           required: false
           schema:
             type: string
             format: string
-            default: relevance
+        - name: user_agent
+          in: query
+          description: 'The user agent of the user who clicked on the result.'
+          required: false
+          schema:
+            type: string
+            format: string
+        - name: referrer
+          in: query
+          description: 'The URL of the page the user was on when clicking on the result.'
+          required: false
+          schema:
+            type: string
+            format: string
       tags:
       - search
 
