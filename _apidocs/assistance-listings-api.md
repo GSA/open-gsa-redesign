@@ -5,9 +5,11 @@ banner-heading: SAM.gov Assistance Listings Public API
 
 ## Overview
 
-The Assistance Listings API allows users to request federal assistance listings data, similar to the CFDA catalog, based on query parameters for filtering and pagination. This API requires pagination, and the response will be provided to users synchronously.
+The Assistance Listings API provides Active and Inactive federal assistance listings data, similar to the CFDA catalog.
 
 ## Getting Started
+
+Access the Assistance Listings Public API from the following Production or Alpha environments:
 
 ### API endpoints
 **Production:**
@@ -18,15 +20,18 @@ The Assistance Listings API allows users to request federal assistance listings 
 
 ### User Requirements
 
-* Users must have a non-Federal/Federal Individual (Personal) account and the respective API Key.
+* Users must have a non-Federal/Federal Individual (Personal) account and the respective API Key.Request a public API key from your SAM.gov user account on the Account Details page. If using the Alpha environment API, get your API key from your alpha.SAM.gov user account. Get a Production environment API key from your SAM.gov user account.
 * Users can make GET calls using any Browser or a Restful API client such as Postman.
 
 #### User Account API Key Creation
 * The SAM.gov Federal or non-Federal registered users must obtain the API Key from the https://sam.gov/profile/details page using the field, “Public API Key”.<br>
-  ![EYE_IMAGE.JPG](contract-awards/v1/EYE_IMAGE.JPG)
+  ![EYE_IMAGE.JPG](assistance-listings-api/v1/EYE_IMAGE.JPG)
 * Click on the “Eye” icon, enter the “Enter One-time Password” (this value will be sent to your email address that is associated with your registered account), hit “Submit”, for the API Key value to appear in the box.
 
+
 ### API Key Rate Limits
+
+We limit call rates by day and account type.
 
 | Type of User Account| Type of API Key | Default API Daily Rate Limit 
 | ---------------------------|---------------------------|------------------------------|
