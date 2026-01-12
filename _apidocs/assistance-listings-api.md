@@ -4,11 +4,9 @@ banner-heading: SAM.gov Assistance Listings Public API
 ---
 
 ## Overview
-
 The Assistance Listings API provides Active and Inactive federal assistance listings data, similar to the CFDA catalog.
 
 ## Getting Started
-
 Access the Assistance Listings Public API from the following Production or Alpha environments:
 
 ### API endpoints
@@ -24,8 +22,9 @@ Access the Assistance Listings Public API from the following Production or Alpha
 * Users can make GET calls using any Browser or a Restful API client such as Postman.
 
 #### User Account API Key Creation
+
 * The SAM.gov Federal or non-Federal registered users must obtain the API Key from the https://sam.gov/profile/details page using the field, “Public API Key”.<br>
-  ![EYE_IMAGE.JPG](assistance-listings-api/v1/EYE_IMAGE.JPG)
+ ![EYE_IMAGE.JPG](assistance-listings-api/v1/EYE_IMAGE.JPG)
 * Click on the “Eye” icon, enter the “Enter One-time Password” (this value will be sent to your email address that is associated with your registered account), hit “Submit”, for the API Key value to appear in the box.
 
 
@@ -42,8 +41,9 @@ We limit call rates by day and account type.
 ## API Description
 The Assistance Listings API offers the following search parameters that can be provided independently or in combination with each other.
 
-### Query String Parameters:
-Request Parameter	| Description | Required| Data Type | Applicable Versions
+### Request Parameters
+
+Request Parameter | Description | Required| Data Type | Applicable Versions
 ----- | ----- | ---- |-----| -----
 api_key	| Public Key of users	| Yes| 	String | v1
 status|	Status of the assistance listing. Possible values: "Active", "Inactive"|	No| 	String | v1
@@ -59,7 +59,7 @@ offset	|Indicates the page index. Default offset starts with 0 |No|	Int | v1
 
 ### Response Parameters
 
-Response Parameters that API returns | Description | Required | Data Type | Applicable Versions
+Response Parameters | Description | Required | Data Type | Applicable Versions
 ----- | ----- | ---- |-----| -----
 totalRecords | Total number of matching records | Yes | integer | v1
 limit | Limit value used in this response | Yes | integer | v1
