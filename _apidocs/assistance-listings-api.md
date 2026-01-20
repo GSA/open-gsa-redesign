@@ -3,32 +3,32 @@ title: SAM.gov Assistance Listings Public API
 banner-heading: SAM.gov Assistance Listings Public API 
 ---
 
-# Overview
+## Overview
 The Assistance Listings API provides Active and Inactive federal assistance listings data, similar to the CFDA catalog.
 
-# Getting Started
+## Getting Started
 Access the Assistance Listings Public API from the following Production or Alpha environments:
 
-## API endpoints
+### API endpoints
 **Production:**
 * https://api.sam.gov/assistance-listings/v1/search (coming soon)
 
 **Alpha:**
 * https://api-alpha.sam.gov/assistance-listings/v1/search
 
-## User Requirements
+### User Requirements
 
 * Users must have a non-Federal/Federal Individual (Personal) account and the respective API Key.Request a public API key from your SAM.gov user account on the Account Details page. If using the Alpha environment API, get your API key from your alpha.SAM.gov user account. Get a Production environment API key from your SAM.gov user account.
 * Users can make GET calls using any Browser or a Restful API client such as Postman.
 
-### User Account API Key Creation
+#### User Account API Key Creation
 
 * The SAM.gov Federal or non-Federal registered users must obtain the API Key from the https://sam.gov/profile/details page using the field, “Public API Key”.<br>
   ![EYE_IMAGE.JPG](assistance-listings-api/v1/EYE_IMAGE.JPG)
 * Click on the “Eye” icon, enter the “Enter One-time Password” (this value will be sent to your email address that is associated with your registered account), hit “Submit”, for the API Key value to appear in the box.
 
 
-### API Key Rate Limits
+#### API Key Rate Limits
 
 We limit call rates by day and account type.
 
@@ -38,10 +38,10 @@ We limit call rates by day and account type.
 | Non-federal user with a Role in SAM.gov | Personal API key | 1,000 requests/day |
 | Federal User | Personal API key | 1,000 requests/day |
 
-# API Description
+## API Description
 The Assistance Listings API offers the following search parameters that can be provided independently or in combination with each other.
 
-## Request Parameters
+### Request Parameters
 
 Request Parameter | Description                                                                                                                                                                                                                                                            | Required| Data Type | Applicable Versions
 ----- |------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| ---- |-----------| -----
@@ -61,7 +61,7 @@ OrganizationLevel| 	 Filters results by Federal Organization level. Available va
 coreBasedStatisticalDelineations| 	Filters results by Core Based Statistical Delineation Usage. Acceptable values are Y or N.                                                                                                                                                                            |	No| 	String[] | v1
 
 
-## Response Parameters
+### Response Parameters
 
 This section provides a **fully flattened, exhaustive data dictionary** for the Assistance Listings API response.
 
@@ -71,7 +71,7 @@ This section provides a **fully flattened, exhaustive data dictionary** for the 
 
 ---
 
-### Pagination Metadata
+#### Pagination Metadata
 
 | Response Parameter | Description | Data Type | Applicable Versions |
 |-------------------|------------|-----------|---------------------|
@@ -82,7 +82,7 @@ This section provides a **fully flattened, exhaustive data dictionary** for the 
 
 ---
 
-### assistanceListingsData (Root)
+#### assistanceListingsData (Root)
 
 | Response Parameter | Description                        | Data Type | Applicable Versions |
 |-------------------|------------------------------------|-----------|---------------------|
@@ -100,7 +100,7 @@ This section provides a **fully flattened, exhaustive data dictionary** for the 
 
 ---
 
-### Federal Organization
+#### Federal Organization
 
 | Response Parameter                                          | Description | Data Type | Applicable Versions |
 |-------------------------------------------------------------|------------|-----------|---------------------|
@@ -113,14 +113,14 @@ This section provides a **fully flattened, exhaustive data dictionary** for the 
 
 ---
 
-### Overview
+#### Overview
 
 | Response Parameter | Description | Data Type | Applicable Versions |
 |-------------------|------------|-----------|---------------------|
 | assistanceListingsData[].overview.objective | Program objective | string | All |
 | assistanceListingsData[].overview.assistanceListingDescription | Program description | string | All |
 
-#### Funded Projects
+##### Funded Projects
 
 | Response Parameter | Description | Data Type | Applicable Versions |
 |-------------------|------------|-----------|---------------------|
@@ -129,7 +129,7 @@ This section provides a **fully flattened, exhaustive data dictionary** for the 
 | assistanceListingsData[].overview.fundedProjectsList.list[].fiscalYear | Funded project FY | integer | All |
 | assistanceListingsData[].overview.fundedProjectsList.list[].description | Funded project description | string | All |
 
-#### Functional Codes (v1.0)
+##### Functional Codes (v1.0)
 
 | Response Parameter | Description | Data Type | Applicable Versions |
 |-------------------|------------|-----------|---------------------|
@@ -137,7 +137,7 @@ This section provides a **fully flattened, exhaustive data dictionary** for the 
 | assistanceListingsData[].overview.functionalCodes[].code | Functional code | string | v1.0 |
 | assistanceListingsData[].overview.functionalCodes[].name | Functional code name | string | v1.0 |
 
-#### Mission Sub-Categories (v2.0)
+##### Mission Sub-Categories (v2.0)
 
 | Response Parameter | Description | Data Type | Applicable Versions |
 |-------------------|------------|-----------|---------------------|
@@ -146,7 +146,7 @@ This section provides a **fully flattened, exhaustive data dictionary** for the 
 | assistanceListingsData[].overview.missionSubCategories.Other[].code | Other mission code | string | All |
 | assistanceListingsData[].overview.missionSubCategories.Other[].name | Other mission name | string | All |
 
-#### Subject Terms (v1.0)
+##### Subject Terms (v1.0)
 
 | Response Parameter | Description | Data Type | Applicable Versions |
 |-------------------|------------|-----------|---------------------|
@@ -156,7 +156,7 @@ This section provides a **fully flattened, exhaustive data dictionary** for the 
 
 ---
 
-### Authorizations
+#### Authorizations
 
 | Response Parameter | Description | Data Type | Applicable Versions |
 |-------------------|------------|-----------|---------------------|
@@ -169,7 +169,7 @@ This section provides a **fully flattened, exhaustive data dictionary** for the 
 | assistanceListingsData[].authorizations.list[].authorizationTypes.statute | Authorized by Statute | boolean | All |
 | assistanceListingsData[].authorizations.list[].authorizationTypes.USC | Authorized by USC | boolean | All |
 
-#### Authorization Details
+##### Authorization Details
 
 | Response Parameter | Description | Data Type | Applicable Versions |
 |-------------------|------------|-----------|---------------------|
@@ -193,14 +193,14 @@ This section provides a **fully flattened, exhaustive data dictionary** for the 
 
 ---
 
-### Financial Information
+#### Financial Information
 
 | Response Parameter | Description | Data Type | Applicable Versions |
 |-------------------|------------|-----------|---------------------|
 | assistanceListingsData[].financialInformation.isFundedCurrentFY | Funded current FY | boolean | All |
 | assistanceListingsData[].financialInformation.additionalInformation | Additional financial info | string | All |
 
-#### Obligations
+##### Obligations
 
 | Response Parameter | Description | Data Type | Applicable Versions |
 |-------------------|------------|-----------|---------------------|
@@ -214,7 +214,7 @@ This section provides a **fully flattened, exhaustive data dictionary** for the 
 | assistanceListingsData[].financialInformation.obligations[].values[].actual | Actual amount | number | All                 |
 | assistanceListingsData[].financialInformation.obligations[].values[].estimate | Estimated amount | number | All                 |
 
-#### Range & Average Assistance
+##### Range & Average Assistance
 
 | Response Parameter | Description | Data Type | Applicable Versions |
 |-------------------|------------|-----------|--------------------|
@@ -223,7 +223,7 @@ This section provides a **fully flattened, exhaustive data dictionary** for the 
 | assistanceListingsData[].financialInformation.rangeAndAverageAssistance[].maximumAwardAmount | Maximum award amount | number | v2.0                |
 | assistanceListingsData[].financialInformation.rangeAndAverageAssistance[].averageAwardAmount | Average award amount | number | v2.0                 |
 
-#### Accomplishments
+##### Accomplishments
 
 | Response Parameter | Description | Data Type | Applicable Versions |
 |-------------------|------------|-----------|---------------------|
@@ -231,7 +231,7 @@ This section provides a **fully flattened, exhaustive data dictionary** for the 
 | assistanceListingsData[].financialInformation.accomplishments.list[].fiscalYear | Accomplishment FY | integer | All |
 | assistanceListingsData[].financialInformation.accomplishments.list[].description | Accomplishment description | string | All |
 
-#### Accounts Identification
+##### Accounts Identification
 
 | Response Parameter | Description | Data Type | Applicable Versions |
 |-------------------|------------|-----------|---------------------|
@@ -240,16 +240,16 @@ This section provides a **fully flattened, exhaustive data dictionary** for the 
 
 ---
 
-### Criteria for Applying
+#### Criteria for Applying
 
-#### Documentation
+##### Documentation
 
 | Response Parameter | Description | Data Type | Applicable Versions |
 |-------------------|------------|-----------|---------------------|
 | assistanceListingsData[].criteriaForApplying.documentation.isApplicable | Documentation required | boolean | All |
 | assistanceListingsData[].criteriaForApplying.documentation.description | Documentation list | string[] | All |
 
-#### Applicant / Beneficiary
+##### Applicant / Beneficiary
 
 | Response Parameter | Description | Data Type | Applicable Versions |
 |-------------------|------------|-----------|---------------------|
@@ -261,7 +261,7 @@ This section provides a **fully flattened, exhaustive data dictionary** for the 
 | assistanceListingsData[].criteriaForApplying.beneficiary.types[].name | Beneficiary type name | string | All |
 | assistanceListingsData[].criteriaForApplying.beneficiary.description | Beneficiary description | string | All |
 
-#### Assistance Usage / Restrictions
+##### Assistance Usage / Restrictions
 
 | Response Parameter | Description | Data Type | Applicable Versions |
 |-------------------|------------|-----------|---------------------|
@@ -274,9 +274,9 @@ This section provides a **fully flattened, exhaustive data dictionary** for the 
 
 ---
 
-### Assistance Application
+#### Assistance Application
 
-#### Deadlines
+##### Deadlines
 
 | Response Parameter | Description | Data Type | Applicable Versions |
 |-------------------|------------|-----------|---------------------|
@@ -286,7 +286,7 @@ This section provides a **fully flattened, exhaustive data dictionary** for the 
 | assistanceListingsData[].assistanceApplication.deadlines.list[].description | Deadline description | string | All |
 | assistanceListingsData[].assistanceApplication.deadlines.description | General deadline description | string | All |
 
-#### Pre-Application Coordination
+##### Pre-Application Coordination
 
 | Response Parameter | Description | Data Type | Applicable Versions |
 |-------------------|------------|-----------|---------------------|
@@ -294,7 +294,7 @@ This section provides a **fully flattened, exhaustive data dictionary** for the 
 | assistanceListingsData[].assistanceApplication.preApplicationCoordination.environmentalImpact.reports[].isSelected | Report required | boolean | All |
 | assistanceListingsData[].assistanceApplication.preApplicationCoordination.description | Coordination description | string | All |
 
-#### Application / Award / Payments
+##### Application / Award / Payments
 
 | Response Parameter | Description | Data Type | Applicable Versions |
 |-------------------|------------|-----------|---------------------|
@@ -312,7 +312,7 @@ This section provides a **fully flattened, exhaustive data dictionary** for the 
 | assistanceListingsData[].assistanceApplication.payments.list[].spendingPeriodType | Spending period type | string | v2.0                |
 | assistanceListingsData[].assistanceApplication.payments.list[].spendingPeriod | Spending period | integer | v2.0                |
 
-#### Approval / Appeal / Renewal
+##### Approval / Appeal / Renewal
 
 | Response Parameter | Description | Data Type | Applicable Versions |
 |-------------------|------------|-----------|---------------------|
@@ -325,9 +325,9 @@ This section provides a **fully flattened, exhaustive data dictionary** for the 
 
 ---
 
-### Compliance
+#### Compliance
 
-#### CFR, Reports, Audit
+##### CFR, Reports, Audit
 
 | Response Parameter | Description | Data Type | Applicable Versions |
 |-------------------|------------|-----------|---------------------|
@@ -341,7 +341,7 @@ This section provides a **fully flattened, exhaustive data dictionary** for the 
 | assistanceListingsData[].compliance.audit.frequency | Audit frequency | string | All                 |
 | assistanceListingsData[].compliance.audit.description | Audit description | string | All                 |
 
-#### Records & Documents
+##### Records & Documents
 
 | Response Parameter | Description | Data Type | Applicable Versions |
 |-------------------|------------|-----------|---------------------|
@@ -351,7 +351,7 @@ This section provides a **fully flattened, exhaustive data dictionary** for the 
 | assistanceListingsData[].compliance.documents.isApplicable | Documents reference | uuid | All |
 | assistanceListingsData[].compliance.documents.description | Documents description | string | All |
 
-#### Formula & Matching
+##### Formula & Matching
 
 | Response Parameter                                                              | Description               | Data Type | Applicable Versions |
 | ------------------------------------------------------------------------------- | ------------------------- | --------- | ------------------- |
@@ -372,9 +372,9 @@ This section provides a **fully flattened, exhaustive data dictionary** for the 
 
 ---
 
-### Contacts
+#### Contacts
 
-#### Local
+##### Local
 
 | Response Parameter | Description | Data Type | Applicable Versions |
 |-------------------|------------|-----------|---------------------|
@@ -382,7 +382,7 @@ This section provides a **fully flattened, exhaustive data dictionary** for the 
 | assistanceListingsData[].contacts.local.officeLocationURL | Office URL | uri | v2.0                |
 | assistanceListingsData[].contacts.local.description | Local description | string | v1.0                |
 
-#### Headquarters
+##### Headquarters
 
 | Response Parameter | Description | Data Type | Applicable Versions |
 |-------------------|------------|-----------|---------------------|
@@ -400,20 +400,20 @@ This section provides a **fully flattened, exhaustive data dictionary** for the 
 | assistanceListingsData[].contacts.headquarters[].subdivisionCode | Subdivision code | string | All |
 | assistanceListingsData[].contacts.headquarters[].subdivisionName | Subdivision name | string | All |
 
-## OpenAPI Specification File
+### OpenAPI Specification File
 
 You can view the full details of this API in the OpenAPI Specification file available here: <a href="assistance-listings-api/v1/assistance-listings-api.openapi.yaml">Open API specification file for the Assistance Listings API</a>
 
 
-## Reference Data
+### Reference Data
 
-### Assistance Types (By Code)
+#### Assistance Types (By Code)
 
 This section lists the standardized assistance types organized by their corresponding codes.
 
 ---
 
-#### Financial Assistance
+##### Financial Assistance
 
 | Assistance Type Code | Assistance Type Name                               |
 |----------------------|----------------------------------------------------|
@@ -430,7 +430,7 @@ This section lists the standardized assistance types organized by their correspo
 
 ---
 
-#### Non-Financial Assistance
+##### Non-Financial Assistance
 
 | Assistance Type Code | Assistance Type Name                               |
 |----------------------|----------------------------------------------------|
@@ -443,7 +443,7 @@ This section lists the standardized assistance types organized by their correspo
 | N007                 | Other Non-Financial Assistance                    |
 
 ---
-### Eligible Award Applicant and Beneficiary Types
+#### Eligible Award Applicant and Beneficiary Types
 
 This section lists entity types according to their eligibility as **Award Applicants** and **Beneficiaries**.
 
