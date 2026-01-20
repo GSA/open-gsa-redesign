@@ -3,25 +3,25 @@ title: SAM.gov Assistance Listings Public API
 banner-heading: SAM.gov Assistance Listings Public API 
 ---
 
-## Overview
+# Overview
 The Assistance Listings API provides Active and Inactive federal assistance listings data, similar to the CFDA catalog.
 
-## Getting Started
+# Getting Started
 Access the Assistance Listings Public API from the following Production or Alpha environments:
 
-### API endpoints
+## API endpoints
 **Production:**
 * https://api.sam.gov/assistance-listings/v1/search (coming soon)
 
 **Alpha:**
 * https://api-alpha.sam.gov/assistance-listings/v1/search
 
-### User Requirements
+## User Requirements
 
 * Users must have a non-Federal/Federal Individual (Personal) account and the respective API Key.Request a public API key from your SAM.gov user account on the Account Details page. If using the Alpha environment API, get your API key from your alpha.SAM.gov user account. Get a Production environment API key from your SAM.gov user account.
 * Users can make GET calls using any Browser or a Restful API client such as Postman.
 
-#### User Account API Key Creation
+### User Account API Key Creation
 
 * The SAM.gov Federal or non-Federal registered users must obtain the API Key from the https://sam.gov/profile/details page using the field, “Public API Key”.<br>
   ![EYE_IMAGE.JPG](assistance-listings-api/v1/EYE_IMAGE.JPG)
@@ -38,10 +38,10 @@ We limit call rates by day and account type.
 | Non-federal user with a Role in SAM.gov | Personal API key | 1,000 requests/day |
 | Federal User | Personal API key | 1,000 requests/day |
 
-## API Description
+# API Description
 The Assistance Listings API offers the following search parameters that can be provided independently or in combination with each other.
 
-### Request Parameters
+## Request Parameters
 
 Request Parameter | Description                                                                                                                                                                                                                                                            | Required| Data Type | Applicable Versions
 ----- |------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| ---- |-----------| -----
@@ -61,67 +61,349 @@ OrganizationLevel| 	 Filters results by Federal Organization level. Available va
 coreBasedStatisticalDelineations| 	Filters results by Core Based Statistical Delineation Usage. Acceptable values are Y or N.                                                                                                                                                                            |	No| 	String[] | v1
 
 
-### Response Parameters
+## Response Parameters
 
-Response Parameter | Description                                        | Required | Data Type           | Applicable Versions
------ |----------------------------------------------------| ---- |---------------------| -----
-totalRecords | Total Records                                      | Yes | Number              | v1
-pageSize | Page size                                          | Yes | Number              | v1
-page | Page Number                                        | Yes | Number              | v1
-totalPages | Total Pages                                        | Yes | Number              | v1
-assistanceListingsData | Array of assistance listing objects                | Yes | AssistanceListing[] | v1
-assistanceListingsData.version | Data version                                       | No | String              | v1
-assistanceListingsData.status | Status of the program (\"Active\" or \"Inactive\") | No | String              | v1
-assistanceListingsData.fiscalYear | Fiscal year for the listing                        | No | Number              | v1
-assistanceListingsData.publishedDate | Published date (ISO 8601)                          | No | String              | v1
-assistanceListingsData.assistanceListingId | Program number (CFDA ID)                           | No | String              | v1
-assistanceListingsData.title | Program title                                      | No | String              | v1
-assistanceListingsData.popularLongName | Alternative long name                              | No | String              | v1
-assistanceListingsData.popularShortName | Alternative short name                             | No | String              | v1
-assistanceListingsData.relatedFederalAssistance | Related program IDs                                | No | String[]            | v1
-assistanceListingsData.federalOrganization | Federal organization information                   | No | JSON object         | v1
-assistanceListingsData.federalOrganization.department | Department Name                                    | No | String              | v1
-assistanceListingsData.federalOrganization.departmentCode | Department Code (FPDS code)                        | No | String              | v1
-assistanceListingsData.federalOrganization.agency| Agency Name                                        | No | String              | v1
-assistanceListingsData.federalOrganization.agencyCode| Agency Code (FPDS code)                            | No | String              | v1
-assistanceListingsData.federalOrganization.office | Office name                                        | No | String              | v1
-assistanceListingsData.federalOrganization.office | Office Code (AAC code)                             | No | String              | v1
-assistanceListingsData.programWebPage | URL to program website                                                           | No | String              | v1
-assistanceListingsData.overview | Overview object (objective, description, funded projects, codes, subjects)       | No | JSON Object         | v1
-assistanceListingsData.overview.objective | Program objective                                                                | No | String              | v1
-assistanceListingsData.overview.assistanceListingDescription | Program description                                                              | No | String              | v1
-assistanceListingsData.overview.fundedProjectsList.isApplicable | Whether funded projects apply                                                    | No | boolean             | v1
-assistanceListingsData.overview.fundedProjectsList.list.fiscalYear | Funded project fiscal year                                                       | No | integer             | v1
-assistanceListingsData.overview.functionalCodes.code | Functional code                                                                  | No | string              | v1
-assistanceListingsData.overview.missionSubCategories.Primary.code | Primary mission code                                                             | No | string              | v1
-assistanceListingsData.authorizations | Authorizations object (description and list)                                     | No | Object              | v1
-assistanceListingsData.authorizations.list.authorizationTypes | Authorization types flags                                                        | No | Object              | v1
-assistanceListingsData.financialInformation | Financial information object (obligations, ranges, accounts)                     | No | Object              | v1
-assistanceListingsData.financialInformation.isFundedCurrentFY | Funded in current fiscal year                                                    | No | boolean             | v1
-assistanceListingsData.financialInformation.obligations.assistanceType | Assistance type for obligations                                                  | No | Object              | v1
-assistanceListingsData.financialInformation.rangeAndAverageAssistance.minimumAwardAmount | Minimum award amount                                                             | No | number              | v1
-assistanceListingsData.criteriaForApplying | Criteria for applying (documentation, applicant, beneficiary, usage, restrictions) | No | Object              | v1
-assistanceListingsData.assistanceApplication | Application details (deadlines, procedure, payments, renewal, appeal)            | No | Object              | v1
-assistanceListingsData.assistanceApplication.deadlines.value | Deadline flag/value                                                              | No | string              | v1
-assistanceListingsData.assistanceApplication.payments.list.type | Payment type                                                                     | No | string              | v1
-assistanceListingsData.compliance | Compliance information (CFR200, reports, audit, records, documents)              | No | Object              | v1
-assistanceListingsData.compliance.CFR200Requirements.questions.code | CFR subpart code                                                                 | No | string              | v1
-assistanceListingsData.contacts | Contacts object (local and headquarters)                                         | No | Object              | v1
-assistanceListingsData.contacts.local.flag | Local contact flag                                                               | No | string              | v1
-assistanceListingsData.contacts.headquarters.contactId | Contact UUID                                                                     | No | uuid                | v1
-assistanceListingsData.contacts.headquarters.fullName | Contact full name                                                                | No | string              | v1
-assistanceListingsData.contacts.headquarters.email | Contact email                                                                    | No | string              | v1
-assistanceListingsData.contacts.headquarters.phone | Contact phone                                                                    | No | string              | v1
-assistanceListingsData.contacts.headquarters.fax | Contact fax                                                                      | No | string              | v1
-assistanceListingsData.contacts.headquarters.title | Contact title                                                                    | No | string              | v1
-assistanceListingsData.additionalInformation | Additional information object (website, instructions, publications)              | No | Object              | v1
-assistanceListingsData.additionalInformation.website | Additional website URL                                                           | No | string              | v1
-assistanceListingsData.additionalInformation.instructions | Additional instructions                                                          | No | string              | v1
-assistanceListingsData.additionalInformation.publications.title | Publication title                                                                | No | string              | v1
-assistanceListingsData.additionalInformation.publications.url | Publication URL                                                                  | No | string              | v1
-assistanceListingsData.assistanceTypes | Assistance types array                                                           | No | string[]            | v1
-assistanceListingsData.applicantTypes | Applicant types array                                                            | No | string[]            | v1
-assistanceListingsData.beneficiaryTypes | Beneficiary types array                                                          | No | string[]            | v1
+This section provides a **fully flattened, exhaustive data dictionary** for the Assistance Listings API response.
+
+- **Notation**: Dot notation is used for nesting
+- **Arrays**: Indicated with `[]`
+- **Versions**: “All” unless explicitly stated (e.g., v1.0)
+
+---
+
+### Pagination Metadata
+
+| Response Parameter | Description | Data Type | Applicable Versions |
+|-------------------|------------|-----------|---------------------|
+| totalRecords | Total number of records available | integer | All |
+| pageSize | Number of records per page | integer | All |
+| page | Current page number | integer | All |
+| totalPages | Total number of pages | integer | All |
+
+---
+
+### assistanceListingsData (Root)
+
+| Response Parameter | Description                        | Data Type | Applicable Versions |
+|-------------------|------------------------------------|-----------|---------------------|
+| assistanceListingsData | Assistance listings container      | array | All |
+| assistanceListingsData[].version | Data specification version         | string | All |
+| assistanceListingsData[].status | Program status (Active / Inactive) | string | All |
+| assistanceListingsData[].fiscalYear | Fiscal year                        | integer | All |
+| assistanceListingsData[].publishedDate | Published date (ISO 8601)          | string | All |
+| assistanceListingsData[].assistanceListingId | CFDA / Assistance Listing ID       | string | All |
+| assistanceListingsData[].title | Program title                      | string | All |
+| assistanceListingsData[].popularLongName | Popular long name                  | string | All |
+| assistanceListingsData[].popularShortName | Popular short name                 | string | All |
+| assistanceListingsData[].relatedFederalAssistance | Related assistance listings        | string[] | All |
+| assistanceListingsData[].programWebPage | Program website URL                | string (URL) | All |
+
+---
+
+### Federal Organization
+
+| Response Parameter                                          | Description | Data Type | Applicable Versions |
+|-------------------------------------------------------------|------------|-----------|---------------------|
+| assistanceListingsData[].federalOrganization.department     | Department name | string | All |
+| assistanceListingsData[].federalOrganization.departmentCode | Department Code (FPDS code) | string | All |
+| assistanceListingsData[].federalOrganization.agency         | Agency name | string | All |
+| assistanceListingsData[].federalOrganization.agencyCode     | Agency Code (FPDS code) | string | All |
+| assistanceListingsData[].federalOrganization.office         | Office name | string | All |
+| assistanceListingsData[].federalOrganization.officeCode     | Office Code (AAC code)  | string | All |
+
+---
+
+### Overview
+
+| Response Parameter | Description | Data Type | Applicable Versions |
+|-------------------|------------|-----------|---------------------|
+| assistanceListingsData[].overview.objective | Program objective | string | All |
+| assistanceListingsData[].overview.assistanceListingDescription | Program description | string | All |
+
+#### Funded Projects
+
+| Response Parameter | Description | Data Type | Applicable Versions |
+|-------------------|------------|-----------|---------------------|
+| assistanceListingsData[].overview.fundedProjectsList.isApplicable | Funded projects applicable | boolean | All |
+| assistanceListingsData[].overview.fundedProjectsList.list | Funded projects list | array | All |
+| assistanceListingsData[].overview.fundedProjectsList.list[].fiscalYear | Funded project FY | integer | All |
+| assistanceListingsData[].overview.fundedProjectsList.list[].description | Funded project description | string | All |
+
+#### Functional Codes (v1.0)
+
+| Response Parameter | Description | Data Type | Applicable Versions |
+|-------------------|------------|-----------|---------------------|
+| assistanceListingsData[].overview.functionalCodes | Functional codes | array | v1.0 |
+| assistanceListingsData[].overview.functionalCodes[].code | Functional code | string | v1.0 |
+| assistanceListingsData[].overview.functionalCodes[].name | Functional code name | string | v1.0 |
+
+#### Mission Sub-Categories (v2.0)
+
+| Response Parameter | Description | Data Type | Applicable Versions |
+|-------------------|------------|-----------|---------------------|
+| assistanceListingsData[].overview.missionSubCategories.Primary.code | Primary mission code | string | All |
+| assistanceListingsData[].overview.missionSubCategories.Primary.name | Primary mission name | string | All |
+| assistanceListingsData[].overview.missionSubCategories.Other[].code | Other mission code | string | All |
+| assistanceListingsData[].overview.missionSubCategories.Other[].name | Other mission name | string | All |
+
+#### Subject Terms (v1.0)
+
+| Response Parameter | Description | Data Type | Applicable Versions |
+|-------------------|------------|-----------|---------------------|
+| assistanceListingsData[].overview.subjectTerms | Subject terms | array | v1.0 |
+| assistanceListingsData[].overview.subjectTerms[].code | Subject term code | string | v1.0 |
+| assistanceListingsData[].overview.subjectTerms[].name | Subject term name | string | v1.0 |
+
+---
+
+### Authorizations
+
+| Response Parameter | Description | Data Type | Applicable Versions |
+|-------------------|------------|-----------|---------------------|
+| assistanceListingsData[].authorizations.description | Authorization description | string | v1.0 |
+| assistanceListingsData[].authorizations.list | Authorization list | array | All |
+| assistanceListingsData[].authorizations.list[].parentAuthorizationId | Parent authorization ID | uuid | All |
+| assistanceListingsData[].authorizations.list[].authorizationTypes.act | Authorized by Act | boolean | All |
+| assistanceListingsData[].authorizations.list[].authorizationTypes.executiveOrder | Authorized by Executive Order | boolean | All |
+| assistanceListingsData[].authorizations.list[].authorizationTypes.publicLaw | Authorized by Public Law | boolean | All |
+| assistanceListingsData[].authorizations.list[].authorizationTypes.statute | Authorized by Statute | boolean | All |
+| assistanceListingsData[].authorizations.list[].authorizationTypes.USC | Authorized by USC | boolean | All |
+
+#### Authorization Details
+
+| Response Parameter | Description | Data Type | Applicable Versions |
+|-------------------|------------|-----------|---------------------|
+| assistanceListingsData[].authorizations.list[].act.title | Act title | string | All                 |
+| assistanceListingsData[].authorizations.list[].act.part | Act part | string | All                 |
+| assistanceListingsData[].authorizations.list[].act.section | Act section | string | All                 |
+| assistanceListingsData[].authorizations.list[].act.description | Act description | string | All                 |
+| assistanceListingsData[].authorizations.list[].executiveOrder.title | EO title | string | All                 |
+| assistanceListingsData[].authorizations.list[].executiveOrder.part | EO part | string | All                 |
+| assistanceListingsData[].authorizations.list[].executiveOrder.section | EO section | string | All                 |
+| assistanceListingsData[].authorizations.list[].executiveOrder.description | EO description | string | All                 |
+| assistanceListingsData[].authorizations.list[].publicLaw.congressCode | Congress code | string | All                 |
+| assistanceListingsData[].authorizations.list[].publicLaw.number | Public law number | string | All                 |
+| assistanceListingsData[].authorizations.list[].publicLaw.description | Public law description | string | All                 |
+| assistanceListingsData[].authorizations.list[].statute.volume | Statute volume | string | All                 |
+| assistanceListingsData[].authorizations.list[].statute.page | Statute page | string | All                 |
+| assistanceListingsData[].authorizations.list[].statute.description | Statute description | string | v2.0                |
+| assistanceListingsData[].authorizations.list[].USC.title | USC title | string | All                 |
+| assistanceListingsData[].authorizations.list[].USC.section | USC section | string | All                 |
+| assistanceListingsData[].authorizations.list[].USC.description | USC description | string | v2.0                |
+
+---
+
+### Financial Information
+
+| Response Parameter | Description | Data Type | Applicable Versions |
+|-------------------|------------|-----------|---------------------|
+| assistanceListingsData[].financialInformation.isFundedCurrentFY | Funded current FY | boolean | All |
+| assistanceListingsData[].financialInformation.additionalInformation | Additional financial info | string | All |
+
+#### Obligations
+
+| Response Parameter | Description | Data Type | Applicable Versions |
+|-------------------|------------|-----------|---------------------|
+| assistanceListingsData[].financialInformation.obligations | Obligations | array | All                 |
+| assistanceListingsData[].financialInformation.obligations[].isRecoveryAct | Recovery Act related | boolean | v1.0                |
+| assistanceListingsData[].financialInformation.obligations[].assistanceType.code | Assistance type code | string | All                 |
+| assistanceListingsData[].financialInformation.obligations[].assistanceType.name | Assistance type name | string | All                 |
+| assistanceListingsData[].financialInformation.obligations[].awardAmountBasis[].code | Award amount basis code | string | v2.0                |
+| assistanceListingsData[].financialInformation.obligations[].awardRecipientBasis[].code | Award recipient basis code | string | v2.0                |
+| assistanceListingsData[].financialInformation.obligations[].values[].year | Award year | integer | All                 |
+| assistanceListingsData[].financialInformation.obligations[].values[].actual | Actual amount | number | All                 |
+| assistanceListingsData[].financialInformation.obligations[].values[].estimate | Estimated amount | number | All                 |
+
+#### Range & Average Assistance
+
+| Response Parameter | Description | Data Type | Applicable Versions |
+|-------------------|------------|-----------|--------------------|
+| assistanceListingsData[].financialInformation.rangeAndAverageAssistance[].fiscalYear | Fiscal year | integer | v2.0               |
+| assistanceListingsData[].financialInformation.rangeAndAverageAssistance[].minimumAwardAmount | Minimum award amount | number | v2.0                |
+| assistanceListingsData[].financialInformation.rangeAndAverageAssistance[].maximumAwardAmount | Maximum award amount | number | v2.0                |
+| assistanceListingsData[].financialInformation.rangeAndAverageAssistance[].averageAwardAmount | Average award amount | number | v2.0                 |
+
+#### Accomplishments
+
+| Response Parameter | Description | Data Type | Applicable Versions |
+|-------------------|------------|-----------|---------------------|
+| assistanceListingsData[].financialInformation.accomplishments.isApplicable | Accomplishments applicable | boolean | All |
+| assistanceListingsData[].financialInformation.accomplishments.list[].fiscalYear | Accomplishment FY | integer | All |
+| assistanceListingsData[].financialInformation.accomplishments.list[].description | Accomplishment description | string | All |
+
+#### Accounts Identification
+
+| Response Parameter | Description | Data Type | Applicable Versions |
+|-------------------|------------|-----------|---------------------|
+| assistanceListingsData[].financialInformation.accountsIdentificationList[].code | Account code | string | All |
+| assistanceListingsData[].financialInformation.accountsIdentificationList[].description | Account description | string | All |
+
+---
+
+### Criteria for Applying
+
+#### Documentation
+
+| Response Parameter | Description | Data Type | Applicable Versions |
+|-------------------|------------|-----------|---------------------|
+| assistanceListingsData[].criteriaForApplying.documentation.isApplicable | Documentation required | boolean | All |
+| assistanceListingsData[].criteriaForApplying.documentation.description | Documentation list | string[] | All |
+
+#### Applicant / Beneficiary
+
+| Response Parameter | Description | Data Type | Applicable Versions |
+|-------------------|------------|-----------|---------------------|
+| assistanceListingsData[].criteriaForApplying.applicant.types[].code | Applicant type code | string | All |
+| assistanceListingsData[].criteriaForApplying.applicant.types[].name | Applicant type name | string | All |
+| assistanceListingsData[].criteriaForApplying.applicant.description | Applicant description | string | All |
+| assistanceListingsData[].criteriaForApplying.beneficiary.isSameAsApplicant | Beneficiary same as applicant | boolean | All |
+| assistanceListingsData[].criteriaForApplying.beneficiary.types[].code | Beneficiary type code | string | All |
+| assistanceListingsData[].criteriaForApplying.beneficiary.types[].name | Beneficiary type name | string | All |
+| assistanceListingsData[].criteriaForApplying.beneficiary.description | Beneficiary description | string | All |
+
+#### Assistance Usage / Restrictions
+
+| Response Parameter | Description | Data Type | Applicable Versions |
+|-------------------|------------|-----------|---------------------|
+| assistanceListingsData[].criteriaForApplying.assistanceUsage.types[].code | Usage type code | string | All |
+| assistanceListingsData[].criteriaForApplying.assistanceUsage.types[].name | Usage type name | string | All |
+| assistanceListingsData[].criteriaForApplying.assistanceUsage.description | Usage description | string | All |
+| assistanceListingsData[].criteriaForApplying.assistanceRestriction.types[].code | Restriction type code | string | All |
+| assistanceListingsData[].criteriaForApplying.assistanceRestriction.types[].name | Restriction type name | string | All |
+| assistanceListingsData[].criteriaForApplying.assistanceRestriction.description | Restriction description | string | All |
+
+---
+
+### Assistance Application
+
+#### Deadlines
+
+| Response Parameter | Description | Data Type | Applicable Versions |
+|-------------------|------------|-----------|---------------------|
+| assistanceListingsData[].assistanceApplication.deadlines.value | Deadline indicator | string | All |
+| assistanceListingsData[].assistanceApplication.deadlines.list[].start | Start date | date | All |
+| assistanceListingsData[].assistanceApplication.deadlines.list[].end | End date | date | All |
+| assistanceListingsData[].assistanceApplication.deadlines.list[].description | Deadline description | string | All |
+| assistanceListingsData[].assistanceApplication.deadlines.description | General deadline description | string | All |
+
+#### Pre-Application Coordination
+
+| Response Parameter | Description | Data Type | Applicable Versions |
+|-------------------|------------|-----------|---------------------|
+| assistanceListingsData[].assistanceApplication.preApplicationCoordination.environmentalImpact.reports[].reportCode | Report code | string | All |
+| assistanceListingsData[].assistanceApplication.preApplicationCoordination.environmentalImpact.reports[].isSelected | Report required | boolean | All |
+| assistanceListingsData[].assistanceApplication.preApplicationCoordination.description | Coordination description | string | All |
+
+#### Application / Award / Payments
+
+| Response Parameter | Description | Data Type | Applicable Versions |
+|-------------------|------------|-----------|---------------------|
+| assistanceListingsData[].assistanceApplication.applicationProcedure.opportunityPostedLocation | Posted location | string | All                 |
+| assistanceListingsData[].assistanceApplication.applicationProcedure.opportunityPostedURL | Posted URL | string | All                 |
+| assistanceListingsData[].assistanceApplication.applicationProcedure.location | Application location | string | All                 |
+| assistanceListingsData[].assistanceApplication.applicationProcedure.URL | Application URL | string | All                 |
+| assistanceListingsData[].assistanceApplication.applicationProcedure.description | Procedure description | string | All                 |
+| assistanceListingsData[].assistanceApplication.selectionCriteria.isApplicable | Selection applicable | boolean | All                 |
+| assistanceListingsData[].assistanceApplication.selectionCriteria.description | Selection description | string | All                 |
+| assistanceListingsData[].assistanceApplication.awardProcedure.description | Award procedure | string | All                 |
+| assistanceListingsData[].assistanceApplication.payments.list[].fundingDate | Funding date | date | v2.0                |
+| assistanceListingsData[].assistanceApplication.payments.list[].type | Payment type | string | v2.0                |
+| assistanceListingsData[].assistanceApplication.payments.list[].frequency | Payment frequency | string | v2.0                |
+| assistanceListingsData[].assistanceApplication.payments.list[].spendingPeriodType | Spending period type | string | v2.0                |
+| assistanceListingsData[].assistanceApplication.payments.list[].spendingPeriod | Spending period | integer | v2.0                |
+
+#### Approval / Appeal / Renewal
+
+| Response Parameter | Description | Data Type | Applicable Versions |
+|-------------------|------------|-----------|---------------------|
+| assistanceListingsData[].assistanceApplication.approval.interval | Approval interval | string | All |
+| assistanceListingsData[].assistanceApplication.approval.description | Approval description | string | All |
+| assistanceListingsData[].assistanceApplication.appeal.interval | Appeal interval | string | All |
+| assistanceListingsData[].assistanceApplication.appeal.description | Appeal description | string | All |
+| assistanceListingsData[].assistanceApplication.renewal.interval | Renewal interval | string | All |
+| assistanceListingsData[].assistanceApplication.renewal.description | Renewal description | string | All |
+
+---
+
+### Compliance
+
+#### CFR, Reports, Audit
+
+| Response Parameter | Description | Data Type | Applicable Versions |
+|-------------------|------------|-----------|---------------------|
+| assistanceListingsData[].compliance.CFR200Requirements.questions[].code | CFR subpart code | string | All                 |
+| assistanceListingsData[].compliance.CFR200Requirements.questions[].isSelected | CFR selected | boolean | All                 |
+| assistanceListingsData[].compliance.CFR200Requirements.description | CFR description | string | All                 |
+| assistanceListingsData[].compliance.reports[].code | Report code | string | All                 |
+| assistanceListingsData[].compliance.reports[].frequency | Report frequency | string | v2.0                |
+| assistanceListingsData[].compliance.reports[].description | Report description | string | All                 |
+| assistanceListingsData[].compliance.audit.isApplicable | Audit applicable | boolean | All                 |
+| assistanceListingsData[].compliance.audit.frequency | Audit frequency | string | All                 |
+| assistanceListingsData[].compliance.audit.description | Audit description | string | All                 |
+
+#### Records & Documents
+
+| Response Parameter | Description | Data Type | Applicable Versions |
+|-------------------|------------|-----------|---------------------|
+| assistanceListingsData[].compliance.records.retentionPeriodType | Retention type | string | All |
+| assistanceListingsData[].compliance.records.retentionPeriod | Retention period | integer | All |
+| assistanceListingsData[].compliance.records.description | Records description | string | All |
+| assistanceListingsData[].compliance.documents.isApplicable | Documents reference | uuid | All |
+| assistanceListingsData[].compliance.documents.description | Documents description | string | All |
+
+#### Formula & Matching
+
+| Response Parameter                                                              | Description               | Data Type | Applicable Versions |
+| ------------------------------------------------------------------------------- | ------------------------- | --------- | ------------------- |
+| assistanceListingsData[].compliance.formulaAndMatching                          | Formula and matching info | object    | All                 |
+| assistanceListingsData[].compliance.formulaAndMatching.types.formula            | Formula used flag         | boolean   | All                 |
+| assistanceListingsData[].compliance.formulaAndMatching.types.matching           | Matching required flag    | boolean   | All                 |
+| assistanceListingsData[].compliance.formulaAndMatching.types.moe                | MOE used flag             | boolean   | All                 |
+| assistanceListingsData[].compliance.formulaAndMatching.formula.title            | Formula title             | string    | All                 |
+| assistanceListingsData[].compliance.formulaAndMatching.formula.chapter          | Formula chapter           | string    | All                 |
+| assistanceListingsData[].compliance.formulaAndMatching.formula.part             | Formula part              | string    | All                 |
+| assistanceListingsData[].compliance.formulaAndMatching.formula.subPart          | Formula subpart           | string    | All                 |
+| assistanceListingsData[].compliance.formulaAndMatching.formula.publicLaw        | Formula public law        | string    | All                 |
+| assistanceListingsData[].compliance.formulaAndMatching.formula.description      | Formula description       | string    | All                 |
+| assistanceListingsData[].compliance.formulaAndMatching.matching.requirementFlag | Matching requirement flag | string    | All                 |
+| assistanceListingsData[].compliance.formulaAndMatching.matching.percent         | Matching percent          | string    | All                 |
+| assistanceListingsData[].compliance.formulaAndMatching.matching.description     | Matching description      | string    | All                 |
+| assistanceListingsData[].compliance.formulaAndMatching.moe.description          | MOE description           | string    | All                 |
+
+---
+
+### Contacts
+
+#### Local
+
+| Response Parameter | Description | Data Type | Applicable Versions |
+|-------------------|------------|-----------|---------------------|
+| assistanceListingsData[].contacts.local.flag | Local contact flag | string | v1.0                |
+| assistanceListingsData[].contacts.local.officeLocationURL | Office URL | uri | v2.0                |
+| assistanceListingsData[].contacts.local.description | Local description | string | v1.0                |
+
+#### Headquarters
+
+| Response Parameter | Description | Data Type | Applicable Versions |
+|-------------------|------------|-----------|---------------------|
+| assistanceListingsData[].contacts.headquarters[].contactId | Contact ID | uuid | All |
+| assistanceListingsData[].contacts.headquarters[].title | Contact title | string | All |
+| assistanceListingsData[].contacts.headquarters[].fullName | Full name | string | All |
+| assistanceListingsData[].contacts.headquarters[].email | Email | string | All |
+| assistanceListingsData[].contacts.headquarters[].phone | Phone | string | All |
+| assistanceListingsData[].contacts.headquarters[].fax | Fax | string | All |
+| assistanceListingsData[].contacts.headquarters[].streetAddress | Street address | string | All |
+| assistanceListingsData[].contacts.headquarters[].city | City | string | All |
+| assistanceListingsData[].contacts.headquarters[].state | State | string | All |
+| assistanceListingsData[].contacts.headquarters[].zip | ZIP | string | All |
+| assistanceListingsData[].contacts.headquarters[].country | Country | string | All |
+| assistanceListingsData[].contacts.headquarters[].subdivisionCode | Subdivision code | string | All |
+| assistanceListingsData[].contacts.headquarters[].subdivisionName | Subdivision name | string | All |
+
+## OpenAPI Specification File
+
+You can view the full details of this API in the OpenAPI Specification file available here: <a href="assistance-listings-api/v1/assistance-listings-api.openapi.yaml">Open API specification file for the Assistance Listings API</a>
+
 
 ## Reference Data
 
@@ -293,6 +575,7 @@ This section lists entity types according to their eligibility as **Award Applic
 | ET59080 | Reservist (including dependents) |
 | ET59090 | Consumer |
 | ET59999 | Other |
+
 ## HTTP Response Codes
 
 HTTP Response Code | Description 
@@ -302,3 +585,14 @@ HTTP Response Code | Description
 404 | No Data found
 500 | Internal Server Error 
 
+## Contact Us
+
+* Reach out to the SAM.gov team at [www.fsd.gov](https://www.fsd.gov)
+
+## Change Log
+
+Date | Version | Description
+------|---------|---------
+01/20/2026 | v1.0    | Base Version
+
+<p><small><a href="#">Back to top</a></small></p>
