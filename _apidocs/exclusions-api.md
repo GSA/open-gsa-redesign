@@ -30,7 +30,7 @@ Exclusions API can be accessed from Production or Alpha with the following versi
 * Alpha Version 4: https://api-alpha.sam.gov/entity-information/v4/exclusions?api_key=< value ><br><br>
 
 Generating a personal API Key:
-* Registered users can request for a public API on 'Account Details' page. This page can be accessed here: <a href="https://sam.gov/profile/details" target="_blank">Account Details page on sam.gov</a>
+* Registered users can request for a public API on 'Account Details' page. This page can be accessed here: <a href="https://sam.gov/workspace/profile/account-details" target="_blank">Account Details page on sam.gov</a>
 * Users must enter their password on ‘Account Details’ page to view the API Key information. If an incorrect password is entered, an error will be returned.
 * After the API Key is generated on ‘Account Details’ page, the API Key can be viewed on the Account Details page immediately. The API Key is visible until users navigate to a different page.
 * If an error is encountered during the API Key generation/retrieval, then users will receive an error message and they can try again.
