@@ -2337,7 +2337,7 @@ Error Code| Error Message                                                       
 400| Core Based Statistical Delineations parameter must be either Y or N              | Core Based Statistical Delineations value provided is invalid.                 
 400| Status must be either 'ACTIVE', 'INACTIVE', or 'ALL'                             | Status value provided is invalid.                                           |                                 
 400| Organization Level must be one of these values: 'Department', 'Agency', or 'Office' | Organization Level value provided is invalid.                               | 
-500| Error occurred while searching assistance listings                                 | Any system error encountered while retreieving the assistance listings data for the user's request.                                           
+500| Error occurred while searching assistance listings                                 | A System error was encountered while retrieving the assistance listings data for the user's request.|                                           
 
 ## Contact Us
 
