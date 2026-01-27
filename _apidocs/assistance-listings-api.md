@@ -590,11 +590,11 @@ Production URL: https://api.sam.gov/assistance-listings/v1/search?api_key={Userâ
 <br>
 Alpha URL: https://api-alpha.sam.gov/assistance-listings/v1/search?api_key={Userâ€™s Public API Key}&assistanceListingId=10.080<br>
 
-Note: Request URL for alpha is used in this example
+Note: Request URL for Alpha is used in this example
 </details>
 
 <details>
-    <summary>Response (JSON Output) v2</summary>
+    <summary>Response (JSON Output)</summary>
 
 <p>
 <code><pre>
@@ -1008,11 +1008,11 @@ Production URL: https://api.sam.gov/assistance-listings/v1/search?api_key={Userâ
 <br>
 Alpha URL: https://api-alpha.sam.gov/assistance-listings/v1/search?api_key={Userâ€™s Public API Key}&assitanceTypes=F001,N003&Status=ACTIVE&pageSize=25&organizationCodes=4700&organizationLevel=Agency<br>
 
-Note: Request URL for alpha is used in this example
+Note: Request URL for Alpha is used in this example
 </details>
 
 <details>
-    <summary>Response (JSON Output) v2</summary>
+    <summary>Response (JSON Output)</summary>
 
 Note: Response for one record is provided as an example <br>
 
@@ -1438,11 +1438,11 @@ Production URL: https://api.sam.gov/assistance-listings/v1/search?api_key={Userâ
 <br>
 Alpha URL: https://api-alpha.sam.gov/assistance-listings/v1/search?api_key={Userâ€™s Public API Key}&status=ALL&pageSize=25&applicantTypes=ET21010&publishedDateFrom=2025-01-01&publishedDateTo=2026-01-01<br>
 
-Note: Request URL for alpha is used in this example
+Note: Request URL for Alpha is used in this example
 </details>
 
 <details>
-    <summary>Response (JSON Output) v2</summary>
+    <summary>Response (JSON Output)</summary>
 
 Note: Response for one record is provided as an example <br>
 
@@ -1808,11 +1808,11 @@ Production URL: https://api.sam.gov/assistance-listings/v1/search?api_key={Userâ
 <br>
 Alpha URL: https://api-alpha.sam.gov/assistance-listings/v1/search?api_key={Userâ€™s Public API Key}&status=Active&pageSize=10&organizationCodes=47QXLA&organizationLevel=Office&applicantTypes=ET21010&publishedDateFrom=2025-01-01&beneficiaryTypes=ET11020<br>
 
-Note: Request URL for alpha is used in this example
+Note: Request URL for Alpha is used in this example
 </details>
 
 <details>
-    <summary>Response (JSON Output) v2</summary>
+    <summary>Response (JSON Output)</summary>
 
 <p>
 <code><pre>
