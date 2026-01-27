@@ -23,7 +23,7 @@ Access the Assistance Listings Public API from the following Production or Alpha
 
 #### User Account API Key Creation
 
-* The SAM.gov Federal or non-Federal registered users must obtain the API Key from the https://sam.gov/profile/details page using the field, “Public API Key”.<br>
+* The SAM.gov Federal or non-Federal registered users must obtain the API Key from the [https://sam.gov/profile/details](https://sam.gov/profile/details) page using the field, “Public API Key”.<br>
   ![image info](v1/EYE_IMAGE.JPG)
 * Click on the “Eye” icon, enter the “Enter One-time Password” (this value will be sent to your email address that is associated with your registered account), hit “Submit”, for the API Key value to appear in the box.
 
