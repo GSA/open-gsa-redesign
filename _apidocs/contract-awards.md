@@ -1385,7 +1385,7 @@ The Contract Awards API can be used to pull the deleted contracts by sending the
         <tr>
             <td>coreData.federalOrganization.fundingInformation</td>
             <td>Funding Information:<br>Funding Department<br>Funding Subtier<br>Funding Office<br>Foreign Funding</td>
-            <td>String</td>
+            <td>JSON Object</td>
             <td>v1</td></tr>
         <tr>
             <td>coreData.federalOrganization.fundingInformation.fundingDepartment</td>
@@ -1690,7 +1690,7 @@ The Contract Awards API can be used to pull the deleted contracts by sending the
         <tr>
             <td>coreData.principalPlaceOfPerformance.city</td>
             <td>City</td>
-            <td>String</td>
+            <td>JSON Object</td>
             <td>v1</td></tr>
         <tr>
             <td>coreData.principalPlaceOfPerformance.city.code</td>
@@ -4020,7 +4020,10 @@ You can view the full details of this API in the OpenAPI Specification file avai
 
 ## Additional Help References
 
-Go to [SAM.gov Data Services](https://sam.gov/data-services/Data%20Dictionary/Contract%20Awards) for mapping and Data Dictionary documents.
+Go to [SAM.gov Data Services](https://sam.gov/data-services/Data%20Dictionary/Contract%20Awards) for mapping and Data Dictionary documents. - Coming Soon
+
+You can view the full details of the differences between the FPDS legacy API and SAM.gov API
+ available here: <a href="v1/FPDSvsSAM-ContractDataAPI.pdf"> Variance Document</a>
 
 ## HTTP Response Codes
 
@@ -5486,10 +5489,6 @@ The API will return one of the following responses:
 <p><small><a href="#">Back to top</a></small></p>
 
 ## Additional Information
-
-You can view the full details of the differences between the FPDS legacy API and SAM.gov API
- available here: <a href="v1/FPDSvsSAM-ContractDataAPI.pdf"> Variance Document</a>
- 
 
 Disclaimer:  **Limitation on Permissible Use of Dun & Bradstreet, Inc. (D&B) Data**
 
