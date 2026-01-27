@@ -24,7 +24,7 @@ Access the Assistance Listings Public API from the following Production or Alpha
 #### User Account API Key Creation
 
 * The SAM.gov Federal or non-Federal registered users must obtain the API Key from the https://sam.gov/profile/details page using the field, “Public API Key”.<br>
-  ![EYE_IMAGE.JPG](assistance-listings-api/v1/EYE_IMAGE.JPG)
+  ![image info](v1/EYE_IMAGE.JPG)
 * Click on the “Eye” icon, enter the “Enter One-time Password” (this value will be sent to your email address that is associated with your registered account), hit “Submit”, for the API Key value to appear in the box.
 
 
@@ -404,7 +404,7 @@ This section provides a **fully flattened, exhaustive data dictionary** for the 
 
 ### OpenAPI Specification File
 
-You can view the full details of this API in the OpenAPI Specification file available here: <a href="assistance-listings-api/v1/assistance-listings-api.openapi.yaml">Open API specification file for the Assistance Listings API</a>
+You can view the full details of this API in the OpenAPI Specification file available here: <a href="v1/assistance-listings-api.openapi.yaml">Open API specification file for the Assistance Listings API</a>
 
 
 ### Reference Data
