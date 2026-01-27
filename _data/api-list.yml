@@ -31,6 +31,9 @@
 - title: Regulations.gov API
   description: Regulations.gov offers a GET API that allows searching for documents, comments, and dockets.
   url: https://open.gsa.gov/api/regulationsgov/
+- title: SAM.gov Assistance Listings Public API
+  description: The Assistance Listings Public API provides Active and Inactive federal assistance listings data, similar to the CFDA catalog.
+  url: https://open.gsa.gov/api/assistance-listings-api/
 - title: SAM.gov Acquisition Subaward Reporting Public API
   description: The Acquisition Subaward Reporting Public API provides published and deleted federal subcontract data.
   url: https://open.gsa.gov/api/acquisition-subaward-reporting-api/
