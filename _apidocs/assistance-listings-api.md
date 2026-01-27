@@ -11,7 +11,7 @@ Access the Assistance Listings Public API from the following Production or Alpha
 
 ### API endpoints
 **Production:**
-* https://api.sam.gov/assistance-listings/v1/search (coming soon)
+* https://api.sam.gov/assistance-listings/v1/search
 
 **Alpha:**
 * https://api-alpha.sam.gov/assistance-listings/v1/search
