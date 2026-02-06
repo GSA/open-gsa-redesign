@@ -1382,6 +1382,11 @@ The Contract Awards API can be used to pull the deleted contracts by sending the
             <td>Contracting Office Name</td>
             <td>String</td>
             <td>v1</td></tr>
+		<tr>
+			<td>coreData.federalOrganization.contractingInformation.contractingOffice.country</td>
+            <td>Contracting Office Country</td>
+            <td>String</td>
+            <td>v1</td></tr>
         <tr>
 			<td>coreData.federalOrganization.contractingInformation.contractingOffice.regionCode</td>
             <td>Contracting Office Region Code</td>
