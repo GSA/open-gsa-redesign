@@ -121,7 +121,7 @@ GEM
       hashery (~> 2.0)
       ruby-rc4
       ttfunk
-    power_assert (2.0.5)
+    power_assert (3.0.1)
     public_suffix (6.0.2)
     racc (1.8.1)
     rainbow (3.1.1)
@@ -138,7 +138,7 @@ GEM
     sass-listen (4.0.0)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
-    test-unit (3.7.0)
+    test-unit (3.7.7)
       power_assert
     traces (0.15.2)
     ttfunk (1.8.0)
