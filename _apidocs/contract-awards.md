@@ -4073,7 +4073,7 @@ The Contract Awards API can be used to pull the deleted contracts by sending the
             <td>JSON Array</td>
             <td>v1</td></tr>
 		<tr>
-            <td>awardDetails.genericTags.genericBooleans.genericBoolean05</td>
+            <td>awardDetails.genericTags.genericBooleans.genericBoolean01</td>
             <td>genericBoolean01</td>
             <td>Boolean</td>
             <td>v1</td></tr>
