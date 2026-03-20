@@ -4063,8 +4063,18 @@ The Contract Awards API can be used to pull the deleted contracts by sending the
             <td>JSON Array</td>
             <td>v1</td></tr>
 		<tr>
-            <td>awardDetails.genericTags.genericStrings.genericString01</td>
-            <td>genericString01</td>
+            <td>awardDetails.genericTags.genericStrings.dataElement</td>
+            <td>dataElement</td>
+            <td>JSON Object</td>
+            <td>v1</td></tr>
+		<tr>
+            <td>awardDetails.genericTags.genericStrings.dataElement.dataElementName</td>
+            <td>dataElementName</td>
+            <td>String</td>
+            <td>v1</td></tr>
+		<tr>
+            <td>awardDetails.genericTags.genericStrings.dataElement.dataElementValue</td>
+            <td>dataElementValue</td>
             <td>String</td>
             <td>v1</td></tr>
 		<tr>
@@ -4073,8 +4083,18 @@ The Contract Awards API can be used to pull the deleted contracts by sending the
             <td>JSON Array</td>
             <td>v1</td></tr>
 		<tr>
-            <td>awardDetails.genericTags.genericBooleans.genericBoolean01</td>
-            <td>genericBoolean01</td>
+            <td>awardDetails.genericTags.genericBooleans.dataElement</td>
+            <td>dataElement</td>
+            <td>JSON Object</td>
+            <td>v1</td></tr>
+		<tr>
+            <td>awardDetails.genericTags.genericBooleans.dataElement.dataElementName</td>
+            <td>dataElementName</td>
+            <td>String</td>
+            <td>v1</td></tr>
+		<tr>
+            <td>awardDetails.genericTags.genericBooleans.dataElement.dataElementValue</td>
+            <td>dataElementValue</td>
             <td>Boolean</td>
             <td>v1</td></tr>
 		<tr>
@@ -4083,8 +4103,18 @@ The Contract Awards API can be used to pull the deleted contracts by sending the
             <td>JSON Array</td>
             <td>v1</td></tr>
 		<tr>
-            <td>awardDetails.genericTags.genericFloats.genericFloat01</td>
-            <td>genericFloat01</td>
+            <td>awardDetails.genericTags.genericFloats.dataElement</td>
+            <td>dataElement</td>
+            <td>JSON Object</td>
+            <td>v1</td></tr>
+		<tr>
+            <td>awardDetails.genericTags.genericFloats.dataElement.dataElementName</td>
+            <td>dataElementName</td>
+            <td>String</td>
+            <td>v1</td></tr>
+		<tr>
+            <td>awardDetails.genericTags.genericFloats.dataElement.dataElementValue</td>
+            <td>dataElementValue</td>
             <td>Number</td>
             <td>v1</td></tr>
 		<tr>
@@ -4093,8 +4123,18 @@ The Contract Awards API can be used to pull the deleted contracts by sending the
             <td>JSON Array</td>
             <td>v1</td></tr>
 		<tr>
-            <td>awardDetails.genericTags.genericIntegers.genericInteger01</td>
-            <td>genericInteger01</td>
+            <td>awardDetails.genericTags.genericIntegers.dataElement</td>
+            <td>dataElement</td>
+            <td>JSON Object</td>
+            <td>v1</td></tr>
+		<tr>
+            <td>awardDetails.genericTags.genericIntegers.dataElement.dataElementName</td>
+            <td>dataElementName</td>
+            <td>String</td>
+            <td>v1</td></tr>
+		<tr>
+            <td>awardDetails.genericTags.genericIntegers.dataElement.dataElementValue</td>
+            <td>dataElementValue</td>
             <td>Number</td>
             <td>v1</td></tr>
         </tbody>
