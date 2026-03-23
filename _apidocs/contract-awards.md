@@ -913,15 +913,15 @@ The Contract Awards API can be used to pull the deleted contracts by sending the
             <td>v1</td>
         </tr>
         <tr>
-            <td>far1102ExceptionCode</td>
-            <td>Allows a 1 character code.<br>Example: far1102ExceptionCode=3</td>
+            <td>far41102ExceptionCode</td>
+            <td>Allows a 1 character code.<br>Example: far41102ExceptionCode=3</td>
             <td>No</td>
             <td>String</td>
             <td>v1</td>
         </tr>
         <tr>
-            <td>far1102ExceptionName</td>
-            <td>Allows a text.<br>Example: far1102ExceptionName=CLASSIFIED CONTRACTS</td>
+            <td>far41102ExceptionName</td>
+            <td>Allows a text.<br>Example: far41102ExceptionName=CLASSIFIED CONTRACTS</td>
             <td>No</td>
             <td>String</td>
             <td>v1</td>
@@ -4051,6 +4051,91 @@ The Contract Awards API can be used to pull the deleted contracts by sending the
             <td>awardDetails.transactionData.closedStatus</td>
             <td>Closed Status</td>
             <td>String</td>
+            <td>v1</td></tr>
+		<tr>
+            <td>awardDetails.genericTags</td>
+            <td>genericTags</td>
+            <td>JSON Object</td>
+            <td>v1</td></tr>
+		<tr>
+            <td>awardDetails.genericTags.genericStrings</td>
+            <td>genericStrings</td>
+            <td>JSON Array</td>
+            <td>v1</td></tr>
+		<tr>
+            <td>awardDetails.genericTags.genericStrings.dataElement</td>
+            <td>dataElement</td>
+            <td>JSON Object</td>
+            <td>v1</td></tr>
+		<tr>
+            <td>awardDetails.genericTags.genericStrings.dataElement.dataElementName</td>
+            <td>dataElementName</td>
+            <td>String</td>
+            <td>v1</td></tr>
+		<tr>
+            <td>awardDetails.genericTags.genericStrings.dataElement.dataElementValue</td>
+            <td>dataElementValue</td>
+            <td>String</td>
+            <td>v1</td></tr>
+		<tr>
+            <td>awardDetails.genericTags.genericBooleans</td>
+            <td>genericBooleans</td>
+            <td>JSON Array</td>
+            <td>v1</td></tr>
+		<tr>
+            <td>awardDetails.genericTags.genericBooleans.dataElement</td>
+            <td>dataElement</td>
+            <td>JSON Object</td>
+            <td>v1</td></tr>
+		<tr>
+            <td>awardDetails.genericTags.genericBooleans.dataElement.dataElementName</td>
+            <td>dataElementName</td>
+            <td>String</td>
+            <td>v1</td></tr>
+		<tr>
+            <td>awardDetails.genericTags.genericBooleans.dataElement.dataElementValue</td>
+            <td>dataElementValue</td>
+            <td>Boolean</td>
+            <td>v1</td></tr>
+		<tr>
+            <td>awardDetails.genericTags.genericFloats</td>
+            <td>genericFloats</td>
+            <td>JSON Array</td>
+            <td>v1</td></tr>
+		<tr>
+            <td>awardDetails.genericTags.genericFloats.dataElement</td>
+            <td>dataElement</td>
+            <td>JSON Object</td>
+            <td>v1</td></tr>
+		<tr>
+            <td>awardDetails.genericTags.genericFloats.dataElement.dataElementName</td>
+            <td>dataElementName</td>
+            <td>String</td>
+            <td>v1</td></tr>
+		<tr>
+            <td>awardDetails.genericTags.genericFloats.dataElement.dataElementValue</td>
+            <td>dataElementValue</td>
+            <td>Number</td>
+            <td>v1</td></tr>
+		<tr>
+            <td>awardDetails.genericTags.genericIntegers</td>
+            <td>genericIntegers</td>
+            <td>JSON Array</td>
+            <td>v1</td></tr>
+		<tr>
+            <td>awardDetails.genericTags.genericIntegers.dataElement</td>
+            <td>dataElement</td>
+            <td>JSON Object</td>
+            <td>v1</td></tr>
+		<tr>
+            <td>awardDetails.genericTags.genericIntegers.dataElement.dataElementName</td>
+            <td>dataElementName</td>
+            <td>String</td>
+            <td>v1</td></tr>
+		<tr>
+            <td>awardDetails.genericTags.genericIntegers.dataElement.dataElementValue</td>
+            <td>dataElementValue</td>
+            <td>Number</td>
             <td>v1</td></tr>
         </tbody>
     </table>
