@@ -4,17 +4,17 @@
 
 The Subcontracting Plan Reporting API is intended for federal use only.
 
-In MVP 1, the API provides a basic synchronous interface that enables users to query and retrieve data. 
+In MVP 1, the API provides a basic synchronous interface that enables users to query and retrieve data.
 MVP 2 will introduce additional capabilities, including data download and extract functionality.
 
-This API allows authorized federal users to request For Official Use Only (FOUO) data. 
-Access to data is controlled based on the sensitivity level of the user's System Account, along with a set of 
+This API allows authorized federal users to request For Official Use Only (FOUO) data.
+Access to data is controlled based on the sensitivity level of the user's System Account, along with a set of
 optional request parameters that can be used to filter and refine results.
 
 ### FOUO (CUI) Data
 
-This constitutes both the publicly available entities and the entities that have opted out of public display 
-with their CUI data such as hierarchy, company and employee security levels and points of 
+This constitutes both the publicly available entities and the entities that have opted out of public display
+with their CUI data such as hierarchy, company and employee security levels and points of
 contact email address, phone, and fax numbers.
 
 ## Key Features of the Subcontracting Plan Reporting API: (MVP 1)
@@ -51,7 +51,7 @@ contact email address, phone, and fax numbers.
 
 To access FOUO (CUI) data:
 
-- Users must have a Federal System Account with the "Read FOUO" in Subcontracting Plan Reports permission and 
+- Users must have a Federal System Account with the "Read FOUO" in Subcontracting Plan Reports permission and
   the respective API Key in SAM.gov.
 - Users can make GET calls using any Browser or a Restful API client such as Postman.
 
@@ -60,22 +60,22 @@ To access FOUO (CUI) data:
 - The SAM.gov Federal registered users must contact their agency administrator for obtaining the "System Accounts" widget on their SAM.gov "Workspace" page.
 
 - To learn more about System Account roles and how to request or manage them, refer to the following resources:
-  - How to assign a System Administrator / System Manager role in system accounts (KB0017682)
-  - What roles are associated with system accounts? (KB0017606)
+    - How to assign a System Administrator / System Manager role in system accounts (KB0017682)
+    - What roles are associated with system accounts? (KB0017606)
 
 - Users must create their System Account using the “System Accounts” widget and get it approved.
 - Users must then set the password for the System Account.
 - After the above step is successfully completed, users will see a new section for retrieving the API Key. Users must enter the password to retrieve this value.
 - System Accounts must satisfy the following criteria to successfully utilize the Subcontracting Plan Reporting API:
-   - System Accounts Criteria
-     Unique System ID: The System Account ID
-   - Permissions
-     Subcontracting Plan Reports: Read FOUO –> Gives access to the Public and FOUO (CUI) data.
-   - Security Information
-     IP Address: List all the IP Addresses that the System invokes the API from.
-   - Type of Connection: REST APIs
-   - System Account Password
-   - System Account API Key
+    - System Accounts Criteria
+      Unique System ID: The System Account ID
+    - Permissions
+      Subcontracting Plan Reports: Read FOUO –> Gives access to the Public and FOUO (CUI) data.
+    - Security Information
+      IP Address: List all the IP Addresses that the System invokes the API from.
+    - Type of Connection: REST APIs
+    - System Account Password
+    - System Account API Key
 
 ### API Key Rate Limits
 
@@ -263,9 +263,9 @@ For more info: datause_govt@dnb.com
   ii. Is this related to the American Rescue Plan Act?: No  
   iii. Issue Type: Other  
   iv. Business Type: Other  
-  v. Subject (select 1):  
-  1. Option A: I need a role to test in alpha.sam.gov  
-  2. Option B: System account approval in alpha.sam.gov
+  v. Subject (select 1):
+    1. Option A: I need a role to test in alpha.sam.gov
+    2. Option B: System account approval in alpha.sam.gov
 
   vi. Please describe the issue:  
   (Copy and paste the below information into the ticket, filling in your information within the brackets)
