@@ -1,3 +1,10 @@
+---
+title: SAM.gov Entity Management  API
+banner-heading: SAM.gov Entity Management API
+---
+<!--<link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/swagger-ui.css" >-->
+<!--<link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/custom.css" >-->
+
 # Subcontracting Plan Reporting Outbound API Specs
 
 ## Overview
