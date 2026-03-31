@@ -33,7 +33,7 @@ contact email address, phone, and fax numbers.
 - Use the size parameter to control the number of records returned (maximum: 100).
 - If size is not specified, the default is 10 records per request.
 - Additional records can be retrieved by making subsequent requests and updating the page parameter.
-- The following characters are not allowed to be sent in the parameter values with the API request: & | { } ^ \
+- The following characters are not allowed to be sent in the parameter values with the API request: "& | { } ^ \"
 
 ## Additional Features of the Subcontracting Plan Reporting API: (MVP 2 - Awaiting for Program's decision on any enhance features)
 
