@@ -737,7 +737,7 @@ curl -X POST "https://<Production or Alpha URL>/spr/v1/search?api_key=<API KEY>"
 ```
 
 #### Response
-- JSON Output
+**JSON Output**
 ```json
 {
     "totalNumberOfReports": 1,
@@ -969,7 +969,7 @@ curl -X POST "https://<Production or Alpha URL>/spr/v1/search?api_key=<API KEY>"
 ```
 
 #### Response
-- JSON Output
+**JSON Output**
 ```json
 {
     "totalNumberOfReports": 18076,
