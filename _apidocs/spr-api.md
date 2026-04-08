@@ -11,8 +11,7 @@ banner-heading: SAM.gov Entity Management API
 
 The Subcontracting Plan Reporting API is intended for federal use only.
 
-In MVP 1, the API provides a basic synchronous interface that enables users to query and retrieve data.
-MVP 2 will introduce additional capabilities, including data download and extract functionality.
+The API provides a basic synchronous interface that enables users to query and retrieve data. The future enhancements will introduce additional capabilities, including data download and extract functionality.
 
 This API allows authorized federal users to request For Official Use Only (FOUO) data. Access to data is controlled based on the sensitivity level of the user’s System Account, along with a set of optional request parameters that can be used to filter and refine results.
 
@@ -31,7 +30,7 @@ This constitutes both the publicly available entities and the entities that have
 - Additional records can be retrieved by making subsequent requests and updating the page parameter.
 - The following characters are not allowed to be sent in the parameter values with the API request: "& | { } ^ \"
 
-## Additional Features of the Subcontracting Plan Reporting API: (MVP 2 - Awaiting for Program's decision on any enhance features)
+## Additional Features of the Subcontracting Plan Reporting API: (No Available  yet. Awaiting for Program's decision on any enhance features)
 
 - It can serve as an extract API with the addition of "format" parameter in the request.
 - Following are the key features of the Subcontracting Plan Reporting API:
@@ -40,7 +39,7 @@ This constitutes both the publicly available entities and the entities that have
     - It returns data in the JSON or CSV format as selected by the user.
     - It can return only the first 1,000,000 records.
 
-## Getting Started (MVP 1)
+## Getting Started
 
 ### API Endpoints
 
@@ -52,7 +51,7 @@ This constitutes both the publicly available entities and the entities that have
 
 ### User Requirements
 
-To access FOUO (CUI) data:
+FOUO (CUI) data:
 
 - Users must have a Federal System Account with the "Read FOUO" in Subcontracting Plan Reports permission and
   the respective API Key in SAM.gov.
@@ -70,7 +69,7 @@ To access FOUO (CUI) data:
 - Users must then set the password for the System Account.
 - After the above step is successfully completed, users will see a new section for retrieving the API Key. Users must enter the password to retrieve this value.
 - System Accounts must satisfy the following criteria to successfully utilize the Subcontracting Plan Reporting API:
-    - System Accounts Criteria
+    - System Information
       Unique System ID: The System Account ID
     - Permissions
       Subcontracting Plan Reports: Read FOUO –> Gives access to the Public and FOUO (CUI) data.
@@ -84,7 +83,7 @@ To access FOUO (CUI) data:
 
 | Type of User Account | Type of API Key | Default API Daily Rate Limit |
 |---------------------|----------------|------------------------------|
-| Federal System User | System Account API Key | 10,000 Requests/Day |
+| Federal System User | System Account API Key | 10,000 Requests every 24-hour|
 
 ## API Description
 
@@ -92,24 +91,24 @@ To access FOUO (CUI) data:
 
 The Subcontract Plan Reports API offers several optional search parameters that can be provided independently or in combination with each other. All parameters are optional.
 
-| # | Parameter Name | Description | Applicable Versions |
-|---|---------------|-------------|---------------------|
-| 1 | q | User to pass filtername:value format. Entity Management example for reference: https://api.sam.gov/spr/v1/search?api_key=<VALID API KEY> | V1 |
-| 2 | organizationCode | Open GSA Documentation shall indicate that complete values must be provided. If mapping this filter to multiple Org fields may lead to user confusion, then we can offer separate filters such as: reportedToDepartmentCode, contractingDepartmentCode, contractingSubtierCode, contractingOfficeCode | V1 |
-| 3 | submitter | Open GSA Documentation shall indicate that complete values must be provided. Note: API must be able to accept case-insensitive values. | V1 |
-| 4 | reportSubmittedDate | Report Submitted date | V1 |
-| 5 | reportinFiscalYear | Open GSA Documentation shall indicate that complete values must be provided. | V1 |
-| 6 | reportingPeriod | Applies to ISR and DOD (Final does not apply for DOD). Open GSA Documentation shall indicate that complete values must be provided. Note: API must be able to accept case-insensitive values. | V1 |
-| 7 | reportType | Open GSA Documentation shall indicate that complete values must be provided. Note: API must be able to accept case-insensitive values. | V1 |
-| 8 | uniqueEntityID | Open GSA Documentation shall indicate that complete values must be provided. | V1 |
-| 9 | legalBusinessName | Allows partial or complete value search. Allows single or multiple values. Note: API must be able to accept case-insensitive values. | V1 |
-| 10 | ultimateParentUniqueEntityID | Open GSA Documentation shall indicate that complete values must be provided. | V1 |
-| 11 | piid | Open GSA Documentation shall indicate that complete values must be provided. Note: API must be able to accept case-insensitive values. | V1 |
-| 12 | referenceIdvPiid | Open GSA Documentation shall indicate that complete values must be provided. Note: API must be able to accept case-insensitive values. | V1 |
-| 13 | subcontractNumber | Open GSA Documentation shall indicate that complete values must be provided. Note: API must be able to accept case-insensitive values. | V1 |
-| 14 | includeSections | The API shall offer the following by default: reportData, contractData, entityData, taskOrdersData, commercialPercentageForFederalOrganizationsData, goalsAndActualsData, certificationData. Offers the following, when explicitly queried in the includeSections: remarks, dodComprehensiveAttachments | V1 |
-| 15 | page | Maximum returned data records pages. Notes: the maximum returned number less than 10,000 records per 24 hours (Page multiplied by Size). | V1 |
-| 16 | size | Maximum records on returned data page, up to 100. | V1 |
+| # | Parameter Name | Description                                                                                                                                                                                                                                                                                                                     | Applicable Versions |
+|---|---------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------|
+| 1 | q | User to pass filtername:value format. Entity Management example for reference: https://api.sam.gov/spr/v1/search?api_key=<VALID API KEY>                                                                                                                                                                                        | V1 |
+| 2 | organizationCode | Open GSA Documentation shall indicate that complete values must be provided. If mapping this filter to multiple Org fields may lead to user confusion, then we can offer separate filters such as:<br> reportedToDepartmentCode<br> contractingDepartmentCode<br> contractingSubtierCode<br> contractingOfficeCode              | V1 |
+| 3 | submitter | Open GSA Documentation shall indicate that complete values must be provided. <br>Note: API must be able to accept case-insensitive values.                                                                                                                                                                                      | V1 |
+| 4 | reportSubmittedDate | Report Submitted date                                                                                                                                                                                                                                                                                                           | V1 |
+| 5 | reportinFiscalYear | Open GSA Documentation shall indicate that complete values must be provided.                                                                                                                                                                                                                                                    | V1 |
+| 6 | reportingPeriod | Applies to ISR and DOD (Final does not apply for DOD). <br>Open GSA Documentation shall indicate that complete values must be provided. <br>Note: API must be able to accept case-insensitive values.                                                                                                                           | V1 |
+| 7 | reportType | Open GSA Documentation shall indicate that complete values must be provided. <br>Note: API must be able to accept case-insensitive values.                                                                                                                                                                                      | V1 |
+| 8 | uniqueEntityID | Open GSA Documentation shall indicate that complete values must be provided.                                                                                                                                                                                                                                                    | V1 |
+| 9 | legalBusinessName | Allows partial or complete value search. Allows single or multiple values. <br>Note: API must be able to accept case-insensitive values.                                                                                                                                                                                        | V1 |
+| 10 | ultimateParentUniqueEntityID | Open GSA Documentation shall indicate that complete values must be provided.                                                                                                                                                                                                                                                    | V1 |
+| 11 | piid | Open GSA Documentation shall indicate that complete values must be provided. <br>Note: API must be able to accept case-insensitive values.                                                                                                                                                                                      | V1 |
+| 12 | referenceIdvPiid | Open GSA Documentation shall indicate that complete values must be provided. <br>Note: API must be able to accept case-insensitive values.                                                                                                                                                                                      | V1 |
+| 13 | subcontractNumber | Open GSA Documentation shall indicate that complete values must be provided. <br>Note: API must be able to accept case-insensitive values.                                                                                                                                                                                      | V1 |
+| 14 | includeSections | The API shall offer the following by default:<br> reportData<br>contractData<br>entityData<br>taskOrdersData<br>commercialPercentageForFederalOrganizationsData<br>goalsAndActualsData<br>certificationData. <br><br>Offers the following, when explicitly queried in the includeSections:<br>remarks<br>dodComprehensiveAttachments | V1 |
+| 15 | page | Maximum returned data records pages.<br> Notes: the maximum returned number less than 10,000 records per 24 hours (Page multiplied by Size).                                                                                                                                                                                        | V1 |
+| 16 | size | Maximum records on returned data page, up to 100.                                                                                                                                                                                                                                                                               | V1 |
 
 ### Response Schema
 
@@ -706,14 +705,14 @@ You can view the full details of this API in the OpenAPI Specification file avai
 
 The API will return one of the following responses:
 
-| HTTP Response Code | Description |
-|-------------------|-------------|
-| 200 | The API call is successful |
-| 400 (Bad Request) | Application Level Error Messages: <br>- Invalid Search Parameter format <br>- Invalid Search Parameter name <br>- More than 100 records are requested via "size" parameters |
-| 401 (Unauthorized) | - Missing "Basic Auth" under "Authorization" and missing System Account credentials <br>- Providing "Basic Auth" under "Authorization", but missing or invalid System Account credentials <br>- Different IP Address than that mentioned in the System Account <br>- API Key does not belong to the System Account <br>- Missing API Key in request <br>- Invalid API Key (Expired API Key) |
-| 403 Forbidden (Forbidden) | - No Subcontracting Plan Reports Permission in System Account <br>- System Account has a different value for "Type of Connection" |
-| 406 | Missing Accept Header |
-| 415 | Missing or Invalid Content-Type header |
+| HTTP Response Code | Description                                                                                                                                                                                                                                                                                                                                                                                              |
+|------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 200 | The API call is successful                                                                                                                                                                                                                                                                                                                                                                               |
+| 400 | Bad Request - Application Level Error Messages: <br>- Invalid Search Parameter format <br>- Invalid Search Parameter name <br>- More than 100 records are requested via "size" parameters                                                                                                                                                                                                                |
+| 401 | Unauthorized - Missing "Basic Auth" under "Authorization" and missing System Account credentials <br>- Providing "Basic Auth" under "Authorization", but missing or invalid System Account credentials <br>- Different IP Address than that mentioned in the System Account <br>- API Key does not belong to the System Account <br>- Missing API Key in request <br>- Invalid API Key (Expired API Key) |
+| 403 | Forbidden - No Subcontracting Plan Reports Permission in System Account <br>- System Account has a different value for "Type of Connection"                                                                                                                                                                                                                                                              |
+| 406 | Not Acceptable Error - Missing Accept Header                                                                                                                                                                                                                                                                                                                                                             |
+| 415 | Missing or Invalid Content - Type header                                                                                                                                                                                                                                                                                                                                                                 |
 
 ## Examples
 
