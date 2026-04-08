@@ -19,7 +19,7 @@ This API allows authorized federal users to request For Official Use Only (FOUO)
 
 This constitutes both the publicly available entities and the entities that have opted out of public display with their CUI data such as hierarchy, company and employee security levels and points of contact email address, phone, and fax numbers.
 
-## Key Features of the Subcontracting Plan Reporting API: (MVP 1)
+## Key Features of the Subcontracting Plan Reporting API:
 
 - It offers several optional search parameters, filtering by sections, AND (&), OR (~) conditions and a free text search q to obtain the desired data.
 - It returns synchronous responses.
