@@ -699,7 +699,8 @@ The Subcontracting Plan Reports API offers several response elements that are de
 
 ### OpenAPI Specification File
 
-You can view the full details of this API in the OpenAPI Specification file available here: [Open API specification file for the Subcontracting Plan Reports API](openapi.yaml)
+You can view the full details of this API in the OpenAPI Specification file available here: <a href="v1/openapi.yaml">Open API specification file for the Subcontracting Plan Reports API</a>
+
 
 ### HTTP Response Codes
 
