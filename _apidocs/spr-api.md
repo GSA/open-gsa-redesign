@@ -1206,7 +1206,6 @@ You can view the full details of the differences between the SAM legacy API and 
 
 <p><small><a href="#">Back to top</a></small></p>
 
-## Contact Us
 
 ## Contact Us
 
