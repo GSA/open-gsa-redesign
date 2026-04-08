@@ -19,16 +19,16 @@ This API allows authorized federal users to request For Official Use Only (FOUO)
 
 This constitutes both the publicly available entities and the entities that have opted out of public display with their CUI data such as hierarchy, company and employee security levels and points of contact email address, phone, and fax numbers.
 
-## Key Features of the Subcontracting Plan Reporting API:
+**Key Features of the Subcontracting Plan Reporting API:**
 
-- It offers several optional search parameters, filtering by sections, AND (&), OR (~) conditions and a free text search q to obtain the desired data.
-- It returns synchronous responses.
-- Returns results in JSON format.
-- Supports pagination with up to 100 records per request.
-- Use the size parameter to control the number of records returned (maximum: 100).
-- If size is not specified, the default is 10 records per request.
-- Additional records can be retrieved by making subsequent requests and updating the page parameter.
-- The following characters are not allowed to be sent in the parameter values with the API request: '& | { } ^ \'
+* It offers several optional search parameters, filtering by sections, AND (&), OR (~) conditions and a free text search q to obtain the desired data.
+* It returns synchronous responses.
+* Returns results in JSON format.
+* Supports pagination with up to 100 records per request.
+* Use the size parameter to control the number of records returned (maximum: 100).
+* If size is not specified, the default is 10 records per request.
+* Additional records can be retrieved by making subsequent requests and updating the page parameter.
+* The following characters are not allowed to be sent in the parameter values with the API request: & | { } ^ \
 
 ## Additional Features of the Subcontracting Plan Reporting API: (No Available  yet. Awaiting for Program's decision on any enhance features)
 
