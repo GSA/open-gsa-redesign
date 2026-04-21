@@ -2717,21 +2717,6 @@ The Contract Awards API can be used to pull the deleted contracts by sending the
             <td>String</td>
             <td>v1</td></tr>
         <tr>
-            <td>awardDetails.competitionInformation.preawardSynopsisRequirement</td>
-            <td>Pre-award Synopsis Requirement</td>
-            <td>JSON Object</td>
-            <td>v1</td></tr>
-        <tr>
-            <td>awardDetails.competitionInformation.preawardSynopsisRequirement.code</td>
-            <td>Pre-award Synopsis Requirement Code</td>
-            <td>String</td>
-            <td>v1</td></tr>
-        <tr>
-            <td>awardDetails.competitionInformation.preawardSynopsisRequirement.name</td>
-            <td>Pre-award Synopsis Requirement Name</td>
-            <td>String</td>
-            <td>v1</td></tr>
-        <tr>
             <td>awardDetails.preferenceProgramsInformation</td>
             <td>Preference Programs Information</td>
             <td>JSON Object</td>
@@ -4060,81 +4045,91 @@ The Contract Awards API can be used to pull the deleted contracts by sending the
 		<tr>
             <td>awardDetails.genericTags.genericStrings</td>
             <td>genericStrings</td>
-            <td>JSON Array</td>
-            <td>v1</td></tr>
-		<tr>
-            <td>awardDetails.genericTags.genericStrings.dataElement</td>
-            <td>dataElement</td>
             <td>JSON Object</td>
             <td>v1</td></tr>
 		<tr>
-            <td>awardDetails.genericTags.genericStrings.dataElement.dataElementName</td>
-            <td>dataElementName</td>
+            <td>awardDetails.genericTags.genericStrings.genericString07</td>
+            <td>genericString07</td>
             <td>String</td>
             <td>v1</td></tr>
 		<tr>
-            <td>awardDetails.genericTags.genericStrings.dataElement.dataElementValue</td>
-            <td>dataElementValue</td>
+            <td>awardDetails.genericTags.genericStrings.genericString08</td>
+            <td>genericString08</td>
+            <td>String</td>
+            <td>v1</td></tr>
+		<tr>
+            <td>awardDetails.genericTags.genericStrings.genericString09</td>
+            <td>genericString09</td>
+            <td>String</td>
+            <td>v1</td></tr>
+		<tr>
+			<td>awardDetails.genericTags.genericStrings.genericString10</td>
+            <td>genericString10</td>
             <td>String</td>
             <td>v1</td></tr>
 		<tr>
             <td>awardDetails.genericTags.genericBooleans</td>
             <td>genericBooleans</td>
-            <td>JSON Array</td>
-            <td>v1</td></tr>
-		<tr>
-            <td>awardDetails.genericTags.genericBooleans.dataElement</td>
-            <td>dataElement</td>
             <td>JSON Object</td>
             <td>v1</td></tr>
 		<tr>
-            <td>awardDetails.genericTags.genericBooleans.dataElement.dataElementName</td>
-            <td>dataElementName</td>
-            <td>String</td>
+            <td>awardDetails.genericTags.genericBooleans.genericBoolean05</td>
+            <td>genericBoolean05</td>
+            <td>Boolean</td>
             <td>v1</td></tr>
 		<tr>
-            <td>awardDetails.genericTags.genericBooleans.dataElement.dataElementValue</td>
-            <td>dataElementValue</td>
+            <td>awardDetails.genericTags.genericBooleans.genericBoolean06</td>
+            <td>genericBoolean06</td>
+            <td>Boolean</td>
+            <td>v1</td></tr>
+		<tr>
+            <td>awardDetails.genericTags.genericBooleans.genericBoolean07</td>
+            <td>genericBoolean07</td>
+            <td>Boolean</td>
+            <td>v1</td></tr>
+		<tr>
+			<td>awardDetails.genericTags.genericBooleans.genericBoolean08</td>
+            <td>genericBoolean08</td>
+            <td>Boolean</td>
+            <td>v1</td></tr>
+		<tr>
+			<td>awardDetails.genericTags.genericBooleans.genericBoolean09</td>
+            <td>genericBoolean09</td>
+            <td>Boolean</td>
+            <td>v1</td></tr>
+		<tr>
+			<td>awardDetails.genericTags.genericBooleans.genericBoolean10</td>
+            <td>genericBoolean10</td>
             <td>Boolean</td>
             <td>v1</td></tr>
 		<tr>
             <td>awardDetails.genericTags.genericFloats</td>
             <td>genericFloats</td>
-            <td>JSON Array</td>
-            <td>v1</td></tr>
-		<tr>
-            <td>awardDetails.genericTags.genericFloats.dataElement</td>
-            <td>dataElement</td>
             <td>JSON Object</td>
             <td>v1</td></tr>
 		<tr>
-            <td>awardDetails.genericTags.genericFloats.dataElement.dataElementName</td>
-            <td>dataElementName</td>
-            <td>String</td>
+            <td>awardDetails.genericTags.genericFloats.genericFloat01</td>
+            <td>genericFloat01</td>
+            <td>Number</td>
             <td>v1</td></tr>
 		<tr>
-            <td>awardDetails.genericTags.genericFloats.dataElement.dataElementValue</td>
-            <td>dataElementValue</td>
+            <td>awardDetails.genericTags.genericFloats.genericFloat02</td>
+            <td>genericFloat02</td>
             <td>Number</td>
             <td>v1</td></tr>
 		<tr>
             <td>awardDetails.genericTags.genericIntegers</td>
             <td>genericIntegers</td>
-            <td>JSON Array</td>
-            <td>v1</td></tr>
-		<tr>
-            <td>awardDetails.genericTags.genericIntegers.dataElement</td>
-            <td>dataElement</td>
             <td>JSON Object</td>
             <td>v1</td></tr>
 		<tr>
-            <td>awardDetails.genericTags.genericIntegers.dataElement.dataElementName</td>
-            <td>dataElementName</td>
-            <td>String</td>
+            <td>awardDetails.genericTags.genericIntegers.genericInteger01</td>
+            <td>genericInteger01</td>
+            <td>Number</td>
             <td>v1</td></tr>
 		<tr>
-            <td>awardDetails.genericTags.genericIntegers.dataElement.dataElementValue</td>
-            <td>dataElementValue</td>
+            <td>awardDetails.genericTags.genericIntegers.genericInteger02</td>
+            <td>genericInteger02</td>
             <td>Number</td>
             <td>v1</td></tr>
         </tbody>
