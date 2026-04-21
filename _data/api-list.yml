@@ -91,6 +91,9 @@
 - title: Touchpoints
   description: Touchpoints makes customer feedback easier for federal agencies, and Touchpoints API provides an convenient, programmatic way to access the data for your Forms and Responses.
   url: https://github.com/gsa/touchpoints/wiki/API
+- title: SAM.gov Subcontracting Plan Reporting (SPR)/ Outbound API Specs
+  description: This API is for Subcontracting Plan Reporting API is intended for federal use only. This API allows authorized federal users to request For Official Use Only (FOUO) data.
+  url: https://open.gsa.gov/api/spr-api/
 #- title: System for Award Management API
 #  description: A RESTful method of retrieving public information about the businesses or individuals within the System for Award Management data set.
 #  url: https://gsa.github.io/sam_api/sam/
