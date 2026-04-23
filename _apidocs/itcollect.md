@@ -6,10 +6,12 @@ banner-heading: GSA IT Collect Public API
 <link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/swagger-ui.css" >
 <link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/custom.css" >
 
+We are taking action to simplify IT investment reporting – focusing on core statutory requirements while reducing agency burden. With this optimization, Federal agencies: (1) are expected to leverage the tools and practices that best satisfy their capital planning and investment control needs; and (2) are no longer required to report data via the IT Collect API. For more information, please read the [Federal CIO’s Letter to the American Taxpayer](https://itdashboard.gov/).
+
 
 ## Overview
 
-The IT Collect API provides a way for the general public to access government-wide IT Portfolio Management and other related IT data sources. 
+The IT Collect API provides a way for the general public to access historical government-wide IT Portfolio Management and other related IT data sources. 
 This data is presented in a visual format on itdashboard.gov.
 
 
