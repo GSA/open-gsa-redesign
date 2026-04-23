@@ -6,7 +6,14 @@ banner-heading: GSA IT Collect Public API
 <link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/swagger-ui.css" >
 <link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/custom.css" >
 
-We are taking action to simplify IT investment reporting – focusing on core statutory requirements while reducing agency burden. With this optimization, Federal agencies: (1) are expected to leverage the tools and practices that best satisfy their capital planning and investment control needs; and (2) are no longer required to report data via the IT Collect API. For more information, please read the [Federal CIO’s Letter to the American Taxpayer](https://itdashboard.gov/).
+<div class="usa-alert usa-alert-warning" id="site-wide-alert" role="alert">
+   <div class="usa-alert-body">
+     <p class="usa-alert-text">
+        We are taking action to simplify IT investment reporting – focusing on core statutory requirements while reducing agency burden. With this optimization, Federal agencies: (1) are expected to leverage the tools and practices that best satisfy their capital planning and investment control needs; and (2) are no longer required to report data via the IT Collect API. For more information, please read the <a href="https://itdashboard.gov">Federal CIO’s Letter to the American Taxpayer</a>.
+     </p>
+   </div>
+ </div>
+
 
 
 ## Overview
