@@ -1,21 +1,24 @@
 ---
-title: Data.gov API
-banner-heading: Data.gov API
+title: Data.gov Catalog API
+banner-heading: Data.gov Catalog API
 ---
-
 
 ## Overview
 
-The data.gov catalog is powered by [CKAN](http://ckan.org/developers/about-ckan/), a powerful open source data platform that includes a robust API. Please be aware that data.gov and the data.gov CKAN API only contain metadata about datasets. This metadata includes URLs and descriptions of datasets, but it does not include the actual data within each dataset.
+The Data.gov Catalog API provides access to metadata about datasets published by federal, state, local, and tribal governments. You can use it to search for datasets, filter by organization or topic, and retrieve detailed information about individual records.
 
-Complete API documentation is available [from CKAN](https://docs.ckan.org/en/latest/api/index.html).
+Note: This metadata includes URLs, descriptions, and DCAT-US fields for each dataset. It does not include the underlying data itself.
 
+Complete API documentation is available at [resources.data.gov/catalog-api](https://resources.data.gov/catalog-api/).
 <p><small><a href="#">Back to top</a></small></p>
 
 ## Getting Started
 
 To begin using this API, you will need to register for an API Key. You can sign up for an API key below.  After registration, you will need to provide this API key in the `x-api-key` HTTP header with every API request.
 
+| HTTP Header Name | Description |
+| --- | --- |
+| x-api-key | API key from api.data.gov. For sample purposes, you can use `DEMO_KEY` as an API key. |
 
 {% raw %}
 <div id="apidatagov_signup">Loading signup form...</div>
@@ -92,32 +95,43 @@ To begin using this API, you will need to register for an API Key. You can sign 
 
 ## API Description
 
+### Endpoints
 
-This API has one primary endpoint:
+| Endpoint | Description |
+| --- | --- |
+| `GET /search` | Search datasets by keyword, organization, topic, or geography |
+| `GET /api/organizations` | List all organizations publishing datasets in the catalog |
+| `GET /api/keywords` | List the most commonly used dataset keywords |
+| `GET /api/locations/search` | Search for location names to use with spatial filtering |
+| `GET /api/location/{location_id}` | Retrieve the geographic boundary (GeoJSON) for a location |
+| `GET /harvest_record/{record_id}` | Retrieve harvest record metadata for a specific dataset |
+| `GET /harvest_record/{record_id}/raw` | Retrieve the original source payload for a harvest record |
+| `GET /harvest_record/{record_id}/transformed` | Retrieve the transformed DCAT-US payload for a harvest record |
 
-**Endpoint 1:** https://api.gsa.gov/technology/datagov/v3/
+### Key features
 
-**Description**   CKAN Endpoint
+- **Full-text search** with keyword, organization, and geographic filters
+- **DCAT-US metadata** returned for every dataset result
+- **Cursor-based pagination** for reliable traversal of large result sets
+- **Spatial filtering** by GeoJSON geometry or named location
 
-Complete API documentation is available [from CKAN](https://docs.ckan.org/en/latest/api/index.html).
+Complete documentation, including request parameters, response field definitions, and pagination details, is available at [resources.data.gov/catalog-api](https://resources.data.gov/catalog-api/).
 
-**Example Query**   Package List: [https://api.gsa.gov/technology/datagov/v3/action/package_search?api_key=DEMO_KEY](https://api.gsa.gov/technology/datagov/v3/action/package_search?api_key=DEMO_KEY)
+### Previous CKAN-based API
 
+The prior CKAN endpoint (`https://api.gsa.gov/technology/datagov/v3/`) remains available in a read-only state for existing integrations. New development should use the Catalog API described above.
 
-
-| HTTP Header Name | Description |
-| ---- | ----------- |
-| x-api-key | API key from api.data.gov.  For sample purposes, you can use `DEMO_KEY` as an API key. |
-
+[Back to top](#)
 
 ## OpenAPI Specification File
 
-You can view the full details of this API in the OpenAPI Specification file available here:
-<a href="https://open.gsa.gov/api/datadotgov/v1/openapi.json">Open API specification file for the data.gov catalog API</a>.
+You can view the full details of this API in the OpenAPI Specification file available here: [Open API specification file for the Data.gov Catalog API](https://open.gsa.gov/api/datadotgov/v4/open.json).
 
+[Back to top](#)
 
 ## Contact Us
 
-For questions or help, please use our [Contact Us page](https://www.data.gov/contact).  
+For questions or help, use the [Data.gov Contact page](https://www.data.gov/contact).
 
-<p><small><a href="#">Back to top</a></small></p>
+[Back to top](#)
+
