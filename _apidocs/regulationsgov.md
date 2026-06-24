@@ -119,7 +119,7 @@ By registering for, receiving and using a key to the Comment API, the key holder
 
 ## API Description
 
-Regulations.gov offers a GET API for documents, comments, and dockets and a POST API for comments. These endpoints can be used for searching documents, comments and dockets, and posting a comment.
+Regulations.gov offers a GET API for documents, comments, dockets, and a POST API for comments. These endpoints can be used for searching documents, comments, dockets, and posting a comment.
 
 #### Searching for documents
 
