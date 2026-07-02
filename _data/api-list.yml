@@ -29,7 +29,7 @@
   description: This API contains the allowed reimbursement rates for hotel stays and meals for federal travelers.
   url: https://open.gsa.gov/api/perdiem/
 - title: Regulations.gov API
-  description: Regulations.gov offers a GET API that allows searching for documents, comments, and dockets.
+  description: Regulations.gov offers a GET API that allows searching for documents, comments, and dockets. Additionally,  a POST API is offered that allows users to submit comments.
   url: https://open.gsa.gov/api/regulationsgov/
 - title: SAM.gov Assistance Listings Public API
   description: The Assistance Listings Public API provides Active and Inactive federal assistance listings data, similar to the CFDA catalog.
