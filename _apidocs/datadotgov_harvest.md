@@ -1,6 +1,6 @@
 ---
-title: Data.gov Catalog API
-banner-heading: Data.gov Catalog API
+title: Data.gov Harvester API
+banner-heading: Data.gov Harvester API
 ---
 
 ## Overview
