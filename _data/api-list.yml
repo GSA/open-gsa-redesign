@@ -88,9 +88,9 @@
 - title: TMSS 2.0 Rate Query API
   description: TMSS 2.0 Rate Query API provides shipment cost for a regular Household Goods (HHG) shipment or for an Extended Storage (EXSTG) shipment.
   url: https://open.gsa.gov/api/ratequeryhhg/
-- title: Touchpoints
-  description: Touchpoints makes customer feedback easier for federal agencies, and Touchpoints API provides an convenient, programmatic way to access the data for your Forms and Responses.
-  url: https://github.com/gsa/touchpoints/wiki/API
+- title: Touchpoints API
+  description: For Touchpoints customers. The Touchpoints API provides an convenient, programmatic way to access the data for your Forms and Responses.
+  url: https://touchpoints.digital.gov/api-overview/
 #- title: System for Award Management API
 #  description: A RESTful method of retrieving public information about the businesses or individuals within the System for Award Management data set.
 #  url: https://gsa.github.io/sam_api/sam/
