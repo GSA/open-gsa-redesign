@@ -1,0 +1,44 @@
+openapi: 3.1.0
+info:
+  title: Subcontracting Plan Reports API
+  description: Modernized eSRS (Electronic Subcontracting Reporting System) backend
+    microservice for SAM.gov. Provides RESTful APIs for managing subcontracting plan
+    reports with Role-Based Access Control (RBAC) and UEI-based data filtering.
+  contact:
+    name: GSA IAE SAM.gov
+    url: https://sam.gov
+    email: sam-support@gsa.gov
+  license:
+    name: US Government Work
+    url: https://www.usa.gov/
+  version: "63.2"
+tags:
+  - name: Report Search
+    description: Search submitted reports
+paths:
+  /spr/v1/search:
+    post:
+      tags:
+        - open-gsa-controller
+      operationId: getAwardDetails
+      parameters:
+        - name: api_key
+          in: query
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/JsonNode"
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: object
+components:
+  schemas:
+    JsonNode: {}
