@@ -21,17 +21,25 @@ paths:
       tags:
         - open-gsa-controller
       operationId: getAwardDetails
+      security:
+        - basicAuth: []
       parameters:
         - name: api_key
           in: query
           required: true
           schema:
             type: string
+        - name: X-Api-Roles
+          in: header
+          required: false
+          description: Role header for authorization (must contain SA-FED-ALL)
+          schema:
+            type: string
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/JsonNode"
+              $ref: "#/components/schemas/SearchRequest"
       responses:
         "200":
           description: OK
@@ -41,4 +49,40 @@ paths:
                 type: object
 components:
   schemas:
-    JsonNode: {}
+    SearchRequest:
+      type: object
+      properties:
+        q:
+          type: string
+        includeSections:
+          type: string
+        submitter:
+          type: string
+        uniqueEntityID:
+          type: string
+        legalBusinessName:
+          type: string
+        ultimateParentUniqueEntityID:
+          type: string
+        piid:
+          type: string
+        referencedIdvPiid:
+          type: string
+        subcontractNumber:
+          type: string
+        organizationCode:
+          type: string
+        reportSubmittedDate:
+          type: string
+        reportingFiscalYear:
+          type: string
+        reportType:
+          type: string
+        reportingPeriod:
+          type: string
+        page:
+          type: integer
+          example: 0
+        size:
+          type: integer
+          example: 1

@@ -2,6 +2,7 @@
 title: SAM.gov Subcontracting Plan Reporting Outbound API
 banner-heading: Subcontracting Plan Reporting Outbound API
 ---
+
 <!--<link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/swagger-ui.css" >-->
 <!--<link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/custom.css" >-->
 
@@ -11,30 +12,37 @@ banner-heading: Subcontracting Plan Reporting Outbound API
 
 The Subcontracting Plan Reporting API is intended for federal use only.
 
-The API provides a basic synchronous interface that enables users to query and retrieve data. The future enhancements will introduce additional capabilities, including data download and extract functionality.
+The API provides a basic synchronous interface that enables users to query and retrieve data. The future enhancements
+will introduce additional capabilities, including data download and extract functionality.
 
-This API allows authorized federal users to request For Official Use Only (FOUO) data. Access to data is controlled based on the sensitivity level of the user’s System Account, along with a set of optional request parameters that can be used to filter and refine results.
+This API allows authorized federal users to request For Official Use Only (FOUO) data. Access to data is controlled
+based on the sensitivity level of the user’s System Account, along with a set of optional request parameters that can be
+used to filter and refine results.
 
 ### FOUO (CUI) Data
 
-This constitutes both the publicly available entities and the entities that have opted out of public display with their CUI data such as hierarchy, company and employee security levels and points of contact email address, phone, and fax numbers.
+This constitutes both the publicly available entities and the entities that have opted out of public display with their
+CUI data such as hierarchy, company and employee security levels and points of contact email address, phone, and fax
+numbers.
 
 **Key Features of the Subcontracting Plan Reporting API:**
 
-* It offers several optional search parameters, filtering by sections, AND (&), OR (~) conditions and a free text search q to obtain the desired data.
+* It offers several optional search parameters, filtering by sections, AND (&), OR (~) conditions and a free text search
+  q to obtain the desired data.
 * It returns synchronous responses.
 * Returns results in JSON format.
 * Supports pagination with up to 100 records per request.
 * Use the size parameter to control the number of records returned (maximum: 100).
 * If size is not specified, the default is 10 records per request.
 * Additional records can be retrieved by making subsequent requests and updating the page parameter.
-* The following characters are not allowed to be sent in the parameter values with the API request: `& | { } ^ \\`
+* The following characters are not allowed to be sent in the parameter values with the API request: `& | { } ^ \\ ~``
 
-## Additional Features of the Subcontracting Plan Reporting API: (No Available  yet. Awaiting for Program's decision on any enhance features)
+## Additional Features of the Subcontracting Plan Reporting API: (Not Available  yet. Awaiting for Program's decision on any enhance features)
 
 - It can serve as an extract API with the addition of "format" parameter in the request.
 - Following are the key features of the Subcontracting Plan Reporting API:
-    - It offers several optional search parameters, filtering by sections, AND, OR, NOT conditions and a free text search q to obtain the desired data.
+    - It offers several optional search parameters, filtering by sections, AND, OR, NOT conditions and a free text
+      search q to obtain the desired data.
     - It returns asynchronous responses by sending file downloadable link.
     - It returns data in the JSON or CSV format as selected by the user.
     - It can return only the first 1,000,000 records.
@@ -44,9 +52,11 @@ This constitutes both the publicly available entities and the entities that have
 ### API Endpoints
 
 **Production:**
+
 - `https://api.sam.gov/spr/v1/search?api_key=`
 
 **Alpha:**
+
 - `https://api-alpha.sam.gov/spr/v1/search?api_key=`
 
 ### User Requirements
@@ -59,15 +69,15 @@ FOUO (CUI) data:
 
 ### System Accounts
 
-- The SAM.gov Federal registered users must contact their agency administrator for obtaining the "System Accounts" widget on their SAM.gov "Workspace" page.
-
+- The SAM.gov Federal registered users must contact their agency administrator for obtaining the "System Accounts"
+  widget on their SAM.gov "Workspace" page.
 - To learn more about System Account roles and how to request or manage them, refer to the following resources:
     - How to assign a System Administrator / System Manager role in system accounts (KB0017682)
     - What roles are associated with system accounts? (KB0017606)
-
 - Users must create their System Account using the “System Accounts” widget and get it approved.
 - Users must then set the password for the System Account.
-- After the above step is successfully completed, users will see a new section for retrieving the API Key. Users must enter the password to retrieve this value.
+- After the above step is successfully completed, users will see a new section for retrieving the API Key. Users must
+  enter the password to retrieve this value.
 - System Accounts must satisfy the following criteria to successfully utilize the Subcontracting Plan Reporting API:
     - System Information
       Unique System ID: The System Account ID
@@ -81,43 +91,39 @@ FOUO (CUI) data:
 
 ### API Key Rate Limits
 
-| Type of User Account | Type of API Key | Default API Daily Rate Limit |
-|---------------------|----------------|------------------------------|
-| Federal System User | System Account API Key | 10,000 Requests every 24-hour|
+| Type of User Account | Type of API Key        | Default API Daily Rate Limit   |
+|----------------------|------------------------|--------------------------------|
+| Federal System User  | System Account API Key | 10,000 Requests every 24 hours |
 
 ## API Description
 
 ### Query String Parameters
 
-The Subcontract Plan Reports API offers several optional search parameters that can be provided independently or in combination with each other. All parameters are optional.
+The Subcontract Plan Reports API offers several optional search parameters that can be provided independently or in
+combination with each other. All parameters are optional.
 
-| # | Parameter Name | Description                                                                                                                                                                                                                                                                                                                     | Applicable Versions |
-|---|---------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------|
-| 1 | q | User to pass filtername:value format. Entity Management example for reference: https://api.sam.gov/spr/v1/search?api_key=<VALID API KEY>                                                                                                                                                                                        | V1 |
-| 2 | organizationCode | Open GSA Documentation shall indicate that complete values must be provided. If mapping this filter to multiple Org fields may lead to user confusion, then we can offer separate filters such as:<br> reportedToDepartmentCode<br> contractingDepartmentCode<br> contractingSubtierCode<br> contractingOfficeCode              | V1 |
-| 3 | submitter | Open GSA Documentation shall indicate that complete values must be provided. <br>Note: API must be able to accept case-insensitive values.                                                                                                                                                                                      | V1 |
-| 4 | reportSubmittedDate | Report Submitted date                                                                                                                                                                                                                                                                                                           | V1 |
-| 5 | reportinFiscalYear | Open GSA Documentation shall indicate that complete values must be provided.                                                                                                                                                                                                                                                    | V1 |
-| 6 | reportingPeriod | Applies to ISR and DOD (Final does not apply for DOD). <br>Open GSA Documentation shall indicate that complete values must be provided. <br>Note: API must be able to accept case-insensitive values.                                                                                                                           | V1 |
-| 7 | reportType | Open GSA Documentation shall indicate that complete values must be provided. <br>Note: API must be able to accept case-insensitive values.                                                                                                                                                                                      | V1 |
-| 8 | uniqueEntityID | Open GSA Documentation shall indicate that complete values must be provided.                                                                                                                                                                                                                                                    | V1 |
-| 9 | legalBusinessName | Allows partial or complete value search. Allows single or multiple values. <br>Note: API must be able to accept case-insensitive values.                                                                                                                                                                                        | V1 |
-| 10 | ultimateParentUniqueEntityID | Open GSA Documentation shall indicate that complete values must be provided.                                                                                                                                                                                                                                                    | V1 |
-| 11 | piid | Open GSA Documentation shall indicate that complete values must be provided. <br>Note: API must be able to accept case-insensitive values.                                                                                                                                                                                      | V1 |
-| 12 | referenceIdvPiid | Open GSA Documentation shall indicate that complete values must be provided. <br>Note: API must be able to accept case-insensitive values.                                                                                                                                                                                      | V1 |
-| 13 | subcontractNumber | Open GSA Documentation shall indicate that complete values must be provided. <br>Note: API must be able to accept case-insensitive values.                                                                                                                                                                                      | V1 |
-| 14 | includeSections | The API shall offer the following by default:<br> reportData<br>contractData<br>entityData<br>taskOrdersData<br>commercialPercentageForFederalOrganizationsData<br>goalsAndActualsData<br>certificationData. <br><br>Offers the following, when explicitly queried in the includeSections:<br>remarks<br>dodComprehensiveAttachments | V1 |
-| 15 | page | Maximum returned data records pages.<br> Notes: the maximum returned number less than 10,000 records per 24 hours (Page multiplied by Size).                                                                                                                                                                                        | V1 |
-| 16 | size | Maximum records on returned data page, up to 100.                                                                                                                                                                                                                                                                               | V1 |
+| #  | Parameter Name               | Description                                                                                                                                                                                                                                                                                                                                                                                                                                         | Applicable Versions |
+|----|------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------|
+| 1  | q                            | User to pass filtername:value format. Entity Management example for reference: https://api.sam.gov/spr/v1/search?api_key=<VALID API KEY>                                                                                                                                                                                                                                                                                                            | V1                  |
+| 2  | organizationCode             | Open GSA Documentation shall indicate that complete values must be provided. If mapping this filter to multiple Org fields may lead to user confusion, then we can offer separate filters such as:<br> reportedToDepartmentCode<br> contractingDepartmentCode<br> contractingSubtierCode<br> contractingOfficeCode                                                                                                                                  | V1                  |
+| 3  | submitter                    | Open GSA Documentation shall indicate that complete values must be provided. <br>Note: API must be able to accept case-insensitive values.                                                                                                                                                                                                                                                                                                          | V1                  |
+| 4  | reportSubmittedDate          | Report Submitted date                                                                                                                                                                                                                                                                                                                                                                                                                               | V1                  |
+| 5  | reportingFiscalYear          | Open GSA Documentation shall indicate that complete values must be provided.                                                                                                                                                                                                                                                                                                                                                                        | V1                  |
+| 6  | reportingPeriod              | Applies to ISR and DOD (Final does not apply for DOD). <br>Open GSA Documentation shall indicate that complete values must be provided. <br>Note: API must be able to accept case-insensitive values.                                                                                                                                                                                                                                               | V1                  |
+| 7  | reportType                   | Open GSA Documentation shall indicate that complete values must be provided. <br>Note: API must be able to accept case-insensitive values.                                                                                                                                                                                                                                                                                                          | V1                  |
+| 8  | uniqueEntityID               | Open GSA Documentation shall indicate that complete values must be provided.                                                                                                                                                                                                                                                                                                                                                                        | V1                  |
+| 9  | legalBusinessName            | Allows partial or complete value search. Allows single or multiple values. <br>Note: API must be able to accept case-insensitive values.                                                                                                                                                                                                                                                                                                            | V1                  |
+| 10 | ultimateParentUniqueEntityID | Open GSA Documentation shall indicate that complete values must be provided.                                                                                                                                                                                                                                                                                                                                                                        | V1                  |
+| 11 | piid                         | Open GSA Documentation shall indicate that complete values must be provided. <br>Note: API must be able to accept case-insensitive values.                                                                                                                                                                                                                                                                                                          | V1                  |
+| 12 | referenceIdvPiid             | Open GSA Documentation shall indicate that complete values must be provided. <br>Note: API must be able to accept case-insensitive values.                                                                                                                                                                                                                                                                                                          | V1                  |
+| 13 | subcontractNumber            | Open GSA Documentation shall indicate that complete values must be provided. <br>Note: API must be able to accept case-insensitive values.                                                                                                                                                                                                                                                                                                          | V1                  |
+| 14 | includeSections              | The API shall offer the following by default:<br> reportData<br>contractData<br>entityData<br>taskOrdersData<br>commercialPercentageForFederalOrganizationsData<br>goalsAndActualsData<br>certificationData. <br><br>Offers the following, when explicitly queried in the includeSections:<br>remarks<br>dodComprehensiveAttachments <br>***NOTE: Link provided for downloading attachments expires after 15 minutes. URL should open in browser*** | V1                  |
+| 15 | page                         | Maximum returned data records pages.<br> Notes: the maximum returned number less than 10,000 records per 24 hours (Page multiplied by Size).                                                                                                                                                                                                                                                                                                        | V1                  |
+| 16 | size                         | Maximum records on returned data page, up to 100.                                                                                                                                                                                                                                                                                                                                                                                                   | V1                  |
 
 ### Response Schema
 
 The Subcontracting Plan Reports API offers several response elements that are described in the following sections.
-
-<details>
-<summary><b>Response Schema:</b>
-<br>The Subcontracting Plan Reporting API offers several response elements that are described in the following sections.<br>
-</summary>
 
 <details>
 <summary><b>reportData</b><br>
@@ -159,7 +165,7 @@ The Subcontracting Plan Reports API offers several response elements that are de
 </tr>
 
 <tr>
-<td>reportFiscalYear</td>
+<td>reportingFiscalYear</td>
 <td>string</td>
 <td>Fiscal year for which the subcontracting report is being submitted.</td>
 <td>V1</td>
@@ -699,27 +705,28 @@ The Subcontracting Plan Reports API offers several response elements that are de
 
 ### OpenAPI Specification File
 
-You can view the full details of this API in the OpenAPI Specification file available here: <a href="v1/openapi.yaml">Open API specification file for the Subcontracting Plan Reports API</a>
-
+You can view the full details of this API in the OpenAPI Specification file available here: <a href="v1/openapi.yaml">
+Open API specification file for the Subcontracting Plan Reports API</a>
 
 ### HTTP Response Codes
 
 The API will return one of the following responses:
 
 | HTTP Response Code | Description                                                                                                                                                                                                                                                                                                                                                                                              |
-|------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 200 | The API call is successful                                                                                                                                                                                                                                                                                                                                                                               |
-| 400 | Bad Request - Application Level Error Messages: <br>- Invalid Search Parameter format <br>- Invalid Search Parameter name <br>- More than 100 records are requested via "size" parameters                                                                                                                                                                                                                |
-| 401 | Unauthorized - Missing "Basic Auth" under "Authorization" and missing System Account credentials <br>- Providing "Basic Auth" under "Authorization", but missing or invalid System Account credentials <br>- Different IP Address than that mentioned in the System Account <br>- API Key does not belong to the System Account <br>- Missing API Key in request <br>- Invalid API Key (Expired API Key) |
-| 403 | Forbidden - No Subcontracting Plan Reports Permission in System Account <br>- System Account has a different value for "Type of Connection"                                                                                                                                                                                                                                                              |
-| 406 | Not Acceptable Error - Missing Accept Header                                                                                                                                                                                                                                                                                                                                                             |
-| 415 | Missing or Invalid Content - Type header                                                                                                                                                                                                                                                                                                                                                                 |
+|--------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 200                | The API call is successful                                                                                                                                                                                                                                                                                                                                                                               |
+| 400                | Bad Request - Application Level Error Messages: <br>- Invalid Search Parameter format <br>- Invalid Search Parameter name <br>- More than 100 records are requested via "size" parameters                                                                                                                                                                                                                |
+| 401                | Unauthorized - Missing "Basic Auth" under "Authorization" and missing System Account credentials <br>- Providing "Basic Auth" under "Authorization", but missing or invalid System Account credentials <br>- Different IP Address than that mentioned in the System Account <br>- API Key does not belong to the System Account <br>- Missing API Key in request <br>- Invalid API Key (Expired API Key) |
+| 403                | Forbidden - No Subcontracting Plan Reports Permission in System Account <br>- System Account has a different value for "Type of Connection"                                                                                                                                                                                                                                                              |
+| 406                | Not Acceptable Error - Missing 'Accept' Header                                                                                                                                                                                                                                                                                                                                                           |
+| 415                | Missing or Invalid Content - Type header                                                                                                                                                                                                                                                                                                                                                                 |
 
 ## Examples
 
 ### Example 1: I would like to obtain all Individual Subcontracting Reports (ISR) submitted by a specific entity (UEI) for a given fiscal year.
 
 #### Request URL
+
 - **Production:** https://api.sam.gov/spr/v1/search?api_key=<VALID API KEY>
 - **Alpha:** https://api-alpha.sam.gov/spr/v1/search?api_key=<VALID API KEY>
 
@@ -737,222 +744,226 @@ curl -X POST "https://<Production or Alpha URL>/spr/v1/search?api_key=<API KEY>"
 ```
 
 #### Response
+
 **JSON Output**
+
 ```json
 {
-    "totalNumberOfReports": 1,
-    "subContractingPlanReports": [
-        {
-            "reportData": {
-                "reportType": "Individual",
-                "submitter": "Prime Contractor",
-                "uniqueEntityID": "C3NLZNSMU254",
-                "legalBusinessName": "M-I-C, INC.",
-                "reportFiscalYear": 2026,
-                "reportingPeriod": "Final",
-                "submittedDate": "2026-03-02T16:36:45.259314",
-                "reportedToDepartmentCode": "Not Applicable",
-                "reportedToDeportmentName": "Not Applicable"
-            },
-            "entityData": {
-                "uniqueEntityID": "C3NLZNSMU254",
-                "legalBusinessName": "M-I-C, INC.",
-                "ultimateParentUniqueEntityID": "C3NLZNSMU254",
-                "entityURL": "www.m-i-cinc.com",
-                "physicalAddress": {
-                    "addressLine1": "486 LINDBERGH AVE",
-                    "addressLine2": null,
-                    "city": "LIVERMORE",
-                    "stateOrProvinceCode": "CA",
-                    "zipCode": "94551-9554",
-                    "countryCode": null
-                }
-            },
-            "contractData": {
-                "piid": "N0002418C2307",
-                "awardOrIdv": null,
-                "referencedIdvPiid": null,
-                "subcontractNumber": null,
-                "totalDollars": "3751449349.000000000000",
-                "contractingOrganization": {
-                    "department": {
-                        "code": "9700",
-                        "name": "DEPT OF DEFENSE"
-                    },
-                    "subTier": {
-                        "code": "1700",
-                        "name": "DEPT OF THE NAVY"
-                    },
-                    "office": {
-                        "code": "N00024",
-                        "name": "NAVSEA HQ"
-                    }
-                },
-                "subcontractingPlanCode": null,
-                "subcontractingPlanDesc": null
-            },
-            "taskOrdersData": {
-                "areTaskOrdersApplicable": "No",
-                "taskOrders": []
-            },
-            "departmentAllocationPercentageData": "Not Applicable",
-            "goalsAndActualsData": {
-                "businessCategories": {
-                    "businessConcerns": [
-                        {
-                            "code": "SB",
-                            "name": "Small Business",
-                            "individualReport": {
-                                "goalsWholeDollars": "22",
-                                "goalsSubcontractPercentage": "100",
-                                "goalsTotalContractPercentage": "5.864400116681411E-7",
-                                "actualsWholeDollars": "22",
-                                "actualsSubcontractPercentage": "100",
-                                "actualsTotalContractPercentage": "5.864400116681411E-7"
-                            }
-                        },
-                        {
-                            "code": "OTSB",
-                            "name": "Other Than Small Business",
-                            "individualReport": {
-                                "goalsWholeDollars": "0",
-                                "goalsSubcontractPercentage": "0",
-                                "goalsTotalContractPercentage": "0",
-                                "actualsWholeDollars": "0",
-                                "actualsSubcontractPercentage": "0",
-                                "actualsTotalContractPercentage": "0"
-                            }
-                        }
-                    ],
-                    "smallBusinessCategories": [
-                        {
-                            "code": "SDB",
-                            "name": "Small Disadvantaged Business",
-                            "individualReport": {
-                                "goalsWholeDollars": "0",
-                                "goalsSubcontractPercentage": "0",
-                                "goalsTotalContractPercentage": "0",
-                                "actualsWholeDollars": "0",
-                                "actualsSubcontractPercentage": "0",
-                                "actualsTotalContractPercentage": "0"
-                            }
-                        },
-                        {
-                            "code": "WOSB",
-                            "name": "Women Owned Small Business",
-                            "individualReport": {
-                                "goalsWholeDollars": "0",
-                                "goalsSubcontractPercentage": "0",
-                                "goalsTotalContractPercentage": "0",
-                                "actualsWholeDollars": "0",
-                                "actualsSubcontractPercentage": "0",
-                                "actualsTotalContractPercentage": "0"
-                            }
-                        },
-                        {
-                            "code": "HBCU and MSI",
-                            "name": "Historically Black Colleges and Universities and Minority Serving Institutions",
-                            "individualReport": {
-                                "goalsWholeDollars": "0",
-                                "goalsSubcontractPercentage": "0",
-                                "goalsTotalContractPercentage": "0",
-                                "actualsWholeDollars": "0",
-                                "actualsSubcontractPercentage": "0",
-                                "actualsTotalContractPercentage": "0"
-                            }
-                        },
-                        {
-                            "code": "HUBZone",
-                            "name": "SBA Certified HUBZone Small Business",
-                            "individualReport": {
-                                "goalsWholeDollars": "0",
-                                "goalsSubcontractPercentage": "0",
-                                "goalsTotalContractPercentage": "0",
-                                "actualsWholeDollars": "0",
-                                "actualsSubcontractPercentage": "0",
-                                "actualsTotalContractPercentage": "0"
-                            }
-                        },
-                        {
-                            "code": "VOSB",
-                            "name": "Veteran Owned Small Business",
-                            "individualReport": {
-                                "goalsWholeDollars": "0",
-                                "goalsSubcontractPercentage": "0",
-                                "goalsTotalContractPercentage": "0",
-                                "actualsWholeDollars": "0",
-                                "actualsSubcontractPercentage": "0",
-                                "actualsTotalContractPercentage": "0"
-                            }
-                        },
-                        {
-                            "code": "SDVOSB",
-                            "name": "SBA Certified Service Disabled Veteran Owned Small Business",
-                            "individualReport": {
-                                "goalsWholeDollars": "0",
-                                "goalsSubcontractPercentage": "0",
-                                "goalsTotalContractPercentage": "0",
-                                "actualsWholeDollars": "0",
-                                "actualsSubcontractPercentage": "0",
-                                "actualsTotalContractPercentage": "0"
-                            }
-                        },
-                        {
-                            "code": "ANC",
-                            "name": "Alaskan Native Corporations and Indian Tribes that are not Small Disadvantaged Business",
-                            "individualReport": {
-                                "goalsWholeDollars": "0",
-                                "goalsSubcontractPercentage": "0",
-                                "goalsTotalContractPercentage": "0",
-                                "actualsWholeDollars": "0",
-                                "actualsSubcontractPercentage": "0",
-                                "actualsTotalContractPercentage": "0"
-                            }
-                        }
-                    ],
-                    "totals": {
-                        "individualReport": {
-                            "goalsWholeDollars": "22",
-                            "goalsSubcontractPercentage": "100",
-                            "goalsTotalContractPercentage": "5.864400116681411E-7",
-                            "actualsWholeDollars": "22",
-                            "actualsSubcontractPercentage": "100",
-                            "actualsTotalContractPercentage": "5.864400116681411E-7"
-                        },
-                        "summaryReport": {
-                            "totalGoalsWholeDollars": "22",
-                            "totalGoalsPercentage": "5.864400116681411E-7",
-                            "totalActualsWholeDollars": "22",
-                            "totalActualsPercentage": "5.864400116681411E-7"
-                        }
-                    }
-                }
-            },
-            "certificationData": {
-                "includeIndirectCosts": "Y",
-                "accountingMethod": {
-                    "method": "payment basis",
-                    "explanation": "Not Applicable"
-                },
-                "isCertified": "Y",
-                "nameOfTheCertifier": "Pooja",
-                "titleOfTheCertifier": "Test",
-                "genericEmailAddressOrUrl": "https://sam.gov"
-            }
+  "totalNumberOfReports": 1,
+  "subContractingPlanReports": [
+    {
+      "reportData": {
+        "reportType": "Individual",
+        "submitter": "Prime Contractor",
+        "uniqueEntityID": "C3NLZNSMU254",
+        "legalBusinessName": "M-I-C, INC.",
+        "reportingFiscalYear": 2026,
+        "reportingPeriod": "Final",
+        "submittedDate": "2026-03-02T16:36:45.259314",
+        "reportedToDepartmentCode": "Not Applicable",
+        "reportedToDeportmentName": "Not Applicable"
+      },
+      "entityData": {
+        "uniqueEntityID": "C3NLZNSMU254",
+        "legalBusinessName": "M-I-C, INC.",
+        "ultimateParentUniqueEntityID": "C3NLZNSMU254",
+        "entityURL": "www.m-i-cinc.com",
+        "physicalAddress": {
+          "addressLine1": "486 LINDBERGH AVE",
+          "addressLine2": null,
+          "city": "LIVERMORE",
+          "stateOrProvinceCode": "CA",
+          "zipCode": "94551-9554",
+          "countryCode": null
         }
-    ],
-    "links": {
-        "selfLink": "https://gateway-am.test.apiss.mcaas.fcs.gsa.gov/spr/v1/search?api_key=SAM-c967577e-a405-41d3-8232-7b895b3ba565&page=0&size=10",
-        "nextLink": null
+      },
+      "contractData": {
+        "piid": "N0002418C2307",
+        "awardOrIdv": null,
+        "referencedIdvPiid": null,
+        "subcontractNumber": null,
+        "totalDollars": "3751449349.000000000000",
+        "contractingOrganization": {
+          "department": {
+            "code": "9700",
+            "name": "DEPT OF DEFENSE"
+          },
+          "subTier": {
+            "code": "1700",
+            "name": "DEPT OF THE NAVY"
+          },
+          "office": {
+            "code": "N00024",
+            "name": "NAVSEA HQ"
+          }
+        },
+        "subcontractingPlanCode": null,
+        "subcontractingPlanDesc": null
+      },
+      "taskOrdersData": {
+        "areTaskOrdersApplicable": "No",
+        "taskOrders": []
+      },
+      "departmentAllocationPercentageData": "Not Applicable",
+      "goalsAndActualsData": {
+        "businessCategories": {
+          "businessConcerns": [
+            {
+              "code": "SB",
+              "name": "Small Business",
+              "individualReport": {
+                "goalsWholeDollars": "22",
+                "goalsSubcontractPercentage": "100",
+                "goalsTotalContractPercentage": "5.864400116681411E-7",
+                "actualsWholeDollars": "22",
+                "actualsSubcontractPercentage": "100",
+                "actualsTotalContractPercentage": "5.864400116681411E-7"
+              }
+            },
+            {
+              "code": "OTSB",
+              "name": "Other Than Small Business",
+              "individualReport": {
+                "goalsWholeDollars": "0",
+                "goalsSubcontractPercentage": "0",
+                "goalsTotalContractPercentage": "0",
+                "actualsWholeDollars": "0",
+                "actualsSubcontractPercentage": "0",
+                "actualsTotalContractPercentage": "0"
+              }
+            }
+          ],
+          "smallBusinessCategories": [
+            {
+              "code": "SDB",
+              "name": "Small Disadvantaged Business",
+              "individualReport": {
+                "goalsWholeDollars": "0",
+                "goalsSubcontractPercentage": "0",
+                "goalsTotalContractPercentage": "0",
+                "actualsWholeDollars": "0",
+                "actualsSubcontractPercentage": "0",
+                "actualsTotalContractPercentage": "0"
+              }
+            },
+            {
+              "code": "WOSB",
+              "name": "Women Owned Small Business",
+              "individualReport": {
+                "goalsWholeDollars": "0",
+                "goalsSubcontractPercentage": "0",
+                "goalsTotalContractPercentage": "0",
+                "actualsWholeDollars": "0",
+                "actualsSubcontractPercentage": "0",
+                "actualsTotalContractPercentage": "0"
+              }
+            },
+            {
+              "code": "HBCU and MSI",
+              "name": "Historically Black Colleges and Universities and Minority Serving Institutions",
+              "individualReport": {
+                "goalsWholeDollars": "0",
+                "goalsSubcontractPercentage": "0",
+                "goalsTotalContractPercentage": "0",
+                "actualsWholeDollars": "0",
+                "actualsSubcontractPercentage": "0",
+                "actualsTotalContractPercentage": "0"
+              }
+            },
+            {
+              "code": "HUBZone",
+              "name": "SBA Certified HUBZone Small Business",
+              "individualReport": {
+                "goalsWholeDollars": "0",
+                "goalsSubcontractPercentage": "0",
+                "goalsTotalContractPercentage": "0",
+                "actualsWholeDollars": "0",
+                "actualsSubcontractPercentage": "0",
+                "actualsTotalContractPercentage": "0"
+              }
+            },
+            {
+              "code": "VOSB",
+              "name": "Veteran Owned Small Business",
+              "individualReport": {
+                "goalsWholeDollars": "0",
+                "goalsSubcontractPercentage": "0",
+                "goalsTotalContractPercentage": "0",
+                "actualsWholeDollars": "0",
+                "actualsSubcontractPercentage": "0",
+                "actualsTotalContractPercentage": "0"
+              }
+            },
+            {
+              "code": "SDVOSB",
+              "name": "SBA Certified Service Disabled Veteran Owned Small Business",
+              "individualReport": {
+                "goalsWholeDollars": "0",
+                "goalsSubcontractPercentage": "0",
+                "goalsTotalContractPercentage": "0",
+                "actualsWholeDollars": "0",
+                "actualsSubcontractPercentage": "0",
+                "actualsTotalContractPercentage": "0"
+              }
+            },
+            {
+              "code": "ANC",
+              "name": "Alaskan Native Corporations and Indian Tribes that are not Small Disadvantaged Business",
+              "individualReport": {
+                "goalsWholeDollars": "0",
+                "goalsSubcontractPercentage": "0",
+                "goalsTotalContractPercentage": "0",
+                "actualsWholeDollars": "0",
+                "actualsSubcontractPercentage": "0",
+                "actualsTotalContractPercentage": "0"
+              }
+            }
+          ],
+          "totals": {
+            "individualReport": {
+              "goalsWholeDollars": "22",
+              "goalsSubcontractPercentage": "100",
+              "goalsTotalContractPercentage": "5.864400116681411E-7",
+              "actualsWholeDollars": "22",
+              "actualsSubcontractPercentage": "100",
+              "actualsTotalContractPercentage": "5.864400116681411E-7"
+            },
+            "summaryReport": {
+              "totalGoalsWholeDollars": "22",
+              "totalGoalsPercentage": "5.864400116681411E-7",
+              "totalActualsWholeDollars": "22",
+              "totalActualsPercentage": "5.864400116681411E-7"
+            }
+          }
+        }
+      },
+      "certificationData": {
+        "includeIndirectCosts": "Y",
+        "accountingMethod": {
+          "method": "payment basis",
+          "explanation": "Not Applicable"
+        },
+        "isCertified": "Y",
+        "nameOfTheCertifier": "Pooja",
+        "titleOfTheCertifier": "Test",
+        "genericEmailAddressOrUrl": "https://sam.gov"
+      }
     }
+  ],
+  "links": {
+    "selfLink": "https://gateway-am.test.apiss.mcaas.fcs.gsa.gov/spr/v1/search?page=0&size=10",
+    "nextLink": null
+  }
 }
 
 ```
+
 ---
 
 ### Example 2: Retrieve Summary Individual Reports from fiscal year 2022 to 2025
 
 #### Request URL
+
 - **Production:** https://api.sam.gov/spr/v1/search?api_key=<VALID API KEY>
 - **Alpha:** https://api-alpha.sam.gov/spr/v1/search?api_key=<VALID API KEY>
 
@@ -969,243 +980,264 @@ curl -X POST "https://<Production or Alpha URL>/spr/v1/search?api_key=<API KEY>"
 ```
 
 #### Response
+
 **JSON Output**
+
 ```json
 {
-    "totalNumberOfReports": 18076,
-    "subContractingPlanReports": [
-        {
-            "reportData": {
-                "reportType": "Summary Individual",
-                "submitter": "Prime Contractor",
-                "uniqueEntityID": "GNF9XURG4LR7",
-                "legalBusinessName": "BENCO DENTAL SUPPLY CO.",
-                "reportFiscalYear": 2022,
-                "reportingPeriod": "March 31",
-                "submittedDate": "2022-10-31T14:23:14",
-                "reportedToDepartmentCode": "3600",
-                "reportedToDeportmentName": "VETERANS AFFAIRS, DEPARTMENT OF"
-            },
-            "entityData": {
-                "uniqueEntityID": "GNF9XURG4LR7",
-                "legalBusinessName": "BENCO DENTAL SUPPLY CO.",
-                "ultimateParentUniqueEntityID": "GNF9XURG4LR7",
-                "entityURL": null,
-                "physicalAddress": {
-                    "addressLine1": "295 CENTERPOINT BLVD",
-                    "addressLine2": null,
-                    "city": "PITTSTON",
-                    "stateOrProvinceCode": "PA",
-                    "zipCode": "186406136",
-                    "countryCode": "USA"
-                }
-            },
-            "contractData": "Not Applicable",
-            "taskOrdersData": {
-                "areTaskOrdersApplicable": "No",
-                "taskOrders": []
-            },
-            "departmentAllocationPercentageData": "Not Applicable",
-            "goalsAndActualsData": {
-                "businessCategories": {
-                    "businessConcerns": [
-                        {
-                            "code": "SB",
-                            "name": "Small Business",
-                            "summaryReport": [
-                                {
-                                    "organizationCode": "3600",
-                                    "organizationName": "VETERANS AFFAIRS, DEPARTMENT OF",
-                                    "goalsWholeDollars": "Not Applicable",
-                                    "goalsPercentage": "Not Applicable",
-                                    "actualsWholeDollars": "3918457",
-                                    "actualsPercentage": "35.6"
-                                }
-                            ]
-                        },
-                        {
-                            "code": "OTSB",
-                            "name": "Other Than Small Business",
-                            "summaryReport": [
-                                {
-                                    "organizationCode": "3600",
-                                    "organizationName": "VETERANS AFFAIRS, DEPARTMENT OF",
-                                    "goalsWholeDollars": "Not Applicable",
-                                    "goalsPercentage": "Not Applicable",
-                                    "actualsWholeDollars": "7097688",
-                                    "actualsPercentage": "64.4"
-                                }
-                            ]
-                        }
-                    ],
-                    "smallBusinessCategories": [
-                        {
-                            "code": "SDB",
-                            "name": "Small Disadvantaged Business",
-                            "summaryReport": [
-                                {
-                                    "organizationCode": "3600",
-                                    "organizationName": "VETERANS AFFAIRS, DEPARTMENT OF",
-                                    "goalsWholeDollars": "Not Applicable",
-                                    "goalsPercentage": "Not Applicable",
-                                    "actualsWholeDollars": "0",
-                                    "actualsPercentage": "0"
-                                }
-                            ]
-                        },
-                        {
-                            "code": "WOSB",
-                            "name": "Women Owned Small Business",
-                            "summaryReport": [
-                                {
-                                    "organizationCode": "3600",
-                                    "organizationName": "VETERANS AFFAIRS, DEPARTMENT OF",
-                                    "goalsWholeDollars": "Not Applicable",
-                                    "goalsPercentage": "Not Applicable",
-                                    "actualsWholeDollars": "253988",
-                                    "actualsPercentage": "2.3"
-                                }
-                            ]
-                        },
-                        {
-                            "code": "HBCU and MSI",
-                            "name": "Historically Black Colleges and Universities and Minority Serving Institutions",
-                            "summaryReport": [
-                                {
-                                    "organizationCode": "3600",
-                                    "organizationName": "VETERANS AFFAIRS, DEPARTMENT OF",
-                                    "goalsWholeDollars": "Not Applicable",
-                                    "goalsPercentage": "Not Applicable",
-                                    "actualsWholeDollars": "0",
-                                    "actualsPercentage": "0"
-                                }
-                            ]
-                        },
-                        {
-                            "code": "HUBZone",
-                            "name": "SBA Certified HUBZone Small Business",
-                            "summaryReport": [
-                                {
-                                    "organizationCode": "3600",
-                                    "organizationName": "VETERANS AFFAIRS, DEPARTMENT OF",
-                                    "goalsWholeDollars": "Not Applicable",
-                                    "goalsPercentage": "Not Applicable",
-                                    "actualsWholeDollars": "37747",
-                                    "actualsPercentage": "0.3"
-                                }
-                            ]
-                        },
-                        {
-                            "code": "VOSB",
-                            "name": "Veteran Owned Small Business",
-                            "summaryReport": [
-                                {
-                                    "organizationCode": "3600",
-                                    "organizationName": "VETERANS AFFAIRS, DEPARTMENT OF",
-                                    "goalsWholeDollars": "Not Applicable",
-                                    "goalsPercentage": "Not Applicable",
-                                    "actualsWholeDollars": "7953",
-                                    "actualsPercentage": "0.1"
-                                }
-                            ]
-                        },
-                        {
-                            "code": "SDVOSB",
-                            "name": "SBA Certified Service Disabled Veteran Owned Small Business",
-                            "summaryReport": [
-                                {
-                                    "organizationCode": "3600",
-                                    "organizationName": "VETERANS AFFAIRS, DEPARTMENT OF",
-                                    "goalsWholeDollars": "Not Applicable",
-                                    "goalsPercentage": "Not Applicable",
-                                    "actualsWholeDollars": "0",
-                                    "actualsPercentage": "0"
-                                }
-                            ]
-                        },
-                        {
-                            "code": "ANC",
-                            "name": "Alaskan Native Corporations and Indian Tribes that are not Small Disadvantaged Business",
-                            "summaryReport": [
-                                {
-                                    "organizationCode": "3600",
-                                    "organizationName": "VETERANS AFFAIRS, DEPARTMENT OF",
-                                    "goalsWholeDollars": "Not Applicable",
-                                    "goalsPercentage": "Not Applicable",
-                                    "actualsWholeDollars": "0",
-                                    "actualsPercentage": "0"
-                                }
-                            ]
-                        },
-                        {
-                            "code": "ANC",
-                            "name": "Alaskan Native Corporations and Indian Tribes that are not Small Business",
-                            "summaryReport": [
-                                {
-                                    "organizationCode": "3600",
-                                    "organizationName": "VETERANS AFFAIRS, DEPARTMENT OF",
-                                    "goalsWholeDollars": "Not Applicable",
-                                    "goalsPercentage": "Not Applicable",
-                                    "actualsWholeDollars": "0",
-                                    "actualsPercentage": "0"
-                                }
-                            ]
-                        }
-                    ],
-                    "totals": {
-                        "individualReport": {
-                            "goalsWholeDollars": "Not Applicable",
-                            "goalsSubcontractPercentage": "Not Applicable",
-                            "goalsTotalContractPercentage": "Not Applicable",
-                            "actualsWholeDollars": "11016145",
-                            "actualsSubcontractPercentage": "100",
-                            "actualsTotalContractPercentage": "Not Applicable"
-                        },
-                        "summaryReport": {
-                            "totalGoalsWholeDollars": "Not Applicable",
-                            "totalGoalsPercentage": "Not Applicable",
-                            "totalActualsWholeDollars": "11016145",
-                            "totalActualsPercentage": "Not Applicable"
-                        }
-                    }
-                }
-            },
-            "certificationData": {
-                "includeIndirectCosts": "Not Applicable",
-                "accountingMethod": {
-                    "method": "Not Applicable",
-                    "explanation": "Not Applicable"
-                },
-                "isCertified": "Y",
-                "nameOfTheCertifier": "Godfrey Warner",
-                "titleOfTheCertifier": "Contract Administrator",
-                "genericEmailAddressOrUrl": null
-            }
+  "totalNumberOfReports": 18076,
+  "subContractingPlanReports": [
+    {
+      "reportData": {
+        "reportType": "Summary Individual",
+        "submitter": "Prime Contractor",
+        "uniqueEntityID": "GNF9XURG4LR7",
+        "legalBusinessName": "BENCO DENTAL SUPPLY CO.",
+        "reportingFiscalYear": 2022,
+        "reportingPeriod": "March 31",
+        "submittedDate": "2022-10-31T14:23:14",
+        "reportedToDepartmentCode": "3600",
+        "reportedToDeportmentName": "VETERANS AFFAIRS, DEPARTMENT OF"
+      },
+      "entityData": {
+        "uniqueEntityID": "GNF9XURG4LR7",
+        "legalBusinessName": "BENCO DENTAL SUPPLY CO.",
+        "ultimateParentUniqueEntityID": "GNF9XURG4LR7",
+        "entityURL": null,
+        "physicalAddress": {
+          "addressLine1": "295 CENTERPOINT BLVD",
+          "addressLine2": null,
+          "city": "PITTSTON",
+          "stateOrProvinceCode": "PA",
+          "zipCode": "186406136",
+          "countryCode": "USA"
         }
-    ],
-    "links": {
-        "selfLink": "https://gateway-am.test.apiss.mcaas.fcs.gsa.gov/spr/v1/search?api_key=SAM-c967577e-a405-41d3-8232-7b895b3ba565&page=0&size=1",
-        "nextLink": "https://gateway-am.test.apiss.mcaas.fcs.gsa.gov/spr/v1/search?api_key=SAM-c967577e-a405-41d3-8232-7b895b3ba565&page=1&size=1"
+      },
+      "contractData": "Not Applicable",
+      "taskOrdersData": {
+        "areTaskOrdersApplicable": "No",
+        "taskOrders": []
+      },
+      "departmentAllocationPercentageData": "Not Applicable",
+      "goalsAndActualsData": {
+        "businessCategories": {
+          "businessConcerns": [
+            {
+              "code": "SB",
+              "name": "Small Business",
+              "summaryReport": [
+                {
+                  "organizationCode": "3600",
+                  "organizationName": "VETERANS AFFAIRS, DEPARTMENT OF",
+                  "goalsWholeDollars": "Not Applicable",
+                  "goalsPercentage": "Not Applicable",
+                  "actualsWholeDollars": "3918457",
+                  "actualsPercentage": "35.6"
+                }
+              ]
+            },
+            {
+              "code": "OTSB",
+              "name": "Other Than Small Business",
+              "summaryReport": [
+                {
+                  "organizationCode": "3600",
+                  "organizationName": "VETERANS AFFAIRS, DEPARTMENT OF",
+                  "goalsWholeDollars": "Not Applicable",
+                  "goalsPercentage": "Not Applicable",
+                  "actualsWholeDollars": "7097688",
+                  "actualsPercentage": "64.4"
+                }
+              ]
+            }
+          ],
+          "smallBusinessCategories": [
+            {
+              "code": "SDB",
+              "name": "Small Disadvantaged Business",
+              "summaryReport": [
+                {
+                  "organizationCode": "3600",
+                  "organizationName": "VETERANS AFFAIRS, DEPARTMENT OF",
+                  "goalsWholeDollars": "Not Applicable",
+                  "goalsPercentage": "Not Applicable",
+                  "actualsWholeDollars": "0",
+                  "actualsPercentage": "0"
+                }
+              ]
+            },
+            {
+              "code": "WOSB",
+              "name": "Women Owned Small Business",
+              "summaryReport": [
+                {
+                  "organizationCode": "3600",
+                  "organizationName": "VETERANS AFFAIRS, DEPARTMENT OF",
+                  "goalsWholeDollars": "Not Applicable",
+                  "goalsPercentage": "Not Applicable",
+                  "actualsWholeDollars": "253988",
+                  "actualsPercentage": "2.3"
+                }
+              ]
+            },
+            {
+              "code": "HBCU and MSI",
+              "name": "Historically Black Colleges and Universities and Minority Serving Institutions",
+              "summaryReport": [
+                {
+                  "organizationCode": "3600",
+                  "organizationName": "VETERANS AFFAIRS, DEPARTMENT OF",
+                  "goalsWholeDollars": "Not Applicable",
+                  "goalsPercentage": "Not Applicable",
+                  "actualsWholeDollars": "0",
+                  "actualsPercentage": "0"
+                }
+              ]
+            },
+            {
+              "code": "HUBZone",
+              "name": "SBA Certified HUBZone Small Business",
+              "summaryReport": [
+                {
+                  "organizationCode": "3600",
+                  "organizationName": "VETERANS AFFAIRS, DEPARTMENT OF",
+                  "goalsWholeDollars": "Not Applicable",
+                  "goalsPercentage": "Not Applicable",
+                  "actualsWholeDollars": "37747",
+                  "actualsPercentage": "0.3"
+                }
+              ]
+            },
+            {
+              "code": "VOSB",
+              "name": "Veteran Owned Small Business",
+              "summaryReport": [
+                {
+                  "organizationCode": "3600",
+                  "organizationName": "VETERANS AFFAIRS, DEPARTMENT OF",
+                  "goalsWholeDollars": "Not Applicable",
+                  "goalsPercentage": "Not Applicable",
+                  "actualsWholeDollars": "7953",
+                  "actualsPercentage": "0.1"
+                }
+              ]
+            },
+            {
+              "code": "SDVOSB",
+              "name": "SBA Certified Service Disabled Veteran Owned Small Business",
+              "summaryReport": [
+                {
+                  "organizationCode": "3600",
+                  "organizationName": "VETERANS AFFAIRS, DEPARTMENT OF",
+                  "goalsWholeDollars": "Not Applicable",
+                  "goalsPercentage": "Not Applicable",
+                  "actualsWholeDollars": "0",
+                  "actualsPercentage": "0"
+                }
+              ]
+            },
+            {
+              "code": "ANC",
+              "name": "Alaskan Native Corporations and Indian Tribes that are not Small Disadvantaged Business",
+              "summaryReport": [
+                {
+                  "organizationCode": "3600",
+                  "organizationName": "VETERANS AFFAIRS, DEPARTMENT OF",
+                  "goalsWholeDollars": "Not Applicable",
+                  "goalsPercentage": "Not Applicable",
+                  "actualsWholeDollars": "0",
+                  "actualsPercentage": "0"
+                }
+              ]
+            },
+            {
+              "code": "ANC",
+              "name": "Alaskan Native Corporations and Indian Tribes that are not Small Business",
+              "summaryReport": [
+                {
+                  "organizationCode": "3600",
+                  "organizationName": "VETERANS AFFAIRS, DEPARTMENT OF",
+                  "goalsWholeDollars": "Not Applicable",
+                  "goalsPercentage": "Not Applicable",
+                  "actualsWholeDollars": "0",
+                  "actualsPercentage": "0"
+                }
+              ]
+            }
+          ],
+          "totals": {
+            "individualReport": {
+              "goalsWholeDollars": "Not Applicable",
+              "goalsSubcontractPercentage": "Not Applicable",
+              "goalsTotalContractPercentage": "Not Applicable",
+              "actualsWholeDollars": "11016145",
+              "actualsSubcontractPercentage": "100",
+              "actualsTotalContractPercentage": "Not Applicable"
+            },
+            "summaryReport": {
+              "totalGoalsWholeDollars": "Not Applicable",
+              "totalGoalsPercentage": "Not Applicable",
+              "totalActualsWholeDollars": "11016145",
+              "totalActualsPercentage": "Not Applicable"
+            }
+          }
+        }
+      },
+      "certificationData": {
+        "includeIndirectCosts": "Not Applicable",
+        "accountingMethod": {
+          "method": "Not Applicable",
+          "explanation": "Not Applicable"
+        },
+        "isCertified": "Y",
+        "nameOfTheCertifier": "Godfrey Warner",
+        "titleOfTheCertifier": "Contract Administrator",
+        "genericEmailAddressOrUrl": null
+      }
     }
+  ],
+  "links": {
+    "selfLink": "https://gateway-am.test.apiss.mcaas.fcs.gsa.gov/spr/v1/search?page=0&size=1",
+    "nextLink": "https://gateway-am.test.apiss.mcaas.fcs.gsa.gov/spr/v1/search?page=1&size=1"
+  }
 }
 
 ```
+
 ---
 
 ## Additional Information
 
-You can view the full details of the differences between the SAM legacy API and SAM.gov API in the **Variance Document**.
+You can view the full details of the differences between the SAM legacy API and SAM.gov API in the [Variance Document](https://open.gsa.gov/api/entity-api/LegacySAMvsBetaSAM-EntityManagementAPI.pdf).
 
-- This website contains data supplied by third party information suppliers, including Dun & Bradstreet (D&B). For the purposes of the following limitation on permissible use of D&B data, which includes each entity’s DUNS Number and its associated business information, “D&B Open Data” is defined as the following data elements: Legal Business Name, Street Address, City Name, State/Province Name, Country Name, County Code, State/Province Code, State/Province Abbreviation, ZIP/Postal Code, Country Name and Country Code. Entity registration, exclusion, or contract award records in SAM may contain D&B-supplied data. Applicable records containing D&B data include all entity registration records with a last updated date earlier than 4/4/2022, all exclusions records with a created date earlier than 4/4/2022, and all base award notices with an award date earlier than 4/4/2022. These records show the Entity Validation Service (EVS) Source as D&B in outbound data streams.
-- D&B hereby grants you, the user, a license for a limited, non-exclusive right to use D&B Open Data within the limitations set forth herein. By using this website you agree that you shall not use D&B Open Data without giving written attribution to the source of such data (i.e., D&B) and shall not access, use or disseminate D&B Open Data in bulk, (i.e., in amounts sufficient for use as an original source or as a substitute for the product and/or service being licensed hereunder).
-- Except for data elements identified above as D&B Open Data, under no circumstances are you authorized to use any other D&B data for commercial, resale or marketing purposes (e.g., identifying, quantifying, segmenting and/or analyzing customers and prospective customers). Systematic access (electronic harvesting) or extraction of content from the website, including the use of “bots” or “spiders”, is prohibited. Federal government entities are authorized to use the D&B data for purposes of acquisition as defined in FAR 2.101 and for the purpose of managing Federal awards, including sub-awards, or reporting Federal award information.
-- GSA assumes no liability for the use of the D&B data once it is downloaded or accessed. The D&B data is provided “as is” without warranty of any kind. The D&B data is the intellectual property of D&B. In no event will D&B or any third party information supplier be liable in any way with regard to the use of the D&B data. For more information about the scope of permissible use of D&B data licensed hereunder, please contact D&B at datause_govt@dnb.com.
-
+- This website contains data supplied by third party information suppliers, including Dun & Bradstreet (D&B). For the
+  purposes of the following limitation on permissible use of D&B data, which includes each entity’s DUNS Number and its
+  associated business information, “D&B Open Data” is defined as the following data elements: Legal Business Name,
+  Street Address, City Name, State/Province Name, Country Name, County Code, State/Province Code, State/Province
+  Abbreviation, ZIP/Postal Code. Entity registration, exclusion, or contract award records in SAM may contain
+  D&B-supplied data. Applicable records containing D&B data include all entity registration records with a last updated
+  date earlier than 4/4/2022, all exclusions records with a created date earlier than 4/4/2022, and all base award
+  notices with an award date earlier than 4/4/2022. These records show the Entity Validation Service (EVS) Source as D&B
+  in outbound data streams.
+- D&B hereby grants you, the user, a license for a limited, non-exclusive right to use D&B Open Data within the
+  limitations set forth herein. By using this website you agree that you shall not use D&B Open Data without giving
+  written attribution to the source of such data (i.e., D&B) and shall not access, use or disseminate D&B Open Data in
+  bulk, (i.e., in amounts sufficient for use as an original source or as a substitute for the product and/or service
+  being licensed hereunder).
+- Except for data elements identified above as D&B Open Data, under no circumstances are you authorized to use any other
+  D&B data for commercial, resale or marketing purposes (e.g., identifying, quantifying, segmenting and/or analyzing
+  customers and prospective customers). Systematic access (electronic harvesting) or extraction of content from the
+  website, including the use of “bots” or “spiders”, is prohibited. Federal government entities are authorized to use
+  the D&B data for purposes of acquisition as defined in FAR 2.101 and for the purpose of managing Federal awards,
+  including sub-awards, or reporting Federal award information.
+- GSA assumes no liability for the use of the D&B data once it is downloaded or accessed. The D&B data is provided “as
+  is” without warranty of any kind. The D&B data is the intellectual property of D&B. In no event will D&B or any third
+  party information supplier be liable in any way with regard to the use of the D&B data. For more information about the
+  scope of permissible use of D&B data licensed hereunder, please contact D&B at datause_govt@dnb.com.
 
 ---
 
 <p><small><a href="#">Back to top</a></small></p>
-
 
 ## Contact Us
 
@@ -1215,12 +1247,14 @@ You can view the full details of the differences between the SAM legacy API and 
 
   i. Conduct a recent review of the open.gsa.gov/api specifications  
   ii. Confirm you are using an API tool, not a browser to send the request (FOUO & Sensitive Calls)  
-  iii. Confirm you are using the username/password for the system account that created the API key in the authentication header (Sensitive Calls)  
+  iii. Confirm you are using the username/password for the System Account that created the API key in the authentication
+  header (Sensitive Calls)  
   iv. Confirm you used POST and not GET for this request (Sensitive Calls)  
-  v. Confirm that the API key is from a system account (FOUO & Sensitive Calls)  
+  v. Confirm that the API key is from a System Account (FOUO & Sensitive Calls)  
   vi. Confirm that the API key being used is still active  
-  vii. Confirm that the system account you are using has "read fouo" or "read sensitive" permissions as applicable (FOUO & Sensitive Calls)  
-  viii. Confirm that the IP addresses registered with your system account are current
+  vii. Confirm that the System Account you are using has "read fouo" or "read sensitive" permissions as applicable (
+  FOUO & Sensitive Calls)  
+  viii. Confirm that the IP addresses registered with your System Account are current
 
   b. When submitting help desk tickets for API or system connection issues, provide the following:
 
@@ -1246,20 +1280,21 @@ You can view the full details of the differences between the SAM legacy API and 
   iv. Business Type: Other  
   v. Subject (select 1):
 
-        1. Option A: I need a role to test in alpha.sam.gov  
-        2. Option B: System account approval in alpha.sam.gov  
+    1. Option A: I need a role to test in alpha.sam.gov  
+    2. Option B: System account approval in alpha.sam.gov  
 
-  vi. Please describe the issue: (Copy and paste the below information into the ticket, filling in your information within the brackets)
+  vi. Please describe the issue: (Copy and paste the below information into the ticket, filling in your information
+     within the brackets)
 
-        1. Option A:  
-           I have already navigated to alpha.sam.gov and created a user account, following the same steps for creating an account in sam.gov.  
-           I would like to conduct testing but do not have the necessary role(s) in alpha.sam.gov.  
-           The account that needs role assignment is associated with [EMAIL ADDRESS].  
-           I request a [ROLE] role for the [DOMAIN] domain in alpha.sam.gov.  
+     1. Option A:  
+        I have already navigated to alpha.sam.gov and created a user account, following the same steps for creating an account in sam.gov.  
+        I would like to conduct testing but do not have the necessary role(s) in alpha.sam.gov.  
+        The account that needs role assignment is associated with [EMAIL ADDRESS].  
+        I request a [ROLE] role for the [DOMAIN] domain in alpha.sam.gov.  
 
-        2. Option B:  
-           I am creating/editing a system account and have submitted my account in alpha.sam.gov for approval.  
-           I would like to request alpha.sam.gov system account review and approval for [Name of the alpha.sam.gov system account].  
+     2. Option B:  
+        I am creating/editing a system account and have submitted my account in alpha.sam.gov for approval.  
+        I would like to request alpha.sam.gov system account review and approval for [Name of the alpha.sam.gov system account].  
 
 ---
 
