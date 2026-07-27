@@ -108,7 +108,7 @@ combination with each other. All parameters are optional.
 | 2  | organizationCode             | Open GSA Documentation shall indicate that complete values must be provided. If mapping this filter to multiple Org fields may lead to user confusion, then we can offer separate filters such as:<br> reportedToDepartmentCode<br> contractingDepartmentCode<br> contractingSubtierCode<br> contractingOfficeCode                                                                                                                                  | V1                  |
 | 3  | submitter                    | Open GSA Documentation shall indicate that complete values must be provided. <br>Note: API must be able to accept case-insensitive values.                                                                                                                                                                                                                                                                                                          | V1                  |
 | 4  | reportSubmittedDate          | Report Submitted date                                                                                                                                                                                                                                                                                                                                                                                                                               | V1                  |
-| 5  | reportingFiscalYear          | Open GSA Documentation shall indicate that complete values must be provided.                                                                                                                                                                                                                                                                                                                                                                        | V1                  |
+| 5  | reportFiscalYear             | Open GSA Documentation shall indicate that complete values must be provided.                                                                                                                                                                                                                                                                                                                                                                        | V1                  |
 | 6  | reportingPeriod              | Applies to ISR and DOD (Final does not apply for DOD). <br>Open GSA Documentation shall indicate that complete values must be provided. <br>Note: API must be able to accept case-insensitive values.                                                                                                                                                                                                                                               | V1                  |
 | 7  | reportType                   | Open GSA Documentation shall indicate that complete values must be provided. <br>Note: API must be able to accept case-insensitive values.                                                                                                                                                                                                                                                                                                          | V1                  |
 | 8  | uniqueEntityID               | Open GSA Documentation shall indicate that complete values must be provided.                                                                                                                                                                                                                                                                                                                                                                        | V1                  |
@@ -165,7 +165,7 @@ The Subcontracting Plan Reports API offers several response elements that are de
 </tr>
 
 <tr>
-<td>reportingFiscalYear</td>
+<td>reportFiscalYear</td>
 <td>string</td>
 <td>Fiscal year for which the subcontracting report is being submitted.</td>
 <td>V1</td>
@@ -738,7 +738,7 @@ curl -X POST "https://<Production or Alpha URL>/spr/v1/search?api_key=<API KEY>"
 -H "Content-Type: application/json" \
 -d '{
   "uniqueEntityID": "C3NLZNSMU254",
-  "reportingFiscalYear": "2026",
+  "reportFiscalYear": "2026",
   "reportType": "Individual"
 }'
 ```
@@ -757,7 +757,7 @@ curl -X POST "https://<Production or Alpha URL>/spr/v1/search?api_key=<API KEY>"
         "submitter": "Prime Contractor",
         "uniqueEntityID": "C3NLZNSMU254",
         "legalBusinessName": "M-I-C, INC.",
-        "reportingFiscalYear": 2026,
+        "reportFiscalYear": 2026,
         "reportingPeriod": "Final",
         "submittedDate": "2026-03-02T16:36:45.259314",
         "reportedToDepartmentCode": "Not Applicable",
@@ -974,7 +974,7 @@ curl -X POST "https://<Production or Alpha URL>/spr/v1/search?api_key=<API KEY>"
 -u "YourSystemAccountName:YourSystemAccountPassword" \
 -H "Content-Type: application/json" \
 -d '{
-  "reportingFiscalYear": "[2022,2025]",
+  "reportFiscalYear": "[2022,2025]",
   "reportType": "Summary Individual"
 }'
 ```
@@ -993,7 +993,7 @@ curl -X POST "https://<Production or Alpha URL>/spr/v1/search?api_key=<API KEY>"
         "submitter": "Prime Contractor",
         "uniqueEntityID": "GNF9XURG4LR7",
         "legalBusinessName": "BENCO DENTAL SUPPLY CO.",
-        "reportingFiscalYear": 2022,
+        "reportFiscalYear": 2022,
         "reportingPeriod": "March 31",
         "submittedDate": "2022-10-31T14:23:14",
         "reportedToDepartmentCode": "3600",
