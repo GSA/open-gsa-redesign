@@ -12,6 +12,11 @@ info:
     name: US Government Work
     url: https://www.usa.gov/
   version: "63.2"
+servers:
+  - url: https://api.sam.gov
+    description: Production
+  - url: https://api-alpha.sam.gov
+    description: Alpha
 tags:
   - name: Report Search
     description: Search submitted reports
@@ -19,20 +24,25 @@ paths:
   /spr/v1/search:
     post:
       tags:
-        - open-gsa-controller
-      operationId: getAwardDetails
+        - Report Search
+      summary: Search subcontracting plan reports
+      description: Search submitted subcontracting plan reports. All request body
+        parameters are optional and may be combined. Supports pagination with up to
+        100 records per request.
+      operationId: searchSubcontractingPlanReports
       security:
-        - basicAuth: []
+        - basicAuth: [ ]
       parameters:
         - name: api_key
           in: query
           required: true
+          description: System Account API Key.
           schema:
             type: string
         - name: X-Api-Roles
           in: header
           required: false
-          description: Role header for authorization (must contain SA-FED-ALL)
+          description: Role header for authorization (must contain SA-FED-ALL).
           schema:
             type: string
       requestBody:
@@ -42,47 +52,420 @@ paths:
               $ref: "#/components/schemas/SearchRequest"
       responses:
         "200":
-          description: OK
+          description: The API call is successful
           content:
-            '*/*':
+            application/json:
               schema:
-                type: object
+                $ref: "#/components/schemas/SearchResponse"
+        "400":
+          description: Bad Request - Invalid search parameter format, invalid search
+            parameter name, or more than 100 records requested via the "size"
+            parameter.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "401":
+          description: Unauthorized - Missing or invalid Basic Auth / System Account
+            credentials, request from an IP address not registered to the System
+            Account, API key not belonging to the System Account, or missing/invalid
+            (expired) API key.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "403":
+          description: Forbidden - No Subcontracting Plan Reports permission in the
+            System Account, or the System Account has a different value for "Type of
+            Connection".
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "406":
+          description: Not Acceptable - Missing 'Accept' header.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "415":
+          description: Unsupported Media Type - Missing or invalid 'Content-Type'
+            header.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
 components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: System Account name and password provided via HTTP Basic
+        authentication.
   schemas:
     SearchRequest:
       type: object
       properties:
         q:
           type: string
+          description: Free-text search using the filtername:value format. Supports
+            AND (&) and OR (~) conditions.
         includeSections:
           type: string
+          description: Comma-separated list of sections to include. Returned by
+            default - reportData, contractData, entityData, taskOrdersData,
+            commercialPercentageForFederalOrganizationsData, goalsAndActualsData,
+            certificationData. Returned only when explicitly requested - remarks,
+            dodComprehensiveAttachments. Note - links provided for downloading
+            attachments expire after 15 minutes and should be opened in a browser.
         submitter:
           type: string
+          description: Exact match. Provide the complete value. Case-insensitive.
         uniqueEntityID:
           type: string
+          description: Exact match. Provide the complete Unique Entity Identifier
+            (UEI).
         legalBusinessName:
           type: string
+          description: Supports partial or complete value search. Allows single or
+            multiple values. Case-insensitive.
         ultimateParentUniqueEntityID:
           type: string
+          description: Exact match. Provide the complete ultimate parent Unique
+            Entity Identifier (UEI).
         piid:
           type: string
+          description: Exact match. Provide the complete value. Case-insensitive.
         referencedIdvPiid:
           type: string
+          description: Exact match. Provide the complete value. Case-insensitive.
         subcontractNumber:
           type: string
+          description: Exact match. Provide the complete value. Case-insensitive.
         organizationCode:
           type: string
+          description: Exact match. Provide the complete organization code.
         reportSubmittedDate:
           type: string
-        reportingFiscalYear:
+          description: Report submitted date.
+        reportFiscalYear:
           type: string
+          description: Exact match. Provide the complete fiscal year. Also accepts a
+            range, for example [2022,2025].
         reportType:
           type: string
+          description: Exact match. Provide the complete value. Case-insensitive.
+            For example, Individual, Summary Individual, Summary, or Commercial.
         reportingPeriod:
           type: string
+          description: Exact match. Case-insensitive. Applies to ISR and DOD (Final
+            does not apply for DOD).
         page:
           type: integer
+          description: Zero-based page index. The maximum number of returned records
+            (page multiplied by size) must be less than 10,000 per 24 hours.
+          default: 0
           example: 0
         size:
           type: integer
-          example: 1
+          description: Number of records per page. Maximum is 100. If not specified,
+            the default is 10.
+          default: 10
+          maximum: 100
+          example: 10
+    SearchResponse:
+      type: object
+      properties:
+        totalNumberOfReports:
+          type: integer
+          description: Total number of reports matching the search criteria.
+        subContractingPlanReports:
+          type: array
+          items:
+            $ref: "#/components/schemas/SubcontractingPlanReport"
+        links:
+          $ref: "#/components/schemas/Links"
+    SubcontractingPlanReport:
+      type: object
+      properties:
+        reportData:
+          $ref: "#/components/schemas/ReportData"
+        entityData:
+          $ref: "#/components/schemas/EntityData"
+        contractData:
+          description: Contract details, or the string "Not Applicable" when not
+            applicable.
+          oneOf:
+            - $ref: "#/components/schemas/ContractData"
+            - type: string
+        taskOrdersData:
+          $ref: "#/components/schemas/TaskOrdersData"
+        departmentAllocationPercentageData:
+          description: Department allocation percentage details, or the string "Not
+            Applicable" when not applicable.
+          oneOf:
+            - type: array
+              items:
+                $ref: "#/components/schemas/DepartmentAllocationPercentage"
+            - type: string
+        goalsAndActualsData:
+          $ref: "#/components/schemas/GoalsAndActualsData"
+        remarksData:
+          $ref: "#/components/schemas/RemarksData"
+        certificationData:
+          $ref: "#/components/schemas/CertificationData"
+        dodComprehensiveAttachmentsData:
+          type: array
+          items:
+            $ref: "#/components/schemas/DodComprehensiveAttachment"
+    ReportData:
+      type: object
+      properties:
+        reportType:
+          type: string
+          description: Type of subcontracting report submitted (for example,
+            Individual Subcontract Report (ISR), Summary Subcontract Report (SSR), or
+            Commercial Plan Report).
+        submitter:
+          type: string
+          description: Role of the entity submitting the report. Valid values may
+            include Prime Contractor, Subcontractor, or Both.
+        uniqueEntityID:
+          type: string
+          description: Unique Entity Identifier (UEI) assigned to the reporting
+            entity in SAM.gov.
+        legalBusinessName:
+          type: string
+          description: Official legal name of the entity as registered in SAM.gov.
+        reportFiscalYear:
+          type: string
+          description: Fiscal year for which the subcontracting report is being
+            submitted.
+        reportingPeriod:
+          type: string
+          description: Reporting period covered by the report.
+        submittedDate:
+          type: string
+          description: Date the report was officially submitted.
+        reportedToDepartmentCode:
+          type: string
+          description: Code representing the federal department or agency receiving
+            the report.
+        reportedToDepartmentName:
+          type: string
+          description: Name of the federal department or agency receiving the report.
+    EntityData:
+      type: object
+      properties:
+        uniqueEntityID:
+          type: string
+          description: Unique Entity Identifier (UEI) assigned to the entity in
+            SAM.gov.
+        legalBusinessName:
+          type: string
+          description: Official legal name of the entity as registered in SAM.gov.
+        ultimateParentUniqueEntityID:
+          type: string
+          description: UEI of the ultimate parent entity associated with the
+            reporting entity, if applicable.
+        entityURL:
+          type: string
+          description: Public website URL of the entity, if available.
+        physicalAddress:
+          $ref: "#/components/schemas/PhysicalAddress"
+    PhysicalAddress:
+      type: object
+      properties:
+        addressLine1:
+          type: string
+          description: Address line 1.
+        addressLine2:
+          type: string
+          description: Address line 2.
+        city:
+          type: string
+          description: City.
+        stateOrProvinceCode:
+          type: string
+          description: State or province code.
+        zipCode:
+          type: string
+          description: ZIP or postal code.
+        countryCode:
+          type: string
+          description: Country code.
+    ContractData:
+      type: object
+      properties:
+        piid:
+          type: string
+          description: Procurement Instrument Identifier (PIID) assigned to the
+            contract or award.
+        awardOrIdv:
+          type: string
+          description: Indicates whether the record represents a contract award or an
+            Indefinite Delivery Vehicle (IDV).
+        referencedIdvPiid:
+          type: string
+          description: PIID of the referenced IDV associated with the award, if
+            applicable.
+        subcontractNumber:
+          type: string
+          description: Identifier assigned to the subcontract.
+        totalDollars:
+          type: string
+          description: Total dollar amount obligated or reported under the
+            subcontract.
+        contractingOrganization:
+          $ref: "#/components/schemas/ContractingOrganization"
+        subcontractingPlanCode:
+          type: string
+          description: Code representing the type of subcontracting plan.
+        subcontractingPlanDesc:
+          type: string
+          description: Description of the subcontracting plan type associated with
+            the contract.
+    ContractingOrganization:
+      type: object
+      properties:
+        department:
+          $ref: "#/components/schemas/OrganizationRef"
+        subTier:
+          $ref: "#/components/schemas/OrganizationRef"
+        office:
+          $ref: "#/components/schemas/OrganizationRef"
+    OrganizationRef:
+      type: object
+      properties:
+        code:
+          type: string
+        name:
+          type: string
+    TaskOrdersData:
+      type: object
+      properties:
+        areTaskOrdersApplicable:
+          type: string
+          description: Indicates whether task orders are applicable for the contract
+            or report.
+        taskOrders:
+          type: array
+          items:
+            $ref: "#/components/schemas/TaskOrder"
+    TaskOrder:
+      type: object
+      properties:
+        piid:
+          type: string
+          description: Task order PIID.
+        businessCategories:
+          type: object
+          description: Business category details for the task order.
+    DepartmentAllocationPercentage:
+      type: object
+      properties:
+        organizationCode:
+          type: string
+          description: Code representing the federal department or organization to
+            which the allocation applies.
+        organizationName:
+          type: string
+          description: Name of the federal department or organization associated with
+            the allocation.
+        percentage:
+          type: string
+          description: Percentage of the total subcontracting dollars allocated to
+            the specified department or organization.
+    GoalsAndActualsData:
+      type: object
+      properties:
+        businessCategories:
+          $ref: "#/components/schemas/BusinessCategories"
+    BusinessCategories:
+      type: object
+      properties:
+        businessConcerns:
+          type: array
+          items:
+            type: object
+          description: Array of business concern categories.
+        smallBusinessCategories:
+          type: array
+          items:
+            type: object
+          description: Array of small business categories.
+        totals:
+          type: object
+          description: Aggregated totals for goals and actuals.
+    RemarksData:
+      type: object
+      properties:
+        remarks:
+          type: string
+          description: Additional comments or explanatory information provided by the
+            submitter related to the subcontracting report.
+    CertificationData:
+      type: object
+      properties:
+        includeIndirectCosts:
+          type: string
+          description: Indicates whether indirect costs are included in the reported
+            subcontracting amounts.
+        accountingMethod:
+          $ref: "#/components/schemas/AccountingMethod"
+        isCertified:
+          type: string
+          description: Indicates whether the report has been officially certified by
+            the submitter.
+        nameOfTheCertifier:
+          type: string
+          description: Full name of the individual who certified the report.
+        titleOfTheCertifier:
+          type: string
+          description: Official title or position of the individual who certified the
+            report.
+        genericEmailAddressOrUrl:
+          type: string
+          description: Contact email address or URL associated with the certifier or
+            organization for follow-up or verification purposes.
+    AccountingMethod:
+      type: object
+      properties:
+        method:
+          type: string
+        explanation:
+          type: string
+    DodComprehensiveAttachment:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Name or title of the attachment associated with the DoD
+            Comprehensive Subcontracting Plan.
+        url:
+          type: string
+          description: URL link where the attachment can be accessed or downloaded.
+    Links:
+      type: object
+      properties:
+        selfLink:
+          type: string
+          description: URL of the current resource or request, allowing clients to
+            retrieve the same result.
+        nextLink:
+          type: string
+          description: URL to retrieve the next page of results in a paginated
+            response, if additional data is available.
+    ErrorResponse:
+      type: object
+      properties:
+        timestamp:
+          type: string
+        status:
+          type: integer
+        error:
+          type: string
+        message:
+          type: string
+        path:
+          type: string
