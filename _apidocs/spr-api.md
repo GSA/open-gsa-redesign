@@ -19,12 +19,6 @@ This API allows authorized federal users to request For Official Use Only (FOUO)
 based on the sensitivity level of the user’s System Account, along with a set of optional request parameters that can be
 used to filter and refine results.
 
-### FOUO (CUI) Data
-
-This constitutes both the publicly available entities and the entities that have opted out of public display with their
-CUI data such as hierarchy, company and employee security levels and points of contact email address, phone, and fax
-numbers.
-
 **Key Features of the Subcontracting Plan Reporting API:**
 
 * It offers several optional search parameters, filtering by sections, AND (&), OR (~) conditions and a free text search
@@ -37,27 +31,17 @@ numbers.
 * Additional records can be retrieved by making subsequent requests and updating the page parameter.
 * The following characters are not allowed to be sent in the parameter values with the API request: `& | { } ^ \\ ~``
 
-## Additional Features of the Subcontracting Plan Reporting API: (Not Available  yet. Awaiting for Program's decision on any enhance features)
-
-- It can serve as an extract API with the addition of "format" parameter in the request.
-- Following are the key features of the Subcontracting Plan Reporting API:
-    - It offers several optional search parameters, filtering by sections, AND, OR, NOT conditions and a free text
-      search q to obtain the desired data.
-    - It returns asynchronous responses by sending file downloadable link.
-    - It returns data in the JSON or CSV format as selected by the user.
-    - It can return only the first 1,000,000 records.
-
 ## Getting Started
 
 ### API Endpoints
 
 **Production:**
 
-- `https://api.sam.gov/spr/v1/search?api_key=`
+- `https://api.sam.gov/spr/v1/search
 
 **Alpha:**
 
-- `https://api-alpha.sam.gov/spr/v1/search?api_key=`
+- `https://api-alpha.sam.gov/spr/v1/search
 
 ### User Requirements
 
@@ -65,7 +49,7 @@ FOUO (CUI) data:
 
 - Users must have a Federal System Account with the "Read FOUO" in Subcontracting Plan Reports permission and
   the respective API Key in SAM.gov.
-- Users can make GET calls using any Browser or a Restful API client such as Postman.
+- Users can make POST calls using a Restful API client such as Postman.
 
 ### System Accounts
 
@@ -102,24 +86,23 @@ FOUO (CUI) data:
 The Subcontract Plan Reports API offers several optional search parameters that can be provided independently or in
 combination with each other. All parameters are optional.
 
-| #  | Parameter Name               | Description                                                                                                                                                                                                                                                                                                                                                                                                            | Applicable Versions |
-|----|------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------|
-| 1  | q                            | User to pass filtername:value format. Entity Management example for reference: https://api.sam.gov/spr/v1/search?api_key=<VALID API KEY>                                                                                                                                                                                                                                                                               | V1                  |
-| 2  | organizationCode             | Code representing the federal department or organization to which the allocation applies.                                                                                                                                                                                                                                                                                                                              | V1                  |
-| 3  | submitter                    | Role of the entity submitting the report. Valid values may include Prime Contractor, Subcontractor, or Both.                                                                                                                                                                                                                                                                                                           | V1                  |
-| 4  | reportSubmittedDate          | Report Submitted date                                                                                                                                                                                                                                                                                                                                                                                                  | V1                  |
-| 5  | reportFiscalYear             | Fiscal year for which the subcontracting report is being submitted.                                                                                                                                                                                                                                                                                                                                                    | V1                  |
-| 6  | reportingPeriod              | Applies to ISR and DOD (Final does not apply for DOD).                                                                                                                                                                                                                                                                                                                                                                 | V1                  |
-| 7  | reportType                   | Type of subcontracting report submitted (for example, Individual Subcontract Report (ISR), Summary Subcontract Report (SSR), or Commercial Plan Report). <br> Acceptable values:"Summary Individual", "Summary Commercial", "Summary DOD Comprehensive", "Individual"                                                                                                                                                  | V1                  |
-| 8  | uniqueEntityID               | Unique Entity Identifier (UEI) assigned to the reporting entity in SAM.gov.                                                                                                                                                                                                                                                                                                                                            | V1                  |
-| 9  | legalBusinessName            | Allows partial or complete value search. Allows single or multiple values. <br>Note: API must be able to accept case-insensitive values.                                                                                                                                                                                                                                                                               | V1                  |
-| 10 | ultimateParentUniqueEntityID | UEI of the ultimate parent entity associated with the reporting entity, if applicable.                                                                                                                                                                                                                                                                                                                                 | V1                  |
-| 11 | piid                         | Procurement Instrument Identifier (PIID) assigned to the contract or award.                                                                                                                                                                                                                                                                                                                                            | V1                  |
-| 12 | referenceIdvPiid             | PIID of the referenced IDV associated with the award, if applicable.                                                                                                                                                                                                                                                                                                                                                   | V1                  |
-| 13 | subcontractNumber            | Identifier assigned to the subcontract.                                                                                                                                                                                                                                                                                                                                                                                | V1                  |
-| 14 | includeSections              | Acceptable values:<br> reportData<br>contractData<br>entityData<br>taskOrdersData<br>commercialPercentageForFederalOrganizationsData<br>goalsAndActualsData<br>certificationData<br>remarks<br>dodComprehensiveAttachments <br>***NOTE: Link provided for downloading attachments expires after 15 minutes. URL should open in browser*** | V1                  |
-| 15 | page                         | Maximum returned data records pages.<br> Notes: the maximum returned number less than 10,000 records per 24 hours (Page multiplied by Size).                                                                                                                                                                                                                                                                           | V1                  |
-| 16 | size                         | Maximum records on returned data page, up to 100.                                                                                                                                                                                                                                                                                                                                                                      | V1                  |
+| #  | Parameter Name               | Description                                                                                                                                                                                                                                                                                                                               | Applicable Versions |
+|----|------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------|
+| 1  | organizationCode             | Code representing the federal department or organization to which an ISR or SSR is reported to.<br> Usage: "9700", "9700~8000"                                                                                                                                                                                                            | V1                  |
+| 2  | submitter                    | Role of the entity submitting the report. Case insensitive. <br>Usage: "Prime Contractor", "Subcontractor", "Prime Contractor ~ Subcontractor".                                                                                                                                                                                           | V1                  |
+| 3  | reportSubmittedDate          | Report Submitted date. Date must be formatted: mm/dd/yyyy <br>Usage: "10/28/2022", "10/28/2022 ~ 10/30/2022"                                                                                                                                                                                                                              | V1                  |
+| 4  | reportFiscalYear             | Fiscal year for which the subcontracting report is being submitted. <br> Usage: "2022", "[2022, 2023]"                                                                                                                                                                                                                                    | V1                  |
+| 5  | reportingPeriod              | Applies to ISR and DOD (Final does not apply for DOD).<br> Usage: "March 31", "September 30", "Final"                                                                                                                                                                                                                                     | V1                  |
+| 6  | reportType                   | Type of subcontracting report submitted (for example, Individual Subcontract Report (ISR), Summary Subcontract Report (SSR), or Commercial Plan Report). <br> Usage: "Summary Individual", "Summary Commercial", "Summary DOD Comprehensive", "Individual"                                                                                | V1                  |
+| 7  | uniqueEntityID               | Unique Entity Identifier (UEI) assigned to the reporting entity in SAM.gov.                                                                                                                                                                                                                                                               | V1                  |
+| 8  | legalBusinessName            | Allows partial or complete value search. Allows single or multiple values.                                                                                                                                                                                                                                                                | V1                  |
+| 9  | ultimateParentUniqueEntityID | UEI of the ultimate parent entity associated with the reporting entity, if applicable.                                                                                                                                                                                                                                                    | V1                  |
+| 10 | piid                         | Procurement Instrument Identifier (PIID) assigned to the contract or award.                                                                                                                                                                                                                                                               | V1                  |
+| 11 | referenceIdvPiid             | PIID of the referenced IDV associated with the award, if applicable.                                                                                                                                                                                                                                                                      | V1                  |
+| 12 | subcontractNumber            | Identifier assigned to the subcontract.                                                                                                                                                                                                                                                                                                   | V1                  |
+| 13 | includeSections              | Acceptable values:<br> reportData<br>contractData<br>entityData<br>taskOrdersData<br>commercialPercentageForFederalOrganizationsData<br>goalsAndActualsData<br>certificationData<br>remarks<br>dodComprehensiveAttachments <br>***NOTE: Link provided for downloading attachments expires after 15 minutes. URL should open in browser*** | V1                  |
+| 14 | page                         | Maximum returned data records pages.<br> Notes: the maximum returned number less than 10,000 records per 24 hours (Page multiplied by Size).                                                                                                                                                                                              | V1                  |
+| 15 | size                         | Maximum records on returned data page, up to 100.                                                                                                                                                                                                                                                                                         | V1                  |
 
 ### Response Schema
 
@@ -701,8 +684,6 @@ The Subcontracting Plan Reports API offers several response elements that are de
 </table>
 </details>
 
-</details>
-
 ### OpenAPI Specification File
 
 You can view the full details of this API in the OpenAPI Specification file available here: <a href="v1/openapi.yaml">
@@ -727,15 +708,18 @@ The API will return one of the following responses:
 
 #### Request URL
 
-- **Production:** https://api.sam.gov/spr/v1/search?api_key=<VALID API KEY>
-- **Alpha:** https://api-alpha.sam.gov/spr/v1/search?api_key=<VALID API KEY>
+- **Production:** https://api.sam.gov/spr/v1/search
+- **Alpha:** https://api-alpha.sam.gov/spr/v1/search
 
 #### Curl Request
 
 ```bash
-curl -X POST "https://<Production or Alpha URL>/spr/v1/search?api_key=<API KEY>" \
--u "YourSystemAccountName:YourSystemAccountPassword" \
--H "Content-Type: application/json" \
+curl -X POST \
+  'http://<PROD_URL>/spr/v1/search?api_key=<API KEY>' \
+  -H 'accept: */*' \
+  -H 'X-Api-Roles: SA-FED-ALL' \
+  -H 'Authorization: Basic <Base64 encoded username:password>' \
+  -H 'Content-Type: application/json' \
 -d '{
   "uniqueEntityID": "C3NLZNSMU254",
   "reportFiscalYear": "2026",
@@ -749,7 +733,7 @@ curl -X POST "https://<Production or Alpha URL>/spr/v1/search?api_key=<API KEY>"
 
 ```json
 {
-  "totalNumberOfReports": 1,
+  "totalNumberOfReports": 3,
   "subContractingPlanReports": [
     {
       "reportData": {
@@ -951,8 +935,8 @@ curl -X POST "https://<Production or Alpha URL>/spr/v1/search?api_key=<API KEY>"
     }
   ],
   "links": {
-    "selfLink": "https://gateway-am.test.apiss.mcaas.fcs.gsa.gov/spr/v1/search?page=0&size=10",
-    "nextLink": null
+    "selfLink": "https://<PROD URL>/spr/v1/search?page=0&size=1",
+    "nextLink": "https://<PROD_URL>/spr/v1/search?page=1&size=1"
   }
 }
 
@@ -964,16 +948,19 @@ curl -X POST "https://<Production or Alpha URL>/spr/v1/search?api_key=<API KEY>"
 
 #### Request URL
 
-- **Production:** https://api.sam.gov/spr/v1/search?api_key=<VALID API KEY>
-- **Alpha:** https://api-alpha.sam.gov/spr/v1/search?api_key=<VALID API KEY>
+- **Production:** https://api.sam.gov/spr/v1/search
+- **Alpha:** https://api-alpha.sam.gov/spr/v1/search
 
 #### Curl Request
 
 ```bash
-curl -X POST "https://<Production or Alpha URL>/spr/v1/search?api_key=<API KEY>" \
--u "YourSystemAccountName:YourSystemAccountPassword" \
--H "Content-Type: application/json" \
--d '{
+curl -X 'POST' \
+  'http://<PROD_URL>/spr/v1/search?api_key=<API KEY>' \
+  -H 'accept: */*' \
+  -H 'X-Api-Roles: SA-FED-ALL' \
+  -H 'Authorization: Basic <Base64 encoded username:password>' \
+  -H 'Content-Type: application/json' \
+  -d '{
   "reportFiscalYear": "[2022,2025]",
   "reportType": "Summary Individual"
 }'
@@ -985,38 +972,1573 @@ curl -X POST "https://<Production or Alpha URL>/spr/v1/search?api_key=<API KEY>"
 
 ```json
 {
-  "totalNumberOfReports": 18076,
+  "totalNumberOfReports": 166035,
   "subContractingPlanReports": [
     {
       "reportData": {
-        "reportType": "Summary Individual",
+        "reportType": "Individual",
         "submitter": "Prime Contractor",
-        "uniqueEntityID": "GNF9XURG4LR7",
-        "legalBusinessName": "BENCO DENTAL SUPPLY CO.",
-        "reportFiscalYear": 2022,
+        "uniqueEntityID": "C2R2ML1DWXW6",
+        "legalBusinessName": "MANAGEMENT CONCEPTS, INC.",
+        "reportFiscalYear": 2024,
         "reportingPeriod": "March 31",
-        "submittedDate": "2022-10-31T14:23:14",
-        "reportedToDepartmentCode": "3600",
-        "reportedToDeportmentName": "VETERANS AFFAIRS, DEPARTMENT OF"
+        "submittedDate": "2024-04-25T10:37:11",
+        "reportedToDepartmentCode": "Not Applicable",
+        "reportedToDeportmentName": "Not Applicable"
       },
       "entityData": {
-        "uniqueEntityID": "GNF9XURG4LR7",
-        "legalBusinessName": "BENCO DENTAL SUPPLY CO.",
-        "ultimateParentUniqueEntityID": "GNF9XURG4LR7",
+        "uniqueEntityID": "C2R2ML1DWXW6",
+        "legalBusinessName": "MANAGEMENT CONCEPTS, INC.",
+        "ultimateParentUniqueEntityID": null,
         "entityURL": null,
         "physicalAddress": {
-          "addressLine1": "295 CENTERPOINT BLVD",
+          "addressLine1": "8230 LEESBURG PIKE STE 800",
           "addressLine2": null,
-          "city": "PITTSTON",
-          "stateOrProvinceCode": "PA",
-          "zipCode": "186406136",
+          "city": "TYSONS CORNER",
+          "stateOrProvinceCode": "VA",
+          "zipCode": "221822641",
           "countryCode": "USA"
         }
       },
-      "contractData": "Not Applicable",
+      "contractData": {
+        "piid": "47QREA18D000Y",
+        "awardOrIdv": null,
+        "referencedIdvPiid": null,
+        "subcontractNumber": null,
+        "totalDollars": "6000000.00",
+        "contractingOrganization": {
+          "department": {
+            "code": "4700",
+            "name": "GENERAL SERVICES ADMINISTRATION"
+          },
+          "subTier": {
+            "code": "4732",
+            "name": "FEDERAL ACQUISITION SERVICE"
+          },
+          "office": {
+            "code": "47QRAA",
+            "name": "GSA/FAS/PSHC/PROF SRVCS SCHED-PSS"
+          }
+        },
+        "subcontractingPlanCode": "F",
+        "subcontractingPlanDesc": "Individual Subcontract Plan"
+      },
       "taskOrdersData": {
-        "areTaskOrdersApplicable": "No",
-        "taskOrders": []
+        "areTaskOrdersApplicable": "Yes",
+        "taskOrders": [
+          {
+            "piid": "69319523F30100N",
+            "businessCategories": {
+              "businessConcerns": [],
+              "smallBusinessCategories": [
+                {
+                  "code": "SDB",
+                  "name": "Small Disadvantaged Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "WOSB",
+                  "name": "Women Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "HBCU and MSI",
+                  "name": "Historically Black Colleges and Universities and Minority Serving Institutions",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "HUBZone",
+                  "name": "SBA Certified HUBZone Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "VOSB",
+                  "name": "Veteran Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "SDVOSB",
+                  "name": "SBA Certified Service Disabled Veteran Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "ANC",
+                  "name": "Alaskan Native Corporations and Indian Tribes that are not Small Disadvantaged Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "ANC",
+                  "name": "Alaskan Native Corporations and Indian Tribes that are not Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                }
+              ]
+            }
+          },
+          {
+            "piid": "47HAA023F0124",
+            "businessCategories": {
+              "businessConcerns": [],
+              "smallBusinessCategories": [
+                {
+                  "code": "SDB",
+                  "name": "Small Disadvantaged Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 257089
+                },
+                {
+                  "code": "WOSB",
+                  "name": "Women Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 197906
+                },
+                {
+                  "code": "HBCU and MSI",
+                  "name": "Historically Black Colleges and Universities and Minority Serving Institutions",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "HUBZone",
+                  "name": "SBA Certified HUBZone Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "VOSB",
+                  "name": "Veteran Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 430864
+                },
+                {
+                  "code": "SDVOSB",
+                  "name": "SBA Certified Service Disabled Veteran Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 261433
+                },
+                {
+                  "code": "ANC",
+                  "name": "Alaskan Native Corporations and Indian Tribes that are not Small Disadvantaged Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "ANC",
+                  "name": "Alaskan Native Corporations and Indian Tribes that are not Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                }
+              ]
+            }
+          },
+          {
+            "piid": "123A9423F0176",
+            "businessCategories": {
+              "businessConcerns": [],
+              "smallBusinessCategories": [
+                {
+                  "code": "SDB",
+                  "name": "Small Disadvantaged Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 7160
+                },
+                {
+                  "code": "WOSB",
+                  "name": "Women Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 7160
+                },
+                {
+                  "code": "HBCU and MSI",
+                  "name": "Historically Black Colleges and Universities and Minority Serving Institutions",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "HUBZone",
+                  "name": "SBA Certified HUBZone Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "VOSB",
+                  "name": "Veteran Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 2360
+                },
+                {
+                  "code": "SDVOSB",
+                  "name": "SBA Certified Service Disabled Veteran Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "ANC",
+                  "name": "Alaskan Native Corporations and Indian Tribes that are not Small Disadvantaged Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "ANC",
+                  "name": "Alaskan Native Corporations and Indian Tribes that are not Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                }
+              ]
+            }
+          },
+          {
+            "piid": "73351023F0198",
+            "businessCategories": {
+              "businessConcerns": [],
+              "smallBusinessCategories": [
+                {
+                  "code": "SDB",
+                  "name": "Small Disadvantaged Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "WOSB",
+                  "name": "Women Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "HBCU and MSI",
+                  "name": "Historically Black Colleges and Universities and Minority Serving Institutions",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "HUBZone",
+                  "name": "SBA Certified HUBZone Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "VOSB",
+                  "name": "Veteran Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "SDVOSB",
+                  "name": "SBA Certified Service Disabled Veteran Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "ANC",
+                  "name": "Alaskan Native Corporations and Indian Tribes that are not Small Disadvantaged Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "ANC",
+                  "name": "Alaskan Native Corporations and Indian Tribes that are not Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                }
+              ]
+            }
+          },
+          {
+            "piid": "69319523F30028N",
+            "businessCategories": {
+              "businessConcerns": [],
+              "smallBusinessCategories": [
+                {
+                  "code": "SDB",
+                  "name": "Small Disadvantaged Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "WOSB",
+                  "name": "Women Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "HBCU and MSI",
+                  "name": "Historically Black Colleges and Universities and Minority Serving Institutions",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "HUBZone",
+                  "name": "SBA Certified HUBZone Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "VOSB",
+                  "name": "Veteran Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "SDVOSB",
+                  "name": "SBA Certified Service Disabled Veteran Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "ANC",
+                  "name": "Alaskan Native Corporations and Indian Tribes that are not Small Disadvantaged Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "ANC",
+                  "name": "Alaskan Native Corporations and Indian Tribes that are not Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                }
+              ]
+            }
+          },
+          {
+            "piid": "12319823F0046",
+            "businessCategories": {
+              "businessConcerns": [],
+              "smallBusinessCategories": [
+                {
+                  "code": "SDB",
+                  "name": "Small Disadvantaged Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 996
+                },
+                {
+                  "code": "WOSB",
+                  "name": "Women Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 996
+                },
+                {
+                  "code": "HBCU and MSI",
+                  "name": "Historically Black Colleges and Universities and Minority Serving Institutions",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "HUBZone",
+                  "name": "SBA Certified HUBZone Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "VOSB",
+                  "name": "Veteran Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 2396
+                },
+                {
+                  "code": "SDVOSB",
+                  "name": "SBA Certified Service Disabled Veteran Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "ANC",
+                  "name": "Alaskan Native Corporations and Indian Tribes that are not Small Disadvantaged Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "ANC",
+                  "name": "Alaskan Native Corporations and Indian Tribes that are not Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                }
+              ]
+            }
+          },
+          {
+            "piid": "12445023F0011",
+            "businessCategories": {
+              "businessConcerns": [],
+              "smallBusinessCategories": [
+                {
+                  "code": "SDB",
+                  "name": "Small Disadvantaged Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "WOSB",
+                  "name": "Women Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "HBCU and MSI",
+                  "name": "Historically Black Colleges and Universities and Minority Serving Institutions",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "HUBZone",
+                  "name": "SBA Certified HUBZone Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "VOSB",
+                  "name": "Veteran Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "SDVOSB",
+                  "name": "SBA Certified Service Disabled Veteran Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "ANC",
+                  "name": "Alaskan Native Corporations and Indian Tribes that are not Small Disadvantaged Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "ANC",
+                  "name": "Alaskan Native Corporations and Indian Tribes that are not Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                }
+              ]
+            }
+          },
+          {
+            "piid": "89243623FCD000008",
+            "businessCategories": {
+              "businessConcerns": [],
+              "smallBusinessCategories": [
+                {
+                  "code": "SDB",
+                  "name": "Small Disadvantaged Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 1328
+                },
+                {
+                  "code": "WOSB",
+                  "name": "Women Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 1328
+                },
+                {
+                  "code": "HBCU and MSI",
+                  "name": "Historically Black Colleges and Universities and Minority Serving Institutions",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "HUBZone",
+                  "name": "SBA Certified HUBZone Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "VOSB",
+                  "name": "Veteran Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 1328
+                },
+                {
+                  "code": "SDVOSB",
+                  "name": "SBA Certified Service Disabled Veteran Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "ANC",
+                  "name": "Alaskan Native Corporations and Indian Tribes that are not Small Disadvantaged Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "ANC",
+                  "name": "Alaskan Native Corporations and Indian Tribes that are not Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                }
+              ]
+            }
+          },
+          {
+            "piid": "1605C323F00054",
+            "businessCategories": {
+              "businessConcerns": [],
+              "smallBusinessCategories": [
+                {
+                  "code": "SDB",
+                  "name": "Small Disadvantaged Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "WOSB",
+                  "name": "Women Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "HBCU and MSI",
+                  "name": "Historically Black Colleges and Universities and Minority Serving Institutions",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "HUBZone",
+                  "name": "SBA Certified HUBZone Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "VOSB",
+                  "name": "Veteran Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "SDVOSB",
+                  "name": "SBA Certified Service Disabled Veteran Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "ANC",
+                  "name": "Alaskan Native Corporations and Indian Tribes that are not Small Disadvantaged Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "ANC",
+                  "name": "Alaskan Native Corporations and Indian Tribes that are not Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                }
+              ]
+            }
+          },
+          {
+            "piid": "140P5424F0007",
+            "businessCategories": {
+              "businessConcerns": [],
+              "smallBusinessCategories": [
+                {
+                  "code": "SDB",
+                  "name": "Small Disadvantaged Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "WOSB",
+                  "name": "Women Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "HBCU and MSI",
+                  "name": "Historically Black Colleges and Universities and Minority Serving Institutions",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "HUBZone",
+                  "name": "SBA Certified HUBZone Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "VOSB",
+                  "name": "Veteran Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "SDVOSB",
+                  "name": "SBA Certified Service Disabled Veteran Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "ANC",
+                  "name": "Alaskan Native Corporations and Indian Tribes that are not Small Disadvantaged Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "ANC",
+                  "name": "Alaskan Native Corporations and Indian Tribes that are not Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                }
+              ]
+            }
+          },
+          {
+            "piid": "47QFAA20F0046",
+            "businessCategories": {
+              "businessConcerns": [],
+              "smallBusinessCategories": [
+                {
+                  "code": "SDB",
+                  "name": "Small Disadvantaged Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "WOSB",
+                  "name": "Women Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "HBCU and MSI",
+                  "name": "Historically Black Colleges and Universities and Minority Serving Institutions",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "HUBZone",
+                  "name": "SBA Certified HUBZone Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "VOSB",
+                  "name": "Veteran Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "SDVOSB",
+                  "name": "SBA Certified Service Disabled Veteran Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "ANC",
+                  "name": "Alaskan Native Corporations and Indian Tribes that are not Small Disadvantaged Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "ANC",
+                  "name": "Alaskan Native Corporations and Indian Tribes that are not Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                }
+              ]
+            }
+          },
+          {
+            "piid": "89303320FEM400154",
+            "businessCategories": {
+              "businessConcerns": [],
+              "smallBusinessCategories": [
+                {
+                  "code": "SDB",
+                  "name": "Small Disadvantaged Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "WOSB",
+                  "name": "Women Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "HBCU and MSI",
+                  "name": "Historically Black Colleges and Universities and Minority Serving Institutions",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "HUBZone",
+                  "name": "SBA Certified HUBZone Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "VOSB",
+                  "name": "Veteran Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "SDVOSB",
+                  "name": "SBA Certified Service Disabled Veteran Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "ANC",
+                  "name": "Alaskan Native Corporations and Indian Tribes that are not Small Disadvantaged Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "ANC",
+                  "name": "Alaskan Native Corporations and Indian Tribes that are not Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                }
+              ]
+            }
+          },
+          {
+            "piid": "68HERC20F0302",
+            "businessCategories": {
+              "businessConcerns": [],
+              "smallBusinessCategories": [
+                {
+                  "code": "SDB",
+                  "name": "Small Disadvantaged Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "WOSB",
+                  "name": "Women Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "HBCU and MSI",
+                  "name": "Historically Black Colleges and Universities and Minority Serving Institutions",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "HUBZone",
+                  "name": "SBA Certified HUBZone Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "VOSB",
+                  "name": "Veteran Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "SDVOSB",
+                  "name": "SBA Certified Service Disabled Veteran Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "ANC",
+                  "name": "Alaskan Native Corporations and Indian Tribes that are not Small Disadvantaged Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "ANC",
+                  "name": "Alaskan Native Corporations and Indian Tribes that are not Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                }
+              ]
+            }
+          },
+          {
+            "piid": "2032H324F00019",
+            "businessCategories": {
+              "businessConcerns": [],
+              "smallBusinessCategories": [
+                {
+                  "code": "SDB",
+                  "name": "Small Disadvantaged Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "WOSB",
+                  "name": "Women Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "HBCU and MSI",
+                  "name": "Historically Black Colleges and Universities and Minority Serving Institutions",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "HUBZone",
+                  "name": "SBA Certified HUBZone Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "VOSB",
+                  "name": "Veteran Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "SDVOSB",
+                  "name": "SBA Certified Service Disabled Veteran Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "ANC",
+                  "name": "Alaskan Native Corporations and Indian Tribes that are not Small Disadvantaged Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "ANC",
+                  "name": "Alaskan Native Corporations and Indian Tribes that are not Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                }
+              ]
+            }
+          },
+          {
+            "piid": "28321323FDX030227",
+            "businessCategories": {
+              "businessConcerns": [],
+              "smallBusinessCategories": [
+                {
+                  "code": "SDB",
+                  "name": "Small Disadvantaged Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "WOSB",
+                  "name": "Women Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "HBCU and MSI",
+                  "name": "Historically Black Colleges and Universities and Minority Serving Institutions",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "HUBZone",
+                  "name": "SBA Certified HUBZone Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "VOSB",
+                  "name": "Veteran Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "SDVOSB",
+                  "name": "SBA Certified Service Disabled Veteran Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "ANC",
+                  "name": "Alaskan Native Corporations and Indian Tribes that are not Small Disadvantaged Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "ANC",
+                  "name": "Alaskan Native Corporations and Indian Tribes that are not Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                }
+              ]
+            }
+          },
+          {
+            "piid": "75D30123F16774",
+            "businessCategories": {
+              "businessConcerns": [],
+              "smallBusinessCategories": [
+                {
+                  "code": "SDB",
+                  "name": "Small Disadvantaged Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "WOSB",
+                  "name": "Women Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 3250
+                },
+                {
+                  "code": "HBCU and MSI",
+                  "name": "Historically Black Colleges and Universities and Minority Serving Institutions",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "HUBZone",
+                  "name": "SBA Certified HUBZone Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "VOSB",
+                  "name": "Veteran Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 3500
+                },
+                {
+                  "code": "SDVOSB",
+                  "name": "SBA Certified Service Disabled Veteran Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "ANC",
+                  "name": "Alaskan Native Corporations and Indian Tribes that are not Small Disadvantaged Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "ANC",
+                  "name": "Alaskan Native Corporations and Indian Tribes that are not Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                }
+              ]
+            }
+          },
+          {
+            "piid": "43310123F0033",
+            "businessCategories": {
+              "businessConcerns": [],
+              "smallBusinessCategories": [
+                {
+                  "code": "SDB",
+                  "name": "Small Disadvantaged Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "WOSB",
+                  "name": "Women Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "HBCU and MSI",
+                  "name": "Historically Black Colleges and Universities and Minority Serving Institutions",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "HUBZone",
+                  "name": "SBA Certified HUBZone Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "VOSB",
+                  "name": "Veteran Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "SDVOSB",
+                  "name": "SBA Certified Service Disabled Veteran Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "ANC",
+                  "name": "Alaskan Native Corporations and Indian Tribes that are not Small Disadvantaged Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "ANC",
+                  "name": "Alaskan Native Corporations and Indian Tribes that are not Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                }
+              ]
+            }
+          },
+          {
+            "piid": "2032H520F00571",
+            "businessCategories": {
+              "businessConcerns": [],
+              "smallBusinessCategories": [
+                {
+                  "code": "SDB",
+                  "name": "Small Disadvantaged Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "WOSB",
+                  "name": "Women Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "HBCU and MSI",
+                  "name": "Historically Black Colleges and Universities and Minority Serving Institutions",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "HUBZone",
+                  "name": "SBA Certified HUBZone Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "VOSB",
+                  "name": "Veteran Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "SDVOSB",
+                  "name": "SBA Certified Service Disabled Veteran Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "ANC",
+                  "name": "Alaskan Native Corporations and Indian Tribes that are not Small Disadvantaged Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "ANC",
+                  "name": "Alaskan Native Corporations and Indian Tribes that are not Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                }
+              ]
+            }
+          },
+          {
+            "piid": "12443923F0065",
+            "businessCategories": {
+              "businessConcerns": [],
+              "smallBusinessCategories": [
+                {
+                  "code": "SDB",
+                  "name": "Small Disadvantaged Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "WOSB",
+                  "name": "Women Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "HBCU and MSI",
+                  "name": "Historically Black Colleges and Universities and Minority Serving Institutions",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "HUBZone",
+                  "name": "SBA Certified HUBZone Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "VOSB",
+                  "name": "Veteran Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 4000
+                },
+                {
+                  "code": "SDVOSB",
+                  "name": "SBA Certified Service Disabled Veteran Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "ANC",
+                  "name": "Alaskan Native Corporations and Indian Tribes that are not Small Disadvantaged Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "ANC",
+                  "name": "Alaskan Native Corporations and Indian Tribes that are not Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                }
+              ]
+            }
+          },
+          {
+            "piid": "1333BJ22F00185002",
+            "businessCategories": {
+              "businessConcerns": [],
+              "smallBusinessCategories": [
+                {
+                  "code": "SDB",
+                  "name": "Small Disadvantaged Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "WOSB",
+                  "name": "Women Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "HBCU and MSI",
+                  "name": "Historically Black Colleges and Universities and Minority Serving Institutions",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "HUBZone",
+                  "name": "SBA Certified HUBZone Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "VOSB",
+                  "name": "Veteran Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 6825
+                },
+                {
+                  "code": "SDVOSB",
+                  "name": "SBA Certified Service Disabled Veteran Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 4200
+                },
+                {
+                  "code": "ANC",
+                  "name": "Alaskan Native Corporations and Indian Tribes that are not Small Disadvantaged Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "ANC",
+                  "name": "Alaskan Native Corporations and Indian Tribes that are not Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                }
+              ]
+            }
+          },
+          {
+            "piid": "47PB0123F0068",
+            "businessCategories": {
+              "businessConcerns": [],
+              "smallBusinessCategories": [
+                {
+                  "code": "SDB",
+                  "name": "Small Disadvantaged Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 2532
+                },
+                {
+                  "code": "WOSB",
+                  "name": "Women Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 8532
+                },
+                {
+                  "code": "HBCU and MSI",
+                  "name": "Historically Black Colleges and Universities and Minority Serving Institutions",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "HUBZone",
+                  "name": "SBA Certified HUBZone Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "VOSB",
+                  "name": "Veteran Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 25932
+                },
+                {
+                  "code": "SDVOSB",
+                  "name": "SBA Certified Service Disabled Veteran Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 16000
+                },
+                {
+                  "code": "ANC",
+                  "name": "Alaskan Native Corporations and Indian Tribes that are not Small Disadvantaged Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "ANC",
+                  "name": "Alaskan Native Corporations and Indian Tribes that are not Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                }
+              ]
+            }
+          },
+          {
+            "piid": "36C10X23F0061",
+            "businessCategories": {
+              "businessConcerns": [],
+              "smallBusinessCategories": [
+                {
+                  "code": "SDB",
+                  "name": "Small Disadvantaged Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "WOSB",
+                  "name": "Women Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "HBCU and MSI",
+                  "name": "Historically Black Colleges and Universities and Minority Serving Institutions",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "HUBZone",
+                  "name": "SBA Certified HUBZone Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "VOSB",
+                  "name": "Veteran Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "SDVOSB",
+                  "name": "SBA Certified Service Disabled Veteran Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "ANC",
+                  "name": "Alaskan Native Corporations and Indian Tribes that are not Small Disadvantaged Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "ANC",
+                  "name": "Alaskan Native Corporations and Indian Tribes that are not Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                }
+              ]
+            }
+          },
+          {
+            "piid": "31310020F0009",
+            "businessCategories": {
+              "businessConcerns": [],
+              "smallBusinessCategories": [
+                {
+                  "code": "SDB",
+                  "name": "Small Disadvantaged Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "WOSB",
+                  "name": "Women Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 8400
+                },
+                {
+                  "code": "HBCU and MSI",
+                  "name": "Historically Black Colleges and Universities and Minority Serving Institutions",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "HUBZone",
+                  "name": "SBA Certified HUBZone Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "VOSB",
+                  "name": "Veteran Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 2550
+                },
+                {
+                  "code": "SDVOSB",
+                  "name": "SBA Certified Service Disabled Veteran Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 2550
+                },
+                {
+                  "code": "ANC",
+                  "name": "Alaskan Native Corporations and Indian Tribes that are not Small Disadvantaged Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "ANC",
+                  "name": "Alaskan Native Corporations and Indian Tribes that are not Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                }
+              ]
+            }
+          },
+          {
+            "piid": "20343022F00025",
+            "businessCategories": {
+              "businessConcerns": [],
+              "smallBusinessCategories": [
+                {
+                  "code": "SDB",
+                  "name": "Small Disadvantaged Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "WOSB",
+                  "name": "Women Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "HBCU and MSI",
+                  "name": "Historically Black Colleges and Universities and Minority Serving Institutions",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "HUBZone",
+                  "name": "SBA Certified HUBZone Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "VOSB",
+                  "name": "Veteran Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "SDVOSB",
+                  "name": "SBA Certified Service Disabled Veteran Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "ANC",
+                  "name": "Alaskan Native Corporations and Indian Tribes that are not Small Disadvantaged Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "ANC",
+                  "name": "Alaskan Native Corporations and Indian Tribes that are not Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                }
+              ]
+            }
+          },
+          {
+            "piid": "12314423F0824",
+            "businessCategories": {
+              "businessConcerns": [],
+              "smallBusinessCategories": [
+                {
+                  "code": "SDB",
+                  "name": "Small Disadvantaged Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "WOSB",
+                  "name": "Women Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "HBCU and MSI",
+                  "name": "Historically Black Colleges and Universities and Minority Serving Institutions",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "HUBZone",
+                  "name": "SBA Certified HUBZone Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "VOSB",
+                  "name": "Veteran Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "SDVOSB",
+                  "name": "SBA Certified Service Disabled Veteran Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "ANC",
+                  "name": "Alaskan Native Corporations and Indian Tribes that are not Small Disadvantaged Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "ANC",
+                  "name": "Alaskan Native Corporations and Indian Tribes that are not Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                }
+              ]
+            }
+          },
+          {
+            "piid": "FA701422F0336",
+            "businessCategories": {
+              "businessConcerns": [],
+              "smallBusinessCategories": [
+                {
+                  "code": "SDB",
+                  "name": "Small Disadvantaged Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "WOSB",
+                  "name": "Women Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "HBCU and MSI",
+                  "name": "Historically Black Colleges and Universities and Minority Serving Institutions",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "HUBZone",
+                  "name": "SBA Certified HUBZone Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "VOSB",
+                  "name": "Veteran Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "SDVOSB",
+                  "name": "SBA Certified Service Disabled Veteran Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "ANC",
+                  "name": "Alaskan Native Corporations and Indian Tribes that are not Small Disadvantaged Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "ANC",
+                  "name": "Alaskan Native Corporations and Indian Tribes that are not Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                }
+              ]
+            }
+          },
+          {
+            "piid": "15JA2423F00000024",
+            "businessCategories": {
+              "businessConcerns": [],
+              "smallBusinessCategories": [
+                {
+                  "code": "SDB",
+                  "name": "Small Disadvantaged Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "WOSB",
+                  "name": "Women Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "HBCU and MSI",
+                  "name": "Historically Black Colleges and Universities and Minority Serving Institutions",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "HUBZone",
+                  "name": "SBA Certified HUBZone Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "VOSB",
+                  "name": "Veteran Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "SDVOSB",
+                  "name": "SBA Certified Service Disabled Veteran Owned Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "ANC",
+                  "name": "Alaskan Native Corporations and Indian Tribes that are not Small Disadvantaged Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                },
+                {
+                  "code": "ANC",
+                  "name": "Alaskan Native Corporations and Indian Tribes that are not Small Business",
+                  "goalsWholeDollars": null,
+                  "wholeDollars": 0
+                }
+              ]
+            }
+          }
+        ]
       },
       "departmentAllocationPercentageData": "Not Applicable",
       "goalsAndActualsData": {
@@ -1025,180 +2547,160 @@ curl -X POST "https://<Production or Alpha URL>/spr/v1/search?api_key=<API KEY>"
             {
               "code": "SB",
               "name": "Small Business",
-              "summaryReport": [
-                {
-                  "organizationCode": "3600",
-                  "organizationName": "VETERANS AFFAIRS, DEPARTMENT OF",
-                  "goalsWholeDollars": "Not Applicable",
-                  "goalsPercentage": "Not Applicable",
-                  "actualsWholeDollars": "3918457",
-                  "actualsPercentage": "35.6"
-                }
-              ]
+              "individualReport": {
+                "goalsWholeDollars": "27000000",
+                "goalsSubcontractPercentage": "90",
+                "goalsTotalContractPercentage": "13.5",
+                "actualsWholeDollars": "39664149",
+                "actualsSubcontractPercentage": "98.9",
+                "actualsTotalContractPercentage": "0"
+              }
             },
             {
               "code": "OTSB",
               "name": "Other Than Small Business",
-              "summaryReport": [
-                {
-                  "organizationCode": "3600",
-                  "organizationName": "VETERANS AFFAIRS, DEPARTMENT OF",
-                  "goalsWholeDollars": "Not Applicable",
-                  "goalsPercentage": "Not Applicable",
-                  "actualsWholeDollars": "7097688",
-                  "actualsPercentage": "64.4"
-                }
-              ]
+              "individualReport": {
+                "goalsWholeDollars": "3000000",
+                "goalsSubcontractPercentage": "Not Applicable",
+                "goalsTotalContractPercentage": "Not Applicable",
+                "actualsWholeDollars": "460213",
+                "actualsSubcontractPercentage": "1.1",
+                "actualsTotalContractPercentage": "0"
+              }
             }
           ],
           "smallBusinessCategories": [
             {
               "code": "SDB",
               "name": "Small Disadvantaged Business",
-              "summaryReport": [
-                {
-                  "organizationCode": "3600",
-                  "organizationName": "VETERANS AFFAIRS, DEPARTMENT OF",
-                  "goalsWholeDollars": "Not Applicable",
-                  "goalsPercentage": "Not Applicable",
-                  "actualsWholeDollars": "0",
-                  "actualsPercentage": "0"
-                }
-              ]
+              "individualReport": {
+                "goalsWholeDollars": "1800000",
+                "goalsSubcontractPercentage": "6",
+                "goalsTotalContractPercentage": "Not Applicable",
+                "actualsWholeDollars": "2575804",
+                "actualsSubcontractPercentage": "6.4",
+                "actualsTotalContractPercentage": "0"
+              }
             },
             {
               "code": "WOSB",
               "name": "Women Owned Small Business",
-              "summaryReport": [
-                {
-                  "organizationCode": "3600",
-                  "organizationName": "VETERANS AFFAIRS, DEPARTMENT OF",
-                  "goalsWholeDollars": "Not Applicable",
-                  "goalsPercentage": "Not Applicable",
-                  "actualsWholeDollars": "253988",
-                  "actualsPercentage": "2.3"
-                }
-              ]
+              "individualReport": {
+                "goalsWholeDollars": "5100000",
+                "goalsSubcontractPercentage": "17",
+                "goalsTotalContractPercentage": "Not Applicable",
+                "actualsWholeDollars": "7564353",
+                "actualsSubcontractPercentage": "18.9",
+                "actualsTotalContractPercentage": "0"
+              }
             },
             {
               "code": "HBCU and MSI",
               "name": "Historically Black Colleges and Universities and Minority Serving Institutions",
-              "summaryReport": [
-                {
-                  "organizationCode": "3600",
-                  "organizationName": "VETERANS AFFAIRS, DEPARTMENT OF",
-                  "goalsWholeDollars": "Not Applicable",
-                  "goalsPercentage": "Not Applicable",
-                  "actualsWholeDollars": "0",
-                  "actualsPercentage": "0"
-                }
-              ]
+              "individualReport": {
+                "goalsWholeDollars": "0",
+                "goalsSubcontractPercentage": "0",
+                "goalsTotalContractPercentage": "Not Applicable",
+                "actualsWholeDollars": "0",
+                "actualsSubcontractPercentage": "0",
+                "actualsTotalContractPercentage": "0"
+              }
             },
             {
               "code": "HUBZone",
               "name": "SBA Certified HUBZone Small Business",
-              "summaryReport": [
-                {
-                  "organizationCode": "3600",
-                  "organizationName": "VETERANS AFFAIRS, DEPARTMENT OF",
-                  "goalsWholeDollars": "Not Applicable",
-                  "goalsPercentage": "Not Applicable",
-                  "actualsWholeDollars": "37747",
-                  "actualsPercentage": "0.3"
-                }
-              ]
+              "individualReport": {
+                "goalsWholeDollars": "900000",
+                "goalsSubcontractPercentage": "3",
+                "goalsTotalContractPercentage": "Not Applicable",
+                "actualsWholeDollars": "5850",
+                "actualsSubcontractPercentage": "0",
+                "actualsTotalContractPercentage": "0"
+              }
             },
             {
               "code": "VOSB",
               "name": "Veteran Owned Small Business",
-              "summaryReport": [
-                {
-                  "organizationCode": "3600",
-                  "organizationName": "VETERANS AFFAIRS, DEPARTMENT OF",
-                  "goalsWholeDollars": "Not Applicable",
-                  "goalsPercentage": "Not Applicable",
-                  "actualsWholeDollars": "7953",
-                  "actualsPercentage": "0.1"
-                }
-              ]
+              "individualReport": {
+                "goalsWholeDollars": "7500000",
+                "goalsSubcontractPercentage": "25",
+                "goalsTotalContractPercentage": "Not Applicable",
+                "actualsWholeDollars": "9639995",
+                "actualsSubcontractPercentage": "24",
+                "actualsTotalContractPercentage": "0"
+              }
             },
             {
               "code": "SDVOSB",
               "name": "SBA Certified Service Disabled Veteran Owned Small Business",
-              "summaryReport": [
-                {
-                  "organizationCode": "3600",
-                  "organizationName": "VETERANS AFFAIRS, DEPARTMENT OF",
-                  "goalsWholeDollars": "Not Applicable",
-                  "goalsPercentage": "Not Applicable",
-                  "actualsWholeDollars": "0",
-                  "actualsPercentage": "0"
-                }
-              ]
+              "individualReport": {
+                "goalsWholeDollars": "3000000",
+                "goalsSubcontractPercentage": "10",
+                "goalsTotalContractPercentage": "Not Applicable",
+                "actualsWholeDollars": "4362889",
+                "actualsSubcontractPercentage": "10.9",
+                "actualsTotalContractPercentage": "0"
+              }
             },
             {
               "code": "ANC",
               "name": "Alaskan Native Corporations and Indian Tribes that are not Small Disadvantaged Business",
-              "summaryReport": [
-                {
-                  "organizationCode": "3600",
-                  "organizationName": "VETERANS AFFAIRS, DEPARTMENT OF",
-                  "goalsWholeDollars": "Not Applicable",
-                  "goalsPercentage": "Not Applicable",
-                  "actualsWholeDollars": "0",
-                  "actualsPercentage": "0"
-                }
-              ]
+              "individualReport": {
+                "goalsWholeDollars": "Not Applicable",
+                "goalsSubcontractPercentage": "Not Applicable",
+                "goalsTotalContractPercentage": "Not Applicable",
+                "actualsWholeDollars": "0",
+                "actualsSubcontractPercentage": "0",
+                "actualsTotalContractPercentage": "Not Applicable"
+              }
             },
             {
               "code": "ANC",
               "name": "Alaskan Native Corporations and Indian Tribes that are not Small Business",
-              "summaryReport": [
-                {
-                  "organizationCode": "3600",
-                  "organizationName": "VETERANS AFFAIRS, DEPARTMENT OF",
-                  "goalsWholeDollars": "Not Applicable",
-                  "goalsPercentage": "Not Applicable",
-                  "actualsWholeDollars": "0",
-                  "actualsPercentage": "0"
-                }
-              ]
+              "individualReport": {
+                "goalsWholeDollars": "Not Applicable",
+                "goalsSubcontractPercentage": "Not Applicable",
+                "goalsTotalContractPercentage": "Not Applicable",
+                "actualsWholeDollars": "0",
+                "actualsSubcontractPercentage": "0",
+                "actualsTotalContractPercentage": "Not Applicable"
+              }
             }
           ],
           "totals": {
             "individualReport": {
-              "goalsWholeDollars": "Not Applicable",
-              "goalsSubcontractPercentage": "Not Applicable",
-              "goalsTotalContractPercentage": "Not Applicable",
-              "actualsWholeDollars": "11016145",
-              "actualsSubcontractPercentage": "100",
-              "actualsTotalContractPercentage": "Not Applicable"
+              "goalsWholeDollars": "30000000",
+              "goalsSubcontractPercentage": "100",
+              "goalsTotalContractPercentage": "100",
+              "actualsWholeDollars": "40124362",
+              "actualsSubcontractPercentage": "100.0",
+              "actualsTotalContractPercentage": "0"
             },
             "summaryReport": {
-              "totalGoalsWholeDollars": "Not Applicable",
-              "totalGoalsPercentage": "Not Applicable",
-              "totalActualsWholeDollars": "11016145",
-              "totalActualsPercentage": "Not Applicable"
+              "totalGoalsWholeDollars": "30000000",
+              "totalGoalsPercentage": "100",
+              "totalActualsWholeDollars": "40124362",
+              "totalActualsPercentage": "0"
             }
           }
         }
       },
       "certificationData": {
-        "includeIndirectCosts": "Not Applicable",
+        "includeIndirectCosts": "N",
         "accountingMethod": {
-          "method": "Not Applicable",
+          "method": "payment basis",
           "explanation": "Not Applicable"
         },
         "isCertified": "Y",
-        "nameOfTheCertifier": "Godfrey Warner",
-        "titleOfTheCertifier": "Contract Administrator",
-        "genericEmailAddressOrUrl": null
+        "nameOfTheCertifier": "Rosanna Dombrowski",
+        "titleOfTheCertifier": "Not Applicable",
+        "genericEmailAddressOrUrl": "RDombrowski@ManagementConcepts.com"
       }
     }
   ],
   "links": {
-    "selfLink": "https://gateway-am.test.apiss.mcaas.fcs.gsa.gov/spr/v1/search?page=0&size=1",
-    "nextLink": "https://gateway-am.test.apiss.mcaas.fcs.gsa.gov/spr/v1/search?page=1&size=1"
+    "selfLink": "https://<PROD_URL>/spr/v1/search?page=0&size=1",
+    "nextLink": "https://<PROD_URL>/spr/v1/search?page=1&size=1"
   }
 }
 
