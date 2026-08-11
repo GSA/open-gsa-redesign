@@ -18,18 +18,19 @@ Get Location API can be accessed from Production or Alpha environments via the f
 * Alpha: https://api-alpha.sam.gov 
 
 ## Authentication and API Keys
-User of this API must provide a System Account API key to use this Location Services API. 
+User of this API must provide an API key to use this API. Request per day are limited based on the federal or non-federal or general roles. 
 
-In order to use Public Location Services API, the following is required:
-* Valid SAM.gov Federal Government System Account API Key
+Note: 
+* For production, users can request an API Key in their Profile under Account Details on https://sam.gov/
+* For prodlike, users can request an API Key in their Profile under Account Details on https://alpha.sam.gov/
+* Rate limit for Federal User is 1000 requests/day
+* Rate limit for Non-Federal User is 10 requests/day
 
-#### Generating a System Account API Key
-* Users registered with a government email address and have appropriate System Account Manager or System Account Admin role may request a system account for data access.
-* If a user satisfies the above registration criteria they will be able to access the System Accounts widget from their Workspace page after logging in.
-* The user can then select “Request System Account” from the widget and fill out the required sections with appropriate Contract Opportunities permissions.
-* The requested system account will then need to be approved. After approval the user will be notified via email and they can also see the updated status in the System Account widget.
-* The user can select ‘Go to System Accounts’ in the widget from their workspace and enter a new system account password.
-* After setting up the password the user will see a new section for retrieving a system account API Key. The user must enter their password again to retrieve the key.
+#### User Account API Key Creation
+* Registered user can request for a public API on ‘Account Details’ page. This page can be accessed on Account Details page on SAM.gov
+* User must enter account password on ‘Account Details’ page to view the API Key information. If an incorrect password is entered, an error will be returned.
+* After the API Key is generated on ‘Account Details’ page, the API Key can be viewed on the Account Details page immediately. The API Key is visible until user navigates to a different page.
+* If an error is encountered during the API Key generation/retrieval, then user will receive an error message and must try again.
 
 ## Public Location Services API Request and Responses
 
