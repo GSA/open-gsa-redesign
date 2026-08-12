@@ -553,7 +553,7 @@ The Subcontracting Plan Reports API offers several response elements that are de
 </tr>
 
 <tr>
-<td>businessCategories</td>
+<td>goalsAndActualsData</td>
 <td>object</td>
 <td>
 <details>
@@ -646,7 +646,7 @@ The Subcontracting Plan Reports API offers several response elements that are de
 <td>Actuals Percentage for Small Business and Other Than Small Business</td>
 </tr>
 <tr>
-<td colspan="3">Small Business Categories  - Both ISR and SSR</td>
+<td colspan="3" style="font-weight: bold">Small Business Categories  - Both ISR and SSR</td>
 </tr>
 <tr>
 <td>smallBusinessCategories.code</td>
@@ -659,7 +659,7 @@ The Subcontracting Plan Reports API offers several response elements that are de
 <td>Small Disadvantaged Business, Women Owned Small Business, Historically Black Colleges and Universities and Minority Serving Institutions, SBA Certified HUBZone Small Business, Veteran Owned Small Business, SBA Certified Service Disabled Veteran Owned Small Business, Alaskan Native Corporations and Indian Tribes that are not Small Disadvantaged Business, and Alaskan Native Corporations and Indian Tribes that are not Small Business (pre 02/24/2026)</td>
 </tr>
 <tr>
-<td colspan="3">Small Business Categories  - ISR</td>
+<td colspan="3" style="font-weight: bold">Small Business Categories  - ISR</td>
 </tr>
 <tr>
 <td>smallBusinessCategories.individualReport.goalsWholeDollars</td>
@@ -692,7 +692,7 @@ The Subcontracting Plan Reports API offers several response elements that are de
 <td>Actuals Total Contract Percentage for Small Disadvantaged Business, Women Owned Small Business, Historically Black Colleges and Universities and Minority Serving Institutions, SBA Certified HUBZone Small Business, Veteran Owned Small Business, SBA Certified Service Disabled Veteran Owned Small Business, Alaskan Native Corporations and Indian Tribes that are not Small Disadvantaged Business, and Alaskan Native Corporations and Indian Tribes that are not Small Business (pre 02/24/2026)</td>
 </tr>
 <tr>
-<td colspan="3">Small Business Categories  - SSR</td>
+<td colspan="3" style="font-weight: bold">Small Business Categories  - SSR</td>
 </tr>
 <tr>
 <td>smallBusinessCategories.summaryReport.organizationCode</td>
@@ -725,7 +725,7 @@ The Subcontracting Plan Reports API offers several response elements that are de
 <td>Actuals Percentage  for Small Disadvantaged Business, Women Owned Small Business, Historically Black Colleges and Universities and Minority Serving Institutions, SBA Certified HUBZone Small Business, Veteran Owned Small Business, SBA Certified Service Disabled Veteran Owned Small Business, Alaskan Native Corporations and Indian Tribes that are not Small Disadvantaged Business, and Alaskan Native Corporations and Indian Tribes that are not Small Business (pre 02/24/2026)</td>
 </tr>
 <tr>
-<td colspan="3">Totals - Both ISR and SSR</td>
+<td colspan="3" style="font-weight: bold">Totals - Both ISR and SSR</td>
 </tr>
 <tr>
 <td>individualReport.goalsWholeDollars</td>
