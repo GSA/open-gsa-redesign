@@ -39,12 +39,6 @@ paths:
           description: System Account API Key.
           schema:
             type: string
-        - name: X-Api-Roles
-          in: header
-          required: false
-          description: Role header for authorization (must contain SA-FED-ALL).
-          schema:
-            type: string
       requestBody:
         content:
           application/json:
@@ -106,10 +100,6 @@ components:
     SearchRequest:
       type: object
       properties:
-        q:
-          type: string
-          description: Free-text search using the filtername:value format. Supports
-            AND (&) and OR (~) conditions.
         includeSections:
           type: string
           description: Comma-separated list of sections to include. Returned by
