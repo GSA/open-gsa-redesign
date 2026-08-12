@@ -37,11 +37,11 @@ used to filter and refine results.
 
 **Production:**
 
-- `https://api.sam.gov/spr/v1/search
+- https://api.sam.gov/spr/v1/search
 
 **Alpha:**
 
-- `https://api-alpha.sam.gov/spr/v1/search
+- https://api-alpha.sam.gov/spr/v1/search
 
 ### User Requirements
 
