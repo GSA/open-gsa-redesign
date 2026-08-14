@@ -967,6 +967,20 @@ The API will return one of the following responses:
 
 #### Curl Request
 
+#### Prod
+```bash
+curl -X POST \
+  'https://api.sam.gov/spr/v1/search?api_key=<API KEY>' \
+  -H 'Authorization: Basic <Base64 encoded username:password>' \
+  -H 'Content-Type: application/json' \
+  -H 'accept: application/json' \
+-d '{
+  "reportSubmittedDate": "[02/24/2026,]",
+  "reportType": "Individual"
+}'
+```
+
+#### Alpha
 ```bash
 curl -X POST \
   'https://api-alpha.sam.gov/spr/v1/search?api_key=<API KEY>' \
@@ -1268,6 +1282,22 @@ curl -X POST \
 
 #### Curl Request
 
+#### Prod
+```bash
+curl -X POST \
+  'https://api.sam.gov/spr/v1/search?api_key=<API KEY>' \
+  -H 'Authorization: Basic <Base64 encoded username:password>' \
+  -H 'Content-Type: application/json' \
+  -H 'accept: application/json' \
+-d '{
+  "reportFiscalYear": "2025",
+  "uniqueEntityID": "C47BNA8GM833",
+  "reportSubmittedDate": "[02/18/2026,02/23/2026]",
+  "includeSections": "reportData~contractData~taskOrdersData~goalsAndActualsData~remarks"
+}'
+```
+
+#### Alpha
 ```bash
 curl -X POST \
   'https://api-alpha.sam.gov/spr/v1/search?api_key=<API KEY>' \
@@ -1830,6 +1860,22 @@ curl -X POST \
 
 #### Curl Request
 
+#### Prod
+```bash
+curl -X POST \
+  'https://api.sam.gov/spr/v1/search?api_key=<API KEY>' \
+  -H 'Authorization: Basic <Base64 encoded username:password>' \
+  -H 'Content-Type: application/json' \
+  -H 'accept: application/json' \
+-d '{
+  "reportType": "Summary DOD COMPREHENSIVE",
+  "reportFiscalYear": "2025",
+  "reportingPeriod": "March 31",
+  "includeSections": "reportData~goalsAndActualsData~remarks~certificationData~dodComprehensiveAttachments"
+}'
+```
+
+#### Alpha
 ```bash
 curl -X POST \
   'https://api-alpha.sam.gov/spr/v1/search?api_key=<API KEY>' \
