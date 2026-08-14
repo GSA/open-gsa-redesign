@@ -1837,8 +1837,6 @@ curl -X POST \
   -H 'Content-Type: application/json' \
   -H 'accept: application/json' \
 -d '{
-  "reportSubmittedDate": "[02/24/2026,]",
-  "reportType": "Individual",
   "reportType": "Summary DOD COMPREHENSIVE",
   "reportFiscalYear": "2025",
   "reportingPeriod": "March 31",
