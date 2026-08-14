@@ -969,7 +969,7 @@ The API will return one of the following responses:
 
 ```bash
 curl -X POST \
-  'https://api.sam.gov/spr/v1/search?api_key=<API KEY>' \
+  'https://api-alpha.sam.gov/spr/v1/search?api_key=<API KEY>' \
   -H 'Authorization: Basic <Base64 encoded username:password>' \
   -H 'Content-Type: application/json' \
   -H 'accept: application/json' \
@@ -1270,7 +1270,7 @@ curl -X POST \
 
 ```bash
 curl -X POST \
-  'https://api.sam.gov/spr/v1/search?api_key=<API KEY>' \
+  'https://api-alpha.sam.gov/spr/v1/search?api_key=<API KEY>' \
   -H 'Authorization: Basic <Base64 encoded username:password>' \
   -H 'Content-Type: application/json' \
   -H 'accept: application/json' \
@@ -1834,7 +1834,7 @@ curl -X POST \
 
 ```bash
 curl -X POST \
-  'https://api.sam.gov/spr/v1/search?api_key=<API KEY>' \
+  'https://api-alpha.sam.gov/spr/v1/search?api_key=<API KEY>' \
   -H 'Authorization: Basic <Base64 encoded username:password>' \
   -H 'Content-Type: application/json' \
   -H 'accept: application/json' \
