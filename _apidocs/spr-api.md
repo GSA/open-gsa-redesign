@@ -2364,6 +2364,4 @@ the [Variance Document](https://open.gsa.gov/api/entity-api/LegacySAMvsBetaSAM-E
 
 ---
 
-**NOTE:** If you do not have an alpha account you can find the instructions here.
-
 <p><small><a href="#">Back to top</a></small></p>
