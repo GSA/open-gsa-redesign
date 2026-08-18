@@ -70,11 +70,11 @@
 - title: SAM.gov Public Location Services API
   description: This API provides location retrieval needed for opportunities
   url: https://open.gsa.gov/api/location-public-api/
-- title: SAM.gov Subaward reporting Bulk Upload API
-  description: This API provides information for publishing subcontract and subaward reports to SAM.gov
-  url: https://open.gsa.gov/api/subawards-bulkupload-api/
-- title: SearchGov Clicks API
-  description: For SearchGov customers. Use the clicks API to send SearchGov your click data. You must use both APIs for a complete search experience.
+- title: SAM.gov Subcontracting Plan Reporting Outbound API
+  description: API to retrieve detailed information for submitted ISRs and SSRs from SAM.gov using various searchable parameters.
+  url: https://open.gsa.gov/api/spr-api/
+- title: Search.gov Clicks API
+  description: For Search.gov customers. This API allows you to collect click data for both analytics reporting and as an input to relevance ranking of search results.
   url: https://open.gsa.gov/api/searchgov-clicks/
 - title: SearchGov Results API
   description: For SearchGov customers. Use the results API to receive search results from SearchGov. You must use both APIs for a complete search experience.
