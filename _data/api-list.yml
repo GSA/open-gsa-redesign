@@ -67,7 +67,7 @@
 - title: SAM.gov Public Location Services API
   description: This API provides location retrieval needed for opportunities
   url: https://open.gsa.gov/api/location-public-api/
-- title: Subcontracting Plan Reporting Outbound API
+- title: SAM.gov Subcontracting Plan Reporting Outbound API
   description: API to retrieve detailed information for submitted ISRs and SSRs from SAM.gov using various searchable parameters.
   url: https://open.gsa.gov/api/spr-api/
 - title: Search.gov Clicks API
