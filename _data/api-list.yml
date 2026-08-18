@@ -85,9 +85,6 @@
 - title: Site Scanning API
   description: The Site Scanning API provides a wide range of scan data for public federal websites and their website health and best practices.
   url: https://open.gsa.gov/api/site-scanning-api/
-- title: Subcontracting Plan Reporting Outbound API
-  description: API to retrieve detailed information for submitted ISRs and SSRs from SAM.gov using various searchable parameters.
-  url: https://open.gsa.gov/api/spr-api/
 - title: Sustainable Facilities Tool API
   description: The Sustainable Facilities Tool offers useful sustainable guidance and tools for a variety of roles.
   url: https://sftool.gov/developers
