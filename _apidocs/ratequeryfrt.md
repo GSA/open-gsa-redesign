@@ -101,7 +101,9 @@ To begin using this API, you will need to register for an API Key. You can sign 
 <noscript>Please enable JavaScript to signup for an <a href="http://api.data.gov/">api.data.gov</a> API key.</noscript>
 {% endraw %}  
 
-•	After registration, you will need to request the Agency Token by sending an email to transportation.programs@gsa.gov.
+•	After the API key registration, you will need to request the Agency Token by sending an email to transportation.programs@gsa.gov. 
+  You must also attach to that email a completed copy of the Memorandum Of Understanding (MOU). [Click here to download the MOU template](https://github.com/user-attachments/files/17574538/GSA_FAS_FMP_TMSS2_FRT_Rate_Query_API_MOU_Template.docx).
+
  
 •	Then you will need to provide this API key in the x-api-key and Agency Token in the x-agency-token of HTTP header with every API request.
  
@@ -131,15 +133,15 @@ This API has one primary endpoint:
 | Request Element | Description |
 | ---- | ----------- |
 | agencyLocationCode |	Customer Location Code |
-| queryType	| Tpe of Query |
+| queryType	| Type of Query |
 | pickupDate	| Pick up/ Move Date |
 | sroType	| Shipment/Rate Type |
 | sroId	| Shipment / SRO Id |
 | estimatedWeight	| Estimated weight of the Shipment |
 | estimatedMileage	| Miles |
-| originZip	| Pickup/ Orgin Zip code |
+| originZip	| Pickup/ Origin Zip code |
 | destinationZip	| Delivery/Destination Zip code |
-| originCountryCode	| Pickup/Orgin Country Code |
+| originCountryCode	| Pickup/Origin Country Code |
 | destinationCountryCode	| Delivery/Destination Country Code |
 | originProvince	| Pickup/Origin province code if the Origin country is Canada |
 | destinProvince	| Delivery/Destinationprovince code if the Destination country is Canada |
@@ -194,17 +196,17 @@ This API has one primary endpoint:
 | accessorialsResults |Accessorials results |
 | estimatedCost |total cost of the individual accessorial  |
 | frtAccessorialId |DB id of the accessoral code |
-| unitsId |DB id of the acessorial unit type |
+| unitsId |DB id of the accessorial unit type |
 | quantity |applicable quantity |
 | accessorialCode |accessorial code from the request |
-| accessorialCost |acessorial cost in integer |
+| accessorialCost |accessorial cost in integer |
 | usage |Usage from the request |
 
 
 ## API Specification File
 
-You can view the full details of this API in the OpenAPI Specification file available here:
-[TMSS.FRT.Rate.Query.API.spec.xlsx](https://github.com/GSA/open-gsa-redesign/files/11870768/TMSS.FRT.Rate.Query.API.spec.xlsx)
+You can view the details of this API in the OpenAPI Specification file available here:
+[TMSS_FRT_RateQuery_API_spec.xlsx](https://github.com/user-attachments/files/17131254/TMSS.FRT.Rate.Query.API.spec.xlsx)
 
 
 
@@ -217,7 +219,7 @@ The API will return one of the following responses:
 | HTTP Response Code | Description |
 | ---- | ----------- |
 | 200 | Successful. Data will be returned in JSON format. |
-| 400 | Bad request. Verify the query string parmaters that were provided. |
+| 400 | Bad request. Verify the query string parameters that were provided. |
 | 403 | API key is not correct or was not provided. |
 | 404	| Not Found
 | 408	| Request Timeout
@@ -339,6 +341,81 @@ Response :
     }
 ]
 ```
+<p><small><a href="#">Back to top</a></small></p>
+
+
+**Optional Endpoint:** https://api.gsa.gov/travel/tmss/v1/uspslookup/?cityName=  
+
+**API Method:** GET
+
+**Description:** This API can be used to lookup/search city name or Zip codes. Use the keyword **cityName=** to pass the query param.
+
+**API-KEY:** API-KEY obtained for the primary endpoint can be used and must be passed as a HTTP header name **x-api-key** .
+  
+  **API Query Parameters:**
+  
+  This API must be used by including at least one of the following params
+   - the City Name or a beginning letter of the city name or a few beginning letters of the City Name
+   - Zip code or a beginning digit of a zip code or a few beginning digits of a Zip code
+
+  **Expected Response**
+  
+  | Response Object | Description |
+  | ---- | ----------- |
+  | uspsZipId | TMSS 2.0 data ref ID |
+  | zipCode |	Zip Code |
+  | zipClassificationCode |	ZIP classification codes (P - PO Box, U - unclassified, " " - no classification) |
+  | cityName |	City Name |
+  | cityAbbrev |	City Abbreviation (if available) |
+  | stateAbbrev |	State Code |
+  | countyNo |	County Number |
+  | countyName |	County Name |
+  | createdDate |	Initial Data creation Date |
+  | updateProgram |	Update Program (internal use) |
+  | updateId |	For internal use |
+  | updateDate |	Date of last update (internal use) |
+  | stateId |	For internal use |
+
+  <p><small><a href="#">Back to top</a></small></p>
+  
+ **Sample Request and Response for the optional endpoint:**
+
+ Request: https://api.data.gov/TEST/travel/tmss/v1/uspslookup/?cityName=Glen
+
+ Response:
+ 
+    {
+        "uspsZipId": 4536,
+        "zipCode": "03238",
+        "zipClassificationCode": "P",
+        "cityName": "GLENCLIFF",
+        "cityAbbrev": "",
+        "stateAbbrev": "NH",
+        "countyNo": "009",
+        "countyName": "GRAFTON",
+        "createdDate": "2019-05-03T16:57:05.000+00:00",
+        "updateProgram": "Manual Data Load Feb. 3 2024",
+        "updateId": null,
+        "updateDate": "2024-02-03T17:41:29.000+00:00",
+        "stateId": null
+    },
+    {
+        "uspsZipId": 4845,
+        "zipCode": "03838",
+        "zipClassificationCode": "",
+        "cityName": "GLEN",
+        "cityAbbrev": "",
+        "stateAbbrev": "NH",
+        "countyNo": "003",
+        "countyName": "CARROLL",
+        "createdDate": "2019-05-03T16:57:05.000+00:00",
+        "updateProgram": "Manual Data Load Feb. 3 2024",
+        "updateId": null,
+        "updateDate": "2024-02-03T17:41:31.000+00:00",
+        "stateId": null
+    } ...
+
+    
 <p><small><a href="#">Back to top</a></small></p>
 
 ## Feedback

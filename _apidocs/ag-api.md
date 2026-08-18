@@ -1,6 +1,6 @@
 ---
-title: Acquisition Gateway Document Library API
-banner-heading: Acquisition Gateway Document Library API
+title: Acquisition Gateway Public Listings API
+banner-heading: Acquisition Gateway Public Listings API
 ---
 
 <link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/swagger-ui.css" >
@@ -9,11 +9,11 @@ banner-heading: Acquisition Gateway Document Library API
 <!-- Alpha status alert -->
 <div class="usa-alert usa-alert-warning" id="site-wide-alert" role="alert">
    <div class="usa-alert-body">
-     <strong>
-       This project is in BETA       
-     </strong>
+     <strong>This project is a placeholder</strong>
      <p class="usa-alert-text">
-        This project is providing AG Document Library API</br>
+        This project is a placeholder for AG Listings API (No APIs are available)
+     </p>
+     <p class="usa-alert-text">
         Have feedback or questions? <a href="https://github.com/GSA/ag-api/issues">Please let us know</a>!
      </p>
    </div>
@@ -23,16 +23,15 @@ banner-heading: Acquisition Gateway Document Library API
 
 ## Overview
 
-In addition to being published and available at <a href="https://hallways.cap.gsa.gov/app/#/tutorials/document-library">Document Library</a>, the documents for hallways.cap.gsa.gov is also available via APIs.
+In addition to being published and available at <a href="https://acquisitiongateway.gov/">Acquisition Gateway</a>, the listings are not available via Public APIs, yet.
 
-**Please note that the API `v1.0` is available, now.**
+**Please note that the API `v4.0` is available, now.**
 
-The URL for the API is `https://api.gsa.gov/acquisition/cap/v1/`, and it exposes 4 routes to query data:
+The URL for the API is `https://api.gsa.gov/acquisitiongateway/api/v4.0/`, and it exposes routes per content types (workgroup) to query data:
 
-- `/tag-groups/<group id>/`
-- `/search/documents/<keyword>`
-- `/documents`
-- `/documents/<document id>`
+- `/documents/` (TBD)
+
+Note: No API is available at this time.
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -122,82 +121,45 @@ To begin using this API, you will need to register for an API Key. You can sign 
 ## OpenAPI Specification File
 
 You can view the full details of this API in the OpenAPI Specification file available here:
-<a href="v1/openapi.yaml">Open API specification file for the Document Library API</a>
+<a href="v4/openapi.yaml">Open API specification file for the Listings API</a>
 
 <p><small><a href="#">Back to top</a></small></p>
 
 
 ## The Response
 
-The response represents the rows in the `data` array in the JSON reports that can be downloaded. You may also downlow the document files. 
+The response represents the rows in the `data` array in the JSON reports that can be downloaded.
 
 They are returned as an array of JSON objects. Here is an example of one such object:
 
 ```
-{
-    "id": 0,
-    "self": "string",
-    "title": "string",
-    "node_type": "string",
-    "description": "string",
-    "excerpt": "string",
-    "agency": {
-      "label": "string",
-      "id": 0
-    },
-    "type": [
-      {}
-    ],
-    "acquisition_stage": [
-      {}
-    ],
-    "contract_type": [
-      {}
-    ],
-    "format": "string",
-    "public_private": true,
-    "file": [
-      null
-    ],
-    "date_uploaded": "string",
-    "tags": [
-      null
-    ],
-    "relevance": 0,
-    "views": 0,
-    "downloads": 0,
-    "comment_count": 0,
-    "updated": 0,
-    "sections": [
-      {}
-    ]
-  }
+TBD
 ```
 
 Note that it has the following properties:
 
-- `id`: The primary key of the data point
-- `title`: The name of the document
-- `description`: The description of the document
-- `agency`: The name of the data point's agency
-- `type`: The type of document
+- `pid`: The primary key of the data point
+- `title`: The name of the listing
+- `description`: The description of the listing
+- `summary`: The summary of the listing description
+- `type`: The type of listing content
 
-## Querying documents - API Calls
+## Querying Listings - API Calls
 
-Documents can be queried...
+Listings can be queried...
 
 {% include swagger-section-header-disable-try-it-out.html %}
-    url: "v1/openapi.yaml", 
+    url: "v4/openapi.yaml", 
 {% include swagger-section-footer-disable-try-it-out.html %}
 
 
-## Filtering/Sorting documents by parameters
+## Filtering/Sorting listings by parameters
 
-Documents can be queried by filtering/sorting ?filter[key]=value&sorted
+Listings can be queried by filtering/sorting ?filter[key]=value&sorted
 
-Ex. /documents?filter[id]=4138
+Ex. /documents?filter[pid]=4138
 
-It will return document id 4138. In this case, it is also equivalent to /documents/4138
+It will return document id 4138. In this case, it is also equivalent to /documents/resource/4138
 
 ## HTTP Response Codes
 

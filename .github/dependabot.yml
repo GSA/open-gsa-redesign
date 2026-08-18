@@ -9,7 +9,25 @@ updates:
     directory: "/" # Location of package manifests
     schedule:
       interval: "weekly"
+    groups:
+      # Bundle npm minor and patch updates into a single PR;
+      # major updates still open as individual PRs
+      npm-dependencies:
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"
   - package-ecosystem: "bundler" # See documentation for possible values
     directory: "/" # Location of package manifests
     schedule:
       interval: "weekly"
+    groups:
+      # Bundle bundler minor and patch updates into a single PR;
+      # major updates still open as individual PRs
+      bundler-dependencies:
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"

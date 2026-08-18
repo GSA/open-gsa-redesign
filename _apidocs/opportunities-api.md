@@ -8887,6 +8887,8 @@ Error Code|Field | Error Message | Reason/Description | Operation
 400|Award Amount |	Award amount is required |	Award Amount is required |	CreateAndPublish, Publish, Update notice
 400|Award Amount |	Award amount must be a valid integer value |	Award amount must be a valid integer value |	CreateAndPublish, Publish, Update notice
 400|Award Amount |	Award amount must be greater than or equal $0 |	Award amount must be greater than or equal $0 |	CreateAndPublish, Publish, Update notice
+400|Resource Id |	Invalid resource ID provided |	Invalid resource ID provided |	Download Attachment as Original File Type
+401|Secure Attachments |	Insufficient privileges to access the secured attachment |	Insufficient privileges to access the secured attachment. |	Download Attachment as Original File Type
 
 
 
@@ -8956,5 +8958,7 @@ Date | Version | Description
 12/12/2023| v1.28| Updated the setAside titile descriptions for IEE, ISBEE.
 12/13/2023| v1.29| Updated the api's list for Award Amount error messages.
 03/22/2024| v1.30| The retirement date for the V2 endpoints(create, createAndPublished and update) has been updated in both the alpha and production environments. Please adjust your implementations accordingly.
+03/06/2025| v1.31| Added specific error messages related to the download attachment as original file type endpoint.
+
 
 <p><small><a href="#">Back to top</a></small></p>

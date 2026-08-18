@@ -97,7 +97,9 @@ To begin using this API, you will need to register for an API Key. You can sign 
 <noscript>Please enable JavaScript to signup for an <a href="http://api.data.gov/">api.data.gov</a> API key.</noscript>
 {% endraw %}  
 
-•	After registering for the API Key, you will need to send an email to errc@gsa.gov requesting the Agency Token (x-agency-token).  You must also attach to that email a completed copy of the Memorandum Of Understanding (MOU). [Click here to download the MOU template.](https://github.com/GSA/open-gsa-redesign/files/12539068/GSA_FAS_TTL_TMSS2.Rate.Query.API.TEMPLATE.Updated.9-1-23.docx)
+•	After registering for the API Key, you will need to send an email to errc@gsa.gov requesting the Agency Token (x-agency-token).  You must also attach to that email a completed copy of the Memorandum Of Understanding (MOU). [Click here to download the MOU template](https://github.com/user-attachments/files/18496312/GSA_FAS_ERRC_TMSS2_HHG_Rate_Query_API_MOU_Template_01-15-25.docx).
+
+
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -124,7 +126,7 @@ Every API request must have the API key in the x-api-key and Agency Token in the
   **Description**   This API can be used to retrieve shipment cost for a regular Household Goods (HHG) shipment or for an Extended Storage (EXSTG) shipment.
 
   Request:
-  All request payloads for ptimary endpoint must be in JSON data structure specified in the Data dictionary section of this document.
+  All request payloads for primary endpoint must be in JSON data structure specified in the Data dictionary section of this document.
   
   Response:
   All response must be in JSON data structure specified in the Data dictionary section of this document.
@@ -136,13 +138,13 @@ Every API request must have the API key in the x-api-key and Agency Token in the
   | Request Payload Fields | Description |
   | ---- | ----------- |
   | agencyLocationCode | Customer Location Code |
-  | queryType |	Tpe of Query |
+  | queryType |	Type of Query |
   | pickupDate |	Pick up/ Move Date |
   | shipmentType |	Shipment/Rate Type |
   | sroId |	Shipment / SRO Id  |
   | containerizedShipments |	To pull only Containerized Shipment costs |
-  | originCountryCode |	Pickup/Orgin Country Code |
-  | originZip |	Pickup/ Orgin Zip code |
+  | originCountryCode |	Pickup/Origin Country Code |
+  | originZip |	Pickup/ Origin Zip code |
   | originProvince |	Pickup/Origin province code if the Origin country is Canada |
   | destinationCountryCode |	Delivery/Destination Country Code |
   | destinationZip |	Delivery/Destination Zip code |
@@ -165,11 +167,11 @@ Every API request must have the API key in the x-api-key and Agency Token in the
   | containerizedShipments | To pull only Containerized Shipment costs | 
   | vehicleClass | Class of the Vehicle |  
   | estimatedWeight | Estimated weight of the Shipment | 
-  | originZip | Pickup/ Orgin Zip code | 
+  | originZip | Pickup/ Origin Zip code | 
   | originProvince | Pickup/Origin province code if the Origin country is Canada | 
   | destinationZip | Delivery/Destination Zip code |
   | destinationProvince |	Delivery/Destinationprovince code if the Destination country is Canada |
-  | originCountryCode | Pickup/Orgin Country Code |
+  | originCountryCode | Pickup/Origin Country Code |
   | destinationCountryCode | Delivery/Destination Country Code |
   | miles | Miles only for USA to Canada |
   | uabWeight | UAB weight in lbs |
@@ -180,6 +182,7 @@ Every API request must have the API key in the x-api-key and Agency Token in the
   | zefflag |	Zero Emission Footprint indicator for the TSP |
   | companyName |	Name of the TSP |
   | telephone	| TSP's contact phone number |
+  | email | TSP's contact email address |
   | socioEconomicInd | TSP's Socio Economic Indicator |
   | tender | Tender Id used in the selected rate |
   | csi | Customer Satisfaction Index of the TSP |
@@ -273,6 +276,7 @@ Every API request must have the API key in the x-api-key and Agency Token in the
           "zefflag": false,
           "companyName": "HILLDRUP MOVING &",
           "telephone": "703-221-7155",
+          "email": "xxxx@xxx.test.com",
           "socioEconomicInd": null,
           "tender": "HT20",
           "csi": "111.62",
@@ -361,6 +365,7 @@ Every API request must have the API key in the x-api-key and Agency Token in the
           "zefflag": false,
           "companyName": "SUDDATH RELOCATION SERVICES, I",
           "telephone": "800-365-5463",
+          "email": "xxxx@xxx.test.com",
           "socioEconomicInd": null,
           "tender": "GS05",
           "csi": "109.02",
@@ -446,6 +451,7 @@ Every API request must have the API key in the x-api-key and Agency Token in the
           "zefflag": true,
           "companyName": "Stevens Moving & Storage, Inc.",
           "telephone": "800-955-5421",
+          "email": "xxxx@xxx.test.com",
           "socioEconomicInd": "w,s",
           "tender": "SX01",
           "csi": null,
@@ -497,7 +503,7 @@ Every API request must have the API key in the x-api-key and Agency Token in the
   **API Query Parameters:**
   
   This API must be used by including at least one of the following params
-   - the City Name or a biginning letter of the city name or a few beginning letters of the City Name
+   - the City Name or a beginning letter of the city name or a few beginning letters of the City Name
    - Zip code or a beginning digit of a zip code or a few beginning digits of a Zip code
 
   **Expected Response**
@@ -508,14 +514,14 @@ Every API request must have the API key in the x-api-key and Agency Token in the
   | zipCode |	Zip Code |
   | zipClassificationCode |	ZIP classification codes (P - PO Box, U - unclassified, " " - no classification) |
   | cityName |	City Name |
-  | cityAbbrev |	City Abbrevation (if availabale) |
+  | cityAbbrev |	City Abbreviation (if available) |
   | stateAbbrev |	State Code |
   | countyNo |	County Number |
   | countyName |	County Name |
   | createdDate |	Initial Data creation Date |
   | updateProgram |	Update Program (internal use) |
   | updateId |	For internal use |
-  | updateDate |	Date of last updation (internal use) |
+  | updateDate |	Date of last update (internal use) |
   | stateId |	For internal use |
 
   <p><small><a href="#">Back to top</a></small></p>
@@ -563,9 +569,8 @@ Every API request must have the API key in the x-api-key and Agency Token in the
 ## API Specification File
   
   You can view the full details of this API in the API Specification file available here:
-  [TMSS HHG Rate Query API spec.xlsx](https://github.com/GSA/open-gsa-redesign/files/8064723/TMSS.HHG.Rate.Query.API.spec.xlsx)
-  
-  
+  [TMSS.HHG.Rate.Query.API.specs.xlsx](https://github.com/user-attachments/files/20905804/TMSS.HHG.Rate.Query.API.specs_updated_06242025.xlsx)
+
   
   
   
@@ -578,7 +583,7 @@ Every API request must have the API key in the x-api-key and Agency Token in the
   | HTTP Response Code | Description |
   | ---- | ----------- |
   | 200 | Successful. Data will be returned in JSON format. |
-  | 400 | Bad request. Verify the query string parmaters that were provided. |
+  | 400 | Bad request. Verify the query string parameters that were provided. |
   | 403 | API key is not correct or was not provided. |
   | 404	| Not Found
   | 408	| Request Timeout

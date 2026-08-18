@@ -1,0 +1,147 @@
+openapi: 3.0.1
+info:
+  title: Subaward Reporting Public API
+  description: Swagger documenation for API contracts and grants subaward reporting
+  name: GSA
+  version: 0.1.0
+servers:
+  - url: 'https://api-alpha.sam.gov/prodlike/contract/v1/subcontracts/search'
+  - url: 'https://api-alpha.sam.gov/prodlike/assistance/v1/subawards/search'
+tags:
+  - name: Acquisition Subaward Reporting Public API
+    description: All endpoints for acquisition subcontract reporting public API
+  - name: Assistance Subaward Reporting Public API
+    description: All endpoints for assistance subcontract reporting public API
+paths:
+  '/{type}/v1/{subType}/search':
+    get:
+      tags:
+        - Subaward Search Module API
+        - OpenSearch APIs
+      summary: Search entries
+      description: Search entries
+      operationId: search
+      parameters:
+        - name: pageNumber
+          in: query
+          required: false
+          schema:
+            type: string
+            default: '0'
+        - name: pageSize
+          in: query
+          required: false
+          schema:
+            type: string
+            default: '100'
+        - name: status
+          in: query
+          required: false
+          schema:
+            type: string
+            default: Published
+        - name: uniqueAwardKey
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: piid
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: agencyId
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: referencedIDVAgencyId
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: primeAwardType
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: referencedIDVPIID
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: fain
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: agencyCode
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: fromDate
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: toDate
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: type
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: subType
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: successful operation
+          content:
+            '*/*':
+              schema:
+                type: object
+        '400':
+          description: Bad Request
+          content:
+            '*/*':
+              schema:
+                type: object
+        '403':
+          description: Forbidden
+          content:
+            '*/*':
+              schema:
+                type: object
+        '404':
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                type: object
+        '405':
+          description: Validation exception
+          content:
+            '*/*':
+              schema:
+                type: object
+        '500':
+          description: Internal Server Error
+          content:
+            '*/*':
+              schema:
+                type: object
+        '501':
+          description: Not Implemented
+          content:
+            '*/*':
+              schema:
+                type: object
+components: {}
+

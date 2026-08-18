@@ -6,10 +6,19 @@ banner-heading: GSA IT Collect Public API
 <link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/swagger-ui.css" >
 <link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/custom.css" >
 
+<div class="usa-alert usa-alert-warning" id="site-wide-alert" role="alert">
+   <div class="usa-alert-body">
+     <p class="usa-alert-text">
+        We are taking action to simplify IT investment reporting – focusing on core statutory requirements while reducing agency burden. With this optimization, Federal agencies: (1) are expected to leverage the tools and practices that best satisfy their capital planning and investment control needs; and (2) are no longer required to report data via the IT Collect API. For more information, please read the <a href="https://itdashboard.gov">Federal CIO’s Letter to the American Taxpayer</a>.
+     </p>
+   </div>
+ </div>
+
+
 
 ## Overview
 
-The IT Collect API provides a way for the general public to access government-wide IT Portfolio Management and other related IT data sources. 
+The IT Collect API provides a way for the general public to access historical government-wide IT Portfolio Management and other related IT data sources. 
 This data is presented in a visual format on itdashboard.gov.
 
 
@@ -17,7 +26,7 @@ This data is presented in a visual format on itdashboard.gov.
 
 ## Getting Started
 
-To use our API, request an api key below and visit our <a href="https://gsa.github.io/ITDB-schema/public-by-2025/api/data/gov/docs/index.html"> full API documentation </a>
+To use our API, request an api key below and visit our <a href="https://gsa.github.io/ITDB-schema/public-by-2026/api/data/gov/docs/index.html"> full API documentation </a>
 
 {% raw %}
 <div id="apidatagov_signup">Loading signup form...</div>
@@ -107,7 +116,7 @@ To use our API, request an api key below and visit our <a href="https://gsa.gith
 ## OpenAPI Specification File
 
 You can view the full details of this API in the OpenAPI Specification file available as part of our full API documentation, located here:
-<a href="https://gsa.github.io/ITDB-schema/public-by-2025/api/data/gov/docs/index.html"> IT Collect API Documentation </a>
+<a href="https://gsa.github.io/ITDB-schema/public-by-2026/api/data/gov/docs/index.html"> IT Collect API Documentation </a>
 
 <p><small><a href="#">Back to top</a></small></p>
 
