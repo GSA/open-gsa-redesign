@@ -452,7 +452,14 @@ The Contract Awards API can be used to pull the deleted contracts by sending the
         </tr>
         <tr>
             <td>lastModifiedDate</td>
-            <td>Allows a single Date or a Date range.<br>lastModifiedDate=01/01/2019 or lastModifiedDate=[01/01/2019,05/29/2019]</td>
+            <td>Allows a single Date or a Date range. Returns contracts based on their Last Modified Date. <br>lastModifiedDate=01/01/2019 or lastModifiedDate=[01/01/2019,05/29/2019]</td>
+            <td>No</td>
+            <td>String</td>
+            <td>v1</td>
+        </tr>
+		<tr>
+            <td>publicDeltaDate</td>
+            <td>Allows a single Date or a Date range. Returns contracts based on their Last Modified Date or Reveal Date.<br>publicDeltaDate=01/01/2019 or publicDeltaDate=[01/01/2019,05/29/2019]</td>
             <td>No</td>
             <td>String</td>
             <td>v1</td>
@@ -6254,7 +6261,7 @@ Disclaimer:  **Limitation on Permissible Use of Dun & Bradstreet, Inc. (D&B) Dat
 Date | Version | Description
 ------|---------------|---------
 12/05/2025 | v1.0 | Base Version
-08/18/2026 | v1.0 | Added Commercial Product/Service
+08/25/2026 | v1.0 | Added Commercial Product/Service and publicDeltaDate
 
 
 <p><small><a href="#">Back to top</a></small></p>
