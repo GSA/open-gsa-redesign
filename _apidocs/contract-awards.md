@@ -111,7 +111,7 @@ The Contract Awards API can be used to pull the deleted contracts by sending the
 
 #### Individual (Personal) Accounts
 
-* The SAM.gov Federal or non-Federal registered users must obtain the API Key from the https://sam.gov/workspace/profile/account-details page using the field, “Public API Key”.<br>
+* The SAM.gov Federal or non-Federal registered users must obtain the API Key from the https://sam.gov/profile/details page using the field, “Public API Key”.<br>
   ![image info](v1/EYE_IMAGE.JPG)  
 * Click on the “Eye” icon, enter the “Enter One-time Password” (this value will be sent to your email address that is associated with your registered account), hit “Submit”, for the API Key value to appear in the box.
 
@@ -452,7 +452,14 @@ The Contract Awards API can be used to pull the deleted contracts by sending the
         </tr>
         <tr>
             <td>lastModifiedDate</td>
-            <td>Allows a single Date or a Date range.<br>lastModifiedDate=01/01/2019 or lastModifiedDate=[01/01/2019,05/29/2019]</td>
+            <td>Allows a single Date or a Date range. Returns contracts based on their Last Modified Date. <br>lastModifiedDate=01/01/2019 or lastModifiedDate=[01/01/2019,05/29/2019]</td>
+            <td>No</td>
+            <td>String</td>
+            <td>v1</td>
+        </tr>
+		<tr>
+            <td>publicDeltaDate</td>
+            <td>Allows a single Date or a Date range. Returns contracts based on their Last Modified Date or Reveal Date.<br>publicDeltaDate=01/01/2019 or publicDeltaDate=[01/01/2019,05/29/2019]</td>
             <td>No</td>
             <td>String</td>
             <td>v1</td>
@@ -1805,6 +1812,21 @@ The Contract Awards API can be used to pull the deleted contracts by sending the
         <tr>
             <td>coreData.productOrServiceInformation.productOrService.name</td>
             <td>Product Or Service Name</td>
+            <td>String</td>
+            <td>v1</td></tr>
+		<tr>
+            <td>coreData.productOrServiceInformation.commercialProductService</td>
+            <td>Commercial Product/Service</td>
+            <td>JSON Object</td>
+            <td>v1</td></tr>
+        <tr>
+            <td>coreData.productOrServiceInformation.commercialProductService.code</td>
+            <td>Commercial Product/Service Code</td>
+            <td>String</td>
+            <td>v1</td></tr>
+        <tr>
+            <td>coreData.productOrServiceInformation.commercialProductService.name</td>
+            <td>Commercial Product/Service Name</td>
             <td>String</td>
             <td>v1</td></tr>
         <tr>
@@ -6239,7 +6261,7 @@ Disclaimer:  **Limitation on Permissible Use of Dun & Bradstreet, Inc. (D&B) Dat
 Date | Version | Description
 ------|---------------|---------
 12/05/2025 | v1.0 | Base Version
-
+08/25/2026 | v1.0 | Added Commercial Product/Service and publicDeltaDate
 
 
 <p><small><a href="#">Back to top</a></small></p>
