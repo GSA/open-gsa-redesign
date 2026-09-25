@@ -47,8 +47,8 @@ used to filter and refine results.
 
 FOUO (CUI) data:
 
-- Users must have a Federal System Account with the "Read FOUO" in Subcontracting Plan Reports permission and
-  the respective API Key in SAM.gov.
+- Users must have a Federal System Account with the "Read FOUO" in Subcontracting Plan Reports permission and the
+  respective API Key in SAM.gov.
 - Users can make POST calls using a Restful API client such as Postman.
 
 ### System Accounts
@@ -63,12 +63,9 @@ FOUO (CUI) data:
 - After the above step is successfully completed, users will see a new section for retrieving the API Key. Users must
   enter the password to retrieve this value.
 - System Accounts must satisfy the following criteria to successfully utilize the Subcontracting Plan Reporting API:
-    - System Information
-      Unique System ID: The System Account ID
-    - Permissions
-      Subcontracting Plan Reports: Read FOUO –> Gives access to the Public and FOUO (CUI) data.
-    - Security Information
-      IP Address: List all the IP Addresses that the System invokes the API from.
+    - System Information Unique System ID: The System Account ID
+    - Permissions Subcontracting Plan Reports: Read FOUO –> Gives access to the Public and FOUO (CUI) data.
+    - Security Information IP Address: List all the IP Addresses that the System invokes the API from.
     - Type of Connection: REST APIs
     - System Account Password
     - System Account API Key
@@ -86,24 +83,24 @@ FOUO (CUI) data:
 The Subcontract Plan Reports API offers several optional search parameters that can be provided independently or in
 combination with each other. All parameters are optional.
 
-| #  | Parameter Name               | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | Applicable Versions |
-|----|------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------|
-| 1  | -                            | Users can obtain the entire dataset consisting of Individual Subcontract Reports (ISR) and Summary Subcontract Reports (SSR).<br/><br/>Request Body:<br/>`{}`                                                                                                                                                                                                                                                                                                                                                                                             | V1                  |
-| 2  | organizationCode             | Code representing the federal organization to which an ISR or SSR is reported.<br/><br/>Examples of Request Body:<br/>`{"organizationCode": "4732"}` <br/>`{"organizationCode": "9700~8000"}`                                                                                                                                                                                                                                                                                                                                                             | V1                  |
-| 3  | submitter                    | Submitter of the ISR or SSR. <br/><br/>Examples of Request Body:<br/>`{"submitter": "Prime Contractor"}`<br/> `{"submitter": "subcontractor~both"}`                                                                                                                                                                                                                                                                                                                                                                                                       | V1                  |
-| 4  | reportSubmittedDate          | Date an ISR or SSR was submitted on.<br/><br/>Examples of Request Body:<br/>`{"reportSubmittedDate": "03/31/2025"}`<br/>`{"reportSubmittedDate": "[,03/31/2026]"}`<br/>`{"reportSubmittedDate": "[04/24/2026,]"}`<br/>`{"reportSubmittedDate": "[03/01/2026,07/31/2026]"}`                                                                                                                                                                                                                                                                                | V1                  |
-| 5  | reportFiscalYear             | Fiscal Year an ISR or SSR was submitted for.<br/><br/>Examples of Request Body:<br/>`{"reportFiscalYear": "2026"}`<br/>`{"reportFiscalYear": "2026~2025~2024"}`                                                                                                                                                                                                                                                                                                                                                                                           | V1                  |
-| 6  | reportingPeriod              | Reporting Period an ISR or SSR was submitted for.<br/><br/>Examples of Request Body:<br/>`{"reportingPeriod": "march 31"}`<br/>`{"reportingPeriod": "FINAL"}`<br/>`{"reportingPeriod": "March 31~September 30"}`                                                                                                                                                                                                                                                                                                                                          | V1                  |
-| 7  | reportType                   | Type of the report.<br/><br/>Examples of Request Body:<br/>`{"reportType": "Individual"}`<br/>`{"reportType": "Summary Individual"}`<br/>`{"reportType": "Summary Individual~summary commercial"}`<br/>`{"reportType": "SUMMARY DOD COMPREHENSIVE"}`                                                                                                                                                                                                                                                                                                      | V1                  |
-| 8  | uniqueEntityID               | Unique Entity ID of the contractor.<br/><br/>Examples of Request Body:<br/>`{"uniqueEntityID": "NACNDU85S2Q2"}`<br/>`{"uniqueEntityID": "NACNDU85S2Q2~C8VFSNKTMQB6"}`                                                                                                                                                                                                                                                                                                                                                                                     | V1                  |
-| 9  | legalBusinessName            | Legal Business Name/Entity Name of the contractor.<br/><br/>Examples of Request Body:<br/>`{"legalBusinessName": "WORLD WIDE TECHNOLOGY, INC."}`<br/>`{"legalBusinessName": "world wide technology, inc."}`<br/>`{"legalBusinessName": "JBS INTERNATIONAL, INC.~Colonial Oil Industries, Inc."}`<br/><br/>Note: Partial searches are not allowed.                                                                                                                                                                                                         | V1                  |
-| 10 | ultimateParentUniqueEntityID | Ultimate Parent Unique Entity ID of the contractor.<br/><br/>Examples of Request Body:<br/>`{"ultimateParentUniqueEntityID": "NACNDU85S2Q2"}`<br/>`{"ultimateParentUniqueEntityID": "NACNDU85S2Q2~C8VFSNKTMQB6"}`<br/>`{"ultimateParentUniqueEntityID": null}`                                                                                                                                                                                                                                                                                            | V1                  |
-| 11 | piid                         | Procurement Instrument Identifier (PIID) of the Prime Contract that the ISR was submitted for.<br/><br/>Examples of Request Body:<br/>`{"piid": "80GSFC22CA020"}`<br/>`{"piid": "80GSFC22CA020~GS00F006DA"}`                                                                                                                                                                                                                                                                                                                                              | V1                  |
-| 12 | referenceIdvPiid             | Reference IDV PIID of the Prime Contract that the ISR was submitted for.<br/><br/>Examples of Request Body:<br/>`{"referencedIdvPiid": "SAQMMA13A0229"}`<br/>`{"referencedIdvPiid": "SAQMMA13A0229~N0002420G4107"}`                                                                                                                                                                                                                                                                                                                                       | V1                  |
-| 13 | subcontractNumber            | Subcontract ID that the ISR was submitted for.<br/><br/>Examples of Request Body:<br/>`{"subcontractNumber": "4202831076"}`<br/>`{"subcontractNumber": "4202831076~PO-000738"}`                                                                                                                                                                                                                                                                                                                                                                           | V1                  |
-| 14 | includeSections              | To include only the sections that the user wants to get in the response. Acceptable values:<br/>- reportDate <br/>- entityData <br/>- contractData <br/>- taskOrdersData <br/>- departmentAllocationPercentageData <br/>- goalsAndActualsData <br/>- remarks <br/>- certificationData <br/>- dodComprehensiveAttachments<br/><br/>Examples of Request Body:<br/>`{"reportFiscalYear": "2026", "includeSections": "reportData"}`<br/>`{"reportType": "Summary DoD Comprehensive", "includeSections": "reportData~entityData~dodComprehensiveAttachments"}` | V1                  |
-| 15 | page                         | The page number that the user wants to access.<br/><br/>Examples of Request Body:<br/>`{"submitter": "Both","page": "20"}`<br/>`{"reportFiscalYear": "2026", "page": "5", "size": "25"}`                                                                                                                                                                                                                                                                                                                                                                  | V1                  |
-| 16 | size                         | The maximum number of records returned on each page is 100, but a lesser number can be requested.<br/><br/>Examples of Request Body:<br/>`{"submitter": "Both", "size": "25"}`<br/>`{"reportFiscalYear": "2026", "page": "5", "size": "25"}`                                                                                                                                                                                                                                                                                                              | V1                  |
+| #  | Parameter Name               | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | Applicable Versions |
+|----|------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------|
+| 1  | -                            | Users can obtain the entire dataset consisting of Individual Subcontract Reports (ISR) and Summary Subcontract Reports (SSR).<br/><br/>Request Body:<br/>`{}`                                                                                                                                                                                                                                                                                                                                                                                                        | V1                  |
+| 2  | organizationCode             | Code representing the federal organization to which an ISR or SSR is reported.<br/><br/>Examples of Request Body:<br/>`{"organizationCode": "4732"}` <br/>`{"organizationCode": "9700~8000"}`                                                                                                                                                                                                                                                                                                                                                                        | V1                  |
+| 3  | submitter                    | Submitter of the ISR or SSR. <br/><br/>Examples of Request Body:<br/>`{"submitter": "Prime Contractor"}`<br/> `{"submitter": "subcontractor~both"}`                                                                                                                                                                                                                                                                                                                                                                                                                  | V1                  |
+| 4  | reportSubmittedDate          | Date an ISR or SSR was submitted on.<br/><br/>Examples of Request Body:<br/>`{"reportSubmittedDate": "03/31/2025"}`<br/>`{"reportSubmittedDate": "[,03/31/2026]"}`<br/>`{"reportSubmittedDate": "[04/24/2026,]"}`<br/>`{"reportSubmittedDate": "[03/01/2026,07/31/2026]"}`                                                                                                                                                                                                                                                                                           | V1                  |
+| 5  | reportFiscalYear             | Fiscal Year an ISR or SSR was submitted for.<br/><br/>Examples of Request Body:<br/>`{"reportFiscalYear": "2026"}`<br/>`{"reportFiscalYear": "2026~2025~2024"}`                                                                                                                                                                                                                                                                                                                                                                                                      | V1                  |
+| 6  | reportingPeriod              | Reporting Period an ISR or SSR was submitted for.<br/><br/>Examples of Request Body:<br/>`{"reportingPeriod": "march 31"}`<br/>`{"reportingPeriod": "FINAL"}`<br/>`{"reportingPeriod": "March 31~September 30"}`                                                                                                                                                                                                                                                                                                                                                     | V1                  |
+| 7  | reportType                   | Type of the report.<br/><br/>Examples of Request Body:<br/>`{"reportType": "Individual"}`<br/>`{"reportType": "Summary Individual"}`<br/>`{"reportType": "Summary Individual~summary commercial"}`<br/>`{"reportType": "SUMMARY DOD COMPREHENSIVE"}`                                                                                                                                                                                                                                                                                                                 | V1                  |
+| 8  | uniqueEntityID               | Unique Entity ID of the contractor.<br/><br/>Examples of Request Body:<br/>`{"uniqueEntityID": "NACNDU85S2Q2"}`<br/>`{"uniqueEntityID": "NACNDU85S2Q2~C8VFSNKTMQB6"}`                                                                                                                                                                                                                                                                                                                                                                                                | V1                  |
+| 9  | legalBusinessName            | Legal Business Name/Entity Name of the contractor.<br/><br/>Examples of Request Body:<br/>`{"legalBusinessName": "WORLD WIDE TECHNOLOGY, INC."}`<br/>`{"legalBusinessName": "world wide technology, inc."}`<br/>`{"legalBusinessName": "JBS INTERNATIONAL, INC.~Colonial Oil Industries, Inc."}`<br/><br/>Note: Partial searches are not allowed.                                                                                                                                                                                                                    | V1                  |
+| 10 | ultimateParentUniqueEntityID | Ultimate Parent Unique Entity ID of the contractor.<br/><br/>Examples of Request Body:<br/>`{"ultimateParentUniqueEntityID": "NACNDU85S2Q2"}`<br/>`{"ultimateParentUniqueEntityID": "NACNDU85S2Q2~C8VFSNKTMQB6"}`<br/>`{"ultimateParentUniqueEntityID": null}`                                                                                                                                                                                                                                                                                                       | V1                  |
+| 11 | piid                         | Procurement Instrument Identifier (PIID) of the Prime Contract that the ISR was submitted for.<br/><br/>Examples of Request Body:<br/>`{"piid": "80GSFC22CA020"}`<br/>`{"piid": "80GSFC22CA020~GS00F006DA"}`                                                                                                                                                                                                                                                                                                                                                         | V1                  |
+| 12 | referenceIdvPiid             | Reference IDV PIID of the Prime Contract that the ISR was submitted for.<br/><br/>Examples of Request Body:<br/>`{"referencedIdvPiid": "SAQMMA13A0229"}`<br/>`{"referencedIdvPiid": "SAQMMA13A0229~N0002420G4107"}`                                                                                                                                                                                                                                                                                                                                                  | V1                  |
+| 13 | subcontractNumber            | Subcontract ID that the ISR was submitted for.<br/><br/>Examples of Request Body:<br/>`{"subcontractNumber": "4202831076"}`<br/>`{"subcontractNumber": "4202831076~PO-000738"}`                                                                                                                                                                                                                                                                                                                                                                                      | V1                  |
+| 14 | includeSections              | To include only the sections that the user wants to get in the response. Acceptable values:<br/>- all <br/>- reportDate <br/>- entityData <br/>- contractData <br/>- taskOrdersData <br/>- departmentAllocationPercentageData <br/>- goalsAndActualsData <br/>- remarks <br/>- certificationData <br/>- dodComprehensiveAttachments<br/><br/>Examples of Request Body:<br/>`{"reportFiscalYear": "2026", "includeSections": "reportData"}`<br/>`{"reportType": "Summary DoD Comprehensive", "includeSections": "reportData~entityData~dodComprehensiveAttachments"}` | V1                  |
+| 15 | page                         | The page number that the user wants to access.<br/><br/>Examples of Request Body:<br/>`{"submitter": "Both","page": "20"}`<br/>`{"reportFiscalYear": "2026", "page": "5", "size": "25"}`                                                                                                                                                                                                                                                                                                                                                                             | V1                  |
+| 16 | size                         | The maximum number of records returned on each page is 100, but a lesser number can be requested.<br/><br/>Examples of Request Body:<br/>`{"submitter": "Both", "size": "25"}`<br/>`{"reportFiscalYear": "2026", "page": "5", "size": "25"}`                                                                                                                                                                                                                                                                                                                         | V1                  |
 
 ### Response Schema
 
@@ -968,6 +965,7 @@ The API will return one of the following responses:
 #### Curl Request
 
 #### Prod
+
 ```bash
 curl -X POST \
   'https://api.sam.gov/spr/v1/search?api_key=<API KEY>' \
@@ -981,6 +979,7 @@ curl -X POST \
 ```
 
 #### Alpha
+
 ```bash
 curl -X POST \
   'https://api-alpha.sam.gov/spr/v1/search?api_key=<API KEY>' \
@@ -1115,7 +1114,8 @@ curl -X POST \
                 }
               ]
             }
-          }],
+          }
+        ],
         "departmentAllocationPercentageData": "Not Applicable",
         "goalsAndActualsData": {
           "businessCategories": {
@@ -1261,8 +1261,8 @@ curl -X POST \
           "genericEmailAddressOrUrl": "https://entity.com"
         }
       }
-
-    }],
+    }
+  ],
   "links": {
     "selfLink": "https://api-alpha.sam.gov/spr/v1/search?page=0&size=10",
     "nextLink": "https://api-alpha.sam.gov/spr/v1/search?page=1&size=10"
@@ -1283,6 +1283,7 @@ curl -X POST \
 #### Curl Request
 
 #### Prod
+
 ```bash
 curl -X POST \
   'https://api.sam.gov/spr/v1/search?api_key=<API KEY>' \
@@ -1298,6 +1299,7 @@ curl -X POST \
 ```
 
 #### Alpha
+
 ```bash
 curl -X POST \
   'https://api-alpha.sam.gov/spr/v1/search?api_key=<API KEY>' \
@@ -1491,8 +1493,6 @@ curl -X POST \
         "remarks": "test"
       }
     },
-
-
     {
       "reportData": {
         "reportType": "Summary Commercial",
@@ -1852,7 +1852,6 @@ curl -X POST \
 
 ### Example 3: I would like to obtain all the Summary DoD Comprehensive reports submitted for a given fiscal year and period, with specific sections in the response.
 
-
 #### Request URL
 
 - **Production:** https://api.sam.gov/spr/v1/search
@@ -1861,6 +1860,7 @@ curl -X POST \
 #### Curl Request
 
 #### Prod
+
 ```bash
 curl -X POST \
   'https://api.sam.gov/spr/v1/search?api_key=<API KEY>' \
@@ -1876,6 +1876,7 @@ curl -X POST \
 ```
 
 #### Alpha
+
 ```bash
 curl -X POST \
   'https://api-alpha.sam.gov/spr/v1/search?api_key=<API KEY>' \
@@ -2100,7 +2101,7 @@ curl -X POST \
         {
           "name": "Attachment Name",
           "url": "URL"
-        },
+        }
       ]
     },
     {
@@ -2301,7 +2302,7 @@ curl -X POST \
         {
           "name": "Attachment Name",
           "url": "URL"
-        },
+        }
       ]
     }
   ],
@@ -2362,8 +2363,8 @@ the [Variance Document](https://open.gsa.gov/api/entity-api/LegacySAMvsBetaSAM-E
   iv. Confirm you used POST and not GET for this request (Sensitive Calls)  
   v. Confirm that the API key is from a System Account (FOUO & Sensitive Calls)  
   vi. Confirm that the API key being used is still active  
-  vii. Confirm that the System Account you are using has "read fouo" or "read sensitive" permissions as applicable (
-  FOUO & Sensitive Calls)  
+  vii. Confirm that the System Account you are using has "read fouo" or "read sensitive" permissions as applicable
+  (FOUO & Sensitive Calls)  
   viii. Confirm that the IP addresses registered with your System Account are current
 
   b. When submitting help desk tickets for API or system connection issues, provide the following:
@@ -2399,7 +2400,7 @@ the [Variance Document](https://open.gsa.gov/api/entity-api/LegacySAMvsBetaSAM-E
     1. Option A:  
        I have already navigated to alpha.sam.gov and created a user account, following the same steps for creating an
        account in sam.gov.  
-       I would like to conduct testing but do not have the necessary role(s) in alpha.sam.gov.  
+       I would like to conduct testing but do not have the necessary role (s) in alpha.sam.gov.  
        The account that needs role assignment is associated with [EMAIL ADDRESS].  
        I request a [ROLE] role for the [DOMAIN] domain in alpha.sam.gov.
 
