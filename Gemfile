@@ -14,6 +14,6 @@ group :development, :test do
   gem 'html-proofer'
   gem 'eslintrb'
   gem 'test-unit'
-  gem 'json-schema'
+  gem 'json_schemer'
   gem 'webrick'
 end
