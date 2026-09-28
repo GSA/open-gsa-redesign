@@ -2067,9 +2067,9 @@ curl -X POST \
               "actualsTotalContractPercentage": "Not Applicable"
             },
             "summaryReport": {
-              "totalGoalsWholeDollars": "Not Applicable",
-              "totalGoalsPercentage": "Not Applicable",
-              "totalActualsWholeDollars": "507520552",
+              "totalGoalsWholeDollars": "200",
+              "totalGoalsPercentage": "100",
+              "totalActualsWholeDollars": "200",
               "totalActualsPercentage": "100"
             }
           }
