@@ -1241,10 +1241,10 @@ curl -X POST \
                 "actualsTotalContractPercentage": "0.057"
               },
               "summaryReport": {
-                "totalGoalsWholeDollars": "",
-                "totalGoalsPercentage": "",
-                "totalActualsWholeDollars": "",
-                "totalActualsPercentage": ""
+                "totalGoalsWholeDollars": "Not Applicable",
+                "totalGoalsPercentage": "Not Applicable",
+                "totalActualsWholeDollars": "Not Applicable",
+                "totalActualsPercentage": "Not Applicable"
               }
             }
           }
