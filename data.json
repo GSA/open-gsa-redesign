@@ -8648,7 +8648,7 @@
       "@type": "dcat:Dataset",
       "title": "GSA Enterprise Data Inventory (EDI)",
       "description": "GSA Enterprise Data Inventory (EDI)",
-      "modified": "2026-09-29T12:48:59.356Z",
+      "modified": "2026-10-05T12:49:23.482Z",
       "accessLevel": "public",
       "identifier": "GSA-2015-11-13-01",
       "dataQuality": true,
@@ -8672,8 +8672,8 @@
         {
           "@type": "dcat:Distribution",
           "mediaType": "application/json",
-          "title": "9.29.26data.json",
-          "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/bc5a0a6e-d806-4751-874d-3b9e2faf251e/download/9.29.26data.json",
+          "title": "10.5.26data.json",
+          "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/a62577f8-24d4-4c59-a4dd-078792953d8e/download/10.5.26data.json",
           "license": "https://creativecommons.org/publicdomain/zero/1.0/"
         }
       ],
@@ -18517,54 +18517,6 @@
         "leasing",
         "pbs",
         "policy"
-      ],
-      "bureauCode": [
-        "000:00"
-      ],
-      "programCode": [
-        "000:000"
-      ],
-      "language": [
-        "en"
-      ],
-      "accessRights": "public"
-    },
-    {
-      "@type": "dcat:Dataset",
-      "title": "Leasing Desk Guide",
-      "description": "Leasing policy and procedures are reflected in the Leasing Desk Guide (LDG) and through other policy information such as Leasing Alerts, Lease Acquisition Circulars (LACs), and Realty Services Letters (RSLs).\n\nPolicies are effective until they are canceled by additional LDG issuances, Leasing Alerts, or LACs.",
-      "modified": "2022-09-30T14:51:13.754Z",
-      "accessLevel": "public",
-      "identifier": "GSA-2022-09-30-06",
-      "rights": [
-        "true"
-      ],
-      "publisher": {
-        "@type": "org:Organization",
-        "name": "Public Buildings Service",
-        "subOrganizationOf": [
-          {
-            "@type": "org:Organization",
-            "name": "General Services Administration"
-          }
-        ]
-      },
-      "contactPoint": {
-        "@type": "vcard:Contact",
-        "fn": "Matt Crothers",
-        "hasEmail": "mailto:matthew.crothers@gsa.gov"
-      },
-      "distribution": [
-        {
-          "@type": "dcat:Distribution",
-          "accessURL": "https://www.gsa.gov/real-estate/real-estate-services/leasing/leasing-policy",
-          "title": "Leasing Desk Guide"
-        }
-      ],
-      "keyword": [
-        "leasing",
-        "leasing desk",
-        "pbs"
       ],
       "bureauCode": [
         "000:00"
