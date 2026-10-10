@@ -1,20 +1,19 @@
 ---
-title: Data.gov Catalog API
-banner-heading: Data.gov Catalog API
+title: Data.gov Harvester API
+banner-heading: Data.gov Harvester API
 ---
 
 ## Overview
 
-The Data.gov Catalog API provides access to metadata about datasets published by federal, state, local, and tribal governments. You can use it to search for datasets, filter by organization or topic, and retrieve detailed information about individual records.
+The Data.gov Harvester API provides programmatic access to Data.gov's harvest infrastructure — the system that collects dataset metadata from federal agencies and other publishers. Use it to look up harvest sources, check job status, and investigate harvest errors.
 
-Note: This metadata includes URLs, descriptions, and DCAT-US fields for each dataset. It does not include the underlying data itself.
+Complete API documentation is available at [resources.data.gov/harvester-api](https://resources.data.gov/harvester-api/).
 
-Complete API documentation is available at [resources.data.gov/catalog-api](https://resources.data.gov/catalog-api/).
 <p><small><a href="#">Back to top</a></small></p>
 
 ## Getting Started
 
-To begin using this API, you will need to register for an API Key. You can sign up for an API key below.  After registration, you will need to provide this API key in the `x-api-key` HTTP header with every API request.
+To begin using this API, you will need to register for an API Key. You can sign up for an API key below. After registration, you will need to provide this API key in the `x-api-key` HTTP header with every API request.
 
 | HTTP Header Name | Description |
 | --- | --- |
@@ -91,13 +90,17 @@ To begin using this API, you will need to register for an API Key. You can sign 
 <noscript>Please enable JavaScript to signup for an <a href="http://api.data.gov/">api.data.gov</a> API key.</noscript>
 {% endraw %}  
 
-**Base URL:** `https://api.gsa.gov/technology/datagov/v4`
+**Base URL:** `https://api.gsa.gov/technology/datagov_harvest/v2`
 
-**Example query** — search for water quality datasets:
+**Example query** — list all registered harvest sources:
 
 ```
-GET https://api.gsa.gov/technology/datagov/v4/search?q=water+quality&api_key=DEMO_KEY
+GET https://api.gsa.gov/technology/datagov_harvest/v2/harvest_sources/?api_key=DEMO_KEY
 ```
+
+| HTTP Header Name | Description |
+| --- | --- |
+| x-api-key | API key from api.data.gov. For sample purposes, you can use `DEMO_KEY` as an API key. |
 
 <p><small><a href="#">Back to top</a></small></p>
 
@@ -107,33 +110,33 @@ GET https://api.gsa.gov/technology/datagov/v4/search?q=water+quality&api_key=DEM
 
 | Endpoint | Description |
 | --- | --- |
-| `GET /search` | Search datasets by keyword, organization, topic, or geography |
-| `GET /api/organizations` | List all organizations publishing datasets in the catalog |
-| `GET /api/keywords` | List the most commonly used dataset keywords |
-| `GET /api/locations/search` | Search for location names to use with spatial filtering |
-| `GET /api/location/{location_id}` | Retrieve the geographic boundary (GeoJSON) for a location |
-| `GET /harvest_record/{record_id}` | Retrieve harvest record metadata for a specific dataset |
-| `GET /harvest_record/{record_id}/raw` | Retrieve the original source payload for a harvest record |
-| `GET /harvest_record/{record_id}/transformed` | Retrieve the transformed DCAT-US payload for a harvest record |
+| `GET /harvest_sources/` | List all registered harvest sources |
+| `GET /harvest_source/{source_id}` | Get a specific harvest source |
+| `GET /harvest_source/{source_id}/jobs` | List harvest jobs for a source |
+| `GET /organization/` | List all organizations with harvest sources |
+| `GET /organization/{org_id}` | Get a specific organization |
+| `GET /harvest_job/{job_id}` | Get a specific harvest job |
+| `GET /harvest_job/{job_id}/errors` | Get errors for a harvest job |
+| `GET /harvest_record/{record_id}` | Get a specific harvest record |
+| `GET /harvest_record/{record_id}/raw` | Get the original source payload for a record |
+| `GET /harvest_record/{record_id}/transformed` | Get the transformed DCAT-US payload for a record |
+| `POST /validate` | Validate a DCAT-US catalog against the 1.1 schema |
 
 ### Key features
 
-- **Full-text search** with keyword, organization, and geographic filters
-- **DCAT-US metadata** returned for every dataset result
-- **Cursor-based pagination** for reliable traversal of large result sets
-- **Spatial filtering** by GeoJSON geometry or named location
+- **Source management** — look up harvest sources by organization or ID
+- **Job tracking** — retrieve status and record counts for harvest runs
+- **Error inspection** — surface validation and processing errors at the record level
+- **Raw and transformed payloads** — access both the original source metadata and the DCAT-US version after transformation
+- **Catalog validation** — validate a data.json file against the DCAT-US 1.1 schema before submitting
 
-Complete documentation, including request parameters, response field definitions, and pagination details, is available at [resources.data.gov/catalog-api](https://resources.data.gov/catalog-api/).
-
-### Previous CKAN-based API
-
-The prior CKAN endpoint (`https://api.gsa.gov/technology/datagov/v3/`) remains available in a read-only state for existing integrations. New development should use the Catalog API described above.
+Complete documentation, including request parameters, response field definitions, and example responses, is available at [resources.data.gov/harvester-api](https://resources.data.gov/harvester-api/).
 
 <p><small><a href="#">Back to top</a></small></p>
 
 ## OpenAPI Specification File
 
-You can view the full details of this API in the OpenAPI Specification file available here: [Open API specification file for the Data.gov Catalog API](https://open.gsa.gov/api/datadotgov/v4/open.json).
+You can view the full details of this API in the OpenAPI Specification file available here: [OpenAPI specification file for the Data.gov Harvester API](https://api.gsa.gov/technology/datagov_harvest/v2/openapi.json?api_key=DEMO_KEY).
 
 <p><small><a href="#">Back to top</a></small></p>
 
