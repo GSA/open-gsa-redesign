@@ -42,7 +42,7 @@
     "stylelint-config-standard-scss": "^15.0.1",
     "stylelint-scss": "^6.12.1",
     "swagger-ui-dist": "^5.32.8",
-    "uswds": "^1.6.13"
+    "uswds": "^2.14.0"
   },
   "dependencies": {
     "details-polyfill": "^1.2.0",
