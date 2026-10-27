@@ -8648,7 +8648,7 @@
       "@type": "dcat:Dataset",
       "title": "GSA Enterprise Data Inventory (EDI)",
       "description": "GSA Enterprise Data Inventory (EDI)",
-      "modified": "2026-10-19T13:18:01.648Z",
+      "modified": "2026-10-27T13:17:26.903Z",
       "accessLevel": "public",
       "identifier": "GSA-2015-11-13-01",
       "dataQuality": true,
@@ -8672,8 +8672,8 @@
         {
           "@type": "dcat:Distribution",
           "mediaType": "application/json",
-          "title": "10.19.26data.json",
-          "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/b679bf52-aaaa-4c64-a249-a868198960f3/download/10.19.26data.json",
+          "title": "10.27.26data.json",
+          "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/cf3243f4-f731-4857-b8f4-01373c8020bd/download/10.27.26data.json",
           "license": "https://creativecommons.org/publicdomain/zero/1.0/"
         }
       ],
@@ -19350,8 +19350,8 @@
     {
       "@type": "dcat:Dataset",
       "title": "Federal Real Property Profile (FRPP)",
-      "description": "An ISO compliant metadata file to be used for harvesting the FRPP NGDA to the geoPlatform.",
-      "modified": "2026-06-01T12:32:58.905Z",
+      "description": "An ISO compliant metadata file to be used for harvesting the FRPP NGDA to the geoPlatform.   Assets on a campus or installation may share one main address or identical Lat/Long coordinates and appear stacked visually, but each remains a unique GIS feature. Due to national security and other authorized exclusions, some FRPP data is not available to the public.",
+      "modified": "2026-10-27T14:53:48.099Z",
       "accessLevel": "public",
       "identifier": "GSA-2023-10-30-01",
       "dataQuality": true,
@@ -20303,8 +20303,8 @@
     {
       "@type": "dcat:Dataset",
       "title": "FY 2025 Federal Real Property Profile (FRPP) Public Dataset",
-      "description": "The Federal Real Property Profile Management System (FRPP MS) is the federal government’s centralized inventory of real property under the custody and control of executive branch agencies. Due to national security and other authorized exclusions, some FRPP data is not available to the public.",
-      "modified": "2026-09-24T13:17:07.232Z",
+      "description": "The Federal Real Property Profile Management System (FRPP MS) is the federal government’s centralized inventory of real property under the custody and control of executive branch agencies. Assets on a campus or installation may share one main address or identical Lat/Long coordinates and appear stacked visually, but each remains a unique GIS feature. Due to national security and other authorized exclusions, some FRPP data is not available to the public.",
+      "modified": "2026-10-27T14:53:07.887Z",
       "accessLevel": "public",
       "identifier": "GSA-26-09-24-01",
       "dataQuality": true,
