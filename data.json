@@ -2172,7 +2172,7 @@
       "@type": "dcat:Dataset",
       "title": "Real Estate Across the United States (REXUS) Inventory (Building)",
       "description": "Real Estate Across the United States (REXUS) is the primary tool used by PBS to track and manage the government's real property assets and to store inventory data, building data, customer data, and lease information. STAR manages aspects of real property space management, including identification of all building space and daily management of 22,000 assignments for all property to its client Federal agencies. This data set contains PBS building inventory that consists of both owned and leased buildings with active and excess status.",
-      "modified": "2026-10-05T12:46:59.811Z",
+      "modified": "2026-11-02T14:42:28.177Z",
       "accessLevel": "public",
       "identifier": "GSA-25251",
       "dataQuality": true,
@@ -2202,7 +2202,7 @@
           "@type": "dcat:Distribution",
           "mediaType": "text/csv",
           "title": "data_gov_bldg_rexus.csv",
-          "downloadURL": "https://inventory.data.gov/dataset/04247624-1d6b-4e03-84eb-9eda1a6ea638/resource/ffeb547d-cb1e-4cc6-a085-7370e94c1930/download/data_gov_bldg_rexus.csv",
+          "downloadURL": "https://inventory.data.gov/dataset/04247624-1d6b-4e03-84eb-9eda1a6ea638/resource/1749de8d-0e60-4ad1-a31d-541a5da965d8/download/data_gov_bldg_rexus.csv",
           "license": "https://creativecommons.org/publicdomain/zero/1.0/"
         }
       ],
@@ -2229,7 +2229,7 @@
       "@type": "dcat:Dataset",
       "title": "Real Estate Across the United States (REXUS) (Lease)",
       "description": "Real Estate Across the United States (REXUS) is the primary tool used by PBS to track and manage the government's real property assets and to store inventory data, building data, customer data, and lease information. STAR manages aspects of real property space management, including identification of all building space and daily management of 22,000 assignments for all property to its client Federal agencies. This data set contains PBS building inventory that consists of both owned and leased buildings with active and excess status.",
-      "modified": "2026-10-05T12:46:14.092Z",
+      "modified": "2026-11-02T14:41:27.992Z",
       "accessLevel": "public",
       "identifier": "GSA-25261",
       "dataQuality": true,
@@ -2253,7 +2253,7 @@
           "@type": "dcat:Distribution",
           "mediaType": "text/csv",
           "title": "data_gov_lse_rexus.csv",
-          "downloadURL": "https://inventory.data.gov/dataset/2cdc97b5-3029-4ec3-b3bf-baec7948bad1/resource/88674892-4fd9-4bb0-b303-c86b9b7c8385/download/data_gov_lse_rexus.csv",
+          "downloadURL": "https://inventory.data.gov/dataset/2cdc97b5-3029-4ec3-b3bf-baec7948bad1/resource/32478ec5-a9ee-40f2-80b1-6a0c4557a115/download/data_gov_lse_rexus.csv",
           "license": "http://www.usa.gov/publicdomain/label/1.0/"
         }
       ],
@@ -4194,7 +4194,7 @@
       "@type": "dcat:Dataset",
       "title": "Inventory of Owned and Leased Properties (IOLP)",
       "description": "The Inventory of Owned and Leased Properties (IOLP) allows users to search properties owned and leased by the General Services Administration (GSA) across the United States, Puerto Rico, Guam and American Samoa.\n\nThe Owned and Leased Data Sets include the following data except where noted below for Leases:\n\n- Location Code - GSA’s alphanumeric identifier for the building\n- Real Property Asset Name - Allows users to find information about a specific building \n- Installation Name - Allows users to identify whether a property is part of an installation, such as a campus\n- Owned or Leased - Indicates the building is federally owned (F) or leased (L)\n- GSA Region - GSA assigned region for building location\n- Street Address/City/State/Zip Code - Building address\n- Longitude and Latitude - Map coordinates of the building (only through .csv export)\n- Rentable Square Feet - Total rentable square feet in building\n- Available Square Feet - Vacant space in building\n- Construction Date (Owned Only) - Year built\n- Congressional District - Congressional District building is located\n- Senator/Representative/URL - Senator/Representative of the Congressional District and their URL\n- Building Status (Owned Only) - Indicates building is active\n- Lease Number (Leased Only) - GSA’s alphanumeric identifier for the lease\n- Lease Effective/Expiration Dates (Leased Only) - Date lease starts/expires\n- Real Property Asset Type - Identifies a property as land, building, or structure",
-      "modified": "2026-10-27T13:15:08.310Z",
+      "modified": "2026-11-02T14:40:21.966Z",
       "accessLevel": "public",
       "identifier": "GSA-4495",
       "dataQuality": true,
@@ -4230,15 +4230,15 @@
         {
           "@type": "dcat:Distribution",
           "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-          "title": "2026 - 10 - 23 - IOLP Buildings.xlsx",
-          "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/a07671a5-037d-4a2b-8f52-3a556f0a2422/download/2026-10-23-iolp-buildings.xlsx",
+          "title": "2026 - 10 - 30 - IOLP Leases.xlsx",
+          "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/13886719-6b8a-4596-8c82-5b32664005f7/download/2026-10-30-iolp-leases.xlsx",
           "license": "https://creativecommons.org/publicdomain/zero/1.0/"
         },
         {
           "@type": "dcat:Distribution",
           "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-          "title": "2026 - 10 - 23 - IOLP Leases.xlsx",
-          "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/dec19a67-3126-4eaa-9835-2ef8f46c2238/download/2026-10-23-iolp-leases.xlsx",
+          "title": "2026 - 10 - 30 - IOLP Buildings.xlsx",
+          "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/ad1a66f2-8019-43d9-b625-ea55e1f09677/download/2026-10-30-iolp-buildings.xlsx",
           "license": "https://creativecommons.org/publicdomain/zero/1.0/"
         }
       ],
@@ -8648,7 +8648,7 @@
       "@type": "dcat:Dataset",
       "title": "GSA Enterprise Data Inventory (EDI)",
       "description": "GSA Enterprise Data Inventory (EDI)",
-      "modified": "2026-10-27T13:17:26.903Z",
+      "modified": "2026-10-27T14:57:21.855Z",
       "accessLevel": "public",
       "identifier": "GSA-2015-11-13-01",
       "dataQuality": true,
@@ -8673,7 +8673,7 @@
           "@type": "dcat:Distribution",
           "mediaType": "application/json",
           "title": "10.27.26data.json",
-          "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/cf3243f4-f731-4857-b8f4-01373c8020bd/download/10.27.26data.json",
+          "downloadURL": "https://inventory.data.gov/dataset/acf8e47e-24d2-4e4d-a786-847643f101fd/resource/4b57f600-181d-4b3b-a724-762fb94a187a/download/10.27.26data.json",
           "license": "https://creativecommons.org/publicdomain/zero/1.0/"
         }
       ],
