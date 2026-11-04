@@ -138,7 +138,7 @@ The Contract Awards API can be used to pull the deleted contracts by sending the
 
 ### API Key Rate Limits
 
-| Type of User Account| Type of API Key | Default API Daily Rate Limit 
+| Type of User Account| Type of API Key | Default API Daily Rate Limit
 | ---------------------------|---------------------------|------------------------------|
 | Non-federal user with no Role in SAM.gov | Personal API key | 10 requests/day |
 | Non-federal user with a Role in SAM.gov | Personal API key | 1,000 requests/day |
@@ -254,7 +254,7 @@ The Contract Awards API can be used to pull the deleted contracts by sending the
             <td>String</td>
             <td>v1</td>
         </tr>
-		  <tr>
+ <tr>
             <td>deletedStatus</td>
             <td>Allows value equal to 'yes'. Returns contracts deleted within the last 6 months.<br> Example: deletedStatus=yes</td>
             <td>No</td>
@@ -457,7 +457,7 @@ The Contract Awards API can be used to pull the deleted contracts by sending the
             <td>String</td>
             <td>v1</td>
         </tr>
-		<tr>
+<tr>
             <td>publicDeltaDate</td>
             <td>Allows a single Date or a Date range. Returns contracts based on their Last Modified Date or Reveal Date.<br>publicDeltaDate=01/01/2019 or publicDeltaDate=[01/01/2019,05/29/2019]</td>
             <td>No</td>
@@ -1129,7 +1129,7 @@ The Contract Awards API can be used to pull the deleted contracts by sending the
             <td>Subtier</td>
             <td>JSON object</td>
             <td>v1</td></tr>
-		 <tr>
+<tr>
             <td>contractId.subtier.code</td>
             <td>Subtier Code</td>
             <td>String</td>
@@ -1389,13 +1389,13 @@ The Contract Awards API can be used to pull the deleted contracts by sending the
             <td>Contracting Office Name</td>
             <td>String</td>
             <td>v1</td></tr>
-		<tr>
-			<td>coreData.federalOrganization.contractingInformation.contractingOffice.country</td>
+<tr>
+<td>coreData.federalOrganization.contractingInformation.contractingOffice.country</td>
             <td>Contracting Office Country</td>
             <td>String</td>
             <td>v1</td></tr>
         <tr>
-			<td>coreData.federalOrganization.contractingInformation.contractingOffice.regionCode</td>
+<td>coreData.federalOrganization.contractingInformation.contractingOffice.regionCode</td>
             <td>Contracting Office Region Code</td>
             <td>String</td>
             <td>v1</td></tr>
@@ -1814,7 +1814,7 @@ The Contract Awards API can be used to pull the deleted contracts by sending the
             <td>Product Or Service Name</td>
             <td>String</td>
             <td>v1</td></tr>
-		<tr>
+<tr>
             <td>coreData.productOrServiceInformation.commercialProductService</td>
             <td>Commercial Product/Service</td>
             <td>JSON Object</td>
@@ -3289,7 +3289,7 @@ The Contract Awards API can be used to pull the deleted contracts by sending the
             <td>String</td>
             <td>v1</td></tr>
         <tr>
-			<td>awardDetails.awardeeData.socioEconomicData.smallBusiness</td>
+<td>awardDetails.awardeeData.socioEconomicData.smallBusiness</td>
             <td>Small Business</td>
             <td>String</td>
             <td>v1</td></tr>
@@ -3549,12 +3549,12 @@ The Contract Awards API can be used to pull the deleted contracts by sending the
             <td>JSON Object</td>
             <td>v1</td></tr>
         <tr>
-			<td>awardDetails.awardeeData.organizationFactors.stateOfIncorporation.code</td>
+<td>awardDetails.awardeeData.organizationFactors.stateOfIncorporation.code</td>
             <td>State of Incorporation Code</td>
             <td>String</td>
             <td>v1</td></tr>
         <tr>
-			<td>awardDetails.awardeeData.organizationFactors.stateOfIncorporation.name</td>
+<td>awardDetails.awardeeData.organizationFactors.stateOfIncorporation.name</td>
             <td>State of Incorporation Name</td>
             <td>String</td>
             <td>v1</td></tr>
@@ -3564,12 +3564,12 @@ The Contract Awards API can be used to pull the deleted contracts by sending the
             <td>JSON Object</td>
             <td>v1</td></tr>
         <tr>
-			<td>awardDetails.awardeeData.organizationFactors.countryOfIncorporation.code</td>
+<td>awardDetails.awardeeData.organizationFactors.countryOfIncorporation.code</td>
             <td>Country of Incorporation Code</td>
             <td>String</td>
             <td>v1</td></tr>
         <tr>
-			<td>awardDetails.awardeeData.organizationFactors.countryOfIncorporation.name</td>
+<td>awardDetails.awardeeData.organizationFactors.countryOfIncorporation.name</td>
             <td>Country of Incorporation Name</td>
             <td>String</td>
             <td>v1</td></tr>
@@ -4000,12 +4000,12 @@ The Contract Awards API can be used to pull the deleted contracts by sending the
             <td>JSON Object</td>
             <td>v1</td></tr>
         <tr>
-			<td>awardDetails.transactionData.status.code</td>
+<td>awardDetails.transactionData.status.code</td>
             <td>Status Code</td>
             <td>String</td>
             <td>v1</td></tr>
         <tr>
-			<td>awardDetails.transactionData.status.name</td>
+<td>awardDetails.transactionData.status.name</td>
             <td>Status Name</td>
             <td>String</td>
             <td>v1</td></tr>
@@ -4059,97 +4059,97 @@ The Contract Awards API can be used to pull the deleted contracts by sending the
             <td>Closed Status</td>
             <td>String</td>
             <td>v1</td></tr>
-		<tr>
+<tr>
             <td>awardDetails.genericTags</td>
             <td>genericTags</td>
             <td>JSON Object</td>
             <td>v1</td></tr>
-		<tr>
+<tr>
             <td>awardDetails.genericTags.genericStrings</td>
             <td>genericStrings</td>
             <td>JSON Object</td>
             <td>v1</td></tr>
-		<tr>
+<tr>
             <td>awardDetails.genericTags.genericStrings.genericString07</td>
             <td>genericString07</td>
             <td>String</td>
             <td>v1</td></tr>
-		<tr>
+<tr>
             <td>awardDetails.genericTags.genericStrings.genericString08</td>
             <td>genericString08</td>
             <td>String</td>
             <td>v1</td></tr>
-		<tr>
+<tr>
             <td>awardDetails.genericTags.genericStrings.genericString09</td>
             <td>genericString09</td>
             <td>String</td>
             <td>v1</td></tr>
-		<tr>
-			<td>awardDetails.genericTags.genericStrings.genericString10</td>
+<tr>
+<td>awardDetails.genericTags.genericStrings.genericString10</td>
             <td>genericString10</td>
             <td>String</td>
             <td>v1</td></tr>
-		<tr>
+<tr>
             <td>awardDetails.genericTags.genericBooleans</td>
             <td>genericBooleans</td>
             <td>JSON Object</td>
             <td>v1</td></tr>
-		<tr>
+<tr>
             <td>awardDetails.genericTags.genericBooleans.genericBoolean05</td>
             <td>genericBoolean05</td>
             <td>Boolean</td>
             <td>v1</td></tr>
-		<tr>
+<tr>
             <td>awardDetails.genericTags.genericBooleans.genericBoolean06</td>
             <td>genericBoolean06</td>
             <td>Boolean</td>
             <td>v1</td></tr>
-		<tr>
+<tr>
             <td>awardDetails.genericTags.genericBooleans.genericBoolean07</td>
             <td>genericBoolean07</td>
             <td>Boolean</td>
             <td>v1</td></tr>
-		<tr>
-			<td>awardDetails.genericTags.genericBooleans.genericBoolean08</td>
+<tr>
+<td>awardDetails.genericTags.genericBooleans.genericBoolean08</td>
             <td>genericBoolean08</td>
             <td>Boolean</td>
             <td>v1</td></tr>
-		<tr>
-			<td>awardDetails.genericTags.genericBooleans.genericBoolean09</td>
+<tr>
+<td>awardDetails.genericTags.genericBooleans.genericBoolean09</td>
             <td>genericBoolean09</td>
             <td>Boolean</td>
             <td>v1</td></tr>
-		<tr>
-			<td>awardDetails.genericTags.genericBooleans.genericBoolean10</td>
+<tr>
+<td>awardDetails.genericTags.genericBooleans.genericBoolean10</td>
             <td>genericBoolean10</td>
             <td>Boolean</td>
             <td>v1</td></tr>
-		<tr>
+<tr>
             <td>awardDetails.genericTags.genericFloats</td>
             <td>genericFloats</td>
             <td>JSON Object</td>
             <td>v1</td></tr>
-		<tr>
+<tr>
             <td>awardDetails.genericTags.genericFloats.genericFloat01</td>
             <td>genericFloat01</td>
             <td>Number</td>
             <td>v1</td></tr>
-		<tr>
+<tr>
             <td>awardDetails.genericTags.genericFloats.genericFloat02</td>
             <td>genericFloat02</td>
             <td>Number</td>
             <td>v1</td></tr>
-		<tr>
+<tr>
             <td>awardDetails.genericTags.genericIntegers</td>
             <td>genericIntegers</td>
             <td>JSON Object</td>
             <td>v1</td></tr>
-		<tr>
+<tr>
             <td>awardDetails.genericTags.genericIntegers.genericInteger01</td>
             <td>genericInteger01</td>
             <td>Number</td>
             <td>v1</td></tr>
-		<tr>
+<tr>
             <td>awardDetails.genericTags.genericIntegers.genericInteger02</td>
             <td>genericInteger02</td>
             <td>Number</td>
@@ -4171,6 +4171,9 @@ Go to [SAM.gov Data Services](https://sam.gov/data-services/Data%20Dictionary/Co
 
 You can view the full details of the differences between the FPDS legacy API and SAM.gov API
  available here: <a href="v1/FPDSvsSAM-ContractDataAPI.pdf"> Variance Document</a>
+ 
+ You can view the mapping of the JSON response to the CSV response here:
+ <a href="v1/ContractAwardAPI_JSONvsCSV.pdf"> JSON to CSV Mapping Document</a>
 
 ## HTTP Response Codes
 
@@ -4231,7 +4234,7 @@ The API will return one of the following responses:
 
 <details>
   <summary>Response (JSON Output)</summary>
-  
+ 
 <pre>
   {
     "awardSummary": [
@@ -4766,7 +4769,7 @@ The API will return one of the following responses:
 </details>
 
 
-### Example 2: Get Purchase Orders Approved between January 1st, 2025 and August 19th, 2025 with a NIACS code of 513310 or 541512 or 111150.             
+### Example 2: Get Purchase Orders Approved between January 1st, 2025 and August 19th, 2025 with a NIACS code of 513310 or 541512 or 111150.            
 <details>
   <summary>Request URL:</summary>
 
@@ -5382,7 +5385,7 @@ The API will return one of the following responses:
 
 <details>
   <summary>Response (JSON Output)</summary>
-  
+ 
 <pre>
   {
     "awardSummary": [
@@ -5714,7 +5717,7 @@ API Response Token
 }
 </pre>
 
-Extract Response   
+Extract Response  
 <pre>  
   {
   "limit" : "10",
