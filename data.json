@@ -4194,7 +4194,7 @@
       "@type": "dcat:Dataset",
       "title": "Inventory of Owned and Leased Properties (IOLP)",
       "description": "The Inventory of Owned and Leased Properties (IOLP) allows users to search properties owned and leased by the General Services Administration (GSA) across the United States, Puerto Rico, Guam and American Samoa.\n\nThe Owned and Leased Data Sets include the following data except where noted below for Leases:\n\n- Location Code - GSA’s alphanumeric identifier for the building\n- Real Property Asset Name - Allows users to find information about a specific building \n- Installation Name - Allows users to identify whether a property is part of an installation, such as a campus\n- Owned or Leased - Indicates the building is federally owned (F) or leased (L)\n- GSA Region - GSA assigned region for building location\n- Street Address/City/State/Zip Code - Building address\n- Longitude and Latitude - Map coordinates of the building (only through .csv export)\n- Rentable Square Feet - Total rentable square feet in building\n- Available Square Feet - Vacant space in building\n- Construction Date (Owned Only) - Year built\n- Congressional District - Congressional District building is located\n- Senator/Representative/URL - Senator/Representative of the Congressional District and their URL\n- Building Status (Owned Only) - Indicates building is active\n- Lease Number (Leased Only) - GSA’s alphanumeric identifier for the lease\n- Lease Effective/Expiration Dates (Leased Only) - Date lease starts/expires\n- Real Property Asset Type - Identifies a property as land, building, or structure",
-      "modified": "2026-11-02T14:40:21.966Z",
+      "modified": "2026-11-06T15:49:19.926Z",
       "accessLevel": "public",
       "identifier": "GSA-4495",
       "dataQuality": true,
@@ -4230,15 +4230,15 @@
         {
           "@type": "dcat:Distribution",
           "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-          "title": "2026 - 10 - 30 - IOLP Leases.xlsx",
-          "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/13886719-6b8a-4596-8c82-5b32664005f7/download/2026-10-30-iolp-leases.xlsx",
+          "title": "2026 - 11 - 6 - IOLP Buildings.xlsx",
+          "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/c9db0ffa-d55b-4dc4-b62a-597c72737deb/download/2026-11-6-iolp-buildings.xlsx",
           "license": "https://creativecommons.org/publicdomain/zero/1.0/"
         },
         {
           "@type": "dcat:Distribution",
           "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-          "title": "2026 - 10 - 30 - IOLP Buildings.xlsx",
-          "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/ad1a66f2-8019-43d9-b625-ea55e1f09677/download/2026-10-30-iolp-buildings.xlsx",
+          "title": "2026 - 11 - 6 - IOLP Leases.xlsx",
+          "downloadURL": "https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/d05232d8-dc36-46e0-905b-275413399499/download/2026-11-6-iolp-leases.xlsx",
           "license": "https://creativecommons.org/publicdomain/zero/1.0/"
         }
       ],
