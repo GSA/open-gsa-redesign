@@ -1,6 +1,7 @@
 ---
 title: SAM.gov Contract Awards Extracts
 banner-heading: SAM.gov Contract Awards Extracts
+permalink: /api/sam-contract-extracts-api/
 ---
 <!--<link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/swagger-ui.css" >-->
 <!--<link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/custom.css" >-->
