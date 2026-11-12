@@ -4172,7 +4172,7 @@ Go to [SAM.gov Data Services](https://sam.gov/data-services/Data%20Dictionary/Co
 You can view the full details of the differences between the FPDS legacy API and SAM.gov API
  available here: <a href="v1/FPDSvsSAM-ContractDataAPI.pdf"> Variance Document</a>
  
- **(Nov 9, 2026) Upcoming Change:** The current Contract Award API CSV headers will be updated to align with the Data Services Contract Award Extract. The mapping document linked below compares the current CSV headers (aligned with the JSON response) to the new headers.
+ **Nov 12, 2026: Upcoming Change: (Effective Date TBD)** The current Contract Award API CSV headers will be updated to align with the Data Services Contract Award Extract. The mapping document linked below compares the current CSV headers (aligned with the JSON response) to the new headers.
  **View the mapping:** <a href="v1/ContractAwardAPI_JSONvsCSV.pdf"> JSON to CSV Mapping Document</a>
 
 ## HTTP Response Codes
