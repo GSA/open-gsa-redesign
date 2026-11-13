@@ -102,9 +102,9 @@ components:
       properties:
         includeSections:
           type: string
-          description: Comma-separated list of sections to include. Returned by
-            default - reportData, contractData, entityData, taskOrdersData,
-            commercialPercentageForFederalOrganizationsData, goalsAndActualsData,
+          description: Tilde-separated list of sections to include, or "all" for every
+            section. Returned by default - reportData, contractData, entityData,
+            taskOrdersData, departmentAllocationPercentageData, goalsAndActualsData,
             certificationData. Returned only when explicitly requested - remarks,
             dodComprehensiveAttachments. Note - links provided for downloading
             attachments expire after 15 minutes and should be opened in a browser.
@@ -129,7 +129,10 @@ components:
         referencedIdvPiid:
           type: string
           description: Exact match. Provide the complete value. Case-insensitive.
-        subcontractNumber:
+        firstTierSubcontractNumber:
+          type: string
+          description: Exact match. Provide the complete value. Case-insensitive.
+        lowerTierSubcontractNumber:
           type: string
           description: Exact match. Provide the complete value. Case-insensitive.
         organizationCode:
@@ -150,6 +153,15 @@ components:
           type: string
           description: Exact match. Case-insensitive. Applies to ISR and DOD (Final
             does not apply for DOD).
+        sortBy:
+          type: string
+          description: Field to sort by, either submittedDate or lastModifiedDate.
+            Case-insensitive.
+          default: submittedDate
+        sortDirection:
+          type: string
+          description: Sort direction, either desc or asc. Case-insensitive.
+          default: desc
         page:
           type: integer
           description: Zero-based page index. The maximum number of returned records
@@ -194,9 +206,7 @@ components:
           description: Department allocation percentage details, or the string "Not
             Applicable" when not applicable.
           oneOf:
-            - type: array
-              items:
-                $ref: "#/components/schemas/DepartmentAllocationPercentage"
+            - $ref: "#/components/schemas/DepartmentAllocationPercentageData"
             - type: string
         goalsAndActualsData:
           $ref: "#/components/schemas/GoalsAndActualsData"
@@ -219,14 +229,32 @@ components:
         submitter:
           type: string
           description: Role of the entity submitting the report. Valid values may
-            include Prime Contractor, Subcontractor, or Both.
-        uniqueEntityID:
+            include Prime Contractor, First Tier Subcontractor, Lower Tier
+            Subcontractor, or Both.
+        primeContractorUniqueEntityID:
           type: string
-          description: Unique Entity Identifier (UEI) assigned to the reporting
-            entity in SAM.gov.
-        legalBusinessName:
+          description: Unique Entity Identifier (UEI) of the prime contractor on the
+            contract.
+        primeContractorLegalBusinessName:
           type: string
-          description: Official legal name of the entity as registered in SAM.gov.
+          description: Official legal name of the prime contractor as registered in
+            SAM.gov.
+        firstTierUniqueEntityID:
+          type: string
+          description: UEI of the first tier subcontractor. Not Applicable on a prime
+            report.
+        firstTierLegalBusinessName:
+          type: string
+          description: Official legal name of the first tier subcontractor as
+            registered in SAM.gov. Not Applicable on a prime report.
+        lowerTierUniqueEntityID:
+          type: string
+          description: UEI of the second or lower tier subcontractor. Not Applicable on
+            a prime or first tier report.
+        lowerTierLegalBusinessName:
+          type: string
+          description: Official legal name of the second or lower tier subcontractor as
+            registered in SAM.gov. Not Applicable on a prime or first tier report.
         reportFiscalYear:
           type: string
           description: Fiscal year for which the subcontracting report is being
@@ -299,38 +327,33 @@ components:
           type: string
           description: PIID of the referenced IDV associated with the award, if
             applicable.
-        subcontractNumber:
+        firstTierSubcontractNumber:
           type: string
-          description: Identifier assigned to the subcontract.
+          description: Identifier assigned to the first tier subcontract. Returned on
+            both first tier and lower tier reports.
+        lowerTierSubcontractNumber:
+          type: string
+          description: Identifier assigned to the second or lower tier subcontract. Not
+            Applicable unless the report was submitted by a second or lower tier
+            subcontractor.
+        lowerTierSubcontractDate:
+          type: string
+          description: Date the second or lower tier subcontract was awarded. Not
+            Applicable unless the report was submitted by a second or lower tier
+            subcontractor.
         totalDollars:
           type: string
           description: Total dollar amount obligated or reported under the
             subcontract.
-        contractingOrganization:
-          $ref: "#/components/schemas/ContractingOrganization"
-        subcontractingPlanCode:
+        firstTierSubcontractAmount:
           type: string
-          description: Code representing the type of subcontracting plan.
-        subcontractingPlanDesc:
+          description: Dollar amount of the first tier subcontract. Not Applicable on a
+            lower tier report when no first tier report could be matched.
+        lowerTierSubcontractAmount:
           type: string
-          description: Description of the subcontracting plan type associated with
-            the contract.
-    ContractingOrganization:
-      type: object
-      properties:
-        department:
-          $ref: "#/components/schemas/OrganizationRef"
-        subTier:
-          $ref: "#/components/schemas/OrganizationRef"
-        office:
-          $ref: "#/components/schemas/OrganizationRef"
-    OrganizationRef:
-      type: object
-      properties:
-        code:
-          type: string
-        name:
-          type: string
+          description: Dollar amount of the second or lower tier subcontract. Not
+            Applicable unless the report was submitted by a second or lower tier
+            subcontractor.
     TaskOrdersData:
       type: object
       properties:
@@ -351,6 +374,13 @@ components:
         businessCategories:
           type: object
           description: Business category details for the task order.
+    DepartmentAllocationPercentageData:
+      type: object
+      properties:
+        departmentAllocationPercentageData:
+          type: array
+          items:
+            $ref: "#/components/schemas/DepartmentAllocationPercentage"
     DepartmentAllocationPercentage:
       type: object
       properties:
