@@ -13032,10 +13032,6 @@
     - API
     - Data.gov
     - CKAN
-- title: Federal Procurement Data System - FPDS API
-  body: SOAP and XML web services are used in FPDS-NG to provide interoperability with various federal procurement systems.
-  url: https://sam.gov/data-services/Data%20Dictionary/Contract%20Awards?privacy=Public
-  category: APIs
 - title: Per Diem API
   body: This API contains the allowed reimbursement rates for hotel stays and meals for federal travelers.
   url: https://www.gsa.gov/technology/government-it-initiatives/digital-strategy/per-diem-apis/per-diem-api
@@ -13057,14 +13053,6 @@
   body: For Search.gov customers. This API exposes the type-ahead suggestions that often appear below the search box as searchers enter their search terms.
   url: https://open.gsa.gov/api/searchgov-suggestions/
   category: APIs
-- title: Sustainable Facilities Tool API
-  body: The Sustainable Facilities Tool offers useful sustainable guidance and tools for a variety of roles.
-  url: https://sftool.gov/developers
-  category: APIs
-  tags:
-    - Acquisition
-    - Award
-    - Contracts
 #- title: System for Award Management API
 #  body: A RESTful method of retrieving public information about the businesses or individuals within the System for Award Management data set.
 #  url: https://gsa.github.io/sam_api/sam/
@@ -13078,10 +13066,6 @@
     - Equipment
     - Auction
     - Sales
-- title: Fleet Vehicles API
-  body: GSA Fleet Drive-thru offers two reports through an API for GSA Fleet Leasing customers.
-  url: https://www.gsa.gov/buying-selling/products-services/transportation-logistics-services/vehicle-leasing/gsa-fleet-drivethru
-  category: APIs
 - title: Regulations.gov API
   body: Regulations.gov offers a GET API that allows searching for documents, comments, and dockets and a POST API that allows users to submit comments.
   url: https://open.gsa.gov/api/regulationsgov/
