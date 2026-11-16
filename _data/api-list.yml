@@ -1,6 +1,3 @@
-- title: Acquisition Gateway Listings API
-  description: This page is a placeholder. The APIs are not yet available.
-  url: https://open.gsa.gov/api/ag-api/
 - title: Analytics.usa.gov API
   description: The data for this API comes from Analytics.usa.gov, which is a unified Google Analytics account for U.S. federal government agencies known as the Digital Analytics Program. This program helps government agencies understand how people find, access, and use government services online. The program does not track individuals, and anonymizes the IP addresses of visitors.
   url: https://open.gsa.gov/api/dap/
@@ -16,12 +13,6 @@
 - title: Data.gov CKAN API
   description: The government-wide data catalog available at Data.gov.
   url: https://open.gsa.gov/api/datadotgov/
-- title: Federal Procurement Data System - FPDS API
-  description: SOAP and XML web services are used in FPDS-NG to provide interoperability with various federal procurement systems.
-  url: https://sam.gov/data-services/Data%20Dictionary/Contract%20Awards?privacy=Public
-- title: Fleet Vehicles API
-  description: GSA Fleet Drive-thru offers two reports through an API for GSA Fleet Leasing customers.
-  url: https://www.gsa.gov/buying-selling/products-services/transportation-logistics-services/vehicle-leasing/gsa-fleet-drivethru
 - title: GSA IT Collect Public API
   description: The IT Collect API provides a way for the general public to access government-wide IT Portfolio Management and other related IT data sources.
   url: https://open.gsa.gov/api/itcollect/
@@ -85,9 +76,6 @@
 - title: Site Scanning API
   description: The Site Scanning API provides a wide range of scan data for public federal websites and their website health and best practices.
   url: https://open.gsa.gov/api/site-scanning-api/
-- title: Sustainable Facilities Tool API
-  description: The Sustainable Facilities Tool offers useful sustainable guidance and tools for a variety of roles.
-  url: https://sftool.gov/developers
 - title: TMSS 2.0 Rate Query API
   description: TMSS 2.0 Rate Query API provides shipment cost for a regular Household Goods (HHG) shipment or for an Extended Storage (EXSTG) shipment.
   url: https://open.gsa.gov/api/ratequeryhhg/
