@@ -607,7 +607,7 @@ This section lists entity types according to their eligibility as **Award Applic
 
 Production URL: https://api.sam.gov/assistance-listings/v1/search?api_key={User’s Public API Key}&assistanceListingId=43.008 <br>
 <br>
-Alpha URL: https://api-alpha.sam.gov/assistance-listings/v1/search?api_key={User’s Public API Key}&assistanceListingId=10.080<br>
+Alpha URL: https://api-alpha.sam.gov/assistance-listings/v1/search?api_key={User’s Public API Key}&assistanceListingId=39.664<br>
 
 Note: Request URL for Alpha is used in this example
 </details>
@@ -624,20 +624,20 @@ Note: Request URL for Alpha is used in this example
     "totalPages": 1,
     "assistanceListingsData": [
         {
-            "version": "2.0",
+            "version": "3.0",
             "status": "Active",
-            "programId": "18aa264962af4fa0b73c40ab1f2f9202",
-            "publishedDate": "2025-11-07T18:56:43.719+00:00",
-            "assistanceListingId": "10.080",
-            "title": "Milk Income Loss Contract Program ",
+            "programId": "28a371ef649f43acaec1a7520580242f",
+            "publishedDate": "2026-11-17T16:26:57.946+00:00",
+            "assistanceListingId": "39.664",
+            "title": "Milk Income Loss Contract Program v3.0",
             "popularLongName": "(MILC)",
             "popularShortName": null,
             "relatedFederalAssistance": null,
             "federalOrganization": {
-                "department": "AGRICULTURE, DEPARTMENT OF",
-                "departmentCode": "1200",
-                "agency": "FARM SERVICE AGENCY",
-                "agencyCode": "12D2"
+                "department": "GENERAL SERVICES ADMINISTRATION",
+                "departmentCode": "4700",
+                "agency": null,
+                "agencyCode": null
             },
             "programWebPage": "http://www.fsa.usda.gov",
             "overview": {
@@ -670,7 +670,7 @@ Note: Request URL for Alpha is used in this example
                             "title": "1",
                             "part": "E",
                             "section": "1506",
-                            "description": "Food, Conservaton and Energy Act of 2008"
+                            "description": null
                         },
                         "executiveOrder": null,
                         "publicLaw": {
@@ -688,7 +688,7 @@ Note: Request URL for Alpha is used in this example
                 ]
             },
             "financialInformation": {
-                "isFundedCurrentFY": false,
+                "isFundedCurrentFY": true,
                 "additionalInformation": "testing",
                 "obligations": [
                     {
@@ -714,17 +714,17 @@ Note: Request URL for Alpha is used in this example
                         ],
                         "values": [
                             {
-                                "year": 2024,
+                                "year": 2025,
                                 "actual": 2000.00,
                                 "estimate": null
                             },
                             {
-                                "year": 2025,
+                                "year": 2026,
                                 "actual": 3000.00,
                                 "estimate": null
                             },
                             {
-                                "year": 2026,
+                                "year": 2027,
                                 "actual": null,
                                 "estimate": 3000.00
                             }
@@ -733,13 +733,13 @@ Note: Request URL for Alpha is used in this example
                 ],
                 "rangeAndAverageAssistance": [
                     {
-                        "fiscalYear": 2025,
+                        "fiscalYear": 2026,
                         "minimumAwardAmount": 200.00,
                         "maximumAwardAmount": 3000.00,
                         "averageAwardAmount": 4000.00
                     },
                     {
-                        "fiscalYear": 2026,
+                        "fiscalYear": 2027,
                         "minimumAwardAmount": null,
                         "maximumAwardAmount": null,
                         "averageAwardAmount": null
@@ -752,7 +752,7 @@ Note: Request URL for Alpha is used in this example
                 "accountsIdentificationList": [
                     {
                         "code": "12-4336-0-3-351",
-                        "description": null
+                        "description": ""
                     }
                 ]
             },
@@ -761,7 +761,7 @@ Note: Request URL for Alpha is used in this example
                     "isApplicable": true,
                     "description": [
                         "Before MILC contract payments are issued, all persons involved in a single dairy operation must provide evidence of eligible marketing.  Verifiable production evidence can include:  (1) milk marketing payment stubs, (2) tank records, (3) milk handler records, (4) daily milk marketing, and (5) copies of any payments received as compensation from other sources.",
-                        "testing"
+                        "Testing"
                     ]
                 },
                 "applicant": {
@@ -804,7 +804,7 @@ Note: Request URL for Alpha is used in this example
             },
             "assistanceApplication": {
                 "deadlines": {
-                    "value": "This Assistance Listing has deadline information",
+                    "value": "Assistance listing administering agency organizational unit establishes deadlines",
                     "list": [
                         {
                             "start": "2007-10-01",
@@ -839,6 +839,17 @@ Note: Request URL for Alpha is used in this example
                             "type": "Directive",
                             "frequency": "Semi-Annually",
                             "frequencyDescription": null,
+                            "spendingTimeDetermination": "NOFO or Award",
+                            "spendingPeriodType": null,
+                            "spendingPeriod": null,
+                            "spendingPeriodDescription": null
+                        },
+                        {
+                            "fundingDate": "2020-02-04",
+                            "type": "Reimbursement",
+                            "frequency": "Annually",
+                            "frequencyDescription": null,
+                            "spendingTimeDetermination": "Program",
                             "spendingPeriodType": "Months",
                             "spendingPeriod": 23,
                             "spendingPeriodDescription": "test"
@@ -890,19 +901,26 @@ Note: Request URL for Alpha is used in this example
                         "frequency": [
                             "Quarterly"
                         ],
-                        "description": "test"
+                        "description": "test",
+                        "name": null
                     },
                     {
                         "code": "progress",
                         "frequency": [
                             "Monthly"
                         ],
-                        "description": "test"
+                        "description": "test",
+                        "name": null
                     },
                     {
                         "code": "other",
-                        "frequency": [],
-                        "description": ""
+                        "frequency": [
+                            "Monthly",
+                            "Quarterly",
+                            "Semi-Annually"
+                        ],
+                        "description": "test",
+                        "name": "test name"
                     }
                 ],
                 "audit": {
@@ -921,25 +939,20 @@ Note: Request URL for Alpha is used in this example
                 },
                 "additionalRequirements": [
                     {
-                        "id": "dc3170b693a4429a8936026472a6fe13",
+                        "id": "b69c5543d9fe4b4db7575afe869e662c",
                         "url": "https://sam.gov",
                         "description": "test"
                     }
                 ],
                 "guidelinesAndInformation": [
                     {
-                        "id": "903686f8a1504df9bacb11b0a9e11733",
+                        "id": "cc17b1aeda724fd6856a79d976e582e4",
                         "url": "https://sam.gov",
-                        "description": "test"
-                    },
-                    {
-                        "id": "479b85703d6343be92a3c3f30699a0f9",
-                        "url": "https://sam.gov",
-                        "description": "test124"
+                        "description": "test125"
                     }
                 ],
                 "formulaAndMatching": {
-                    "isApplicable": false,
+                    "isApplicable": true,
                     "types": {
                         "formula": true,
                         "matching": true,
@@ -955,7 +968,7 @@ Note: Request URL for Alpha is used in this example
                     },
                     "matching": {
                         "requirementFlag": "D",
-                        "percent": "30",
+                        "percent": "",
                         "description": "test"
                     },
                     "moe": {
@@ -963,25 +976,36 @@ Note: Request URL for Alpha is used in this example
                     }
                 },
                 "maps": {
-                    "basis": [],
-                    "usageList": [],
-                    "areCBSADelineationsUsed": "no",
+                    "basis": [
+                        {
+                            "code": "Agency election",
+                            "isSelected": true
+                        }
+                    ],
+                    "usageList": [
+                        {
+                            "code": "Statistical uses",
+                            "details": [],
+                            "isSelected": true
+                        }
+                    ],
+                    "areCBSADelineationsUsed": "yes",
                     "currentCBSADelineationAdopted": {
-                        "isSelected": null,
+                        "isSelected": "yes",
                         "historicalDelineationSelection": ""
                     }
                 }
             },
             "contacts": {
                 "local": {
-                    "flag": "none",
+                    "flag": null,
                     "officeLocationURL": "https://sam.gov",
-                    "description": "Consult the local phone directory for location of the nearest county FSA office.  If no listing, contact the appropriate State FSA office listed in the FSA section of Appendix IV of the Catalog, or on the Internet at http://www.fsa.usda.gov/edso/."
+                    "description": null
                 },
                 "headquarters": [
                     {
-                        "contactId": "20ae21a5cc599b66634cc6d109e4e817",
-                        "title": "Program Manager",
+                        "contactId": "aca90d46369b44f18b1bbc207ce5542a",
+                        "title": "",
                         "fullName": "Danielle Cooke",
                         "email": "danielle.cooke@wdc.usda.gov",
                         "phone": "202-720-1919",
@@ -989,23 +1013,8 @@ Note: Request URL for Alpha is used in this example
                         "streetAddress": "Stop 0512, 1400 Independence Ave SW",
                         "city": "Washington",
                         "state": "DC",
-                        "zip": "20250-0512",
-                        "country": "US",
-                        "subdivisionCode": null,
-                        "subdivisionName": null
-                    },
-                    {
-                        "contactId": "869ae41df9c7b70849acc9ccf64d37f5",
-                        "title": "",
-                        "fullName": "Amy Mitchell",
-                        "email": "Amy.Mitchell1@usda.gov",
-                        "phone": "2027208954",
-                        "fax": "",
-                        "streetAddress": "USDA, FSA, Safety Net Division, 1400 Independence Ave SW Stop 0517",
-                        "city": "Washington",
-                        "state": "DC",
-                        "zip": "20250",
-                        "country": "US",
+                        "zip": "20512",
+                        "country": "USA",
                         "subdivisionCode": null,
                         "subdivisionName": null
                     }
@@ -1044,10 +1053,10 @@ Note: Response for one record is provided as an example <br>
     "totalPages": 3,
     "assistanceListingsData": [
         {
-            "version": "2.0",
+            "version": "3.0",
             "status": "Active",
-            "programId": "9303061aa89341218fb4622a2e7988c3",
-            "publishedDate": "2025-11-19T05:00:17.343+00:00",
+            "programId": "9ba0389dabf8402a919b3dbe64f945ac",
+            "publishedDate": "2026-11-17T16:47:27.166+00:00",
             "assistanceListingId": "39.141",
             "title": "Test01_07212022_ALAdmin",
             "popularLongName": "Test01_07212022_ALAdmin",
@@ -1059,7 +1068,7 @@ Note: Response for one record is provided as an example <br>
                 "agency": "GENERAL SERVICES ADMINISTRATION",
                 "agencyCode": "4700"
             },
-            "programWebPage": "https://test.gov",
+            "programWebPage": "",
             "overview": {
                 "objective": "The Long Island Sound Program: (1) implements the Long Island Sound Study (LISS) Comprehensive Conservation and Management Plan (CCMP); and (2) assists the states of Connecticut and New York and other public or nonprofit entities in implementation, research, planning, enforcement, and citizen involvement and education related to reducing pollution and improving the quality of the environment to sustain living resources in the Long Island Sound. Funding Priority - Fiscal Year 2022: To award assistance agreements that support the Long Island Sound Study (LISS) National Estuary Program. Section 119(d) of the Clean Water Act, as amended by America’s Water Infrastructure Act of 2018 Public Law No: 115-270, authorizes the Administrator to award grants to eligible entities to implement the LISS Comprehensive Conservation and Management Plan (CCMP), with special emphasis on implementation, research and planning, enforcement, and citizen involvement and education projects. The LISS management conference, with participants from state, interstate and regional environmental agencies, local governments and other public or nonprofit private agencies, research institutions and individuals, develops programs to protect and restore Long Island Sound. EPA also provides assistance through funds appropriated under Section 320 of the Clean Water Act (The National Estuary Program). The LISS program characterizes the problems in the estuary, determines relationships between pollutant loading and impacts on living resources, maintains a comprehensive plan recommending solutions to priority problems, and implements actions addressing priority problem areas. Activities focused on theme areas identified in the plan as requiring special attention, such as: clean waters and healthy watersheds; thriving habitats and abundant wildlife; sustainable and resilient communities; and sound science and inclusive management. Under the Bipartisan Infrastructure Law, Long Island Sound will receive $21.2 million for FY 2022 through CWA §119 and $909,800/year through CWA §320. These allocations are expected to continue for five years, through 2026. The LISS goal for BIL funding is to significantly improve Long Island Sound’s environmental health, climate resilience, and economic vitality in an equitable manner in communities across the Sound’s watershed. The focus will be on: 1) planning and implementation of infrastructure improvements to enhance water and habitat quality, including green infrastructure, essential equipment upgrades, transition to innovative septic systems and nitrogen reduction upgrades to wastewater treatment plants; 2) climate resilience and sustainability through implementation of the LISS 5-year Sustainable and Resilient Communities Work Plan, including community planning and implementation of living shorelines, wetland restoration, and flood These allocations are expected to continue for five years, through 2026. The LISS goal for BIL funding is to significantly improve Long Island Sound’s environmental health, climate resilience, and economic vitality in an equitable; 2) climate resilience and sustainability through implementation of the LISS 5-year Sustainable and Resilient Communities Work Plan, including community planning and implementation of living shorelines, wetland restoration, and flood These allocations are expected to continue for five years, through 2026. The LISS goal for BIL funding is to significantly improve Long Island Sound’s environmental health, climate resilience, and economic vitality in an equitable; 2) climate resilience and sustainability through implementation of the LISS 5-year Sustainable and Resilient Communities Work Plan, including community planning and implementation of living shorelines, wetland restoration, and flood These allocations are expected to continue for five years, through 2026. The LISS goal for BIL funding is to significantly improve Long Island Sound’s environmental health, climate resilience, and economic vitality in an equitable; 2) climate resilience and sustainability through implementation of the LISS 5-year Sustainable and Resilient Communities Work Plan, including community planning and implementation of living shorelines, wetland restoration, and flood These allocations are expected to continue for five years, through 2026. The LISS goal for BIL funding is to significantly improve Long Island Sound’s environmental health, climate resilience, and economic vitality in an equitable; 2) climate resilience and sustainability through implementation of the LISS 5-year Sustainable and Resilient Communities Work Plan, including community planning and implementation of living shorelines, wetland restoration, and flood These allocations are expected to continue for five years, through 2026. The LISS goal for BIL funding is to significantly improve Long Island Sound’s environmental health, climate resilience, and economic vitality in an equitableyefgywedfgsdfgsjdfuwesdhfsdjfhsduif",
                 "assistanceListingDescription": "The Long Island Sound Program: (1) implements the Long Island Sound Study (LISS) Comprehensive Conservation and Management Plan (CCMP); and (2) assists the states of Connecticut and New York and other public or nonprofit entities in implementation, research, planning, enforcement, and citizen involvement and education related to reducing pollution and improving the quality of the environment to sustain living resources in the Long Island Sound. Funding Priority - Fiscal Year 2022: To award assistance agreements that support the Long Island Sound Study (LISS) National Estuary Program. Section 119(d) of the Clean Water Act, as amended by America’s Water Infrastructure Act of 2018 Public Law No: 115-270, authorizes the Administrator to award grants to eligible entities to implement the LISS Comprehensive Conservation and Management Plan (CCMP), with special emphasis on implementation, research and planning, enforcement, and citizen involvement and education projects. The LISS management conference, with participants from state, interstate and regional environmental agencies, local governments and other public or nonprofit private agencies, research institutions and individuals, develops programs to protect and restore Long Island Sound. EPA also provides assistance through funds appropriated under Section 320 of the Clean Water Act (The National Estuary Program). The LISS program characterizes the problems in the estuary, determines relationships between pollutant loading and impacts on living resources, maintains a comprehensive plan recommending solutions to priority problems, and implements actions addressing priority problem areas. Activities focused on theme areas identified in the plan as requiring special attention, such as: clean waters and healthy watersheds; thriving habitats and abundant wildlife; sustainable and resilient communities; and sound science and inclusive management. Under the Bipartisan Infrastructure Law, Long Island Sound will receive $21.2 million for FY 2022 through CWA §119 and $909,800/year through CWA §320. These allocations are expected to continue for five years, through 2026. The LISS goal for BIL funding is to significantly improve Long Island Sound’s environmental health, climate resilience, and economic vitality in an equitable manner in communities across the Sound’s watershed. The focus will be on: 1) planning and implementation of infrastructure improvements to enhance water and habitat quality, including green infrastructure, essential equipment upgrades, transition to innovative septic systems and nitrogen reduction upgrades to wastewater treatment plants; 2) climate resilience and sustainability through implementation of the LISS 5-year Sustainable and Resilient Communities Work Plan, including community planning and implementation of living shorelines, wetland restoration, and flood These allocations are expected to continue for five years, through 2026. The LISS goal for BIL funding is to significantly improve Long Island Sound’s environmental health, climate resilience, and economic vitality in an equitable; 2) climate resilience and sustainability through implementation of the LISS 5-year Sustainable and Resilient Communities Work Plan, including community planning and implementation of living shorelines, wetland restoration, and flood These allocations are expected to continue for five years, through 2026. The LISS goal for BIL funding is to significantly improve Long Island Sound’s environmental health, climate resilience, and economic vitality in an equitable; 2) climate resilience and sustainability through implementation of the LISS 5-year Sustainable and Resilient Communities Work Plan, including community planning and implementation of living shorelines, wetland restoration, and flood These allocations are expected to continue for five years, through 2026. The LISS goal for BIL funding is to significantly improve Long Island Sound’s environmental health, climate resilience, and economic vitality in an equitable; 2) climate resilience and sustainability through implementation of the LISS 5-year Sustainable and Resilient Communities Work Plan, including community planning and implementation of living shorelines, wetland restoration, and flood These allocations are expected to continue for five years, through 2026. The LISS goal for BIL funding is to significantly improve Long Island Sound’s environmental health, climate resilience, and economic vitality in an equitable; 2) climate resilience and sustainability through implementation of the LISS 5-year Sustainable and Resilient Communities Work Plan, including community planning and implementation of living shorelines, wetland restoration, and flood These allocations are expected to continue for five years, through 2026. The LISS goal for BIL funding is to significantly improve Long Island Sound’s environmental health, climate resilience, and economic vitality in an equitableyefgywedfgsdfgsjdfuwesdhfsdjfhsduif",
@@ -1202,13 +1211,13 @@ Note: Response for one record is provided as an example <br>
                 ],
                 "rangeAndAverageAssistance": [
                     {
-                        "fiscalYear": 2025,
+                        "fiscalYear": 2026,
                         "minimumAwardAmount": 100.00,
                         "maximumAwardAmount": 500.00,
                         "averageAwardAmount": 300.00
                     },
                     {
-                        "fiscalYear": 2026,
+                        "fiscalYear": 2027,
                         "minimumAwardAmount": null,
                         "maximumAwardAmount": null,
                         "averageAwardAmount": null
@@ -1314,6 +1323,7 @@ Note: Response for one record is provided as an example <br>
                             "type": "Reimbursement",
                             "frequency": "Determined at Time of Award",
                             "frequencyDescription": null,
+                            "spendingTimeDetermination": "N/A",
                             "spendingPeriodType": "Months",
                             "spendingPeriod": 23,
                             "spendingPeriodDescription": "TEST"
@@ -1365,7 +1375,8 @@ Note: Response for one record is provided as an example <br>
                         "frequency": [
                             "Monthly"
                         ],
-                        "description": "The Long Island Sound Program: (1) implements the Long Island Sound Study (LISS) Comprehensive Conservation and Management Plan (CCMP); and (2) assists the states of Connecticut and New York and other public or nonprofit entities in implementation, research, planning, enforcement, and citizen involvement and education related to reducing pollution and improving the quality of the environment to sustain living resources in the Long Island Sound. Funding Priority - Fiscal Year 2022: To award assistance agreements that support the Long Island Sound Study (LISS) National Estuary Program. Section 119(d) of the Clean Water Act, as amended by America’s Water Infrastructure Act of 2018 Public Law No: 115-270, authorizes the Administrator to award grants to eligible entities to implement the LISS Comprehensive Conservation and Management Plan (CCMP), with special emphasis on implementation, research and planning, enforcement, and citizen involvement and education projects. The LISS management conference, with participants from state, interstate and regional environmental agencies, local governments and other public or nonprofit private agencies, research institutions and individuals, develops programs to protect and restore Long Island Sound. EPA also provides assistance through funds appropriated under Section 320 of the Clean Water Act (The National Estuary Program). The LISS program characterizes the problems in the estuary, determines relationships between pollutant loading and impacts on living resources, maintains a comprehensive plan recommending solutions to priority problems, and implements actions addressing priority problem areas. Activities focused on theme areas identified in the plan as requiring special attention, such as: clean waters and healthy watersheds; thriving habitats and abundant wildlife; sustainable and resilient communities; and sound science and inclusive management. Under the Bipartisan Infrastructure Law, Long Island Sound will receive $21.2 million for FY 2022 through CWA §119 and $909,800/year through CWA §320. These allocations are expected to continue for five years, through 2026. The LISS goal for BIL funding is to significantly improve Long Island Sound’s environmental health, climate resilience, and economic vitality in an equitable manner in communities across the Sound’s watershed. The focus will be on: 1) planning and implementation of infrastructure improvements to enhance water and habitat quality, including green infrastructure, essential equipment upgrades, transition to innovative septic systems and nitrogen reduction upgrades to wastewater treatment plants; 2) climate resilience and sustainability through implementation of the LISS 5-year Sustainable and Resilient Communities Work Plan, including community planning and implementation of living shorelines, wetland restoration, and flood These allocations are expected to continue for five years, through 2026. The LISS goal for BIL funding is to significantly improve Long Island Sound’s environmental health, climate resilience, and economic vitality in an equitable; 2) climate resilience and sustainability through implementation of the LISS 5-year Sustainable and Resilient Communities Work Plan, including community planning and implementation of living shorelines, wetland restoration, and flood These allocations are expected to continue for five years, through 2026. The LISS goal for BIL funding is to significantly improve Long Island Sound’s environmental health, climate resilience, and economic vitality in an equitable; 2) climate resilience and sustainability through implementation of the LISS 5-year Sustainable and Resilient Communities Work Plan, including community planning and implementation of living shorelines, wetland restoration, and flood These allocations are expected to continue for five years, through 2026. The LISS goal for BIL funding is to significantly improve Long Island Sound’s environmental health, climate resilience, and economic vitality in an equitable; 2) climate resilience and sustainability through implementation of the LISS 5-year Sustainable and Resilient Communities Work Plan, including community planning and implementation of living shorelines, wetland restoration, and flood These allocations are expected to continue for five years, through 2026. The LISS goal for BIL funding is to significantly improve Long Island Sound’s environmental health, climate resilience, and economic vitality in an equitable; 2) climate resilience and sustainability through implementation of the LISS 5-year Sustainable and Resilient Communities Work Plan, including community planning and implementation of living shorelines, wetland restoration, and flood These allocations are expected to continue for five years, through 2026. The LISS goal for BIL funding is to significantly improve Long Island Sound’s environmental health, climate resilience, and economic vitality in an equitableyefgywedfgsdfgsjdfuwesdhfsdjfhsduif"
+                        "description": "The Long Island Sound Program: (1) implements the Long Island Sound Study (LISS) Comprehensive Conservation and Management Plan (CCMP); and (2) assists the states of Connecticut and New York and other public or nonprofit entities in implementation, research, planning, enforcement, and citizen involvement and education related to reducing pollution and improving the quality of the environment to sustain living resources in the Long Island Sound. Funding Priority - Fiscal Year 2022: To award assistance agreements that support the Long Island Sound Study (LISS) National Estuary Program. Section 119(d) of the Clean Water Act, as amended by America’s Water Infrastructure Act of 2018 Public Law No: 115-270, authorizes the Administrator to award grants to eligible entities to implement the LISS Comprehensive Conservation and Management Plan (CCMP), with special emphasis on implementation, research and planning, enforcement, and citizen involvement and education projects. The LISS management conference, with participants from state, interstate and regional environmental agencies, local governments and other public or nonprofit private agencies, research institutions and individuals, develops programs to protect and restore Long Island Sound. EPA also provides assistance through funds appropriated under Section 320 of the Clean Water Act (The National Estuary Program). The LISS program characterizes the problems in the estuary, determines relationships between pollutant loading and impacts on living resources, maintains a comprehensive plan recommending solutions to priority problems, and implements actions addressing priority problem areas. Activities focused on theme areas identified in the plan as requiring special attention, such as: clean waters and healthy watersheds; thriving habitats and abundant wildlife; sustainable and resilient communities; and sound science and inclusive management. Under the Bipartisan Infrastructure Law, Long Island Sound will receive $21.2 million for FY 2022 through CWA §119 and $909,800/year through CWA §320. These allocations are expected to continue for five years, through 2026. The LISS goal for BIL funding is to significantly improve Long Island Sound’s environmental health, climate resilience, and economic vitality in an equitable manner in communities across the Sound’s watershed. The focus will be on: 1) planning and implementation of infrastructure improvements to enhance water and habitat quality, including green infrastructure, essential equipment upgrades, transition to innovative septic systems and nitrogen reduction upgrades to wastewater treatment plants; 2) climate resilience and sustainability through implementation of the LISS 5-year Sustainable and Resilient Communities Work Plan, including community planning and implementation of living shorelines, wetland restoration, and flood These allocations are expected to continue for five years, through 2026. The LISS goal for BIL funding is to significantly improve Long Island Sound’s environmental health, climate resilience, and economic vitality in an equitable; 2) climate resilience and sustainability through implementation of the LISS 5-year Sustainable and Resilient Communities Work Plan, including community planning and implementation of living shorelines, wetland restoration, and flood These allocations are expected to continue for five years, through 2026. The LISS goal for BIL funding is to significantly improve Long Island Sound’s environmental health, climate resilience, and economic vitality in an equitable; 2) climate resilience and sustainability through implementation of the LISS 5-year Sustainable and Resilient Communities Work Plan, including community planning and implementation of living shorelines, wetland restoration, and flood These allocations are expected to continue for five years, through 2026. The LISS goal for BIL funding is to significantly improve Long Island Sound’s environmental health, climate resilience, and economic vitality in an equitable; 2) climate resilience and sustainability through implementation of the LISS 5-year Sustainable and Resilient Communities Work Plan, including community planning and implementation of living shorelines, wetland restoration, and flood These allocations are expected to continue for five years, through 2026. The LISS goal for BIL funding is to significantly improve Long Island Sound’s environmental health, climate resilience, and economic vitality in an equitable; 2) climate resilience and sustainability through implementation of the LISS 5-year Sustainable and Resilient Communities Work Plan, including community planning and implementation of living shorelines, wetland restoration, and flood These allocations are expected to continue for five years, through 2026. The LISS goal for BIL funding is to significantly improve Long Island Sound’s environmental health, climate resilience, and economic vitality in an equitableyefgywedfgsdfgsjdfuwesdhfsdjfhsduif",
+                        "name": null
                     }
                 ],
                 "audit": {
@@ -1455,7 +1466,7 @@ Note: Response for one record is provided as an example <br>
 
 Production URL: https://api.sam.gov/assistance-listings/v1/search?api_key={User’s Public API Key}&status=ALL&pageSize=25&applicantTypes=ET21010&publishedDateFrom=2025-01-01&publishedDateTo=2026-01-01<br>
 <br>
-Alpha URL: https://api-alpha.sam.gov/assistance-listings/v1/search?api_key={User’s Public API Key}&status=ALL&pageSize=25&applicantTypes=ET21010&publishedDateFrom=2025-01-01&publishedDateTo=2026-01-01<br>
+Alpha URL: https://api-alpha.sam.gov/assistance-listings/v1/search?api_key={User’s Public API Key}&status=ALL&pageSize=25&applicantTypes=ET21010&publishedDateFrom=2026-01-01&publishedDateTo=2026-11-17<br>
 
 Note: Request URL for Alpha is used in this example
 </details>
@@ -1468,31 +1479,31 @@ Note: Response for one record is provided as an example <br>
 <p>
 <code><pre>
 {
-    "totalRecords": 7,
+    "totalRecords": 3,
     "pageSize": 25,
     "pageNumber": 1,
     "totalPages": 1,
     "assistanceListingsData": [
         {
-            "version": "2.0",
+            "version": "3.0",
             "status": "Active",
-            "programId": "3b09a5c9171e4f2390899f8fe7a4b95a",
-            "publishedDate": "2025-12-30T05:00:02.100+00:00",
-            "assistanceListingId": "10.078",
-            "title": "Bioenergy Program",
-            "popularLongName": "(BIO)",
+            "programId": "7d1e11802c8e438caff314c4f5b79238",
+            "publishedDate": "2026-11-16T19:47:42.101+00:00",
+            "assistanceListingId": "39.602",
+            "title": "test",
+            "popularLongName": null,
             "popularShortName": null,
             "relatedFederalAssistance": null,
             "federalOrganization": {
-                "department": "AGRICULTURE, DEPARTMENT OF",
-                "departmentCode": "1200",
-                "agency": "FARM SERVICE AGENCY",
-                "agencyCode": "12D2"
+                "department": "GENERAL SERVICES ADMINISTRATION",
+                "departmentCode": "4700",
+                "agency": null,
+                "agencyCode": null
             },
-            "programWebPage": "https://www.gsa.gov",
+            "programWebPage": "https://sam.gov",
             "overview": {
-                "objective": "The goals of the Bioenergy Program are to encourage increased purchases of eligible commodities for the purpose of expanding production of such bioenergy and support new production capacity for such bioenergy.",
-                "assistanceListingDescription": "TEST",
+                "objective": "test",
+                "assistanceListingDescription": "test",
                 "fundedProjectsList": {
                     "isApplicable": false,
                     "list": []
@@ -1502,7 +1513,24 @@ Note: Response for one record is provided as an example <br>
                         "code": "0001001",
                         "name": "Agricultural Resource Conservation and Development"
                     },
-                    "other": []
+                    "other": [
+                        {
+                            "code": "0001002",
+                            "name": "Production and Operation"
+                        },
+                        {
+                            "code": "0001007",
+                            "name": "Agriculture Stabilization and Conservation"
+                        },
+                        {
+                            "code": "0003002",
+                            "name": "Construction, Renewal and Operations"
+                        },
+                        {
+                            "code": "0003005",
+                            "name": "Recreation"
+                        }
+                    ]
                 }
             },
             "authorizations": {
@@ -1510,18 +1538,19 @@ Note: Response for one record is provided as an example <br>
                     {
                         "parentAuthorizationId": null,
                         "authorizationTypes": {
-                            "act": true,
-                            "executiveOrder": false,
+                            "act": false,
+                            "executiveOrder": true,
                             "publicLaw": false,
                             "statute": false,
                             "usc": false
                         },
-                        "act": {
-                            "title": null,
-                            "section": null,
-                            "description": " Title IX, Section 9010, Farm Security and Rural Investment Act of 2002 and Section 5(e) of the CCC Charter Act, 15 U.S.C. 714c. \n"
+                        "act": null,
+                        "executiveOrder": {
+                            "title": "test",
+                            "part": "12",
+                            "section": "2",
+                            "description": "test"
                         },
-                        "executiveOrder": null,
                         "publicLaw": null,
                         "statute": null,
                         "usc": null
@@ -1529,18 +1558,18 @@ Note: Response for one record is provided as an example <br>
                 ]
             },
             "financialInformation": {
-                "isFundedCurrentFY": false,
-                "additionalInformation": "TEST",
+                "isFundedCurrentFY": true,
+                "additionalInformation": "test",
                 "obligations": [
                     {
                         "assistanceType": {
-                            "code": "F001",
-                            "name": "Grant"
+                            "code": "F003",
+                            "name": "Direct Loan"
                         },
                         "awardAmountBasis": [
                             {
-                                "code": "A01",
-                                "name": "Discretionary Award Amount Selection"
+                                "code": "A03",
+                                "name": "Mandatory Award Amount Selection"
                             }
                         ],
                         "awardRecipientBasis": [
@@ -1552,34 +1581,88 @@ Note: Response for one record is provided as an example <br>
                         "values": [
                             {
                                 "year": 2024,
-                                "actual": 5673.00,
+                                "actual": 200.00,
                                 "estimate": null
                             },
                             {
                                 "year": 2025,
-                                "actual": 4567.00,
+                                "actual": 100.00,
                                 "estimate": null
                             },
                             {
                                 "year": 2026,
                                 "actual": null,
-                                "estimate": 78980.00
+                                "estimate": 499.00
+                            }
+                        ]
+                    },
+                    {
+                        "assistanceType": {
+                            "code": "N001",
+                            "name": "Use of Property, Facilities, and Equipment"
+                        },
+                        "awardAmountBasis": [
+                            {
+                                "code": "A02",
+                                "name": "Formula Award Amount Selection"
+                            }
+                        ],
+                        "awardRecipientBasis": [
+                            {
+                                "code": "R02",
+                                "name": "Discretionary and Non-Competitive Recipient Selection Award"
+                            }
+                        ],
+                        "values": []
+                    },
+                    {
+                        "assistanceType": {
+                            "code": "F008",
+                            "name": "Asset Forfeiture/Equitable Sharing"
+                        },
+                        "awardAmountBasis": [
+                            {
+                                "code": "A02",
+                                "name": "Formula Award Amount Selection"
+                            }
+                        ],
+                        "awardRecipientBasis": [
+                            {
+                                "code": "R03",
+                                "name": "Non-Discretionary and Competitive Recipient Selection Award"
+                            }
+                        ],
+                        "values": [
+                            {
+                                "year": 2024,
+                                "actual": 300.00,
+                                "estimate": null
+                            },
+                            {
+                                "year": 2025,
+                                "actual": 244.00,
+                                "estimate": null
+                            },
+                            {
+                                "year": 2026,
+                                "actual": null,
+                                "estimate": 2345.00
                             }
                         ]
                     }
                 ],
                 "rangeAndAverageAssistance": [
                     {
-                        "fiscalYear": 2025,
-                        "minimumAwardAmount": 567.00,
-                        "maximumAwardAmount": 890.00,
-                        "averageAwardAmount": 678.00
+                        "fiscalYear": 2026,
+                        "minimumAwardAmount": 100.00,
+                        "maximumAwardAmount": 199.99,
+                        "averageAwardAmount": 19.00
                     },
                     {
-                        "fiscalYear": 2026,
-                        "minimumAwardAmount": null,
-                        "maximumAwardAmount": null,
-                        "averageAwardAmount": null
+                        "fiscalYear": 2027,
+                        "minimumAwardAmount": 235.00,
+                        "maximumAwardAmount": 467.00,
+                        "averageAwardAmount": 234.00
                     }
                 ],
                 "accomplishments": {
@@ -1588,8 +1671,8 @@ Note: Response for one record is provided as an example <br>
                 },
                 "accountsIdentificationList": [
                     {
-                        "code": "12-4336-0-1-271",
-                        "description": null
+                        "code": "21-5869-0-6-655",
+                        "description": "test"
                     }
                 ]
             },
@@ -1597,7 +1680,8 @@ Note: Response for one record is provided as an example <br>
                 "documentation": {
                     "isApplicable": true,
                     "description": [
-                        "USDA will collect information from bioenergy producers that request payments under the Bioenergy Program as the Secretary may require to ensure that benefits are paid only to eligible bioenergy producers for eligible commodities.  Bioenergy producers seeking program payments will have to meet minimum requirements by providing information concerning the production of bioenergy.  Applicants must certify that they will abide by the Bioenergy Program Agreement's provisions.  This program is excluded from coverage under OMB Circular No. A-87."
+                        "test",
+                        "test12456"
                     ]
                 },
                 "applicant": {
@@ -1605,34 +1689,70 @@ Note: Response for one record is provided as an example <br>
                         {
                             "code": "ET21010",
                             "name": "U.S. Federal Government"
+                        },
+                        {
+                            "code": "ET22050",
+                            "name": "Interstate Organization"
+                        },
+                        {
+                            "code": "ET24050",
+                            "name": "Other Local Government Consortium, Regional Organization (Intrastate), or Other Local Government Combination"
+                        },
+                        {
+                            "code": "ET26010",
+                            "name": "Local"
                         }
                     ],
-                    "description": "All bioenergy producers are eligible to participate in the program.  To participate, ethanol producers must provide USDA with evidence of increased production of bioenergy and increased purchase and utilization of agricultural commodities related to that increased production.  Biodiesel producers must provide evidence of production and purchase and utilization of agricultural commodities related to that production."
+                    "description": "testing"
                 },
                 "beneficiary": {
                     "isSameAsApplicant": false,
                     "types": [
                         {
-                            "code": "ET21010",
-                            "name": "U.S. Federal Government"
+                            "code": "ET11010",
+                            "name": "Unrestricted by Entity Type"
+                        },
+                        {
+                            "code": "ET22040",
+                            "name": "Department or Agency of a U.S. Territorial Government"
+                        },
+                        {
+                            "code": "ET25040",
+                            "name": "Port Authority"
+                        },
+                        {
+                            "code": "ET59090",
+                            "name": "Consumer"
                         }
                     ],
-                    "description": "Bioenergy producers."
+                    "description": "test"
                 },
                 "assistanceUsage": {
                     "types": [
                         {
-                            "code": "CC003",
-                            "name": "Marketing, Advertising, and Public Relations"
+                            "code": "CC001",
+                            "name": "Professional Services"
+                        },
+                        {
+                            "code": "ZZ999",
+                            "name": "Other"
                         }
                     ],
-                    "description": "Bioenergy producers may increase their purchases of eligible commodities as compared to the previous fiscal year purchases and convert that commodity into increased commercial fuel grade ethanol and biodiesel production as compared to previous fiscal year ethanol and biodiesel production.  The Program defines eligible commodities as barley, corn, grain sorghum, oats, rice, wheat, soybeans, sunflower seed, canola, crambe, rapeseed, safflower, sesame seed, flaxseed, mustard seed, and cellulosic crops, such as switchgrass and short rotation trees, grown on farms, for the purpose of producing ethanol and/or biodiesel or any other commodity or commodity by-product as determined and announced by CCC used in ethanol and biodiesel production which is produced in the United States and its territories."
+                    "description": null
                 },
                 "assistanceRestriction": {
                     "types": [
                         {
-                            "code": "AD001",
-                            "name": "Administrative Expenses"
+                            "code": "CC002",
+                            "name": "Publication and Printing"
+                        },
+                        {
+                            "code": "CN008",
+                            "name": "Refinancing"
+                        },
+                        {
+                            "code": "ZZ999",
+                            "name": "Other"
                         }
                     ],
                     "description": null
@@ -1642,50 +1762,51 @@ Note: Response for one record is provided as an example <br>
                 "deadlines": {
                     "value": "Deadlines do not apply",
                     "list": [],
-                    "description": "Please contact the program contact listed in the Information Contacts section below or Headquarters office."
+                    "description": null
                 },
                 "preApplicationCoordination": {
                     "environmentalImpact": null,
-                    "description": null
+                    "description": "test"
                 },
                 "applicationProcedure": {
-                    "opportunityPostedLocation": null,
-                    "opportunityPostedURL": null,
-                    "location": null,
+                    "opportunityPostedLocation": "Other",
+                    "opportunityPostedURL": "https://sam.gov",
+                    "location": "NOFO",
                     "description": null,
                     "url": null
                 },
                 "selectionCriteria": {
-                    "isApplicable": false,
-                    "description": null
+                    "isApplicable": true,
+                    "description": "test"
                 },
                 "awardProcedure": {
-                    "description": "None."
+                    "description": "test"
                 },
                 "payments": {
                     "list": [
                         {
-                            "fundingDate": "2026-12-23",
+                            "fundingDate": "2025-12-12",
                             "type": "Reimbursement",
-                            "frequency": "Monthly",
-                            "frequencyDescription": "TEST",
+                            "frequency": "Annually",
+                            "frequencyDescription": null,
+                            "spendingTimeDetermination": "N/A",
                             "spendingPeriodType": "Months",
-                            "spendingPeriod": 78,
-                            "spendingPeriodDescription": "TEST"
+                            "spendingPeriod": 24,
+                            "spendingPeriodDescription": "test"
                         }
                     ]
                 },
                 "approval": {
-                    "interval": "Not Applicable",
-                    "description": "From 1 to 30 days."
+                    "interval": "From 120 to 180 days",
+                    "description": "test"
                 },
                 "appeal": {
-                    "interval": "Not Applicable",
-                    "description": "Any participant who is subject to an adverse determination may appeal the determination by filing a written request with the Deputy Administrator at the following address:  Deputy Administrator, Commodity Operations, Farm Service Agency, Department of Agriculture, STOP 0550, 1400 Independence Avenue, S.W., Washington, DC 20250-0550.  To receive consideration, the participant must file the appeal within 30 days after written notice of the decision, which is the subject of the appeal, is mailed or otherwise made available to the participant.  An appeal shall be considered to have been filed when personally delivered in writing to the Deputy Administrator or when the properly addressed request, postage paid, is postmarked.  The Deputy Administrator may accept and act upon an appeal even though it is not timely filed if, in the judgement of the Deputy Administrator, circumstances warrant such action."
+                    "interval": "From 15 to 30 days",
+                    "description": "test"
                 },
                 "renewal": {
-                    "interval": "Not Applicable",
-                    "description": null
+                    "interval": "From 60 to 90 days",
+                    "description": "test"
                 }
             },
             "compliance": {
@@ -1701,7 +1822,7 @@ Note: Response for one record is provided as an example <br>
                         },
                         {
                             "code": "subpartD",
-                            "isSelected": false
+                            "isSelected": true
                         },
                         {
                             "code": "subpartE",
@@ -1712,15 +1833,24 @@ Note: Response for one record is provided as an example <br>
                             "isSelected": false
                         }
                     ],
-                    "description": ""
+                    "description": "test"
                 },
                 "reports": [
                     {
-                        "code": "progress",
+                        "code": "financial",
                         "frequency": [
                             "Monthly"
                         ],
-                        "description": "TEST"
+                        "description": "testing",
+                        "name": null
+                    },
+                    {
+                        "code": "other",
+                        "frequency": [
+                            "Quarterly"
+                        ],
+                        "description": "testing",
+                        "name": "testing"
                     }
                 ],
                 "audit": {
@@ -1731,88 +1861,97 @@ Note: Response for one record is provided as an example <br>
                 "records": {
                     "retentionPeriodType": "Months",
                     "retentionPeriod": 1,
-                    "description": "Bioenergy producers or any other individual or entity receiving payments for Bioenergy Program shall maintain and retain financial books and records which will permit verification of all transactions for at least 3 years, following the end of the calendar year in which payments were received."
+                    "description": "test"
                 },
                 "documents": {
                     "isApplicable": "true",
                     "description": ""
                 },
-                "additionalRequirements": [],
-                "guidelinesAndInformation": [],
+                "additionalRequirements": [
+                    {
+                        "id": "972747117a75489d9469213258c6cbab",
+                        "url": "https://sam.gov",
+                        "description": "test"
+                    }
+                ],
+                "guidelinesAndInformation": [
+                    {
+                        "id": "6a814e7940194be699abec95800e2c18",
+                        "url": "https://google.com",
+                        "description": "test"
+                    }
+                ],
                 "formulaAndMatching": {
-                    "isApplicable": false,
+                    "isApplicable": true,
                     "types": {
                         "formula": true,
-                        "matching": false,
-                        "moe": false
+                        "matching": true,
+                        "moe": true
                     },
                     "formula": {
-                        "title": "TEST",
-                        "chapter": "5",
-                        "part": "4",
-                        "subPart": "7",
-                        "publicLaw": "8",
-                        "description": "TEST"
+                        "title": "test",
+                        "chapter": "1",
+                        "part": "2",
+                        "subPart": "4",
+                        "publicLaw": "3",
+                        "description": "test"
                     },
                     "matching": {
-                        "requirementFlag": null,
-                        "percent": null,
-                        "description": ""
+                        "requirementFlag": "D",
+                        "percent": "",
+                        "description": "test"
                     },
                     "moe": {
-                        "description": ""
+                        "description": "test"
                     }
                 },
                 "maps": {
-                    "basis": [],
-                    "usageList": [],
-                    "areCBSADelineationsUsed": "no",
+                    "basis": [
+                        {
+                            "code": "Statute",
+                            "isSelected": true
+                        }
+                    ],
+                    "usageList": [
+                        {
+                            "code": "Statistical uses",
+                            "details": [],
+                            "isSelected": true
+                        }
+                    ],
+                    "areCBSADelineationsUsed": "yes",
                     "currentCBSADelineationAdopted": {
-                        "isSelected": null,
+                        "isSelected": "yes",
                         "historicalDelineationSelection": ""
                     }
                 }
             },
             "contacts": {
                 "local": {
-                    "flag": "none",
-                    "officeLocationURL": null,
-                    "description": ""
+                    "flag": null,
+                    "officeLocationURL": "https://gsa.gov",
+                    "description": null
                 },
                 "headquarters": [
                     {
-                        "contactId": "869ae41df9c7b70849acc9ccf64d37f5",
+                        "contactId": "2f56ae20a25c4cf69b195861fa8002b7",
                         "title": "",
-                        "fullName": "Amy Mitchell",
-                        "email": "Amy.Mitchell1@usda.gov",
-                        "phone": "2027208954",
+                        "fullName": "123 Test",
+                        "email": "123test@gsa.gov",
+                        "phone": "1231231234",
                         "fax": "",
-                        "streetAddress": "USDA, FSA, Safety Net Division, 1400 Independence Ave SW Stop 0517",
-                        "city": "Washington",
-                        "state": "DC",
-                        "zip": "20250",
-                        "country": "US",
-                        "subdivisionCode": null,
-                        "subdivisionName": null
-                    },
-                    {
-                        "contactId": "869ae41df9c7b70849acc9ccf64d37f5",
-                        "title": "",
-                        "fullName": "Amy Mitchell",
-                        "email": "Amy.Mitchell1@usda.gov",
-                        "phone": "2027208954",
-                        "fax": "",
-                        "streetAddress": "USDA, FSA, Safety Net Division, 1400 Independence Ave SW Stop 0517",
-                        "city": "Washington",
-                        "state": "DC",
-                        "zip": "20250",
-                        "country": "US",
+                        "streetAddress": "test street",
+                        "city": "Herndon",
+                        "state": "VA",
+                        "zip": "20170",
+                        "country": "USA",
                         "subdivisionCode": null,
                         "subdivisionName": null
                     }
                 ]
             }
         },..
+    ]
 }
 </pre></code>
 </p>
@@ -1825,7 +1964,7 @@ Note: Response for one record is provided as an example <br>
 
 Production URL: https://api.sam.gov/assistance-listings/v1/search?api_key={User’s Public API Key}&status=Active&pageSize=10&organizationCodes=47QXLA&organizationLevel=Office&applicantTypes=ET21010&publishedDateFrom=2025-01-01&beneficiaryTypes=ET11020<br>
 <br>
-Alpha URL: https://api-alpha.sam.gov/assistance-listings/v1/search?api_key={User’s Public API Key}&status=Active&pageSize=10&organizationCodes=47QXLA&organizationLevel=Office&applicantTypes=ET21010&publishedDateFrom=2025-01-01&beneficiaryTypes=ET11020<br>
+Alpha URL: https://api-alpha.sam.gov/assistance-listings/v1/search?api_key={User’s Public API Key}&status=Active&pageSize=10&organizationCodes=47QXLA&organizationLevel=Office&applicantTypes=ET11010&publishedDateFrom=2025-01-01&beneficiaryTypes=ET11020<br>
 
 Note: Request URL for Alpha is used in this example
 </details>
@@ -1836,18 +1975,18 @@ Note: Request URL for Alpha is used in this example
 <p>
 <code><pre>
 {
-    "totalRecords": 1,
+    "totalRecords": 16,
     "pageSize": 10,
     "pageNumber": 1,
-    "totalPages": 1,
+    "totalPages": 2,
     "assistanceListingsData": [
         {
-            "version": "2.0",
+            "version": "3.0",
             "status": "Active",
-            "programId": "eea804ef04f348eca2f2de7a63ef5b73",
-            "publishedDate": "2025-12-29T21:35:48.062+00:00",
-            "assistanceListingId": "39.58U",
-            "title": "NOVEMBER 13 2025 ALPHA PROGRAM TITLE",
+            "programId": "cfcb865bd3a44eea8c6d9b39b5df30dd",
+            "publishedDate": "2026-11-17T05:00:43.615+00:00",
+            "assistanceListingId": "39.655",
+            "title": "SFE-E2E Assistance Listing MW41D4E1",
             "popularLongName": "PROGRAM POPULAR NAME - LONG",
             "popularShortName": "PROGRAM POPULAR NAME - SHORT",
             "relatedFederalAssistance": [
@@ -1869,10 +2008,6 @@ Note: Request URL for Alpha is used in this example
                 "fundedProjectsList": {
                     "isApplicable": true,
                     "list": [
-                        {
-                            "fiscalYear": 2025,
-                            "description": "partially funded"
-                        },
                         {
                             "fiscalYear": 2026,
                             "description": "unfunded"
@@ -1992,8 +2127,8 @@ Note: Request URL for Alpha is used in this example
                 ]
             },
             "financialInformation": {
-                "isFundedCurrentFY": false,
-                "additionalInformation": "TEST",
+                "isFundedCurrentFY": true,
+                "additionalInformation": "",
                 "obligations": [
                     {
                         "assistanceType": {
@@ -2015,53 +2150,18 @@ Note: Request URL for Alpha is used in this example
                         "values": [
                             {
                                 "year": 2024,
-                                "actual": 100.00,
+                                "actual": 0.00,
                                 "estimate": null
                             },
                             {
                                 "year": 2025,
-                                "actual": 200.00,
+                                "actual": 50.00,
                                 "estimate": null
                             },
                             {
                                 "year": 2026,
                                 "actual": null,
-                                "estimate": 300.00
-                            }
-                        ]
-                    },
-                    {
-                        "assistanceType": {
-                            "code": "F002",
-                            "name": "Cooperative Agreement"
-                        },
-                        "awardAmountBasis": [
-                            {
-                                "code": "A02",
-                                "name": "Formula Award Amount Selection"
-                            }
-                        ],
-                        "awardRecipientBasis": [
-                            {
-                                "code": "R03",
-                                "name": "Non-Discretionary and Competitive Recipient Selection Award"
-                            }
-                        ],
-                        "values": [
-                            {
-                                "year": 2024,
-                                "actual": 200.00,
-                                "estimate": null
-                            },
-                            {
-                                "year": 2025,
-                                "actual": 300.00,
-                                "estimate": null
-                            },
-                            {
-                                "year": 2026,
-                                "actual": null,
-                                "estimate": 400.00
+                                "estimate": 250.00
                             }
                         ]
                     }
@@ -2083,10 +2183,6 @@ Note: Request URL for Alpha is used in this example
                 "accomplishments": {
                     "isApplicable": true,
                     "list": [
-                        {
-                            "fiscalYear": 2025,
-                            "description": "2025"
-                        },
                         {
                             "fiscalYear": 2026,
                             "description": "2026"
@@ -2110,8 +2206,12 @@ Note: Request URL for Alpha is used in this example
                 "applicant": {
                     "types": [
                         {
-                            "code": "ET21010",
-                            "name": "U.S. Federal Government"
+                            "code": "ET11010",
+                            "name": "Unrestricted by Entity Type"
+                        },
+                        {
+                            "code": "ET59999",
+                            "name": "Other"
                         }
                     ],
                     "description": "some may apply"
@@ -2147,20 +2247,9 @@ Note: Request URL for Alpha is used in this example
             },
             "assistanceApplication": {
                 "deadlines": {
-                    "value": "Assistance listing administering agency organizational unit establishes deadlines",
-                    "list": [
-                        {
-                            "start": "2020-10-01",
-                            "end": "2020-11-01",
-                            "description": "add desc"
-                        },
-                        {
-                            "start": "1800-12-12",
-                            "end": "1800-12-12",
-                            "description": null
-                        }
-                    ],
-                    "description": "I have added multiple deadlines"
+                    "value": "Deadline determined at as part of the Notice of Funding Opportunity (NOFO)",
+                    "list": [],
+                    "description": "TEST"
                 },
                 "preApplicationCoordination": {
                     "environmentalImpact": null,
@@ -2187,6 +2276,7 @@ Note: Request URL for Alpha is used in this example
                             "type": "Reimbursement",
                             "frequency": "Monthly",
                             "frequencyDescription": null,
+                            "spendingTimeDetermination": "NOFO or Award",
                             "spendingPeriodType": "Months",
                             "spendingPeriod": 3,
                             "spendingPeriodDescription": "TEST"
@@ -2199,7 +2289,7 @@ Note: Request URL for Alpha is used in this example
                 },
                 "appeal": {
                     "interval": "From 30 to 60 days",
-                    "description": "optional?"
+                    "description": "Appeal procedures are published by the agency."
                 },
                 "renewal": {
                     "interval": "From 1 to 15 days",
@@ -2230,7 +2320,7 @@ Note: Request URL for Alpha is used in this example
                             "isSelected": false
                         }
                     ],
-                    "description": ""
+                    "description": "test"
                 },
                 "reports": [
                     {
@@ -2238,7 +2328,8 @@ Note: Request URL for Alpha is used in this example
                         "frequency": [
                             "Semi-Annually"
                         ],
-                        "description": ""
+                        "description": "SFE-E2E other report description.",
+                        "name": "SFE-E2E other report"
                     }
                 ],
                 "audit": {
@@ -2259,14 +2350,14 @@ Note: Request URL for Alpha is used in this example
                 },
                 "additionalRequirements": [
                     {
-                        "id": "d88c20ac4c1d42be8941cb6f03616428",
+                        "id": "d4d60c6f0cec4ef1ae406d6e4944df20",
                         "url": "http://url.net",
                         "description": "ACRD"
                     }
                 ],
                 "guidelinesAndInformation": [
                     {
-                        "id": "e5da02b213684121846ac2d891a0aaad",
+                        "id": "93e19b52be7f408e83deef63ffa8360e",
                         "url": "http://gov.sam.gov",
                         "description": "information and and guidelines"
                     }
@@ -2275,7 +2366,7 @@ Note: Request URL for Alpha is used in this example
                     "isApplicable": false,
                     "types": {
                         "formula": false,
-                        "matching": true,
+                        "matching": false,
                         "moe": false
                     },
                     "formula": {
@@ -2289,19 +2380,30 @@ Note: Request URL for Alpha is used in this example
                     "matching": {
                         "requirementFlag": "D",
                         "percent": "1",
-                        "description": "desc"
+                        "description": ""
                     },
                     "moe": {
                         "description": ""
                     }
                 },
                 "maps": {
-                    "basis": [],
-                    "usageList": [],
-                    "areCBSADelineationsUsed": "no",
+                    "basis": [
+                        {
+                            "code": "Agency election",
+                            "isSelected": true
+                        }
+                    ],
+                    "usageList": [
+                        {
+                            "code": "Statistical uses",
+                            "details": [],
+                            "isSelected": true
+                        }
+                    ],
+                    "areCBSADelineationsUsed": "yes",
                     "currentCBSADelineationAdopted": {
-                        "isSelected": null,
-                        "historicalDelineationSelection": ""
+                        "isSelected": "no",
+                        "historicalDelineationSelection": "Sep 2018"
                     }
                 }
             },
@@ -2329,7 +2431,7 @@ Note: Request URL for Alpha is used in this example
                     }
                 ]
             }
-        }
+        },..
     ]
 }
 </pre></code>
@@ -2367,5 +2469,6 @@ Error Code| Error Message                                                       
 Date | Version | Description
 ------|---------|---------
 01/27/2026 | v1.0    | Base Version
+11/17/2026 | v2.0    | Added FAL v3.0 changes
 
 <p><small><a href="#">Back to top</a></small></p>
