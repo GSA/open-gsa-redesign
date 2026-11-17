@@ -151,28 +151,28 @@ The Subcontracting Plan Reports API offers several response elements that are de
 <tr>
 <td>firstTierUniqueEntityID</td>
 <td>string</td>
-<td>UEI of the first tier subcontractor. Not Applicable on a prime report.</td>
+<td>UEI of the first tier subcontractor. The value is Not Applicable on a report submitted by a prime contractor.</td>
 <td>V1</td>
 </tr>
 
 <tr>
 <td>firstTierLegalBusinessName</td>
 <td>string</td>
-<td>Official legal name of the first tier subcontractor as registered in SAM.gov. Not Applicable on a prime report.</td>
+<td>Legal Business Name of the first tier subcontractor. The value is Not Applicable on a report submitted by a prime contractor.</td>
 <td>V1</td>
 </tr>
 
 <tr>
 <td>lowerTierUniqueEntityID</td>
 <td>string</td>
-<td>UEI of the second or lower tier subcontractor. Not Applicable on a prime or first tier report.</td>
+<td>UEI of the lower tier subcontractor. The value is Not Applicable on a report submitted by either a prime contractor or a first tier subcontractor.</td>
 <td>V1</td>
 </tr>
 
 <tr>
 <td>lowerTierLegalBusinessName</td>
 <td>string</td>
-<td>Official legal name of the second or lower tier subcontractor as registered in SAM.gov. Not Applicable on a prime or first tier report.</td>
+<td>Legal Business Name of the lower tier subcontractor. The value is Not Applicable on a report submitted by a prime contractor or a first tier subcontractor.</td>
 <td>V1</td>
 </tr>
 
@@ -1879,8 +1879,8 @@ curl -X POST \
         "submitter": "Both",
         "primeContractorUniqueEntityID": "UEI",
         "primeContractorLegalBusinessName": "Legal Business Name",
-        "firstTierUniqueEntityID": "First Tier UEI",
-        "firstTierLegalBusinessName": "First Tier Business Name",
+        "firstTierUniqueEntityID": "Not Applicable",
+        "firstTierLegalBusinessName": "Not Applicable",
         "lowerTierUniqueEntityID": "Not Applicable",
         "lowerTierLegalBusinessName": "Not Applicable",
         "reportFiscalYear": 2025,
@@ -2062,7 +2062,7 @@ curl -X POST \
         "isCertified": "Y",
         "nameOfTheCertifier": "Certifier",
         "titleOfTheCertifier": "SBLO ",
-        "genericEmailAddressOrUrl": null
+        "genericEmailAddressOrUrl": "Email Address"
       },
       "remarksData": {
         "remarks": "Remarks as provided by the contractor"
@@ -2072,211 +2072,6 @@ curl -X POST \
           "name": "Attachment Name",
           "url": "URL"
         },
-        {
-          "name": "Attachment Name",
-          "url": "URL"
-        },
-        {
-          "name": "Attachment Name",
-          "url": "URL"
-        }
-      ]
-    },
-    {
-      "reportData": {
-        "reportType": "Summary DOD Comprehensive",
-        "submitter": "Lower Tier Subcontractor",
-        "primeContractorUniqueEntityID": "UEI",
-        "primeContractorLegalBusinessName": "Legal Business Name",
-        "firstTierUniqueEntityID": "First Tier UEI",
-        "firstTierLegalBusinessName": "First Tier Legal Business Name",
-        "lowerTierUniqueEntityID": "Lower Tier UEI",
-        "lowerTierLegalBusinessName": "Lower Tier Legal Business Name",
-        "reportFiscalYear": 2025,
-        "reportingPeriod": "March 31",
-        "submittedDate": "2025-05-15T16:56:21",
-        "reportedToDepartmentCode": "CSP",
-        "reportedToDeportmentName": "COMPREHENSIVE SUBCONTRACT PROGRAM DIVISION"
-      },
-      "goalsAndActualsData": {
-        "businessCategories": {
-          "businessConcerns": [
-            {
-              "code": "SB",
-              "name": "Small Business",
-              "summaryReport": [
-                {
-                  "organizationCode": "9700",
-                  "organizationName": "Department of Defense",
-                  "goalsWholeDollars": "Not Applicable",
-                  "goalsPercentage": "Not Applicable",
-                  "actualsWholeDollars": "241601987",
-                  "actualsPercentage": "23.4"
-                }
-              ]
-            },
-            {
-              "code": "OTSB",
-              "name": "Other Than Small Business",
-              "summaryReport": [
-                {
-                  "organizationCode": "9700",
-                  "organizationName": "Department of Defense",
-                  "goalsWholeDollars": "Not Applicable",
-                  "goalsPercentage": "Not Applicable",
-                  "actualsWholeDollars": "793044138",
-                  "actualsPercentage": "76.6"
-                }
-              ]
-            }
-          ],
-          "smallBusinessCategories": [
-            {
-              "code": "SDB",
-              "name": "Small Disadvantaged Business",
-              "summaryReport": [
-                {
-                  "organizationCode": "9700",
-                  "organizationName": "Department of Defense",
-                  "goalsWholeDollars": "Not Applicable",
-                  "goalsPercentage": "Not Applicable",
-                  "actualsWholeDollars": "7164832",
-                  "actualsPercentage": "0.7"
-                }
-              ]
-            },
-            {
-              "code": "WOSB",
-              "name": "Women Owned Small Business",
-              "summaryReport": [
-                {
-                  "organizationCode": "9700",
-                  "organizationName": "Department of Defense",
-                  "goalsWholeDollars": "Not Applicable",
-                  "goalsPercentage": "Not Applicable",
-                  "actualsWholeDollars": "23663085",
-                  "actualsPercentage": "2.3"
-                }
-              ]
-            },
-            {
-              "code": "HBCU and MSI",
-              "name": "Historically Black Colleges and Universities and Minority Serving Institutions",
-              "summaryReport": [
-                {
-                  "organizationCode": "9700",
-                  "organizationName": "Department of Defense",
-                  "goalsWholeDollars": "Not Applicable",
-                  "goalsPercentage": "Not Applicable",
-                  "actualsWholeDollars": "0",
-                  "actualsPercentage": "0"
-                }
-              ]
-            },
-            {
-              "code": "HUBZone",
-              "name": "SBA Certified HUBZone Small Business",
-              "summaryReport": [
-                {
-                  "organizationCode": "9700",
-                  "organizationName": "Department of Defense",
-                  "goalsWholeDollars": "Not Applicable",
-                  "goalsPercentage": "Not Applicable",
-                  "actualsWholeDollars": "1827505",
-                  "actualsPercentage": "0.2"
-                }
-              ]
-            },
-            {
-              "code": "VOSB",
-              "name": "Veteran Owned Small Business",
-              "summaryReport": [
-                {
-                  "organizationCode": "9700",
-                  "organizationName": "Department of Defense",
-                  "goalsWholeDollars": "Not Applicable",
-                  "goalsPercentage": "Not Applicable",
-                  "actualsWholeDollars": "11426320",
-                  "actualsPercentage": "1.1"
-                }
-              ]
-            },
-            {
-              "code": "SDVOSB",
-              "name": "SBA Certified Service Disabled Veteran Owned Small Business",
-              "summaryReport": [
-                {
-                  "organizationCode": "9700",
-                  "organizationName": "Department of Defense",
-                  "goalsWholeDollars": "Not Applicable",
-                  "goalsPercentage": "Not Applicable",
-                  "actualsWholeDollars": "2840877",
-                  "actualsPercentage": "0.3"
-                }
-              ]
-            },
-            {
-              "code": "ANC",
-              "name": "Alaskan Native Corporations and Indian Tribes that are not Small Disadvantaged Business",
-              "summaryReport": [
-                {
-                  "organizationCode": "9700",
-                  "organizationName": "Department of Defense",
-                  "goalsWholeDollars": "Not Applicable",
-                  "goalsPercentage": "Not Applicable",
-                  "actualsWholeDollars": "0",
-                  "actualsPercentage": "0"
-                }
-              ]
-            },
-            {
-              "code": "ANC",
-              "name": "Alaskan Native Corporations and Indian Tribes that are not Small Business",
-              "summaryReport": [
-                {
-                  "organizationCode": "9700",
-                  "organizationName": "Department of Defense",
-                  "goalsWholeDollars": "Not Applicable",
-                  "goalsPercentage": "Not Applicable",
-                  "actualsWholeDollars": "0",
-                  "actualsPercentage": "0"
-                }
-              ]
-            }
-          ],
-          "totals": {
-            "individualReport": {
-              "goalsWholeDollars": "Not Applicable",
-              "goalsSubcontractPercentage": "Not Applicable",
-              "goalsTotalContractPercentage": "Not Applicable",
-              "actualsWholeDollars": "Not Applicable",
-              "actualsSubcontractPercentage": "Not Applicable",
-              "actualsTotalContractPercentage": "Not Applicable"
-            },
-            "summaryReport": {
-              "totalGoalsWholeDollars": "1034646125",
-              "totalGoalsPercentage": "100",
-              "totalActualsWholeDollars": "1034646125",
-              "totalActualsPercentage": "100"
-            }
-          }
-        }
-      },
-      "certificationData": {
-        "includeIndirectCosts": "Not Applicable",
-        "accountingMethod": {
-          "method": "Not Applicable",
-          "explanation": "Not Applicable"
-        },
-        "isCertified": "Y",
-        "nameOfTheCertifier": "Certifier",
-        "titleOfTheCertifier": "Associate Director Procurement/SBLO",
-        "genericEmailAddressOrUrl": null
-      },
-      "remarksData": {
-        "remarks": "As provided by the contractor"
-      },
-      "dodComprehensiveAttachmentsData": [
         {
           "name": "Attachment Name",
           "url": "URL"
