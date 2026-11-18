@@ -96,10 +96,10 @@ combination with each other. All parameters are optional.
 | 9  | legalBusinessName            | Legal Business Name/Entity Name of the contractor.<br/><br/>Examples of Request Body:<br/>`{"legalBusinessName": "WORLD WIDE TECHNOLOGY, INC."}`<br/>`{"legalBusinessName": "world wide technology, inc."}`<br/>`{"legalBusinessName": "JBS INTERNATIONAL, INC.~Colonial Oil Industries, Inc."}`<br/><br/>Note: Partial searches are not allowed.                                                                                                                                                                                                                    | V1                  |
 | 10 | ultimateParentUniqueEntityID | Ultimate Parent Unique Entity ID of the contractor.<br/><br/>Examples of Request Body:<br/>`{"ultimateParentUniqueEntityID": "NACNDU85S2Q2"}`<br/>`{"ultimateParentUniqueEntityID": "NACNDU85S2Q2~C8VFSNKTMQB6"}`<br/>`{"ultimateParentUniqueEntityID": null}`                                                                                                                                                                                                                                                                                                       | V1                  |
 | 11 | piid                         | Procurement Instrument Identifier (PIID) of the Prime Contract that the ISR was submitted for.<br/><br/>Examples of Request Body:<br/>`{"piid": "80GSFC22CA020"}`<br/>`{"piid": "80GSFC22CA020~GS00F006DA"}`                                                                                                                                                                                                                                                                                                                                                         | V1                  |
-| 12 | referenceIdvPiid             | Reference IDV PIID of the Prime Contract that the ISR was submitted for.<br/><br/>Examples of Request Body:<br/>`{"referencedIdvPiid": "SAQMMA13A0229"}`<br/>`{"referencedIdvPiid": "SAQMMA13A0229~N0002420G4107"}`                                                                                                                                                                                                                                                                                                                                                  | V1                  |
+| 12 | referencedIdvPiid            | Reference IDV PIID of the Prime Contract that the ISR was submitted for.<br/><br/>Examples of Request Body:<br/>`{"referencedIdvPiid": "SAQMMA13A0229"}`<br/>`{"referencedIdvPiid": "SAQMMA13A0229~N0002420G4107"}`                                                                                                                                                                                                                                                                                                                                                  | V1                  |
 | 13 | firstTierSubcontractNumber   | First Tier Subcontract ID that the ISR was submitted for.<br/><br/>Examples of Request Body:<br/>`{"firstTierSubcontractNumber": "4202831076"}`<br/>`{"firstTierSubcontractNumber": "4202831076~PO-000738"}`                                                                                                                                                                                                                                                                                                                                                         | V1                  |
 | 14 | lowerTierSubcontractNumber   | Lower Tier Subcontract ID that the ISR was submitted for.<br/><br/>Examples of Request Body:<br/>`{"lowerTierSubcontractNumber": "4202831076"}`<br/>`{"lowerTierSubcontractNumber": "4202831076~PO-000738"}`                                                                                                                                                                                                                                                                                                                                                         | V1                  |
-| 15 | includeSections              | To include only the sections that the user wants to get in the response. Acceptable values:<br/>- all <br/>- reportDate <br/>- entityData <br/>- contractData <br/>- taskOrdersData <br/>- departmentAllocationPercentageData <br/>- goalsAndActualsData <br/>- remarks <br/>- certificationData <br/>- dodComprehensiveAttachments<br/><br/>Examples of Request Body:<br/>`{"reportFiscalYear": "2026", "includeSections": "reportData"}`<br/>`{"reportType": "Summary DoD Comprehensive", "includeSections": "reportData~entityData~dodComprehensiveAttachments"}` | V1                  |
+| 15 | includeSections              | To include only the sections that the user wants to get in the response. Acceptable values:<br/>- all <br/>- reportData <br/>- entityData <br/>- contractData <br/>- taskOrdersData <br/>- departmentAllocationPercentageData <br/>- goalsAndActualsData <br/>- remarks <br/>- certificationData <br/>- dodComprehensiveAttachments<br/><br/>Examples of Request Body:<br/>`{"reportFiscalYear": "2026", "includeSections": "reportData"}`<br/>`{"reportType": "Summary DoD Comprehensive", "includeSections": "reportData~entityData~dodComprehensiveAttachments"}` | V1                  |
 | 16 | sortBy                       | The default sorting order of the response is by the latest to the oldest Submitted Date.  It can be changed to obtain the latest to the oldest data by the Last Modified Date.<br/><br/>Examples of Request Body:<br/>`{"sortBy": "lastmodifieddate"}`<br/>`{"sortBy": "LASTMODIFIEDDATE"}`<br/>`{"sortBy": "SUBMITTEDdate"}`<br/>`{"sortBy": "submitteddate"}`<br/><br/>Note: The values are not case-sensitive.                                                                                                                                                    | V1                  |
 | 17 | sortDirection                | The default sorting order of the response is by the latest (desc - descending) to the oldest (asc - ascending) Submitted Date.  It can be changed to obtain the oldest (asc - ascending) to the latest (desc - descending) data by using this parameter.<br/><br/>Examples of Request Body:<br/>{`"sortDirection": "asc"}`<br/>`{"sortDirection": "ASC"}`<br/>`{"sortDirection": "desc"}`<br/>`{"sortDirection": "DESC"}`<br/><br/>Note: The values are not case-sensitive.                                                                                          | V1                  |
 | 18 | page                         | The page number that the user wants to access.<br/><br/>Examples of Request Body:<br/>`{"submitter": "Both","page": "20"}`<br/>`{"reportFiscalYear": "2026", "page": "5", "size": "25"}`                                                                                                                                                                                                                                                                                                                                                                             | V1                  |
@@ -130,21 +130,49 @@ The Subcontracting Plan Reports API offers several response elements that are de
 <tr>
 <td>submitter</td>
 <td>string</td>
-<td>Role of the entity submitting the report. Valid values may include Prime Contractor, Subcontractor, or Both.</td>
+<td>Role of the entity submitting the report. Valid values may include Prime Contractor, First Tier Subcontractor, Lower Tier Subcontractor, or Both.</td>
 <td>V1</td>
 </tr>
 
 <tr>
-<td>uniqueEntityID</td>
+<td>primeContractorUniqueEntityID</td>
 <td>string</td>
-<td>Unique Entity Identifier (UEI) assigned to the reporting entity in SAM.gov.</td>
+<td>Unique Entity Identifier (UEI) of the prime contractor on the contract.</td>
 <td>V1</td>
 </tr>
 
 <tr>
-<td>legalBusinessName</td>
+<td>primeContractorLegalBusinessName</td>
 <td>string</td>
-<td>Official legal name of the entity as registered in SAM.gov.</td>
+<td>Official legal name of the prime contractor as registered in SAM.gov.</td>
+<td>V1</td>
+</tr>
+
+<tr>
+<td>firstTierUniqueEntityID</td>
+<td>string</td>
+<td>UEI of the first tier subcontractor. The value is Not Applicable on a report submitted by a prime contractor.</td>
+<td>V1</td>
+</tr>
+
+<tr>
+<td>firstTierLegalBusinessName</td>
+<td>string</td>
+<td>Legal Business Name of the first tier subcontractor. The value is Not Applicable on a report submitted by a prime contractor.</td>
+<td>V1</td>
+</tr>
+
+<tr>
+<td>lowerTierUniqueEntityID</td>
+<td>string</td>
+<td>UEI of the lower tier subcontractor. The value is Not Applicable on a report submitted by either a prime contractor or a first tier subcontractor.</td>
+<td>V1</td>
+</tr>
+
+<tr>
+<td>lowerTierLegalBusinessName</td>
+<td>string</td>
+<td>Legal Business Name of the lower tier subcontractor. The value is Not Applicable on a report submitted by a prime contractor or a first tier subcontractor.</td>
 <td>V1</td>
 </tr>
 
@@ -306,16 +334,30 @@ The Subcontracting Plan Reports API offers several response elements that are de
 </tr>
 
 <tr>
-<td>referenceIdvPiid</td>
+<td>referencedIdvPiid</td>
 <td>string</td>
 <td>PIID of the referenced IDV associated with the award, if applicable.</td>
 <td>V1</td>
 </tr>
 
 <tr>
-<td>subcontractNumber</td>
+<td>firstTierSubcontractNumber</td>
 <td>string</td>
-<td>Identifier assigned to the subcontract.</td>
+<td>Identifier assigned to the first tier subcontract. Returned on both first tier and lower tier reports.</td>
+<td>V1</td>
+</tr>
+
+<tr>
+<td>lowerTierSubcontractNumber</td>
+<td>string</td>
+<td>Identifier assigned to the second or lower tier subcontract. Not Applicable unless the report was submitted by a second or lower tier subcontractor.</td>
+<td>V1</td>
+</tr>
+
+<tr>
+<td>lowerTierSubcontractDate</td>
+<td>string</td>
+<td>Date the second or lower tier subcontract was awarded. Not Applicable unless the report was submitted by a second or lower tier subcontractor.</td>
 <td>V1</td>
 </tr>
 
@@ -327,79 +369,16 @@ The Subcontracting Plan Reports API offers several response elements that are de
 </tr>
 
 <tr>
-<td>contractingOrganization</td>
-<td>object</td>
-<td>
-<details>
-<summary>contractingOrganization contains below fields</summary>
-<table>
-<tr>
-<th style="background-color: #f1f1f1;"><b>Field Name</b></th>
-<th style="background-color: #f1f1f1;"><b>Type</b></th>
-<th style="background-color: #f1f1f1;"><b>Description</b></th>
-</tr>
-
-<tr>
-<td>department</td>
-<td>object</td>
-<td>Department details.</td>
-</tr>
-
-<tr>
-<td>subTier</td>
-<td>object</td>
-<td>Sub-tier details.</td>
-</tr>
-
-<tr>
-<td>office</td>
-<td>object</td>
-<td>Office details.</td>
-</tr>
-</table>
-
-<details>
-<summary>department contains below fields</summary>
-<table>
-<tr><th style="background-color: #f1f1f1;"><b>Field Name</b></th><th style="background-color: #f1f1f1;"><b>Type</b></th></tr>
-<tr><td>code</td><td>string</td></tr>
-<tr><td>name</td><td>string</td></tr>
-</table>
-</details>
-
-<details>
-<summary>subTier contains below fields</summary>
-<table>
-<tr><th style="background-color: #f1f1f1;"><b>Field Name</b></th><th style="background-color: #f1f1f1;"><b>Type</b></th></tr>
-<tr><td>code</td><td>string</td></tr>
-<tr><td>name</td><td>string</td></tr>
-</table>
-</details>
-
-<details>
-<summary>office contains below fields</summary>
-<table>
-<tr><th style="background-color: #f1f1f1;"><b>Field Name</b></th><th style="background-color: #f1f1f1;"><b>Type</b></th></tr>
-<tr><td>code</td><td>string</td></tr>
-<tr><td>name</td><td>string</td></tr>
-</table>
-</details>
-</details>
-</td>
+<td>firstTierSubcontractAmount</td>
+<td>string</td>
+<td>Dollar amount of the first tier subcontract. Not Applicable on a lower tier report when no first tier report could be matched.</td>
 <td>V1</td>
 </tr>
 
 <tr>
-<td>subcontractingPlanCode</td>
+<td>lowerTierSubcontractAmount</td>
 <td>string</td>
-<td>Code representing the type of subcontracting plan.</td>
-<td>V1</td>
-</tr>
-
-<tr>
-<td>subcontractingPlanDesc</td>
-<td>string</td>
-<td>Description of the subcontracting plan type associated with the contract.</td>
+<td>Dollar amount of the second or lower tier subcontract. Not Applicable unless the report was submitted by a second or lower tier subcontractor.</td>
 <td>V1</td>
 </tr>
 
@@ -1007,8 +986,12 @@ curl -X POST \
       "reportData": {
         "reportType": "Individual",
         "submitter": "Prime Contractor",
-        "uniqueEntityID": "UEI",
-        "legalBusinessName": "LEGAL BUSINESS NAME",
+        "primeContractorUniqueEntityID": "UEI",
+        "primeContractorLegalBusinessName": "LEGAL BUSINESS NAME",
+        "firstTierUniqueEntityID": "Not Applicable",
+        "firstTierLegalBusinessName": "Not Applicable",
+        "lowerTierUniqueEntityID": "Not Applicable",
+        "lowerTierLegalBusinessName": "Not Applicable",
         "reportFiscalYear": 2026,
         "reportingPeriod": "March 31",
         "submittedDate": "2026-06-08T14:42:46.858536",
@@ -1031,26 +1014,14 @@ curl -X POST \
       },
       "contractData": {
         "piid": "Prime Contract PIID",
-        "awardOrIdv": "Award or IDV",
+        "awardOrIdv": "IDV",
         "referencedIdvPiid": "Referenced IDV PIID",
-        "subcontractNumber": "Subcontract ID",
+        "firstTierSubcontractNumber": "Not Applicable",
+        "lowerTierSubcontractNumber": "Not Applicable",
+        "lowerTierSubcontractDate": "Not Applicable",
         "totalDollars": "1111111111",
-        "contractingOrganization": {
-          "department": {
-            "code": "1111",
-            "name": "DEPARTMENT"
-          },
-          "subTier": {
-            "code": "2222",
-            "name": "SUBTIER"
-          },
-          "office": {
-            "code": "AB1111",
-            "name": "OFFICE"
-          }
-        },
-        "subcontractingPlanCode": "F",
-        "subcontractingPlanDesc": "Individual Subcontract Plan"
+        "firstTierSubcontractAmount": "Not Applicable",
+        "lowerTierSubcontractAmount": "Not Applicable"
       },
       "taskOrdersData": {
         "areTaskOrdersApplicable": "Yes",
@@ -1118,151 +1089,151 @@ curl -X POST \
               ]
             }
           }
-        ],
-        "departmentAllocationPercentageData": "Not Applicable",
-        "goalsAndActualsData": {
-          "businessCategories": {
-            "businessConcerns": [
-              {
-                "code": "SB",
-                "name": "Small Business",
-                "individualReport": {
-                  "goalsWholeDollars": "56789",
-                  "goalsSubcontractPercentage": "55.4",
-                  "goalsTotalContractPercentage": "0.02",
-                  "actualsWholeDollars": "67890",
-                  "actualsSubcontractPercentage": "54.4",
-                  "actualsTotalContractPercentage": "0.02"
-                }
-              },
-              {
-                "code": "OTSB",
-                "name": "Other Than Small Business",
-                "individualReport": {
-                  "goalsWholeDollars": "45678",
-                  "goalsSubcontractPercentage": "44.6",
-                  "goalsTotalContractPercentage": "0.019",
-                  "actualsWholeDollars": "56789",
-                  "actualsSubcontractPercentage": "45.6",
-                  "actualsTotalContractPercentage": "0.023"
-                }
-              }
-            ],
-            "smallBusinessCategories": [
-              {
-                "code": "SDB",
-                "name": "Small Disadvantaged Business",
-                "individualReport": {
-                  "goalsWholeDollars": "56789",
-                  "goalsSubcontractPercentage": "55.4",
-                  "goalsTotalContractPercentage": "0.02",
-                  "actualsWholeDollars": "67890",
-                  "actualsSubcontractPercentage": "54.4",
-                  "actualsTotalContractPercentage": "0.02"
-                }
-              },
-              {
-                "code": "WOSB",
-                "name": "Women Owned Small Business",
-                "individualReport": {
-                  "goalsWholeDollars": "56789",
-                  "goalsSubcontractPercentage": "55.4",
-                  "goalsTotalContractPercentage": "0.02",
-                  "actualsWholeDollars": "67890",
-                  "actualsSubcontractPercentage": "54.4",
-                  "actualsTotalContractPercentage": "0.02"
-                }
-              },
-              {
-                "code": "HBCU and MSI",
-                "name": "Historically Black Colleges and Universities and Minority Serving Institutions",
-                "individualReport": {
-                  "goalsWholeDollars": "56789",
-                  "goalsSubcontractPercentage": "55.4",
-                  "goalsTotalContractPercentage": "0.02",
-                  "actualsWholeDollars": "67890",
-                  "actualsSubcontractPercentage": "54.4",
-                  "actualsTotalContractPercentage": "0.02"
-                }
-              },
-              {
-                "code": "HUBZone",
-                "name": "SBA Certified HUBZone Small Business",
-                "individualReport": {
-                  "goalsWholeDollars": "56789",
-                  "goalsSubcontractPercentage": "55.4",
-                  "goalsTotalContractPercentage": "0.02",
-                  "actualsWholeDollars": "67890",
-                  "actualsSubcontractPercentage": "54.4",
-                  "actualsTotalContractPercentage": "0.02"
-                }
-              },
-              {
-                "code": "VOSB",
-                "name": "Veteran Owned Small Business",
-                "individualReport": {
-                  "goalsWholeDollars": "56789",
-                  "goalsSubcontractPercentage": "55.4",
-                  "goalsTotalContractPercentage": "0.02",
-                  "actualsWholeDollars": "67890",
-                  "actualsSubcontractPercentage": "54.4",
-                  "actualsTotalContractPercentage": "0.02"
-                }
-              },
-              {
-                "code": "SDVOSB",
-                "name": "SBA Certified Service Disabled Veteran Owned Small Business",
-                "individualReport": {
-                  "goalsWholeDollars": "56789",
-                  "goalsSubcontractPercentage": "55.4",
-                  "goalsTotalContractPercentage": "0.02",
-                  "actualsWholeDollars": "67890",
-                  "actualsSubcontractPercentage": "54.4",
-                  "actualsTotalContractPercentage": "0.02"
-                }
-              },
-              {
-                "code": "ANC",
-                "name": "Alaskan Native Corporations and Indian Tribes that are not Small Disadvantaged Business",
-                "individualReport": {
-                  "goalsWholeDollars": "56789",
-                  "goalsSubcontractPercentage": "55.4",
-                  "goalsTotalContractPercentage": "0.02",
-                  "actualsWholeDollars": "67890",
-                  "actualsSubcontractPercentage": "54.4",
-                  "actualsTotalContractPercentage": "0.02"
-                }
-              }
-            ],
-            "totals": {
+        ]
+      },
+      "departmentAllocationPercentageData": "Not Applicable",
+      "goalsAndActualsData": {
+        "businessCategories": {
+          "businessConcerns": [
+            {
+              "code": "SB",
+              "name": "Small Business",
               "individualReport": {
-                "goalsWholeDollars": "102467",
-                "goalsSubcontractPercentage": "100",
-                "goalsTotalContractPercentage": "0.043",
-                "actualsWholeDollars": "124679",
-                "actualsSubcontractPercentage": "100",
-                "actualsTotalContractPercentage": "0.057"
-              },
-              "summaryReport": {
-                "totalGoalsWholeDollars": "Not Applicable",
-                "totalGoalsPercentage": "Not Applicable",
-                "totalActualsWholeDollars": "Not Applicable",
-                "totalActualsPercentage": "Not Applicable"
+                "goalsWholeDollars": "56789",
+                "goalsSubcontractPercentage": "55.4",
+                "goalsTotalContractPercentage": "0.02",
+                "actualsWholeDollars": "67890",
+                "actualsSubcontractPercentage": "54.4",
+                "actualsTotalContractPercentage": "0.02"
+              }
+            },
+            {
+              "code": "OTSB",
+              "name": "Other Than Small Business",
+              "individualReport": {
+                "goalsWholeDollars": "45678",
+                "goalsSubcontractPercentage": "44.6",
+                "goalsTotalContractPercentage": "0.019",
+                "actualsWholeDollars": "56789",
+                "actualsSubcontractPercentage": "45.6",
+                "actualsTotalContractPercentage": "0.023"
               }
             }
+          ],
+          "smallBusinessCategories": [
+            {
+              "code": "SDB",
+              "name": "Small Disadvantaged Business",
+              "individualReport": {
+                "goalsWholeDollars": "56789",
+                "goalsSubcontractPercentage": "55.4",
+                "goalsTotalContractPercentage": "0.02",
+                "actualsWholeDollars": "67890",
+                "actualsSubcontractPercentage": "54.4",
+                "actualsTotalContractPercentage": "0.02"
+              }
+            },
+            {
+              "code": "WOSB",
+              "name": "Women Owned Small Business",
+              "individualReport": {
+                "goalsWholeDollars": "56789",
+                "goalsSubcontractPercentage": "55.4",
+                "goalsTotalContractPercentage": "0.02",
+                "actualsWholeDollars": "67890",
+                "actualsSubcontractPercentage": "54.4",
+                "actualsTotalContractPercentage": "0.02"
+              }
+            },
+            {
+              "code": "HBCU and MSI",
+              "name": "Historically Black Colleges and Universities and Minority Serving Institutions",
+              "individualReport": {
+                "goalsWholeDollars": "56789",
+                "goalsSubcontractPercentage": "55.4",
+                "goalsTotalContractPercentage": "0.02",
+                "actualsWholeDollars": "67890",
+                "actualsSubcontractPercentage": "54.4",
+                "actualsTotalContractPercentage": "0.02"
+              }
+            },
+            {
+              "code": "HUBZone",
+              "name": "SBA Certified HUBZone Small Business",
+              "individualReport": {
+                "goalsWholeDollars": "56789",
+                "goalsSubcontractPercentage": "55.4",
+                "goalsTotalContractPercentage": "0.02",
+                "actualsWholeDollars": "67890",
+                "actualsSubcontractPercentage": "54.4",
+                "actualsTotalContractPercentage": "0.02"
+              }
+            },
+            {
+              "code": "VOSB",
+              "name": "Veteran Owned Small Business",
+              "individualReport": {
+                "goalsWholeDollars": "56789",
+                "goalsSubcontractPercentage": "55.4",
+                "goalsTotalContractPercentage": "0.02",
+                "actualsWholeDollars": "67890",
+                "actualsSubcontractPercentage": "54.4",
+                "actualsTotalContractPercentage": "0.02"
+              }
+            },
+            {
+              "code": "SDVOSB",
+              "name": "SBA Certified Service Disabled Veteran Owned Small Business",
+              "individualReport": {
+                "goalsWholeDollars": "56789",
+                "goalsSubcontractPercentage": "55.4",
+                "goalsTotalContractPercentage": "0.02",
+                "actualsWholeDollars": "67890",
+                "actualsSubcontractPercentage": "54.4",
+                "actualsTotalContractPercentage": "0.02"
+              }
+            },
+            {
+              "code": "ANC",
+              "name": "Alaskan Native Corporations and Indian Tribes that are not Small Disadvantaged Business",
+              "individualReport": {
+                "goalsWholeDollars": "56789",
+                "goalsSubcontractPercentage": "55.4",
+                "goalsTotalContractPercentage": "0.02",
+                "actualsWholeDollars": "67890",
+                "actualsSubcontractPercentage": "54.4",
+                "actualsTotalContractPercentage": "0.02"
+              }
+            }
+          ],
+          "totals": {
+            "individualReport": {
+              "goalsWholeDollars": "102467",
+              "goalsSubcontractPercentage": "100",
+              "goalsTotalContractPercentage": "0.043",
+              "actualsWholeDollars": "124679",
+              "actualsSubcontractPercentage": "100",
+              "actualsTotalContractPercentage": "0.057"
+            },
+            "summaryReport": {
+              "totalGoalsWholeDollars": "Not Applicable",
+              "totalGoalsPercentage": "Not Applicable",
+              "totalActualsWholeDollars": "Not Applicable",
+              "totalActualsPercentage": "Not Applicable"
+            }
           }
-        },
-        "certificationData": {
-          "includeIndirectCosts": "N",
-          "accountingMethod": {
-            "method": "commitment basis",
-            "explanation": "Not Applicable"
-          },
-          "isCertified": "Y",
-          "nameOfTheCertifier": "Name",
-          "titleOfTheCertifier": "Title",
-          "genericEmailAddressOrUrl": "https://entity.com"
         }
+      },
+      "certificationData": {
+        "includeIndirectCosts": "N",
+        "accountingMethod": {
+          "method": "commitment basis",
+          "explanation": "Not Applicable"
+        },
+        "isCertified": "Y",
+        "nameOfTheCertifier": "Name",
+        "titleOfTheCertifier": "Title",
+        "genericEmailAddressOrUrl": "https://entity.com"
       }
     }
   ],
@@ -1329,8 +1300,12 @@ curl -X POST \
       "reportData": {
         "reportType": "Summary Individual",
         "submitter": "Prime Contractor",
-        "uniqueEntityID": "UEI",
-        "legalBusinessName": "Legal Business Name",
+        "primeContractorUniqueEntityID": "UEI",
+        "primeContractorLegalBusinessName": "Legal Business Name",
+        "firstTierUniqueEntityID": "Not Applicable",
+        "firstTierLegalBusinessName": "Not Applicable",
+        "lowerTierUniqueEntityID": "Not Applicable",
+        "lowerTierLegalBusinessName": "Not Applicable",
         "reportFiscalYear": 2025,
         "reportingPeriod": "September 30",
         "submittedDate": "2026-02-18T20:22:37.444611",
@@ -1500,8 +1475,12 @@ curl -X POST \
       "reportData": {
         "reportType": "Summary Commercial",
         "submitter": "Prime Contractor",
-        "uniqueEntityID": "UEI",
-        "legalBusinessName": "Legal Business Name",
+        "primeContractorUniqueEntityID": "UEI",
+        "primeContractorLegalBusinessName": "Legal Business Name",
+        "firstTierUniqueEntityID": "Not Applicable",
+        "firstTierLegalBusinessName": "Not Applicable",
+        "lowerTierUniqueEntityID": "Not Applicable",
+        "lowerTierLegalBusinessName": "Not Applicable",
         "reportFiscalYear": 2025,
         "reportingPeriod": null,
         "submittedDate": "2026-02-18T20:31:23.51933",
@@ -1671,8 +1650,12 @@ curl -X POST \
       "reportData": {
         "reportType": "Individual",
         "submitter": "Prime Contractor",
-        "uniqueEntityID": "UEI",
-        "legalBusinessName": "Legal Business Name",
+        "primeContractorUniqueEntityID": "UEI",
+        "primeContractorLegalBusinessName": "Legal Business Name",
+        "firstTierUniqueEntityID": "Not Applicable",
+        "firstTierLegalBusinessName": "Not Applicable",
+        "lowerTierUniqueEntityID": "Not Applicable",
+        "lowerTierLegalBusinessName": "Not Applicable",
         "reportFiscalYear": 2025,
         "reportingPeriod": "September 30",
         "submittedDate": "2026-02-23T21:59:44.883998",
@@ -1681,26 +1664,14 @@ curl -X POST \
       },
       "contractData": {
         "piid": "GS35F540GA",
-        "awardOrIdv": null,
-        "referencedIdvPiid": null,
-        "subcontractNumber": null,
+        "awardOrIdv": "AWARD",
+        "referencedIdvPiid": "Not Applicable",
+        "firstTierSubcontractNumber": "Not Applicable",
+        "lowerTierSubcontractNumber": "Not Applicable",
+        "lowerTierSubcontractDate": "Not Applicable",
         "totalDollars": "1961200000",
-        "contractingOrganization": {
-          "department": {
-            "code": "4700",
-            "name": "GENERAL SERVICES ADMINISTRATION"
-          },
-          "subTier": {
-            "code": "4732",
-            "name": "FEDERAL ACQUISITION SERVICE"
-          },
-          "office": {
-            "code": "47QTCA",
-            "name": "GSA/FAS CENTER FOR IT SCHEDULE PROG"
-          }
-        },
-        "subcontractingPlanCode": null,
-        "subcontractingPlanDesc": null
+        "firstTierSubcontractAmount": "Not Applicable",
+        "lowerTierSubcontractAmount": "Not Applicable"
       },
       "taskOrdersData": {
         "areTaskOrdersApplicable": "No",
@@ -1906,8 +1877,12 @@ curl -X POST \
       "reportData": {
         "reportType": "Summary DOD Comprehensive",
         "submitter": "Both",
-        "uniqueEntityID": "UEI",
-        "legalBusinessName": "Legal Business Name",
+        "primeContractorUniqueEntityID": "UEI",
+        "primeContractorLegalBusinessName": "Legal Business Name",
+        "firstTierUniqueEntityID": "Not Applicable",
+        "firstTierLegalBusinessName": "Not Applicable",
+        "lowerTierUniqueEntityID": "Not Applicable",
+        "lowerTierLegalBusinessName": "Not Applicable",
         "reportFiscalYear": 2025,
         "reportingPeriod": "March 31",
         "submittedDate": "2025-05-14T15:00:22",
@@ -2087,7 +2062,7 @@ curl -X POST \
         "isCertified": "Y",
         "nameOfTheCertifier": "Certifier",
         "titleOfTheCertifier": "SBLO ",
-        "genericEmailAddressOrUrl": null
+        "genericEmailAddressOrUrl": "Email Address"
       },
       "remarksData": {
         "remarks": "Remarks as provided by the contractor"
@@ -2097,207 +2072,6 @@ curl -X POST \
           "name": "Attachment Name",
           "url": "URL"
         },
-        {
-          "name": "Attachment Name",
-          "url": "URL"
-        },
-        {
-          "name": "Attachment Name",
-          "url": "URL"
-        }
-      ]
-    },
-    {
-      "reportData": {
-        "reportType": "Summary DOD Comprehensive",
-        "submitter": "Prime Contractor",
-        "uniqueEntityID": "UEI",
-        "legalBusinessName": "Legal Business Name",
-        "reportFiscalYear": 2025,
-        "reportingPeriod": "March 31",
-        "submittedDate": "2025-05-15T16:56:21",
-        "reportedToDepartmentCode": "CSP",
-        "reportedToDeportmentName": "COMPREHENSIVE SUBCONTRACT PROGRAM DIVISION"
-      },
-      "goalsAndActualsData": {
-        "businessCategories": {
-          "businessConcerns": [
-            {
-              "code": "SB",
-              "name": "Small Business",
-              "summaryReport": [
-                {
-                  "organizationCode": "9700",
-                  "organizationName": "Department of Defense",
-                  "goalsWholeDollars": "Not Applicable",
-                  "goalsPercentage": "Not Applicable",
-                  "actualsWholeDollars": "241601987",
-                  "actualsPercentage": "23.4"
-                }
-              ]
-            },
-            {
-              "code": "OTSB",
-              "name": "Other Than Small Business",
-              "summaryReport": [
-                {
-                  "organizationCode": "9700",
-                  "organizationName": "Department of Defense",
-                  "goalsWholeDollars": "Not Applicable",
-                  "goalsPercentage": "Not Applicable",
-                  "actualsWholeDollars": "793044138",
-                  "actualsPercentage": "76.6"
-                }
-              ]
-            }
-          ],
-          "smallBusinessCategories": [
-            {
-              "code": "SDB",
-              "name": "Small Disadvantaged Business",
-              "summaryReport": [
-                {
-                  "organizationCode": "9700",
-                  "organizationName": "Department of Defense",
-                  "goalsWholeDollars": "Not Applicable",
-                  "goalsPercentage": "Not Applicable",
-                  "actualsWholeDollars": "7164832",
-                  "actualsPercentage": "0.7"
-                }
-              ]
-            },
-            {
-              "code": "WOSB",
-              "name": "Women Owned Small Business",
-              "summaryReport": [
-                {
-                  "organizationCode": "9700",
-                  "organizationName": "Department of Defense",
-                  "goalsWholeDollars": "Not Applicable",
-                  "goalsPercentage": "Not Applicable",
-                  "actualsWholeDollars": "23663085",
-                  "actualsPercentage": "2.3"
-                }
-              ]
-            },
-            {
-              "code": "HBCU and MSI",
-              "name": "Historically Black Colleges and Universities and Minority Serving Institutions",
-              "summaryReport": [
-                {
-                  "organizationCode": "9700",
-                  "organizationName": "Department of Defense",
-                  "goalsWholeDollars": "Not Applicable",
-                  "goalsPercentage": "Not Applicable",
-                  "actualsWholeDollars": "0",
-                  "actualsPercentage": "0"
-                }
-              ]
-            },
-            {
-              "code": "HUBZone",
-              "name": "SBA Certified HUBZone Small Business",
-              "summaryReport": [
-                {
-                  "organizationCode": "9700",
-                  "organizationName": "Department of Defense",
-                  "goalsWholeDollars": "Not Applicable",
-                  "goalsPercentage": "Not Applicable",
-                  "actualsWholeDollars": "1827505",
-                  "actualsPercentage": "0.2"
-                }
-              ]
-            },
-            {
-              "code": "VOSB",
-              "name": "Veteran Owned Small Business",
-              "summaryReport": [
-                {
-                  "organizationCode": "9700",
-                  "organizationName": "Department of Defense",
-                  "goalsWholeDollars": "Not Applicable",
-                  "goalsPercentage": "Not Applicable",
-                  "actualsWholeDollars": "11426320",
-                  "actualsPercentage": "1.1"
-                }
-              ]
-            },
-            {
-              "code": "SDVOSB",
-              "name": "SBA Certified Service Disabled Veteran Owned Small Business",
-              "summaryReport": [
-                {
-                  "organizationCode": "9700",
-                  "organizationName": "Department of Defense",
-                  "goalsWholeDollars": "Not Applicable",
-                  "goalsPercentage": "Not Applicable",
-                  "actualsWholeDollars": "2840877",
-                  "actualsPercentage": "0.3"
-                }
-              ]
-            },
-            {
-              "code": "ANC",
-              "name": "Alaskan Native Corporations and Indian Tribes that are not Small Disadvantaged Business",
-              "summaryReport": [
-                {
-                  "organizationCode": "9700",
-                  "organizationName": "Department of Defense",
-                  "goalsWholeDollars": "Not Applicable",
-                  "goalsPercentage": "Not Applicable",
-                  "actualsWholeDollars": "0",
-                  "actualsPercentage": "0"
-                }
-              ]
-            },
-            {
-              "code": "ANC",
-              "name": "Alaskan Native Corporations and Indian Tribes that are not Small Business",
-              "summaryReport": [
-                {
-                  "organizationCode": "9700",
-                  "organizationName": "Department of Defense",
-                  "goalsWholeDollars": "Not Applicable",
-                  "goalsPercentage": "Not Applicable",
-                  "actualsWholeDollars": "0",
-                  "actualsPercentage": "0"
-                }
-              ]
-            }
-          ],
-          "totals": {
-            "individualReport": {
-              "goalsWholeDollars": "Not Applicable",
-              "goalsSubcontractPercentage": "Not Applicable",
-              "goalsTotalContractPercentage": "Not Applicable",
-              "actualsWholeDollars": "Not Applicable",
-              "actualsSubcontractPercentage": "Not Applicable",
-              "actualsTotalContractPercentage": "Not Applicable"
-            },
-            "summaryReport": {
-              "totalGoalsWholeDollars": "1034646125",
-              "totalGoalsPercentage": "100",
-              "totalActualsWholeDollars": "1034646125",
-              "totalActualsPercentage": "100"
-            }
-          }
-        }
-      },
-      "certificationData": {
-        "includeIndirectCosts": "Not Applicable",
-        "accountingMethod": {
-          "method": "Not Applicable",
-          "explanation": "Not Applicable"
-        },
-        "isCertified": "Y",
-        "nameOfTheCertifier": "Certifier",
-        "titleOfTheCertifier": "Associate Director Procurement/SBLO",
-        "genericEmailAddressOrUrl": null
-      },
-      "remarksData": {
-        "remarks": "As provided by the contractor"
-      },
-      "dodComprehensiveAttachmentsData": [
         {
           "name": "Attachment Name",
           "url": "URL"
