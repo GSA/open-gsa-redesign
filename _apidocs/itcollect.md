@@ -26,7 +26,7 @@ This data is presented in a visual format on itdashboard.gov.
 
 ## Getting Started
 
-To use our API, request an api key below and visit our <a href="https://gsa.github.io/ITDB-schema/public-by-2026/api/data/gov/docs/index.html"> full API documentation </a>
+To use our API, request an API key below and visit our <a href="https://gsa.github.io/ITDB-schema/public-by-2026/api/data/gov/docs/index.html"> full API documentation </a>. Please use the following Base URL for accessing public data from the IT Collect API: https://itcollect.itdashboard.gov/api/public/.
 
 {% raw %}
 <div id="apidatagov_signup">Loading signup form...</div>
